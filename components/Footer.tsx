@@ -183,7 +183,7 @@ export default function Footer() {
           {/* Legal & Copyright */}
           <div className="flex flex-col lg:items-end gap-4">
             <div className="flex gap-8 font-mono text-[10px] tracking-widest text-primary/40 uppercase">
-              <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
+              <Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy</Link>
               <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>
               <Link href="/contact" className="hover:text-primary transition-colors">Cookies</Link>
             </div>
