@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --color-background: var(--bg);
+  --color-surface: var(--surface);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-accent: #6324FC;
+  
+  --font-sans: var(--font-dm-sans);
+  --font-heading: var(--font-bebas-neue);
+  --font-mono: var(--font-space-mono);
+}
+
+@layer base {
+  :root {
+    /* Light Mode Variables */
+    --bg: #F5F5F0; 
+    --surface: #FFFFFF;
+    --text-primary: #060608;
+    --text-secondary: #555555;
+  }
+  
+  html.dark {
+    /* Dark Mode Variables */
+    --bg: #060608;
+    --surface: #0a0a0d;
+    --text-primary: #EDEAE2;
+    --text-secondary: #888888;
+  }
+  
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+}
+
+@layer utilities {
+  .stroke-text {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-primary);
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-xl bg-primary/5 border border-primary/10 rounded-none transition-colors duration-500;
+  }
+  
+  .clip-cta {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+  }
+
+  /* Marquee Animations */
+  .animate-marquee {
+    animation: marquee linear infinite;
+  }
+  
+  .animate-marquee-reverse {
+    animation: marquee-reverse linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes marquee-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+}
