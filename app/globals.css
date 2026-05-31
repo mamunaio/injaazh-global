@@ -1,0 +1,95 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --color-background: var(--bg);
+  --color-surface: var(--surface);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-accent: #6324FC;
+  
+  --font-sans: var(--font-dm-sans);
+  --font-heading: var(--font-bebas-neue);
+  --font-mono: var(--font-space-mono);
+}
+
+@layer base {
+  :root {
+    --bg: #F5F5F0; 
+    --surface: #FFFFFF;
+    --text-primary: #060608;
+    --text-secondary: #555555;
+    --bg-opacity-80: rgba(245, 245, 240, 0.95);
+    --border-opacity-10: rgba(6, 6, 8, 0.1);
+  }
+  
+  html {
+    overflow-x: hidden;
+  }
+  
+  html.dark {
+    --bg: #060608;
+    --surface: #0a0a0d;
+    --text-primary: #EDEAE2;
+    --text-secondary: #888888;
+    --bg-opacity-80: rgba(6, 6, 8, 0.95);
+    --border-opacity-10: rgba(237, 234, 226, 0.1);
+  }
+  
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+}
+
+@layer utilities {
+  .stroke-text {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-primary);
+  }
+  
+  .stroke-white {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+  }
+
+  .swiper-pagination-bullet {
+    background-color: rgba(255,255,255,0.2) !important;
+    width: 8px !important;
+    height: 8px !important;
+    transition: all 0.4s ease !important;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #6324FC !important;
+    width: 24px !important;
+    border-radius: 4px !important;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-xl bg-primary/5 border border-primary/10 rounded-none transition-colors duration-500;
+  }
+  
+  .clip-cta {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+  }
+
+  /* Marquee Animations */
+  .animate-marquee {
+    animation: marquee linear infinite;
+  }
+  
+  .animate-marquee-reverse {
+    animation: marquee-reverse linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes marquee-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+}
