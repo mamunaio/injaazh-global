@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { useProjectModal } from "./ProjectModalContext";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const [now, setNow] = useState(new Date());
@@ -77,7 +78,7 @@ export default function Footer() {
             className="font-mono text-[#6324FC] tracking-[0.5em] text-[10px] uppercase mb-12 flex items-center gap-4"
           >
             <span className="w-12 h-[1px] bg-[#6324FC]" /> 
-            Collaborate With Us
+            COLLABORATE WITH US
           </motion.div>
           
           <motion.h2 
@@ -112,16 +113,23 @@ export default function Footer() {
         </div>
 
         {/* 2. Mega Navigation & Newsletter */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 lg:gap-12 pb-32 border-b border-primary/10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 pb-10 lg:pb-16 border-b border-primary/10">
           
           {/* Newsletter Section */}
           <div className="col-span-1 lg:col-span-5 flex flex-col lg:pr-24">
             <div className="flex items-center gap-4 mb-6">
               <span className="w-8 h-[1px] bg-[#6324FC]" />
-              <span className="font-mono text-[10px] tracking-[0.4em] text-[#6324FC] uppercase">Join the Collective</span>
+              <span className="font-mono text-[10px] tracking-[0.4em] text-[#6324FC] uppercase">JOIN THE COLLECTIVE</span>
             </div>
-            <h3 className="font-heading text-6xl md:text-7xl tracking-tighter mb-6 uppercase">The Insider</h3>
-            <p className="font-sans font-light text-primary/70 text-base leading-relaxed mb-12 max-w-md">
+            <div className="relative h-12 w-36 mb-6">
+              <Image 
+                src="/assets/logo.webp" 
+                alt="INJAAZH" 
+                fill 
+                className="object-contain dark:brightness-0 dark:invert transition-all duration-300" 
+              />
+            </div>
+            <p className="font-sans font-light text-primary/70 text-base leading-relaxed mb-8 max-w-md">
               Receive our exclusive weekly breakdown of the engineering strategies and digital technologies shaping the future of global brands.
             </p>
             <div className="relative group w-full max-w-md">
@@ -137,25 +145,32 @@ export default function Footer() {
           </div>
 
           {/* Navigation Links */}
-          <div className="col-span-1 lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 lg:gap-8 mt-12 lg:mt-0">
+          <div className="col-span-1 lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-6 lg:gap-8 lg:mt-0">
             {footerLinks.map((column, idx) => (
-              <div key={idx} className="flex flex-col gap-10">
-                <div className="font-mono text-[10px] text-primary/40 tracking-[0.4em] uppercase">
+              <div key={idx} className="flex flex-col gap-6">
+                <div className="font-sans text-lg font-bold text-primary/95 dark:text-primary/90 tracking-wider uppercase">
                   {column.title}
                 </div>
-                <ul className="flex flex-col gap-6">
-                  {column.links.map((link, lIdx) => (
-                    <li key={lIdx}>
-                      <Link 
-                        href={link.href} 
-                        className="group relative inline-flex items-center font-heading text-2xl lg:text-3xl tracking-tight text-primary/80 hover:text-[#6324FC] transition-all duration-300"
-                      >
-                        <span className="relative z-10">{link.label}</span>
-                        <div className="absolute -left-6 w-0 h-[2px] bg-[#6324FC] group-hover:w-4 transition-all duration-500 opacity-0 group-hover:opacity-100" />
-                        <ArrowUpRight className="w-5 h-5 ml-2 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:-translate-y-1 group-hover:translate-x-0 transition-all duration-500 text-[#6324FC]" />
-                      </Link>
-                    </li>
-                  ))}
+                <ul className="flex flex-col gap-3.5">
+                  {column.links.map((link, lIdx) => {
+                    const isExternal = link.href.startsWith("http");
+                    return (
+                      <li key={lIdx}>
+                        <Link 
+                          href={link.href} 
+                          target={isExternal ? "_blank" : undefined}
+                          rel={isExternal ? "noopener noreferrer" : undefined}
+                          className="group relative inline-flex items-center gap-1.5 font-sans text-base font-light text-primary/90 dark:text-primary/60 hover:text-[#6324FC] dark:hover:text-[#6324FC] transition-all duration-300 pl-0 hover:pl-4"
+                        >
+                          {/* Circle dot appearing on hover */}
+                          <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-[#6324FC] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 shadow-[0_0_8px_rgba(99,36,252,0.8)]" />
+                          
+                          <span className="relative transition-all duration-300">{link.label}</span>
+                          <ArrowRight className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 text-primary/60 group-hover:text-[#6324FC]" />
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}
@@ -163,13 +178,13 @@ export default function Footer() {
         </div>
 
         {/* 3. Bottom Bar */}
-        <div className="py-12 flex flex-col lg:flex-row justify-between items-center gap-12">
+        <div className="pb-6 py-8 flex flex-col lg:flex-row justify-between items-center gap-12">
           {/* World Clocks */}
           <div className="flex flex-wrap justify-center gap-10 lg:gap-16">
             {[
-              { city: "New York", tz: "America/New_York", code: "US" },
-              { city: "London", tz: "Europe/London", code: "UK" },
-              { city: "Dubai", tz: "Asia/Dubai", code: "UAE" }
+              { city: "NEW YORK", tz: "America/New_York", code: "US" },
+              { city: "LONDON", tz: "Europe/London", code: "UK" },
+              { city: "DUBAI", tz: "Asia/Dubai", code: "UAE" }
             ].map((loc, i) => (
               <div key={i} className="flex items-center gap-4 group">
                 <div className="relative flex items-center justify-center w-2 h-2">
@@ -189,9 +204,9 @@ export default function Footer() {
           {/* Legal & Copyright */}
           <div className="flex flex-col lg:items-end gap-6">
             <div className="flex gap-8 font-mono text-[10px] tracking-widest text-primary/60 uppercase">
-              <Link href="/privacy-policy" className="hover:text-[#6324FC] transition-colors">Privacy</Link>
-              <Link href="/terms" className="hover:text-[#6324FC] transition-colors">Terms</Link>
-              <Link href="/cookies" className="hover:text-[#6324FC] transition-colors">Cookies</Link>
+              <Link href="/privacy-policy" className="hover:text-[#6324FC] transition-colors">PRIVACY</Link>
+              <Link href="/terms" className="hover:text-[#6324FC] transition-colors">TERMS</Link>
+              <Link href="/cookies" className="hover:text-[#6324FC] transition-colors">COOKIES</Link>
             </div>
             <p className="font-sans text-xs text-primary/40 tracking-wider">
               © 2026 Injaazh. All Rights Reserved.
@@ -200,43 +215,91 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* 4. Infinite Cinematic Marquee */}
-      <div className="w-full relative pointer-events-none select-none overflow-hidden pb-12 border-t border-white/5 pt-12">
-        <div className="flex whitespace-nowrap">
-          <motion.div 
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
-            className="flex gap-20 items-center pr-20"
-          >
-            {[...Array(4)].map((_, i) => (
-              <div key={i} className="flex gap-20 items-center">
-                <span className="font-heading text-[12vw] leading-none tracking-tighter uppercase bg-clip-text text-transparent bg-gradient-to-r from-[#6324FC] via-[#A855F7] to-[#00E5FF] opacity-40">
-                  INJAAZH GLOBAL
-                </span>
-                <span className="font-heading text-[12vw] leading-none tracking-tighter stroke-text text-transparent opacity-50 uppercase italic">
-                  DIGITAL AGENCY
-                </span>
-              </div>
-            ))}
-          </motion.div>
+      {/* 4. Infinite Cinematic Marquee replaced with Futuristic Cybernetic Global Hub Grid Visual */}
+      <div className="w-full relative h-[100px] lg:h-[250px] overflow-hidden border-t border-primary/5 flex items-center justify-center bg-black/5 dark:bg-white/[0.01]">
+        {/* Grid lines */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(99,36,252,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(99,36,252,0.05)_1px,transparent_1px)] bg-[size:40px_40px]" />
+        
+        {/* Animated network nodes */}
+        <svg className="w-full max-w-[1200px] h-full opacity-70 dark:opacity-90 z-10" viewBox="0 0 1200 250">
+          {/* Connection paths */}
+          <motion.path 
+            d="M 200 130 Q 600 40 1000 130" 
+            fill="none" 
+            stroke="url(#neon-grad)" 
+            strokeWidth="2" 
+            strokeDasharray="8 6"
+            animate={{ strokeDashoffset: [-100, 0] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.path 
+            d="M 200 130 Q 400 90 600 90 T 1000 130" 
+            fill="none" 
+            stroke="url(#cyan-grad)" 
+            strokeWidth="1.5" 
+            strokeDasharray="6 4"
+            animate={{ strokeDashoffset: [0, 100] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+          />
           
-          {/* Duplicate for seamless loop */}
-          <motion.div 
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
-            className="flex gap-20 items-center pr-20"
-          >
-            {[...Array(4)].map((_, i) => (
-              <div key={i} className="flex gap-20 items-center">
-                <span className="font-heading text-[12vw] leading-none tracking-tighter uppercase bg-clip-text text-transparent bg-gradient-to-r from-[#6324FC] via-[#A855F7] to-[#00E5FF] opacity-40">
-                  INJAAZH GLOBAL
-                </span>
-                <span className="font-heading text-[12vw] leading-none tracking-tighter stroke-text text-transparent opacity-50 uppercase italic">
-                  DIGITAL AGENCY
-                </span>
-              </div>
+          {/* Gradient Definitions */}
+          <defs>
+            <linearGradient id="neon-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#6324FC" stopOpacity="0.8" />
+              <stop offset="50%" stopColor="#A855F7" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#00E5FF" stopOpacity="0.8" />
+            </linearGradient>
+            <linearGradient id="cyan-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#6324FC" stopOpacity="0.8" />
+            </linearGradient>
+          </defs>
+
+          {/* Pulse rings and dots for Hubs */}
+          {/* Hub 1 (New York - approx 200, 130) */}
+          <g transform="translate(200, 130)">
+            <circle r="3" fill="#6324FC" />
+            <motion.circle r="12" fill="none" stroke="#6324FC" strokeWidth="1" animate={{ scale: [1, 2.5], opacity: [0.8, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut" }} />
+            <text y="-14" textAnchor="middle" className="font-mono text-[9px] font-bold fill-primary tracking-[0.2em] uppercase">NYC HUB</text>
+            <text y="18" textAnchor="middle" className="font-mono text-[7px] fill-primary/30 tracking-widest">40.7128° N / 74.0060° W</text>
+          </g>
+
+          {/* Hub 2 (London - approx 600, 90) */}
+          <g transform="translate(600, 90)">
+            <circle r="3" fill="#A855F7" />
+            <motion.circle r="12" fill="none" stroke="#A855F7" strokeWidth="1" animate={{ scale: [1, 2.5], opacity: [0.8, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut", delay: 0.8 }} />
+            <text y="-14" textAnchor="middle" className="font-mono text-[9px] font-bold fill-primary tracking-[0.2em] uppercase">LDN HUB</text>
+            <text y="18" textAnchor="middle" className="font-mono text-[7px] fill-primary/30 tracking-widest">51.5074° N / 0.1278° W</text>
+          </g>
+
+          {/* Hub 3 (Dubai - approx 1000, 130) */}
+          <g transform="translate(1000, 130)">
+            <circle r="3" fill="#00E5FF" />
+            <motion.circle r="12" fill="none" stroke="#00E5FF" strokeWidth="1" animate={{ scale: [1, 2.5], opacity: [0.8, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut", delay: 1.6 }} />
+            <text y="-14" textAnchor="middle" className="font-mono text-[9px] font-bold fill-primary tracking-[0.2em] uppercase">DXB HUB</text>
+            <text y="18" textAnchor="middle" className="font-mono text-[7px] fill-primary/30 tracking-widest">25.2048° N / 55.2708° E</text>
+          </g>
+        </svg>
+        
+        {/* Center brand watermark behind nodes with letter wave float & infinite gradient shifts */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
+          <h2 className="font-heading text-[14vw] tracking-[0.05em] leading-none uppercase font-bold flex">
+            {["I", "N", "J", "A", "A", "Z", "H"].map((char, index) => (
+              <motion.span
+                key={index}
+                animate={{ y: [-5, 5, -5] }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: index * 0.25
+                }}
+                className="bg-gradient-to-r from-[#6324FC] via-[#00E5FF] to-[#6324FC] bg-[length:200%_auto] animate-gradient-shift bg-clip-text text-transparent opacity-[0.18] dark:opacity-[0.06]"
+              >
+                {char}
+              </motion.span>
             ))}
-          </motion.div>
+          </h2>
         </div>
       </div>
     </footer>

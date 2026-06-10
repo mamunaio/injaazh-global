@@ -49,7 +49,7 @@ export default function Awards() {
           <div className="lg:w-1/2 lg:sticky lg:top-32">
             <div className="flex items-center gap-4 mb-10">
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-mono text-[10px] tracking-[0.5em] text-[#6324FC] uppercase">Validated Excellence</span>
+              <span className="font-mono text-[10px] tracking-[0.5em] text-[#6324FC] uppercase">VALIDATED EXCELLENCE</span>
             </div>
             
             <div className="relative">
@@ -64,7 +64,7 @@ export default function Awards() {
             </div>
 
             <p className="font-sans font-light text-white/30 text-xl leading-relaxed max-w-lg mb-16 border-l border-white/5 pl-10">
-              Our excellence is recognized by the world&apos;s leading digital platforms and industry watchdogs. We don&apos;t just compete; we set the benchmark.
+              Our work is recognized by the world's leading digital platforms and industry watchdogs. We don't just compete — we set the benchmark.
             </p>
 
             <div className="flex items-center gap-6 group cursor-pointer">
@@ -73,7 +73,7 @@ export default function Awards() {
               </div>
               <div className="flex flex-col">
                 <span className="text-white font-heading text-lg">Quality Guaranteed</span>
-                <span className="text-white/20 font-mono text-[10px] uppercase tracking-widest">ISO 9001:2015 Compliant</span>
+                <span className="text-white/20 font-mono text-[10px] uppercase tracking-widest">ISO 9001:2015 COMPLIANT</span>
               </div>
             </div>
           </div>

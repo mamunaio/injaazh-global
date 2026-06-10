@@ -32,7 +32,7 @@ const cases = [
       { label: "BOOKING CONV.", val: 150, suffix: "%", prefix: "+", icon: Zap },
       { label: "AUTO SCHEDULING", val: 24, suffix: "/7", icon: Target }
     ],
-    body: "A complete logistics platform redesign focusing on enterprise UX/UI, driving higher booking conversions and automated scheduling systems.",
+    body: "A complete logistics platform redesign focused on enterprise UX/UI — driving higher booking conversions and fully automated scheduling systems.",
     tags: ["UI/UX", "Logistics", "Optimization"],
     image: "/assets/aka_moving_final.webp",
     color: "#00E5FF"
@@ -47,7 +47,7 @@ const cases = [
       { label: "REGISTRATION", val: 200, suffix: "%", prefix: "+", icon: Target },
       { label: "LOAD SPEED", val: 0.9, suffix: "s", icon: Zap },
     ],
-    body: "A lightning-fast, high-performance web architecture for a global esports platform, achieving instant registrations and sub-second load times.",
+    body: "A lightning-fast, high-performance web architecture for a global esports platform — achieving instant registrations and sub-second load times.",
     tags: ["UI/UX", "Esports", "Next.js"],
     image: "/assets/nexus_esports_final.webp",
     color: "#FF2D55"
@@ -186,7 +186,7 @@ function CaseStudyCard({ project, index }: { project: typeof cases[0], index: nu
           <div className="mt-auto">
             <div className="group/link inline-flex items-center gap-3 py-2">
               <span className="font-mono text-[12px] tracking-[0.3em] text-white/70 group-hover/link:text-white transition-colors duration-300 uppercase font-medium">
-                Explore Study
+                EXPLORE STUDY
               </span>
               <div className="relative w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover/link:border-[#6324FC] group-hover/link:bg-[#6324FC] transition-all duration-500">
                 <ArrowUpRight className="w-4 h-4 text-white group-hover/link:scale-110 transition-transform" />
@@ -216,7 +216,7 @@ export default function FeaturedWork() {
               whileInView={{ width: 48 }}
               className="h-[1px] bg-[#6324FC]" 
             />
-            <span className="font-mono text-sm tracking-[0.5em] text-[#6324FC] uppercase">Selected Works</span>
+            <span className="font-mono text-sm tracking-[0.5em] text-[#6324FC] uppercase">SELECTED WORKS</span>
           </div>
           
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
@@ -233,10 +233,10 @@ export default function FeaturedWork() {
             </div>
             <div className="max-w-md border-l-2 border-[#6324FC]/20 pl-8 pb-4">
               <p className="font-sans font-light text-white/50 text-xl leading-relaxed mb-6">
-                We bridge the gap between ambitious vision and measurable impact — delivering full-service digital solutions that drive real revenue for businesses across the US, UK, and Australia.
+                Three industries. Three countries. One standard — ship work that performs. Every project below was measured against real KPIs, not aesthetics alone.
               </p>
               <Link href="/work" className="group flex items-center gap-3 text-white/80 hover:text-[#6324FC] transition-colors">
-                <span className="font-mono text-xs tracking-widest uppercase">View methodology →</span>
+                <span className="font-mono text-xs tracking-widest uppercase">VIEW METHODOLOGY →</span>
               </Link>
             </div>
           </div>
@@ -256,7 +256,7 @@ export default function FeaturedWork() {
               Success Stories
              </div>
              <div className="font-sans text-white/90 italic text-xl md:text-2xl max-w-sm relative z-10 font-medium">
-               "We don't just deliver projects; we engineer long-term digital growth."
+                "We don't just deliver projects — we engineer long-term digital growth."
              </div>
           </div>
           

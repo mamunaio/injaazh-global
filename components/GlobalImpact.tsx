@@ -57,11 +57,11 @@ export default function GlobalImpact() {
             <h2 className="sr-only">Global Web Design and SEO Agency Serving US, UK, CA, and AU Markets</h2>
             <div aria-hidden="true" className="font-heading text-6xl md:text-[8rem] lg:text-[10rem] tracking-tight leading-[0.85]">
               RECOGNIZED <br/>
-              <span className="stroke-white italic opacity-80">WORLDWIDE</span>
+              <span className="stroke-white italic opacity-80">WORLDWIDE.</span>
             </div>
           </div>
           <p className="font-sans font-light text-xl text-white/80 max-w-md">
-            We partner with enterprise leaders and ambitious challengers globally. Delivering highly scalable web architectures and revenue-driven SEO campaigns that redefine the standard for digital agencies in the US, UK, Australia, and UAE.
+            We partner with enterprise leaders and ambitious challengers globally — delivering highly scalable web architectures and revenue-driven SEO campaigns across the US, UK, Australia, and UAE.
           </p>
         </div>
 
@@ -73,10 +73,10 @@ export default function GlobalImpact() {
               <Trophy className="w-8 h-8 text-white/50 mb-6 group-hover:text-white transition-colors duration-500" />
             </motion.div>
             <div className="font-heading text-6xl md:text-8xl tracking-wider mb-2">
-              <AnimatedCounter from={0} to={300} duration={2.5} suffix="+" />
+              <AnimatedCounter from={0} to={500} duration={2.5} suffix="+" />
             </div>
             <div className="font-mono text-[10px] md:text-xs tracking-[0.3em] text-white/70 border-t border-white/20 pt-4 mt-2 group-hover:border-white/50 transition-colors duration-500">
-              CLIENTS SERVED
+              PROJECTS DELIVERED
             </div>
           </div>
 
@@ -85,7 +85,7 @@ export default function GlobalImpact() {
               <Globe2 className="w-8 h-8 text-white/50 mb-6 group-hover:text-white transition-colors duration-500" />
             </motion.div>
             <div className="font-heading text-6xl md:text-8xl tracking-wider mb-2">
-              <AnimatedCounter from={0} to={20} duration={2} suffix="+" />
+              <AnimatedCounter from={0} to={25} duration={2} suffix="+" />
             </div>
             <div className="font-mono text-[10px] md:text-xs tracking-[0.3em] text-white/70 border-t border-white/20 pt-4 mt-2 group-hover:border-white/50 transition-colors duration-500">
               COUNTRIES REACHED
@@ -97,10 +97,10 @@ export default function GlobalImpact() {
               <Target className="w-8 h-8 text-white/50 mb-6 group-hover:text-white transition-colors duration-500" />
             </motion.div>
             <div className="font-heading text-6xl md:text-8xl tracking-wider mb-2">
-              $<AnimatedCounter from={0} to={1} duration={3} suffix="B+" />
+              <AnimatedCounter from={0} to={1000} duration={3} suffix="+" />
             </div>
             <div className="font-mono text-[10px] md:text-xs tracking-[0.3em] text-white/70 border-t border-white/20 pt-4 mt-2 group-hover:border-white/50 transition-colors duration-500">
-              CLIENT REVENUE GENERATED
+              CLIENTS SERVED
             </div>
           </div>
 

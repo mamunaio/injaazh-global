@@ -10,7 +10,7 @@ const reasons = [
     id: "01",
     icon: Zap,
     title: "One Digital Agency. Everything.",
-    body: "Enterprise Web development, Technical SEO, B2B marketing, and content — all under one roof, one data-driven strategy. No more managing fragmented vendors.",
+    body: "Enterprise web development, Technical SEO, B2B marketing, and content — all under one roof, one data-driven strategy. No fragmented vendors, no misaligned teams.",
     size: "large",
     color: "#6324FC"
   },
@@ -18,7 +18,7 @@ const reasons = [
     id: "02",
     icon: Globe,
     title: "Global Search Dominance",
-    body: "We understand US, UK, Canada, and Australian search intent and consumer psychology. We build international SEO strategies that actually convert global traffic into enterprise clients.",
+    body: "We understand US, UK, Canada, and Australian search intent and consumer psychology. We build international SEO strategies that convert global traffic into enterprise clients — not just rankings.",
     size: "small",
     color: "#00E5FF"
   },
@@ -34,7 +34,7 @@ const reasons = [
     id: "04",
     icon: BarChart2,
     title: "Data-Driven Performance",
-    body: "Backed by years of proven SEO and CRO experience, we agree on clear KPIs before every engagement. We scale your organic growth and conversion rates with transparent, predictable results.",
+    body: "We agree on clear KPIs before every engagement. Every campaign, build, and SEO strategy is tracked, reported, and optimized against the numbers that matter — revenue, not vanity metrics.",
     size: "large",
     color: "#00FFA3"
   }
@@ -100,7 +100,7 @@ function FeatureCard({ item, index }: { item: typeof reasons[0], index: number }
           </motion.div>
 
           <div className="flex flex-col items-end opacity-20 group-hover:opacity-100 transition-opacity duration-500">
-             <span className="font-mono text-[9px] tracking-[0.4em] text-white uppercase mb-1">Architecture</span>
+             <span className="font-mono text-[9px] tracking-[0.4em] text-white uppercase mb-1">ARCHITECTURE</span>
              <span className="font-mono text-[10px] tracking-[0.2em] text-[#6324FC] uppercase">{item.id}</span>
           </div>
         </div>
@@ -120,7 +120,7 @@ function FeatureCard({ item, index }: { item: typeof reasons[0], index: number }
       <div className="relative z-10 mt-16 pt-8 border-t border-white/[0.05] flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: item.color }} />
-            <span className="font-mono text-[10px] tracking-widest text-white/20 uppercase">Operational Status: Optimal</span>
+            <span className="font-mono text-[10px] tracking-widest text-white/20 uppercase">OPERATIONAL STATUS: OPTIMAL</span>
           </div>
           <ArrowUpRight className="w-5 h-5 text-white/10 group-hover:text-white transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
       </div>
@@ -148,7 +148,7 @@ export default function WhyChoose() {
               whileInView={{ width: 48 }}
               className="h-[1px] bg-[#6324FC]" 
             />
-            <span className="font-mono text-xs tracking-[0.6em] text-[#6324FC] uppercase">Engineered Growth</span>
+            <span className="font-mono text-xs tracking-[0.6em] text-[#6324FC] uppercase">ENGINEERED GROWTH</span>
           </div>
           
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
@@ -159,7 +159,7 @@ export default function WhyChoose() {
             <div className="max-w-md">
               <h3 className="sr-only">Why Choose Our Elite Web Design & SEO Services</h3>
               <p className="font-sans font-light text-white/70 text-lg md:text-xl leading-relaxed mb-10 border-l-2 border-[#6324FC]/40 pl-8">
-                Backed by proven global expertise, we engineer complete digital ecosystems that dominate search engines, convert high-ticket B2B traffic, and generate scalable enterprise revenue while you sleep.
+                Backed by proven global expertise, we engineer complete digital ecosystems that dominate search engines, convert high-ticket B2B traffic, and generate scalable enterprise revenue — measured transparently against KPIs you agree on before we start.
               </p>
               <div className="flex gap-4 pl-8 group cursor-pointer">
                 <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#6324FC] transition-colors">
@@ -167,7 +167,7 @@ export default function WhyChoose() {
                 </div>
                 <div className="flex flex-col justify-center">
                   <span className="text-white font-heading text-sm">Certified Excellence</span>
-                  <span className="text-white/30 font-mono text-[9px] uppercase tracking-widest">Global Standards</span>
+                  <span className="text-white/30 font-mono text-[9px] uppercase tracking-widest">GLOBAL STANDARDS</span>
                 </div>
               </div>
             </div>
@@ -194,13 +194,13 @@ export default function WhyChoose() {
                     <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
                        <Cpu className="w-5 h-5 text-white animate-spin-slow" />
                     </div>
-                    <span className="font-mono text-xs text-[#6324FC] tracking-[0.4em] uppercase">Neural Engine v2.0</span>
+                    <span className="font-mono text-xs text-[#6324FC] tracking-[0.4em] uppercase">NEURAL ENGINE V2.0</span>
                  </div>
                  <h2 className="font-heading text-3xl md:text-6xl text-white leading-none tracking-tighter mb-6 uppercase">
                     Get Your <br/><span className="italic text-[#00E5FF]">Free Audit</span>
                  </h2>
                  <p className="font-sans font-light text-white/80 text-xl max-w-xl leading-relaxed">
-                    We analyze your technical architecture, SEO gaps, and revenue potential — and deliver a custom growth report within 24 hours. No automation. Real experts. Real insights.
+                    We analyze your technical architecture, SEO gaps, and revenue potential — then deliver a custom growth report within 24 hours. No automation. Real experts. Real insights.
                  </p>
               </div>
 

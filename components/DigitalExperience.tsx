@@ -54,48 +54,68 @@ export default function DigitalExperience() {
 
   const content = [
     {
-      badge: "Architecture // 01",
-      headline: "HEADLESS COMMERCE & NEXT.JS",
-      desc: "We engineer high-performance Next.js websites and headless commerce architectures. Dominating Core Web Vitals, our custom web development solutions are built to scale enterprise revenue and pass Google's strictest performance algorithms.",
-      tags: ["Next.js Web Development", "Enterprise Headless CMS", "Custom Web Applications"],
+      badge: "ARCHITECTURE // 01",
+      headlineSegments: [
+        { text: "HEADLESS", type: "solid" },
+        { text: "COMMERCE &", type: "purple" },
+        { text: "NEXTJS", type: "outline" }
+      ],
+      desc: "We engineer high-performance Next.js websites and headless commerce architectures. Built to dominate Core Web Vitals, pass Google's strictest performance algorithms, and scale enterprise revenue without limits.",
+      tags: ["NEXT.JS WEB DEVELOPMENT", "ENTERPRISE HEADLESS CMS", "CUSTOM WEB APPLICATIONS"],
       kpis: [{ label: "PAGE SPEED", val: "99" }, { label: "UPTIME", val: "99.9%" }],
-      bars: [{ label: "Performance", width: "98%" }, { label: "Accessibility", width: "100%" }, { label: "Security Score", width: "95%" }],
+      bars: [{ label: "PERFORMANCE", width: "98%" }, { label: "ACCESSIBILITY", width: "100%" }, { label: "SECURITY SCORE", width: "95%" }],
       cta: "INITIATE PROJECT"
     },
     {
-      badge: "SEO Dominance // 02",
-      headline: "TECHNICAL SEARCH ARCHITECTURE",
-      desc: "Dominate Google search with high-precision Technical SEO. We ensure your digital assets are crawled, indexed, and ranked with surgical precision across international markets, securing topical authority.",
-      tags: ["Enterprise SEO Audit", "International SEO Strategy", "Programmatic SEO"],
+      badge: "SEO DOMINANCE // 02",
+      headlineSegments: [
+        { text: "TECHNICAL", type: "solid" },
+        { text: "SEARCH", type: "purple" },
+        { text: "ARCHITECTURE", type: "solid" }
+      ],
+      desc: "Dominate Google search with high-precision Technical SEO. We ensure your digital assets are crawled, indexed, and ranked with surgical precision across international markets — securing topical authority that compounds over time.",
+      tags: ["ENTERPRISE SEO AUDIT", "INTERNATIONAL SEO STRATEGY", "PROGRAMMATIC SEO"],
       kpis: [{ label: "TRAFFIC GROWTH", val: "340%" }, { label: "RANKING", val: "Top 3" }],
-      bars: [{ label: "Authority", width: "88%" }, { label: "Trust Flow", width: "92%" }, { label: "Index Rate", width: "100%" }],
-      cta: "START NEURAL AUDIT"
+      bars: [{ label: "AUTHORITY", width: "88%" }, { label: "TRUST FLOW", width: "92%" }, { label: "INDEX RATE", width: "100%" }],
+      cta: "START YOUR AUDIT"
     },
     {
-      badge: "Performance // 03",
-      headline: "ROI FOCUSED PERFORMANCE",
-      desc: "Data-driven marketing engineered for maximum market penetration. We turn clicks into compound interest through precision-targeted neural campaigns.",
-      tags: ["Google & Meta Ads (PPC)", "Growth & Funnel Strategy", "Conversion Rate Optimization"],
+      badge: "PERFORMANCE // 03",
+      headlineSegments: [
+        { text: "ROI", type: "solid" },
+        { text: "FOCUSED", type: "purple" },
+        { text: "PERFORMANCE", type: "solid" }
+      ],
+      desc: "Data-driven campaigns engineered for maximum market penetration. We align paid media, funnel architecture, and conversion psychology — turning ad spend into predictable, compounding revenue.",
+      tags: ["GOOGLE & META ADS (PPC)", "GROWTH & FUNNEL STRATEGY", "CONVERSION RATE OPTIMIZATION"],
       kpis: [{ label: "AVG ROAS", val: "4.5x" }, { label: "CPA CUT", val: "40%" }],
-      bars: [{ label: "Conv. Rate", width: "8.5%" }, { label: "Retention", width: "90%" }, { label: "Market Fit", width: "95%" }],
+      bars: [{ label: "CONV. RATE", width: "8.5%" }, { label: "RETENTION", width: "90%" }, { label: "MARKET FIT", width: "95%" }],
       cta: "LAUNCH CAMPAIGN"
     },
     {
-      badge: "Creative // 04",
-      headline: "EDITORIAL CONTENT ENGINES",
-      desc: "Words that convert and content architectures that rank. We craft SEO-optimized editorial content, B2B copywriting, and semantic silos that engage high-intent readers and satisfy search intent.",
-      tags: ["B2B Content Marketing", "SEO Copywriting", "Topical Authority Silos"],
+      badge: "CREATIVE // 04",
+      headlineSegments: [
+        { text: "EDITORIAL", type: "solid" },
+        { text: "CONTENT", type: "purple" },
+        { text: "ENGINES", type: "solid" }
+      ],
+      desc: "Words that convert and content architectures that rank. We craft SEO-optimized editorial content, B2B copywriting, and semantic silos that capture high-intent readers and satisfy search intent at every stage.",
+      tags: ["B2B CONTENT MARKETING", "SEO COPYWRITING", "TOPICAL AUTHORITY SILOS"],
       kpis: [{ label: "ENGAGEMENT", val: "+120%" }, { label: "READ TIME", val: "4m 20s" }],
-      bars: [{ label: "Readability", width: "96%" }, { label: "SEO Score", width: "100%" }, { label: "Voice Sync", width: "92%" }],
+      bars: [{ label: "READABILITY", width: "96%" }, { label: "SEO SCORE", width: "100%" }, { label: "VOICE SYNC", width: "92%" }],
       cta: "GET CONTENT BRIEF"
     },
     {
-      badge: "Strategic // 05",
-      headline: "ELITE PRODUCT STRATEGY",
-      desc: "The blueprint for market dominance. We align your high-level business objectives with technical execution — building the roadmap for future dominance.",
-      tags: ["Positioning", "UX Audit", "Scale"],
+      badge: "STRATEGIC // 05",
+      headlineSegments: [
+        { text: "ELITE", type: "solid" },
+        { text: "PRODUCT", type: "purple" },
+        { text: "STRATEGY", type: "solid" }
+      ],
+      desc: "The blueprint for market dominance. We map your high-level business objectives to technical execution — then build the roadmap that turns ambition into measurable market share.",
+      tags: ["POSITIONING", "UX AUDIT", "SCALE"],
       kpis: [{ label: "SHARE", val: "+25%" }, { label: "GROWTH", val: "Exp" }],
-      bars: [{ label: "Alignment", width: "100%" }, { label: "UX Maturity", width: "88%" }, { label: "Velocity", width: "95%" }],
+      bars: [{ label: "ALIGNMENT", width: "100%" }, { label: "UX MATURITY", width: "88%" }, { label: "VELOCITY", width: "95%" }],
       cta: "CONSULT STRATEGY"
     }
   ];
@@ -164,11 +184,27 @@ export default function DigitalExperience() {
                 </div>
                 
                 <h3 className="font-heading text-5xl md:text-[5.5rem] leading-[0.85] tracking-tighter text-white uppercase flex flex-wrap gap-x-4 gap-y-2">
-                  {content[activeTab].headline.split(' ').map((word, i) => (
-                    <span key={i} className="inline-block">
-                      {i % 2 !== 0 ? <span className="italic text-[#6324FC]">{word}</span> : word}
-                    </span>
-                  ))}
+                  {content[activeTab].headlineSegments.map((seg, idx) => {
+                    if (seg.type === "purple") {
+                      return (
+                        <span key={idx} className="inline-block italic text-[#6324FC]">
+                          {seg.text}
+                        </span>
+                      );
+                    } else if (seg.type === "outline") {
+                      return (
+                        <span key={idx} className="inline-block stroke-text opacity-90">
+                          {seg.text}
+                        </span>
+                      );
+                    } else {
+                      return (
+                        <span key={idx} className="inline-block text-white">
+                          {seg.text}
+                        </span>
+                      );
+                    }
+                  })}
                 </h3>
                 
                 <p className="font-sans font-light text-lg md:text-xl text-white/70 leading-relaxed max-w-xl border-l-2 border-[#6324FC]/40 pl-6 md:pl-8">

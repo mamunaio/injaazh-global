@@ -10,7 +10,7 @@ const posts = [
     category: "SEO",
     title: "The SEO Renaissance: Why Modern Brands are Ditching Old Strategies",
     slug: "the-seo-renaissance",
-    excerpt: "Standard SEO is dying. Discover the shift toward Semantic Search and why your technical architecture is now the biggest ranking factor in 2025.",
+    excerpt: "Standard SEO is dying. Discover the shift toward Semantic Search and why your technical architecture is now the biggest ranking factor.",
     readTime: "5 min read",
     date: "May 04, 2026",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
@@ -19,7 +19,7 @@ const posts = [
     category: "WEB DEV",
     title: "Performance as a Feature: Building Speed-First Architectures with Next.js",
     slug: "performance-as-a-feature",
-    excerpt: "A slow website is a silent revenue killer. We explore how migrating to headless architectures converts higher and outranks legacy WordPress setups.",
+    excerpt: "A slow website is a silent revenue killer. We explore how migrating to headless architectures converts higher and outranks legacy competitors.",
     readTime: "7 min read",
     date: "May 02, 2026",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800"
@@ -28,7 +28,7 @@ const posts = [
     category: "MARKETING",
     title: "From Clicks to Clients: The Blueprint for B2B Growth in Global Markets",
     slug: "from-clicks-to-clients",
-    excerpt: "Scale across borders without losing your brand's voice. A deep dive into how we localized digital strategies for market leaders in the US and UK.",
+    excerpt: "Scale across borders without losing your brand's voice. A deep dive into how we localized digital strategies for market leaders across 3 continents.",
     readTime: "6 min read",
     date: "April 28, 2026",
     image: "https://images.unsplash.com/photo-1551288049-bbbda536ad79?auto=format&fit=crop&q=80&w=800"
@@ -56,7 +56,7 @@ export default function LatestInsights() {
               className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase mb-8 flex items-center gap-4"
             >
               <span className="w-12 h-[1px] bg-[#6324FC]" /> 
-              The Intelligence Hub
+              THE INTELLIGENCE HUB
             </motion.div>
             <h2 className="font-heading text-8xl md:text-[9rem] tracking-tighter text-white leading-[0.85] uppercase">
               INSIGHTS THAT <br/>
@@ -71,7 +71,7 @@ export default function LatestInsights() {
             className="max-w-sm"
           >
             <p className="font-sans font-light text-white/40 text-lg leading-relaxed border-l-2 border-[#6324FC] pl-8">
-              Strategy, deep-dives, and actionable intelligence from our global elite squad.
+              Strategy, deep-dives, and actionable intelligence from our global expert squad.
             </p>
           </motion.div>
         </div>

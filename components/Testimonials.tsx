@@ -10,31 +10,7 @@ import "swiper/css/pagination";
 
 const reviews = [
   {
-    quote: "Injaazh completely overhauled our technical architecture. Their team diagnosed our enterprise bottlenecks quickly, delivered highly scalable solutions, and communicated clearly throughout. No vague updates — just elite engineering.",
-    name: "Matthew D.",
-    role: "Digital Venture Lead",
-    flag: "US",
-    initials: "MD",
-    gradient: "from-[#6324FC]/20 to-cyan-500/10"
-  },
-  {
-    quote: "Professional all the way. Many agencies overpromise and underdeliver, but Injaazh is different. They are reliable strategic partners. I absolutely recommend them for any enterprise-scale digital transformation.",
-    name: "Philippe H.",
-    role: "Enterprise Project Lead",
-    flag: "FR",
-    initials: "PH",
-    gradient: "from-[#6324FC]/20 to-blue-500/10"
-  },
-  {
-    quote: "Exceptional communication and revenue-driven results. They solved all our complex technical requests without any problems and scaled our international SEO perfectly. We consider Injaazh an extension of our own team.",
-    name: "Gurkan G.",
-    role: "Business Operations",
-    flag: "TR",
-    initials: "GG",
-    gradient: "from-[#6324FC]/20 to-purple-500/10"
-  },
-  {
-    quote: "Our 3rd major engagement with Injaazh. Their team consists of absolute experts at what they do—trustworthy, flexible, and innovative. I highly recommend them for any complex digital requirements and global campaigns.",
+    quote: "Our 3rd major engagement with Injaazh. Their team consists of absolute experts at what they do — trustworthy, flexible, and innovative. I highly recommend them for any complex digital requirements and global campaigns.",
     name: "Sarah M.",
     role: "Chief Marketing Officer",
     flag: "UK",
@@ -56,14 +32,6 @@ const reviews = [
     flag: "IN",
     initials: "SG",
     gradient: "from-[#6324FC]/20 to-rose-500/10"
-  },
-  {
-    quote: "Their SEO and development work is unparalleled. Highly professional, talented, and they deliver exactly what is needed for global market dominance. We look forward to a long-term partnership with Injaazh.",
-    name: "Saroj B.",
-    role: "Digital Entrepreneur",
-    flag: "NP",
-    initials: "SB",
-    gradient: "from-[#6324FC]/20 to-teal-500/10"
   }
 ];
 
@@ -87,7 +55,7 @@ export default function Testimonials() {
               className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase mb-8 flex items-center gap-4"
             >
               <span className="w-12 h-[1px] bg-[#6324FC]" /> 
-              Client Success Stories
+              CLIENT SUCCESS STORIES
             </motion.div>
             <h2 className="font-heading text-6xl md:text-[8rem] tracking-tighter text-white leading-[0.85] uppercase">
               TRUSTED <br/>
@@ -185,15 +153,15 @@ export default function Testimonials() {
         <div className="mt-32 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 relative z-10">
            <div className="flex flex-col items-center justify-center py-12 md:py-16 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
              <span className="font-heading text-7xl md:text-[6rem] text-white group-hover:text-[#6324FC] transition-colors duration-500 mb-2 leading-none">98%</span>
-             <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase text-white/50 group-hover:text-white/80 transition-colors duration-500">Retention Rate</span>
+             <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase text-white/50 group-hover:text-white/80 transition-colors duration-500">RETENTION RATE</span>
            </div>
            <div className="flex flex-col items-center justify-center py-12 md:py-16 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
              <span className="font-heading text-7xl md:text-[6rem] text-white group-hover:text-[#00E5FF] transition-colors duration-500 mb-2 leading-none">24/7</span>
-             <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase text-white/50 group-hover:text-white/80 transition-colors duration-500">Global Support</span>
+             <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase text-white/50 group-hover:text-white/80 transition-colors duration-500">GLOBAL SUPPORT</span>
            </div>
            <div className="flex flex-col items-center justify-center py-12 md:py-16 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
-             <span className="font-heading text-7xl md:text-[6rem] text-white group-hover:text-[#6324FC] transition-colors duration-500 mb-2 leading-none">800+</span>
-             <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase text-white/50 group-hover:text-white/80 transition-colors duration-500">Projects Delivered</span>
+             <span className="font-heading text-7xl md:text-[6rem] text-white group-hover:text-[#6324FC] transition-colors duration-500 mb-2 leading-none">500+</span>
+             <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase text-white/50 group-hover:text-white/80 transition-colors duration-500">PROJECTS DELIVERED</span>
            </div>
         </div>
 

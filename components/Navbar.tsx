@@ -3,13 +3,22 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
-import { Code, Search, TrendingUp, PenTool, ArrowRight, Menu, X, Paintbrush, LayoutDashboard } from "lucide-react";
+import { Code, Search, TrendingUp, PenTool, ArrowRight, Menu, X, Paintbrush, LayoutDashboard, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isHovered, setIsHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  
+  // Mobile menu sub-navigation states
+  const [direction, setDirection] = useState<"forward" | "backward">("forward");
+  const [currentPane, setCurrentPane] = useState<"main" | "services" | "category">("main");
+  const [activeCategory, setActiveCategory] = useState<number | null>(null);
+
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const { scrollY } = useScroll();
@@ -43,6 +52,41 @@ export default function Navbar() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
+
+  // Reset mobile sub-menu states when drawer is closed
+  useEffect(() => {
+    if (!mobileMenuOpen) {
+      const timer = setTimeout(() => {
+        setCurrentPane("main");
+        setActiveCategory(null);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [mobileMenuOpen]);
+
+  const paneVariants = {
+    enter: (dir: "forward" | "backward") => ({
+      x: dir === "forward" ? "100%" : "-100%",
+      opacity: 0
+    }),
+    center: {
+      x: 0,
+      opacity: 1
+    },
+    exit: (dir: "forward" | "backward") => ({
+      x: dir === "forward" ? "-100%" : "100%",
+      opacity: 0
+    })
+  };
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Work", href: "/work" },
+    { name: "Services", href: "/services", isDropdown: true },
+    { name: "Agency", href: "/agency" },
+    { name: "Insights", href: "/insights" },
+    { name: "Team", href: "/team" }
+  ];
 
   const services = [
     { 
@@ -124,63 +168,114 @@ export default function Navbar() {
           </Link>
           
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-10 h-full">
-            <Link href="/work" className="group relative text-sm font-sans text-primary/80 hover:text-primary transition-colors">
-              Work
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#6324FC] transition-all duration-300 group-hover:w-full" />
-            </Link>
-            
-            <div 
-              className="h-full flex items-center group relative"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <Link href="/services" className="text-sm font-sans text-primary/80 group-hover:text-primary transition-colors flex items-center gap-1">
-                Services 
-                <motion.span animate={{ rotate: isHovered ? 180 : 0 }} className="text-[10px] ml-1 text-[#6324FC]">▼</motion.span>
-              </Link>
-              <span className={`absolute bottom-6 left-0 h-[1px] bg-[#6324FC] transition-all duration-300 ${isHovered ? 'w-full' : 'w-0'}`} />
-            </div>
-
-            <Link href="/agency" className="group relative text-sm font-sans text-primary/80 hover:text-primary transition-colors">
-              Agency
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#6324FC] transition-all duration-300 group-hover:w-full" />
-            </Link>
-
-            <Link href="/insights" className="group relative text-sm font-sans text-primary/80 hover:text-primary transition-colors">
-              Insights
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#6324FC] transition-all duration-300 group-hover:w-full" />
-            </Link>
-
-            <Link href="/team" className="group relative text-sm font-sans text-primary/80 hover:text-primary transition-colors">
-              Team
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#6324FC] transition-all duration-300 group-hover:w-full" />
-            </Link>
+          <nav className="hidden lg:flex items-center gap-4 h-full relative">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+              const isHoveredOrDropdownOpen = hoveredLink === link.name || (link.isDropdown && isHovered);
+              return (
+                <div
+                  key={link.name}
+                  className="relative py-2 px-4 rounded-full flex items-center h-fit cursor-pointer group"
+                  onMouseEnter={() => {
+                    setHoveredLink(link.name);
+                    if (link.isDropdown) handleMouseEnter();
+                  }}
+                  onMouseLeave={() => {
+                    setHoveredLink(null);
+                    if (link.isDropdown) handleMouseLeave();
+                  }}
+                >
+                  <Link 
+                    href={link.href} 
+                    className={`relative z-10 text-sm font-sans tracking-wide transition-colors duration-300 flex items-center gap-1 ${
+                      isActive 
+                        ? "text-[#6324FC] font-semibold" 
+                        : "text-primary/70 hover:text-[#6324FC]"
+                    }`}
+                  >
+                    {link.name}
+                    {link.isDropdown && (
+                      <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${isHovered ? "rotate-180 text-[#6324FC]" : "text-primary/50"}`} />
+                    )}
+                  </Link>
+                  
+                  {/* Hover Pill Background */}
+                  {isHoveredOrDropdownOpen && (
+                    <motion.span
+                      layoutId="navbar-hover-pill"
+                      className="absolute inset-0 bg-primary/[0.05] dark:bg-white/[0.05] rounded-full -z-0"
+                      transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                    />
+                  )}
+                  
+                  {/* Active Indicator Under Link */}
+                  {isActive && (
+                    <motion.span
+                      layoutId="navbar-active-indicator"
+                      className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)]"
+                    />
+                  )}
+                </div>
+              );
+            })}
           </nav>
 
-          <div className="hidden md:block">
-            <Link href="/contact">
-              <motion.div 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="clip-cta relative overflow-hidden bg-[#6324FC] px-8 py-3 font-heading text-xl tracking-wider shadow-[0_0_20px_rgba(99,36,252,0.3)] group cursor-pointer flex items-center justify-center"
-              >
-                <div className="absolute inset-0 bg-primary translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] z-0" />
-                <span className="relative z-10 flex items-center gap-2 text-background group-hover:text-[#6324FC] transition-colors duration-500">
-                  LET&apos;S TALK
-                  <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
+          <div className="hidden lg:block">
+            <Link 
+              href="/contact" 
+              className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)]"
+            >
+              {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+              <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+                <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+              </div>
+              
+              <div className="relative w-full h-full px-6 py-3 rounded-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
+                {/* Flowing background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                
+                {/* Bouncing/pulsating dot */}
+                <span className="w-2 h-2 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
+                
+                <span className="relative z-10 flex items-center gap-2 font-heading text-lg tracking-wider text-primary uppercase transition-colors duration-500">
+                  LET'S TALK
+                  <ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform duration-500 text-[#6324FC] dark:group-hover:text-white" />
                 </span>
-              </motion.div>
+              </div>
             </Link>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden relative z-[101] text-primary"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
-          </button>
+          {/* Mobile Action Buttons (Let's Talk & Hamburger Toggle) */}
+          <div className="lg:hidden flex items-center gap-3 relative z-[101]">
+            {!mobileMenuOpen && (
+              <Link 
+                href="/contact" 
+                className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_20px_rgba(99,36,252,0.3)]"
+              >
+                {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+                <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+                  <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+                </div>
+                
+                <div className="relative w-full h-full px-3.5 py-1.5 rounded-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-2 z-10">
+                  {/* Pulsating dot */}
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
+                  
+                  <span className="relative z-10 flex items-center gap-1 font-heading text-xs tracking-wider text-primary uppercase transition-colors duration-500">
+                    LET'S TALK
+                    <ArrowRight className="w-3 h-3 -rotate-45 group-hover:rotate-0 transition-transform duration-500 text-[#6324FC] dark:group-hover:text-white" />
+                  </span>
+                </div>
+              </Link>
+            )}
+            
+            <button 
+              className="text-primary hover:text-[#6324FC] transition-colors p-1"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+            </button>
+          </div>
         </div>
 
         {/* Desktop Mega Menu Dropdown */}
@@ -257,39 +352,196 @@ export default function Navbar() {
         </AnimatePresence>
       </motion.header>
 
-      {/* Full Screen Mobile Menu */}
+      {/* Mobile Off-canvas Drawer Backdrop */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.5 }}
+            exit={{ opacity: 0 }}
+            onClick={() => {
+              setMobileMenuOpen(false);
+              setCurrentPane("main");
+            }}
+            className="fixed inset-0 z-[98] bg-black"
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Slide-in Mobile Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div 
-            initial={{ opacity: 0, y: "-100%" }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "-100%" }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[99] bg-background flex flex-col pt-32 px-6 pb-12"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", damping: 30, stiffness: 300 }}
+            className="fixed top-0 right-0 z-[99] w-full max-w-[400px] h-screen bg-background border-l border-primary/10 shadow-2xl p-6 pt-32 pb-12 flex flex-col overflow-hidden"
           >
-            <nav className="flex flex-col gap-6 md:gap-8 mb-auto">
-              {["Work", "Services", "Agency", "Insights", "Team", "Contact"].map((item, i) => (
-                <motion.div 
-                  key={item}
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
-                >
-                  <Link 
-                    href={["Work", "Agency", "Services", "Insights", "Team"].includes(item) ? `/${item.toLowerCase()}` : `/${item.toLowerCase()}`}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-widest text-primary hover:text-[#6324FC] transition-colors flex items-center justify-between group"
+            {/* Horizontal sliding panes area */}
+            <div className="relative flex-grow overflow-hidden w-full h-full flex flex-col">
+              <AnimatePresence initial={false} mode="popLayout" custom={direction}>
+                
+                {/* PANE 1: MAIN MENU */}
+                {currentPane === "main" && (
+                  <motion.div
+                    key="main"
+                    custom={direction}
+                    variants={paneVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ type: "tween", duration: 0.25, ease: "easeInOut" }}
+                    className="flex flex-col gap-4 w-full h-full overflow-y-auto pr-2 absolute inset-0 custom-scrollbar"
                   >
-                    {item}
-                    <ArrowRight className="w-6 h-6 md:w-8 md:h-8 text-[#6324FC] opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </Link>
-                  <div className="w-full h-[1px] bg-primary/10 mt-4 md:mt-6" />
-                </motion.div>
-              ))}
-            </nav>
+                    {/* Main Nav Items */}
+                    {navLinks.map((link) => {
+                      const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+                      return (
+                        <div key={link.name} className="w-full">
+                          {link.isDropdown ? (
+                            <button
+                              onClick={() => {
+                                setDirection("forward");
+                                setCurrentPane("services");
+                              }}
+                              className="w-full font-sans text-base font-medium tracking-wide text-primary hover:text-[#6324FC] transition-colors flex items-center justify-between group text-left cursor-pointer py-2"
+                            >
+                              <span>{link.name}</span>
+                              <ChevronDown className="w-4 h-4 -rotate-90 text-[#6324FC]" />
+                            </button>
+                          ) : (
+                            <Link
+                              href={link.href}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className={`font-sans text-base font-medium tracking-wide transition-colors flex items-center justify-between group py-2 ${
+                                isActive ? "text-[#6324FC]" : "text-primary hover:text-[#6324FC]"
+                              }`}
+                            >
+                              <span>{link.name}</span>
+                              {isActive ? (
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)]" />
+                              ) : (
+                                <ArrowRight className="w-4 h-4 text-[#6324FC] opacity-0 group-hover:opacity-100 transition-opacity" />
+                              )}
+                            </Link>
+                          )}
+                          <div className="w-full h-[1px] bg-primary/5 mt-2" />
+                        </div>
+                      );
+                    })}
+                    
+                    {/* Contact Link in menu */}
+                    <div className="w-full">
+                      <Link
+                        href="/contact"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`font-sans text-base font-medium tracking-wide transition-colors flex items-center justify-between group py-2 ${
+                          pathname === "/contact" ? "text-[#6324FC]" : "text-primary hover:text-[#6324FC]"
+                        }`}
+                      >
+                        <span>Contact</span>
+                        {pathname === "/contact" ? (
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)]" />
+                        ) : (
+                          <ArrowRight className="w-4 h-4 text-[#6324FC] opacity-0 group-hover:opacity-100 transition-opacity" />
+                        )}
+                      </Link>
+                      <div className="w-full h-[1px] bg-primary/5 mt-2" />
+                    </div>
 
-            <div className="font-mono text-xs text-primary/40 tracking-widest uppercase mb-4">Get in touch</div>
-            <a href="mailto:contact@injaazh.com" className="font-sans font-light text-xl text-[#6324FC]">contact@injaazh.com</a>
+                    {/* Get in touch footer */}
+                    <div className="mt-auto pt-8">
+                      <div className="font-mono text-xs text-primary/40 tracking-widest uppercase mb-4">Get in touch</div>
+                      <a href="mailto:contact@injaazh.com" className="font-sans font-light text-xl text-[#6324FC]">contact@injaazh.com</a>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* PANE 2: SERVICES CATEGORIES */}
+                {currentPane === "services" && (
+                  <motion.div
+                    key="services"
+                    custom={direction}
+                    variants={paneVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ type: "tween", duration: 0.25, ease: "easeInOut" }}
+                    className="flex flex-col gap-4 w-full h-full overflow-y-auto pr-2 absolute inset-0 custom-scrollbar"
+                  >
+                    {/* Back header */}
+                    <button
+                      onClick={() => {
+                        setDirection("backward");
+                        setCurrentPane("main");
+                        setActiveCategory(null);
+                      }}
+                      className="flex items-center gap-2 font-mono text-[10px] tracking-widest text-primary/50 hover:text-primary transition-colors text-left uppercase mb-4 cursor-pointer"
+                    >
+                      <ArrowRight className="w-4 h-4 rotate-180 text-[#6324FC]" />
+                      Back to Menu
+                    </button>
+                    
+                    <h3 className="font-sans text-lg font-semibold text-primary tracking-wide mb-2 border-b border-primary/10 pb-4">Our Services</h3>
+
+                    {services.map((svc, i) => {
+                      const isOpen = activeCategory === i;
+                      return (
+                        <div key={i} className="w-full">
+                          <button
+                            onClick={() => {
+                              setActiveCategory(isOpen ? null : i);
+                            }}
+                            className="w-full font-sans text-base font-medium tracking-wide text-primary hover:text-[#6324FC] transition-colors flex items-center justify-between group text-left cursor-pointer py-2"
+                          >
+                            <span className="flex items-center gap-3">
+                              <svc.icon className="w-4 h-4 text-[#6324FC]" />
+                              {svc.title}
+                            </span>
+                            <ChevronDown className={`w-4 h-4 transition-transform duration-300 text-[#6324FC] ${isOpen ? "rotate-180" : ""}`} />
+                          </button>
+                          
+                          <AnimatePresence initial={false}>
+                            {isOpen && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                                className="overflow-hidden mt-2 pl-7 border-l border-primary/10 flex flex-col gap-2"
+                              >
+                                {svc.items.map((item, idx) => {
+                                  const isSubActive = pathname === item.link;
+                                  return (
+                                    <Link
+                                      key={idx}
+                                      href={item.link}
+                                      onClick={() => {
+                                        setMobileMenuOpen(false);
+                                        setActiveCategory(null);
+                                      }}
+                                      className={`font-sans text-sm font-light transition-colors flex items-center justify-between group py-1.5 ${
+                                        isSubActive ? "text-[#6324FC] font-normal" : "text-primary/70 hover:text-[#6324FC]"
+                                      }`}
+                                    >
+                                      <span>{item.name}</span>
+                                      <ArrowRight className="w-3.5 h-3.5 text-[#6324FC] opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    </Link>
+                                  );
+                                })}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                          <div className="w-full h-[1px] bg-primary/5 mt-2" />
+                        </div>
+                      );
+                    })}
+                  </motion.div>
+                )}
+
+              </AnimatePresence>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

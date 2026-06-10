@@ -55,7 +55,7 @@ export default function TeamPreview() {
               className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase mb-8 flex items-center gap-4"
             >
               <span className="w-12 h-[1px] bg-[#6324FC]" /> 
-              The Collective
+              THE COLLECTIVE
             </motion.div>
             <h2 className="font-heading text-8xl md:text-[9rem] tracking-tighter text-white leading-[0.85] uppercase">
               THE MINDS BEHIND <br/>
@@ -70,7 +70,7 @@ export default function TeamPreview() {
             className="max-w-sm"
           >
             <p className="font-sans font-light text-white/40 text-lg leading-relaxed border-l-2 border-[#6324FC] pl-8">
-              A global squad of elite digital architects and growth hackers.
+              A global squad of elite digital architects, growth engineers, and SEO strategists — built to outperform agencies ten times our size.
             </p>
           </motion.div>
         </div>

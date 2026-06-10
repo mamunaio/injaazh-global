@@ -14,29 +14,29 @@ const steps = [
     id: "01",
     title: "DISCOVERY & AUDIT",
     icon: Hexagon,
-    desc: "We don't guess — we engineer. Every Injaazh engagement starts with a deep technical SEO and UX audit, a full competitor gap analysis, and a data-driven strategy for global market domination.",
-    tags: ["Market Research", "Enterprise SEO Audit", "Technical Architecture"]
+    desc: "Every Injaazh engagement starts with a deep technical SEO and UX audit, a full competitor gap analysis, and a data-driven strategy built specifically for your market.",
+    tags: ["MARKET RESEARCH", "ENTERPRISE SEO AUDIT", "TECHNICAL ARCHITECTURE"]
   },
   {
     id: "02",
     title: "SYSTEM DESIGN",
     icon: Layers,
-    desc: "Awwwards-level aesthetics mapped to conversion psychology. As a premium web design agency, we build headless architectures and UI systems that are visually unparalleled and engineered to convert enterprise traffic.",
-    tags: ["Wireframing", "UI/UX Design", "Conversion Psychology"]
+    desc: "Awwwards-level aesthetics mapped to conversion psychology. We build headless architectures and UI systems that are visually unparalleled and engineered to convert enterprise traffic.",
+    tags: ["WIREFRAMING", "UI/UX DESIGN", "CONVERSION PSYCHOLOGY"]
   },
   {
     id: "03",
     title: "CORE ENGINEERING",
     icon: Cpu,
     desc: "Performance is non-negotiable. We deploy ultra-fast Next.js infrastructures built for global audiences — guaranteeing 99/100 Lighthouse scores, sub-second load times, and Core Web Vitals that satisfy Google US, UK, and AU.",
-    tags: ["Next.js App Router", "React Development", "Core Web Vitals"]
+    tags: ["NEXT.JS APP ROUTER", "REACT DEVELOPMENT", "CORE WEB VITALS"]
   },
   {
     id: "04",
     title: "SCALE & DOMINATE",
     icon: Zap,
-    desc: "Deployment is just the beginning. We integrate advanced technical SEO, programmatic content silos, and conversion rate optimization to continuously grow your market share and scale B2B revenue.",
-    tags: ["Technical SEO", "Performance Monitoring", "CRO"]
+    desc: "Deployment is just the beginning. We integrate advanced Technical SEO, programmatic content silos, and conversion rate optimization to continuously grow your market share and scale B2B revenue.",
+    tags: ["TECHNICAL SEO", "PERFORMANCE MONITORING", "CRO"]
   }
 ];
 
