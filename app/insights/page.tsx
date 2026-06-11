@@ -72,7 +72,7 @@ export default function InsightsPage() {
           className="flex flex-col md:flex-row md:items-end justify-between gap-8"
         >
           <div className="max-w-2xl">
-            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-8">
+            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-8">
               IN <span className="italic text-[#6324FC]">SIGHTS</span>
             </h1>
             <p className="font-sans font-light text-xl text-white/50 leading-relaxed">
@@ -87,7 +87,7 @@ export default function InsightsPage() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-6 py-2 rounded-full font-mono text-xs tracking-widest uppercase transition-all border ${
+                className={`px-6 py-2 rounded-full font-heading  text-xs tracking-widest capitalize transition-all border ${
                   activeCategory === cat 
                     ? "bg-[#6324FC] border-[#6324FC] text-white" 
                     : "bg-transparent border-white/10 text-white/40 hover:border-white/30"
@@ -120,8 +120,8 @@ export default function InsightsPage() {
             <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full flex flex-col md:flex-row md:items-end justify-between gap-8">
               <div className="max-w-3xl">
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="bg-[#6324FC] text-white px-3 py-1 font-mono text-[10px] tracking-widest uppercase">FEATURED</span>
-                  <span className="font-mono text-[10px] tracking-widest uppercase text-white/60">{posts[0].category.toUpperCase()}</span>
+                  <span className="bg-[#6324FC] text-white px-3 py-1 font-heading  text-[10px] tracking-widest capitalize ">FEATURED</span>
+                  <span className="font-heading  text-[10px] tracking-widest capitalize text-white/60">{posts[0].category.toUpperCase()}</span>
                 </div>
                 <h2 className="font-heading text-4xl md:text-6xl text-white tracking-tight leading-none group-hover:text-[#6324FC] transition-colors duration-500 mb-4">
                   {posts[0].title}
@@ -130,7 +130,7 @@ export default function InsightsPage() {
                   {posts[0].excerpt}
                 </p>
               </div>
-              <div className="flex items-center gap-4 text-white/60 font-mono text-[10px] tracking-widest uppercase whitespace-nowrap">
+              <div className="flex items-center gap-4 text-white/60 font-heading  text-[10px] tracking-widest capitalize whitespace-nowrap">
                 <span className="flex items-center gap-2"><Clock className="w-3 h-3" /> {posts[0].readTime}</span>
                 <ArrowUpRight className="w-6 h-6 text-[#6324FC] group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
               </div>
@@ -157,12 +157,12 @@ export default function InsightsPage() {
                 fill 
                 className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
               />
-              <div className="absolute top-4 right-4 bg-[#060608]/80 backdrop-blur-md px-3 py-1 font-mono text-[10px] tracking-widest uppercase text-white border border-white/10">
+              <div className="absolute top-4 right-4 bg-[#060608]/80 backdrop-blur-md px-3 py-1 font-heading  text-[10px] tracking-widest capitalize text-white border border-white/10">
                 {post.category}
               </div>
             </Link>
             
-            <div className="flex items-center gap-4 mb-4 font-mono text-[10px] tracking-widest uppercase text-white/40">
+            <div className="flex items-center gap-4 mb-4 font-heading  text-[10px] tracking-widest capitalize text-white/40">
               <span>{post.date}</span>
               <span className="w-1 h-1 rounded-full bg-[#6324FC]" />
               <span>{post.readTime}</span>
@@ -180,7 +180,7 @@ export default function InsightsPage() {
             
             <Link href={`/insights/${post.slug}`} className="group/btn relative inline-flex items-center justify-center px-8 py-4 border border-white/10 overflow-hidden rounded-xl transition-all duration-500 hover:border-[#6324FC]">
               <div className="absolute inset-0 bg-[#6324FC] translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
-              <span className="relative z-10 font-mono text-[10px] tracking-[0.2em] uppercase text-white/60 group-hover/btn:text-white transition-colors duration-500 flex items-center gap-3">
+              <span className="relative z-10 font-heading  text-[10px] tracking-[0.2em] capitalize text-white/60 group-hover/btn:text-white transition-colors duration-500 flex items-center gap-3">
                 READ ARTICLE <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
               </span>
             </Link>
@@ -210,15 +210,15 @@ export default function InsightsPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#060608]/80" />
             
             <div className="absolute inset-0 flex flex-col justify-end p-12">
-               <div className="font-mono text-[9px] tracking-[0.5em] text-[#6324FC] uppercase mb-4">Core Signal</div>
-               <h3 className="font-heading text-4xl uppercase tracking-tighter italic">Join the Elite <br/>Intelligence Squad.</h3>
+               <div className="font-heading  text-[9px] tracking-[0.5em] text-[#6324FC] capitalize mb-4">Core Signal</div>
+               <h3 className="font-heading text-4xl capitalize tracking-tighter italic">Join the Elite <br/>Intelligence Squad.</h3>
             </div>
           </div>
 
           {/* Right: Content & Form Side */}
           <div className="lg:w-3/5 p-12 lg:p-24 flex flex-col justify-center space-y-12 relative z-10">
             <div className="space-y-6">
-              <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase">
+              <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize ">
                 NEVER MISS <br/> 
                 <span className="text-[#6324FC] italic">A SIGNAL.</span>
               </h2>
@@ -231,7 +231,7 @@ export default function InsightsPage() {
               <input 
                 type="email" 
                 placeholder="ENTER YOUR EMAIL" 
-                className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-8 py-8 font-heading text-2xl focus:outline-none focus:border-[#6324FC] focus:bg-white/[0.05] transition-all placeholder:text-white/10 uppercase text-white backdrop-blur-xl"
+                className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-8 py-8 font-heading text-2xl focus:outline-none focus:border-[#6324FC] focus:bg-white/[0.05] transition-all placeholder:text-white/10 capitalize text-white backdrop-blur-xl"
               />
               <button className="absolute right-3 top-1/2 -translate-y-1/2 w-14 h-14 rounded-xl bg-[#6324FC] flex items-center justify-center group-hover/input:scale-105 transition-transform duration-500 shadow-[0_0_30px_rgba(99,36,252,0.3)]">
                 <ArrowRight className="w-6 h-6 text-white" />
@@ -246,7 +246,7 @@ export default function InsightsPage() {
                     </div>
                   ))}
                </div>
-               <p className="font-mono text-[9px] tracking-widest text-white/20 uppercase">
+               <p className="font-heading  text-[9px] tracking-widest text-white/20 capitalize ">
                  Join a global network of digital architects
                </p>
             </div>
@@ -260,8 +260,8 @@ export default function InsightsPage() {
 
       {/* 5. Bottom CTA Section */}
       <section className="px-6 lg:px-12 max-w-[1400px] mx-auto text-center py-16 md:py-24 border-t border-white/5">
-        <div className="font-mono text-sm tracking-[0.5em] text-[#6324FC] uppercase mb-8">COLLABORATE WITH US</div>
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-12">
+        <div className="font-heading  text-sm tracking-[0.5em] text-[#6324FC] capitalize mb-8">COLLABORATE WITH US</div>
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-12">
           <span className="text-white">LET'S SCALE</span> <br/>
           <span className="stroke-white italic opacity-80">WORLDWIDE.</span>
         </h2>

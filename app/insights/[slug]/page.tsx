@@ -74,17 +74,17 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
             {/* Back Button - Re-placed here but lowered to clear Navbar/Logo */}
             <Link href="/insights" className="group inline-flex items-center gap-4 mb-16 px-6 py-3 border border-white/5 rounded-full bg-white/[0.02] backdrop-blur-md hover:border-[#6324FC] transition-all">
                <ArrowLeft className="w-4 h-4 text-[#6324FC]" />
-               <span className="font-mono text-[9px] tracking-[0.4em] uppercase text-white/40 group-hover:text-white transition-colors">Back to Insights</span>
+               <span className="font-heading  text-[9px] tracking-[0.4em] capitalize text-white/40 group-hover:text-white transition-colors">Back to Insights</span>
             </Link>
 
-            <div className="font-mono text-[10px] tracking-[0.8em] text-[#6324FC] uppercase mb-12 ml-[0.8em]">Insights Archive // 2026</div>
+            <div className="font-heading  text-[10px] tracking-[0.8em] text-[#6324FC] capitalize mb-12 ml-[0.8em]">Insights Archive // 2026</div>
             
-            <h1 className="font-heading text-6xl md:text-[10vw] leading-[0.85] tracking-tighter uppercase mb-16">
+            <h1 className="font-heading text-6xl md:text-[10vw] leading-[0.85] tracking-tighter capitalize mb-16">
                {post.title.split(' ').slice(0, 2).join(' ')} <br/>
                <span className="stroke-text text-transparent italic opacity-40">{post.title.split(' ').slice(2).join(' ')}</span>
             </h1>
 
-            <div className="flex flex-wrap items-center justify-center gap-12 font-mono text-[9px] tracking-[0.4em] uppercase text-white/30">
+            <div className="flex flex-wrap items-center justify-center gap-12 font-heading  text-[9px] tracking-[0.4em] capitalize text-white/30">
                <div className="flex items-center gap-4 group cursor-pointer">
                   <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#6324FC] transition-colors">
                      <User className="w-3.5 h-3.5 text-[#6324FC]" />
@@ -111,37 +111,37 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
             {/* Left: Metadata & Interactions */}
             <div className="lg:col-span-4 lg:sticky lg:top-48 space-y-20 order-2 lg:order-1">
                <div className="space-y-6">
-                  <div className="font-mono text-[9px] text-[#6324FC] tracking-[0.5em] uppercase">Core Topic</div>
-                  <div className="font-heading text-4xl uppercase tracking-tighter italic">{post.category}</div>
+                  <div className="font-heading  text-[9px] text-[#6324FC] tracking-[0.5em] capitalize ">Core Topic</div>
+                  <div className="font-heading text-4xl capitalize tracking-tighter italic">{post.category}</div>
                </div>
 
                <div className="p-10 bg-white/[0.02] border border-white/5 rounded-[2.5rem] space-y-8 backdrop-blur-xl">
-                  <div className="font-mono text-[9px] text-white/20 tracking-[0.5em] uppercase">Share Intelligence</div>
+                  <div className="font-heading  text-[9px] text-white/20 tracking-[0.5em] capitalize ">Share Intelligence</div>
                   <div className="flex flex-col gap-6">
                      <button className="flex items-center justify-between group">
-                        <span className="font-mono text-[10px] tracking-widest text-white/40 group-hover:text-white transition-colors uppercase">LinkedIn</span>
+                        <span className="font-heading  text-[10px] tracking-widest text-white/40 group-hover:text-white transition-colors capitalize ">LinkedIn</span>
                         <Link2 className="w-4 h-4 text-white/10 group-hover:text-[#6324FC] transition-colors" />
                      </button>
                      <button className="flex items-center justify-between group">
-                        <span className="font-mono text-[10px] tracking-widest text-white/40 group-hover:text-white transition-colors uppercase">Twitter</span>
+                        <span className="font-heading  text-[10px] tracking-widest text-white/40 group-hover:text-white transition-colors capitalize ">Twitter</span>
                         <Globe className="w-4 h-4 text-white/10 group-hover:text-[#6324FC] transition-colors" />
                      </button>
                      <button className="flex items-center justify-between group">
-                        <span className="font-mono text-[10px] tracking-widest text-white/40 group-hover:text-white transition-colors uppercase">Facebook</span>
+                        <span className="font-heading  text-[10px] tracking-widest text-white/40 group-hover:text-white transition-colors capitalize ">Facebook</span>
                         <Share2 className="w-4 h-4 text-white/10 group-hover:text-[#6324FC] transition-colors" />
                      </button>
                   </div>
                </div>
 
                <div className="space-y-8">
-                  <div className="font-mono text-[9px] text-white/20 tracking-[0.5em] uppercase">Contributor</div>
+                  <div className="font-heading  text-[9px] text-white/20 tracking-[0.5em] capitalize ">Contributor</div>
                   <div className="flex items-center gap-6">
                      <div className="w-16 h-16 rounded-full bg-[#6324FC]/10 border border-[#6324FC]/20 flex items-center justify-center shrink-0">
                         <User className="w-6 h-6 text-[#6324FC]" />
                      </div>
                      <div>
-                        <div className="font-heading text-xl uppercase">{post.author}</div>
-                        <div className="font-mono text-[9px] tracking-widest text-white/40 uppercase">{post.authorRole}</div>
+                        <div className="font-heading text-xl capitalize ">{post.author}</div>
+                        <div className="font-heading  text-[9px] tracking-widest text-white/40 capitalize ">{post.authorRole}</div>
                      </div>
                   </div>
                </div>
@@ -165,7 +165,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
                         In the rapidly evolving world of digital architecture, the concept of <span className="text-white font-normal underline decoration-[#6324FC]/50 underline-offset-8">headless</span> has moved from a buzzword to a fundamental necessity. As we look at the benchmarks of 2026, the agencies that dominate are those that have decoupled the presentation layer from the core business logic.
                      </p>
                      
-                     <h3 className="font-heading text-5xl text-white tracking-tighter uppercase pt-16 mb-8 italic">
+                     <h3 className="font-heading text-5xl text-white tracking-tighter capitalize pt-16 mb-8 italic">
                         The Death of the <span className="text-[#6324FC]">Monolith.</span>
                      </h3>
                      <p>
@@ -181,11 +181,11 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
                         />
                         <div className="absolute inset-0 bg-black/40 mix-blend-overlay" />
                         <div className="absolute bottom-8 left-8 right-8 p-6 bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl">
-                           <div className="font-mono text-[9px] tracking-widest uppercase text-white/40">Visual 0x44 // Global Data Distribution Architecture</div>
+                           <div className="font-heading  text-[9px] tracking-widest capitalize text-white/40">Visual 0x44 // Global Data Distribution Architecture</div>
                         </div>
                      </div>
 
-                     <h3 className="font-heading text-5xl text-white tracking-tighter uppercase pt-16 mb-8 italic">
+                     <h3 className="font-heading text-5xl text-white tracking-tighter capitalize pt-16 mb-8 italic">
                         Predictive <span className="text-[#6324FC]">Performance.</span>
                      </h3>
                      <p>
@@ -193,10 +193,10 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
                      </p>
 
                      <blockquote className="relative p-16 bg-white/[0.02] border-l-4 border-[#6324FC] rounded-r-3xl my-24">
-                        <p className="font-heading text-3xl md:text-5xl text-white leading-tight uppercase tracking-tighter mb-8">
+                        <p className="font-heading text-3xl md:text-5xl text-white leading-tight capitalize tracking-tighter mb-8">
                            &quot;Efficiency is not about doing more. It&apos;s about eliminating the friction between a user&apos;s desire and the machine&apos;s response.&quot;
                         </p>
-                        <cite className="font-mono text-[10px] tracking-[0.4em] uppercase text-[#6324FC]">/ Senior Architect Insight</cite>
+                        <cite className="font-heading  text-[10px] tracking-[0.4em] capitalize text-[#6324FC]">/ Senior Architect Insight</cite>
                      </blockquote>
 
                      <p>
@@ -226,8 +226,8 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
             </motion.div>
 
             <div className="relative z-10 text-center space-y-8">
-               <div className="font-mono text-[11px] tracking-[0.8em] text-white/30 uppercase">Continue Reading</div>
-               <h2 className="font-heading text-[15vw] leading-none tracking-tighter uppercase text-white group-hover:text-[#6324FC] transition-colors duration-700 italic">
+               <div className="font-heading  text-[11px] tracking-[0.8em] text-white/30 capitalize ">Continue Reading</div>
+               <h2 className="font-heading text-[15vw] leading-none tracking-tighter capitalize text-white group-hover:text-[#6324FC] transition-colors duration-700 italic">
                   NEURO <br className="md:hidden" /> DESIGN.
                </h2>
                <div className="flex items-center justify-center gap-6">

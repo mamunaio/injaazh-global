@@ -82,7 +82,7 @@ export default function FloatingWidget() {
                 <button 
                   key={item.id}
                   onClick={() => handleThemeChange(item.id)} 
-                  className={`flex items-center gap-3 px-4 py-2.5 font-mono text-[10px] tracking-[0.2em] transition-all rounded-xl ${
+                  className={`flex items-center gap-3 px-4 py-2.5 font-heading  text-[10px] tracking-[0.2em] transition-all rounded-xl ${
                     theme === item.id 
                       ? 'bg-[#6324FC] text-white' 
                       : 'text-zinc-500 dark:text-zinc-400 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white'

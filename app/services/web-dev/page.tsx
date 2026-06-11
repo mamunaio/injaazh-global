@@ -202,10 +202,10 @@ export default function WebDevPage() {
 
         <div className="flex items-center gap-4 mb-8">
           <div className="w-12 h-[1px] bg-[#6324FC]" />
-          <span className="font-mono text-sm tracking-[0.5em] text-[#6324FC] uppercase">WEB DEVELOPMENT</span>
+          <span className="font-heading  text-sm tracking-[0.5em] text-[#6324FC] capitalize ">WEB DEVELOPMENT</span>
         </div>
         
-        <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-12">
+        <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-12">
           Web Development Services <br/>
           That Perform <span className="italic bg-gradient-to-r from-[#6324FC] to-[#d946ef] bg-clip-text text-transparent">Globally.</span>
         </h1>
@@ -243,7 +243,7 @@ export default function WebDevPage() {
                 <Counter value={stat.value} />
               </div>
               
-              <div className="font-mono text-xs tracking-[0.2em] text-white/30 uppercase group-hover:text-white/70 transition-colors duration-500">
+              <div className="font-heading  text-xs tracking-[0.2em] text-white/30 capitalize group-hover:text-white/70 transition-colors duration-500">
                 {stat.label}
               </div>
               
@@ -259,7 +259,7 @@ export default function WebDevPage() {
       {/* WHAT WE BUILD */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-16">WHAT WE BUILD</h2>
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">WHAT WE BUILD</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {whatWeBuild.map((item, i) => (
             <div key={i} className="p-10 bg-white/[0.01] backdrop-blur-md border border-white/5 rounded-3xl hover:border-[#6324FC]/30 hover:shadow-[0_0_30px_rgba(99,36,252,0.1)] transition-all duration-500 group relative overflow-hidden">
@@ -277,7 +277,7 @@ export default function WebDevPage() {
               </p>
               <div className="flex flex-wrap gap-2">
                 {item.tags.map((tag, j) => (
-                  <span key={j} className="px-4 py-1.5 bg-white/[0.05] border border-white/5 font-mono text-[10px] tracking-widest text-white/40 uppercase rounded-full group-hover:text-white group-hover:border-[#6324FC]/30 transition-colors duration-500">
+                  <span key={j} className="px-4 py-1.5 bg-white/[0.05] border border-white/5 font-heading  text-[10px] tracking-widest text-white/40 capitalize rounded-full group-hover:text-white group-hover:border-[#6324FC]/30 transition-colors duration-500">
                     {tag}
                   </span>
                 ))}
@@ -291,7 +291,7 @@ export default function WebDevPage() {
       {/* WHY OUR WEB DEVELOPMENT WORKS */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-16">WHY OUR WEB DEVELOPMENT WORKS</h2>
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">WHY OUR WEB DEVELOPMENT WORKS</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {whyItWorks.map((item, i) => (
             <div key={i} className="relative space-y-4 p-8 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-[#6324FC]/20 transition-all duration-500 group overflow-hidden">
@@ -313,7 +313,7 @@ export default function WebDevPage() {
       {/* OUR WEB DEVELOPMENT PROCESS */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-16">OUR WEB DEVELOPMENT PROCESS</h2>
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">OUR WEB DEVELOPMENT PROCESS</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {process.map((step, i) => (
             <div key={i} className="relative p-8 bg-white/[0.01] backdrop-blur-md border border-white/5 rounded-2xl hover:border-[#6324FC]/30 hover:shadow-[0_0_30px_rgba(99,36,252,0.1)] transition-all duration-500 group">
@@ -322,7 +322,7 @@ export default function WebDevPage() {
                 <div className="absolute top-12 left-full w-full h-[1px] bg-gradient-to-r from-[#6324FC]/20 to-[#6324FC]/5 hidden lg:block z-0" />
               )}
               
-              <div className="font-mono text-xs text-[#6324FC] mb-4 group-hover:text-white transition-colors duration-500 relative z-10">{step.id}</div>
+              <div className="font-heading  text-xs text-[#6324FC] mb-4 group-hover:text-white transition-colors duration-500 relative z-10">{step.id}</div>
               <h3 className="font-heading text-xl mb-3 group-hover:text-[#6324FC] transition-colors duration-500 relative z-10">{step.title}</h3>
               <p className="font-sans font-light text-white/40 text-sm leading-relaxed relative z-10">
                 {step.desc}
@@ -336,7 +336,7 @@ export default function WebDevPage() {
       {/* FREQUENTLY ASKED QUESTIONS */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-16">FREQUENTLY ASKED QUESTIONS</h2>
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">FREQUENTLY ASKED QUESTIONS</h2>
         <div className="space-y-4">
           {faqs.map((faq, i) => {
             const isOpen = openFaq === i;
@@ -378,7 +378,7 @@ export default function WebDevPage() {
       {/* CTA Section */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-t border-white/5 text-center">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-8">Ready to Build Something Incredible?</h2>
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-8">Ready to Build Something Incredible?</h2>
         <p className="font-sans font-light text-xl text-white/50 max-w-2xl mx-auto mb-12">
           Send us your brief and we'll respond with a clear proposal within 24 hours.
         </p>

@@ -57,10 +57,10 @@ export default function WorkPage() {
       <section className="w-full bg-[#060608] pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end border-b border-primary/10 pb-12">
-            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase">
+            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize ">
               SELECTED <span className="text-[#6324FC] italic">WORKS</span>
             </h1>
-            <p className="font-mono text-sm tracking-widest text-primary/50 max-w-xs text-right hidden md:block">
+            <p className="font-heading  text-sm tracking-widest text-primary/50 max-w-xs text-right hidden md:block">
               Engineering digital dominance through award-winning design and robust architectures.
             </p>
           </div>
@@ -81,23 +81,23 @@ export default function WorkPage() {
             >
               {/* Left Side: ID + Title */}
               <div className="flex items-center gap-8 md:gap-16 w-full md:w-auto">
-                <span className="font-mono text-xl text-primary/30 group-hover:text-[#6324FC] transition-colors duration-500">
+                <span className="font-heading  text-xl text-primary/30 group-hover:text-[#6324FC] transition-colors duration-500">
                   {project.id}
                 </span>
                 
                 {/* Rolling Text Reveal Animation */}
                 <div className="relative overflow-hidden py-2">
-                  <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase text-primary group-hover:-translate-y-[150%] transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]">
+                  <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize text-primary group-hover:-translate-y-[150%] transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]">
                     {project.title}
                   </h2>
-                  <h2 className="absolute top-2 left-0 font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase text-[#6324FC] translate-y-[150%] group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] italic">
+                  <h2 className="absolute top-2 left-0 font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize text-[#6324FC] translate-y-[150%] group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] italic">
                     {project.title}
                   </h2>
                 </div>
               </div>
 
               {/* Right Side: Meta Info */}
-              <div className="hidden md:flex items-center gap-16 font-mono text-sm tracking-widest uppercase">
+              <div className="hidden md:flex items-center gap-16 font-heading  text-sm tracking-widest capitalize ">
                 <span className="text-primary/50 group-hover:text-primary transition-colors duration-500 w-48 text-right">
                   {project.category}
                 </span>

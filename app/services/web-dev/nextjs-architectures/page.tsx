@@ -51,10 +51,10 @@ export default function NextJsArchitecturesPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase">Architecture Division</span>
+              <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">Architecture Division</span>
             </motion.div>
             
-            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-16">
+            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-16">
               NEXT.JS <br/>
               <span className="stroke-text text-transparent italic opacity-40">ARCHITECTURES.</span>
             </h1>
@@ -97,10 +97,10 @@ export default function NextJsArchitecturesPage() {
         {/* 2. Technical Pillars */}
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-24">
-            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase max-w-xl">
+            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize max-w-xl">
               THE PILLARS OF <span className="italic text-[#6324FC]">MODERN SPEED.</span>
             </h2>
-            <p className="font-mono text-[11px] tracking-widest text-white/30 uppercase max-w-xs leading-loose">
+            <p className="font-heading  text-[11px] tracking-widest text-white/30 capitalize max-w-xs leading-loose">
               Every build follows our &quot;Performance-First&quot; protocol to ensure sub-second TTI and maximum crawl budget.
             </p>
           </div>
@@ -121,7 +121,7 @@ export default function NextJsArchitecturesPage() {
                 <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-10 transition-all duration-500 group-hover:scale-110" style={{ backgroundColor: `${f.color}15`, border: `1px solid ${f.color}30` }}>
                   <f.icon className="w-8 h-8" style={{ color: f.color }} />
                 </div>
-                <h3 className="font-heading text-2xl text-white mb-4 uppercase">{f.title}</h3>
+                <h3 className="font-heading text-2xl text-white mb-4 capitalize ">{f.title}</h3>
                 <p className="font-sans font-light text-white/40 text-base leading-relaxed">{f.description}</p>
               </motion.div>
             ))}
@@ -134,7 +134,7 @@ export default function NextJsArchitecturesPage() {
            
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
               <div>
-                <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-12">
+                <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-12">
                   STANDARD DEV <br/>
                   <span className="italic text-[#6324FC]">VS. INJAAZH OPS.</span>
                 </h2>
@@ -143,7 +143,7 @@ export default function NextJsArchitecturesPage() {
                    <div className="space-y-6">
                       <div className="flex items-center gap-4 opacity-30">
                          <ZapOff className="w-5 h-5 text-red-500" />
-                         <span className="font-heading text-xl uppercase">Standard WordPress / Legacy</span>
+                         <span className="font-heading text-xl capitalize ">Standard WordPress / Legacy</span>
                       </div>
                       <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
                          <motion.div initial={{ width: 0 }} whileInView={{ width: "40%" }} transition={{ duration: 1.5 }} className="h-full bg-red-500/50" />
@@ -153,7 +153,7 @@ export default function NextJsArchitecturesPage() {
                    <div className="space-y-6">
                       <div className="flex items-center gap-4">
                          <Zap className="w-5 h-5 text-[#6324FC]" />
-                         <span className="font-heading text-xl uppercase">Injaazh Next.js Architecture</span>
+                         <span className="font-heading text-xl capitalize ">Injaazh Next.js Architecture</span>
                       </div>
                       <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
                          <motion.div initial={{ width: 0 }} whileInView={{ width: "99%" }} transition={{ duration: 1.5, delay: 0.5 }} className="h-full bg-[#6324FC] shadow-[0_0_20px_rgba(99,36,252,0.5)]" />
@@ -171,8 +171,8 @@ export default function NextJsArchitecturesPage() {
                  ].map((stat, i) => (
                    <div key={i} className="p-8 bg-white/[0.02] border border-white/10 rounded-3xl text-center group hover:bg-[#6324FC]/5 transition-colors">
                       <div className="font-heading text-4xl text-white mb-2 group-hover:text-[#6324FC] transition-colors">{stat.val}</div>
-                      <div className="font-mono text-[9px] tracking-widest text-[#6324FC] uppercase mb-1">{stat.label}</div>
-                      <div className="font-sans text-[10px] text-white/20 uppercase">{stat.sub}</div>
+                      <div className="font-heading  text-[9px] tracking-widest text-[#6324FC] capitalize mb-1">{stat.label}</div>
+                      <div className="font-sans text-[10px] text-white/20 capitalize ">{stat.sub}</div>
                    </div>
                  ))}
               </div>
@@ -181,7 +181,7 @@ export default function NextJsArchitecturesPage() {
 
         {/* 4. Strategic Flow */}
         <div className="py-16 md:py-24 border-b border-white/5">
-           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-24 text-center">
+           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-24 text-center">
               OUR ARCHITECTURAL <span className="italic text-[#6324FC]">WORKFLOW.</span>
            </h2>
 
@@ -194,7 +194,7 @@ export default function NextJsArchitecturesPage() {
                 <div key={i} className="relative group">
                    <div className="font-heading text-[8rem] text-white/[0.02] absolute -top-12 -left-4 group-hover:text-[#6324FC]/5 transition-colors">{s.step}</div>
                    <div className="relative z-10 pt-12 space-y-6">
-                      <h3 className="font-heading text-3xl text-white uppercase">{s.title}</h3>
+                      <h3 className="font-heading text-3xl text-white capitalize ">{s.title}</h3>
                       <p className="font-sans font-light text-xl text-white/40 leading-relaxed border-l border-white/10 pl-8 group-hover:border-[#6324FC] transition-colors">
                         {s.desc}
                       </p>
@@ -206,7 +206,7 @@ export default function NextJsArchitecturesPage() {
 
         {/* 5. Bottom CTA */}
         <div className="text-center py-16 md:py-24 border-t border-white/5">
-          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-12">
+          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-12">
             READY TO <span className="italic text-[#6324FC]">ASCEND?</span>
           </h2>
           <p className="font-sans text-white/40 text-2xl mb-16 max-w-2xl mx-auto leading-relaxed">
@@ -216,7 +216,7 @@ export default function NextJsArchitecturesPage() {
             onClick={() => window.location.href='/contact'}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-16 py-8 bg-white text-black rounded-full font-heading text-2xl tracking-widest shadow-[0_30px_60px_rgba(255,255,255,0.1)] hover:bg-[#6324FC] hover:text-white transition-all flex items-center gap-6 mx-auto uppercase"
+            className="px-16 py-8 bg-white text-black rounded-full font-heading text-2xl tracking-widest shadow-[0_30px_60px_rgba(255,255,255,0.1)] hover:bg-[#6324FC] hover:text-white transition-all flex items-center gap-6 mx-auto capitalize "
           >
             START THE ARCHITECTURE ⚡
           </motion.button>

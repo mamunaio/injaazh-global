@@ -30,15 +30,15 @@ function ApplyFormContent() {
         
         <Link href="/careers" className="relative z-10 flex items-center gap-3 text-white/40 hover:text-white transition-colors group">
           <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-          <span className="font-mono text-xs tracking-widest uppercase">Back to Missions</span>
+          <span className="font-heading  text-xs tracking-widest capitalize ">Back to Missions</span>
         </Link>
 
         <div className="relative z-10 space-y-8">
           <div className="flex items-center gap-4">
              <div className="w-10 h-[1px] bg-[#6324FC]" />
-             <span className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase">Active Objective</span>
+             <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">Active Objective</span>
           </div>
-          <h1 className="font-heading text-6xl lg:text-8xl text-white tracking-tighter uppercase leading-[0.9]">
+          <h1 className="font-heading text-6xl lg:text-8xl text-white tracking-tighter capitalize leading-[0.9]">
             JOIN AS <br/>
             <span className="italic text-[#6324FC]">{role}</span>
           </h1>
@@ -50,11 +50,11 @@ function ApplyFormContent() {
         <div className="relative z-10 flex items-center gap-10 grayscale opacity-30">
           <div className="flex items-center gap-3">
              <ShieldCheck className="w-6 h-6 text-[#6324FC]" />
-             <span className="font-mono text-[9px] tracking-widest text-white uppercase">Neural Shield Active</span>
+             <span className="font-heading  text-[9px] tracking-widest text-white capitalize ">Neural Shield Active</span>
           </div>
           <div className="flex items-center gap-3">
              <Cpu className="w-6 h-6 text-[#00E5FF]" />
-             <span className="font-mono text-[9px] tracking-widest text-white uppercase">Hiring Engine v4.2</span>
+             <span className="font-heading  text-[9px] tracking-widest text-white capitalize ">Hiring Engine v4.2</span>
           </div>
         </div>
       </div>
@@ -71,13 +71,13 @@ function ApplyFormContent() {
               className="w-full max-w-lg space-y-12"
             >
               <div className="space-y-4">
-                <h2 className="font-heading text-3xl text-white uppercase">Infiltration Profile</h2>
+                <h2 className="font-heading text-3xl text-white capitalize ">Infiltration Profile</h2>
                 <div className="h-[1px] w-12 bg-[#6324FC]" />
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="space-y-3">
-                  <label className="font-mono text-[9px] tracking-widest uppercase text-white/30">Full Name</label>
+                  <label className="font-heading  text-[9px] tracking-widest capitalize text-white/30">Full Name</label>
                   <input 
                     required
                     type="text" 
@@ -87,7 +87,7 @@ function ApplyFormContent() {
                 </div>
 
                 <div className="space-y-3">
-                  <label className="font-mono text-[9px] tracking-widest uppercase text-white/30">Email Address</label>
+                  <label className="font-heading  text-[9px] tracking-widest capitalize text-white/30">Email Address</label>
                   <input 
                     required
                     type="email" 
@@ -97,7 +97,7 @@ function ApplyFormContent() {
                 </div>
 
                 <div className="space-y-3">
-                  <label className="font-mono text-[9px] tracking-widest uppercase text-white/30">LinkedIn / Portfolio URL</label>
+                  <label className="font-heading  text-[9px] tracking-widest capitalize text-white/30">LinkedIn / Portfolio URL</label>
                   <input 
                     required
                     type="url" 
@@ -107,7 +107,7 @@ function ApplyFormContent() {
                 </div>
 
                 <div className="space-y-3">
-                  <label className="font-mono text-[9px] tracking-widest uppercase text-white/30">Resume / Dossier</label>
+                  <label className="font-heading  text-[9px] tracking-widest capitalize text-white/30">Resume / Dossier</label>
                   <div className="relative group">
                     <input 
                       type="file" 
@@ -121,7 +121,7 @@ function ApplyFormContent() {
                 </div>
 
                 <div className="space-y-3">
-                  <label className="font-mono text-[9px] tracking-widest uppercase text-white/30">Why are you the asset we need?</label>
+                  <label className="font-heading  text-[9px] tracking-widest capitalize text-white/30">Why are you the asset we need?</label>
                   <textarea 
                     required
                     className="w-full bg-white/[0.03] border border-white/10 rounded-xl p-5 text-white focus:outline-none focus:border-[#6324FC] transition-all font-sans min-h-[150px] resize-none"
@@ -153,12 +153,12 @@ function ApplyFormContent() {
                 <CheckCircle2 className="w-12 h-12" />
               </div>
               <div className="space-y-4">
-                <h2 className="font-heading text-5xl text-white uppercase tracking-tighter">Transmission <br/><span className="italic text-[#6324FC]">Received.</span></h2>
+                <h2 className="font-heading text-5xl text-white capitalize tracking-tighter">Transmission <br/><span className="italic text-[#6324FC]">Received.</span></h2>
                 <p className="font-sans font-light text-white/40 text-xl max-w-sm mx-auto leading-relaxed">
                   Your profile has been indexed. Our command center will contact you if your skills match our current objectives.
                 </p>
               </div>
-              <Link href="/" className="inline-block px-10 py-5 border border-white/10 rounded-full text-white font-mono text-[10px] tracking-widest uppercase hover:bg-white hover:text-black transition-all">
+              <Link href="/" className="inline-block px-10 py-5 border border-white/10 rounded-full text-white font-heading  text-[10px] tracking-widest capitalize hover:bg-white hover:text-black transition-all">
                 Return to Surface
               </Link>
             </motion.div>

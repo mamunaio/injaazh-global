@@ -30,17 +30,17 @@ export async function POST(request: Request) {
             </div>
 
             <div style="margin-bottom: 20px;">
-              <h3 style="color: #6324FC; font-size: 14px; text-transform: uppercase;">Selected Services</h3>
+              <h3 style="color: #6324FC; font-size: 14px; text-transform: capitalize ;">Selected Services</h3>
               <p>${services.join(", ")}</p>
             </div>
 
             <div style="margin-bottom: 20px;">
-              <h3 style="color: #6324FC; font-size: 14px; text-transform: uppercase;">Investment Range</h3>
+              <h3 style="color: #6324FC; font-size: 14px; text-transform: capitalize ;">Investment Range</h3>
               <p>${budget}</p>
             </div>
 
             <div style="margin-bottom: 20px;">
-              <h3 style="color: #6324FC; font-size: 14px; text-transform: uppercase;">Project Vision</h3>
+              <h3 style="color: #6324FC; font-size: 14px; text-transform: capitalize ;">Project Vision</h3>
               <p style="font-style: italic; color: #ccc;">"${details}"</p>
             </div>
 

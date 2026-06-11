@@ -48,10 +48,10 @@ export default function CareersPage() {
             className="flex items-center gap-4 mb-12"
           >
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase">Join the Collective</span>
+            <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">Join the Collective</span>
           </motion.div>
           
-          <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-16">
+          <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-16">
             ENGINEER THE <br/>
             <span className="stroke-text text-transparent italic opacity-40">FUTURE WITH US.</span>
           </h1>
@@ -78,7 +78,7 @@ export default function CareersPage() {
               className="p-10 rounded-[2.5rem] bg-white/[0.02] border border-white/5 hover:border-[#6324FC]/30 transition-all duration-700 backdrop-blur-xl"
             >
               <item.icon className="w-10 h-10 text-[#6324FC] mb-8" />
-              <h3 className="font-heading text-3xl text-white mb-4 uppercase">{item.title}</h3>
+              <h3 className="font-heading text-3xl text-white mb-4 capitalize ">{item.title}</h3>
               <p className="font-sans font-light text-white/40  leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
@@ -88,8 +88,8 @@ export default function CareersPage() {
         {/* 3. Open Positions (Job Board) */}
         <section className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center justify-between mb-20">
-            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase">Open <span className="italic text-[#6324FC]">Missions</span></h2>
-            <div className="hidden md:flex items-center gap-4 text-white/20 font-mono text-[10px] tracking-widest uppercase">
+            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize ">Open <span className="italic text-[#6324FC]">Missions</span></h2>
+            <div className="hidden md:flex items-center gap-4 text-white/20 font-heading  text-[10px] tracking-widest capitalize ">
                <span>Total Active: {jobs.length}</span>
                <div className="w-1 h-1 rounded-full bg-[#6324FC]" />
                <span>Global Intake</span>
@@ -111,8 +111,8 @@ export default function CareersPage() {
                 >
                   <div className="space-y-4">
                     <div className="flex items-center gap-4">
-                      <span className="font-mono text-[9px] tracking-widest text-[#6324FC] px-3 py-1 bg-[#6324FC]/10 rounded-full">{job.type}</span>
-                      <span className="font-mono text-[9px] tracking-widest text-white/30">{job.location}</span>
+                      <span className="font-heading  text-[9px] tracking-widest text-[#6324FC] px-3 py-1 bg-[#6324FC]/10 rounded-full">{job.type}</span>
+                      <span className="font-heading  text-[9px] tracking-widest text-white/30">{job.location}</span>
                     </div>
                     <h3 className="font-heading text-3xl lg:text-4xl text-white group-hover:text-[#6324FC] transition-colors">{job.title}</h3>
                   </div>
@@ -136,7 +136,7 @@ export default function CareersPage() {
                       </p>
                       
                       <div className="space-y-4">
-                        <span className="font-mono text-[10px] tracking-widest text-white/20 uppercase">Baseline Requirements:</span>
+                        <span className="font-heading  text-[10px] tracking-widest text-white/20 capitalize ">Baseline Requirements:</span>
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           {job.requirements.map((req, i) => (
                             <li key={i} className="flex items-center gap-3 font-sans text-sm text-white/40">
@@ -164,11 +164,11 @@ export default function CareersPage() {
 
         {/* 4. Bottom CTA */}
         <section className="py-16 md:py-24 text-center border-t border-white/5">
-          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-8">DON&apos;T SEE YOUR ROLE?</h2>
+          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-8">DON&apos;T SEE YOUR ROLE?</h2>
           <p className="font-sans text-white/40 text-xl mb-12 max-w-xl mx-auto italic">
             "If you are exceptionally lethal at what you do, we will create a mission for you."
           </p>
-          <Link href="/contact" className="font-mono text-sm tracking-widest text-[#6324FC] hover:text-white transition-colors border-b border-[#6324FC]">
+          <Link href="/contact" className="font-heading  text-sm tracking-widest text-[#6324FC] hover:text-white transition-colors border-b border-[#6324FC]">
              SEND US A SPECULATIVE DECK →
           </Link>
         </section>

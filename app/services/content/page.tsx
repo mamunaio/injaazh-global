@@ -127,10 +127,10 @@ export default function ContentPage() {
 
         <div className="flex items-center gap-4 mb-8">
           <div className="w-12 h-[1px] bg-[#6324FC]" />
-          <span className="font-mono text-sm tracking-[0.5em] text-[#6324FC] uppercase">CONTENT WRITING</span>
+          <span className="font-heading  text-sm tracking-[0.5em] text-[#6324FC] capitalize ">CONTENT WRITING</span>
         </div>
         
-        <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-12">
+        <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-12">
           Content Writing Services <br/>
           That Rank on Google <br/>
           <span className="italic text-[#6324FC]">and Convert Readers.</span>
@@ -160,7 +160,7 @@ export default function ContentPage() {
           {stats.map((stat, i) => (
             <div key={i} className="py-12 px-6 text-center">
               <div className="font-heading text-5xl md:text-7xl text-white mb-2">{stat.value}</div>
-              <div className="font-mono text-[10px] tracking-widest text-white/40 uppercase">{stat.label}</div>
+              <div className="font-heading  text-[10px] tracking-widest text-white/40 capitalize ">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -169,7 +169,7 @@ export default function ContentPage() {
       {/* WHAT'S INCLUDED */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-16">WHAT'S INCLUDED</h2>
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">WHAT'S INCLUDED</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {whatIsIncluded.map((item, i) => (
             <div key={i} className="p-10 bg-white/[0.02] border border-white/5 rounded-3xl hover:border-[#6324FC]/30 transition-colors duration-500 flex flex-col justify-between">
@@ -181,7 +181,7 @@ export default function ContentPage() {
               </div>
               <div className="flex flex-wrap gap-2">
                 {item.tags.map((tag, j) => (
-                  <span key={j} className="px-4 py-1.5 bg-white/[0.05] border border-white/5 font-mono text-[10px] tracking-widest text-white/40 uppercase rounded-full">
+                  <span key={j} className="px-4 py-1.5 bg-white/[0.05] border border-white/5 font-heading  text-[10px] tracking-widest text-white/40 capitalize rounded-full">
                     {tag}
                   </span>
                 ))}
@@ -195,7 +195,7 @@ export default function ContentPage() {
       {/* WHY INJAAZH CONTENT WORKS */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-16">WHY INJAAZH CONTENT WORKS</h2>
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">WHY INJAAZH CONTENT WORKS</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {whyItWorks.map((item, i) => (
             <div key={i} className="space-y-4">
@@ -212,11 +212,11 @@ export default function ContentPage() {
       {/* OUR CONTENT PROCESS */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-16">OUR CONTENT PROCESS</h2>
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">OUR CONTENT PROCESS</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {process.map((step, i) => (
             <div key={i} className="relative p-8 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <div className="font-mono text-xs text-[#6324FC] mb-4">{step.id}</div>
+              <div className="font-heading  text-xs text-[#6324FC] mb-4">{step.id}</div>
               <h3 className="font-heading text-xl mb-3">{step.title}</h3>
               <p className="font-sans font-light text-white/40 text-sm leading-relaxed">
                 {step.desc}
@@ -230,7 +230,7 @@ export default function ContentPage() {
       {/* FREQUENTLY ASKED QUESTIONS */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-16">FREQUENTLY ASKED QUESTIONS</h2>
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">FREQUENTLY ASKED QUESTIONS</h2>
         <div className="space-y-4">
           {faqs.map((faq, i) => (
             <div key={i} className="border-b border-white/5">
@@ -257,7 +257,7 @@ export default function ContentPage() {
       {/* CTA Section */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-t border-white/5 text-center">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-8">Ready to Rank and Convert?</h2>
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-8">Ready to Rank and Convert?</h2>
         <p className="font-sans font-light text-xl text-white/50 max-w-2xl mx-auto mb-12">
           Send us your brief and we'll respond with a clear proposal within 24 hours.
         </p>

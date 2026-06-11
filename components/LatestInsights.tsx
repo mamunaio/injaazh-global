@@ -53,12 +53,12 @@ export default function LatestInsights() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase mb-8 flex items-center gap-4"
+              className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize mb-8 flex items-center gap-4"
             >
               <span className="w-12 h-[1px] bg-[#6324FC]" /> 
               THE INTELLIGENCE HUB
             </motion.div>
-            <h2 className="font-heading text-5xl md:text-7xl tracking-tighter text-white leading-[0.85] uppercase">
+            <h2 className="font-heading text-5xl md:text-7xl tracking-tighter text-white leading-[0.85] capitalize ">
               INSIGHTS THAT <br/>
               <span className="stroke-white italic opacity-80">DRIVE GROWTH.</span>
             </h2>
@@ -104,7 +104,7 @@ export default function LatestInsights() {
                 
                 {/* Category Badge */}
                 <div className="absolute top-8 left-8">
-                  <span className="px-5 py-2 bg-white/5 border border-white/10 backdrop-blur-md text-white font-mono text-[8px] tracking-[0.25em] uppercase rounded-full group-hover:bg-[#6324FC] group-hover:border-[#6324FC] transition-all duration-500">
+                  <span className="px-5 py-2 bg-white/5 border border-white/10 backdrop-blur-md text-white font-heading  text-[8px] tracking-[0.25em] capitalize rounded-full group-hover:bg-[#6324FC] group-hover:border-[#6324FC] transition-all duration-500">
                     {post.category}
                   </span>
                 </div>
@@ -112,7 +112,7 @@ export default function LatestInsights() {
 
               {/* Content Area */}
               <div className="p-8 flex flex-col flex-1 relative z-10">
-                <div className="flex items-center gap-6 mb-8 font-mono text-[9px] tracking-[0.2em] uppercase text-white/30">
+                <div className="flex items-center gap-6 mb-8 font-heading  text-[9px] tracking-[0.2em] capitalize text-white/30">
                   <div className="flex items-center gap-2 group-hover:text-white/60 transition-colors">
                     <Calendar className="w-3.5 h-3.5 text-[#6324FC]" />
                     {post.date}
@@ -134,7 +134,7 @@ export default function LatestInsights() {
                 </p>
 
                 <div className="mt-auto pt-4 border-t border-white/5">
-                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-5 text-white/40 font-heading tracking-[0.2em] text-[10px] group/btn uppercase transition-all duration-500 hover:text-white hover:gap-8">
+                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-5 text-white/40 font-heading tracking-[0.2em] text-[10px] group/btn capitalize transition-all duration-500 hover:text-white hover:gap-8">
                     <span className="relative z-10">EXPLORE FULL REPORT</span>
                     <div className="relative">
                       <ArrowRight className="w-5 h-5 text-[#6324FC] group-hover/btn:translate-x-2 transition-transform duration-500" />
@@ -156,7 +156,7 @@ export default function LatestInsights() {
             <motion.div 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="relative px-16 py-8 bg-transparent border border-white/10 text-white font-heading text-xl tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 flex items-center gap-8 uppercase"
+              className="relative px-16 py-8 bg-transparent border border-white/10 text-white font-heading text-xl tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 flex items-center gap-8 capitalize "
             >
               {/* Button Hover Background */}
               <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />

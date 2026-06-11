@@ -58,7 +58,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="font-mono text-xs tracking-[0.3em] uppercase flex items-center gap-4 mb-8"
+            className="font-heading  text-xs tracking-[0.3em] capitalize flex items-center gap-4 mb-8"
             style={{ color: hoveredIndex !== null ? "rgba(255,255,255,0.7)" : "var(--primary)" }}
           >
             <span className="w-12 h-[1px] transition-colors duration-700" style={{ backgroundColor: hoveredIndex !== null ? "white" : "var(--primary)" }} /> EXPERTISE
@@ -68,7 +68,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 1 }}
-            className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase transition-colors duration-700 drop-shadow-sm"
+            className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize transition-colors duration-700 drop-shadow-sm"
             style={{ color: hoveredIndex !== null ? "white" : "var(--primary)" }}
           >
             WHAT WE <span className="italic">DO</span>
@@ -91,13 +91,13 @@ export default function ServicesPage() {
               
               {/* Index Number */}
               <div className="hidden md:block w-[10%]">
-                 <span className="font-mono text-2xl transition-all duration-700" style={{ color: hoveredIndex === index ? "white" : "var(--primary)", opacity: hoveredIndex === index ? 1 : 0.3 }}>0{index + 1}</span>
+                 <span className="font-heading  text-2xl transition-all duration-700" style={{ color: hoveredIndex === index ? "white" : "var(--primary)", opacity: hoveredIndex === index ? 1 : 0.3 }}>0{index + 1}</span>
               </div>
 
               {/* Title */}
               <div className="w-full md:w-[45%] z-10 relative">
                 <h2 
-                  className="font-heading text-5xl md:text-7xl uppercase tracking-tighter leading-[0.85] transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] md:group-hover:translate-x-8"
+                  className="font-heading text-5xl md:text-7xl capitalize tracking-tighter leading-[0.85] transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] md:group-hover:translate-x-8"
                   style={{ color: hoveredIndex === index ? "white" : hoveredIndex !== null ? "rgba(255,255,255,0.2)" : "var(--primary)" }}
                 >
                   {svc.title}
@@ -112,7 +112,7 @@ export default function ServicesPage() {
                   </p>
                   <div className="flex gap-3 flex-wrap md:justify-end">
                     {svc.details.map((detail, i) => (
-                      <span key={i} className="font-mono text-[10px] md:text-xs tracking-widest uppercase px-4 py-2 rounded-full border transition-colors duration-700 backdrop-blur-sm" style={{ borderColor: hoveredIndex === index ? "rgba(255,255,255,0.3)" : "var(--border-opacity-10)", color: hoveredIndex === index ? "white" : "var(--primary)", opacity: hoveredIndex === index ? 1 : 0.7 }}>
+                      <span key={i} className="font-heading  text-[10px] md:text-xs tracking-widest capitalize px-4 py-2 rounded-full border transition-colors duration-700 backdrop-blur-sm" style={{ borderColor: hoveredIndex === index ? "rgba(255,255,255,0.3)" : "var(--border-opacity-10)", color: hoveredIndex === index ? "white" : "var(--primary)", opacity: hoveredIndex === index ? 1 : 0.7 }}>
                         {detail}
                       </span>
                     ))}
@@ -146,7 +146,7 @@ export default function ServicesPage() {
       <section className="py-16 md:py-24 relative overflow-hidden transition-colors duration-1000 border-t border-primary/10" style={{ backgroundColor: hoveredIndex !== null ? "rgba(0,0,0,0.8)" : "" }}>
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
           <div>
-            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-8">
+            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-8">
               THE <br/><span className="italic opacity-80">METHOD</span>
             </h2>
           </div>
@@ -154,7 +154,7 @@ export default function ServicesPage() {
             <p className="font-sans font-light text-3xl md:text-5xl leading-[1.2]">
               We operate on a rigid framework of discovery, design, engineering, and scaling. We do not guess. Everything is driven by data and executed with precision.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 font-mono text-sm tracking-[0.2em] uppercase opacity-70">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 font-heading  text-sm tracking-[0.2em] capitalize opacity-70">
               <div className="flex flex-col gap-6">
                 <div className="w-12 h-[1px] bg-primary opacity-50" />
                 <span>01. Insight & Strategy</span>

@@ -150,7 +150,7 @@ function CaseStudyCard({ project, index }: { project: typeof cases[0], index: nu
                     <m.icon className="w-3.5 h-3.5 text-[#6324FC] group-hover/metric:scale-110 transition-transform" />
                     <NumberTicker value={m.val} suffix={m.suffix} prefix={(m as any).prefix} />
                  </div>
-                 <span className="font-mono text-[9px] tracking-[0.2em] text-white/40 uppercase block">{m.label}</span>
+                 <span className="font-heading  text-[9px] tracking-[0.2em] text-white/40 capitalize block">{m.label}</span>
               </motion.div>
             ))}
           </div>
@@ -165,12 +165,12 @@ function CaseStudyCard({ project, index }: { project: typeof cases[0], index: nu
             <motion.span 
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              className="font-mono text-[11px] tracking-widest text-[#00E5FF] uppercase flex items-center gap-2"
+              className="font-heading  text-[11px] tracking-widest text-[#00E5FF] capitalize flex items-center gap-2"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
               {project.category}
             </motion.span>
-            <span className="font-mono text-[11px] text-white/50">{project.location}</span>
+            <span className="font-heading  text-[11px] text-white/50">{project.location}</span>
           </div>
           
           <h3 className="font-heading text-3xl text-white mb-4 group-hover:text-white transition-colors duration-500 leading-tight">
@@ -185,7 +185,7 @@ function CaseStudyCard({ project, index }: { project: typeof cases[0], index: nu
 
           <div className="mt-auto">
             <div className="group/link inline-flex items-center gap-3 py-2">
-              <span className="font-mono text-[12px] tracking-[0.3em] text-white/70 group-hover/link:text-white transition-colors duration-300 uppercase font-medium">
+              <span className="font-heading  text-[12px] tracking-[0.3em] text-white/70 group-hover/link:text-white transition-colors duration-300 capitalize font-medium">
                 EXPLORE STUDY
               </span>
               <div className="relative w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover/link:border-[#6324FC] group-hover/link:bg-[#6324FC] transition-all duration-500">
@@ -216,7 +216,7 @@ export default function FeaturedWork() {
               whileInView={{ width: 48 }}
               className="h-[1px] bg-[#6324FC]" 
             />
-            <span className="font-mono text-sm tracking-[0.5em] text-[#6324FC] uppercase">SELECTED WORKS</span>
+            <span className="font-heading  text-sm tracking-[0.5em] text-[#6324FC] capitalize ">SELECTED WORKS</span>
           </div>
           
           <div className="flex flex-col md:flex-row justify-between gap-12">
@@ -236,7 +236,7 @@ export default function FeaturedWork() {
                 Three industries. Three countries. One standard — ship work that performs. Every project below was measured against real KPIs, not aesthetics alone.
               </p>
               <Link href="/work" className="group flex items-center gap-3 text-white/80 hover:text-[#6324FC] transition-colors">
-                <span className="font-mono text-xs tracking-widest uppercase">VIEW METHODOLOGY →</span>
+                <span className="font-heading  text-xs tracking-widest capitalize ">VIEW METHODOLOGY →</span>
               </Link>
             </div>
           </div>
@@ -264,12 +264,12 @@ export default function FeaturedWork() {
             <motion.div 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative px-8 md:px-12 py-5 md:py-7 bg-black text-white font-heading  md:text-xl tracking-widest rounded-full overflow-hidden transition-all duration-500 shadow-[0_15px_40px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_60px_rgba(99,36,252,0.4)] flex items-center gap-4 md:gap-6 uppercase"
+              className="relative px-8 md:px-12 py-5 md:py-7 bg-black text-white font-heading  md:text-xl tracking-widest rounded-full overflow-hidden transition-all duration-500 shadow-[0_15px_40px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_60px_rgba(99,36,252,0.4)] flex items-center gap-4 md:gap-6 capitalize "
             >
               {/* Button Glow Layer */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC] to-[#4310C7] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
               
-              <span className="relative z-10 flex items-center gap-4 text-white transition-colors duration-500 uppercase">
+              <span className="relative z-10 flex items-center gap-4 text-white transition-colors duration-500 capitalize ">
                 SEE FULL ARCHIVE <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" />
               </span>
             </motion.div>

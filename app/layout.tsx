@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Bebas_Neue, Space_Mono } from "next/font/google";
+import { DM_Sans, Cabin } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -12,16 +12,10 @@ const dmSans = DM_Sans({
   weight: ["300", "400", "500", "700"],
 });
 
-const bebasNeue = Bebas_Neue({
+const cabin = Cabin({
   subsets: ["latin"],
-  variable: "--font-bebas-neue",
-  weight: ["400"],
-});
-
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  variable: "--font-space-mono",
-  weight: ["400", "700"],
+  variable: "--font-cabin",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -175,7 +169,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" className={`dark ${dmSans.variable} ${cabin.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -190,7 +184,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
         />
       </head>
-      <body suppressHydrationWarning className={`${dmSans.variable} ${bebasNeue.variable} ${spaceMono.variable} font-sans antialiased relative min-h-screen overflow-x-hidden w-full max-w-[100vw]`}>
+      <body suppressHydrationWarning className="font-sans antialiased relative min-h-screen overflow-x-hidden w-full max-w-[100vw]">
         {/* Hero Ambient Glow (Top Only) */}
         <div className="absolute top-[-10%] left-[50%] translate-x-[-50%] w-[80vw] h-[50vw] max-w-[1000px] bg-[#6324FC] opacity-[0.05] dark:opacity-[0.08] pointer-events-none blur-[150px] rounded-full z-[50]" />
 

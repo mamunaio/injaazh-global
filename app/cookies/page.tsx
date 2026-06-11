@@ -129,17 +129,17 @@ export default function CookiePolicy() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-4xl"
         >
-          <div className="font-mono text-[#FACC15] tracking-[0.5em] text-[10px] uppercase mb-8 flex items-center gap-4">
+          <div className="font-heading  text-[#FACC15] tracking-[0.5em] text-[10px] capitalize mb-8 flex items-center gap-4">
             <span className="w-12 h-[1px] bg-[#FACC15]" /> 
             Telemetry Architecture
           </div>
           
-          <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-12">
+          <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-12">
             COOKIE <br/>
             <span className="stroke-text text-transparent italic opacity-50">POLICY</span>
           </h1>
           
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-8 text-white/40 font-mono text-xs uppercase tracking-widest border-t border-white/10 pt-8">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-8 text-white/40 font-heading  text-xs capitalize tracking-widest border-t border-white/10 pt-8">
             <div className="flex items-center gap-3">
               <Clock className="w-4 h-4 text-[#FACC15]" />
               <span>Effective Date: Q2 2026</span>
@@ -158,7 +158,7 @@ export default function CookiePolicy() {
           {/* Left: Sticky Table of Contents */}
           <div className="lg:w-1/3 hidden lg:block">
             <div className="sticky top-40 space-y-8">
-              <h4 className="font-mono text-[10px] text-white/30 tracking-widest uppercase mb-8">Cookie Framework</h4>
+              <h4 className="font-heading  text-[10px] text-white/30 tracking-widest capitalize mb-8">Cookie Framework</h4>
               <nav className="flex flex-col gap-6 relative before:absolute before:left-0 before:top-2 before:bottom-2 before:w-[1px] before:bg-white/10">
                 {SECTIONS.map((section) => (
                   <a 
@@ -201,7 +201,7 @@ export default function CookiePolicy() {
                       0{idx + 1}
                     </div>
                     
-                    <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-12 text-[#6324FC] border-b border-white/10 pb-8 relative z-10">
+                    <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-12 text-[#6324FC] border-b border-white/10 pb-8 relative z-10">
                       {section.title}
                     </h2>
                     
@@ -221,16 +221,16 @@ export default function CookiePolicy() {
               >
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#6324FC]/20 blur-[100px]" />
                 
-                <h3 className="font-heading text-4xl tracking-tight uppercase mb-6 text-white relative z-10">Manage Your Preferences</h3>
+                <h3 className="font-heading text-4xl tracking-tight capitalize mb-6 text-white relative z-10">Manage Your Preferences</h3>
                 <p className="font-sans text-white/70  leading-relaxed mb-10 relative z-10 max-w-2xl">
                   You can purge your existing telemetry settings or review our master Privacy framework at any time. For technical inquiries regarding our cookie architecture, contact our compliance engineering team.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-6 relative z-10">
-                  <Link href="/privacy-policy" className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-white text-black font-heading text-sm tracking-widest uppercase rounded-full hover:bg-[#FACC15] transition-colors">
+                  <Link href="/privacy-policy" className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-white text-black font-heading text-sm tracking-widest capitalize rounded-full hover:bg-[#FACC15] transition-colors">
                     Privacy Policy <ArrowRight className="w-4 h-4" />
                   </Link>
-                  <a href="mailto:privacy@injaazh.com" className="inline-flex items-center justify-center gap-3 px-8 py-5 border border-white/20 text-white font-heading text-sm tracking-widest uppercase rounded-full hover:bg-white/5 transition-colors">
+                  <a href="mailto:privacy@injaazh.com" className="inline-flex items-center justify-center gap-3 px-8 py-5 border border-white/20 text-white font-heading text-sm tracking-widest capitalize rounded-full hover:bg-white/5 transition-colors">
                     Email Compliance
                   </a>
                 </div>

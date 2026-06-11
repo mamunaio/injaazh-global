@@ -96,8 +96,8 @@ export default function TeamPage() {
              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
              className="text-center md:text-left"
            >
-              <div className="font-mono text-[10px] tracking-[0.8em] text-[#6324FC] uppercase mb-12 ml-[0.8em]">The Collective // Talent 0x88</div>
-              <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-16">
+              <div className="font-heading  text-[10px] tracking-[0.8em] text-[#6324FC] capitalize mb-12 ml-[0.8em]">The Collective // Talent 0x88</div>
+              <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">
                  THE MINDS <br/>
                  BEHIND <span className="text-[#6324FC]">INJAAZH.</span>
               </h1>
@@ -132,17 +132,17 @@ export default function TeamPage() {
                 <div className="absolute inset-0 z-10 flex flex-col justify-end p-10 lg:p-12">
                    
                    {/* Meta (Top Right ID) */}
-                   <div className="absolute top-10 right-10 font-mono text-[10px] text-white/10 group-hover:text-[#6324FC]/40 transition-colors">
+                   <div className="absolute top-10 right-10 font-heading  text-[10px] text-white/10 group-hover:text-[#6324FC]/40 transition-colors">
                       {member.id} // SECURE
                    </div>
 
                    {/* Role Badge - Homepage Style */}
-                   <div className="inline-flex w-fit px-3 py-1.5 bg-[#6324FC]/20 backdrop-blur-md border border-[#6324FC]/30 rounded-full font-mono text-[9px] tracking-[0.2em] text-[#E0D4FF] uppercase mb-6 group-hover:bg-[#6324FC] group-hover:border-[#6324FC] group-hover:text-white transition-all duration-500">
+                   <div className="inline-flex w-fit px-3 py-1.5 bg-[#6324FC]/20 backdrop-blur-md border border-[#6324FC]/30 rounded-full font-heading  text-[9px] tracking-[0.2em] text-[#E0D4FF] capitalize mb-6 group-hover:bg-[#6324FC] group-hover:border-[#6324FC] group-hover:text-white transition-all duration-500">
                       {member.role}
                    </div>
 
                    {/* Name */}
-                   <h3 className="font-heading text-4xl lg:text-5xl leading-[0.85] tracking-tighter uppercase mb-8 group-hover:text-[#6324FC] transition-colors duration-500">
+                   <h3 className="font-heading text-4xl lg:text-5xl leading-[0.85] tracking-tighter capitalize mb-8 group-hover:text-[#6324FC] transition-colors duration-500">
                      {member.name}
                    </h3>
 
@@ -172,8 +172,8 @@ export default function TeamPage() {
       <section className="px-6 lg:px-12 max-w-[1400px] mx-auto py-16 md:py-24 border-t border-white/5">
          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div className="lg:col-span-8 p-16 rounded-[4rem] bg-white/[0.02] border border-white/5 flex flex-col justify-center space-y-8">
-               <div className="font-mono text-[10px] text-[#6324FC] tracking-[0.5em] uppercase">Global Sync</div>
-               <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase">
+               <div className="font-heading  text-[10px] text-[#6324FC] tracking-[0.5em] capitalize ">Global Sync</div>
+               <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize ">
                   BASED IN BANGLADESH. <br/>
                   <span className="stroke-text text-transparent italic opacity-20">SERVICING THE GLOBE.</span>
                </h2>
@@ -181,7 +181,7 @@ export default function TeamPage() {
             <div className="lg:col-span-4 p-12 rounded-[3.5rem] bg-[#6324FC] text-white flex flex-col justify-between">
                <Zap className="w-12 h-12 opacity-30" />
                <div className="font-heading text-8xl leading-none tracking-tighter">100%</div>
-               <div className="font-mono text-[10px] tracking-[0.4em] uppercase opacity-60">Success Rate</div>
+               <div className="font-heading  text-[10px] tracking-[0.4em] capitalize opacity-60">Success Rate</div>
             </div>
          </div>
       </section>
@@ -189,8 +189,8 @@ export default function TeamPage() {
       {/* 4. Final CTA */}
       <section className="py-16 md:py-24 px-6 lg:px-12 max-w-[1400px] mx-auto text-center border-t border-white/5">
          <Link href="/contact" className="group flex flex-col items-center">
-            <div className="font-mono text-[11px] tracking-[0.8em] text-white/30 uppercase mb-12">Next Move</div>
-            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase text-white group-hover:text-[#6324FC] transition-colors duration-700 italic">
+            <div className="font-heading  text-[11px] tracking-[0.8em] text-white/30 capitalize mb-12">Next Move</div>
+            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize text-white group-hover:text-[#6324FC] transition-colors duration-700 italic">
                JOIN THE SQUAD.
             </h2>
             <div className="mt-20 w-32 h-32 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-[#6324FC] transition-all duration-700">

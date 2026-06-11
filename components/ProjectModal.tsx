@@ -120,7 +120,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
           <div className="flex items-center justify-between px-8 py-6 border-b border-white/[0.03]">
             <div className="flex items-center gap-3">
               <div className="w-8 h-[1px] bg-[#6324FC]" />
-              <div className="font-mono text-[9px] tracking-[0.3em] uppercase text-white/30">
+              <div className="font-heading  text-[9px] tracking-[0.3em] capitalize text-white/30">
                 {step < 5 ? `Request Pipeline // Phase 0${step}` : "Status: Confirmed"}
               </div>
             </div>
@@ -155,7 +155,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                   className="flex flex-col gap-10"
                 >
                   <div className="space-y-4">
-                    <h2 className="font-heading text-4xl lg:text-5xl uppercase tracking-tight text-white leading-tight">
+                    <h2 className="font-heading text-4xl lg:text-5xl capitalize tracking-tight text-white leading-tight">
                       What can we <span className="text-[#6324FC] italic">architect</span> <br/>
                       for your enterprise?
                     </h2>
@@ -179,7 +179,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                           }`}>
                             <svc.icon className="w-5 h-5" />
                           </div>
-                          <span className="font-heading  uppercase tracking-tight">{svc.id}</span>
+                          <span className="font-heading  capitalize tracking-tight">{svc.id}</span>
                           
                           {isSelected && (
                             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute -top-1 -right-1 w-5 h-5 bg-[#6324FC] rounded-full flex items-center justify-center">
@@ -202,7 +202,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                   exit={{ opacity: 0, y: -10 }}
                   className="flex flex-col gap-10"
                 >
-                  <h2 className="font-heading text-4xl lg:text-5xl uppercase tracking-tight text-white leading-tight">
+                  <h2 className="font-heading text-4xl lg:text-5xl capitalize tracking-tight text-white leading-tight">
                     Define your <span className="text-[#6324FC] italic">strategic</span> <br/>
                     investment range.
                   </h2>
@@ -217,7 +217,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                             : 'bg-white/[0.02] border-white/5 text-white/30 hover:border-white/10 hover:text-white'
                         }`}
                       >
-                        <span className="font-heading text-xl uppercase tracking-tight">{b}</span>
+                        <span className="font-heading text-xl capitalize tracking-tight">{b}</span>
                         <div className={`w-8 h-8 rounded-full border border-white/5 flex items-center justify-center transition-all ${budget === b ? 'bg-[#6324FC] border-[#6324FC]' : 'group-hover:border-white/20'}`}>
                           <ArrowRight className="w-4 h-4" />
                         </div>
@@ -236,7 +236,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                   exit={{ opacity: 0, y: -10 }}
                   className="flex flex-col gap-10 h-full"
                 >
-                  <h2 className="font-heading text-4xl lg:text-5xl uppercase tracking-tight text-white leading-tight">
+                  <h2 className="font-heading text-4xl lg:text-5xl capitalize tracking-tight text-white leading-tight">
                     Detail the <span className="text-[#6324FC] italic">vision</span> <br/>
                     of this objective.
                   </h2>
@@ -259,7 +259,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                   exit={{ opacity: 0, y: -10 }}
                   className="flex flex-col gap-10"
                 >
-                  <h2 className="font-heading text-4xl lg:text-5xl uppercase tracking-tight text-white leading-tight">
+                  <h2 className="font-heading text-4xl lg:text-5xl capitalize tracking-tight text-white leading-tight">
                     Finalize your <span className="text-[#6324FC] italic">professional</span> <br/>
                     identification.
                   </h2>
@@ -268,14 +268,14 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                     <motion.div 
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="bg-red-500/10 border border-red-500/20 text-red-500 font-mono text-[10px] py-3 px-6 rounded-xl text-center"
+                      className="bg-red-500/10 border border-red-500/20 text-red-500 font-heading  text-[10px] py-3 px-6 rounded-xl text-center"
                     >
                       {error}
                     </motion.div>
                   )}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-3">
-                      <label className="font-mono text-[9px] tracking-widest uppercase text-white/20">Full Name</label>
+                      <label className="font-heading  text-[9px] tracking-widest capitalize text-white/20">Full Name</label>
                       <input 
                         type="text" 
                         value={contact.name}
@@ -285,7 +285,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                       />
                     </div>
                     <div className="space-y-3">
-                      <label className="font-mono text-[9px] tracking-widest uppercase text-white/20">Email Address</label>
+                      <label className="font-heading  text-[9px] tracking-widest capitalize text-white/20">Email Address</label>
                       <input 
                         type="email" 
                         value={contact.email}
@@ -310,7 +310,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                     <CheckCircle2 className="w-10 h-10" />
                   </div>
                   <div className="space-y-4">
-                    <h2 className="font-heading text-5xl uppercase tracking-tight text-white">
+                    <h2 className="font-heading text-5xl capitalize tracking-tight text-white">
                       Transmission <br/><span className="text-[#6324FC] italic">Confirmed.</span>
                     </h2>
                     <p className="font-sans font-light  text-white/30 max-w-sm mx-auto">
@@ -319,7 +319,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                   </div>
                   <button 
                     onClick={onClose}
-                    className="px-10 py-4 bg-white text-black font-heading  uppercase tracking-tight hover:bg-[#6324FC] hover:text-white transition-all duration-300 rounded-full"
+                    className="px-10 py-4 bg-white text-black font-heading  capitalize tracking-tight hover:bg-[#6324FC] hover:text-white transition-all duration-300 rounded-full"
                   >
                     Return to Portal
                   </button>
@@ -335,7 +335,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
               {step > 1 ? (
                 <button 
                   onClick={handlePrev}
-                  className="font-mono text-[10px] tracking-widest uppercase text-white/20 hover:text-white transition-colors"
+                  className="font-heading  text-[10px] tracking-widest capitalize text-white/20 hover:text-white transition-colors"
                 >
                   ← Previous Phase
                 </button>
@@ -351,7 +351,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                 }
                 className="group relative px-10 py-4 bg-[#6324FC] rounded-full flex items-center gap-3 transition-all duration-500 disabled:opacity-20 disabled:cursor-not-allowed"
               >
-                <span className="font-heading  uppercase tracking-tight text-white">
+                <span className="font-heading  capitalize tracking-tight text-white">
                   {isSubmitting ? "Transmitting..." : step === 4 ? "Submit Request" : "Next Phase"}
                 </span>
                 {isSubmitting ? (

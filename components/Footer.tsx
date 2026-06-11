@@ -75,7 +75,7 @@ export default function Footer() {
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="font-mono text-[#6324FC] tracking-[0.5em] text-[10px] uppercase mb-12 flex items-center gap-4"
+    className="font-heading  text-[#6324FC] tracking-[0.5em] text-[10px] capitalize mb-12 flex items-center gap-4"
   >
     <span className="w-12 h-[1px] bg-[#6324FC]" /> 
     COLLABORATE WITH US
@@ -89,7 +89,7 @@ export default function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-      className="font-heading text-5xl md:text-7xl leading-[0.8] tracking-tighter uppercase select-none flex-1"
+      className="font-heading text-5xl md:text-7xl leading-[0.8] tracking-tighter capitalize select-none flex-1"
     >
       LET&apos;S SCALE <br/>
       <span className="stroke-text text-transparent italic opacity-80">WORLDWIDE.</span>
@@ -103,7 +103,7 @@ export default function Footer() {
     >
       <button 
         onClick={() => openModal()}
-        className="group relative px-8 md:px-16 py-5 md:py-8 bg-black dark:bg-white text-white dark:text-black font-heading md:text-xl tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 flex items-center justify-between gap-4 md:gap-10 uppercase hover:pr-12 md:hover:pr-20 w-full md:w-auto"
+        className="group relative px-8 md:px-16 py-5 md:py-8 bg-black dark:bg-white text-white dark:text-black font-heading md:text-xl tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 flex items-center justify-between gap-4 md:gap-10 capitalize hover:pr-12 md:hover:pr-20 w-full md:w-auto"
       >
         <div className="absolute inset-0 bg-[#6324FC] translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
         <span className="relative z-10 group-hover:text-white transition-colors duration-500 text-center">
@@ -125,7 +125,7 @@ export default function Footer() {
           <div className="col-span-1 lg:col-span-5 flex flex-col lg:pr-24">
             <div className="flex items-center gap-4 mb-6">
               <span className="w-8 h-[1px] bg-[#6324FC]" />
-              <span className="font-mono text-[10px] tracking-[0.4em] text-[#6324FC] uppercase">JOIN THE COLLECTIVE</span>
+              <span className="font-heading  text-[10px] tracking-[0.4em] text-[#6324FC] capitalize ">JOIN THE COLLECTIVE</span>
             </div>
             <div className="relative h-12 w-36 mb-6">
               <Image 
@@ -142,7 +142,7 @@ export default function Footer() {
               <input 
                 type="email" 
                 placeholder="EMAIL ADDRESS" 
-                className="w-full bg-primary/5 dark:bg-white/5 border border-primary/10 dark:border-white/10 rounded-xl px-6 py-5 text-sm tracking-[0.2em] uppercase focus:outline-none focus:border-[#6324FC] focus:bg-primary/10 dark:focus:bg-white/10 transition-all placeholder:text-primary/30"
+                className="w-full bg-primary/5 dark:bg-white/5 border border-primary/10 dark:border-white/10 rounded-xl px-6 py-5 text-sm tracking-[0.2em] capitalize focus:outline-none focus:border-[#6324FC] focus:bg-primary/10 dark:focus:bg-white/10 transition-all placeholder:text-primary/30"
               />
               <button className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-[#6324FC] text-white rounded-lg hover:scale-105 transition-transform shadow-[0_0_20px_rgba(99,36,252,0.3)]">
                 <ArrowRight className="w-5 h-5" />
@@ -154,7 +154,7 @@ export default function Footer() {
           <div className="col-span-1 lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-6 lg:gap-8 lg:mt-0">
             {footerLinks.map((column, idx) => (
               <div key={idx} className="flex flex-col gap-6">
-                <div className="font-sans  font-bold text-primary/95 dark:text-primary/90 tracking-wider uppercase">
+                <div className="font-sans  font-bold text-primary/95 dark:text-primary/90 tracking-wider capitalize ">
                   {column.title}
                 </div>
                 <ul className="flex flex-col gap-3.5">
@@ -198,7 +198,7 @@ export default function Footer() {
                    <div className="relative w-1.5 h-1.5 rounded-full bg-[#6324FC]" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-primary/60 group-hover:text-[#6324FC] transition-colors">{loc.city}</span>
+                  <span className="font-heading  text-[10px] tracking-[0.3em] capitalize text-primary/60 group-hover:text-[#6324FC] transition-colors">{loc.city}</span>
                   <span className="font-heading text-xl tracking-tight text-primary">
                     {mounted ? now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: loc.tz, hour12: true }) : "--:--"}
                   </span>
@@ -209,7 +209,7 @@ export default function Footer() {
 
           {/* Legal & Copyright */}
           <div className="flex flex-col lg:items-end gap-6">
-            <div className="flex gap-8 font-mono text-[10px] tracking-widest text-primary/60 uppercase">
+            <div className="flex gap-8 font-heading  text-[10px] tracking-widest text-primary/60 capitalize ">
               <Link href="/privacy-policy" className="hover:text-[#6324FC] transition-colors">PRIVACY</Link>
               <Link href="/terms" className="hover:text-[#6324FC] transition-colors">TERMS</Link>
               <Link href="/cookies" className="hover:text-[#6324FC] transition-colors">COOKIES</Link>
@@ -266,30 +266,30 @@ export default function Footer() {
           <g transform="translate(200, 130)">
             <circle r="3" fill="#6324FC" />
             <motion.circle r="12" fill="none" stroke="#6324FC" strokeWidth="1" animate={{ scale: [1, 2.5], opacity: [0.8, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut" }} />
-            <text y="-14" textAnchor="middle" className="font-mono text-[9px] font-bold fill-primary tracking-[0.2em] uppercase">NYC HUB</text>
-            <text y="18" textAnchor="middle" className="font-mono text-[7px] fill-primary/30 tracking-widest">40.7128° N / 74.0060° W</text>
+            <text y="-14" textAnchor="middle" className="font-heading  text-[9px] font-bold fill-primary tracking-[0.2em] capitalize ">NYC HUB</text>
+            <text y="18" textAnchor="middle" className="font-heading  text-[7px] fill-primary/30 tracking-widest">40.7128° N / 74.0060° W</text>
           </g>
 
           {/* Hub 2 (London - approx 600, 90) */}
           <g transform="translate(600, 90)">
             <circle r="3" fill="#A855F7" />
             <motion.circle r="12" fill="none" stroke="#A855F7" strokeWidth="1" animate={{ scale: [1, 2.5], opacity: [0.8, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut", delay: 0.8 }} />
-            <text y="-14" textAnchor="middle" className="font-mono text-[9px] font-bold fill-primary tracking-[0.2em] uppercase">LDN HUB</text>
-            <text y="18" textAnchor="middle" className="font-mono text-[7px] fill-primary/30 tracking-widest">51.5074° N / 0.1278° W</text>
+            <text y="-14" textAnchor="middle" className="font-heading  text-[9px] font-bold fill-primary tracking-[0.2em] capitalize ">LDN HUB</text>
+            <text y="18" textAnchor="middle" className="font-heading  text-[7px] fill-primary/30 tracking-widest">51.5074° N / 0.1278° W</text>
           </g>
 
           {/* Hub 3 (Dubai - approx 1000, 130) */}
           <g transform="translate(1000, 130)">
             <circle r="3" fill="#00E5FF" />
             <motion.circle r="12" fill="none" stroke="#00E5FF" strokeWidth="1" animate={{ scale: [1, 2.5], opacity: [0.8, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut", delay: 1.6 }} />
-            <text y="-14" textAnchor="middle" className="font-mono text-[9px] font-bold fill-primary tracking-[0.2em] uppercase">DXB HUB</text>
-            <text y="18" textAnchor="middle" className="font-mono text-[7px] fill-primary/30 tracking-widest">25.2048° N / 55.2708° E</text>
+            <text y="-14" textAnchor="middle" className="font-heading  text-[9px] font-bold fill-primary tracking-[0.2em] capitalize ">DXB HUB</text>
+            <text y="18" textAnchor="middle" className="font-heading  text-[7px] fill-primary/30 tracking-widest">25.2048° N / 55.2708° E</text>
           </g>
         </svg>
         
         {/* Center brand watermark behind nodes with letter wave float & infinite gradient shifts */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
-          <h2 className="font-heading text-[14vw] tracking-[0.05em] leading-none uppercase font-bold flex">
+          <h2 className="font-heading text-[14vw] tracking-[0.05em] leading-none capitalize font-bold flex">
             {["I", "N", "J", "A", "A", "Z", "H"].map((char, index) => (
               <motion.span
                 key={index}

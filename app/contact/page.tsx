@@ -15,7 +15,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              className="font-mono text-xs tracking-[0.3em] uppercase flex items-center gap-4 mb-8 text-[#6324FC]"
+              className="font-heading  text-xs tracking-[0.3em] capitalize flex items-center gap-4 mb-8 text-[#6324FC]"
             >
               <span className="w-8 h-[1px] bg-[#6324FC]" /> GET IN TOUCH
             </motion.div>
@@ -24,7 +24,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 1 }}
-              className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-8"
+              className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-8"
             >
               LET'S <br/><span className="italic text-[#6324FC]">TALK.</span>
             </motion.h1>
@@ -46,7 +46,7 @@ export default function ContactPage() {
             className="flex flex-col gap-12 mt-16 lg:mt-0"
           >
             <div>
-              <h3 className="font-mono text-xs tracking-widest uppercase text-primary/40 mb-4 flex items-center gap-2">
+              <h3 className="font-heading  text-xs tracking-widest capitalize text-primary/40 mb-4 flex items-center gap-2">
                 <Mail className="w-4 h-4" /> Email Us
               </h3>
               <a href="mailto:hello@injaazh.com" className="font-sans text-3xl md:text-4xl hover:text-[#6324FC] transition-colors relative group inline-block">
@@ -56,7 +56,7 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <h3 className="font-mono text-xs tracking-widest uppercase text-primary/40 mb-6 flex items-center gap-2">
+              <h3 className="font-heading  text-xs tracking-widest capitalize text-primary/40 mb-6 flex items-center gap-2">
                 <MapPin className="w-4 h-4" /> Global Offices
               </h3>
               <div className="grid grid-cols-2 gap-8 font-sans">
@@ -84,7 +84,7 @@ export default function ContactPage() {
           >
             
             <div className="flex flex-col gap-4">
-              <label className="font-mono text-xs tracking-widest uppercase text-primary/60">01. What's your name?</label>
+              <label className="font-heading  text-xs tracking-widest capitalize text-primary/60">01. What's your name?</label>
               <input 
                 type="text" 
                 placeholder="John Doe *" 
@@ -94,7 +94,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex flex-col gap-4">
-              <label className="font-mono text-xs tracking-widest uppercase text-primary/60">02. What's your email?</label>
+              <label className="font-heading  text-xs tracking-widest capitalize text-primary/60">02. What's your email?</label>
               <input 
                 type="email" 
                 placeholder="john@company.com *" 
@@ -104,7 +104,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex flex-col gap-4">
-              <label className="font-mono text-xs tracking-widest uppercase text-primary/60">03. Tell us about your project</label>
+              <label className="font-heading  text-xs tracking-widest capitalize text-primary/60">03. Tell us about your project</label>
               <textarea 
                 placeholder="Hello Injaazh, I need a new web architecture for..." 
                 rows={3}
@@ -114,7 +114,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex flex-col gap-6">
-              <label className="font-mono text-xs tracking-widest uppercase text-primary/60">04. Project Budget (USD)</label>
+              <label className="font-heading  text-xs tracking-widest capitalize text-primary/60">04. Project Budget (USD)</label>
               <div className="flex flex-wrap gap-4">
                 {["$10k - $25k", "$25k - $50k", "$50k - $100k", "$100k+"].map((budget) => (
                   <label key={budget} className="cursor-pointer">
@@ -128,7 +128,7 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-8">
-              <button type="submit" className="flex items-center gap-4 bg-primary text-background px-12 py-6 rounded-full font-mono text-sm tracking-widest uppercase hover:scale-105 hover:bg-[#6324FC] hover:text-white transition-all duration-300 shadow-2xl">
+              <button type="submit" className="flex items-center gap-4 bg-primary text-background px-12 py-6 rounded-full font-heading  text-sm tracking-widest capitalize hover:scale-105 hover:bg-[#6324FC] hover:text-white transition-all duration-300 shadow-2xl">
                 SEND MESSAGE <ArrowUpRight className="w-5 h-5" />
               </button>
             </div>

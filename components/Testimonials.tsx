@@ -52,12 +52,12 @@ export default function Testimonials() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase mb-8 flex items-center gap-4"
+              className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize mb-8 flex items-center gap-4"
             >
               <span className="w-12 h-[1px] bg-[#6324FC]" /> 
               CLIENT SUCCESS STORIES
             </motion.div>
-            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white mb-4 uppercase">
+            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white mb-4 capitalize ">
               TRUSTED <br/>
               <span className="stroke-white italic opacity-80">BY LEADERS.</span>
             </h2>
@@ -65,7 +65,7 @@ export default function Testimonials() {
           
           <div className="flex flex-col items-end text-right">
             <div className="flex items-center gap-6 mb-4">
-              <div className="font-mono text-[10px] text-white/40 uppercase tracking-[0.4em]">Global Rating</div>
+              <div className="font-heading  text-[10px] text-white/40 capitalize tracking-[0.4em]">Global Rating</div>
               <div className="font-heading text-4xl text-white">4.9<span className="text-white/30 text-2xl">/5</span></div>
             </div>
             <div className="flex gap-2">
@@ -122,9 +122,9 @@ export default function Testimonials() {
                     <div className="flex flex-col">
                       <div className="flex items-center gap-3 mb-1">
                         <span className="font-heading text-xl text-white group-hover:text-[#6324FC] transition-colors">{rev.name}</span>
-                        <span className="font-mono text-[8px] text-white/50 bg-white/5 px-2 py-0.5 rounded border border-white/10 uppercase tracking-widest">{rev.flag}</span>
+                        <span className="font-heading  text-[8px] text-white/50 bg-white/5 px-2 py-0.5 rounded border border-white/10 capitalize tracking-widest">{rev.flag}</span>
                       </div>
-                      <span className="font-mono text-[9px] tracking-[0.2em] text-white/40 uppercase">
+                      <span className="font-heading  text-[9px] tracking-[0.2em] text-white/40 capitalize ">
                         {rev.role}
                       </span>
                     </div>
@@ -153,15 +153,15 @@ export default function Testimonials() {
         <div className="mt-16 md:mt-24 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 relative z-10">
            <div className="flex flex-col items-center justify-center py-8 md:py-10 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
              <span className="font-heading text-4xl md:text-6xl text-white group-hover:text-[#6324FC] transition-colors duration-500 mb-2 leading-none">98%</span>
-             <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase text-white/50 group-hover:text-white/80 transition-colors duration-500">RETENTION RATE</span>
+             <span className="font-heading  text-[10px] md:text-xs tracking-[0.4em] capitalize text-white/50 group-hover:text-white/80 transition-colors duration-500">RETENTION RATE</span>
            </div>
            <div className="flex flex-col items-center justify-center py-8 md:py-10 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
              <span className="font-heading text-4xl md:text-6xl text-white group-hover:text-[#00E5FF] transition-colors duration-500 mb-2 leading-none">24/7</span>
-             <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase text-white/50 group-hover:text-white/80 transition-colors duration-500">GLOBAL SUPPORT</span>
+             <span className="font-heading  text-[10px] md:text-xs tracking-[0.4em] capitalize text-white/50 group-hover:text-white/80 transition-colors duration-500">GLOBAL SUPPORT</span>
            </div>
            <div className="flex flex-col items-center justify-center py-8 md:py-10 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
              <span className="font-heading text-4xl md:text-6xl text-white group-hover:text-[#6324FC] transition-colors duration-500 mb-2 leading-none">500+</span>
-             <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase text-white/50 group-hover:text-white/80 transition-colors duration-500">PROJECTS DELIVERED</span>
+             <span className="font-heading  text-[10px] md:text-xs tracking-[0.4em] capitalize text-white/50 group-hover:text-white/80 transition-colors duration-500">PROJECTS DELIVERED</span>
            </div>
         </div>
 

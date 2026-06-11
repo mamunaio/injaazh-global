@@ -51,7 +51,7 @@ export default function GlobalImpact() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 md:mb-20 border-b border-white/20 pb-12">
           <div>
-            <div className="font-mono text-white/60 text-sm tracking-[0.3em] uppercase mb-6">
+            <div className="font-heading  text-white/60 text-sm tracking-[0.3em] capitalize mb-6">
               // GLOBAL IMPACT
             </div>
             <h2 className="sr-only">Global Web Design and SEO Agency Serving US, UK, CA, and AU Markets</h2>
@@ -75,7 +75,7 @@ export default function GlobalImpact() {
             <div className="font-heading text-5xl md:text-6xl tracking-wider mb-2">
               <AnimatedCounter from={0} to={500} duration={2.5} suffix="+" />
             </div>
-            <div className="font-mono text-[10px] md:text-xs tracking-[0.3em] text-white/70 border-t border-white/20 pt-4 mt-2 group-hover:border-white/50 transition-colors duration-500">
+            <div className="font-heading  text-[10px] md:text-xs tracking-[0.3em] text-white/70 border-t border-white/20 pt-4 mt-2 group-hover:border-white/50 transition-colors duration-500">
               PROJECTS DELIVERED
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function GlobalImpact() {
             <div className="font-heading text-5xl md:text-6xl tracking-wider mb-2">
               <AnimatedCounter from={0} to={25} duration={2} suffix="+" />
             </div>
-            <div className="font-mono text-[10px] md:text-xs tracking-[0.3em] text-white/70 border-t border-white/20 pt-4 mt-2 group-hover:border-white/50 transition-colors duration-500">
+            <div className="font-heading  text-[10px] md:text-xs tracking-[0.3em] text-white/70 border-t border-white/20 pt-4 mt-2 group-hover:border-white/50 transition-colors duration-500">
               COUNTRIES REACHED
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function GlobalImpact() {
             <div className="font-heading text-5xl md:text-6xl tracking-wider mb-2">
               <AnimatedCounter from={0} to={1000} duration={3} suffix="+" />
             </div>
-            <div className="font-mono text-[10px] md:text-xs tracking-[0.3em] text-white/70 border-t border-white/20 pt-4 mt-2 group-hover:border-white/50 transition-colors duration-500">
+            <div className="font-heading  text-[10px] md:text-xs tracking-[0.3em] text-white/70 border-t border-white/20 pt-4 mt-2 group-hover:border-white/50 transition-colors duration-500">
               CLIENTS SERVED
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function GlobalImpact() {
           {/* Row 1: Left moving */}
           <div className="animate-marquee flex whitespace-nowrap opacity-40 group-hover:opacity-100 transition-opacity duration-700" style={{ animationDuration: '60s' }}>
             {[...Array(3)].map((_, i) => (
-              <div key={i} className="flex gap-12 items-center font-heading text-5xl md:text-6xl tracking-tight mr-12 uppercase">
+              <div key={i} className="flex gap-12 items-center font-heading text-5xl md:text-6xl tracking-tight mr-12 capitalize ">
                 {industries.slice(0, 10).map((industry, pIdx) => (
                   <div key={pIdx} className="flex items-center gap-12">
                     <span className={`hover:text-[#6324FC] transition-colors cursor-crosshair ${pIdx % 2 !== 0 ? 'stroke-white italic opacity-80' : 'text-white'}`}>
@@ -134,7 +134,7 @@ export default function GlobalImpact() {
           {/* Row 2: Right moving */}
           <div className="animate-marquee-reverse flex whitespace-nowrap opacity-40 group-hover:opacity-100 transition-opacity duration-700" style={{ animationDuration: '60s' }}>
             {[...Array(3)].map((_, i) => (
-              <div key={i} className="flex gap-12 items-center font-heading text-5xl md:text-6xl tracking-tight mr-12 uppercase">
+              <div key={i} className="flex gap-12 items-center font-heading text-5xl md:text-6xl tracking-tight mr-12 capitalize ">
                 {industries.slice(10).map((industry, pIdx) => (
                   <div key={pIdx} className="flex items-center gap-12">
                     <span className={`hover:text-[#00E5FF] transition-colors cursor-crosshair ${pIdx % 2 === 0 ? 'stroke-white italic opacity-80' : 'text-white'}`}>

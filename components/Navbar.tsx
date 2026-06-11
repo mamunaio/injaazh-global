@@ -237,7 +237,7 @@ export default function Navbar() {
                 {/* Bouncing/pulsating dot */}
                 <span className="w-2 h-2 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
                 
-                <span className="relative z-10 flex items-center gap-2 font-heading  tracking-wider text-primary uppercase transition-colors duration-500">
+                <span className="relative z-10 flex items-center gap-2 font-heading  tracking-wider text-primary capitalize transition-colors duration-500">
                   LET'S TALK
                   <ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform duration-500 text-[#6324FC] dark:group-hover:text-white" />
                 </span>
@@ -261,7 +261,7 @@ export default function Navbar() {
                   {/* Pulsating dot */}
                   <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
                   
-                  <span className="relative z-10 flex items-center gap-1 font-heading text-xs tracking-wider text-primary uppercase transition-colors duration-500">
+                  <span className="relative z-10 flex items-center gap-1 font-heading text-xs tracking-wider text-primary capitalize transition-colors duration-500">
                     LET'S TALK
                     <ArrowRight className="w-3 h-3 -rotate-45 group-hover:rotate-0 transition-transform duration-500 text-[#6324FC] dark:group-hover:text-white" />
                   </span>
@@ -330,13 +330,13 @@ export default function Navbar() {
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="col-span-4 border-l border-primary/10 pl-8"
                   >
-                    <div className="text-xs font-mono text-[#6324FC] uppercase tracking-widest mb-4">Featured Case Study</div>
+                    <div className="text-xs font-heading  text-[#6324FC] capitalize tracking-widest mb-4">Featured Case Study</div>
                     <Link href="/work/themesjet" onClick={() => setIsHovered(false)} className="group relative block overflow-hidden rounded-none cursor-pointer">
                       <div className="relative w-full aspect-video bg-primary/5 border border-primary/10 mb-4 overflow-hidden">
                         <div className="absolute inset-0 bg-[#6324FC]/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500" />
                         <Image src="/assets/themes_jet_final.webp" alt="ThemesJet" fill className="object-cover scale-100 group-hover:scale-105 transition-transform duration-700" />
                       </div>
-                      <div className="font-mono text-[10px] tracking-widest text-[#6324FC] mb-2">WEB DEV · MARKETPLACE · 🌐 GLOBAL</div>
+                      <div className="font-heading  text-[10px] tracking-widest text-[#6324FC] mb-2">WEB DEV · MARKETPLACE · 🌐 GLOBAL</div>
                       <h4 className="font-heading text-2xl tracking-wide text-primary group-hover:text-[#6324FC] transition-colors mb-2">ThemesJet — Premium Marketplace</h4>
                       <div className="font-sans text-sm font-light text-primary/50 mb-3">500+ Assets · 10k+ Developers</div>
                       <p className="font-sans text-sm font-light text-primary/60 flex items-center gap-2 group-hover:text-primary transition-colors">
@@ -452,7 +452,7 @@ export default function Navbar() {
 
                     {/* Get in touch footer */}
                     <div className="mt-auto pt-8">
-                      <div className="font-mono text-xs text-primary/40 tracking-widest uppercase mb-4">Get in touch</div>
+                      <div className="font-heading  text-xs text-primary/40 tracking-widest capitalize mb-4">Get in touch</div>
                       <a href="mailto:contact@injaazh.com" className="font-sans font-light text-xl text-[#6324FC]">contact@injaazh.com</a>
                     </div>
                   </motion.div>
@@ -477,7 +477,7 @@ export default function Navbar() {
                         setCurrentPane("main");
                         setActiveCategory(null);
                       }}
-                      className="flex items-center gap-2 font-mono text-[10px] tracking-widest text-primary/50 hover:text-primary transition-colors text-left uppercase mb-4 cursor-pointer"
+                      className="flex items-center gap-2 font-heading  text-[10px] tracking-widest text-primary/50 hover:text-primary transition-colors text-left capitalize mb-4 cursor-pointer"
                     >
                       <ArrowRight className="w-4 h-4 rotate-180 text-[#6324FC]" />
                       Back to Menu

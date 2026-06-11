@@ -21,13 +21,13 @@ export default function DataDeletion() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-center"
           >
-            <div className="font-mono text-[#6324FC] tracking-[0.5em] text-[10px] uppercase mb-10 flex justify-center items-center gap-4">
+            <div className="font-heading  text-[#6324FC] tracking-[0.5em] text-[10px] capitalize mb-10 flex justify-center items-center gap-4">
               <span className="w-12 h-[1px] bg-[#6324FC]" /> 
               Compliance & Privacy
               <span className="w-12 h-[1px] bg-[#6324FC]" />
             </div>
             
-            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-10">
+            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-10">
               DATA DELETION <br/>
               <span className="stroke-text text-transparent italic opacity-30">INSTRUCTIONS</span>
             </h1>
@@ -56,7 +56,7 @@ export default function DataDeletion() {
                 <ShieldCheck className="text-[#6324FC] w-8 h-8" />
               </div>
               <div className="space-y-8">
-                <h2 className="font-heading text-4xl tracking-tight uppercase">Method 1: via Facebook Settings</h2>
+                <h2 className="font-heading text-4xl tracking-tight capitalize ">Method 1: via Facebook Settings</h2>
                 <p className="font-sans text-white/60  leading-relaxed">
                   If you have used our app with Facebook Login, you can remove your activities by following these steps:
                 </p>
@@ -69,7 +69,7 @@ export default function DataDeletion() {
                      "Click the Remove button."
                    ].map((step, i) => (
                      <div key={i} className="flex gap-4 items-start">
-                       <span className="font-mono text-[#6324FC] text-sm font-bold">0{i+1}.</span>
+                       <span className="font-heading  text-[#6324FC] text-sm font-bold">0{i+1}.</span>
                        <p className="font-sans text-white/40 text-sm leading-relaxed">{step}</p>
                      </div>
                    ))}
@@ -93,7 +93,7 @@ export default function DataDeletion() {
                 <Mail className="text-[#00E5FF] w-8 h-8" />
               </div>
               <div className="space-y-8">
-                <h2 className="font-heading text-4xl tracking-tight uppercase">Method 2: Manual Deletion Request</h2>
+                <h2 className="font-heading text-4xl tracking-tight capitalize ">Method 2: Manual Deletion Request</h2>
                 <p className="font-sans text-white/60  leading-relaxed">
                   To request manual deletion of any data associated with your account from our servers, please contact our data protection team directly:
                 </p>
@@ -101,7 +101,7 @@ export default function DataDeletion() {
                   href="mailto:info@injaazh.com" 
                   className="inline-flex items-center gap-6 px-10 py-5 bg-white/[0.03] hover:bg-[#6324FC] border border-white/10 rounded-full transition-all duration-500 group"
                 >
-                  <span className="font-heading text-2xl tracking-tighter uppercase group-hover:text-white">info@injaazh.com</span>
+                  <span className="font-heading text-2xl tracking-tighter capitalize group-hover:text-white">info@injaazh.com</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </a>
                 <div className="p-6 bg-white/[0.01] border-l border-white/10 rounded-r-2xl">
@@ -124,7 +124,7 @@ export default function DataDeletion() {
               <ShieldAlert className="text-[#6324FC] w-6 h-6" />
             </div>
             <div className="space-y-2">
-              <h3 className="font-heading text-2xl tracking-wide uppercase text-[#6324FC]">Important Assurance</h3>
+              <h3 className="font-heading text-2xl tracking-wide capitalize text-[#6324FC]">Important Assurance</h3>
               <p className="font-sans text-white/40 text-sm leading-relaxed">
                 Once your request is processed, all personal data, activity logs, and identifiers will be permanently purged from our active databases and backup systems in accordance with GDPR and global privacy standards.
               </p>

@@ -51,10 +51,10 @@ export default function ConversionOptimizationPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase">Optimization Division</span>
+              <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">Optimization Division</span>
             </motion.div>
             
-            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-16">
+            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-16">
               CONVERSION <br/>
               <span className="stroke-text text-transparent italic opacity-40">MASTERY.</span>
             </h1>
@@ -92,7 +92,7 @@ export default function ConversionOptimizationPage() {
             />
             <div className="absolute inset-0 bg-[#6324FC]/10 mix-blend-overlay group-hover:opacity-0 transition-opacity" />
             <div className="absolute bottom-8 left-8 p-8 bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl">
-               <div className="font-mono text-[9px] text-[#00FFA3] mb-2 uppercase">Lifting Conversion By</div>
+               <div className="font-heading  text-[9px] text-[#00FFA3] mb-2 capitalize ">Lifting Conversion By</div>
                <div className="font-heading text-5xl text-white">+42%</div>
             </div>
           </motion.div>
@@ -101,10 +101,10 @@ export default function ConversionOptimizationPage() {
         {/* 2. Key Pillars */}
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-24">
-            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase max-w-xl">
+            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize max-w-xl">
               THE ART OF <span className="italic text-[#6324FC]">REVENUE GENERATION.</span>
             </h2>
-            <p className="font-mono text-[11px] tracking-widest text-white/30 uppercase max-w-xs leading-loose">
+            <p className="font-heading  text-[11px] tracking-widest text-white/30 capitalize max-w-xs leading-loose">
               Optimization is a science. We test, learn, and iterate until your user journey is mathematically perfect.
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function ConversionOptimizationPage() {
                 <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-10 transition-all duration-500 group-hover:scale-110" style={{ backgroundColor: `${f.color}15`, border: `1px solid ${f.color}30` }}>
                   <f.icon className="w-8 h-8" style={{ color: f.color }} />
                 </div>
-                <h3 className="font-heading text-2xl text-white mb-4 uppercase">{f.title}</h3>
+                <h3 className="font-heading text-2xl text-white mb-4 capitalize ">{f.title}</h3>
                 <p className="font-sans font-light text-white/40 text-base leading-relaxed">{f.description}</p>
               </motion.div>
             ))}
@@ -140,12 +140,12 @@ export default function ConversionOptimizationPage() {
               <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between">
                  <div className="flex justify-between items-start">
                     <Microscope className="w-8 h-8 text-[#6324FC]" />
-                    <div className="font-mono text-[9px] text-white/20 uppercase tracking-[0.3em]">Testing Node // 0x7B</div>
+                    <div className="font-heading  text-[9px] text-white/20 capitalize tracking-[0.3em]">Testing Node // 0x7B</div>
                  </div>
 
                  <div className="flex-1 flex items-center gap-4">
                     <div className="flex-1 space-y-4">
-                       <div className="font-mono text-[8px] text-white/20 uppercase">Variant A</div>
+                       <div className="font-heading  text-[8px] text-white/20 capitalize ">Variant A</div>
                        <div className="h-32 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center">
                           <Percent className="w-6 h-6 text-white/10" />
                        </div>
@@ -155,7 +155,7 @@ export default function ConversionOptimizationPage() {
                        <span className="font-heading text-xl text-[#6324FC]">VS</span>
                     </div>
                     <div className="flex-1 space-y-4">
-                       <div className="font-mono text-[8px] text-[#00FFA3] uppercase">Variant B</div>
+                       <div className="font-heading  text-[8px] text-[#00FFA3] capitalize ">Variant B</div>
                        <div className="h-32 bg-[#00FFA3]/10 rounded-xl border border-[#00FFA3]/30 flex items-center justify-center relative">
                           <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity }} className="w-3 h-3 bg-[#00FFA3] rounded-full" />
                           <div className="absolute inset-0 flex items-center justify-center opacity-10">
@@ -166,14 +166,14 @@ export default function ConversionOptimizationPage() {
                     </div>
                  </div>
 
-                 <div className="flex justify-between font-mono text-[9px] text-[#6324FC] uppercase tracking-widest">
+                 <div className="flex justify-between font-heading  text-[9px] text-[#6324FC] capitalize tracking-widest">
                     <span>Winner Identified</span>
                     <span>Statistical Significance: 99%</span>
                  </div>
               </div>
 
               <div>
-                <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-12">
+                <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-12">
                   THE SCIENCE OF <br/>
                   <span className="italic text-[#00FFA3]">PROFIT.</span>
                 </h2>
@@ -191,7 +191,7 @@ export default function ConversionOptimizationPage() {
                      <div key={i} className="flex gap-6 group">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#00FFA3] mt-2 group-hover:scale-150 transition-transform" />
                         <div className="space-y-1">
-                           <div className="font-heading text-2xl text-white uppercase">{item.label}</div>
+                           <div className="font-heading text-2xl text-white capitalize ">{item.label}</div>
                            <p className="font-sans font-light text-sm text-white/30">{item.desc}</p>
                         </div>
                      </div>
@@ -203,7 +203,7 @@ export default function ConversionOptimizationPage() {
 
         {/* 4. Strategic Flow */}
         <div className="py-16 md:py-24 border-b border-white/5">
-           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-24 text-center">
+           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-24 text-center">
               THE OPTIMIZATION <span className="italic text-[#6324FC]">CYCLE.</span>
            </h2>
 
@@ -216,7 +216,7 @@ export default function ConversionOptimizationPage() {
                 <div key={i} className="relative group">
                    <div className="font-heading text-[8rem] text-white/[0.02] absolute -top-12 -left-4 group-hover:text-[#6324FC]/5 transition-colors">{s.step}</div>
                    <div className="relative z-10 pt-12 space-y-6">
-                      <h3 className="font-heading text-3xl text-white uppercase">{s.title}</h3>
+                      <h3 className="font-heading text-3xl text-white capitalize ">{s.title}</h3>
                       <p className="font-sans font-light text-xl text-white/40 leading-relaxed border-l border-white/10 pl-8 group-hover:border-[#6324FC] transition-colors">
                         {s.desc}
                       </p>
@@ -228,7 +228,7 @@ export default function ConversionOptimizationPage() {
 
         {/* 5. Bottom CTA */}
         <div className="text-center py-16 md:py-24 border-t border-white/5">
-          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-12">
+          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-12">
             STOP LEAKING <span className="italic text-[#6324FC]">REVENUE.</span>
           </h2>
           <p className="font-sans text-white/40 text-2xl mb-16 max-w-2xl mx-auto leading-relaxed">
@@ -238,7 +238,7 @@ export default function ConversionOptimizationPage() {
             onClick={() => window.location.href='/contact'}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-16 py-8 bg-white text-black rounded-full font-heading text-2xl tracking-widest shadow-[0_30px_60px_rgba(255,255,255,0.1)] hover:bg-[#6324FC] hover:text-white transition-all flex items-center gap-6 mx-auto uppercase"
+            className="px-16 py-8 bg-white text-black rounded-full font-heading text-2xl tracking-widest shadow-[0_30px_60px_rgba(255,255,255,0.1)] hover:bg-[#6324FC] hover:text-white transition-all flex items-center gap-6 mx-auto capitalize "
           >
             START CONVERSION AUDIT ⚡
           </motion.button>

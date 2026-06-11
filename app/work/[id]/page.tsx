@@ -187,8 +187,8 @@ export default function UltraPremiumCaseStudy() {
              style={{ y: heroTextY }}
              className="text-center"
            >
-              <div className="font-mono text-[10px] tracking-[0.8em] text-[#6324FC] uppercase mb-8 ml-[0.8em]">Case Study // {project.id}</div>
-              <h1 className="font-heading text-[15vw] leading-[0.75] tracking-tighter uppercase mb-8">
+              <div className="font-heading  text-[10px] tracking-[0.8em] text-[#6324FC] capitalize mb-8 ml-[0.8em]">Case Study // {project.id}</div>
+              <h1 className="font-heading text-[15vw] leading-[0.75] tracking-tighter capitalize mb-8">
                  {project.title.split(' ')[0]} <br/>
                  <span className="stroke-text text-transparent italic opacity-40">{project.title.split(' ')[1] || ""}</span>
               </h1>
@@ -200,7 +200,7 @@ export default function UltraPremiumCaseStudy() {
 
         {/* Scroll Indicator Overlay */}
         <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4 opacity-30">
-           <div className="font-mono text-[9px] tracking-[0.4em] uppercase">Scroll to Explore</div>
+           <div className="font-heading  text-[9px] tracking-[0.4em] capitalize ">Scroll to Explore</div>
            <motion.div 
              animate={{ y: [0, 10, 0] }}
              transition={{ duration: 2, repeat: Infinity }}
@@ -213,7 +213,7 @@ export default function UltraPremiumCaseStudy() {
            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-[#6324FC] group-hover:border-[#6324FC] transition-all duration-500">
               <ArrowLeft className="w-4 h-4" />
            </div>
-           <span className="font-mono text-[9px] tracking-[0.4em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">Archive</span>
+           <span className="font-heading  text-[9px] tracking-[0.4em] capitalize opacity-0 group-hover:opacity-100 transition-opacity duration-500">Archive</span>
         </Link>
       </section>
 
@@ -241,14 +241,14 @@ export default function UltraPremiumCaseStudy() {
                     <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center">
                        <m.icon className="w-5 h-5 text-[#6324FC]" />
                     </div>
-                    <div className="font-mono text-[10px] tracking-widest text-white/20 uppercase">{m.label}</div>
+                    <div className="font-heading  text-[10px] tracking-widest text-white/20 capitalize ">{m.label}</div>
                  </div>
 
                  <div className="relative z-10 mt-auto">
                     <div className={`font-heading tracking-tighter leading-none ${m.size === 'large' ? 'text-9xl' : 'text-6xl'} text-white mb-2`}>
                        <NumberTicker value={m.val} suffix={m.suffix} prefix={m.prefix} />
                     </div>
-                    <div className="font-mono text-[9px] tracking-[0.3em] text-[#6324FC] uppercase">Validated Metric // 0x{i}</div>
+                    <div className="font-heading  text-[9px] tracking-[0.3em] text-[#6324FC] capitalize ">Validated Metric // 0x{i}</div>
                  </div>
               </motion.div>
             ))}
@@ -262,17 +262,17 @@ export default function UltraPremiumCaseStudy() {
             {/* Context Sidebar */}
             <div className="lg:col-span-4 space-y-16 lg:sticky lg:top-48">
                <div className="space-y-4">
-                  <div className="font-mono text-[9px] text-[#6324FC] tracking-[0.5em] uppercase">Core Intel</div>
+                  <div className="font-heading  text-[9px] text-[#6324FC] tracking-[0.5em] capitalize ">Core Intel</div>
                   <div className="flex flex-wrap gap-3">
                      {project.tags.map((tag: string, i: number) => (
-                       <span key={i} className="px-4 py-2 bg-white/5 border border-white/10 rounded-full font-mono text-[9px] text-white/40 uppercase">
+                       <span key={i} className="px-4 py-2 bg-white/5 border border-white/10 rounded-full font-heading  text-[9px] text-white/40 capitalize ">
                           {tag}
                        </span>
                      ))}
                   </div>
                </div>
 
-               <div className="grid grid-cols-2 gap-8 font-mono text-[9px] tracking-widest uppercase">
+               <div className="grid grid-cols-2 gap-8 font-heading  text-[9px] tracking-widest capitalize ">
                   <div className="space-y-2">
                      <div className="text-white/20">Client</div>
                      <div className="text-white text-base font-heading">{project.client}</div>
@@ -284,7 +284,7 @@ export default function UltraPremiumCaseStudy() {
                </div>
 
                <div className="p-8 bg-white/[0.02] border border-white/5 rounded-3xl space-y-6">
-                  <div className="font-mono text-[9px] text-[#6324FC] tracking-[0.5em] uppercase mb-4">Tech Stack</div>
+                  <div className="font-heading  text-[9px] text-[#6324FC] tracking-[0.5em] capitalize mb-4">Tech Stack</div>
                   <div className="grid grid-cols-1 gap-4">
                      {project.tech.map((t: any, i: number) => (
                        <div key={i} className="flex items-center justify-between group cursor-pointer">
@@ -292,7 +292,7 @@ export default function UltraPremiumCaseStudy() {
                              <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-[#6324FC]/20 transition-colors">
                                 <t.icon className="w-3.5 h-3.5 text-white/40 group-hover:text-[#6324FC]" />
                              </div>
-                             <span className="font-mono text-[10px] text-white/60 group-hover:text-white transition-colors uppercase">{t.name}</span>
+                             <span className="font-heading  text-[10px] text-white/60 group-hover:text-white transition-colors capitalize ">{t.name}</span>
                           </div>
                           <ArrowUpRight className="w-3 h-3 text-white/10 group-hover:text-[#6324FC] transition-colors" />
                        </div>
@@ -306,8 +306,8 @@ export default function UltraPremiumCaseStudy() {
                
                {/* Overview */}
                <div className="space-y-10">
-                  <div className="font-mono text-[11px] text-[#6324FC] tracking-[0.5em] uppercase">Project Essence</div>
-                  <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase">
+                  <div className="font-heading  text-[11px] text-[#6324FC] tracking-[0.5em] capitalize ">Project Essence</div>
+                  <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize ">
                      THE <span className="italic opacity-40">OVERVIEW.</span>
                   </h2>
                   <p className="font-sans font-light text-2xl md:text-4xl text-white/60 leading-tight">
@@ -324,8 +324,8 @@ export default function UltraPremiumCaseStudy() {
                     className="space-y-8"
                   >
                      <div className="w-12 h-[1px] bg-white/10" />
-                     <div className="font-mono text-[10px] text-white/30 tracking-[0.4em] uppercase">The Friction</div>
-                     <h3 className="font-heading text-4xl uppercase tracking-tighter">The Challenge</h3>
+                     <div className="font-heading  text-[10px] text-white/30 tracking-[0.4em] capitalize ">The Friction</div>
+                     <h3 className="font-heading text-4xl capitalize tracking-tighter">The Challenge</h3>
                      <p className="font-sans font-light text-xl text-white/40 leading-relaxed">{project.problem}</p>
                   </motion.div>
 
@@ -337,8 +337,8 @@ export default function UltraPremiumCaseStudy() {
                     className="space-y-8"
                   >
                      <div className="w-12 h-[1px] bg-[#6324FC]/30" />
-                     <div className="font-mono text-[10px] text-[#6324FC] tracking-[0.4em] uppercase">The Breakthrough</div>
-                     <h3 className="font-heading text-4xl uppercase tracking-tighter">The Solution</h3>
+                     <div className="font-heading  text-[10px] text-[#6324FC] tracking-[0.4em] capitalize ">The Breakthrough</div>
+                     <h3 className="font-heading text-4xl capitalize tracking-tighter">The Solution</h3>
                      <p className="font-sans font-light text-xl text-white/40 leading-relaxed">{project.solution}</p>
                   </motion.div>
                </div>
@@ -346,12 +346,12 @@ export default function UltraPremiumCaseStudy() {
                {/* Editorial Quote */}
                <div className="relative py-24 border-y border-white/5">
                   <Quote className="absolute top-10 left-0 w-20 h-20 text-[#6324FC] opacity-[0.05] pointer-events-none" />
-                  <blockquote className="font-heading text-5xl md:text-7xl text-center leading-[1.1] tracking-tighter uppercase">
+                  <blockquote className="font-heading text-5xl md:text-7xl text-center leading-[1.1] tracking-tighter capitalize ">
                      &quot;{project.testimonial.quote}&quot;
                   </blockquote>
                   <div className="mt-12 flex flex-col items-center gap-2">
                      <div className="font-heading text-2xl">{project.testimonial.author}</div>
-                     <div className="font-mono text-[9px] text-[#6324FC] tracking-[0.3em] uppercase">{project.testimonial.role}</div>
+                     <div className="font-heading  text-[9px] text-[#6324FC] tracking-[0.3em] capitalize ">{project.testimonial.role}</div>
                   </div>
                </div>
 
@@ -365,12 +365,12 @@ export default function UltraPremiumCaseStudy() {
          
          <div className="max-w-[1400px] mx-auto mb-24">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
-               <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase">
+               <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize ">
                   VISUAL <br/>
                   <span className="text-[#6324FC] italic">CHRONICLE.</span>
                </h2>
                <div className="max-w-sm border-l-2 border-[#6324FC] pl-8">
-                  <p className="font-mono text-[11px] tracking-widest uppercase text-black/40 mb-4">Gallery 0x{project.id}</p>
+                  <p className="font-heading  text-[11px] tracking-widest capitalize text-black/40 mb-4">Gallery 0x{project.id}</p>
                   <p className="font-sans font-light text-xl leading-relaxed">A surgical breakdown of the user experience and architectural depth of the project.</p>
                </div>
             </div>
@@ -388,11 +388,11 @@ export default function UltraPremiumCaseStudy() {
             </div>
             <div className="flex flex-col justify-center space-y-12 p-12">
                <div className="space-y-4">
-                  <div className="font-heading text-4xl uppercase tracking-tighter italic text-[#6324FC]">01 // Interaction Design</div>
+                  <div className="font-heading text-4xl capitalize tracking-tighter italic text-[#6324FC]">01 // Interaction Design</div>
                   <p className="font-sans font-light text-2xl text-black/60 leading-tight">We created a custom animation engine that handles state transitions with fluid, physics-based motion.</p>
                </div>
                <div className="space-y-4">
-                  <div className="font-heading text-4xl uppercase tracking-tighter italic text-[#6324FC]">02 // Performance Core</div>
+                  <div className="font-heading text-4xl capitalize tracking-tighter italic text-[#6324FC]">02 // Performance Core</div>
                   <p className="font-sans font-light text-2xl text-black/60 leading-tight">Optimizing every asset to ensure sub-second interaction times, regardless of device or network speed.</p>
                </div>
             </div>
@@ -416,8 +416,8 @@ export default function UltraPremiumCaseStudy() {
             </motion.div>
 
             <div className="relative z-10 text-center space-y-8">
-               <div className="font-mono text-[11px] tracking-[0.8em] text-white/30 uppercase">Next Masterpiece</div>
-               <h2 className="font-heading text-[15vw] leading-none tracking-tighter uppercase text-white group-hover:text-[#6324FC] transition-colors duration-700 italic">
+               <div className="font-heading  text-[11px] tracking-[0.8em] text-white/30 capitalize ">Next Masterpiece</div>
+               <h2 className="font-heading text-[15vw] leading-none tracking-tighter capitalize text-white group-hover:text-[#6324FC] transition-colors duration-700 italic">
                   {project.next.title.split(' ')[0]}
                </h2>
                <div className="flex items-center justify-center gap-6">

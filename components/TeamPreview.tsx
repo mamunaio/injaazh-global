@@ -52,12 +52,12 @@ export default function TeamPreview() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase mb-8 flex items-center gap-4"
+              className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize mb-8 flex items-center gap-4"
             >
               <span className="w-12 h-[1px] bg-[#6324FC]" /> 
               THE COLLECTIVE
             </motion.div>
-            <h2 className="font-heading text-5xl md:text-7xl tracking-tighter text-white leading-[0.85] uppercase">
+            <h2 className="font-heading text-5xl md:text-7xl tracking-tighter text-white leading-[0.85] capitalize ">
               THE MINDS BEHIND <br/>
               <span className="stroke-white italic opacity-80">INJAAZH.</span>
             </h2>
@@ -109,7 +109,7 @@ export default function TeamPreview() {
               <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col z-10">
                 <div className="w-8 h-[2px] bg-[#6324FC] mb-6 group-hover:w-16 transition-all duration-700 ease-out" />
                 
-                <div className="inline-flex w-fit px-3 py-1.5 bg-[#6324FC]/20 backdrop-blur-md border border-[#6324FC]/30 rounded-full font-mono text-[9px] md:text-[10px] tracking-[0.2em] text-[#E0D4FF] uppercase mb-4 whitespace-nowrap group-hover:bg-[#6324FC] group-hover:border-[#6324FC] group-hover:text-white transition-all duration-500">
+                <div className="inline-flex w-fit px-3 py-1.5 bg-[#6324FC]/20 backdrop-blur-md border border-[#6324FC]/30 rounded-full font-heading  text-[9px] md:text-[10px] tracking-[0.2em] text-[#E0D4FF] capitalize mb-4 whitespace-nowrap group-hover:bg-[#6324FC] group-hover:border-[#6324FC] group-hover:text-white transition-all duration-500">
                   {member.role}
                 </div>
                 
@@ -151,7 +151,7 @@ export default function TeamPreview() {
             <motion.div 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="relative px-16 py-8 bg-transparent border border-white/10 text-white font-heading text-xl tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 flex items-center gap-8 uppercase"
+              className="relative px-16 py-8 bg-transparent border border-white/10 text-white font-heading text-xl tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 flex items-center gap-8 capitalize "
             >
               {/* Button Hover Background */}
               <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />

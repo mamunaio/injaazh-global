@@ -51,10 +51,10 @@ export default function KeywordStrategyPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase">Search Intelligence</span>
+              <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">Search Intelligence</span>
             </motion.div>
             
-            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-16">
+            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-16">
               KEYWORD <br/>
               <span className="stroke-text text-transparent italic opacity-40">STRATEGY.</span>
             </h1>
@@ -93,7 +93,7 @@ export default function KeywordStrategyPage() {
             <div className="absolute inset-0 bg-[#6324FC]/10 mix-blend-overlay group-hover:opacity-0 transition-opacity" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center p-12">
                <div className="font-heading text-6xl text-white tracking-tighter opacity-10 group-hover:opacity-100 transition-all duration-700">USER INTENT</div>
-               <div className="font-mono text-[10px] tracking-[0.8em] text-[#6324FC] uppercase mt-4">Semantic Mapping</div>
+               <div className="font-heading  text-[10px] tracking-[0.8em] text-[#6324FC] capitalize mt-4">Semantic Mapping</div>
             </div>
           </motion.div>
         </div>
@@ -101,10 +101,10 @@ export default function KeywordStrategyPage() {
         {/* 2. Key Pillars */}
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-24">
-            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase max-w-xl">
+            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize max-w-xl">
               TARGETING WITH <span className="italic text-[#6324FC]">SURGICAL INTENT.</span>
             </h2>
-            <p className="font-mono text-[11px] tracking-widest text-white/30 uppercase max-w-xs leading-loose">
+            <p className="font-heading  text-[11px] tracking-widest text-white/30 capitalize max-w-xs leading-loose">
               Finding the right keywords is about understanding the human psychology behind the search query.
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function KeywordStrategyPage() {
                 <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-10 transition-all duration-500 group-hover:scale-110" style={{ backgroundColor: `${f.color}15`, border: `1px solid ${f.color}30` }}>
                   <f.icon className="w-8 h-8" style={{ color: f.color }} />
                 </div>
-                <h3 className="font-heading text-2xl text-white mb-4 uppercase">{f.title}</h3>
+                <h3 className="font-heading text-2xl text-white mb-4 capitalize ">{f.title}</h3>
                 <p className="font-sans font-light text-white/40 text-base leading-relaxed">{f.description}</p>
               </motion.div>
             ))}
@@ -140,7 +140,7 @@ export default function KeywordStrategyPage() {
               <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between">
                  <div className="flex justify-between items-start">
                     <Filter className="w-8 h-8 text-[#6324FC]" />
-                    <div className="font-mono text-[9px] text-white/20 uppercase tracking-[0.3em]">Intent Funnel // v2.0</div>
+                    <div className="font-heading  text-[9px] text-white/20 capitalize tracking-[0.3em]">Intent Funnel // v2.0</div>
                  </div>
 
                  <div className="flex-1 flex flex-col justify-center space-y-4">
@@ -152,8 +152,8 @@ export default function KeywordStrategyPage() {
                     ].map((step, i) => (
                       <div key={i} className="space-y-2">
                          <div className="flex justify-between items-end">
-                            <span className="font-heading text-xl text-white uppercase">{step.label}</span>
-                            <span className="font-mono text-[9px] text-white/30 uppercase tracking-widest">{step.val}</span>
+                            <span className="font-heading text-xl text-white capitalize ">{step.label}</span>
+                            <span className="font-heading  text-[9px] text-white/30 capitalize tracking-widest">{step.val}</span>
                          </div>
                          <div className="h-4 bg-white/5 rounded-full overflow-hidden">
                             <motion.div 
@@ -168,14 +168,14 @@ export default function KeywordStrategyPage() {
                     ))}
                  </div>
 
-                 <div className="flex justify-between font-mono text-[9px] text-[#6324FC] uppercase tracking-widest">
+                 <div className="flex justify-between font-heading  text-[9px] text-[#6324FC] capitalize tracking-widest">
                     <span>Conversion Mapping</span>
                     <span>ROI Protocol Active</span>
                  </div>
               </div>
 
               <div>
-                <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-12">
+                <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-12">
                   MAPPING THE <br/>
                   <span className="italic text-[#6324FC]">JOURNEY.</span>
                 </h2>
@@ -193,7 +193,7 @@ export default function KeywordStrategyPage() {
                      <div key={i} className="flex gap-6 group">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#6324FC] mt-2 group-hover:scale-150 transition-transform" />
                         <div className="space-y-1">
-                           <div className="font-heading text-2xl text-white uppercase">{item.label}</div>
+                           <div className="font-heading text-2xl text-white capitalize ">{item.label}</div>
                            <p className="font-sans font-light text-sm text-white/30">{item.desc}</p>
                         </div>
                      </div>
@@ -205,7 +205,7 @@ export default function KeywordStrategyPage() {
 
         {/* 4. Strategic Flow */}
         <div className="py-16 md:py-24 border-b border-white/5">
-           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-24 text-center">
+           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-24 text-center">
               THE KEYWORD <span className="italic text-[#6324FC]">EVOLUTION.</span>
            </h2>
 
@@ -218,7 +218,7 @@ export default function KeywordStrategyPage() {
                 <div key={i} className="relative group">
                    <div className="font-heading text-[8rem] text-white/[0.02] absolute -top-12 -left-4 group-hover:text-[#6324FC]/5 transition-colors">{s.step}</div>
                    <div className="relative z-10 pt-12 space-y-6">
-                      <h3 className="font-heading text-3xl text-white uppercase">{s.title}</h3>
+                      <h3 className="font-heading text-3xl text-white capitalize ">{s.title}</h3>
                       <p className="font-sans font-light text-xl text-white/40 leading-relaxed border-l border-white/10 pl-8 group-hover:border-[#6324FC] transition-colors">
                         {s.desc}
                       </p>
@@ -230,7 +230,7 @@ export default function KeywordStrategyPage() {
 
         {/* 5. Bottom CTA */}
         <div className="text-center py-16 md:py-24 border-t border-white/5">
-          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-12">
+          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-12">
             OWN THE <span className="italic text-[#6324FC]">SEARCH.</span>
           </h2>
           <p className="font-sans text-white/40 text-2xl mb-16 max-w-2xl mx-auto leading-relaxed">
@@ -240,7 +240,7 @@ export default function KeywordStrategyPage() {
             onClick={() => window.location.href='/contact'}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-16 py-8 bg-white text-black rounded-full font-heading text-2xl tracking-widest shadow-[0_30px_60px_rgba(255,255,255,0.1)] hover:bg-[#6324FC] hover:text-white transition-all flex items-center gap-6 mx-auto uppercase"
+            className="px-16 py-8 bg-white text-black rounded-full font-heading text-2xl tracking-widest shadow-[0_30px_60px_rgba(255,255,255,0.1)] hover:bg-[#6324FC] hover:text-white transition-all flex items-center gap-6 mx-auto capitalize "
           >
             START STRATEGY SESSION ⚡
           </motion.button>

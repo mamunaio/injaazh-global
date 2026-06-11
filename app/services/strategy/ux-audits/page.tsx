@@ -51,10 +51,10 @@ export default function UXAuditsPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase">Experience Division</span>
+              <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">Experience Division</span>
             </motion.div>
             
-            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-16">
+            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-16">
               UX <br/>
               <span className="stroke-text text-transparent italic opacity-40">AUDITS.</span>
             </h1>
@@ -93,7 +93,7 @@ export default function UXAuditsPage() {
             <div className="absolute inset-0 bg-[#6324FC]/10 mix-blend-overlay group-hover:opacity-0 transition-opacity" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
                <ClipboardCheck className="w-20 h-20 text-white mb-4 animate-pulse" />
-               <div className="font-mono text-[10px] tracking-[0.5em] text-white/60 uppercase">Empathy Scanned</div>
+               <div className="font-heading  text-[10px] tracking-[0.5em] text-white/60 capitalize ">Empathy Scanned</div>
             </div>
           </motion.div>
         </div>
@@ -101,10 +101,10 @@ export default function UXAuditsPage() {
         {/* 2. Key Pillars */}
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-24">
-            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase max-w-xl">
+            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize max-w-xl">
               ELIMINATING <span className="italic text-[#6324FC]">FRICTION.</span>
             </h2>
-            <p className="font-mono text-[11px] tracking-widest text-white/30 uppercase max-w-xs leading-loose">
+            <p className="font-heading  text-[11px] tracking-widest text-white/30 capitalize max-w-xs leading-loose">
               A great user experience is invisible. We find the visible problems and turn them into seamless interactions.
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function UXAuditsPage() {
                 <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-10 transition-all duration-500 group-hover:scale-110" style={{ backgroundColor: `${f.color}15`, border: `1px solid ${f.color}30` }}>
                   <f.icon className="w-8 h-8" style={{ color: f.color }} />
                 </div>
-                <h3 className="font-heading text-2xl text-white mb-4 uppercase">{f.title}</h3>
+                <h3 className="font-heading text-2xl text-white mb-4 capitalize ">{f.title}</h3>
                 <p className="font-sans font-light text-white/40 text-base leading-relaxed">{f.description}</p>
               </motion.div>
             ))}
@@ -140,7 +140,7 @@ export default function UXAuditsPage() {
               <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between group">
                  <div className="flex justify-between items-start">
                     <MousePointer2 className="w-8 h-8 text-[#6324FC]" />
-                    <div className="font-mono text-[9px] text-white/20 uppercase tracking-[0.3em]">Behavioral Node // 0xUX</div>
+                    <div className="font-heading  text-[9px] text-white/20 capitalize tracking-[0.3em]">Behavioral Node // 0xUX</div>
                  </div>
 
                  <div className="flex-1 flex flex-col justify-center space-y-8">
@@ -150,20 +150,20 @@ export default function UXAuditsPage() {
                       { label: "Visual Hierarchy", val: "Balanced", color: "text-[#00FFA3]" }
                     ].map((item, i) => (
                       <div key={i} className="flex items-center justify-between border-b border-white/5 pb-4 group-hover:border-[#6324FC]/30 transition-colors">
-                         <div className="font-heading text-2xl text-white uppercase">{item.label}</div>
-                         <div className={`font-mono text-[10px] tracking-widest uppercase ${typeof item.color === 'string' && item.color.startsWith('text') ? item.color : ''}`} style={typeof item.color === 'string' && !item.color.startsWith('text') ? { color: item.color } : {}}>{item.val}</div>
+                         <div className="font-heading text-2xl text-white capitalize ">{item.label}</div>
+                         <div className={`font-heading  text-[10px] tracking-widest capitalize ${typeof item.color === 'string' && item.color.startsWith('text') ? item.color : ''}`} style={typeof item.color === 'string' && !item.color.startsWith('text') ? { color: item.color } : {}}>{item.val}</div>
                       </div>
                     ))}
                  </div>
 
-                 <div className="flex justify-between font-mono text-[9px] text-[#6324FC] uppercase tracking-widest">
+                 <div className="flex justify-between font-heading  text-[9px] text-[#6324FC] capitalize tracking-widest">
                     <span>Empathy Engine</span>
                     <span>99% Satisfaction Target</span>
                  </div>
               </div>
 
               <div>
-                <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-12">
+                <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-12">
                   USER-CENTRIC <br/>
                   <span className="italic text-[#6324FC]">PRECISION.</span>
                 </h2>
@@ -181,7 +181,7 @@ export default function UXAuditsPage() {
                      <div key={i} className="flex gap-6 group">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#6324FC] mt-2 group-hover:scale-150 transition-transform" />
                         <div className="space-y-1">
-                           <div className="font-heading text-2xl text-white uppercase">{item.label}</div>
+                           <div className="font-heading text-2xl text-white capitalize ">{item.label}</div>
                            <p className="font-sans font-light text-sm text-white/30">{item.desc}</p>
                         </div>
                      </div>
@@ -193,7 +193,7 @@ export default function UXAuditsPage() {
 
         {/* 4. Strategic Flow */}
         <div className="py-16 md:py-24 border-b border-white/5">
-           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-24 text-center">
+           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-24 text-center">
               THE AUDIT <span className="italic text-[#6324FC]">LIFECYCLE.</span>
            </h2>
 
@@ -206,7 +206,7 @@ export default function UXAuditsPage() {
                 <div key={i} className="relative group">
                    <div className="font-heading text-[8rem] text-white/[0.02] absolute -top-12 -left-4 group-hover:text-[#6324FC]/5 transition-colors">{s.step}</div>
                    <div className="relative z-10 pt-12 space-y-6">
-                      <h3 className="font-heading text-3xl text-white uppercase">{s.title}</h3>
+                      <h3 className="font-heading text-3xl text-white capitalize ">{s.title}</h3>
                       <p className="font-sans font-light text-xl text-white/40 leading-relaxed border-l border-white/10 pl-8 group-hover:border-[#6324FC] transition-colors">
                         {s.desc}
                       </p>
@@ -218,7 +218,7 @@ export default function UXAuditsPage() {
 
         {/* 5. Bottom CTA */}
         <div className="text-center py-16 md:py-24 border-t border-white/5">
-          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-12">
+          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-12">
             DESIGN FOR <span className="italic text-[#6324FC]">DELIGHT.</span>
           </h2>
           <p className="font-sans text-white/40 text-2xl mb-16 max-w-2xl mx-auto leading-relaxed">
@@ -228,7 +228,7 @@ export default function UXAuditsPage() {
             onClick={() => window.location.href='/contact'}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-16 py-8 bg-white text-black rounded-full font-heading text-2xl tracking-widest shadow-[0_30px_60px_rgba(255,255,255,0.1)] hover:bg-[#6324FC] hover:text-white transition-all flex items-center gap-6 mx-auto uppercase"
+            className="px-16 py-8 bg-white text-black rounded-full font-heading text-2xl tracking-widest shadow-[0_30px_60px_rgba(255,255,255,0.1)] hover:bg-[#6324FC] hover:text-white transition-all flex items-center gap-6 mx-auto capitalize "
           >
             START UX AUDIT ⚡
           </motion.button>

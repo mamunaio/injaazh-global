@@ -32,7 +32,7 @@ export default function TrustedBy() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase mb-6 flex items-center gap-3"
+              className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize mb-6 flex items-center gap-3"
             >
               <span className="w-8 h-[1px] bg-[#6324FC]" />
               THE NETWORK
@@ -68,8 +68,8 @@ export default function TrustedBy() {
               We partner with industry pioneers to engineer digital dominance across every sector.
             </p>
             <div className="flex items-center gap-4">
-              <span className="text-white font-mono text-2xl">1,200+</span>
-              <span className="text-white/20 font-mono text-sm uppercase tracking-widest">Active Clients</span>
+              <span className="text-white font-heading  text-2xl">1,200+</span>
+              <span className="text-white/20 font-heading  text-sm capitalize tracking-widest">Active Clients</span>
             </div>
           </motion.div>
         </div>
@@ -93,7 +93,7 @@ export default function TrustedBy() {
                 <div className="p-3 bg-white/5 border border-white/10 group-hover:bg-[#6324FC] group-hover:border-[#6324FC] transition-all duration-500">
                   <partner.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
-                <div className="font-mono text-[8px] md:text-[10px] tracking-widest text-white/20 uppercase group-hover:text-[#6324FC] transition-colors">
+                <div className="font-heading  text-[8px] md:text-[10px] tracking-widest text-white/20 capitalize group-hover:text-[#6324FC] transition-colors">
                   Sector 0{idx + 1}
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default function TrustedBy() {
                 <h3 className="font-heading text-xl md:text-2xl tracking-wide text-white mb-2 group-hover:translate-x-1 transition-transform">
                   {partner.name}
                 </h3>
-                <p className="font-sans font-light text-[10px] md:text-xs text-white/30 tracking-wider uppercase group-hover:text-white/60 transition-colors">
+                <p className="font-sans font-light text-[10px] md:text-xs text-white/30 tracking-wider capitalize group-hover:text-white/60 transition-colors">
                   {partner.desc}
                 </p>
               </div>

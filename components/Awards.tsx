@@ -49,16 +49,16 @@ export default function Awards() {
           <div className="lg:w-1/2 lg:sticky lg:top-32">
             <div className="flex items-center gap-4 mb-10">
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-mono text-[10px] tracking-[0.5em] text-[#6324FC] uppercase">VALIDATED EXCELLENCE</span>
+              <span className="font-heading  text-[10px] tracking-[0.5em] text-[#6324FC] capitalize ">VALIDATED EXCELLENCE</span>
             </div>
             
             <div className="relative">
-              <h2 className="font-heading text-5xl md:text-7xltracking-tighter text-white leading-[0.8] uppercase mb-12">
+              <h2 className="font-heading text-5xl md:text-7xltracking-tighter text-white leading-[0.8] capitalize mb-12">
                 INDUSTRY <br/>
                 <span className="stroke-white italic opacity-80">AWARDS.</span>
               </h2>
               {/* Background Text */}
-              <div className="absolute -top-10 -left-10 text-[15rem] font-heading font-black text-white/[0.02] pointer-events-none uppercase tracking-tighter select-none">
+              <div className="absolute -top-10 -left-10 text-[15rem] font-heading font-black text-white/[0.02] pointer-events-none capitalize tracking-tighter select-none">
                 Trust
               </div>
             </div>
@@ -73,7 +73,7 @@ export default function Awards() {
               </div>
               <div className="flex flex-col">
                 <span className="text-white font-heading ">Quality Guaranteed</span>
-                <span className="text-white/20 font-mono text-[10px] uppercase tracking-widest">ISO 9001:2015 COMPLIANT</span>
+                <span className="text-white/20 font-heading  text-[10px] capitalize tracking-widest">ISO 9001:2015 COMPLIANT</span>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function Awards() {
                 </div>
                 
                 <div className="relative z-10 flex-grow">
-                  <div className="font-mono text-[8px] text-[#6324FC] uppercase tracking-[0.4em] mb-1">Platform Verified</div>
+                  <div className="font-heading  text-[8px] text-[#6324FC] capitalize tracking-[0.4em] mb-1">Platform Verified</div>
                   <h3 className="font-heading text-xl text-white tracking-tight group-hover:text-[#6324FC] transition-colors">
                     {award.platform}
                   </h3>

@@ -180,10 +180,10 @@ export default function DigitalExperience() {
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-[1px] bg-[#6324FC]" />
-                  <span className="font-mono text-[10px] tracking-[0.5em] text-[#6324FC] uppercase">{content[activeTab].badge}</span>
+                  <span className="font-heading  text-[10px] tracking-[0.5em] text-[#6324FC] capitalize ">{content[activeTab].badge}</span>
                 </div>
                 
-                <h3 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase flex flex-wrap gap-x-4 gap-y-2">
+                <h3 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize flex flex-wrap gap-x-4 gap-y-2">
                   {content[activeTab].headlineSegments.map((seg, idx) => {
                     if (seg.type === "purple") {
                       return (
@@ -213,7 +213,7 @@ export default function DigitalExperience() {
 
                 <div className="flex flex-wrap gap-3">
                   {content[activeTab].tags.map((tag, idx) => (
-                    <div key={idx} className="px-4 py-2 bg-[#6324FC]/10 border border-[#6324FC]/30 font-mono text-[10px] tracking-widest text-white/90 uppercase rounded-full whitespace-nowrap shadow-[0_0_15px_rgba(99,36,252,0.1)]">
+                    <div key={idx} className="px-4 py-2 bg-[#6324FC]/10 border border-[#6324FC]/30 font-heading  text-[10px] tracking-widest text-white/90 capitalize rounded-full whitespace-nowrap shadow-[0_0_15px_rgba(99,36,252,0.1)]">
                       {tag}
                     </div>
                   ))}
@@ -226,7 +226,7 @@ export default function DigitalExperience() {
                   className="group relative px-8 md:px-12 py-4 md:py-6 bg-[#6324FC] rounded-full overflow-hidden transition-all duration-500 shadow-[0_20px_50px_rgba(99,36,252,0.3)] w-full md:w-auto"
                 >
                   <div className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]" />
-                  <span className="relative z-10 flex items-center justify-center gap-4 font-heading text-xl md:text-2xl tracking-tighter text-white group-hover:text-black transition-colors duration-500 uppercase text-center w-full">
+                  <span className="relative z-10 flex items-center justify-center gap-4 font-heading text-xl md:text-2xl tracking-tighter text-white group-hover:text-black transition-colors duration-500 capitalize text-center w-full">
                     {content[activeTab].cta}
                   </span>
                 </motion.button>
@@ -259,7 +259,7 @@ export default function DigitalExperience() {
                         <div className="font-heading text-4xl md:text-5xl text-white tracking-tighter drop-shadow-2xl whitespace-nowrap">
                           {kpi.val}
                         </div>
-                        <div className="font-mono text-[10px] md:text-xs tracking-[0.3em] text-[#00E5FF] uppercase font-semibold">
+                        <div className="font-heading  text-[10px] md:text-xs tracking-[0.3em] text-[#00E5FF] capitalize font-semibold">
                           {kpi.label}
                         </div>
                       </div>
@@ -269,7 +269,7 @@ export default function DigitalExperience() {
                   <div className="space-y-6" style={{ transform: "translateZ(30px)" }}>
                     {content[activeTab].bars.map((bar, idx) => (
                       <div key={idx} className="space-y-2">
-                        <div className="flex justify-between font-mono text-[10px] tracking-[0.2em] text-white/70 uppercase">
+                        <div className="flex justify-between font-heading  text-[10px] tracking-[0.2em] text-white/70 capitalize ">
                           <span>{bar.label}</span>
                           <span className="text-white font-bold">{bar.width}</span>
                         </div>

@@ -51,10 +51,10 @@ export default function BrandIdentityPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase">Creative Division</span>
+              <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">Creative Division</span>
             </motion.div>
             
-            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-16">
+            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-16">
               BRAND <br/>
               <span className="stroke-text text-transparent italic opacity-40">IDENTITY.</span>
             </h1>
@@ -97,10 +97,10 @@ export default function BrandIdentityPage() {
         {/* 2. Key Pillars */}
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-24">
-            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase max-w-xl">
+            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize max-w-xl">
               CRAFTING <span className="italic text-[#6324FC]">VISUAL AUTHORITY.</span>
             </h2>
-            <p className="font-mono text-[11px] tracking-widest text-white/30 uppercase max-w-xs leading-loose">
+            <p className="font-heading  text-[11px] tracking-widest text-white/30 capitalize max-w-xs leading-loose">
               A premium brand is built on consistency, precision, and a deep understanding of market psychology.
             </p>
           </div>
@@ -121,7 +121,7 @@ export default function BrandIdentityPage() {
                 <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-10 transition-all duration-500 group-hover:scale-110" style={{ backgroundColor: `${f.color}15`, border: `1px solid ${f.color}30` }}>
                   <f.icon className="w-8 h-8" style={{ color: f.color }} />
                 </div>
-                <h3 className="font-heading text-2xl text-white mb-4 uppercase">{f.title}</h3>
+                <h3 className="font-heading text-2xl text-white mb-4 capitalize ">{f.title}</h3>
                 <p className="font-sans font-light text-white/40 text-base leading-relaxed">{f.description}</p>
               </motion.div>
             ))}
@@ -134,7 +134,7 @@ export default function BrandIdentityPage() {
            
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
               <div className="space-y-12">
-                <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase">
+                <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize ">
                   BEYOND THE <br/>
                   <span className="italic text-[#6324FC]">LOGO.</span>
                 </h2>
@@ -151,7 +151,7 @@ export default function BrandIdentityPage() {
                      { label: "Voice", text: "Premium / Bold", desc: "Market Authority" }
                    ].map((spec, i) => (
                      <div key={i} className="space-y-4">
-                        <div className="font-mono text-[9px] tracking-widest text-[#6324FC] uppercase">{spec.label}</div>
+                        <div className="font-heading  text-[9px] tracking-widest text-[#6324FC] capitalize ">{spec.label}</div>
                         {spec.colors ? (
                           <div className="flex gap-2">
                              {spec.colors.map((c, ci) => <div key={ci} className={`w-8 h-8 rounded-full border border-white/10 ${c}`} />)}
@@ -163,7 +163,7 @@ export default function BrandIdentityPage() {
                         ) : (
                           <div className="font-sans text-sm text-white/60">{spec.text}</div>
                         )}
-                        <div className="font-sans text-[10px] text-white/20 uppercase tracking-widest">{spec.desc}</div>
+                        <div className="font-sans text-[10px] text-white/20 capitalize tracking-widest">{spec.desc}</div>
                      </div>
                    ))}
                 </div>
@@ -183,7 +183,7 @@ export default function BrandIdentityPage() {
 
         {/* 4. Strategic Process */}
         <div className="py-16 md:py-24 border-b border-white/5">
-           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-24 text-center">
+           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-24 text-center">
               THE BRAND <span className="italic text-[#6324FC]">ARCHAEOLOGY.</span>
            </h2>
 
@@ -196,7 +196,7 @@ export default function BrandIdentityPage() {
                 <div key={i} className="relative group">
                    <div className="font-heading text-[8rem] text-white/[0.02] absolute -top-12 -left-4 group-hover:text-[#6324FC]/5 transition-colors">{s.step}</div>
                    <div className="relative z-10 pt-12 space-y-6">
-                      <h3 className="font-heading text-3xl text-white uppercase">{s.title}</h3>
+                      <h3 className="font-heading text-3xl text-white capitalize ">{s.title}</h3>
                       <p className="font-sans font-light text-xl text-white/40 leading-relaxed border-l border-white/10 pl-8 group-hover:border-[#6324FC] transition-colors">
                         {s.desc}
                       </p>
@@ -208,7 +208,7 @@ export default function BrandIdentityPage() {
 
         {/* 5. Bottom CTA */}
         <div className="text-center py-16 md:py-24 border-t border-white/5">
-          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-12">
+          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-12">
             LEAVE A <span className="italic text-[#6324FC]">LEGACY.</span>
           </h2>
           <p className="font-sans text-white/40 text-2xl mb-16 max-w-2xl mx-auto leading-relaxed">
@@ -218,7 +218,7 @@ export default function BrandIdentityPage() {
             onClick={() => window.location.href='/contact'}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-16 py-8 bg-white text-black rounded-full font-heading text-2xl tracking-widest shadow-[0_30px_60px_rgba(255,255,255,0.1)] hover:bg-[#6324FC] hover:text-white transition-all flex items-center gap-6 mx-auto uppercase"
+            className="px-16 py-8 bg-white text-black rounded-full font-heading text-2xl tracking-widest shadow-[0_30px_60px_rgba(255,255,255,0.1)] hover:bg-[#6324FC] hover:text-white transition-all flex items-center gap-6 mx-auto capitalize "
           >
             START BRAND DISCOVERY ⚡
           </motion.button>

@@ -90,7 +90,7 @@ export default function CustomCursor() {
       </AnimatePresence>
 
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] flex items-center justify-center font-mono text-xs text-primary tracking-widest drop-shadow-[0_0_10px_rgba(99,36,252,0.6)]"
+        className="fixed top-0 left-0 pointer-events-none z-[9999] flex items-center justify-center font-heading  text-xs text-primary tracking-widest drop-shadow-[0_0_10px_rgba(99,36,252,0.6)]"
         style={{
           x: cursorX,
           y: cursorY,

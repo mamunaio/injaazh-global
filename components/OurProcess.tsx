@@ -131,7 +131,7 @@ export default function OurProcess() {
             </svg>
           </motion.div>
 
-          <div className="font-mono text-[#6324FC] text-sm tracking-[0.3em] uppercase mb-8 process-title relative z-10">
+          <div className="font-heading  text-[#6324FC] text-sm tracking-[0.3em] capitalize mb-8 process-title relative z-10">
             // THE METHODOLOGY
           </div>
           <h2 className="sr-only">Our Digital Agency Process: Strategy, Web Design, Next.js Engineering, and SEO Growth</h2>
@@ -156,7 +156,7 @@ export default function OurProcess() {
 
           {/* Mobile Header (Hidden on Desktop) */}
           <div className="lg:hidden mb-20 relative z-10">
-            <div className="font-mono text-[#6324FC] text-sm tracking-[0.3em] uppercase mb-4">
+            <div className="font-heading  text-[#6324FC] text-sm tracking-[0.3em] capitalize mb-4">
               // THE METHODOLOGY
             </div>
             <div aria-hidden="true" className="font-heading text-6xl md:text-7xl leading-[0.85] tracking-tight mb-6">
@@ -196,7 +196,7 @@ export default function OurProcess() {
 
                 <div className="flex flex-wrap gap-3">
                   {step.tags.map((tag, tIdx) => (
-                    <span key={tIdx} className="font-mono text-xs tracking-wider px-4 py-2 bg-primary/10 border border-primary/20 text-primary/80 group-hover:border-primary/40 group-hover:text-primary transition-colors duration-300 font-medium">
+                    <span key={tIdx} className="font-heading  text-xs tracking-wider px-4 py-2 bg-primary/10 border border-primary/20 text-primary/80 group-hover:border-primary/40 group-hover:text-primary transition-colors duration-300 font-medium">
                       {tag}
                     </span>
                   ))}

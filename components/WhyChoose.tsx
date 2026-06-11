@@ -124,10 +124,10 @@ function FeatureCard({
           </motion.div>
 
           <div className="flex flex-col items-end opacity-20 group-hover:opacity-100 transition-opacity duration-500">
-            <span className="font-mono text-[9px] tracking-[0.4em] text-white uppercase mb-1">
+            <span className="font-heading  text-[9px] tracking-[0.4em] text-white capitalize mb-1">
               ARCHITECTURE
             </span>
-            <span className="font-mono text-[10px] tracking-[0.2em] text-[#6324FC] uppercase">
+            <span className="font-heading  text-[10px] tracking-[0.2em] text-[#6324FC] capitalize ">
               {item.id}
             </span>
           </div>
@@ -151,7 +151,7 @@ function FeatureCard({
             className="w-1.5 h-1.5 rounded-full animate-pulse"
             style={{ backgroundColor: item.color }}
           />
-          <span className="font-mono text-[10px] tracking-widest text-white/20 uppercase">
+          <span className="font-heading  text-[10px] tracking-widest text-white/20 capitalize ">
             OPERATIONAL STATUS: OPTIMAL
           </span>
         </div>
@@ -180,13 +180,13 @@ export default function WhyChoose() {
               whileInView={{ width: 48 }}
               className="h-[1px] bg-[#6324FC]"
             />
-            <span className="font-mono text-xs tracking-[0.6em] text-[#6324FC] uppercase">
+            <span className="font-heading  text-xs tracking-[0.6em] text-[#6324FC] capitalize ">
               ENGINEERED GROWTH
             </span>
           </div>
 
           <div className="flex flex-col lg:flex-row justify-between gap-12">
-            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white mb-4 uppercase">
+            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white mb-4 capitalize ">
               THE INJAAZH <br />
               <span className="stroke-white italic opacity-80">ADVANTAGE.</span>
             </h2>
@@ -208,7 +208,7 @@ export default function WhyChoose() {
                   <span className="text-white font-heading text-sm">
                     Certified Excellence
                   </span>
-                  <span className="text-white/30 font-mono text-[9px] uppercase tracking-widest">
+                  <span className="text-white/30 font-heading  text-[9px] capitalize tracking-widest">
                     GLOBAL STANDARDS
                   </span>
                 </div>
@@ -236,11 +236,11 @@ export default function WhyChoose() {
                   <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
                     <Cpu className="w-5 h-5 text-white animate-spin-slow" />
                   </div>
-                  <span className="font-mono text-xs text-[#6324FC] tracking-[0.4em] uppercase">
+                  <span className="font-heading  text-xs text-[#6324FC] tracking-[0.4em] capitalize ">
                     NEURAL ENGINE V2.0
                   </span>
                 </div>
-                <h2 className="font-heading text-3xl md:text-5xl text-white leading-none tracking-tighter mb-6 uppercase">
+                <h2 className="font-heading text-3xl md:text-5xl text-white leading-none tracking-tighter mb-6 capitalize ">
                   Get Your <br />
                   <span className="italic text-[#00E5FF]">Free Audit</span>
                 </h2>

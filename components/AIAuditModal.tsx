@@ -157,14 +157,14 @@ export default function AIAuditModal({ isOpen, onClose }: { isOpen: boolean, onC
                {(step === 3 || step === 4) && (
                  <button onClick={handleBack} className="flex items-center gap-1 text-white/40 hover:text-[#6324FC] transition-colors group">
                     <ChevronLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                    <span className="font-mono text-[10px] uppercase tracking-widest">Back</span>
+                    <span className="font-heading  text-[10px] capitalize tracking-widest">Back</span>
                  </button>
                )}
                <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-[#6324FC]/20 flex items-center justify-center border border-[#6324FC]/30">
                      <Cpu className="w-4 h-4 text-[#6324FC] animate-pulse" />
                   </div>
-                  <span className="font-mono text-[10px] tracking-[0.3em] text-white/50 uppercase">Neural Audit Engine v2.0</span>
+                  <span className="font-heading  text-[10px] tracking-[0.3em] text-white/50 capitalize ">Neural Audit Engine v2.0</span>
                </div>
             </div>
             <button onClick={onClose} className="text-white/20 hover:text-white transition-colors">
@@ -188,12 +188,12 @@ export default function AIAuditModal({ isOpen, onClose }: { isOpen: boolean, onC
                   <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-[#6324FC] to-[#00E5FF] flex items-center justify-center shadow-lg shadow-[#6324FC]/20 mb-4">
                      <Globe className="w-10 h-10 text-white" />
                   </div>
-                  <h2 className="font-heading text-4xl md:text-5xl text-white tracking-tight uppercase leading-[0.9]">
+                  <h2 className="font-heading text-4xl md:text-5xl text-white tracking-tight capitalize leading-[0.9]">
                     Analyze Your <br/><span className="text-[#6324FC] italic">Digital DNA</span>
                   </h2>
                   
                   {error && (
-                    <div className="bg-red-500/10 border border-red-500/20 text-red-500 font-mono text-[10px] py-2 px-4 rounded-full">
+                    <div className="bg-red-500/10 border border-red-500/20 text-red-500 font-heading  text-[10px] py-2 px-4 rounded-full">
                        ERROR: {error}
                     </div>
                   )}
@@ -208,7 +208,7 @@ export default function AIAuditModal({ isOpen, onClose }: { isOpen: boolean, onC
                       value={url}
                       onChange={(e) => setUrl(e.target.value)}
                       placeholder="https://yourwebsite.com"
-                      className="w-full bg-white/5 border border-white/10 rounded-full py-5 px-8 font-mono text-sm text-white focus:outline-none focus:border-[#6324FC] transition-all placeholder:text-white/10"
+                      className="w-full bg-white/5 border border-white/10 rounded-full py-5 px-8 font-heading  text-sm text-white focus:outline-none focus:border-[#6324FC] transition-all placeholder:text-white/10"
                     />
                     <button 
                       onClick={() => url.includes('.') && setStep(2)}
@@ -222,11 +222,11 @@ export default function AIAuditModal({ isOpen, onClose }: { isOpen: boolean, onC
                   </div>
                   
                   <div className="flex items-center gap-6 mt-4">
-                     <div className="flex items-center gap-2 font-mono text-[9px] text-white/20">
+                     <div className="flex items-center gap-2 font-heading  text-[9px] text-white/20">
                         <ShieldCheck className="w-3 h-3 text-green-500" />
                         SECURE SCAN
                      </div>
-                     <div className="flex items-center gap-2 font-mono text-[9px] text-white/20">
+                     <div className="flex items-center gap-2 font-heading  text-[9px] text-white/20">
                         <Activity className="w-3 h-3 text-[#00E5FF]" />
                         REAL-TIME DATA
                      </div>
@@ -252,14 +252,14 @@ export default function AIAuditModal({ isOpen, onClose }: { isOpen: boolean, onC
                      />
                      <div className="absolute inset-0 flex items-center justify-center flex-col">
                         <span className="font-heading text-4xl text-white">{progress}%</span>
-                        <span className="font-mono text-[8px] tracking-widest text-white/50 uppercase mt-2">
+                        <span className="font-heading  text-[8px] tracking-widest text-white/50 capitalize mt-2">
                            {progress < 100 ? "Processing Data" : "Scan Complete"}
                         </span>
                      </div>
                   </div>
 
                   <div className="flex flex-col items-center gap-2">
-                     <p className="font-mono text-[11px] tracking-[0.3em] text-white animate-pulse uppercase">
+                     <p className="font-heading  text-[11px] tracking-[0.3em] text-white animate-pulse capitalize ">
                        {error && !error.includes("failed") ? error : `Scanning: ${url}`}
                      </p>
                   </div>
@@ -280,32 +280,32 @@ export default function AIAuditModal({ isOpen, onClose }: { isOpen: boolean, onC
                         <div className={`text-5xl font-heading mb-2 ${results.performance > 80 ? 'text-green-500' : results.performance > 50 ? 'text-yellow-500' : 'text-red-500'}`}>
                            {results.performance}
                         </div>
-                        <div className="font-mono text-[9px] text-white/20 uppercase tracking-widest">Performance</div>
+                        <div className="font-heading  text-[9px] text-white/20 capitalize tracking-widest">Performance</div>
                      </div>
                      <div className="w-[1px] h-12 bg-white/10" />
                      <div className="flex flex-col items-center">
                         <div className={`text-5xl font-heading mb-2 ${results.seo > 80 ? 'text-green-500' : results.seo > 50 ? 'text-yellow-500' : 'text-red-500'}`}>
                            {results.seo}
                         </div>
-                        <div className="font-mono text-[9px] text-white/20 uppercase tracking-widest">SEO Score</div>
+                        <div className="font-heading  text-[9px] text-white/20 capitalize tracking-widest">SEO Score</div>
                      </div>
                   </div>
                   
                   <div className="grid grid-cols-2 gap-4 w-full">
                      <div className="bg-white/5 p-4 rounded-2xl border border-white/10 text-left">
-                        <div className="text-[9px] font-mono text-white/30 uppercase mb-1">LCP (Load Time)</div>
+                        <div className="text-[9px] font-heading  text-white/30 capitalize mb-1">LCP (Load Time)</div>
                         <div className="text-xl font-heading text-white">{results.metrics.lcp}</div>
                      </div>
                      <div className="bg-white/5 p-4 rounded-2xl border border-white/10 text-left">
-                        <div className="text-[9px] font-mono text-white/30 uppercase mb-1">Total Blocking Time</div>
+                        <div className="text-[9px] font-heading  text-white/30 capitalize mb-1">Total Blocking Time</div>
                         <div className="text-xl font-heading text-white">{results.metrics.tbt}</div>
                      </div>
                      <div className="bg-white/5 p-4 rounded-2xl border border-white/10 text-left">
-                        <div className="text-[9px] font-mono text-white/30 uppercase mb-1">Visual Stability (CLS)</div>
+                        <div className="text-[9px] font-heading  text-white/30 capitalize mb-1">Visual Stability (CLS)</div>
                         <div className="text-xl font-heading text-white">{results.metrics.cls}</div>
                      </div>
                      <div className="bg-white/5 p-4 rounded-2xl border border-white/10 text-left">
-                        <div className="text-[9px] font-mono text-white/30 uppercase mb-1">Growth Potential</div>
+                        <div className="text-[9px] font-heading  text-white/30 capitalize mb-1">Growth Potential</div>
                         <div className="text-xl font-heading text-[#00E5FF]">{results.roiPotential}x ROI</div>
                      </div>
                   </div>
@@ -340,12 +340,12 @@ export default function AIAuditModal({ isOpen, onClose }: { isOpen: boolean, onC
                   className="w-full flex flex-col items-center gap-8 text-left"
                 >
                   <div className="w-full">
-                    <h3 className="font-heading text-3xl text-white mb-2 uppercase italic text-center">Where should we send the report?</h3>
-                    <p className="font-mono text-[9px] text-[#6324FC] text-center mb-10 tracking-[0.3em]">URL: {url}</p>
+                    <h3 className="font-heading text-3xl text-white mb-2 capitalize italic text-center">Where should we send the report?</h3>
+                    <p className="font-heading  text-[9px] text-[#6324FC] text-center mb-10 tracking-[0.3em]">URL: {url}</p>
                     
                     <div className="space-y-6">
                       <div className="flex flex-col gap-2">
-                        <label className="font-mono text-[10px] text-white/30 uppercase tracking-widest">Full Name</label>
+                        <label className="font-heading  text-[10px] text-white/30 capitalize tracking-widest">Full Name</label>
                         <input 
                           type="text" 
                           placeholder="John Doe" 
@@ -355,7 +355,7 @@ export default function AIAuditModal({ isOpen, onClose }: { isOpen: boolean, onC
                         />
                       </div>
                       <div className="flex flex-col gap-2">
-                        <label className="font-mono text-[10px] text-white/30 uppercase tracking-widest">Business Email</label>
+                        <label className="font-heading  text-[10px] text-white/30 capitalize tracking-widest">Business Email</label>
                         <input 
                           type="email" 
                           placeholder="john@company.com" 
@@ -365,7 +365,7 @@ export default function AIAuditModal({ isOpen, onClose }: { isOpen: boolean, onC
                         />
                       </div>
                       <div className="flex flex-col gap-2">
-                        <label className="font-mono text-[10px] text-white/30 uppercase tracking-widest">Growth Goal</label>
+                        <label className="font-heading  text-[10px] text-white/30 capitalize tracking-widest">Growth Goal</label>
                         <select 
                           value={formData.goal}
                           onChange={(e) => setFormData({ ...formData, goal: e.target.value })}
@@ -388,7 +388,7 @@ export default function AIAuditModal({ isOpen, onClose }: { isOpen: boolean, onC
                     {/* Button Glow Layer */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC] to-[#4310C7] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
                     
-                    <span className="relative z-10 flex items-center gap-3 uppercase">
+                    <span className="relative z-10 flex items-center gap-3 capitalize ">
                       {isSubmitting ? "TRANSMITTING LEAD..." : "SEND MY REPORT NOW"} 
                       {!isSubmitting && <Zap className="w-4 h-4 fill-white" />}
                     </span>
@@ -407,7 +407,7 @@ export default function AIAuditModal({ isOpen, onClose }: { isOpen: boolean, onC
                   <div className="w-24 h-24 rounded-full bg-green-500/10 flex items-center justify-center border border-green-500/20 mb-4">
                      <ShieldCheck className="w-12 h-12 text-green-500" />
                   </div>
-                  <h2 className="font-heading text-5xl text-white uppercase tracking-tighter leading-none">
+                  <h2 className="font-heading text-5xl text-white capitalize tracking-tighter leading-none">
                     Mission <br/><span className="text-[#6324FC] italic">Confirmed.</span>
                   </h2>
                   <p className="font-sans text-white/40 max-w-sm">
@@ -416,7 +416,7 @@ export default function AIAuditModal({ isOpen, onClose }: { isOpen: boolean, onC
                   <div className="w-full h-[1px] bg-white/10 my-4" />
                   <button 
                     onClick={onClose}
-                    className="px-10 py-4 border border-white/10 rounded-full font-mono text-[10px] text-white/50 tracking-[0.3em] hover:text-white hover:border-white transition-all uppercase"
+                    className="px-10 py-4 border border-white/10 rounded-full font-heading  text-[10px] text-white/50 tracking-[0.3em] hover:text-white hover:border-white transition-all capitalize "
                   >
                     Close & Continue
                   </button>

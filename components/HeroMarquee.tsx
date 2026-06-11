@@ -49,7 +49,7 @@ export default function HeroMarquee() {
                   href={item.href}
                   className="flex items-center gap-8 sm:gap-12 md:gap-16 hover:opacity-75 transition-opacity"
                 >
-                  <span className="font-heading text-4xl sm:text-6xl leading-none uppercase tracking-tighter text-white">
+                  <span className="font-heading text-4xl sm:text-6xl leading-none capitalize tracking-tighter text-white">
                     {item.label}
                   </span>
                   <span className="text-white/50 text-3xl md:text-5xl">✦</span>
@@ -71,7 +71,7 @@ export default function HeroMarquee() {
                   href={item.href}
                   className="flex items-center gap-8 sm:gap-12 md:gap-16 group/link"
                 >
-                  <span className="font-heading text-4xl sm:text-6xl leading-none uppercase tracking-tighter transition-colors duration-300 text-white/40 group-hover/link:text-[#00E5FF]">
+                  <span className="font-heading text-4xl sm:text-6xl leading-none capitalize tracking-tighter transition-colors duration-300 text-white/40 group-hover/link:text-[#00E5FF]">
                     {item.label}
                   </span>
                   <span className="text-[#00E5FF]/30 text-3xl md:text-5xl">✦</span>

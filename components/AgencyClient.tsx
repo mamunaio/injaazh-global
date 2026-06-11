@@ -106,14 +106,14 @@ export default function AgencyClient() {
             className="inline-flex items-center gap-3 px-6 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-12"
           >
             <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse" />
-            <span className="font-mono text-xs tracking-widest uppercase">Global Digital Agency</span>
+            <span className="font-heading  text-xs tracking-widest capitalize ">Global Digital Agency</span>
           </motion.div>
 
           <motion.h1 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-8 max-w-5xl mx-auto"
+            className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-8 max-w-5xl mx-auto"
           >
             Engineering <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#6324FC] to-[#00E5FF]">Dominance</span> <br/>
             Through Custom Web & SEO Solutions.
@@ -135,7 +135,7 @@ export default function AgencyClient() {
             transition={{ delay: 1.5, duration: 1 }}
             className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 hidden md:flex"
           >
-            <span className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">Scroll to Explore</span>
+            <span className="font-heading  text-[10px] tracking-[0.3em] text-white/30 capitalize ">Scroll to Explore</span>
             <div className="w-[1px] h-16 bg-gradient-to-b from-white/30 to-transparent" />
           </motion.div>
         </motion.div>
@@ -146,7 +146,7 @@ export default function AgencyClient() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="flex items-center gap-4 mb-16">
           <div className="w-12 h-[1px] bg-[#6324FC]" />
-          <span className="font-mono text-sm tracking-[0.5em] text-[#6324FC] uppercase">The Agency Manifesto</span>
+          <span className="font-heading  text-sm tracking-[0.5em] text-[#6324FC] capitalize ">The Agency Manifesto</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 md:h-[600px]">
@@ -161,7 +161,7 @@ export default function AgencyClient() {
             className="md:col-span-2 md:row-span-2 relative rounded-[2rem] p-12 overflow-hidden group bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/5 hover:border-white/20 hover:shadow-[0_0_40px_rgba(99,36,252,0.1)] transition-all duration-500 flex flex-col justify-center cursor-default"
           >
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(99,36,252,0.15),transparent_50%)]" />
-            <h3 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-8 relative z-10">
+            <h3 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-8 relative z-10">
               We Break Through <br/><span className="italic text-[#6324FC]">The Noise.</span>
             </h3>
             <p className="font-sans font-light text-2xl md:text-3xl leading-[1.4] text-white/70 max-w-2xl relative z-10">
@@ -182,7 +182,7 @@ export default function AgencyClient() {
               <Globe className="w-5 h-5 text-[#00E5FF]" />
             </div>
             <h4 className="font-heading text-7xl tracking-tighter text-[#00E5FF] mb-2">20+</h4>
-            <p className="font-mono text-xs tracking-widest text-white/50 uppercase">Countries Served</p>
+            <p className="font-heading  text-xs tracking-widest text-white/50 capitalize ">Countries Served</p>
           </motion.div>
 
           {/* Metric Block 2 */}
@@ -198,7 +198,7 @@ export default function AgencyClient() {
               <Zap className="w-5 h-5 text-[#6324FC]" />
             </div>
             <h4 className="font-heading text-7xl tracking-tighter text-white mb-2">$1B+</h4>
-            <p className="font-mono text-xs tracking-widest text-white/70 uppercase">Client Revenue Generated</p>
+            <p className="font-heading  text-xs tracking-widest text-white/70 capitalize ">Client Revenue Generated</p>
           </motion.div>
 
         </div>
@@ -218,7 +218,7 @@ export default function AgencyClient() {
             className="p-12 rounded-[2rem] bg-white/[0.02] border border-white/5 group hover:bg-white/[0.04] hover:border-[#6324FC]/30 transition-all duration-500 cursor-default"
           >
             <Search className="w-10 h-10 text-[#6324FC] mb-8" />
-            <h3 className="font-heading text-3xl uppercase tracking-tighter mb-4">Digital Strategy & SEO Architecture</h3>
+            <h3 className="font-heading text-3xl capitalize tracking-tighter mb-4">Digital Strategy & SEO Architecture</h3>
             <p className="font-sans font-light text-white/50 leading-relaxed">
               We engineer revenue-generating ecosystems. Our process begins with deep market gap analysis, competitive SEO auditing, and global digital strategy formulation to ensure your brand captures high-intent traffic.
             </p>
@@ -233,7 +233,7 @@ export default function AgencyClient() {
             className="p-12 rounded-[2rem] bg-white/[0.02] border border-white/5 group hover:bg-white/[0.04] hover:border-[#00E5FF]/30 transition-all duration-500 cursor-default"
           >
             <Code className="w-10 h-10 text-[#00E5FF] mb-8" />
-            <h3 className="font-heading text-3xl uppercase tracking-tighter mb-4">Enterprise Web Engineering</h3>
+            <h3 className="font-heading text-3xl capitalize tracking-tighter mb-4">Enterprise Web Engineering</h3>
             <p className="font-sans font-light text-white/50 leading-relaxed">
               We deploy scalable, production-ready code architectures built for speed and security. We guarantee Core Web Vitals compliance and 99/100 PageSpeed scores, ensuring your technical SEO foundation is flawless.
             </p>
@@ -248,7 +248,7 @@ export default function AgencyClient() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="flex items-center gap-4 mb-16">
           <div className="w-12 h-[1px] bg-[#6324FC]" />
-          <span className="font-mono text-sm tracking-[0.5em] text-[#6324FC] uppercase">Enterprise Clientele</span>
+          <span className="font-heading  text-sm tracking-[0.5em] text-[#6324FC] capitalize ">Enterprise Clientele</span>
         </div>
 
         <div className="flex flex-col border-t border-white/5 relative">
@@ -286,7 +286,7 @@ export default function AgencyClient() {
               {/* Dynamic Hover Background */}
               <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 ${client.accent}`} />
               
-              <h3 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase relative z-10 group-hover:text-white transition-colors duration-500">
+              <h3 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize relative z-10 group-hover:text-white transition-colors duration-500">
                 {client.name}
               </h3>
               
@@ -294,7 +294,7 @@ export default function AgencyClient() {
                 <span className="font-sans font-light text-xl text-white/60 group-hover:text-white/90 transition-colors">
                   {client.industry}
                 </span>
-                <span className="font-mono text-xs tracking-widest text-white/30 uppercase group-hover:text-white/60 transition-colors">
+                <span className="font-heading  text-xs tracking-widest text-white/30 capitalize group-hover:text-white/60 transition-colors">
                   {client.location}
                 </span>
               </div>
@@ -323,7 +323,7 @@ export default function AgencyClient() {
             </div>
 
             <div className="relative z-10">
-              <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-8">
+              <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-8">
                 THE <br/>
                 <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#6324FC] to-[#00E5FF]">
                   EVOLUTION
@@ -348,7 +348,7 @@ export default function AgencyClient() {
                   <div className="w-12 h-[1px] bg-white/10 group-hover:bg-[#00E5FF] transition-colors duration-700 hidden md:block" />
                 </div>
                 
-                <h3 className="font-heading text-4xl md:text-5xl mb-6 uppercase tracking-tight relative z-10 group-hover:text-white transition-colors">
+                <h3 className="font-heading text-4xl md:text-5xl mb-6 capitalize tracking-tight relative z-10 group-hover:text-white transition-colors">
                   {item.title}
                 </h3>
                 
@@ -367,14 +367,14 @@ export default function AgencyClient() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
-              <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-4">
+              <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-4">
               AGENCY <br/><span className="italic text-[#6324FC]">CASE STUDIES</span>
             </h2>
             <p className="font-sans font-light  text-white/40 max-w-md">
               A glimpse into the digital products, headless commerce platforms, and web applications we've engineered.
             </p>
           </div>
-          <div className="font-mono text-xs text-[#6324FC] tracking-widest uppercase flex items-center gap-2">
+          <div className="font-heading  text-xs text-[#6324FC] tracking-widest capitalize flex items-center gap-2">
             DRAG TO EXPLORE <ArrowRight className="w-4 h-4" />
           </div>
         </div>
@@ -401,7 +401,7 @@ export default function AgencyClient() {
                 className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105 pointer-events-none"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                <span className="font-heading text-2xl uppercase tracking-wider text-white flex items-center gap-2">
+                <span className="font-heading text-2xl capitalize tracking-wider text-white flex items-center gap-2">
                   View Project <ArrowUpRight className="w-5 h-5" />
                 </span>
               </div>
@@ -416,7 +416,7 @@ export default function AgencyClient() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#6324FC]/10 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
         
-        <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl mb-12 relative z-10 max-w-5xl uppercase tracking-tighter">
+        <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl mb-12 relative z-10 max-w-5xl capitalize tracking-tighter">
           Let's engineer your <br/> <span className="italic text-[#6324FC]">digital growth.</span>
         </h2>
         
@@ -428,7 +428,7 @@ export default function AgencyClient() {
           <ArrowUpRight className="w-5 h-5 relative z-10" />
         </button>
 
-        <div className="flex flex-wrap justify-center gap-8 font-mono text-xs text-white/40 tracking-widest uppercase relative z-10">
+        <div className="flex flex-wrap justify-center gap-8 font-heading  text-xs text-white/40 tracking-widest capitalize relative z-10">
           <span>✓ Global SEO Audits</span>
           <span>✓ Custom Web Development</span>
           <span>✓ Enterprise UI/UX</span>
