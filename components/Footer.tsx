@@ -60,7 +60,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-700 text-primary pt-32 lg:pt-48 relative overflow-hidden flex flex-col justify-between min-h-screen">
+    <footer className="w-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-700 text-primary pt-16 md:pt-24 relative overflow-hidden flex flex-col justify-between min-h-screen">
       
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#6324FC]/5 blur-[150px] rounded-full pointer-events-none" />
@@ -70,47 +70,53 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full relative z-10 flex-grow">
         
         {/* 1. Massive Cinematic CTA */}
-        <div className="mb-48 lg:mb-64">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-mono text-[#6324FC] tracking-[0.5em] text-[10px] uppercase mb-12 flex items-center gap-4"
-          >
-            <span className="w-12 h-[1px] bg-[#6324FC]" /> 
-            COLLABORATE WITH US
-          </motion.div>
-          
-          <motion.h2 
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-heading text-[12vw] lg:text-[10vw] leading-[0.8] tracking-tighter uppercase mb-24 select-none"
-          >
-            LET&apos;S SCALE <br/>
-            <span className="stroke-text text-transparent italic opacity-80">WORLDWIDE.</span>
-          </motion.h2>
+       <div className="mb-16 md:mb-20">
+  <motion.div 
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="font-mono text-[#6324FC] tracking-[0.5em] text-[10px] uppercase mb-12 flex items-center gap-4"
+  >
+    <span className="w-12 h-[1px] bg-[#6324FC]" /> 
+    COLLABORATE WITH US
+  </motion.div>
+  
+  {/* এখানে flex ব্যবহার করা হয়েছে যাতে টেক্সট এবং বাটন পাশাপাশি থাকে */}
+  <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+    
+    <motion.h2 
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+      className="font-heading text-5xl md:text-7xl leading-[0.8] tracking-tighter uppercase select-none flex-1"
+    >
+      LET&apos;S SCALE <br/>
+      <span className="stroke-text text-transparent italic opacity-80">WORLDWIDE.</span>
+    </motion.h2>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
-            <button 
-              onClick={() => openModal()}
-              className="group relative px-8 md:px-16 py-5 md:py-8 bg-black dark:bg-white text-white dark:text-black font-heading text-lg md:text-xl tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 flex items-center justify-between md:justify-start gap-4 md:gap-10 uppercase hover:pr-12 md:hover:pr-20 w-full md:w-auto"
-            >
-              <div className="absolute inset-0 bg-[#6324FC] translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
-              <span className="relative z-10 group-hover:text-white transition-colors duration-500 text-center flex-grow md:flex-grow-0">
-                START A PROJECT
-              </span>
-              <div className="relative z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 dark:bg-black/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-500 shrink-0">
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-              </div>
-            </button>
-          </motion.div>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      className="flex-shrink-0"
+    >
+      <button 
+        onClick={() => openModal()}
+        className="group relative px-8 md:px-16 py-5 md:py-8 bg-black dark:bg-white text-white dark:text-black font-heading md:text-xl tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 flex items-center justify-between gap-4 md:gap-10 uppercase hover:pr-12 md:hover:pr-20 w-full md:w-auto"
+      >
+        <div className="absolute inset-0 bg-[#6324FC] translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+        <span className="relative z-10 group-hover:text-white transition-colors duration-500 text-center">
+          START A PROJECT
+        </span>
+        <div className="relative z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 dark:bg-black/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-500 shrink-0">
+          <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
         </div>
+      </button>
+    </motion.div>
+
+  </div>
+</div>
 
         {/* 2. Mega Navigation & Newsletter */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 pb-10 lg:pb-16 border-b border-primary/10">
@@ -148,7 +154,7 @@ export default function Footer() {
           <div className="col-span-1 lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-6 lg:gap-8 lg:mt-0">
             {footerLinks.map((column, idx) => (
               <div key={idx} className="flex flex-col gap-6">
-                <div className="font-sans text-lg font-bold text-primary/95 dark:text-primary/90 tracking-wider uppercase">
+                <div className="font-sans  font-bold text-primary/95 dark:text-primary/90 tracking-wider uppercase">
                   {column.title}
                 </div>
                 <ul className="flex flex-col gap-3.5">

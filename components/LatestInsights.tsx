@@ -31,13 +31,13 @@ const posts = [
     excerpt: "Scale across borders without losing your brand's voice. A deep dive into how we localized digital strategies for market leaders across 3 continents.",
     readTime: "6 min read",
     date: "April 28, 2026",
-    image: "https://images.unsplash.com/photo-1551288049-bbbda536ad79?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
   }
 ];
 
 export default function LatestInsights() {
   return (
-    <section className="w-full bg-[#060608] py-32 lg:py-48 relative overflow-hidden border-t border-white/5">
+    <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-t border-white/5">
       
       {/* Background Cinematic Accents */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#6324FC]/10 blur-[150px] rounded-full pointer-events-none opacity-50" />
@@ -47,7 +47,7 @@ export default function LatestInsights() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         
         {/* Header Section */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-32">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-16">
           <div className="max-w-3xl">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
@@ -58,7 +58,7 @@ export default function LatestInsights() {
               <span className="w-12 h-[1px] bg-[#6324FC]" /> 
               THE INTELLIGENCE HUB
             </motion.div>
-            <h2 className="font-heading text-8xl md:text-[9rem] tracking-tighter text-white leading-[0.85] uppercase">
+            <h2 className="font-heading text-5xl md:text-7xl tracking-tighter text-white leading-[0.85] uppercase">
               INSIGHTS THAT <br/>
               <span className="stroke-white italic opacity-80">DRIVE GROWTH.</span>
             </h2>
@@ -70,14 +70,14 @@ export default function LatestInsights() {
             transition={{ delay: 0.2 }}
             className="max-w-sm"
           >
-            <p className="font-sans font-light text-white/40 text-lg leading-relaxed border-l-2 border-[#6324FC] pl-8">
+            <p className="font-sans font-light text-white/40  leading-relaxed border-l-2 border-[#6324FC] pl-8">
               Strategy, deep-dives, and actionable intelligence from our global expert squad.
             </p>
           </motion.div>
         </div>
  
         {/* Magazine Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 mb-16 md:mb-20">
           {posts.map((post, idx) => (
             <motion.div 
               key={idx}
@@ -111,7 +111,7 @@ export default function LatestInsights() {
               </Link>
 
               {/* Content Area */}
-              <div className="p-10 lg:p-12 flex flex-col flex-1 relative z-10">
+              <div className="p-8 flex flex-col flex-1 relative z-10">
                 <div className="flex items-center gap-6 mb-8 font-mono text-[9px] tracking-[0.2em] uppercase text-white/30">
                   <div className="flex items-center gap-2 group-hover:text-white/60 transition-colors">
                     <Calendar className="w-3.5 h-3.5 text-[#6324FC]" />
@@ -124,16 +124,16 @@ export default function LatestInsights() {
                 </div>
 
                 <Link href={`/blog/${post.slug}`}>
-                  <h3 className="font-heading text-2xl lg:text-3xl tracking-tight text-white mb-6 leading-tight group-hover:text-[#6324FC] transition-colors duration-500">
+                  <h3 className="font-heading text-2xl tracking-tight text-white mb-6 leading-tight group-hover:text-[#6324FC] transition-colors duration-500">
                     {post.title}
                   </h3>
                 </Link>
 
-                <p className="font-sans font-light text-white/40 text-base leading-relaxed mb-12 line-clamp-3 group-hover:text-white/60 transition-colors duration-500">
+                <p className="font-sans font-light text-white/40 text-base leading-relaxed mb-4 line-clamp-3 group-hover:text-white/60 transition-colors duration-500">
                   {post.excerpt}
                 </p>
 
-                <div className="mt-auto pt-8 border-t border-white/5">
+                <div className="mt-auto pt-4 border-t border-white/5">
                   <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-5 text-white/40 font-heading tracking-[0.2em] text-[10px] group/btn uppercase transition-all duration-500 hover:text-white hover:gap-8">
                     <span className="relative z-10">EXPLORE FULL REPORT</span>
                     <div className="relative">

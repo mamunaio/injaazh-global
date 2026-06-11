@@ -33,7 +33,7 @@ export default function CareersPage() {
   const [openJob, setOpenJob] = useState<number | null>(null);
 
   return (
-    <main className="bg-[#060608] min-h-screen pt-32 lg:pt-48 pb-32 relative overflow-hidden">
+    <main className="bg-[#060608] min-h-screen relative overflow-hidden">
       {/* Background Ambient Glows */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#6324FC]/10 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#00E5FF]/5 blur-[150px] rounded-full pointer-events-none" />
@@ -41,7 +41,7 @@ export default function CareersPage() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         
         {/* 1. Hero Section */}
-        <div className="mb-32 lg:mb-48">
+        <section className="pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -51,18 +51,19 @@ export default function CareersPage() {
             <span className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase">Join the Collective</span>
           </motion.div>
           
-          <h1 className="font-heading text-8xl md:text-[10vw] leading-[0.85] tracking-tighter text-white uppercase mb-16">
+          <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-16">
             ENGINEER THE <br/>
             <span className="stroke-text text-transparent italic opacity-40">FUTURE WITH US.</span>
           </h1>
           
-          <p className="font-sans font-light text-2xl md:text-3xl text-white/40 max-w-3xl leading-relaxed border-l-2 border-[#6324FC] pl-8">
+          <p className="font-sans font-light text-lg md:text-xl text-white/70 max-w-3xl leading-relaxed border-l-2 border-[#6324FC] pl-8">
             We don't hire employees. We recruit elite digital architects and growth hackers to build the infrastructure of 2027.
           </p>
-        </div>
+        </section>
 
         {/* 2. Values / Perks Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-48">
+        <section className="py-16 md:py-24 border-b border-white/5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             { icon: Globe, title: "100% Remote", desc: "Work from anywhere on Earth. We value output over office hours." },
             { icon: Zap, title: "Elite Velocity", desc: "We move fast, ship daily, and dominate markets with technical precision." },
@@ -78,15 +79,16 @@ export default function CareersPage() {
             >
               <item.icon className="w-10 h-10 text-[#6324FC] mb-8" />
               <h3 className="font-heading text-3xl text-white mb-4 uppercase">{item.title}</h3>
-              <p className="font-sans font-light text-white/40 text-lg leading-relaxed">{item.desc}</p>
+              <p className="font-sans font-light text-white/40  leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>
+      </section>
 
         {/* 3. Open Positions (Job Board) */}
-        <div className="mb-32">
+        <section className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center justify-between mb-20">
-            <h2 className="font-heading text-6xl text-white uppercase tracking-tighter">Open <span className="italic text-[#6324FC]">Missions</span></h2>
+            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase">Open <span className="italic text-[#6324FC]">Missions</span></h2>
             <div className="hidden md:flex items-center gap-4 text-white/20 font-mono text-[10px] tracking-widest uppercase">
                <span>Total Active: {jobs.length}</span>
                <div className="w-1 h-1 rounded-full bg-[#6324FC]" />
@@ -148,7 +150,7 @@ export default function CareersPage() {
 
                     <Link 
                       href={`/careers/apply?role=${encodeURIComponent(job.title)}`}
-                      className="inline-flex items-center gap-4 px-10 py-5 bg-[#6324FC] rounded-full text-white font-heading text-lg tracking-widest hover:bg-white hover:text-black transition-all group/btn"
+                      className="inline-flex items-center gap-4 px-10 py-5 bg-[#6324FC] rounded-full text-white font-heading  tracking-widest hover:bg-white hover:text-black transition-all group/btn"
                     >
                       INITIATE APPLICATION
                       <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform" />
@@ -158,18 +160,18 @@ export default function CareersPage() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </section>
 
         {/* 4. Bottom CTA */}
-        <div className="mt-48 text-center py-24 border-t border-white/5">
-          <h2 className="font-heading text-5xl text-white mb-8">DON&apos;T SEE YOUR ROLE?</h2>
+        <section className="py-16 md:py-24 text-center border-t border-white/5">
+          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-8">DON&apos;T SEE YOUR ROLE?</h2>
           <p className="font-sans text-white/40 text-xl mb-12 max-w-xl mx-auto italic">
             "If you are exceptionally lethal at what you do, we will create a mission for you."
           </p>
           <Link href="/contact" className="font-mono text-sm tracking-widest text-[#6324FC] hover:text-white transition-colors border-b border-[#6324FC]">
              SEND US A SPECULATIVE DECK →
           </Link>
-        </div>
+        </section>
 
       </div>
     </main>

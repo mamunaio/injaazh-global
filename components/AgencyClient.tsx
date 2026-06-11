@@ -82,7 +82,7 @@ export default function AgencyClient() {
     <main ref={containerRef} className="w-full bg-[#060608] text-white min-h-screen pb-0 font-sans overflow-hidden selection:bg-[#6324FC] selection:text-white">
       
       {/* 1. Immersive Hero Section */}
-      <section className="relative w-full min-h-screen pt-32 pb-20 flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative w-full min-h-screen pt-32 pb-16 md:pt-40 md:pb-24 flex flex-col items-center justify-center overflow-hidden">
         {/* Dynamic Glow Orbs */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-[#6324FC]/20 to-[#00E5FF]/20 blur-[120px] rounded-full animate-pulse pointer-events-none" style={{ animationDuration: '4s' }} />
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.04] mix-blend-overlay pointer-events-none" />
@@ -113,7 +113,7 @@ export default function AgencyClient() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-heading text-5xl md:text-6xl lg:text-7xl xl:text-[6.5rem] leading-[0.95] tracking-tighter uppercase mb-8 max-w-5xl mx-auto"
+            className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-8 max-w-5xl mx-auto"
           >
             Engineering <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#6324FC] to-[#00E5FF]">Dominance</span> <br/>
             Through Custom Web & SEO Solutions.
@@ -142,8 +142,9 @@ export default function AgencyClient() {
       </section>
 
       {/* 2. The Manifesto (Bento Grid) */}
-      <section className="pt-32 pb-6 px-6 lg:px-12 max-w-[1600px] mx-auto relative z-20">
-        <div className="flex items-center gap-4 mb-16">
+      <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-t border-white/[0.03] z-20">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="flex items-center gap-4 mb-16">
           <div className="w-12 h-[1px] bg-[#6324FC]" />
           <span className="font-mono text-sm tracking-[0.5em] text-[#6324FC] uppercase">The Agency Manifesto</span>
         </div>
@@ -160,7 +161,7 @@ export default function AgencyClient() {
             className="md:col-span-2 md:row-span-2 relative rounded-[2rem] p-12 overflow-hidden group bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/5 hover:border-white/20 hover:shadow-[0_0_40px_rgba(99,36,252,0.1)] transition-all duration-500 flex flex-col justify-center cursor-default"
           >
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(99,36,252,0.15),transparent_50%)]" />
-            <h3 className="font-heading text-4xl md:text-6xl uppercase tracking-tighter mb-8 relative z-10 leading-none">
+            <h3 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-8 relative z-10">
               We Break Through <br/><span className="italic text-[#6324FC]">The Noise.</span>
             </h3>
             <p className="font-sans font-light text-2xl md:text-3xl leading-[1.4] text-white/70 max-w-2xl relative z-10">
@@ -201,11 +202,13 @@ export default function AgencyClient() {
           </motion.div>
 
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* 3. Methodology Bento */}
-      <section className="pt-6 pb-32 px-6 lg:px-12 max-w-[1600px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-t border-white/[0.03]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
@@ -237,11 +240,13 @@ export default function AgencyClient() {
           </motion.div>
 
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* 4. Interactive Client Roster */}
-      <section className="py-32 px-6 lg:px-12 max-w-[1400px] mx-auto border-t border-white/5 relative z-30">
-        <div className="flex items-center gap-4 mb-16">
+      <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-t border-white/[0.03] z-30">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="flex items-center gap-4 mb-16">
           <div className="w-12 h-[1px] bg-[#6324FC]" />
           <span className="font-mono text-sm tracking-[0.5em] text-[#6324FC] uppercase">Enterprise Clientele</span>
         </div>
@@ -281,7 +286,7 @@ export default function AgencyClient() {
               {/* Dynamic Hover Background */}
               <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 ${client.accent}`} />
               
-              <h3 className="font-heading text-4xl md:text-6xl uppercase tracking-tighter relative z-10 group-hover:text-white transition-colors duration-500">
+              <h3 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase relative z-10 group-hover:text-white transition-colors duration-500">
                 {client.name}
               </h3>
               
@@ -301,11 +306,13 @@ export default function AgencyClient() {
             </div>
           ))}
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* 5. The Evolution (Timeline) */}
-      <section className="relative w-full border-t border-white/5">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
+      <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-t border-white/[0.03]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="lg:sticky lg:top-0 h-auto lg:h-[80vh] p-12 lg:p-24 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/5 bg-[#060608] relative overflow-hidden">
             {/* Background Glow */}
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_left,rgba(99,36,252,0.15),transparent_70%)] pointer-events-none" />
@@ -316,7 +323,7 @@ export default function AgencyClient() {
             </div>
 
             <div className="relative z-10">
-              <h2 className="font-heading text-6xl md:text-8xl uppercase tracking-tighter mb-8">
+              <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-8">
                 THE <br/>
                 <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#6324FC] to-[#00E5FF]">
                   EVOLUTION
@@ -352,16 +359,18 @@ export default function AgencyClient() {
             ))}
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* 6. Behind The Scenes */}
-      <section className="py-40 overflow-hidden relative border-t border-white/5">
-        <div className="px-6 lg:px-12 mb-16 flex flex-col md:flex-row md:items-end justify-between max-w-[1600px] mx-auto gap-8">
+      <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-t border-white/[0.03]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
-            <h2 className="font-heading text-6xl md:text-[6vw] uppercase tracking-tighter leading-none mb-4">
+              <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-4">
               AGENCY <br/><span className="italic text-[#6324FC]">CASE STUDIES</span>
             </h2>
-            <p className="font-sans font-light text-lg text-white/40 max-w-md">
+            <p className="font-sans font-light  text-white/40 max-w-md">
               A glimpse into the digital products, headless commerce platforms, and web applications we've engineered.
             </p>
           </div>
@@ -399,7 +408,8 @@ export default function AgencyClient() {
             </Link>
           ))}
         </motion.div>
-      </section>
+      </div>
+    </section>
 
       {/* 7. Outro */}
       <section className="h-[90vh] flex flex-col items-center justify-center text-center px-6 border-t border-white/5 relative overflow-hidden bg-[#060608]">

@@ -64,7 +64,7 @@ export default function TrustedBy() {
             transition={{ delay: 0.3 }}
             className="flex flex-col items-start md:items-end text-left md:text-right"
           >
-            <p className="font-sans font-light text-white/40 text-base md:text-lg max-w-[320px] leading-relaxed mb-4">
+            <p className="font-sans font-light text-white/40 text-base md: max-w-[320px] leading-relaxed mb-4">
               We partner with industry pioneers to engineer digital dominance across every sector.
             </p>
             <div className="flex items-center gap-4">

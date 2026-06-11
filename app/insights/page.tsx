@@ -28,7 +28,7 @@ const posts = [
     category: "Design",
     date: "Latest",
     readTime: "5 MIN READ",
-    image: "https://images.unsplash.com/photo-1586717791821-3f44a563dc4c?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800",
     slug: "neuro-design-psychology"
   },
   {
@@ -48,7 +48,7 @@ const posts = [
     category: "Marketing",
     date: "Latest",
     readTime: "6 MIN READ",
-    image: "https://images.unsplash.com/photo-1551288049-bbbda536ad79?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
     slug: "ai-driven-personalization"
   }
 ];
@@ -72,7 +72,7 @@ export default function InsightsPage() {
           className="flex flex-col md:flex-row md:items-end justify-between gap-8"
         >
           <div className="max-w-2xl">
-            <h1 className="font-heading text-7xl md:text-9xl leading-[0.8] tracking-tighter uppercase mb-8">
+            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-8">
               IN <span className="italic text-[#6324FC]">SIGHTS</span>
             </h1>
             <p className="font-sans font-light text-xl text-white/50 leading-relaxed">
@@ -101,7 +101,7 @@ export default function InsightsPage() {
       </section>
 
       {/* 2. Featured Post */}
-      <section className="px-6 lg:px-12 max-w-[1400px] mx-auto mb-32">
+      <section className="px-6 lg:px-12 max-w-[1400px] mx-auto py-16 md:py-24">
         <Link href={`/insights/${posts[0].slug}`}>
           <motion.div 
             initial={{ opacity: 0, scale: 0.98 }}
@@ -126,7 +126,7 @@ export default function InsightsPage() {
                 <h2 className="font-heading text-4xl md:text-6xl text-white tracking-tight leading-none group-hover:text-[#6324FC] transition-colors duration-500 mb-4">
                   {posts[0].title}
                 </h2>
-                <p className="font-sans font-light text-white/50 text-lg max-w-2xl hidden md:block">
+                <p className="font-sans font-light text-white/50  max-w-2xl hidden md:block">
                   {posts[0].excerpt}
                 </p>
               </div>
@@ -140,7 +140,7 @@ export default function InsightsPage() {
       </section>
 
       {/* 3. Post Grid */}
-      <section className="px-6 lg:px-12 max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20 mb-32">
+      <section className="px-6 lg:px-12 max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20 py-16 md:py-24">
         {filteredPosts.map((post, index) => (
           <motion.div
             key={post.id}
@@ -189,7 +189,7 @@ export default function InsightsPage() {
       </section>
 
       {/* 4. Editorial Flagship Newsletter */}
-      <section className="relative px-6 lg:px-12 max-w-[1400px] mx-auto py-32 overflow-hidden">
+      <section className="relative px-6 lg:px-12 max-w-[1400px] mx-auto py-16 md:py-24 overflow-hidden">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -218,7 +218,7 @@ export default function InsightsPage() {
           {/* Right: Content & Form Side */}
           <div className="lg:w-3/5 p-12 lg:p-24 flex flex-col justify-center space-y-12 relative z-10">
             <div className="space-y-6">
-              <h2 className="font-heading text-6xl md:text-8xl leading-[0.85] tracking-tighter uppercase">
+              <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase">
                 NEVER MISS <br/> 
                 <span className="text-[#6324FC] italic">A SIGNAL.</span>
               </h2>
@@ -259,9 +259,9 @@ export default function InsightsPage() {
       </section>
 
       {/* 5. Bottom CTA Section */}
-      <section className="px-6 lg:px-12 max-w-[1400px] mx-auto text-center py-32 border-t border-white/5">
+      <section className="px-6 lg:px-12 max-w-[1400px] mx-auto text-center py-16 md:py-24 border-t border-white/5">
         <div className="font-mono text-sm tracking-[0.5em] text-[#6324FC] uppercase mb-8">COLLABORATE WITH US</div>
-        <h2 className="font-heading text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tighter uppercase mb-12">
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-12">
           <span className="text-white">LET'S SCALE</span> <br/>
           <span className="stroke-white italic opacity-80">WORLDWIDE.</span>
         </h2>

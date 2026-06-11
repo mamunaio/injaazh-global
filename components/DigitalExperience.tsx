@@ -121,7 +121,7 @@ export default function DigitalExperience() {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-32 bg-[#060608] transition-colors duration-500 overflow-hidden border-t border-white/[0.03]">
+    <section ref={sectionRef} className="relative py-16 md:py-24 bg-[#060608] transition-colors duration-500 overflow-hidden border-t border-white/[0.03]">
       <h2 className="sr-only">Our Premium Digital Services: Web Development, SEO, and Marketing</h2>
       
       {/* High-Tech Background Pattern */}
@@ -137,7 +137,7 @@ export default function DigitalExperience() {
                 key={idx}
                 onClick={() => setActiveTab(idx)}
                 onMouseEnter={() => setActiveTab(idx)}
-                className={`relative py-3 md:py-4 rounded-full font-heading text-xs sm:text-sm md:text-lg tracking-widest transition-all duration-500 flex items-center justify-center ${
+                className={`relative py-3 md:py-4 rounded-full font-heading text-xs sm:text-sm md: tracking-widest transition-all duration-500 flex items-center justify-center ${
                   activeTab === idx 
                     ? "px-4 sm:px-5 md:px-8 text-white flex-grow md:flex-grow-0" 
                     : "px-3 sm:px-4 md:px-8 text-white/40 hover:text-white/70 flex-shrink-0"
@@ -166,7 +166,7 @@ export default function DigitalExperience() {
         </div>
 
         {/* Content Area */}
-        <div className="relative min-h-[700px]">
+        <div className="relative">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -177,13 +177,13 @@ export default function DigitalExperience() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
             >
               {/* Technical Brief */}
-              <div className="space-y-12">
+              <div className="space-y-8">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-[1px] bg-[#6324FC]" />
                   <span className="font-mono text-[10px] tracking-[0.5em] text-[#6324FC] uppercase">{content[activeTab].badge}</span>
                 </div>
                 
-                <h3 className="font-heading text-5xl md:text-[5.5rem] leading-[0.85] tracking-tighter text-white uppercase flex flex-wrap gap-x-4 gap-y-2">
+                <h3 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase flex flex-wrap gap-x-4 gap-y-2">
                   {content[activeTab].headlineSegments.map((seg, idx) => {
                     if (seg.type === "purple") {
                       return (
@@ -207,7 +207,7 @@ export default function DigitalExperience() {
                   })}
                 </h3>
                 
-                <p className="font-sans font-light text-lg md:text-xl text-white/70 leading-relaxed max-w-xl border-l-2 border-[#6324FC]/40 pl-6 md:pl-8">
+                <p className="font-sans font-light  md:text-xl text-white/70 leading-relaxed max-w-xl border-l-2 border-[#6324FC]/40 pl-6 md:pl-8">
                   {content[activeTab].desc}
                 </p>
 
@@ -244,7 +244,7 @@ export default function DigitalExperience() {
                     rotateY,
                     transformStyle: "preserve-3d",
                   }}
-                  className="relative bg-white/[0.03] backdrop-blur-2xl border border-white/10 rounded-[2rem] lg:rounded-[3rem] p-8 md:p-12 lg:p-20 overflow-hidden shadow-2xl shadow-black transition-colors duration-500 hover:border-white/20"
+                  className="relative bg-white/[0.03] backdrop-blur-2xl border border-white/10 rounded-[2rem] lg:rounded-[3rem] p-8 md:p-14 overflow-hidden shadow-2xl shadow-black transition-colors duration-500 hover:border-white/20"
                 >
                   {/* Decorative Ambient Glows inside the card */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#6324FC]/10 blur-[80px] rounded-full -mr-32 -mt-32 pointer-events-none" />
@@ -256,7 +256,7 @@ export default function DigitalExperience() {
                   <div className="grid grid-cols-2 gap-6 md:gap-12 mb-10 md:mb-16" style={{ transform: "translateZ(50px)" }}>
                     {content[activeTab].kpis.map((kpi, idx) => (
                       <div key={idx} className="space-y-1">
-                        <div className="font-heading text-5xl md:text-6xl lg:text-7xl text-white tracking-tighter drop-shadow-2xl whitespace-nowrap">
+                        <div className="font-heading text-4xl md:text-5xl text-white tracking-tighter drop-shadow-2xl whitespace-nowrap">
                           {kpi.val}
                         </div>
                         <div className="font-mono text-[10px] md:text-xs tracking-[0.3em] text-[#00E5FF] uppercase font-semibold">

@@ -53,7 +53,7 @@ export default function ServicesPage() {
       
       {/* 1. Hero Section */}
       <section className="relative w-full h-[60vh] flex flex-col items-center justify-end pb-20 overflow-hidden">
-        <div className="relative z-10 px-6 max-w-[1600px] w-full flex flex-col items-start transition-colors duration-700">
+        <div className="relative z-10 px-6 max-w-[1400px] mx-auto w-full flex flex-col items-start transition-colors duration-700">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 1 }}
-            className="font-heading text-7xl md:text-[12vw] leading-[0.8] tracking-tighter uppercase transition-colors duration-700 drop-shadow-sm"
+            className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase transition-colors duration-700 drop-shadow-sm"
             style={{ color: hoveredIndex !== null ? "white" : "var(--primary)" }}
           >
             WHAT WE <span className="italic">DO</span>
@@ -77,8 +77,9 @@ export default function ServicesPage() {
       </section>
 
       {/* 2. Massive Interactive List */}
-      <section className="px-6 lg:px-12 max-w-[1600px] mx-auto py-20 pb-40">
-        <div className="flex flex-col border-t transition-colors duration-700" style={{ borderColor: hoveredIndex !== null ? "rgba(255,255,255,0.2)" : "var(--border-opacity-10)" }}>
+      <section className="w-full bg-transparent py-16 md:py-24 relative overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="flex flex-col border-t transition-colors duration-700" style={{ borderColor: hoveredIndex !== null ? "rgba(255,255,255,0.2)" : "var(--border-opacity-10)" }}>
           {services.map((svc, index) => (
             <div 
               key={index}
@@ -96,7 +97,7 @@ export default function ServicesPage() {
               {/* Title */}
               <div className="w-full md:w-[45%] z-10 relative">
                 <h2 
-                  className="font-heading text-5xl md:text-7xl lg:text-[7vw] uppercase tracking-tighter leading-[0.85] transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] md:group-hover:translate-x-8"
+                  className="font-heading text-5xl md:text-7xl uppercase tracking-tighter leading-[0.85] transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] md:group-hover:translate-x-8"
                   style={{ color: hoveredIndex === index ? "white" : hoveredIndex !== null ? "rgba(255,255,255,0.2)" : "var(--primary)" }}
                 >
                   {svc.title}
@@ -138,13 +139,14 @@ export default function ServicesPage() {
             </div>
           ))}
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* 3. Global Reach / Process (Dark Block) */}
-      <section className="py-32 md:py-48 px-6 lg:px-12 relative overflow-hidden transition-colors duration-1000 border-t border-primary/10" style={{ backgroundColor: hoveredIndex !== null ? "rgba(0,0,0,0.8)" : "" }}>
-        <div className="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
+      <section className="py-16 md:py-24 relative overflow-hidden transition-colors duration-1000 border-t border-primary/10" style={{ backgroundColor: hoveredIndex !== null ? "rgba(0,0,0,0.8)" : "" }}>
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
           <div>
-            <h2 className="font-heading text-6xl md:text-8xl tracking-tighter uppercase mb-8">
+            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-8">
               THE <br/><span className="italic opacity-80">METHOD</span>
             </h2>
           </div>

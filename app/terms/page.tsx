@@ -129,7 +129,7 @@ export default function TermsOfService() {
   }, []);
 
   return (
-    <main className="w-full min-h-screen bg-[#060608] text-white pt-48 pb-32 relative overflow-hidden selection:bg-[#00E5FF] selection:text-[#060608]">
+    <main className="w-full min-h-screen bg-[#060608] text-white relative overflow-hidden selection:bg-[#00E5FF] selection:text-[#060608]">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#6324FC]/5 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#00E5FF]/5 blur-[150px] rounded-full pointer-events-none" />
@@ -138,18 +138,19 @@ export default function TermsOfService() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         
         {/* Cinematic Header */}
+        <section className="pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-32 max-w-4xl"
+          className="max-w-4xl"
         >
           <div className="font-mono text-[#00E5FF] tracking-[0.5em] text-[10px] uppercase mb-8 flex items-center gap-4">
             <span className="w-12 h-[1px] bg-[#00E5FF]" /> 
             Corporate Agreements
           </div>
           
-          <h1 className="font-heading text-6xl md:text-[8rem] leading-[0.85] tracking-tighter uppercase mb-12">
+          <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-12">
             TERMS OF <br/>
             <span className="stroke-text text-transparent italic opacity-50">SERVICE</span>
           </h1>
@@ -166,7 +167,7 @@ export default function TermsOfService() {
             </div>
           </div>
         </motion.div>
-
+        </section>
         {/* Two Column Layout */}
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
           
@@ -179,7 +180,7 @@ export default function TermsOfService() {
                   <a 
                     key={section.id} 
                     href={`#${section.id}`}
-                    className={`relative pl-8 font-heading text-lg tracking-tight transition-all duration-300 ${activeSection === section.id ? 'text-[#00E5FF]' : 'text-white/40 hover:text-white/80'}`}
+                    className={`relative pl-8 font-heading  tracking-tight transition-all duration-300 ${activeSection === section.id ? 'text-[#00E5FF]' : 'text-white/40 hover:text-white/80'}`}
                   >
                     {/* Active Indicator Line */}
                     <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-[2px] bg-[#00E5FF] transition-all duration-300 ${activeSection === section.id ? 'h-full opacity-100 shadow-[0_0_10px_rgba(0,229,255,0.8)]' : 'h-0 opacity-0'}`} />
@@ -209,18 +210,18 @@ export default function TermsOfService() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
-                    className="scroll-mt-40 relative"
+                    className="scroll-mt-40 relative py-16 md:py-24 border-b border-white/5"
                   >
                     {/* Section Number Watermark */}
                     <div className="absolute -left-12 -top-12 font-heading text-[8rem] leading-none text-white/[0.02] pointer-events-none select-none hidden md:block">
                       0{idx + 1}
                     </div>
                     
-                    <h2 className="font-heading text-4xl md:text-5xl tracking-tight uppercase mb-12 text-[#6324FC] border-b border-white/10 pb-8 relative z-10">
+                    <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-12 text-[#6324FC] border-b border-white/10 pb-8 relative z-10">
                       {section.title}
                     </h2>
                     
-                    <div className="font-sans font-light text-white/60 text-lg leading-loose space-y-8 relative z-10">
+                    <div className="font-sans font-light text-white/60  leading-loose space-y-8 relative z-10">
                       {section.content}
                     </div>
                   </motion.div>
@@ -237,7 +238,7 @@ export default function TermsOfService() {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#6324FC]/20 blur-[100px]" />
                 
                 <h3 className="font-heading text-4xl tracking-tight uppercase mb-6 text-white relative z-10">Questions Regarding Terms?</h3>
-                <p className="font-sans text-white/70 text-lg leading-relaxed mb-10 relative z-10 max-w-2xl">
+                <p className="font-sans text-white/70  leading-relaxed mb-10 relative z-10 max-w-2xl">
                   Our corporate legal team is available to clarify any provisions within this Master Service Agreement. For custom SLA negotiations or enterprise redlines, please route your inquiry through your designated account executive.
                 </p>
                 

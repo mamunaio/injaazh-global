@@ -179,7 +179,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                           }`}>
                             <svc.icon className="w-5 h-5" />
                           </div>
-                          <span className="font-heading text-lg uppercase tracking-tight">{svc.id}</span>
+                          <span className="font-heading  uppercase tracking-tight">{svc.id}</span>
                           
                           {isSelected && (
                             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute -top-1 -right-1 w-5 h-5 bg-[#6324FC] rounded-full flex items-center justify-center">
@@ -245,7 +245,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                     value={details}
                     onChange={(e) => setDetails(e.target.value)}
                     placeholder="Briefly describe the goals, timeline, and current challenges..."
-                    className="w-full min-h-[200px] bg-white/[0.01] border border-white/5 rounded-2xl p-8 font-sans text-lg font-light text-white focus:outline-none focus:border-[#6324FC]/40 transition-all resize-none placeholder:text-white/5"
+                    className="w-full min-h-[200px] bg-white/[0.01] border border-white/5 rounded-2xl p-8 font-sans  font-light text-white focus:outline-none focus:border-[#6324FC]/40 transition-all resize-none placeholder:text-white/5"
                   />
                 </motion.div>
               )}
@@ -313,13 +313,13 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                     <h2 className="font-heading text-5xl uppercase tracking-tight text-white">
                       Transmission <br/><span className="text-[#6324FC] italic">Confirmed.</span>
                     </h2>
-                    <p className="font-sans font-light text-lg text-white/30 max-w-sm mx-auto">
+                    <p className="font-sans font-light  text-white/30 max-w-sm mx-auto">
                       Our strategists will review your brief. Expect a response within 12 business hours.
                     </p>
                   </div>
                   <button 
                     onClick={onClose}
-                    className="px-10 py-4 bg-white text-black font-heading text-lg uppercase tracking-tight hover:bg-[#6324FC] hover:text-white transition-all duration-300 rounded-full"
+                    className="px-10 py-4 bg-white text-black font-heading  uppercase tracking-tight hover:bg-[#6324FC] hover:text-white transition-all duration-300 rounded-full"
                   >
                     Return to Portal
                   </button>
@@ -351,7 +351,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                 }
                 className="group relative px-10 py-4 bg-[#6324FC] rounded-full flex items-center gap-3 transition-all duration-500 disabled:opacity-20 disabled:cursor-not-allowed"
               >
-                <span className="font-heading text-lg uppercase tracking-tight text-white">
+                <span className="font-heading  uppercase tracking-tight text-white">
                   {isSubmitting ? "Transmitting..." : step === 4 ? "Submit Request" : "Next Phase"}
                 </span>
                 {isSubmitting ? (

@@ -36,14 +36,14 @@ const awards = [
 
 export default function Awards() {
   return (
-    <section className="w-full bg-[#08080A] py-32 border-t border-white/[0.03] relative overflow-hidden">
+    <section className="w-full bg-[#08080A] py-16 md:py-24 border-t border-white/[0.03] relative overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E')] opacity-[0.02] pointer-events-none" />
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#6324FC]/5 blur-[120px] rounded-full -translate-x-1/2 pointer-events-none" />
       
       <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 relative z-10">
         
-        <div className="flex flex-col lg:flex-row gap-20 items-start">
+        <div className="flex flex-col lg:flex-row gap-20">
           
           {/* Header (Left Side) */}
           <div className="lg:w-1/2 lg:sticky lg:top-32">
@@ -53,7 +53,7 @@ export default function Awards() {
             </div>
             
             <div className="relative">
-              <h2 className="font-heading text-8xl md:text-[9rem] tracking-tighter text-white leading-[0.8] uppercase mb-12">
+              <h2 className="font-heading text-5xl md:text-7xltracking-tighter text-white leading-[0.8] uppercase mb-12">
                 INDUSTRY <br/>
                 <span className="stroke-white italic opacity-80">AWARDS.</span>
               </h2>
@@ -72,7 +72,7 @@ export default function Awards() {
                 <Award className="w-8 h-8 text-white/20 group-hover:text-[#6324FC]" />
               </div>
               <div className="flex flex-col">
-                <span className="text-white font-heading text-lg">Quality Guaranteed</span>
+                <span className="text-white font-heading ">Quality Guaranteed</span>
                 <span className="text-white/20 font-mono text-[10px] uppercase tracking-widest">ISO 9001:2015 COMPLIANT</span>
               </div>
             </div>

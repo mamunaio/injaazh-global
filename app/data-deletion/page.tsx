@@ -5,7 +5,7 @@ import { ShieldCheck, Mail, ArrowRight, ShieldAlert } from "lucide-react";
 
 export default function DataDeletion() {
   return (
-    <main className="w-full min-h-screen bg-[#060608] pt-48 pb-32 relative overflow-hidden">
+    <main className="w-full min-h-screen bg-[#060608] relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#6324FC]/5 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#00E5FF]/5 blur-[150px] rounded-full pointer-events-none" />
@@ -14,30 +14,32 @@ export default function DataDeletion() {
       <div className="max-w-[900px] mx-auto px-6 md:px-12 relative z-10">
         
         {/* Header Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-24 text-center"
-        >
-          <div className="font-mono text-[#6324FC] tracking-[0.5em] text-[10px] uppercase mb-10 flex justify-center items-center gap-4">
-            <span className="w-12 h-[1px] bg-[#6324FC]" /> 
-            Compliance & Privacy
-            <span className="w-12 h-[1px] bg-[#6324FC]" />
-          </div>
-          
-          <h1 className="font-heading text-6xl md:text-8xl leading-[0.9] tracking-tighter uppercase mb-10">
-            DATA DELETION <br/>
-            <span className="stroke-text text-transparent italic opacity-30">INSTRUCTIONS</span>
-          </h1>
-          
-          <p className="font-sans font-light text-white/50 text-xl leading-relaxed max-w-2xl mx-auto border-l border-white/5 pl-8 text-left md:text-center md:border-l-0 md:pl-0">
-            At Injaazh, we value your privacy. Following Meta&apos;s Platform Policy, we provide a Data Deletion Callback URL or Data Deletion Instructions URL to help users request their data removal.
-          </p>
-        </motion.div>
+        <section className="pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center"
+          >
+            <div className="font-mono text-[#6324FC] tracking-[0.5em] text-[10px] uppercase mb-10 flex justify-center items-center gap-4">
+              <span className="w-12 h-[1px] bg-[#6324FC]" /> 
+              Compliance & Privacy
+              <span className="w-12 h-[1px] bg-[#6324FC]" />
+            </div>
+            
+            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-10">
+              DATA DELETION <br/>
+              <span className="stroke-text text-transparent italic opacity-30">INSTRUCTIONS</span>
+            </h1>
+            
+            <p className="font-sans font-light text-white/50 text-xl leading-relaxed max-w-2xl mx-auto border-l border-white/5 pl-8 text-left md:text-center md:border-l-0 md:pl-0">
+              At Injaazh, we value your privacy. Following Meta&apos;s Platform Policy, we provide a Data Deletion Callback URL or Data Deletion Instructions URL to help users request their data removal.
+            </p>
+          </motion.div>
+        </section>
 
         {/* Instructions Content */}
-        <div className="space-y-16">
+        <div className="space-y-16 py-16 md:py-24">
           
           {/* Method 1: Facebook App Settings */}
           <motion.div 
@@ -55,7 +57,7 @@ export default function DataDeletion() {
               </div>
               <div className="space-y-8">
                 <h2 className="font-heading text-4xl tracking-tight uppercase">Method 1: via Facebook Settings</h2>
-                <p className="font-sans text-white/60 text-lg leading-relaxed">
+                <p className="font-sans text-white/60  leading-relaxed">
                   If you have used our app with Facebook Login, you can remove your activities by following these steps:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -92,7 +94,7 @@ export default function DataDeletion() {
               </div>
               <div className="space-y-8">
                 <h2 className="font-heading text-4xl tracking-tight uppercase">Method 2: Manual Deletion Request</h2>
-                <p className="font-sans text-white/60 text-lg leading-relaxed">
+                <p className="font-sans text-white/60  leading-relaxed">
                   To request manual deletion of any data associated with your account from our servers, please contact our data protection team directly:
                 </p>
                 <a 

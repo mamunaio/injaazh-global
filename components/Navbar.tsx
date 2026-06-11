@@ -237,7 +237,7 @@ export default function Navbar() {
                 {/* Bouncing/pulsating dot */}
                 <span className="w-2 h-2 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
                 
-                <span className="relative z-10 flex items-center gap-2 font-heading text-lg tracking-wider text-primary uppercase transition-colors duration-500">
+                <span className="relative z-10 flex items-center gap-2 font-heading  tracking-wider text-primary uppercase transition-colors duration-500">
                   LET'S TALK
                   <ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform duration-500 text-[#6324FC] dark:group-hover:text-white" />
                 </span>
@@ -483,7 +483,7 @@ export default function Navbar() {
                       Back to Menu
                     </button>
                     
-                    <h3 className="font-sans text-lg font-semibold text-primary tracking-wide mb-2 border-b border-primary/10 pb-4">Our Services</h3>
+                    <h3 className="font-sans  font-semibold text-primary tracking-wide mb-2 border-b border-primary/10 pb-4">Our Services</h3>
 
                     {services.map((svc, i) => {
                       const isOpen = activeCategory === i;

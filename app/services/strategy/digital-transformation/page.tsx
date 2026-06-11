@@ -34,7 +34,7 @@ export default function DigitalTransformationPage() {
   ];
 
   return (
-    <main className="bg-[#060608] min-h-screen pt-32 lg:pt-48 pb-32 relative overflow-hidden">
+    <main className="bg-[#060608] min-h-screen relative overflow-hidden">
       {/* Cinematic Background */}
       <div className="absolute top-0 right-0 w-[1000px] h-[1000px] bg-[#6324FC]/5 blur-[180px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-[#00E5FF]/5 blur-[150px] rounded-full pointer-events-none" />
@@ -43,7 +43,7 @@ export default function DigitalTransformationPage() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         
         {/* 1. Hero Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20 items-center mb-48">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20 items-center pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5">
           <div>
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
@@ -54,7 +54,7 @@ export default function DigitalTransformationPage() {
               <span className="font-mono text-[#6324FC] text-[10px] tracking-[0.5em] uppercase">Strategy Division</span>
             </motion.div>
             
-            <h1 className="font-heading text-8xl md:text-[9vw] leading-[0.85] tracking-tighter text-white uppercase mb-16">
+            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-16">
               DIGITAL <br/>
               <span className="stroke-text text-transparent italic opacity-40">EVOLUTION.</span>
             </h1>
@@ -111,9 +111,9 @@ export default function DigitalTransformationPage() {
         </div>
 
         {/* 2. Key Pillars */}
-        <div className="mb-48">
+        <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-24">
-            <h2 className="font-heading text-6xl text-white uppercase tracking-tighter max-w-xl">
+            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase max-w-xl">
               REINVENTING <span className="italic text-[#6324FC]">EFFICIENCY.</span>
             </h2>
             <p className="font-mono text-[11px] tracking-widest text-white/30 uppercase max-w-xs leading-loose">
@@ -145,7 +145,7 @@ export default function DigitalTransformationPage() {
         </div>
 
         {/* 3. Transformation Map Visualization */}
-        <div className="mb-48 bg-white/[0.01] border border-white/5 rounded-[3.5rem] p-12 lg:p-24 overflow-hidden relative">
+        <div className="py-16 md:py-24 bg-white/[0.01] border border-white/5 rounded-[3.5rem] p-12 lg:p-24 overflow-hidden relative border-b border-white/5">
            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#6324FC] to-transparent animate-scan opacity-30" />
            
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
@@ -175,7 +175,7 @@ export default function DigitalTransformationPage() {
               </div>
 
               <div>
-                <h2 className="font-heading text-5xl lg:text-7xl text-white uppercase tracking-tighter leading-none mb-12">
+                <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-12">
                   MODERNIZE OR <br/>
                   <span className="italic text-[#6324FC]">STAGNATE.</span>
                 </h2>
@@ -204,8 +204,8 @@ export default function DigitalTransformationPage() {
         </div>
 
         {/* 4. Strategic Flow */}
-        <div className="mb-48">
-           <h2 className="font-heading text-6xl text-white uppercase tracking-tighter mb-24 text-center">
+        <div className="py-16 md:py-24 border-b border-white/5">
+           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-24 text-center">
               THE TRANSFORMATION <span className="italic text-[#6324FC]">CYCLE.</span>
            </h2>
 
@@ -229,8 +229,8 @@ export default function DigitalTransformationPage() {
         </div>
 
         {/* 5. Bottom CTA */}
-        <div className="text-center py-24 border-t border-white/5">
-          <h2 className="font-heading text-7xl md:text-8xl text-white tracking-tighter uppercase mb-12">
+        <div className="text-center py-16 md:py-24 border-t border-white/5">
+          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white uppercase mb-12">
             EVOLVE THE <span className="italic text-[#6324FC]">ENTITY.</span>
           </h2>
           <p className="font-sans text-white/40 text-2xl mb-16 max-w-2xl mx-auto leading-relaxed">

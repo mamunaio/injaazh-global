@@ -201,7 +201,7 @@ function CaseStudyCard({ project, index }: { project: typeof cases[0], index: nu
 
 export default function FeaturedWork() {
   return (
-    <section className="w-full bg-[#060608] py-32 relative overflow-hidden">
+    <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#6324FC]/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#00E5FF]/5 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/4 pointer-events-none" />
@@ -209,7 +209,7 @@ export default function FeaturedWork() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Clean Header */}
-        <div className="mb-24">
+        <div className="mb-16">
           <div className="flex items-center gap-4 mb-8">
             <motion.div 
               initial={{ width: 0 }}
@@ -219,9 +219,9 @@ export default function FeaturedWork() {
             <span className="font-mono text-sm tracking-[0.5em] text-[#6324FC] uppercase">SELECTED WORKS</span>
           </div>
           
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
+          <div className="flex flex-col md:flex-row justify-between gap-12">
             <h2 className="sr-only">Our Portfolio of Enterprise Web Development and SEO Case Studies</h2>
-            <div aria-hidden="true" className="font-heading text-6xl sm:text-7xl md:text-[9rem] tracking-tighter text-white leading-[0.9] mb-4">
+            <div aria-hidden="true" className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white mb-4">
               RESULTS <br/>
               <motion.span 
                 initial={{ opacity: 0, x: -20 }}
@@ -264,7 +264,7 @@ export default function FeaturedWork() {
             <motion.div 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative px-8 md:px-12 py-5 md:py-7 bg-black text-white font-heading text-lg md:text-xl tracking-widest rounded-full overflow-hidden transition-all duration-500 shadow-[0_15px_40px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_60px_rgba(99,36,252,0.4)] flex items-center gap-4 md:gap-6 uppercase"
+              className="relative px-8 md:px-12 py-5 md:py-7 bg-black text-white font-heading  md:text-xl tracking-widest rounded-full overflow-hidden transition-all duration-500 shadow-[0_15px_40px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_60px_rgba(99,36,252,0.4)] flex items-center gap-4 md:gap-6 uppercase"
             >
               {/* Button Glow Layer */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC] to-[#4310C7] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />

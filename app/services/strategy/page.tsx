@@ -111,7 +111,8 @@ export default function StrategyPage() {
   return (
     <main className="w-full min-h-screen bg-[#060608] text-white pt-32 pb-20 font-sans overflow-hidden">
       {/* Hero Section */}
-      <section className="relative px-6 lg:px-12 max-w-[1400px] mx-auto mb-32">
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#6324FC]/10 blur-[150px] rounded-full pointer-events-none" />
 
         <div className="flex items-center gap-4 mb-8">
@@ -119,7 +120,7 @@ export default function StrategyPage() {
           <span className="font-mono text-sm tracking-[0.5em] text-[#6324FC] uppercase">DIGITAL STRATEGY</span>
         </div>
         
-        <h1 className="font-heading text-6xl md:text-8xl lg:text-[7rem] leading-[0.9] tracking-tighter uppercase mb-12">
+        <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-12">
           Digital Strategy Services <br/>
           That Turn Vision Into <br/>
           <span className="italic text-[#6324FC]">Market Domination.</span>
@@ -140,10 +141,11 @@ export default function StrategyPage() {
             BOOK A FREE STRATEGY CALL <ArrowUpRight className="w-5 h-5" />
           </span>
         </button>
+      </div>
       </section>
 
       {/* Stats Strip */}
-      <section className="border-y border-white/5 bg-white/[0.01] mb-32">
+      <section className="border-y border-white/5 bg-white/[0.01] py-12 md:py-16">
         <div className="max-w-[1400px] mx-auto grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/5">
           {stats.map((stat, i) => (
             <div key={i} className="py-12 px-6 text-center">
@@ -155,8 +157,9 @@ export default function StrategyPage() {
       </section>
 
       {/* WHAT'S INCLUDED */}
-      <section className="px-6 lg:px-12 max-w-[1400px] mx-auto mb-32">
-        <h2 className="font-heading text-4xl md:text-6xl uppercase mb-16">WHAT'S INCLUDED</h2>
+      <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-16">WHAT'S INCLUDED</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {whatIsIncluded.map((item, i) => (
             <div key={i} className="p-10 bg-white/[0.02] border border-white/5 rounded-3xl hover:border-[#6324FC]/30 transition-colors duration-500 flex flex-col justify-between">
@@ -176,11 +179,13 @@ export default function StrategyPage() {
             </div>
           ))}
         </div>
+      </div>
       </section>
 
       {/* WHY INJAAZH STRATEGY WORKS */}
-      <section className="px-6 lg:px-12 max-w-[1400px] mx-auto mb-32">
-        <h2 className="font-heading text-4xl md:text-6xl uppercase mb-16">WHY INJAAZH STRATEGY WORKS</h2>
+      <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-16">WHY INJAAZH STRATEGY WORKS</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {whyItWorks.map((item, i) => (
             <div key={i} className="space-y-4">
@@ -191,11 +196,13 @@ export default function StrategyPage() {
             </div>
           ))}
         </div>
+      </div>
       </section>
 
       {/* OUR STRATEGY PROCESS */}
-      <section className="px-6 lg:px-12 max-w-[1400px] mx-auto mb-32">
-        <h2 className="font-heading text-4xl md:text-6xl uppercase mb-16">OUR STRATEGY PROCESS</h2>
+      <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-16">OUR STRATEGY PROCESS</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {process.map((step, i) => (
             <div key={i} className="relative p-8 bg-white/[0.02] border border-white/5 rounded-2xl">
@@ -207,11 +214,13 @@ export default function StrategyPage() {
             </div>
           ))}
         </div>
+      </div>
       </section>
 
       {/* FREQUENTLY ASKED QUESTIONS */}
-      <section className="px-6 lg:px-12 max-w-[1400px] mx-auto mb-32">
-        <h2 className="font-heading text-4xl md:text-6xl uppercase mb-16">FREQUENTLY ASKED QUESTIONS</h2>
+      <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-16">FREQUENTLY ASKED QUESTIONS</h2>
         <div className="space-y-4">
           {faqs.map((faq, i) => (
             <div key={i} className="border-b border-white/5">
@@ -232,11 +241,13 @@ export default function StrategyPage() {
             </div>
           ))}
         </div>
+      </div>
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 lg:px-12 max-w-[1400px] mx-auto text-center py-32 border-t border-white/5">
-        <h2 className="font-heading text-5xl md:text-7xl mb-8 uppercase">Ready to Dominate Your Market?</h2>
+      <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-t border-white/5 text-center">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-8">Ready to Dominate Your Market?</h2>
         <p className="font-sans font-light text-xl text-white/50 max-w-2xl mx-auto mb-12">
           Book a free 30-minute strategy call and we'll outline the right engagement for your goals.
         </p>
@@ -249,6 +260,7 @@ export default function StrategyPage() {
             BOOK A FREE STRATEGY CALL ⚡
           </span>
         </button>
+      </div>
       </section>
 
       {/* FAQ Schema */}

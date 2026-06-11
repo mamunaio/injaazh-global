@@ -218,7 +218,7 @@ export default function UltraPremiumCaseStudy() {
       </section>
 
       {/* 2. Bento Grid Stats */}
-      <section className="relative z-20 py-32 px-6 lg:px-12 max-w-[1400px] mx-auto -mt-20">
+      <section className="relative z-20 py-16 md:py-24 px-6 lg:px-12 max-w-[1400px] mx-auto -mt-20">
          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 h-auto md:h-[500px]">
             {project.metrics.map((m: any, i: number) => (
               <motion.div 
@@ -256,7 +256,7 @@ export default function UltraPremiumCaseStudy() {
       </section>
 
       {/* 3. The Narrative (Bento Style Layout) */}
-      <section className="py-48 px-6 lg:px-12 max-w-[1400px] mx-auto">
+      <section className="py-16 md:py-24 px-6 lg:px-12 max-w-[1400px] mx-auto">
          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
             
             {/* Context Sidebar */}
@@ -307,7 +307,7 @@ export default function UltraPremiumCaseStudy() {
                {/* Overview */}
                <div className="space-y-10">
                   <div className="font-mono text-[11px] text-[#6324FC] tracking-[0.5em] uppercase">Project Essence</div>
-                  <h2 className="font-heading text-6xl md:text-8xl leading-[0.9] tracking-tighter uppercase">
+                  <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase">
                      THE <span className="italic opacity-40">OVERVIEW.</span>
                   </h2>
                   <p className="font-sans font-light text-2xl md:text-4xl text-white/60 leading-tight">
@@ -360,12 +360,12 @@ export default function UltraPremiumCaseStudy() {
       </section>
 
       {/* 4. Horizontal Scroll "Masterpiece" Section */}
-      <section className="py-48 px-6 lg:px-12 bg-white text-black overflow-hidden relative">
+      <section className="py-16 md:py-24 px-6 lg:px-12 bg-white text-black overflow-hidden relative">
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none" />
          
          <div className="max-w-[1400px] mx-auto mb-24">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
-               <h2 className="font-heading text-8xl md:text-[10vw] tracking-tighter leading-none uppercase">
+               <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase">
                   VISUAL <br/>
                   <span className="text-[#6324FC] italic">CHRONICLE.</span>
                </h2>

@@ -37,7 +37,7 @@ const reviews = [
 
 export default function Testimonials() {
   return (
-    <section className="w-full bg-[#060608] pt-32 lg:pt-48 pb-0 border-t border-white/5 relative overflow-hidden">
+    <section className="w-full bg-[#060608] pt-16 md:pt-24 pb-0 border-t border-white/5 relative overflow-hidden">
       {/* Background Ambient Glows */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#6324FC]/10 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#00E5FF]/5 blur-[150px] rounded-full pointer-events-none" />
@@ -57,7 +57,7 @@ export default function Testimonials() {
               <span className="w-12 h-[1px] bg-[#6324FC]" /> 
               CLIENT SUCCESS STORIES
             </motion.div>
-            <h2 className="font-heading text-6xl md:text-[8rem] tracking-tighter text-white leading-[0.85] uppercase">
+            <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white mb-4 uppercase">
               TRUSTED <br/>
               <span className="stroke-white italic opacity-80">BY LEADERS.</span>
             </h2>
@@ -110,7 +110,7 @@ export default function Testimonials() {
                     ))}
                   </div>
 
-                  <p className="font-sans font-light text-lg md:text-xl lg:text-2xl text-white/90 leading-[1.6] mb-12 relative z-10 flex-grow">
+                  <p className="font-sans font-light text-lg text-white/90 leading-[1.6] mb-6 relative z-10 flex-grow">
                     "{rev.quote}"
                   </p>
 
@@ -150,17 +150,17 @@ export default function Testimonials() {
         </div>
 
         {/* Global Stats Footer */}
-        <div className="mt-32 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 relative z-10">
-           <div className="flex flex-col items-center justify-center py-12 md:py-16 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
-             <span className="font-heading text-7xl md:text-[6rem] text-white group-hover:text-[#6324FC] transition-colors duration-500 mb-2 leading-none">98%</span>
+        <div className="mt-16 md:mt-24 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 relative z-10">
+           <div className="flex flex-col items-center justify-center py-8 md:py-10 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
+             <span className="font-heading text-4xl md:text-6xl text-white group-hover:text-[#6324FC] transition-colors duration-500 mb-2 leading-none">98%</span>
              <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase text-white/50 group-hover:text-white/80 transition-colors duration-500">RETENTION RATE</span>
            </div>
-           <div className="flex flex-col items-center justify-center py-12 md:py-16 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
-             <span className="font-heading text-7xl md:text-[6rem] text-white group-hover:text-[#00E5FF] transition-colors duration-500 mb-2 leading-none">24/7</span>
+           <div className="flex flex-col items-center justify-center py-8 md:py-10 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
+             <span className="font-heading text-4xl md:text-6xl text-white group-hover:text-[#00E5FF] transition-colors duration-500 mb-2 leading-none">24/7</span>
              <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase text-white/50 group-hover:text-white/80 transition-colors duration-500">GLOBAL SUPPORT</span>
            </div>
-           <div className="flex flex-col items-center justify-center py-12 md:py-16 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
-             <span className="font-heading text-7xl md:text-[6rem] text-white group-hover:text-[#6324FC] transition-colors duration-500 mb-2 leading-none">500+</span>
+           <div className="flex flex-col items-center justify-center py-8 md:py-10 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
+             <span className="font-heading text-4xl md:text-6xl text-white group-hover:text-[#6324FC] transition-colors duration-500 mb-2 leading-none">500+</span>
              <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase text-white/50 group-hover:text-white/80 transition-colors duration-500">PROJECTS DELIVERED</span>
            </div>
         </div>

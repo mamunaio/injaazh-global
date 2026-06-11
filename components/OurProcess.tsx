@@ -102,7 +102,7 @@ export default function OurProcess() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative w-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 text-primary pt-10 pb-16">
+    <section ref={containerRef} className="relative w-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 text-primary py-16 md:py-24">
       
       {/* Background Architectural Grid */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
@@ -113,7 +113,7 @@ export default function OurProcess() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col lg:flex-row relative z-10">
         
         {/* Left Side (Sticky) */}
-        <div className="w-full lg:w-1/2 h-screen hidden lg:flex flex-col justify-start pt-[20vh] pr-20 relative" ref={leftRef}>
+        <div className="w-full lg:w-1/2 h-screen hidden lg:flex flex-col justify-start pr-20 relative" ref={leftRef}>
           
           {/* Rotating Abstract Wireframe SVG */}
           <motion.div 
@@ -135,19 +135,19 @@ export default function OurProcess() {
             // THE METHODOLOGY
           </div>
           <h2 className="sr-only">Our Digital Agency Process: Strategy, Web Design, Next.js Engineering, and SEO Growth</h2>
-          <div aria-hidden="true" className="font-heading text-6xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-[6.5rem] leading-[0.85] tracking-tighter mb-8">
+          <div aria-hidden="true" className="font-heading text-4xl md:text-6xl leading-[0.85] tracking-tighter text-white mb-4">
             <div className="process-title overflow-visible pb-1">THE</div>
             <div className="process-title overflow-visible pb-1 whitespace-nowrap">ARCHITECTURE</div>
             <div className="process-title overflow-visible pb-1">OF</div>
             <div className="process-title overflow-visible pb-1 stroke-text text-transparent italic whitespace-nowrap">DOMINANCE</div>
           </div>
-          <p className="font-sans font-light text-lg text-primary/80 max-w-md process-title border-l-2 border-[#6324FC] pl-6 leading-relaxed">
+          <p className="font-sans font-light  text-primary/80 max-w-md process-title border-l-2 border-[#6324FC] pl-6 leading-relaxed">
             We don't just build websites. We engineer high-performance digital ecosystems — designed to capture market share, outrank competitors in Google search, and dominate every channel your enterprise clients use to find you.
           </p>
         </div>
 
         {/* Right Side (Scrollable Cards) */}
-        <div className="w-full lg:w-1/2 flex flex-col gap-32 pt-[20vh] lg:pt-[20vh] pb-[10vh] relative" ref={rightRef}>
+        <div className="w-full lg:w-1/2 flex flex-col gap-32 pb-[10vh] relative" ref={rightRef}>
           
           {/* Vertical Progress Line (Desktop Only) */}
           <div className="absolute left-0 top-[20vh] bottom-[10vh] w-[1px] bg-primary/10 hidden lg:block z-0">
@@ -190,7 +190,7 @@ export default function OurProcess() {
                   {step.title}
                 </h3>
                 
-                <p className="font-sans font-light text-lg text-primary/80 mb-10 leading-relaxed">
+                <p className="font-sans font-light  text-primary/80 mb-10 leading-relaxed">
                   {step.desc}
                 </p>
 

@@ -131,7 +131,7 @@ export default function HeroSlider() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.4 }}
-          className="hero-description mt-6 md:mt-8 max-w-[700px] font-sans font-light text-sm md:text-lg text-primary/80 leading-relaxed px-2 md:px-0"
+          className="hero-description mt-6 md:mt-8 max-w-[700px] font-sans font-light text-sm md: text-primary/80 leading-relaxed px-2 md:px-0"
         >
           We engineer high-performance Next.js websites, dominate search through Technical SEO, and build revenue infrastructure that scales globally — for the US, UK, and beyond.
         </motion.p>
@@ -157,7 +157,7 @@ export default function HeroSlider() {
               {/* Pulsating dot */}
               <span className="w-2.5 h-2.5 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
               
-              <span className="relative z-10 flex items-center gap-2 font-heading text-lg tracking-wider text-primary uppercase transition-colors duration-500">
+              <span className="relative z-10 flex items-center gap-2 font-heading  tracking-wider text-primary uppercase transition-colors duration-500">
                 LET'S TALK
                 <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-500 text-[#6324FC] dark:group-hover:text-white" />
               </span>

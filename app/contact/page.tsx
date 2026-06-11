@@ -6,10 +6,10 @@ import { ArrowUpRight, Mail, MapPin } from "lucide-react";
 export default function ContactPage() {
   return (
     <main className="w-full min-h-screen bg-background text-primary selection:bg-[#6324FC] selection:text-white pt-24 font-sans">
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 min-h-[80vh]">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 min-h-[80vh]">
         
         {/* Left Side: Info */}
-        <div className="flex flex-col justify-between py-12 lg:py-24 border-b lg:border-b-0 lg:border-r border-primary/10 pr-0 lg:pr-12">
+        <div className="flex flex-col justify-between py-16 md:py-24 border-b lg:border-b-0 lg:border-r border-primary/10 pr-0 lg:pr-12">
           <div>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -24,7 +24,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 1 }}
-              className="font-heading text-6xl md:text-8xl lg:text-[7vw] leading-[0.8] tracking-tighter uppercase mb-8"
+              className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter uppercase mb-8"
             >
               LET'S <br/><span className="italic text-[#6324FC]">TALK.</span>
             </motion.h1>
@@ -74,7 +74,7 @@ export default function ContactPage() {
         </div>
 
         {/* Right Side: Form */}
-        <div className="flex flex-col justify-center py-12 lg:py-24">
+        <div className="flex flex-col justify-center py-16 md:py-24">
           <motion.form 
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
