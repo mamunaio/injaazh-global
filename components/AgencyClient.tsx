@@ -300,8 +300,14 @@ export default function AgencyClient() {
               </div>
               
               {/* Floating Arrow */}
-              <div className="absolute right-8 top-1/2 -translate-y-1/2 opacity-0 -translate-x-10 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 hidden md:flex w-16 h-16 rounded-full bg-white text-black items-center justify-center z-10">
-                <ArrowRight className="w-6 h-6" />
+              <div className="absolute right-8 top-1/2 -translate-y-1/2 opacity-0 -translate-x-10 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 hidden md:flex w-16 h-16 p-[1.5px] rounded-full overflow-hidden items-center justify-center z-10 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] hover:scale-105 active:scale-95 cursor-pointer isolate">
+                <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+                  <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+                </div>
+                <div className="relative w-full h-full rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center z-10">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                  <ArrowRight className="relative z-10 w-6 h-6 text-[#6324FC] group-hover:text-white transition-all duration-500" />
+                </div>
               </div>
             </div>
           ))}
@@ -312,8 +318,8 @@ export default function AgencyClient() {
       {/* 5. The Evolution (Timeline) */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-t border-white/[0.03]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="lg:sticky lg:top-0 h-auto lg:h-[80vh] p-12 lg:p-24 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/5 bg-[#060608] relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0">
+          <div className="lg:sticky lg:top-28 lg:self-start h-auto lg:h-[80vh] p-6 md:p-12 lg:p-24 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/5 bg-[#060608] relative overflow-hidden">
             {/* Background Glow */}
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_left,rgba(99,36,252,0.15),transparent_70%)] pointer-events-none" />
             
@@ -337,7 +343,7 @@ export default function AgencyClient() {
           </div>
           <div className="flex flex-col bg-[#060608] relative">
             {timeline.map((item, index) => (
-              <div key={index} className="p-12 lg:p-24 border-b border-white/5 hover:bg-white/[0.03] transition-all duration-700 group relative overflow-hidden">
+              <div key={index} className="p-6 md:p-12 lg:p-24 border-b border-white/5 hover:bg-white/[0.03] transition-all duration-700 group relative overflow-hidden">
                 {/* Glow Effect on Hover */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#6324FC]/0 group-hover:bg-[#6324FC]/10 blur-[100px] rounded-full transition-colors duration-700 pointer-events-none" />
                 
@@ -422,10 +428,22 @@ export default function AgencyClient() {
         
         <button 
           onClick={() => openModal()}
-          className="relative z-10 flex items-center gap-4 bg-white text-black px-12 py-6 rounded-full font-heading text-xl tracking-widest hover:bg-[#00E5FF] hover:scale-105 transition-all duration-300 mb-8 overflow-hidden group"
+          className="group relative z-10 p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] hover:scale-105 mb-8 w-full md:w-auto isolate"
         >
-          <span className="relative z-10">SCHEDULE A STRATEGY CALL</span>
-          <ArrowUpRight className="w-5 h-5 relative z-10" />
+          {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+          <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+            <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+          </div>
+          
+          <div className="relative w-full h-full px-12 py-6 rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-4 z-10">
+            {/* Flowing background gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+            
+            <span className="relative z-10 flex items-center justify-center gap-4 font-heading text-xl tracking-widest text-white uppercase text-center">
+              SCHEDULE A STRATEGY CALL
+              <ArrowUpRight className="w-5 h-5 text-[#6324FC] group-hover:text-white transition-all duration-500" />
+            </span>
+          </div>
         </button>
 
         <div className="flex flex-wrap justify-center gap-8 font-heading  text-xs text-white/40 tracking-widest capitalize relative z-10">

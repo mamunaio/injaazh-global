@@ -139,11 +139,23 @@ export default function Testimonials() {
             <div className="swiper-pagination-custom flex gap-3" />
             
             <div className="flex gap-4">
-              <button className="testimonial-prev w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:border-[#6324FC] hover:bg-[#6324FC] transition-all duration-500 group">
-                <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
+              <button className="testimonial-prev group relative w-14 h-14 p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-500 hover:scale-105 active:scale-95 shadow-lg isolate">
+                <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+                  <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+                </div>
+                <div className="relative w-full h-full rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center z-10">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                  <ChevronLeft className="relative z-10 w-6 h-6 text-[#6324FC] group-hover:text-white group-hover:-translate-x-1 transition-all" />
+                </div>
               </button>
-              <button className="testimonial-next w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:border-[#6324FC] hover:bg-[#6324FC] transition-all duration-500 group">
-                <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              <button className="testimonial-next group relative w-14 h-14 p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-500 hover:scale-105 active:scale-95 shadow-lg isolate">
+                <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+                  <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+                </div>
+                <div className="relative w-full h-full rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center z-10">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                  <ChevronRight className="relative z-10 w-6 h-6 text-[#6324FC] group-hover:text-white group-hover:translate-x-1 transition-all" />
+                </div>
               </button>
             </div>
           </div>

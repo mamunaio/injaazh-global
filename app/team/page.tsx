@@ -86,7 +86,19 @@ export default function TeamPage() {
     <main className="bg-[#060608] min-h-screen text-white selection:bg-[#6324FC]">
       
       {/* 1. Ultra-Premium Hero Section */}
-      <section className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden">
+      <section className="relative w-full min-h-[50vh] md:min-h-[60vh] py-20 md:py-32 flex items-center justify-center overflow-hidden bg-black">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/assets/hero_bg.png"
+            alt="Hero Background"
+            fill
+            priority
+            className="object-cover opacity-35 select-none pointer-events-none"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-[#060608]/80 to-[#060608]" />
+        </div>
+
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay z-10" />
         
         <div className="relative z-20 w-full max-w-[1400px] px-6 lg:px-12">
@@ -96,8 +108,8 @@ export default function TeamPage() {
              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
              className="text-center md:text-left"
            >
-              <div className="font-heading  text-[10px] tracking-[0.8em] text-[#6324FC] capitalize mb-12 ml-[0.8em]">The Collective // Talent 0x88</div>
-              <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">
+              <div className="font-heading text-[10px] tracking-[0.8em] text-[#6324FC] capitalize mb-6 ml-[0.8em]">The Collective // Talent 0x88</div>
+              <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-4">
                  THE MINDS <br/>
                  BEHIND <span className="text-[#6324FC]">INJAAZH.</span>
               </h1>
@@ -193,8 +205,14 @@ export default function TeamPage() {
             <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize text-white group-hover:text-[#6324FC] transition-colors duration-700 italic">
                JOIN THE SQUAD.
             </h2>
-            <div className="mt-20 w-32 h-32 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-[#6324FC] transition-all duration-700">
-               <Plus className="w-12 h-12 text-[#6324FC] group-hover:text-white group-hover:rotate-90 transition-all duration-700" />
+            <div className="mt-20 relative w-32 h-32 p-[1.5px] rounded-full overflow-hidden flex items-center justify-center transition-all duration-700 group-hover:scale-110 shadow-2xl isolate">
+               <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+                 <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+               </div>
+               <div className="relative w-full h-full rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center z-10">
+                 <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                 <Plus className="relative z-10 w-12 h-12 text-[#6324FC] group-hover:text-white group-hover:rotate-90 transition-all duration-700" />
+               </div>
             </div>
          </Link>
       </section>

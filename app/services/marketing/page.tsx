@@ -143,12 +143,21 @@ export default function MarketingPage() {
 
         <button 
           onClick={() => openModal()}
-          className="group relative px-10 py-5 bg-[#6324FC] text-white rounded-full font-heading text-xl tracking-widest overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(99,36,252,0.4)] active:scale-95"
+          className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] hover:scale-105 inline-block isolate"
         >
-          <div className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500" />
-          <span className="relative z-10 group-hover:text-[#6324FC] transition-colors duration-500 flex items-center gap-3">
-            GET A FREE PROPOSAL <ArrowUpRight className="w-5 h-5" />
-          </span>
+          {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+          <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+            <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+          </div>
+          
+          <div className="relative w-full h-full px-10 py-5 rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
+            {/* Flowing background gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+            
+            <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-xl tracking-widest text-white uppercase text-center">
+              GET A FREE PROPOSAL <ArrowUpRight className="w-5 h-5 text-[#6324FC] group-hover:text-white transition-all duration-500" />
+            </span>
+          </div>
         </button>
       </div>
       </section>
@@ -262,12 +271,21 @@ export default function MarketingPage() {
         </p>
         <button 
           onClick={() => openModal()}
-          className="group relative px-12 py-6 bg-[#6324FC] text-white rounded-full font-heading text-2xl tracking-widest overflow-hidden transition-all duration-500 hover:shadow-[0_0_50px_rgba(99,36,252,0.5)]"
+          className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] hover:scale-105 mx-auto isolate"
         >
-          <div className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500" />
-          <span className="relative z-10 group-hover:text-[#6324FC] transition-colors duration-500 flex items-center gap-3">
-            START YOUR FREE AUDIT ⚡
-          </span>
+          {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+          <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+            <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+          </div>
+          
+          <div className="relative w-full h-full px-12 py-6 rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
+            {/* Flowing background gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+            
+            <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-2xl tracking-widest text-white uppercase text-center">
+              START YOUR FREE AUDIT ⚡
+            </span>
+          </div>
         </button>
       </div>
       </section>

@@ -131,37 +131,44 @@ export default function DigitalExperience() {
 
         {/* Tab Navigation (Glass Pill Style) */}
         <div className="w-full flex justify-center mb-12 md:mb-24 px-4 md:px-0">
-          <div className="flex items-center p-1.5 bg-white/[0.03] border border-white/[0.05] rounded-full backdrop-blur-xl w-full md:w-auto justify-between md:justify-center gap-1 md:gap-2">
-            {tabs.map((tab, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveTab(idx)}
-                onMouseEnter={() => setActiveTab(idx)}
-                className={`relative py-3 md:py-4 rounded-full font-heading text-xs sm:text-sm md: tracking-widest transition-all duration-500 flex items-center justify-center ${
-                  activeTab === idx 
-                    ? "px-4 sm:px-5 md:px-8 text-white flex-grow md:flex-grow-0" 
-                    : "px-3 sm:px-4 md:px-8 text-white/40 hover:text-white/70 flex-shrink-0"
-                }`}
-              >
-                {activeTab === idx && (
-                  <motion.div
-                    layoutId="pill"
-                    className="absolute inset-0 bg-[#6324FC] rounded-full"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  />
-                )}
-                <span className="relative z-10 flex items-center justify-center">
-                  <tab.icon className="w-4 h-4 shrink-0" />
-                  <span className={`whitespace-nowrap transition-all duration-500 overflow-hidden ${
+          <div className="relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center w-full md:w-auto isolate">
+            {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+            <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+              <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+            </div>
+
+            <div className="relative w-full md:w-auto p-1.5 bg-[#060608]/90 backdrop-blur-xl rounded-full flex items-center justify-between md:justify-center gap-1 md:gap-2 z-10">
+              {tabs.map((tab, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveTab(idx)}
+                  onMouseEnter={() => setActiveTab(idx)}
+                  className={`relative py-3 md:py-4 rounded-full font-heading text-xs sm:text-sm md: tracking-widest transition-all duration-500 flex items-center justify-center ${
                     activeTab === idx 
-                      ? "max-w-[200px] opacity-100 ml-2 md:ml-3" 
-                      : "max-w-0 opacity-0 ml-0 md:max-w-[200px] md:opacity-100 md:ml-3"
-                  }`}>
-                    {tab.name}
+                      ? "px-4 sm:px-5 md:px-8 text-white flex-grow md:flex-grow-0" 
+                      : "px-3 sm:px-4 md:px-8 text-white/40 hover:text-white/70 flex-shrink-0"
+                  }`}
+                >
+                  {activeTab === idx && (
+                    <motion.div
+                      layoutId="pill"
+                      className="absolute inset-0 bg-[#6324FC] rounded-full"
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10 flex items-center justify-center">
+                    <tab.icon className="w-4 h-4 shrink-0" />
+                    <span className={`whitespace-nowrap transition-all duration-500 overflow-hidden ${
+                      activeTab === idx 
+                        ? "max-w-[200px] opacity-100 ml-2 md:ml-3" 
+                        : "max-w-0 opacity-0 ml-0 md:max-w-[200px] md:opacity-100 md:ml-3"
+                    }`}>
+                      {tab.name}
+                    </span>
                   </span>
-                </span>
-              </button>
-            ))}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -223,12 +230,24 @@ export default function DigitalExperience() {
                   onClick={() => openModal()}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group relative px-8 md:px-12 py-4 md:py-6 bg-[#6324FC] rounded-full overflow-hidden transition-all duration-500 shadow-[0_20px_50px_rgba(99,36,252,0.3)] w-full md:w-auto"
+                  className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 w-full md:w-auto hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] isolate"
                 >
-                  <div className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]" />
-                  <span className="relative z-10 flex items-center justify-center gap-4 font-heading text-xl md:text-2xl tracking-tighter text-white group-hover:text-black transition-colors duration-500 capitalize text-center w-full">
-                    {content[activeTab].cta}
-                  </span>
+                  {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+                  <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+                    <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+                  </div>
+                  
+                  <div className="relative w-full h-full px-8 py-4 md:px-12 md:py-5 rounded-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
+                    {/* Flowing background gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                    
+                    {/* Bouncing/pulsating dot */}
+                    <span className="w-2 h-2 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
+                    
+                    <span className="relative z-10 flex items-center justify-center gap-4 font-heading text-xl md:text-2xl tracking-tighter text-primary capitalize text-center">
+                      {content[activeTab].cta}
+                    </span>
+                  </div>
                 </motion.button>
               </div>
 

@@ -210,8 +210,14 @@ export default function UltraPremiumCaseStudy() {
 
         {/* Back Link */}
         <Link href="/work" className="absolute top-12 left-12 z-[100] group flex items-center gap-4">
-           <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-[#6324FC] group-hover:border-[#6324FC] transition-all duration-500">
-              <ArrowLeft className="w-4 h-4" />
+           <div className="relative w-12 h-12 p-[1.5px] rounded-full overflow-hidden flex items-center justify-center transition-all duration-500 group-hover:scale-110 shadow-lg isolate">
+              <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+                <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+              </div>
+              <div className="relative w-full h-full rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center z-10">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                <ArrowLeft className="relative z-10 w-4 h-4 text-[#6324FC] group-hover:text-white transition-all duration-500" />
+              </div>
            </div>
            <span className="font-heading  text-[9px] tracking-[0.4em] capitalize opacity-0 group-hover:opacity-100 transition-opacity duration-500">Archive</span>
         </Link>
@@ -422,9 +428,15 @@ export default function UltraPremiumCaseStudy() {
                </h2>
                <div className="flex items-center justify-center gap-6">
                   <div className="w-16 h-[1px] bg-white/20" />
-                  <div className="w-20 h-20 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-[#6324FC] group-hover:border-[#6324FC] group-hover:scale-110 transition-all duration-700">
-                     <MoveRight className="w-8 h-8 text-white" />
-                  </div>
+                   <div className="relative w-20 h-20 p-[1.5px] rounded-full overflow-hidden flex items-center justify-center transition-all duration-700 group-hover:scale-110 shadow-xl isolate">
+                      <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+                        <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+                      </div>
+                      <div className="relative w-full h-full rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center z-10">
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                        <MoveRight className="relative z-10 w-8 h-8 text-[#6324FC] group-hover:text-white transition-all duration-500" />
+                      </div>
+                   </div>
                   <div className="w-16 h-[1px] bg-white/20" />
                </div>
             </div>

@@ -103,14 +103,24 @@ export default function Footer() {
     >
       <button 
         onClick={() => openModal()}
-        className="group relative px-8 md:px-16 py-5 md:py-8 bg-black dark:bg-white text-white dark:text-black font-heading md:text-xl tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 flex items-center justify-between gap-4 md:gap-10 capitalize hover:pr-12 md:hover:pr-20 w-full md:w-auto"
+        className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] isolate w-full md:w-auto"
       >
-        <div className="absolute inset-0 bg-[#6324FC] translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
-        <span className="relative z-10 group-hover:text-white transition-colors duration-500 text-center">
-          START A PROJECT
-        </span>
-        <div className="relative z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 dark:bg-black/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-500 shrink-0">
-          <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+        {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+        <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+          <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+        </div>
+        
+        <div className="relative w-full h-full px-8 py-4 md:px-12 md:py-5 rounded-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
+          {/* Flowing background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+          
+          {/* Bouncing/pulsating dot */}
+          <span className="w-2 h-2 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
+          
+          <span className="relative z-10 flex items-center justify-center gap-4 font-heading md:text-xl tracking-[0.2em] text-primary uppercase text-center">
+            START A PROJECT
+            <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-500 text-[#6324FC] dark:group-hover:text-white" />
+          </span>
         </div>
       </button>
     </motion.div>

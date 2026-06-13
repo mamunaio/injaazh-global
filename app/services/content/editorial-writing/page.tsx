@@ -63,19 +63,21 @@ export default function EditorialWritingPage() {
               We define the conversation. Our editorial team engineers authoritative content that dictates market trends and builds absolute brand trust.
             </p>
 
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-block"
+            <Link 
+              href="/contact" 
+              className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] hover:scale-105 inline-block isolate"
             >
-              <Link href="/contact" className="group relative px-12 py-6 bg-[#6324FC] rounded-full overflow-hidden flex items-center gap-4">
-                <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]" />
-                <span className="relative z-10 font-heading text-xl tracking-widest text-white group-hover:text-black transition-colors duration-500">
+              <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+                <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+              </div>
+              <div className="relative w-full h-full px-12 py-6 rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-4 z-10">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                <span className="relative z-10 font-heading text-xl tracking-widest text-white transition-colors duration-500">
                   DEFINE YOUR VOICE
                 </span>
-                <ArrowRight className="relative z-10 w-5 h-5 text-white group-hover:text-black group-hover:translate-x-1 transition-all duration-500" />
-              </Link>
-            </motion.div>
+                <ArrowRight className="relative z-10 w-5 h-5 text-[#6324FC] group-hover:text-white group-hover:translate-x-1 transition-all duration-500" />
+              </div>
+            </Link>
           </div>
 
           <motion.div 
@@ -236,14 +238,20 @@ export default function EditorialWritingPage() {
           <p className="font-sans text-white/40 text-2xl mb-16 max-w-2xl mx-auto leading-relaxed">
             Ready to lead the industry conversation? Let&apos;s build an editorial strategy that positions your brand as the absolute standard.
           </p>
-          <motion.button 
+          <button 
             onClick={() => window.location.href='/contact'}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-16 py-8 bg-white text-black rounded-full font-heading text-2xl tracking-widest shadow-[0_30px_60px_rgba(255,255,255,0.1)] hover:bg-[#6324FC] hover:text-white transition-all flex items-center gap-6 mx-auto capitalize "
+            className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] hover:scale-105 mx-auto isolate"
           >
-            START EDITORIAL STUDY ⚡
-          </motion.button>
+            <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+              <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+            </div>
+            <div className="relative w-full h-full px-16 py-8 rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-6 z-10">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+              <span className="relative z-10 font-heading text-2xl tracking-widest text-white uppercase text-center flex items-center gap-6">
+                START EDITORIAL STUDY ⚡
+              </span>
+            </div>
+          </button>
         </div>
 
       </div>

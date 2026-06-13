@@ -319,9 +319,21 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                   </div>
                   <button 
                     onClick={onClose}
-                    className="px-10 py-4 bg-white text-black font-heading  capitalize tracking-tight hover:bg-[#6324FC] hover:text-white transition-all duration-300 rounded-full"
+                    className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] isolate w-full md:w-auto"
                   >
-                    Return to Portal
+                    {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+                    <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+                      <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+                    </div>
+                    
+                    <div className="relative w-full h-full px-8 py-3.5 rounded-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
+                      {/* Flowing background gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                      
+                      <span className="relative z-10 flex items-center justify-center gap-4 font-heading text-lg tracking-tight text-primary capitalize text-center">
+                        Return to Portal
+                      </span>
+                    </div>
                   </button>
                 </motion.div>
               )}
@@ -349,16 +361,26 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                   (step === 3 && details.trim().length < 10) || 
                   (step === 4 && (!contact.name.trim() || !contact.email.includes('@') || contact.email.length < 5))
                 }
-                className="group relative px-10 py-4 bg-[#6324FC] rounded-full flex items-center gap-3 transition-all duration-500 disabled:opacity-20 disabled:cursor-not-allowed"
+                className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] disabled:opacity-20 disabled:cursor-not-allowed disabled:hover:shadow-none isolate"
               >
-                <span className="font-heading  capitalize tracking-tight text-white">
-                  {isSubmitting ? "Transmitting..." : step === 4 ? "Submit Request" : "Next Phase"}
-                </span>
-                {isSubmitting ? (
-                  <div className="w-4 h-4 border-2 border-white/20 border-t-white rounded-full animate-spin" />
-                ) : (
-                  <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
-                )}
+                {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+                <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+                  <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+                </div>
+                
+                <div className="relative w-full h-full px-8 py-3.5 rounded-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
+                  {/* Flowing background gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                  
+                  <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-lg tracking-tight text-primary capitalize text-center">
+                    {isSubmitting ? "Transmitting..." : step === 4 ? "Submit Request" : "Next Phase"}
+                    {isSubmitting ? (
+                      <div className="w-4 h-4 border-2 border-[#6324FC] border-t-white rounded-full animate-spin" />
+                    ) : (
+                      <ArrowRight className="w-4 h-4 text-[#6324FC] group-hover:translate-x-1 transition-transform" />
+                    )}
+                  </span>
+                </div>
               </button>
             </div>
           )}

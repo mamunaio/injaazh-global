@@ -192,19 +192,24 @@ export default function HeroSlider() {
         </motion.div>
 
         {/* Center Button Background */}
-        <div className="relative w-16 h-16 rounded-full bg-white/5 backdrop-blur-md border border-white/10 flex items-center justify-center group-hover:bg-[#6324FC]/20 group-hover:border-[#6324FC]/50 transition-all duration-500 shadow-[0_0_15px_rgba(0,0,0,0.5)] group-hover:shadow-[0_0_30px_rgba(99,36,252,0.4)] group-hover:scale-110">
-          
-          {/* Bouncing Arrow */}
-          <motion.div 
-            animate={{ y: [-4, 4, -4] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="relative z-10"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white group-hover:text-[#00E5FF] transition-colors duration-500">
-              <line x1="12" y1="4" x2="12" y2="20"></line>
-              <polyline points="19 13 12 20 5 13"></polyline>
-            </svg>
-          </motion.div>
+        <div className="relative w-16 h-16 p-[1.5px] rounded-full overflow-hidden flex items-center justify-center transition-all duration-500 group-hover:scale-110 shadow-[0_0_15px_rgba(0,0,0,0.5)] group-hover:shadow-[0_0_30px_rgba(99,36,252,0.4)] isolate">
+          <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+            <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+          </div>
+          <div className="relative w-full h-full rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center z-10">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+            {/* Bouncing Arrow */}
+            <motion.div 
+              animate={{ y: [-4, 4, -4] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="relative z-10"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white group-hover:text-[#00E5FF] transition-colors duration-500">
+                <line x1="12" y1="4" x2="12" y2="20"></line>
+                <polyline points="19 13 12 20 5 13"></polyline>
+              </svg>
+            </motion.div>
+          </div>
         </div>
       </motion.div>
 
