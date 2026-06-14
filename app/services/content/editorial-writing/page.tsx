@@ -1,7 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, PenTool, Zap, Shield, Globe, BookOpen, Quote, Feather, Newspaper, AlignLeft, Search, Bookmark } from "lucide-react";
+import {
+  ArrowRight,
+  PenTool,
+  Zap,
+  Shield,
+  Globe,
+  BookOpen,
+  Quote,
+  Feather,
+  Newspaper,
+  AlignLeft,
+  Search,
+  Bookmark,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,28 +22,32 @@ export default function EditorialWritingPage() {
   const features = [
     {
       title: "Thought Leadership",
-      description: "Crafting industry-defining articles that position your executives as the primary authorities in your sector.",
+      description:
+        "Crafting industry-defining articles that position your executives as the primary authorities in your sector.",
       icon: Feather,
-      color: "#6324FC"
+      color: "#6324FC",
     },
     {
       title: "Industry Reports",
-      description: "Data-driven editorial reports that provide deep insights and become the standard reference for your market.",
+      description:
+        "Data-driven editorial reports that provide deep insights and become the standard reference for your market.",
       icon: Newspaper,
-      color: "#00E5FF"
+      color: "#00E5FF",
     },
     {
       title: "Brand Narratives",
-      description: "Engineering cohesive, high-impact stories that define your mission and resonate with global audiences.",
+      description:
+        "Engineering cohesive, high-impact stories that define your mission and resonate with global audiences.",
       icon: AlignLeft,
-      color: "#FF2D55"
+      color: "#FF2D55",
     },
     {
       title: "Strategic Whitepapers",
-      description: "Complex technical concepts translated into compelling narratives that drive enterprise-level trust.",
+      description:
+        "Complex technical concepts translated into compelling narratives that drive enterprise-level trust.",
       icon: BookOpen,
-      color: "#00FFA3"
-    }
+      color: "#00FFA3",
+    },
   ];
 
   return (
@@ -41,30 +58,35 @@ export default function EditorialWritingPage() {
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay" />
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        
         {/* 1. Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20 items-center pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5">
           <div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">Editorial Division</span>
+              <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">
+                Editorial Division
+              </span>
             </motion.div>
-            
+
             <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-16">
-              EDITORIAL <br/>
-              <span className="stroke-text text-transparent italic opacity-40">WRITING.</span>
+              EDITORIAL <br />
+              <span className="stroke-text text-transparent italic opacity-40">
+                WRITING.
+              </span>
             </h1>
-            
-            <p className="font-sans font-light text-2xl md:text-3xl text-white/40 max-w-2xl leading-relaxed border-l-2 border-[#6324FC] pl-8 mb-16">
-              We define the conversation. Our editorial team engineers authoritative content that dictates market trends and builds absolute brand trust.
+
+            <p className="font-sans font-light text-lg text-white/40 max-w-2xl leading-relaxed border-l-2 border-[#6324FC] pl-8 mb-16">
+              We define the conversation. Our editorial team engineers
+              authoritative content that dictates market trends and builds
+              absolute brand trust.
             </p>
 
-            <Link 
-              href="/contact" 
+            <Link
+              href="/contact"
               className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] hover:scale-105 inline-block isolate"
             >
               <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
@@ -80,24 +102,26 @@ export default function EditorialWritingPage() {
             </Link>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
             className="relative aspect-square rounded-[3rem] overflow-hidden border border-white/10 group"
           >
-            <Image 
-              src="/assets/scalia_app_final.webp" 
-              alt="Editorial Visual" 
-              fill 
+            <Image
+              src="/assets/scalia_app_final.webp"
+              alt="Editorial Visual"
+              fill
               className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
             />
             <div className="absolute inset-0 bg-[#060608]/20 mix-blend-multiply group-hover:opacity-0 transition-opacity" />
             <div className="absolute inset-0 p-12 flex flex-col justify-end">
-               <Quote className="w-12 h-12 text-[#6324FC] mb-6 opacity-30" />
-               <div className="font-heading text-4xl text-white tracking-tighter italic leading-none max-w-xs">
-                  WORDS ARE THE <br/>INFRASTRUCTURE <br/>OF TRUST.
-               </div>
+              <Quote className="w-12 h-12 text-[#6324FC] mb-6 opacity-30" />
+              <div className="font-heading text-4xl text-white tracking-tighter italic leading-none max-w-xs">
+                WORDS ARE THE <br />
+                INFRASTRUCTURE <br />
+                OF TRUST.
+              </div>
             </div>
           </motion.div>
         </div>
@@ -108,14 +132,15 @@ export default function EditorialWritingPage() {
             <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize max-w-xl">
               CRAFTING <span className="italic text-[#6324FC]">AUTHORITY.</span>
             </h2>
-            <p className="font-heading  text-[11px] tracking-widest text-white/30 capitalize max-w-xs leading-loose">
-              Content is not just noise. It is the tactical deployment of ideas that capture and hold global attention.
+            <p className="font-heading  text-[16px] tracking-widest text-white/30 capitalize max-w-xs leading-loose">
+              Content is not just noise. It is the tactical deployment of ideas
+              that capture and hold global attention.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((f, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -126,11 +151,21 @@ export default function EditorialWritingPage() {
                 <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-10 transition-opacity">
                   <f.icon className="w-24 h-24 text-white" />
                 </div>
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-10 transition-all duration-500 group-hover:scale-110" style={{ backgroundColor: `${f.color}15`, border: `1px solid ${f.color}30` }}>
+                <div
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-10 transition-all duration-500 group-hover:scale-110"
+                  style={{
+                    backgroundColor: `${f.color}15`,
+                    border: `1px solid ${f.color}30`,
+                  }}
+                >
                   <f.icon className="w-8 h-8" style={{ color: f.color }} />
                 </div>
-                <h3 className="font-heading text-2xl text-white mb-4 capitalize ">{f.title}</h3>
-                <p className="font-sans font-light text-white/40 text-base leading-relaxed">{f.description}</p>
+                <h3 className="font-heading text-2xl text-white mb-4 capitalize ">
+                  {f.title}
+                </h3>
+                <p className="font-sans font-light text-white/40 text-base leading-relaxed">
+                  {f.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -138,96 +173,138 @@ export default function EditorialWritingPage() {
 
         {/* 3. Editorial Layout Visualization */}
         <div className="py-16 md:py-24 bg-white/[0.01] border border-white/5 rounded-[3.5rem] p-12 lg:p-24 overflow-hidden relative border-b border-white/5">
-           <div className="absolute top-0 right-0 w-full h-[1px] bg-gradient-to-l from-transparent via-[#6324FC] to-transparent animate-scan opacity-30" />
-           
-           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-              <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between group">
-                 <div className="flex justify-between items-start">
-                    <Newspaper className="w-8 h-8 text-[#6324FC]" />
-                    <div className="font-heading  text-[9px] text-white/20 capitalize tracking-[0.3em]">Issue 024 // Strategic Narrative</div>
-                 </div>
+          <div className="absolute top-0 right-0 w-full h-[1px] bg-gradient-to-l from-transparent via-[#6324FC] to-transparent animate-scan opacity-30" />
 
-                 <div className="space-y-6 flex-1 flex flex-col justify-center">
-                    <div className="space-y-2">
-                       <div className="h-2 w-full bg-white/10 rounded-full" />
-                       <div className="h-2 w-3/4 bg-white/5 rounded-full" />
-                       <div className="h-2 w-1/2 bg-white/5 rounded-full" />
-                    </div>
-                    
-                    <div className="p-8 bg-[#6324FC]/5 border border-[#6324FC]/20 rounded-2xl relative overflow-hidden">
-                       <motion.div initial={{ x: -100 }} whileInView={{ x: 0 }} transition={{ duration: 1 }} className="absolute inset-0 bg-[#6324FC]/10" />
-                       <div className="relative z-10 space-y-4">
-                          <div className="font-heading text-2xl text-white capitalize italic">Modern Hegemony.</div>
-                          <p className="font-sans text-[10px] text-white/40 leading-relaxed">
-                             In an era of digital noise, silence is authority. We craft the narratives that command the space between the screams.
-                          </p>
-                       </div>
-                    </div>
-
-                    <div className="flex gap-4">
-                       <div className="flex-1 h-20 bg-white/[0.02] rounded-xl border border-white/5" />
-                       <div className="flex-1 h-20 bg-white/[0.02] rounded-xl border border-white/5" />
-                    </div>
-                 </div>
-
-                 <div className="flex justify-between font-heading  text-[9px] text-[#6324FC] capitalize tracking-widest">
-                    <span>Editorial Engine</span>
-                    <span>Tone Consensus: High</span>
-                 </div>
-              </div>
-
-              <div>
-                <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-12">
-                  THE ART OF <br/>
-                  <span className="italic text-[#6324FC]">NARRATIVE.</span>
-                </h2>
-                
-                <p className="font-sans font-light text-xl text-white/40 mb-12 leading-relaxed">
-                   We translate your technical complexity into compelling human stories. Our writing is designed for resonance, retention, and results.
-                </p>
-
-                <div className="space-y-8">
-                   {[
-                     { label: "Semantic Flow", desc: "Engineering sentences that are as beautiful to read as they are easy for bots to index." },
-                     { label: "Authority Bias", desc: "Using high-level diction and strategic positioning to build instant intellectual trust." },
-                     { label: "Viral Longevity", desc: "Creating evergreen assets that continue to drive traffic and trust for years." }
-                   ].map((item, i) => (
-                     <div key={i} className="flex gap-6 group">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#6324FC] mt-2 group-hover:scale-150 transition-transform" />
-                        <div className="space-y-1">
-                           <div className="font-heading text-2xl text-white capitalize ">{item.label}</div>
-                           <p className="font-sans font-light text-sm text-white/30">{item.desc}</p>
-                        </div>
-                     </div>
-                   ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between group">
+              <div className="flex justify-between items-start">
+                <Newspaper className="w-8 h-8 text-[#6324FC]" />
+                <div className="font-heading  text-[9px] text-white/20 capitalize tracking-[0.3em]">
+                  Issue 024 // Strategic Narrative
                 </div>
               </div>
-           </div>
+
+              <div className="space-y-6 flex-1 flex flex-col justify-center">
+                <div className="space-y-2">
+                  <div className="h-2 w-full bg-white/10 rounded-full" />
+                  <div className="h-2 w-3/4 bg-white/5 rounded-full" />
+                  <div className="h-2 w-1/2 bg-white/5 rounded-full" />
+                </div>
+
+                <div className="p-8 bg-[#6324FC]/5 border border-[#6324FC]/20 rounded-2xl relative overflow-hidden">
+                  <motion.div
+                    initial={{ x: -100 }}
+                    whileInView={{ x: 0 }}
+                    transition={{ duration: 1 }}
+                    className="absolute inset-0 bg-[#6324FC]/10"
+                  />
+                  <div className="relative z-10 space-y-4">
+                    <div className="font-heading text-2xl text-white capitalize italic">
+                      Modern Hegemony.
+                    </div>
+                    <p className="font-sans text-[10px] text-white/40 leading-relaxed">
+                      In an era of digital noise, silence is authority. We craft
+                      the narratives that command the space between the screams.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-1 h-20 bg-white/[0.02] rounded-xl border border-white/5" />
+                  <div className="flex-1 h-20 bg-white/[0.02] rounded-xl border border-white/5" />
+                </div>
+              </div>
+
+              <div className="flex justify-between font-heading  text-[9px] text-[#6324FC] capitalize tracking-widest">
+                <span>Editorial Engine</span>
+                <span>Tone Consensus: High</span>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-12">
+                THE ART OF <br />
+                <span className="italic text-[#6324FC]">NARRATIVE.</span>
+              </h2>
+
+              <p className="font-sans font-light text-xl text-white/40 mb-12 leading-relaxed">
+                We translate your technical complexity into compelling human
+                stories. Our writing is designed for resonance, retention, and
+                results.
+              </p>
+
+              <div className="space-y-8">
+                {[
+                  {
+                    label: "Semantic Flow",
+                    desc: "Engineering sentences that are as beautiful to read as they are easy for bots to index.",
+                  },
+                  {
+                    label: "Authority Bias",
+                    desc: "Using high-level diction and strategic positioning to build instant intellectual trust.",
+                  },
+                  {
+                    label: "Viral Longevity",
+                    desc: "Creating evergreen assets that continue to drive traffic and trust for years.",
+                  },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-6 group">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#6324FC] mt-2 group-hover:scale-150 transition-transform" />
+                    <div className="space-y-1">
+                      <div className="font-heading text-2xl text-white capitalize ">
+                        {item.label}
+                      </div>
+                      <p className="font-sans font-light text-sm text-white/30">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* 4. Strategic Flow */}
         <div className="py-16 md:py-24 border-b border-white/5">
-           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-24 text-center">
-              THE EDITORIAL <span className="italic text-[#6324FC]">PROTOCOL.</span>
-           </h2>
+          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-24 text-center">
+            THE EDITORIAL{" "}
+            <span className="italic text-[#6324FC]">PROTOCOL.</span>
+          </h2>
 
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              {[
-                { step: "01", title: "Intel Gathering", desc: "Deep-diving into your industry data and internal insights to find the unique angle that nobody else is talking about." },
-                { step: "02", title: "Narrative Build", desc: "Constructing the editorial framework and drafting high-impact content that aligns with your brand voice." },
-                { step: "03", title: "Market Launch", desc: "Optimizing for search and social sharing to ensure your ideas reach the exact people who need to see them." }
-              ].map((s, i) => (
-                <div key={i} className="relative group">
-                   <div className="font-heading text-[8rem] text-white/[0.02] absolute -top-12 -left-4 group-hover:text-[#6324FC]/5 transition-colors">{s.step}</div>
-                   <div className="relative z-10 pt-12 space-y-6">
-                      <h3 className="font-heading text-3xl text-white capitalize ">{s.title}</h3>
-                      <p className="font-sans font-light text-xl text-white/40 leading-relaxed border-l border-white/10 pl-8 group-hover:border-[#6324FC] transition-colors">
-                        {s.desc}
-                      </p>
-                   </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              {
+                step: "01",
+                title: "Intel Gathering",
+                desc: "Deep-diving into your industry data and internal insights to find the unique angle that nobody else is talking about.",
+              },
+              {
+                step: "02",
+                title: "Narrative Build",
+                desc: "Constructing the editorial framework and drafting high-impact content that aligns with your brand voice.",
+              },
+              {
+                step: "03",
+                title: "Market Launch",
+                desc: "Optimizing for search and social sharing to ensure your ideas reach the exact people who need to see them.",
+              },
+            ].map((s, i) => (
+              <div key={i} className="relative group">
+                <div className="font-heading text-[8rem] text-white/[0.02] absolute -top-12 -left-4 group-hover:text-[#6324FC]/5 transition-colors">
+                  {s.step}
                 </div>
-              ))}
-           </div>
+                <div className="relative z-10 pt-12 space-y-6">
+                  <h3 className="font-heading text-3xl text-white capitalize ">
+                    {s.title}
+                  </h3>
+                  <p className="font-sans font-light text-lg text-white/40 leading-relaxed border-l border-white/10 pl-8 group-hover:border-[#6324FC] transition-colors">
+                    {s.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* 5. Bottom CTA */}
@@ -235,25 +312,26 @@ export default function EditorialWritingPage() {
           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-12">
             COMMAND THE <span className="italic text-[#6324FC]">SPACE.</span>
           </h2>
-          <p className="font-sans text-white/40 text-2xl mb-16 max-w-2xl mx-auto leading-relaxed">
-            Ready to lead the industry conversation? Let&apos;s build an editorial strategy that positions your brand as the absolute standard.
+          <p className="font-sans text-white/40 text-lg mb-16 max-w-2xl mx-auto leading-relaxed">
+            Ready to lead the industry conversation? Let&apos;s build an
+            editorial strategy that positions your brand as the absolute
+            standard.
           </p>
-          <button 
-            onClick={() => window.location.href='/contact'}
+          <button
+            onClick={() => (window.location.href = "/contact")}
             className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] hover:scale-105 mx-auto isolate"
           >
             <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
               <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
             </div>
-            <div className="relative w-full h-full px-16 py-8 rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-6 z-10">
+            <div className="relative w-full h-full md:px-16 px-8 py-4 md:py-8 text-xl md:text-2xl rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-6 z-10">
               <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
-              <span className="relative z-10 font-heading text-2xl tracking-widest text-white uppercase text-center flex items-center gap-6">
+              <span className="relative z-10 font-heading text-lg md:text-2xl tracking-widest text-white uppercase text-center flex items-center gap-6">
                 START EDITORIAL STUDY ⚡
               </span>
             </div>
           </button>
         </div>
-
       </div>
     </main>
   );

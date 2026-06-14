@@ -318,15 +318,25 @@ export default function AIAuditModal({ isOpen, onClose }: { isOpen: boolean, onC
 
                   <button 
                     onClick={() => setStep(4)}
-                    className="group relative w-full py-6 bg-black text-white rounded-full font-heading text-xl tracking-widest overflow-hidden hover:scale-105 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_80px_rgba(99,36,252,0.3)] flex items-center justify-center gap-4"
+                    className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] isolate w-full"
                   >
-                    {/* Button Glow Layer */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC] to-[#4310C7] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                    {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+                    <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+                      <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+                    </div>
                     
-                    <span className="relative z-10 flex items-center gap-4">
-                      GET 100% ACCURATE REPORT
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-500" />
-                    </span>
+                    <div className="relative w-full h-full py-5 rounded-full bg-[#0a0a0d] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
+                      {/* Flowing background gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                      
+                      {/* Bouncing/pulsating dot */}
+                      <span className="w-2 h-2 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
+                      
+                      <span className="relative z-10 flex items-center justify-center gap-4 font-heading text-lg tracking-[0.1em] text-white uppercase text-center">
+                        GET 100% ACCURATE REPORT
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-500 text-[#6324FC] dark:group-hover:text-white" />
+                      </span>
+                    </div>
                   </button>
                 </motion.div>
               )}
@@ -383,15 +393,26 @@ export default function AIAuditModal({ isOpen, onClose }: { isOpen: boolean, onC
                   <button 
                     onClick={handleSubmit}
                     disabled={isSubmitting || !formData.email || !formData.name}
-                    className="group relative w-full py-6 bg-black text-white rounded-full font-heading text-xl tracking-widest overflow-hidden hover:scale-105 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_80px_rgba(99,36,252,0.4)] flex items-center justify-center gap-4 disabled:opacity-50"
+                    className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none isolate w-full"
                   >
-                    {/* Button Glow Layer */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC] to-[#4310C7] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                    {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+                    <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+                      <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+                    </div>
                     
-                    <span className="relative z-10 flex items-center gap-3 capitalize ">
-                      {isSubmitting ? "TRANSMITTING LEAD..." : "SEND MY REPORT NOW"} 
-                      {!isSubmitting && <Zap className="w-4 h-4 fill-white" />}
-                    </span>
+                    <div className="relative w-full h-full py-5 rounded-full bg-[#0a0a0d] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
+                      {/* Flowing background gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                      
+                      <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-lg tracking-[0.1em] text-white uppercase text-center">
+                        {isSubmitting ? "TRANSMITTING LEAD..." : "SEND MY REPORT NOW"} 
+                        {isSubmitting ? (
+                          <div className="w-4 h-4 border-2 border-[#6324FC] border-t-white rounded-full animate-spin" />
+                        ) : (
+                          <Zap className="w-4 h-4 fill-[#6324FC] text-[#6324FC] group-hover:fill-white group-hover:text-white transition-colors duration-500" />
+                        )}
+                      </span>
+                    </div>
                   </button>
                 </motion.div>
               )}

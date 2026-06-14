@@ -108,58 +108,66 @@ export default function MarketingPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(f => ({
+    mainEntity: faqs.map((f) => ({
       "@type": "Question",
-      "name": f.q,
-      "acceptedAnswer": {
+      name: f.q,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": f.a
-      }
-    }))
+        text: f.a,
+      },
+    })),
   };
 
   return (
     <main className="w-full min-h-screen bg-[#060608] text-white pt-32 pb-20 font-sans overflow-hidden">
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#6324FC]/10 blur-[150px] rounded-full pointer-events-none" />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#6324FC]/10 blur-[150px] rounded-full pointer-events-none" />
 
-        <div className="flex items-center gap-4 mb-8">
-          <div className="w-12 h-[1px] bg-[#6324FC]" />
-          <span className="font-heading  text-sm tracking-[0.5em] text-[#6324FC] capitalize ">DIGITAL MARKETING</span>
-        </div>
-        
-        <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-12">
-          Digital Marketing Services <br/>
-          That Turn <span className="italic text-[#6324FC]">Clicks Into Clients.</span>
-        </h1>
-
-        <p className="font-sans font-light text-xl md:text-2xl text-white/50 leading-relaxed max-w-3xl mb-12 border-l border-white/10 pl-8">
-          Anyone can run ads. We run ads that make money.
-          <br/><br/>
-          At Injaazh, every campaign is built on data, not guesswork. Precision-targeted Google and Meta campaigns engineered for maximum ROAS — reaching high-intent audiences across the US, UK, Australia, Canada, and the Middle East.
-        </p>
-
-        <button 
-          onClick={() => openModal()}
-          className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] hover:scale-105 inline-block isolate"
-        >
-          {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
-          <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
-            <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
-          </div>
-          
-          <div className="relative w-full h-full px-10 py-5 rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
-            {/* Flowing background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
-            
-            <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-xl tracking-widest text-white uppercase text-center">
-              GET A FREE PROPOSAL <ArrowUpRight className="w-5 h-5 text-[#6324FC] group-hover:text-white transition-all duration-500" />
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-12 h-[1px] bg-[#6324FC]" />
+            <span className="font-heading  text-sm tracking-[0.5em] text-[#6324FC] capitalize ">
+              DIGITAL MARKETING
             </span>
           </div>
-        </button>
-      </div>
+
+          <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-12">
+            Digital Marketing Services <br />
+            That Turn{" "}
+            <span className="italic text-[#6324FC]">Clicks Into Clients.</span>
+          </h1>
+
+          <p className="font-sans font-light text-lg text-white/50 leading-relaxed max-w-3xl mb-12 border-l border-white/10 pl-8">
+            Anyone can run ads. We run ads that make money.
+            <br />
+            <br />
+            At Injaazh, every campaign is built on data, not guesswork.
+            Precision-targeted Google and Meta campaigns engineered for maximum
+            ROAS — reaching high-intent audiences across the US, UK, Australia,
+            Canada, and the Middle East.
+          </p>
+
+          <button
+            onClick={() => openModal()}
+            className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] hover:scale-105 inline-block isolate"
+          >
+            {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+            <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+              <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+            </div>
+
+            <div className="relative w-full h-full px-10 py-5 rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
+              {/* Flowing background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+
+              <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-xl tracking-widest text-white uppercase text-center">
+                GET A FREE PROPOSAL{" "}
+                <ArrowUpRight className="w-5 h-5 text-[#6324FC] group-hover:text-white transition-all duration-500" />
+              </span>
+            </div>
+          </button>
+        </div>
       </section>
 
       {/* Stats Strip */}
@@ -167,8 +175,12 @@ export default function MarketingPage() {
         <div className="max-w-[1400px] mx-auto grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/5">
           {stats.map((stat, i) => (
             <div key={i} className="py-12 px-6 text-center">
-              <div className="font-heading text-5xl md:text-7xl text-white mb-2">{stat.value}</div>
-              <div className="font-heading  text-[10px] tracking-widest text-white/40 capitalize ">{stat.label}</div>
+              <div className="font-heading text-5xl md:text-7xl text-white mb-2">
+                {stat.value}
+              </div>
+              <div className="font-heading  text-[10px] tracking-widest text-white/40 capitalize ">
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>
@@ -176,118 +188,148 @@ export default function MarketingPage() {
 
       {/* WHAT'S INCLUDED */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">WHAT'S INCLUDED</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {whatIsIncluded.map((item, i) => (
-            <div key={i} className="p-10 bg-white/[0.02] border border-white/5 rounded-3xl hover:border-[#6324FC]/30 transition-colors duration-500 flex flex-col justify-between">
-              <div>
-                <h3 className="font-heading text-3xl mb-4">{item.title}</h3>
-                <p className="font-sans font-light text-white/50 text-lg leading-relaxed mb-6">
-                  {item.desc}
-                </p>
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">
+            WHAT'S INCLUDED
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {whatIsIncluded.map((item, i) => (
+              <div
+                key={i}
+                className="p-10 bg-white/[0.02] border border-white/5 rounded-3xl hover:border-[#6324FC]/30 transition-colors duration-500 flex flex-col justify-between"
+              >
+                <div>
+                  <h3 className="font-heading text-3xl mb-4">{item.title}</h3>
+                  <p className="font-sans font-light text-white/50 text-lg leading-relaxed mb-6">
+                    {item.desc}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {item.tags.map((tag, j) => (
+                    <span
+                      key={j}
+                      className="px-4 py-1.5 bg-white/[0.05] border border-white/5 font-heading  text-[10px] tracking-widest text-white/40 capitalize rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {item.tags.map((tag, j) => (
-                  <span key={j} className="px-4 py-1.5 bg-white/[0.05] border border-white/5 font-heading  text-[10px] tracking-widest text-white/40 capitalize rounded-full">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
       </section>
 
       {/* WHY INJAAZH MARKETING WORKS */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">WHY INJAAZH MARKETING WORKS</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {whyItWorks.map((item, i) => (
-            <div key={i} className="space-y-4">
-              <h3 className="font-heading text-2xl text-[#6324FC]">{item.title}</h3>
-              <p className="font-sans font-light text-white/50 text-lg leading-relaxed">
-                {item.desc}
-              </p>
-            </div>
-          ))}
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">
+            WHY INJAAZH MARKETING WORKS
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {whyItWorks.map((item, i) => (
+              <div key={i} className="space-y-4">
+                <h3 className="font-heading text-2xl text-[#6324FC]">
+                  {item.title}
+                </h3>
+                <p className="font-sans font-light text-white/50 text-lg leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
       </section>
 
       {/* OUR MARKETING PROCESS */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">OUR MARKETING PROCESS</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {process.map((step, i) => (
-            <div key={i} className="relative p-8 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <div className="font-heading  text-xs text-[#6324FC] mb-4">{step.id}</div>
-              <h3 className="font-heading text-xl mb-3">{step.title}</h3>
-              <p className="font-sans font-light text-white/40 text-sm leading-relaxed">
-                {step.desc}
-              </p>
-            </div>
-          ))}
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">
+            OUR MARKETING PROCESS
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {process.map((step, i) => (
+              <div
+                key={i}
+                className="relative p-8 bg-white/[0.02] border border-white/5 rounded-2xl"
+              >
+                <div className="font-heading  text-xs text-[#6324FC] mb-4">
+                  {step.id}
+                </div>
+                <h3 className="font-heading text-xl mb-3">{step.title}</h3>
+                <p className="font-sans font-light text-white/40 text-sm leading-relaxed">
+                  {step.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
       </section>
 
       {/* FREQUENTLY ASKED QUESTIONS */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-b border-white/5">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">FREQUENTLY ASKED QUESTIONS</h2>
-        <div className="space-y-4">
-          {faqs.map((faq, i) => (
-            <div key={i} className="border-b border-white/5">
-              <button
-                onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                className="w-full py-6 flex justify-between items-center text-left"
-              >
-                <span className="font-sans text-xl text-white hover:text-[#6324FC] transition-colors">{faq.q}</span>
-                {openFaq === i ? <Minus className="w-5 h-5 text-[#6324FC]" /> : <Plus className="w-5 h-5 text-white/40" />}
-              </button>
-              {openFaq === i && (
-                <div className="pb-6">
-                  <p className="font-sans font-light text-white/50 text-lg leading-relaxed max-w-4xl">
-                    {faq.a}
-                  </p>
-                </div>
-              )}
-            </div>
-          ))}
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-16">
+            FREQUENTLY ASKED QUESTIONS
+          </h2>
+          <div className="space-y-4">
+            {faqs.map((faq, i) => (
+              <div key={i} className="border-b border-white/5">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full py-6 flex justify-between items-center text-left"
+                >
+                  <span className="font-sans text-xl text-white hover:text-[#6324FC] transition-colors">
+                    {faq.q}
+                  </span>
+                  {openFaq === i ? (
+                    <Minus className="w-5 h-5 text-[#6324FC]" />
+                  ) : (
+                    <Plus className="w-5 h-5 text-white/40" />
+                  )}
+                </button>
+                {openFaq === i && (
+                  <div className="pb-6">
+                    <p className="font-sans font-light text-white/50 text-lg leading-relaxed max-w-4xl">
+                      {faq.a}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
       </section>
 
       {/* CTA Section */}
       <section className="w-full bg-[#060608] py-16 md:py-24 relative overflow-hidden border-t border-white/5 text-center">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-8">Ready to Grow Your Business?</h2>
-        <p className="font-sans font-light text-xl text-white/50 max-w-2xl mx-auto mb-12">
-          Send us your brief and we'll respond with a clear proposal within 24 hours.
-        </p>
-        <button 
-          onClick={() => openModal()}
-          className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] hover:scale-105 mx-auto isolate"
-        >
-          {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
-          <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
-            <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
-          </div>
-          
-          <div className="relative w-full h-full px-12 py-6 rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
-            {/* Flowing background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
-            
-            <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-2xl tracking-widest text-white uppercase text-center">
-              START YOUR FREE AUDIT ⚡
-            </span>
-          </div>
-        </button>
-      </div>
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-8">
+            Ready to Grow Your Business?
+          </h2>
+          <p className="font-sans font-light text-xl text-white/50 max-w-2xl mx-auto mb-12">
+            Send us your brief and we'll respond with a clear proposal within 24
+            hours.
+          </p>
+          <button
+            onClick={() => openModal()}
+            className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] hover:scale-105 mx-auto isolate"
+          >
+            {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+            <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+              <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+            </div>
+
+            <div className="relative w-full h-full px-12 py-6 rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
+              {/* Flowing background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+
+              <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-2xl tracking-widest text-white uppercase text-center">
+                START YOUR FREE AUDIT ⚡
+              </span>
+            </div>
+          </button>
+        </div>
       </section>
 
       {/* FAQ Schema */}

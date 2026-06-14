@@ -327,7 +327,7 @@ export default function FeaturedWork() {
             <div className="font-heading text-3xl sm:text-4xl md:text-5xl text-white/20 absolute top-0 left-0 pointer-events-none select-none italic -translate-y-1/2">
               Success Stories
             </div>
-            <div className="font-sans text-white/90 italic text-xl md:text-2xl max-w-sm relative z-10 font-medium">
+            <div className="font-sans text-white/90 italic text-lg max-w-sm relative z-10 font-medium">
               "We don't just deliver projects — we engineer long-term digital
               growth."
             </div>
@@ -343,14 +343,14 @@ export default function FeaturedWork() {
               <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
                 <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
               </div>
-              
+
               <div className="relative w-full h-full px-8 py-4 md:px-12 md:py-5 rounded-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
                 {/* Flowing background gradient */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
-                
+
                 {/* Bouncing/pulsating dot */}
                 <span className="w-2 h-2 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
-                
+
                 <span className="relative z-10 flex items-center justify-center gap-4 font-heading md:text-xl tracking-widest text-primary uppercase text-center">
                   SEE FULL ARCHIVE
                   <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-500 text-[#6324FC] dark:group-hover:text-white" />

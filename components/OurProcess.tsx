@@ -196,14 +196,14 @@ export default function OurProcess() {
             aria-hidden="true"
             className="font-heading text-4xl md:text-6xl leading-[0.85] tracking-tighter text-white mb-4"
           >
-            <div className="process-title overflow-visible pb-1">THE</div>
-            <div className="process-title overflow-visible pb-1 whitespace-nowrap">
-              ARCHITECTURE
-            </div>
-            <div className="process-title overflow-visible pb-1">OF</div>
-            <div className="process-title overflow-visible pb-1 stroke-text text-transparent italic whitespace-nowrap">
-              DOMINANCE
-            </div>
+            <h2 className="process-title overflow-visible pb-1">The</h2>
+            <h2 className="process-title overflow-visible pb-1 whitespace-nowrap">
+              Architecture
+            </h2>
+            <h2 className="process-title overflow-visible pb-1">Of</h2>
+            <h2 className="process-title overflow-visible pb-1 stroke-text text-transparent italic whitespace-nowrap">
+              Dominance
+            </h2>
           </div>
           <p className="font-sans font-light  text-primary/80 max-w-md process-title border-l-2 border-[#6324FC] pl-6 leading-relaxed">
             We don't just build websites. We engineer high-performance digital
@@ -230,9 +230,9 @@ export default function OurProcess() {
               aria-hidden="true"
               className="font-heading text-6xl md:text-7xl leading-[0.85] tracking-tight mb-6"
             >
-              THE ARCHITECTURE <br />{" "}
+              The Architecture <br />{" "}
               <span className="stroke-text text-transparent italic">
-                OF DOMINANCE
+                Of Dominance
               </span>
             </div>
           </div>

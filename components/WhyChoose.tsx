@@ -255,7 +255,7 @@ export default function WhyChoose() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 md:px-12 py-4 md:py-6 bg-white text-black rounded-2xl font-heading text-xl md:text-2xl tracking-widest shadow-[0_20px_50px_rgba(255,255,255,0.1)] group-hover:bg-[#6324FC] group-hover:text-white transition-all flex items-center justify-center gap-4 w-full md:w-auto"
+                  className="px-8 md:px-12 py-4 md:py-6 bg-white text-black rounded-2xl font-heading text-lg tracking-widest shadow-[0_20px_50px_rgba(255,255,255,0.1)] group-hover:bg-[#6324FC] group-hover:text-white transition-all flex items-center justify-center gap-4 w-full md:w-auto"
                 >
                   START YOUR FREE AUDIT ⚡
                 </motion.button>

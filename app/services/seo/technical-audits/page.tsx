@@ -1,7 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Search, Zap, Shield, Globe, BarChart3, Binary, Eye, Database, FileSearch, PieChart, Activity } from "lucide-react";
+import {
+  ArrowRight,
+  Search,
+  Zap,
+  Shield,
+  Globe,
+  BarChart3,
+  Binary,
+  Eye,
+  Database,
+  FileSearch,
+  PieChart,
+  Activity,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,28 +22,32 @@ export default function TechnicalAuditsPage() {
   const features = [
     {
       title: "Core Web Vitals",
-      description: "Surgical optimization of LCP, FID, and CLS to ensure your site meets Google&apos;s highest performance standards.",
+      description:
+        "Surgical optimization of LCP, FID, and CLS to ensure your site meets Google&apos;s highest performance standards.",
       icon: Activity,
-      color: "#6324FC"
+      color: "#6324FC",
     },
     {
       title: "Semantic Architecture",
-      description: "Structuring your data and HTML to ensure search engines perfectly understand your content hierarchy.",
+      description:
+        "Structuring your data and HTML to ensure search engines perfectly understand your content hierarchy.",
       icon: Binary,
-      color: "#00E5FF"
+      color: "#00E5FF",
     },
     {
       title: "Crawl Budget Ops",
-      description: "Optimizing your site structure so bots can index your most valuable pages faster and more efficiently.",
+      description:
+        "Optimizing your site structure so bots can index your most valuable pages faster and more efficiently.",
       icon: FileSearch,
-      color: "#FF2D55"
+      color: "#FF2D55",
     },
     {
       title: "Global Visibility",
-      description: "Ensuring your international SEO setup (Hreflang, CDN) is flawless for worldwide market dominance.",
+      description:
+        "Ensuring your international SEO setup (Hreflang, CDN) is flawless for worldwide market dominance.",
       icon: Globe,
-      color: "#00FFA3"
-    }
+      color: "#00FFA3",
+    },
   ];
 
   return (
@@ -41,30 +58,35 @@ export default function TechnicalAuditsPage() {
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay" />
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        
         {/* 1. Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20 items-center pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5">
           <div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">Intelligence Division</span>
+              <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">
+                Intelligence Division
+              </span>
             </motion.div>
-            
+
             <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-16">
-              TECHNICAL <br/>
-              <span className="stroke-text text-transparent italic opacity-40">AUDITS.</span>
+              TECHNICAL <br />
+              <span className="stroke-text text-transparent italic opacity-40">
+                AUDITS.
+              </span>
             </h1>
-            
-            <p className="font-sans font-light text-2xl md:text-3xl text-white/40 max-w-2xl leading-relaxed border-l-2 border-[#6324FC] pl-8 mb-16">
-              We don&apos;t just look at keywords. We look at code. Our technical audits reveal the hidden barriers preventing your site from absolute search dominance.
+
+            <p className="font-sans font-light text-lg text-white/40 max-w-2xl leading-relaxed border-l-2 border-[#6324FC] pl-8 mb-16">
+              We don&apos;t just look at keywords. We look at code. Our
+              technical audits reveal the hidden barriers preventing your site
+              from absolute search dominance.
             </p>
 
-            <Link 
-              href="/contact" 
+            <Link
+              href="/contact"
               className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] hover:scale-105 inline-block isolate"
             >
               <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
@@ -80,25 +102,29 @@ export default function TechnicalAuditsPage() {
             </Link>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
             className="relative aspect-square rounded-[3rem] overflow-hidden border border-white/10 group"
           >
-            <Image 
-              src="/assets/scalia_app_final.webp" 
-              alt="Technical SEO Visual" 
-              fill 
+            <Image
+              src="/assets/scalia_app_final.webp"
+              alt="Technical SEO Visual"
+              fill
               className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
             />
             <div className="absolute inset-0 bg-[#060608]/40 mix-blend-multiply group-hover:opacity-0 transition-opacity" />
             <div className="absolute top-8 left-8 p-6 bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl">
-               <div className="font-heading  text-[9px] text-[#00E5FF] mb-2 capitalize ">Crawler Status</div>
-               <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse" />
-                  <span className="font-heading text-xl text-white">OPTIMIZED</span>
-               </div>
+              <div className="font-heading  text-[9px] text-[#00E5FF] mb-2 capitalize ">
+                Crawler Status
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse" />
+                <span className="font-heading text-xl text-white">
+                  OPTIMIZED
+                </span>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -109,14 +135,15 @@ export default function TechnicalAuditsPage() {
             <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize max-w-xl">
               PRECISION <span className="italic text-[#6324FC]">REVEALED.</span>
             </h2>
-            <p className="font-heading  text-[11px] tracking-widest text-white/30 capitalize max-w-xs leading-loose">
-              Our audit process covers over 200+ technical data points that impact your organic visibility and user retention.
+            <p className="font-heading  text-[16px] tracking-widest text-white/30 capitalize max-w-xs leading-loose">
+              Our audit process covers over 200+ technical data points that
+              impact your organic visibility and user retention.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((f, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -127,11 +154,21 @@ export default function TechnicalAuditsPage() {
                 <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-10 transition-opacity">
                   <f.icon className="w-24 h-24 text-white" />
                 </div>
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-10 transition-all duration-500 group-hover:scale-110" style={{ backgroundColor: `${f.color}15`, border: `1px solid ${f.color}30` }}>
+                <div
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-10 transition-all duration-500 group-hover:scale-110"
+                  style={{
+                    backgroundColor: `${f.color}15`,
+                    border: `1px solid ${f.color}30`,
+                  }}
+                >
                   <f.icon className="w-8 h-8" style={{ color: f.color }} />
                 </div>
-                <h3 className="font-heading text-2xl text-white mb-4 capitalize ">{f.title}</h3>
-                <p className="font-sans font-light text-white/40 text-base leading-relaxed">{f.description}</p>
+                <h3 className="font-heading text-2xl text-white mb-4 capitalize ">
+                  {f.title}
+                </h3>
+                <p className="font-sans font-light text-white/40 text-base leading-relaxed">
+                  {f.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -139,100 +176,153 @@ export default function TechnicalAuditsPage() {
 
         {/* 3. Audit Dashboard Visualization */}
         <div className="py-16 md:py-24 bg-white/[0.01] border border-white/5 rounded-[3.5rem] p-12 lg:p-24 overflow-hidden relative border-b border-white/5">
-           <div className="absolute top-0 right-0 w-full h-[1px] bg-gradient-to-l from-transparent via-[#6324FC] to-transparent animate-scan opacity-30" />
-           
-           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-              <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between">
-                 <div className="flex justify-between items-start">
-                    <BarChart3 className="w-8 h-8 text-[#6324FC]" />
-                    <div className="font-heading  text-[9px] text-white/20 capitalize tracking-[0.3em]">Analysis Node // 0x42</div>
-                 </div>
+          <div className="absolute top-0 right-0 w-full h-[1px] bg-gradient-to-l from-transparent via-[#6324FC] to-transparent animate-scan opacity-30" />
 
-                 <div className="space-y-12 flex-1 flex flex-col justify-center">
-                    <div className="grid grid-cols-2 gap-8">
-                       {[
-                         { label: "Indexing", val: "98.4%", color: "text-[#00E5FF]" },
-                         { label: "Performance", val: "100/100", color: "text-[#6324FC]" },
-                         { label: "Semantic", val: "Perfect", color: "text-[#00FFA3]" },
-                         { label: "Security", val: "Shielded", color: "text-[#FF2D55]" }
-                       ].map((stat, i) => (
-                         <div key={i} className="space-y-2">
-                            <div className="font-heading  text-[8px] text-white/20 capitalize tracking-widest">{stat.label}</div>
-                            <div className={`font-heading text-4xl ${stat.color}`}>{stat.val}</div>
-                         </div>
-                       ))}
-                    </div>
-                    
-                    <div className="h-20 w-full bg-white/[0.02] border border-white/5 rounded-xl flex items-end gap-1 p-4">
-                       {[40, 70, 45, 90, 65, 80, 55, 95, 75, 85].map((h, i) => (
-                         <motion.div 
-                           key={i}
-                           initial={{ height: 0 }}
-                           whileInView={{ height: `${h}%` }}
-                           className="flex-1 bg-[#6324FC]/30 rounded-t-sm"
-                         />
-                       ))}
-                    </div>
-                 </div>
-
-                 <div className="flex justify-between font-heading  text-[9px] text-[#6324FC] capitalize tracking-widest">
-                    <span>Neural Scan</span>
-                    <span>Continuous Audit Active</span>
-                 </div>
-              </div>
-
-              <div>
-                <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-12">
-                  DATA OVER <br/>
-                  <span className="italic text-[#00E5FF]">GUESSWORK.</span>
-                </h2>
-                
-                <p className="font-sans font-light text-xl text-white/40 mb-12 leading-relaxed">
-                   We use enterprise-grade crawling technology to simulate how Google sees your site, identifying every friction point in the user journey.
-                </p>
-
-                <div className="space-y-8">
-                   {[
-                     { label: "Site Depth", desc: "Ensuring no important content is more than 3 clicks away from the homepage." },
-                     { label: "Schema Validation", desc: "Implementing rich snippets to dominate search results real estate." },
-                     { label: "Speed Protocol", desc: "Eliminating render-blocking resources and optimizing asset delivery pipelines." }
-                   ].map((item, i) => (
-                     <div key={i} className="flex gap-6 group">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] mt-2 group-hover:scale-150 transition-transform" />
-                        <div className="space-y-1">
-                           <div className="font-heading text-2xl text-white capitalize ">{item.label}</div>
-                           <p className="font-sans font-light text-sm text-white/30">{item.desc}</p>
-                        </div>
-                     </div>
-                   ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between">
+              <div className="flex justify-between items-start">
+                <BarChart3 className="w-8 h-8 text-[#6324FC]" />
+                <div className="font-heading  text-[9px] text-white/20 capitalize tracking-[0.3em]">
+                  Analysis Node // 0x42
                 </div>
               </div>
-           </div>
+
+              <div className="space-y-12 flex-1 flex flex-col justify-center">
+                <div className="grid grid-cols-2 gap-8">
+                  {[
+                    {
+                      label: "Indexing",
+                      val: "98.4%",
+                      color: "text-[#00E5FF]",
+                    },
+                    {
+                      label: "Performance",
+                      val: "100/100",
+                      color: "text-[#6324FC]",
+                    },
+                    {
+                      label: "Semantic",
+                      val: "Perfect",
+                      color: "text-[#00FFA3]",
+                    },
+                    {
+                      label: "Security",
+                      val: "Shielded",
+                      color: "text-[#FF2D55]",
+                    },
+                  ].map((stat, i) => (
+                    <div key={i} className="space-y-2">
+                      <div className="font-heading  text-[8px] text-white/20 capitalize tracking-widest">
+                        {stat.label}
+                      </div>
+                      <div className={`font-heading text-4xl ${stat.color}`}>
+                        {stat.val}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="h-20 w-full bg-white/[0.02] border border-white/5 rounded-xl flex items-end gap-1 p-4">
+                  {[40, 70, 45, 90, 65, 80, 55, 95, 75, 85].map((h, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ height: 0 }}
+                      whileInView={{ height: `${h}%` }}
+                      className="flex-1 bg-[#6324FC]/30 rounded-t-sm"
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex justify-between font-heading  text-[9px] text-[#6324FC] capitalize tracking-widest">
+                <span>Neural Scan</span>
+                <span>Continuous Audit Active</span>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-12">
+                DATA OVER <br />
+                <span className="italic text-[#00E5FF]">GUESSWORK.</span>
+              </h2>
+
+              <p className="font-sans font-light text-xl text-white/40 mb-12 leading-relaxed">
+                We use enterprise-grade crawling technology to simulate how
+                Google sees your site, identifying every friction point in the
+                user journey.
+              </p>
+
+              <div className="space-y-8">
+                {[
+                  {
+                    label: "Site Depth",
+                    desc: "Ensuring no important content is more than 3 clicks away from the homepage.",
+                  },
+                  {
+                    label: "Schema Validation",
+                    desc: "Implementing rich snippets to dominate search results real estate.",
+                  },
+                  {
+                    label: "Speed Protocol",
+                    desc: "Eliminating render-blocking resources and optimizing asset delivery pipelines.",
+                  },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-6 group">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] mt-2 group-hover:scale-150 transition-transform" />
+                    <div className="space-y-1">
+                      <div className="font-heading text-2xl text-white capitalize ">
+                        {item.label}
+                      </div>
+                      <p className="font-sans font-light text-sm text-white/30">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* 4. Strategic Flow */}
         <div className="py-16 md:py-24 border-b border-white/5">
-           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-24 text-center">
-              THE AUDIT <span className="italic text-[#6324FC]">PROTOCOL.</span>
-           </h2>
+          <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-24 text-center">
+            THE AUDIT <span className="italic text-[#6324FC]">PROTOCOL.</span>
+          </h2>
 
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              {[
-                { step: "01", title: "Full Crawl", desc: "Executing a deep-scan of your entire domain to map out architecture and identify all 4xx/5xx errors." },
-                { step: "02", title: "Data Analysis", desc: "Cross-referencing crawl data with Google Search Console and Analytics to prioritize high-impact fixes." },
-                { step: "03", title: "Execution Plan", desc: "Providing a surgical roadmap for your engineering team to eliminate technical debt and boost rankings." }
-              ].map((s, i) => (
-                <div key={i} className="relative group">
-                   <div className="font-heading text-[8rem] text-white/[0.02] absolute -top-12 -left-4 group-hover:text-[#6324FC]/5 transition-colors">{s.step}</div>
-                   <div className="relative z-10 pt-12 space-y-6">
-                      <h3 className="font-heading text-3xl text-white capitalize ">{s.title}</h3>
-                      <p className="font-sans font-light text-xl text-white/40 leading-relaxed border-l border-white/10 pl-8 group-hover:border-[#6324FC] transition-colors">
-                        {s.desc}
-                      </p>
-                   </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              {
+                step: "01",
+                title: "Full Crawl",
+                desc: "Executing a deep-scan of your entire domain to map out architecture and identify all 4xx/5xx errors.",
+              },
+              {
+                step: "02",
+                title: "Data Analysis",
+                desc: "Cross-referencing crawl data with Google Search Console and Analytics to prioritize high-impact fixes.",
+              },
+              {
+                step: "03",
+                title: "Execution Plan",
+                desc: "Providing a surgical roadmap for your engineering team to eliminate technical debt and boost rankings.",
+              },
+            ].map((s, i) => (
+              <div key={i} className="relative group">
+                <div className="font-heading text-[8rem] text-white/[0.02] absolute -top-12 -left-4 group-hover:text-[#6324FC]/5 transition-colors">
+                  {s.step}
                 </div>
-              ))}
-           </div>
+                <div className="relative z-10 pt-12 space-y-6">
+                  <h3 className="font-heading text-3xl text-white capitalize ">
+                    {s.title}
+                  </h3>
+                  <p className="font-sans font-light text-lg text-white/40 leading-relaxed border-l border-white/10 pl-8 group-hover:border-[#6324FC] transition-colors">
+                    {s.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* 5. Bottom CTA */}
@@ -240,25 +330,25 @@ export default function TechnicalAuditsPage() {
           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-12">
             VISIBLE <span className="italic text-[#6324FC]">DOMINANCE.</span>
           </h2>
-          <p className="font-sans text-white/40 text-2xl mb-16 max-w-2xl mx-auto leading-relaxed">
-            Ready to fix the foundation? Let&apos;s run a surgical audit and unlock your site&apos;s true organic potential.
+          <p className="font-sans text-white/40 text-lg mb-16 max-w-2xl mx-auto leading-relaxed">
+            Ready to fix the foundation? Let&apos;s run a surgical audit and
+            unlock your site&apos;s true organic potential.
           </p>
-          <button 
-            onClick={() => window.location.href='/contact'}
+          <button
+            onClick={() => (window.location.href = "/contact")}
             className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] hover:scale-105 mx-auto isolate"
           >
             <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
               <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
             </div>
-            <div className="relative w-full h-full px-16 py-8 rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-6 z-10">
+            <div className="relative w-full h-full md:px-16 px-8 py-4 md:py-8 text-xl md:text-2xl rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-6 z-10">
               <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
-              <span className="relative z-10 font-heading text-2xl tracking-widest text-white uppercase text-center flex items-center gap-6">
+              <span className="relative z-10 font-heading text-lg md:text-2xl tracking-widest text-white uppercase text-center flex items-center gap-6">
                 START TECHNICAL AUDIT ⚡
               </span>
             </div>
           </button>
         </div>
-
       </div>
     </main>
   );

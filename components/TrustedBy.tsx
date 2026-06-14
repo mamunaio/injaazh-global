@@ -1,34 +1,88 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Globe, Cpu, Zap, ShoppingBag, Landmark, Building2, Briefcase, Rocket, Sparkles, Monitor } from "lucide-react";
+import {
+  Globe,
+  Cpu,
+  Zap,
+  ShoppingBag,
+  Landmark,
+  Building2,
+  Briefcase,
+  Rocket,
+  Sparkles,
+  Monitor,
+} from "lucide-react";
 
 const partners = [
-  { name: "E-COMMERCE", icon: ShoppingBag, size: "col-span-2 row-span-1", desc: "Scale-ready retail ecosystems" },
-  { name: "FINTECH", icon: Landmark, size: "col-span-1 row-span-2", desc: "Secure digital banking" },
-  { name: "SAAS", icon: Cpu, size: "col-span-1 row-span-1", desc: "Cloud infrastructures" },
-  { name: "REAL ESTATE", icon: Building2, size: "col-span-1 row-span-1", desc: "Luxury property platforms" },
-  { name: "HEALTHCARE", icon: Briefcase, size: "col-span-2 row-span-1", desc: "Next-gen medical interfaces" },
-  { name: "STARTUPS", icon: Rocket, size: "col-span-1 row-span-1", desc: "Seed-to-Scale growth" },
-  { name: "FASHION", icon: Sparkles, size: "col-span-1 row-span-1", desc: "High-end brand experiences" },
-  { name: "TECH", icon: Monitor, size: "col-span-1 row-span-1", desc: "Cutting-edge software" },
-  { name: "GLOBAL IMPACT", icon: Globe, size: "col-span-2 row-span-1", desc: "Worldwide market dominance" }
+  {
+    name: "E-COMMERCE",
+    icon: ShoppingBag,
+    size: "col-span-2 row-span-1",
+    desc: "Scale-ready retail ecosystems",
+  },
+  {
+    name: "FINTECH",
+    icon: Landmark,
+    size: "col-span-1 row-span-2",
+    desc: "Secure digital banking",
+  },
+  {
+    name: "SAAS",
+    icon: Cpu,
+    size: "col-span-1 row-span-1",
+    desc: "Cloud infrastructures",
+  },
+  {
+    name: "REAL ESTATE",
+    icon: Building2,
+    size: "col-span-1 row-span-1",
+    desc: "Luxury property platforms",
+  },
+  {
+    name: "HEALTHCARE",
+    icon: Briefcase,
+    size: "col-span-2 row-span-1",
+    desc: "Next-gen medical interfaces",
+  },
+  {
+    name: "STARTUPS",
+    icon: Rocket,
+    size: "col-span-1 row-span-1",
+    desc: "Seed-to-Scale growth",
+  },
+  {
+    name: "FASHION",
+    icon: Sparkles,
+    size: "col-span-1 row-span-1",
+    desc: "High-end brand experiences",
+  },
+  {
+    name: "TECH",
+    icon: Monitor,
+    size: "col-span-1 row-span-1",
+    desc: "Cutting-edge software",
+  },
+  {
+    name: "GLOBAL IMPACT",
+    icon: Globe,
+    size: "col-span-2 row-span-1",
+    desc: "Worldwide market dominance",
+  },
 ];
 
 export default function TrustedBy() {
   return (
     <section className="w-full bg-[#060608] py-24 lg:py-32 relative overflow-hidden border-b border-white/5">
-      
       {/* Background Accents */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#6324FC]/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#6324FC]/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-        
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div className="max-w-2xl">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -57,7 +111,7 @@ export default function TrustedBy() {
               </motion.div>
             </h1>
           </div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -65,11 +119,14 @@ export default function TrustedBy() {
             className="flex flex-col items-start md:items-end text-left md:text-right"
           >
             <p className="font-sans font-light text-white/40 text-base md: max-w-[320px] leading-relaxed mb-4">
-              We partner with industry pioneers to engineer digital dominance across every sector.
+              We partner with industry pioneers to engineer digital dominance
+              across every sector.
             </p>
             <div className="flex items-center gap-4">
               <span className="text-white font-heading  text-2xl">1,200+</span>
-              <span className="text-white/20 font-heading  text-sm capitalize tracking-widest">Active Clients</span>
+              <span className="text-white/20 font-heading  text-sm capitalize tracking-widest">
+                Active Clients
+              </span>
             </div>
           </motion.div>
         </div>
@@ -88,7 +145,7 @@ export default function TrustedBy() {
             >
               {/* Card Glow */}
               <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-[#6324FC]/10 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              
+
               <div className="flex justify-between items-start relative z-10">
                 <div className="p-3 bg-white/5 border border-white/10 group-hover:bg-[#6324FC] group-hover:border-[#6324FC] transition-all duration-500">
                   <partner.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -99,7 +156,7 @@ export default function TrustedBy() {
               </div>
 
               <div className="relative z-10">
-                <h3 className="font-heading text-xl md:text-2xl tracking-wide text-white mb-2 group-hover:translate-x-1 transition-transform">
+                <h3 className="font-heading text-lg tracking-wide text-white mb-2 group-hover:translate-x-1 transition-transform">
                   {partner.name}
                 </h3>
                 <p className="font-sans font-light text-[10px] md:text-xs text-white/30 tracking-wider capitalize group-hover:text-white/60 transition-colors">
@@ -115,7 +172,6 @@ export default function TrustedBy() {
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

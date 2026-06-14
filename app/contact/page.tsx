@@ -128,8 +128,27 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-8">
-              <button type="submit" className="flex items-center gap-4 bg-primary text-background px-12 py-6 rounded-full font-heading  text-sm tracking-widest capitalize hover:scale-105 hover:bg-[#6324FC] hover:text-white transition-all duration-300 shadow-2xl">
-                SEND MESSAGE <ArrowUpRight className="w-5 h-5" />
+              <button 
+                type="submit" 
+                className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] isolate w-full sm:w-auto"
+              >
+                {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+                <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
+                  <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+                </div>
+                
+                <div className="relative w-full h-full px-8 py-4 sm:px-12 sm:py-5 rounded-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
+                  {/* Flowing background gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                  
+                  {/* Bouncing/pulsating dot */}
+                  <span className="w-2 h-2 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
+                  
+                  <span className="relative z-10 flex items-center justify-center gap-4 font-heading text-sm tracking-[0.2em] text-primary uppercase text-center">
+                    SEND MESSAGE
+                    <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-500 text-[#6324FC] dark:group-hover:text-white" />
+                  </span>
+                </div>
               </button>
             </div>
 
