@@ -98,26 +98,26 @@ export default function WorkPage() {
 
   return (
     <main className="w-full min-h-screen bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 text-primary relative overflow-hidden">
-      {/* 1. Header Area */}
-      <section className="relative w-full min-h-[50vh] md:min-h-[60vh] py-20 md:py-32 flex items-center justify-center overflow-hidden bg-black">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/assets/hero_bg.png"
-            alt="Hero Background"
-            fill
-            priority
-            className="object-cover opacity-35 select-none pointer-events-none"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-[#060608]/80 to-[#060608]" />
+      {/* 1. Hero Area — agency-style gradient, no image */}
+      <section className="relative w-full min-h-[50vh] md:min-h-[60vh] py-20 md:py-32 flex items-center justify-center overflow-hidden bg-[#F0EEF8] dark:bg-[#060608]">
+        {/* Dynamic Glow Orbs */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-[#6324FC]/15 to-[#00E5FF]/10 dark:from-[#6324FC]/20 dark:to-[#00E5FF]/20 blur-[120px] rounded-full animate-pulse pointer-events-none"
+          style={{ animationDuration: "4s" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#6324FC]/5 via-transparent to-[#F5F5F0]/60 dark:from-[#6324FC]/10 dark:via-transparent dark:to-[#060608]/80 pointer-events-none" />
+
+        {/* Massive watermark text */}
+        <div className="absolute inset-0 flex items-center justify-center font-heading text-[22vw] md:text-[18vw] leading-none whitespace-nowrap tracking-tighter text-[#6324FC]/[0.04] dark:text-white/[0.02] text-center w-full select-none pointer-events-none">
+          WORK
         </div>
 
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10 w-full">
           <div className="flex flex-col md:flex-row justify-between items-end">
-            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize text-white">
+            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize text-[#060608] dark:text-white">
               SELECTED <span className="text-[#6324FC] italic">WORKS</span>
             </h1>
-            <p className="font-heading text-sm tracking-widest text-white/50 max-w-xs text-right hidden md:block">
+            <p className="font-heading text-sm tracking-widest text-[#060608]/50 dark:text-white/50 max-w-xs text-right hidden md:block">
               Engineering digital dominance through award-winning design and
               robust architectures.
             </p>
@@ -126,7 +126,7 @@ export default function WorkPage() {
       </section>
 
       {/* 2. Interactive Brutalist List */}
-      <section className="w-full bg-[#060608] pb-16 md:pb-24 relative overflow-hidden border-t border-white/[0.03] z-10">
+      <section className="w-full bg-[#F5F5F0] dark:bg-[#060608] pb-16 md:pb-24 relative overflow-hidden border-t border-[#060608]/10 dark:border-white/[0.03] z-10">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="flex flex-col w-full border-t border-primary/10">
             {projects.map((project) => (

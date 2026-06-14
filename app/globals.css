@@ -210,3 +210,250 @@
   background-size: 200% auto;
   animation: gradient-shift 6s linear infinite;
 }
+
+/* ==========================================================
+   GLOBAL LIGHT MODE STYLING FIXES (A to Z)
+   These rules run only when the document is in light mode
+   (i.e. html does NOT have the class .dark).
+   This avoids touching or modifying the perfect dark mode.
+   ========================================================== */
+html:not(.dark) {
+  /* 1. Main Background Overrides & Alternation */
+  .bg-\[\#060608\],
+  main.bg-\[\#060608\],
+  header.bg-\[\#060608\] {
+    background-color: var(--bg) !important; /* #F5F5F0 */
+  }
+
+  /* Alternating section backgrounds on pages for visual depth */
+  section.bg-\[\#060608\],
+  div.bg-\[\#060608\] {
+    background-color: var(--bg) !important;
+  }
+  
+  section.bg-\[\#060608\]:nth-of-type(3n+1),
+  div.bg-\[\#060608\]:nth-of-type(3n+1) {
+    background-color: var(--bg) !important; /* #F5F5F0 */
+  }
+
+  section.bg-\[\#060608\]:nth-of-type(3n+2),
+  div.bg-\[\#060608\]:nth-of-type(3n+2) {
+    background-color: #ffffff !important; /* Pure white surface */
+  }
+
+  section.bg-\[\#060608\]:nth-of-type(3n+3),
+  div.bg-\[\#060608\]:nth-of-type(3n+3) {
+    background-color: #EEECEA !important; /* Elegant warm grey */
+  }
+
+  /* Specific premium background assignments for major homepage sections */
+  .hero-section {
+    background-color: var(--bg) !important;
+  }
+  
+  /* HeroMarquee background */
+  main > div:nth-child(2) {
+    background-color: #ffffff !important;
+  }
+  
+  /* DigitalExperience - Section 3 */
+  main > *:nth-child(3) {
+    background-color: #EEECEA !important;
+  }
+
+  /* FeaturedWork (Case Studies Grid) - Section 4 */
+  main > *:nth-child(4) {
+    background-color: #ffffff !important;
+  }
+
+  /* OurProcess - Section 5 */
+  main > *:nth-child(5) {
+    background-color: var(--bg) !important;
+  }
+
+  /* WhyChoose - Section 6 */
+  main > *:nth-child(6) {
+    background-color: #ffffff !important;
+  }
+
+  /* GlobalImpact - Section 7 */
+  main > *:nth-child(7) {
+    background-color: #EEECEA !important;
+  }
+
+  /* Testimonials - Section 8 */
+  main > *:nth-child(8) {
+    background-color: #ffffff !important;
+  }
+
+  /* TeamPreview - Section 9 */
+  main > *:nth-child(9) {
+    background-color: var(--bg) !important;
+  }
+
+  /* LatestInsights - Section 10 */
+  main > *:nth-child(10) {
+    background-color: #ffffff !important;
+  }
+
+  /* Awards - Section 11 */
+  main > *:nth-child(11) {
+    background-color: #EEECEA !important;
+  }
+
+  .bg-\[\#0a0a0d\],
+  .bg-\[\#08080A\] {
+    background-color: var(--surface) !important; /* #ffffff */
+  }
+
+  /* 2. Background Opacities */
+  .bg-\[\#060608\]\/95 { background-color: rgba(245, 245, 240, 0.95) !important; }
+  .bg-\[\#060608\]\/90 { background-color: rgba(245, 245, 240, 0.90) !important; }
+  .bg-\[\#060608\]\/80 { background-color: rgba(245, 245, 240, 0.80) !important; }
+  .bg-\[\#060608\]\/60 { background-color: rgba(245, 245, 240, 0.60) !important; }
+  .bg-\[\#060608\]\/50 { background-color: rgba(245, 245, 240, 0.50) !important; }
+  .bg-\[\#060608\]\/40 { background-color: rgba(245, 245, 240, 0.40) !important; }
+  .bg-\[\#060608\]\/10 { background-color: rgba(245, 245, 240, 0.10) !important; }
+  
+  .bg-black\/20 { background-color: rgba(6, 6, 8, 0.05) !important; }
+  .bg-black\/60 { background-color: rgba(6, 6, 8, 0.4) !important; }
+
+  /* 3. Translucent White Background Overrides (Map to visible light cards) */
+  .bg-white\/5,
+  .bg-white\/10,
+  .bg-white\/\[0\.01\],
+  .bg-white\/\[0\.02\],
+  .bg-white\/\[0\.03\],
+  .bg-white\/\[0\.04\],
+  .bg-white\/\[0\.05\],
+  .bg-\[\#111115\],
+  .process-card {
+    background-color: #ffffff !important;
+    border-color: rgba(6, 6, 8, 0.1) !important;
+    box-shadow: 0 4px 16px rgba(6, 6, 8, 0.04), 0 1px 4px rgba(6, 6, 8, 0.02) !important;
+  }
+
+  /* Interactive Hover Effects on Cards */
+  .bg-white\/\[0\.02\]:hover,
+  .bg-white\/\[0\.01\]:hover,
+  .bg-white\/\[0\.03\]:hover,
+  .bg-white\/\[0\.04\]:hover,
+  .bg-white\/\[0\.05\]:hover,
+  .bg-white\/5:hover,
+  .bg-\[\#111115\]:hover,
+  .process-card:hover {
+    background-color: #FAF8F5 !important;
+    border-color: rgba(99, 36, 252, 0.2) !important;
+    box-shadow: 0 8px 24px rgba(6, 6, 8, 0.06), 0 0 12px rgba(99, 36, 252, 0.04) !important;
+  }
+
+  /* 4. Text Color & Contrast Overrides */
+  .text-white {
+    color: var(--text-primary) !important;
+  }
+  
+  /* Text Opacity Variants */
+  .text-white\/95 { color: rgba(6, 6, 8, 0.95) !important; }
+  .text-white\/90 { color: rgba(6, 6, 8, 0.90) !important; }
+  .text-white\/80 { color: rgba(6, 6, 8, 0.80) !important; }
+  .text-white\/70 { color: rgba(6, 6, 8, 0.70) !important; }
+  .text-white\/60 { color: rgba(6, 6, 8, 0.60) !important; }
+  .text-white\/50 { color: rgba(6, 6, 8, 0.50) !important; }
+  .text-white\/40 { color: rgba(6, 6, 8, 0.40) !important; }
+  .text-white\/30 { color: rgba(6, 6, 8, 0.30) !important; }
+  .text-white\/20 { color: rgba(6, 6, 8, 0.20) !important; }
+  .text-white\/10 { color: rgba(6, 6, 8, 0.10) !important; }
+
+  /* Gray / Zinc text visibility enhancements */
+  .text-zinc-400, .text-gray-400 { color: rgba(6, 6, 8, 0.7) !important; }
+  .text-zinc-500, .text-gray-500 { color: rgba(6, 6, 8, 0.6) !important; }
+  
+  /* 5. Border Overrides (Convert to Deeper Dark Tinted for Crisp Visibility) */
+  .border-white\/5 { border-color: rgba(6, 6, 8, 0.14) !important; }
+  .border-white\/10 { border-color: rgba(6, 6, 8, 0.22) !important; }
+  .border-white\/20 { border-color: rgba(6, 6, 8, 0.32) !important; }
+  .border-white\/\[0\.05\] { border-color: rgba(6, 6, 8, 0.14) !important; }
+  .border-white\/\[0\.03\] { border-color: rgba(6, 6, 8, 0.10) !important; }
+
+  /* Accent Borders */
+  .border-\[\#00E5FF\]\/30 { border-color: rgba(0, 180, 216, 0.4) !important; }
+  .border-\[\#6324FC\]\/20 { border-color: rgba(99, 36, 252, 0.3) !important; }
+  .border-\[\#6324FC\]\/30 { border-color: rgba(99, 36, 252, 0.4) !important; }
+  .border-\[\#6324FC\]\/40 { border-color: rgba(99, 36, 252, 0.55) !important; }
+  .border-\[\#6324FC\]\/50 { border-color: rgba(99, 36, 252, 0.7) !important; }
+
+  /* 6. List and Grid Divider Borders */
+  .divide-white\/10 > :not([hidden]) ~ :not([hidden]) {
+    border-color: rgba(6, 6, 8, 0.14) !important;
+  }
+
+  /* 7. Dropdown and Option Selection fixes */
+  select option {
+    background-color: var(--surface) !important;
+    color: var(--text-primary) !important;
+  }
+  
+  /* Input placeholder adjustments */
+  .placeholder\:text-white\/5::placeholder { color: rgba(6, 6, 8, 0.12) !important; }
+  .placeholder\:text-white\/10::placeholder { color: rgba(6, 6, 8, 0.22) !important; }
+
+  /* 8. Box Shadows (Softened for light mode) */
+  .shadow-\[0_40px_80px_rgba\(0\2c 0\2c 0\2c 0\.4\)\] {
+    box-shadow: 0 10px 30px rgba(6, 6, 8, 0.06), 0 2px 8px rgba(6, 6, 8, 0.03) !important;
+  }
+  .shadow-\[0_0_50px_rgba\(0\2c 0\2c 0\2c 0\.1\)\] {
+    box-shadow: 0 6px 16px rgba(6, 6, 8, 0.05) !important;
+  }
+  .shadow-\[0_20px_50px_rgba\(255\2c 255\2c 255\2c 0\.1\)\] {
+    box-shadow: 0 10px 25px rgba(99, 36, 252, 0.02) !important;
+  }
+  .shadow-\[0_0_40px_rgba\(99\2c 36\2c 252\2c 0\.1\)\] {
+    box-shadow: 0 6px 15px rgba(99, 36, 252, 0.015) !important;
+  }
+  .shadow-\[0_0_50px_rgba\(99\2c 36\2c 252\2c 0\.1\)\] {
+    box-shadow: 0 8px 20px rgba(99, 36, 252, 0.015) !important;
+  }
+  .shadow-\[0_40px_100px_rgba\(0\2c 0\2c 0\2c 0\.8\)\] {
+    box-shadow: 0 15px 30px rgba(6, 6, 8, 0.04), 0 0 20px rgba(99, 36, 252, 0.01) !important;
+  }
+  .shadow-\[0_0_100px_rgba\(99\2c 36\2c 252\2c 0\.2\)\] {
+    box-shadow: 0 15px 30px rgba(99, 36, 252, 0.02), 0 0 15px rgba(0, 229, 255, 0.01) !important;
+  }
+
+  /* 9. Purple Solid Background — always force white text & icons inside */
+  .bg-\[\#6324FC\] {
+    color: #ffffff !important;
+  }
+  .bg-\[\#6324FC\] * {
+    color: #ffffff !important;
+  }
+  .bg-\[\#6324FC\] svg {
+    color: #ffffff !important;
+    stroke: currentColor !important;
+  }
+
+  /* 10. Insights page post category label overlay on images stays readable */
+  .bg-\[\#060608\]\/80 {
+    background-color: rgba(245, 245, 240, 0.92) !important;
+    color: var(--text-primary) !important;
+    border-color: rgba(6, 6, 8, 0.12) !important;
+  }
+
+  /* 11. Insights newsletter card light mode */
+  .bg-white\/\[0\.02\].backdrop-blur-3xl {
+    background-color: #ffffff !important;
+    border-color: rgba(6, 6, 8, 0.10) !important;
+    box-shadow: 0 8px 32px rgba(6, 6, 8, 0.06) !important;
+  }
+
+  /* 12. Input fields light mode */
+  .bg-white\/\[0\.03\] {
+    background-color: rgba(6, 6, 8, 0.03) !important;
+    border-color: rgba(6, 6, 8, 0.12) !important;
+  }
+
+  /* 13. Swiper pagination dots — visible on light bg */
+  .swiper-pagination-bullet {
+    background-color: rgba(6, 6, 8, 0.2) !important;
+  }
+}

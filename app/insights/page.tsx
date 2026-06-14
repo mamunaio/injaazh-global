@@ -71,19 +71,19 @@ export default function InsightsPage() {
       : posts.slice(1).filter((post) => post.category === activeCategory);
 
   return (
-    <main className="w-full bg-[#060608] min-h-screen pt-32 text-white font-sans overflow-hidden">
-      {/* 1. Header Section */}
-      <section className="relative w-full min-h-[50vh] md:min-h-[60vh] py-20 md:py-32 flex items-center justify-center overflow-hidden bg-black mb-20">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/assets/hero_bg.png"
-            alt="Hero Background"
-            fill
-            priority
-            className="object-cover opacity-35 select-none pointer-events-none"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-[#060608]/80 to-[#060608]" />
+    <main className="w-full bg-[#F5F5F0] dark:bg-[#060608] min-h-screen pt-32 text-primary dark:text-white font-sans overflow-hidden">
+      {/* 1. Header Section — agency-style gradient, no image */}
+      <section className="relative w-full min-h-[50vh] md:min-h-[60vh] py-20 md:py-32 flex items-center justify-center overflow-hidden bg-[#F0EEF8] dark:bg-[#060608] mb-20">
+        {/* Dynamic Glow Orbs */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-[#6324FC]/15 to-[#00E5FF]/10 dark:from-[#6324FC]/20 dark:to-[#00E5FF]/20 blur-[120px] rounded-full animate-pulse pointer-events-none"
+          style={{ animationDuration: "4s" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#6324FC]/5 via-transparent to-[#F5F5F0]/60 dark:from-[#6324FC]/10 dark:via-transparent dark:to-[#060608]/80 pointer-events-none" />
+
+        {/* Massive watermark text */}
+        <div className="absolute inset-0 flex items-center justify-center font-heading text-[18vw] md:text-[14vw] leading-none whitespace-nowrap tracking-tighter text-[#6324FC]/[0.04] dark:text-white/[0.02] text-center w-full select-none pointer-events-none">
+          INSIGHTS
         </div>
 
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10 w-full">
@@ -94,10 +94,10 @@ export default function InsightsPage() {
             className="flex flex-col md:flex-row md:items-end justify-between gap-8"
           >
             <div className="max-w-2xl">
-              <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-8">
+              <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-8 text-[#060608] dark:text-white">
                 IN <span className="italic text-[#6324FC]">SIGHTS</span>
               </h1>
-              <p className="font-sans font-light text-xl text-white/50 leading-relaxed">
+              <p className="font-sans font-light text-xl text-[#060608]/50 dark:text-white/50 leading-relaxed">
                 Explorations into the intersection of full-service digital
                 strategy, <br className="hidden md:block" />
                 engineering excellence, and global market dominance.
@@ -113,7 +113,7 @@ export default function InsightsPage() {
                   className={`px-6 py-2 rounded-full font-heading text-xs tracking-widest capitalize transition-all border ${
                     activeCategory === cat
                       ? "bg-[#6324FC] border-[#6324FC] text-white"
-                      : "bg-transparent border-white/10 text-white/40 hover:border-white/30"
+                      : "bg-transparent border-[#060608]/20 dark:border-white/10 text-[#060608]/60 dark:text-white/40 hover:border-[#060608]/40 dark:hover:border-white/30"
                   }`}
                 >
                   {cat}
