@@ -45,7 +45,7 @@ export default function BrandIdentityPage() {
     {
       title: "Color Strategy",
       description:
-        "Scientifically backed color palettes designed to evoke specific emotions and drive user action — chosen for your market, not your personal preference.",
+        "Scientifically backed color palettes designed to evoke specific emotions and drive user action — chosen for your markets, not your personal preference.",
       icon: Palette,
       color: "#FF2D55",
     },

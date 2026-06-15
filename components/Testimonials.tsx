@@ -10,29 +10,32 @@ import "swiper/css/pagination";
 
 const reviews = [
   {
-    quote: "Our 3rd major engagement with Injaazh. Their team consists of absolute experts at what they do — trustworthy, flexible, and innovative. I highly recommend them for any complex digital requirements and global campaigns.",
+    quote:
+      "Our 3rd major engagement with Injaazh. Their team consists of absolute experts at what they do — trustworthy, flexible, and innovative. I highly recommend them for any complex digital requirements and global campaigns.",
     name: "Sarah M.",
     role: "Chief Marketing Officer",
     flag: "UK",
     initials: "SM",
-    gradient: "from-[#6324FC]/20 to-amber-500/10"
+    gradient: "from-[#6324FC]/20 to-amber-500/10",
   },
   {
-    quote: "Injaazh delivered an outstanding headless commerce platform. I especially appreciated their proactive approach when accommodating our enterprise compliance requirements. Highly recommended for elite web development.",
+    quote:
+      "Injaazh delivered an outstanding headless commerce platform. I especially appreciated their proactive approach when accommodating our enterprise compliance requirements. Highly recommended for elite web development.",
     name: "David K.",
     role: "Product Owner",
     flag: "CA",
     initials: "DK",
-    gradient: "from-[#6324FC]/20 to-emerald-500/10"
+    gradient: "from-[#6324FC]/20 to-emerald-500/10",
   },
   {
-    quote: "Excellent work on our custom web application. They integrated new features perfectly into our existing monolithic codebase while migrating us to Next.js. Professional, efficient, and incredibly easy to communicate with.",
+    quote:
+      "Excellent work on our custom web application. They integrated new features perfectly into our existing monolithic codebase while migrating us to Next.js. Professional, efficient, and incredibly easy to communicate with.",
     name: "Saikat G.",
     role: "Technical Lead",
     flag: "IN",
     initials: "SG",
-    gradient: "from-[#6324FC]/20 to-rose-500/10"
-  }
+    gradient: "from-[#6324FC]/20 to-rose-500/10",
+  },
 ];
 
 export default function Testimonials() {
@@ -44,33 +47,41 @@ export default function Testimonials() {
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay" />
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-        
         {/* Header */}
         <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-12">
           <div className="max-w-3xl">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize mb-8 flex items-center gap-4"
             >
-              <span className="w-12 h-[1px] bg-[#6324FC]" /> 
+              <span className="w-12 h-[1px] bg-[#6324FC]" />
               CLIENT SUCCESS STORIES
             </motion.div>
             <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white mb-4 capitalize ">
-              TRUSTED <br/>
-              <span className="stroke-white italic opacity-80">BY LEADERS.</span>
+              TRUSTED <br />
+              <span className="stroke-white italic opacity-80">
+                BY LEADERS.
+              </span>
             </h2>
           </div>
-          
+
           <div className="flex flex-col items-end text-right">
             <div className="flex items-center gap-6 mb-4">
-              <div className="font-heading  text-[10px] text-white/40 capitalize tracking-[0.4em]">Global Rating</div>
-              <div className="font-heading text-4xl text-white">4.9<span className="text-white/30 text-2xl">/5</span></div>
+              <div className="font-heading  text-[10px] text-white/40 capitalize tracking-[0.4em]">
+                Global Rating
+              </div>
+              <div className="font-heading text-4xl text-white">
+                4.9<span className="text-white/30 text-2xl">/5</span>
+              </div>
             </div>
             <div className="flex gap-2">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-[#6324FC] text-[#6324FC] drop-shadow-[0_0_15px_rgba(99,36,252,0.6)]" />
+                <Star
+                  key={i}
+                  className="w-5 h-5 fill-[#6324FC] text-[#6324FC] drop-shadow-[0_0_15px_rgba(99,36,252,0.6)]"
+                />
               ))}
             </div>
           </div>
@@ -101,12 +112,15 @@ export default function Testimonials() {
                   {/* Card Hover Glow */}
                   <div className="absolute inset-0 bg-[#6324FC]/0 group-hover:bg-[#6324FC]/5 transition-colors duration-700" />
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#6324FC]/10 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-                  
+
                   <Quote className="absolute top-10 right-10 w-16 h-16 text-[#6324FC]/5 group-hover:text-[#6324FC]/10 group-hover:scale-110 transition-all duration-700 -rotate-12" />
-                  
+
                   <div className="flex gap-1 mb-8">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#6324FC] text-[#6324FC] drop-shadow-[0_0_10px_rgba(99,36,252,0.8)]" />
+                      <Star
+                        key={i}
+                        className="w-4 h-4 fill-[#6324FC] text-[#6324FC] drop-shadow-[0_0_10px_rgba(99,36,252,0.8)]"
+                      />
                     ))}
                   </div>
 
@@ -115,14 +129,20 @@ export default function Testimonials() {
                   </p>
 
                   <div className="flex items-center gap-5 pt-8 border-t border-white/5 mt-auto relative z-10">
-                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center font-heading text-xl text-white bg-gradient-to-br ${rev.gradient} border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.5)]`}>
+                    <div
+                      className={`w-14 h-14 rounded-2xl flex items-center justify-center font-heading text-xl text-white bg-gradient-to-br ${rev.gradient} border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.5)]`}
+                    >
                       {rev.initials}
                     </div>
-                    
+
                     <div className="flex flex-col">
                       <div className="flex items-center gap-3 mb-1">
-                        <span className="font-heading text-xl text-white group-hover:text-[#6324FC] transition-colors">{rev.name}</span>
-                        <span className="font-heading  text-[8px] text-white/50 bg-white/5 px-2 py-0.5 rounded border border-white/10 capitalize tracking-widest">{rev.flag}</span>
+                        <span className="font-heading text-xl text-white group-hover:text-[#6324FC] transition-colors">
+                          {rev.name}
+                        </span>
+                        <span className="font-heading  text-[8px] text-white/50 bg-white/5 px-2 py-0.5 rounded border border-white/10 capitalize tracking-widest">
+                          {rev.flag}
+                        </span>
                       </div>
                       <span className="font-heading  text-[9px] tracking-[0.2em] text-white/40 capitalize ">
                         {rev.role}
@@ -137,7 +157,7 @@ export default function Testimonials() {
           {/* Custom Navigation & Pagination */}
           <div className="mt-12 flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="swiper-pagination-custom flex gap-3" />
-            
+
             <div className="flex gap-4">
               <button className="testimonial-prev group relative w-14 h-14 p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-500 hover:scale-105 active:scale-95 shadow-lg isolate">
                 <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
@@ -163,22 +183,32 @@ export default function Testimonials() {
 
         {/* Global Stats Footer */}
         <div className="mt-16 md:mt-24 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 relative z-10">
-           <div className="flex flex-col items-center justify-center py-8 md:py-10 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
-             <span className="font-heading text-4xl md:text-6xl text-white group-hover:text-[#6324FC] transition-colors duration-500 mb-2 leading-none">98%</span>
-             <span className="font-heading  text-[10px] md:text-xs tracking-[0.4em] capitalize text-white/50 group-hover:text-white/80 transition-colors duration-500">RETENTION RATE</span>
-           </div>
-           <div className="flex flex-col items-center justify-center py-8 md:py-10 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
-             <span className="font-heading text-4xl md:text-6xl text-white group-hover:text-[#00E5FF] transition-colors duration-500 mb-2 leading-none">24/7</span>
-             <span className="font-heading  text-[10px] md:text-xs tracking-[0.4em] capitalize text-white/50 group-hover:text-white/80 transition-colors duration-500">GLOBAL SUPPORT</span>
-           </div>
-           <div className="flex flex-col items-center justify-center py-8 md:py-10 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
-             <span className="font-heading text-4xl md:text-6xl text-white group-hover:text-[#6324FC] transition-colors duration-500 mb-2 leading-none">500+</span>
-             <span className="font-heading  text-[10px] md:text-xs tracking-[0.4em] capitalize text-white/50 group-hover:text-white/80 transition-colors duration-500">PROJECTS DELIVERED</span>
-           </div>
+          <div className="flex flex-col items-center justify-center py-8 md:py-10 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
+            <span className="font-heading text-4xl md:text-6xl text-white group-hover:text-[#6324FC] transition-colors duration-500 mb-2 leading-none">
+              98%
+            </span>
+            <span className="font-heading  text-[10px] md:text-xs tracking-[0.4em] capitalize text-white/50 group-hover:text-white/80 transition-colors duration-500">
+              RETENTION RATE
+            </span>
+          </div>
+          <div className="flex flex-col items-center justify-center py-8 md:py-10 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
+            <span className="font-heading text-4xl md:text-6xl text-white group-hover:text-[#00E5FF] transition-colors duration-500 mb-2 leading-none">
+              24/7
+            </span>
+            <span className="font-heading  text-[10px] md:text-xs tracking-[0.4em] capitalize text-white/50 group-hover:text-white/80 transition-colors duration-500">
+              GLOBAL SUPPORT
+            </span>
+          </div>
+          <div className="flex flex-col items-center justify-center py-8 md:py-10 group hover:bg-white/[0.02] transition-colors duration-500 cursor-crosshair">
+            <span className="font-heading text-4xl md:text-6xl text-white group-hover:text-[#6324FC] transition-colors duration-500 mb-2 leading-none">
+              500+
+            </span>
+            <span className="font-heading  text-[10px] md:text-xs tracking-[0.4em] capitalize text-white/50 group-hover:text-white/80 transition-colors duration-500">
+              PROJECTS DELIVERED
+            </span>
+          </div>
         </div>
-
       </div>
     </section>
   );
 }
-
