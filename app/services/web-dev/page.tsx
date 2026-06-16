@@ -9,6 +9,7 @@ import {
   ShoppingBag,
   Code,
   Link,
+  ArrowRight,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { useProjectModal } from "@/components/ProjectModalContext";
@@ -474,6 +475,7 @@ export default function WebDevPage() {
               <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-2xl tracking-widest text-white uppercase text-center">
                 START YOUR FREE AUDIT
               </span>
+              <ArrowRight className="relative z-10 w-6 h-6 text-[#6324FC] group-hover:text-white group-hover:translate-x-1 transition-all duration-500" />
             </div>
           </button>
         </div>

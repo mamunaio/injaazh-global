@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Plus, Minus } from "lucide-react";
+import { ArrowUpRight, Plus, Minus,
+  ArrowRight,
+} from "lucide-react";
 import { useState } from "react";
 import { useProjectModal } from "@/components/ProjectModalContext";
 
@@ -316,8 +318,8 @@ export default function UIUXPage() {
               <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
 
               <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-2xl tracking-widest text-white uppercase text-center">
-                START YOUR FREE AUDIT ⚡
-              </span>
+                START YOUR FREE AUDIT</span>
+              <ArrowRight className="relative z-10 w-6 h-6 text-[#6324FC] group-hover:text-white group-hover:translate-x-1 transition-all duration-500" />
             </div>
           </button>
         </div>
