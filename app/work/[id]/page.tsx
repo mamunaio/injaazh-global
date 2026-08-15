@@ -53,6 +53,7 @@ const projectData: Record<string, any> = {
     img: "/assets/themes_jet_final.webp", 
     accent: "#6324FC",
     secondaryAccent: "#00E5FF",
+    link: "https://themesjet.com",
     tags: ["Full-Stack", "Fintech", "UX Strategy"],
     overview: "ThemesJet is not just a marketplace; it is an ecosystem. We were tasked with building a platform that could handle high-frequency digital asset transactions while maintaining the aesthetic standards of a world-class design agency.",
     problem: "The legacy digital marketplace landscape is cluttered, slow, and lacks the premium feel that high-end developers demand. ThemesJet needed a radical departure from the 'template store' norm.",
@@ -86,6 +87,7 @@ const projectData: Record<string, any> = {
     img: "/assets/aka_moving_final.webp", 
     accent: "#00E5FF",
     secondaryAccent: "#6324FC",
+    link: "https://akamoving.ca",
     tags: ["Automation", "React", "Optimization"],
     overview: "Migrating a traditional logistics company into a fully automated digital platform capable of handling thousands of moving requests across Canada.",
     problem: "Manual scheduling and opaque pricing were causing 30% lead leakage. The industry standard was outdated and friction-heavy.",
@@ -119,6 +121,7 @@ const projectData: Record<string, any> = {
     img: "/assets/nexus_esports_final.webp",
     accent: "#FF2D55",
     secondaryAccent: "#00E5FF",
+    link: "https://nexusesports.com",
     tags: ["UI/UX", "Esports", "Next.js"],
     overview: "A lightning-fast, high-performance web architecture for a global esports platform, achieving instant registrations and sub-second load times.",
     problem: "Legacy platforms couldn't handle the traffic spikes during live tournaments.",
@@ -162,6 +165,10 @@ export default function UltraPremiumCaseStudy() {
   const heroScale = useTransform(scrollYProgress, [0, 0.3], [1, 1.2]);
   const heroTextY = useTransform(scrollYProgress, [0, 0.3], [0, -100]);
 
+  // Mockup Parallax
+  const mockupY1 = useTransform(scrollYProgress, [0.3, 0.8], [50, -50]);
+  const mockupY2 = useTransform(scrollYProgress, [0.3, 0.8], [150, -150]);
+
   return (
     <main ref={containerRef} className="bg-[#060608] min-h-screen text-white relative overflow-x-hidden">
       
@@ -187,14 +194,42 @@ export default function UltraPremiumCaseStudy() {
              style={{ y: heroTextY }}
              className="text-center"
            >
-              <div className="font-heading  text-[10px] tracking-[0.8em] text-[#6324FC] capitalize mb-8 ml-[0.8em]">Case Study // {project.id}</div>
+              <div 
+                className="font-heading  text-[10px] tracking-[0.8em] capitalize mb-8 ml-[0.8em]"
+                style={{ color: project.accent }}
+              >
+                 Case Study // {project.id}
+              </div>
               <h1 className="font-heading text-[15vw] leading-[0.75] tracking-tighter capitalize mb-8">
                  {project.title.split(' ')[0]} <br/>
                  <span className="stroke-text text-transparent italic opacity-40">{project.title.split(' ')[1] || ""}</span>
               </h1>
-              <div className="font-sans font-light text-2xl md:text-4xl text-white/40 tracking-tight max-w-3xl mx-auto leading-tight italic">
+              <div className="font-sans font-light text-2xl md:text-4xl text-white/40 tracking-tight max-w-3xl mx-auto leading-tight italic mb-12">
                  &quot;{project.subtitle}&quot;
               </div>
+              
+              {/* Visit Live Site Button */}
+              {project.link && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1 }}
+                >
+                  <Link 
+                    href={project.link} 
+                    target="_blank"
+                    className="group relative inline-flex items-center gap-4 px-8 py-4 rounded-full overflow-hidden transition-all hover:scale-105"
+                    style={{ backgroundColor: `${project.accent}15`, border: `1px solid ${project.accent}40` }}
+                  >
+                    <div 
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      style={{ background: `linear-gradient(to right, ${project.accent}30, transparent)` }}
+                    />
+                    <span className="relative z-10 font-heading tracking-widest text-sm uppercase">Visit Live Site</span>
+                    <ArrowUpRight className="relative z-10 w-5 h-5" style={{ color: project.accent }} />
+                  </Link>
+                </motion.div>
+              )}
            </motion.div>
         </div>
 
@@ -208,19 +243,25 @@ export default function UltraPremiumCaseStudy() {
            />
         </div>
 
-        {/* Back Link */}
-        <Link href="/work" className="absolute top-12 left-12 z-[100] group flex items-center gap-4">
-           <div className="relative w-12 h-12 p-[1.5px] rounded-full overflow-hidden flex items-center justify-center transition-all duration-500 group-hover:scale-110 shadow-lg isolate">
-              <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
-                <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+        {/* Floating Back Button */}
+        <motion.div 
+           initial={{ opacity: 0, x: -20 }}
+           animate={{ opacity: 1, x: 0 }}
+           transition={{ duration: 0.8, delay: 0.5 }}
+           className="fixed top-32 left-6 lg:left-12 z-[100]"
+        >
+           <Link href="/work" className="group flex items-center gap-3 px-5 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-300 shadow-2xl" style={{ border: `1px solid ${project.accent}30` }}>
+              <div 
+                className="p-2 rounded-full transition-colors duration-300"
+                style={{ backgroundColor: `${project.accent}30` }}
+              >
+                 <ArrowLeft className="w-4 h-4 text-white" />
               </div>
-              <div className="relative w-full h-full rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center z-10">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
-                <ArrowLeft className="relative z-10 w-4 h-4 text-[#6324FC] group-hover:text-white transition-all duration-500" />
-              </div>
-           </div>
-           <span className="font-heading  text-[9px] tracking-[0.4em] capitalize opacity-0 group-hover:opacity-100 transition-opacity duration-500">Archive</span>
-        </Link>
+              <span className="font-heading text-xs tracking-[0.2em] uppercase text-white/70 group-hover:text-white transition-colors duration-300">
+                 Back to Works
+              </span>
+           </Link>
+        </motion.div>
       </section>
 
       {/* 2. Bento Grid Stats */}
@@ -363,6 +404,42 @@ export default function UltraPremiumCaseStudy() {
 
             </div>
          </div>
+      </section>
+
+      {/* 3.5 Parallax Device Mockups */}
+      <section className="relative w-full py-32 bg-[#060608] flex items-center justify-center overflow-hidden border-t border-white/5">
+        <div className="absolute inset-0 opacity-50" style={{ background: `linear-gradient(to bottom, ${project.accent}10, transparent)` }} />
+        
+        <div className="max-w-[1400px] w-full mx-auto px-6 lg:px-12 relative flex flex-col md:flex-row items-center justify-center gap-12 h-[600px] md:h-[800px]">
+          
+          {/* Background Text */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none">
+            <h2 className="font-heading text-[15vw] leading-none whitespace-nowrap">EXPERIENCE</h2>
+          </div>
+
+          {/* Left Floating Card (Slow Parallax) */}
+          <motion.div 
+            className="absolute md:relative w-[85%] md:w-[55%] aspect-video rounded-3xl p-3 md:p-4 bg-white/[0.02] border border-white/5 backdrop-blur-3xl shadow-2xl z-10 top-10 md:top-0"
+            style={{ y: mockupY1, boxShadow: `0 25px 50px -12px ${project.accent}20` }}
+          >
+            <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[#060608]">
+               <Image src={project.img} alt="Showcase View 1" fill className="object-cover object-left" />
+               <div className="absolute inset-0 bg-black/10" />
+            </div>
+          </motion.div>
+
+          {/* Right Floating Card (Fast Parallax) */}
+          <motion.div 
+            className="absolute right-[5%] md:right-[15%] bottom-[5%] md:bottom-[10%] w-[45%] md:w-[30%] aspect-[3/4] md:aspect-square rounded-3xl p-3 md:p-4 bg-white/[0.02] border border-white/5 backdrop-blur-3xl shadow-2xl z-20"
+            style={{ y: mockupY2, boxShadow: `0 25px 50px -12px ${project.accent}30` }}
+          >
+            <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[#060608]">
+               <Image src={project.img} alt="Showcase View 2" fill className="object-cover object-right" />
+               <div className="absolute inset-0 bg-black/20" />
+            </div>
+          </motion.div>
+
+        </div>
       </section>
 
       {/* 4. Horizontal Scroll "Masterpiece" Section */}
