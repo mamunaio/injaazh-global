@@ -20,6 +20,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { useProjectModal } from "@/components/ProjectModalContext";
+import Counter from "@/components/Counter";
 
 const timeline = [
   {
@@ -45,56 +46,75 @@ const clients = [
     industry: "Digital Marketplace",
     location: "Global",
     accent: "group-hover:bg-[#6324FC]",
-    image: "/assets/enterprise_ecommerce_1780213870802.png",
+    image: "/assets/themes_jet_final.webp",
   },
   {
-    name: "Apex FinTech",
-    industry: "Enterprise SaaS",
+    name: "B2B SaaS Analytics",
+    industry: "FinTech & UI/UX",
     location: "New York, US",
     accent: "group-hover:bg-[#00E5FF]",
     image: "/assets/b2b_saas_dashboard_1780213845016.png",
   },
   {
-    name: "Quantum Labs",
-    industry: "B2B Infrastructure",
-    location: "San Francisco, US",
+    name: "AKA Moving",
+    industry: "Logistics & Transport",
+    location: "Toronto, CA",
     accent: "group-hover:bg-[#FACC15]",
+    image: "/assets/aka_moving_final.webp",
+  },
+  {
+    name: "Apex E-Commerce",
+    industry: "Retail Marketing",
+    location: "Sydney, AU",
+    accent: "group-hover:bg-[#FF3366]",
     image: "/assets/enterprise_ecommerce_1780213870802.png",
   },
   {
-    name: "Nova Architect",
-    industry: "Corporate Architecture",
+    name: "Nexus Esports",
+    industry: "Gaming Content",
+    location: "Los Angeles, US",
+    accent: "group-hover:bg-[#6324FC]",
+    image: "/assets/nexus_esports_final.webp",
+  },
+  {
+    name: "Novacore",
+    industry: "Enterprise Strategy",
     location: "London, UK",
-    accent: "group-hover:bg-[#FF3366]",
-    image: "/assets/b2b_saas_dashboard_1780213845016.png",
+    accent: "group-hover:bg-[#00E5FF]",
+    image: "/assets/novacore_esports_final.webp",
   },
 ];
 
 const featuredCaseStudies = [
   {
     slug: "themesjet",
-    title: "Enterprise E-commerce Web Design",
-    image: "/assets/enterprise_ecommerce_1780213870802.png",
+    title: "ThemesJet — Web Dev",
+    image: "/assets/themes_jet_final.webp",
   },
   {
-    slug: "scalia",
-    title: "B2B SaaS Web Application UI/UX",
+    slug: "b2b-saas",
+    title: "SaaS Dashboard — UI/UX Design",
     image: "/assets/b2b_saas_dashboard_1780213845016.png",
   },
   {
     slug: "aka-moving",
-    title: "Global Logistics Web Platform",
+    title: "AKA Moving — SEO Strategy",
+    image: "/assets/aka_moving_final.webp",
+  },
+  {
+    slug: "apex-ecommerce",
+    title: "Apex E-Commerce — Marketing",
     image: "/assets/enterprise_ecommerce_1780213870802.png",
   },
   {
     slug: "nexus-esports",
-    title: "Esports Tournament Dashboard",
-    image: "/assets/b2b_saas_dashboard_1780213845016.png",
+    title: "Nexus Esports — Content Strategy",
+    image: "/assets/nexus_esports_final.webp",
   },
   {
-    slug: "novacore-esports",
-    title: "Gaming Brand Architecture",
-    image: "/assets/enterprise_ecommerce_1780213870802.png",
+    slug: "novacore",
+    title: "Novacore — Enterprise Strategy",
+    image: "/assets/novacore_esports_final.webp",
   },
 ];
 
@@ -279,8 +299,8 @@ export default function AgencyClient() {
               <div className="absolute top-10 right-10 w-12 h-12 rounded-full bg-[#00E5FF]/10 flex items-center justify-center group-hover:bg-[#00E5FF]/20 group-hover:scale-110 transition-all duration-500">
                 <Globe className="w-5 h-5 text-[#00E5FF]" />
               </div>
-              <h4 className="font-heading text-7xl tracking-tighter text-[#00E5FF] mb-2">
-                20+
+              <h4 className="font-heading text-7xl tracking-tighter text-white mb-2">
+                <Counter value="20+" />
               </h4>
               <p className="font-heading  text-xs tracking-widest text-white/50 capitalize ">
                 Countries Served
@@ -300,7 +320,7 @@ export default function AgencyClient() {
                 <Zap className="w-5 h-5 text-[#6324FC]" />
               </div>
               <h4 className="font-heading text-7xl tracking-tighter text-white mb-2">
-                $1B+
+                <Counter value="$1B+" />
               </h4>
               <p className="font-heading  text-xs tracking-widest text-white/70 capitalize ">
                 Client Revenue Generated
@@ -511,40 +531,44 @@ export default function AgencyClient() {
                 platforms, and web applications we've engineered.
               </p>
             </div>
-            <div className="font-heading  text-xs text-[#6324FC] tracking-widest capitalize flex items-center gap-2">
-              DRAG TO EXPLORE <ArrowRight className="w-4 h-4" />
-            </div>
+            <Link href="/work" className="font-heading text-xs text-[#6324FC] tracking-widest capitalize flex items-center gap-2 hover:text-white transition-colors">
+              VIEW ALL WORK <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
-          <motion.div
-            ref={dragRef}
-            drag="x"
-            dragConstraints={dragConstraints}
-            dragElastic={0.1}
-            onDragStart={updateConstraints}
-            className="flex gap-8 px-6 lg:px-12 cursor-grab active:cursor-grabbing w-max"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredCaseStudies.map((item, idx) => (
               <Link
                 href={`/work/${item.slug}`}
                 key={idx}
-                className="w-[85vw] md:w-[600px] aspect-[4/3] relative rounded-[2rem] overflow-hidden shrink-0 border border-white/5 bg-white/[0.02] group block"
+                className="w-full aspect-[4/3] relative rounded-[2rem] overflow-hidden border border-white/5 bg-white/[0.02] group block"
               >
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  sizes="(max-width: 768px) 85vw, 600px"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105 pointer-events-none"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                  <span className="font-heading text-2xl capitalize tracking-wider text-white flex items-center gap-2">
-                    View Project <ArrowUpRight className="w-5 h-5" />
-                  </span>
+                {/* Overlay & Centered Glassmorphism Pill */}
+                <div className="absolute inset-0 bg-black/40 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                  <div className="px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 font-heading text-sm tracking-widest text-white flex items-center gap-2 translate-y-10 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out">
+                    VIEW PROJECT <ArrowUpRight className="w-5 h-5" />
+                  </div>
+                </div>
+
+                {/* Bottom Slide-up Details */}
+                <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-[#060608] via-[#060608]/80 to-transparent pointer-events-none translate-y-full opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 ease-out">
+                  <div className="font-heading text-xs text-[#00E5FF] tracking-widest mb-2 uppercase">
+                    {item.title.includes('—') ? item.title.split('—')[1].trim() : "Case Study"}
+                  </div>
+                  <h3 className="font-heading text-3xl text-white tracking-wide">
+                    {item.title.includes('—') ? item.title.split('—')[0].trim() : item.title}
+                  </h3>
                 </div>
               </Link>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 

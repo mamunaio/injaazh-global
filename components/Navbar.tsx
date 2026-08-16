@@ -18,6 +18,7 @@ export default function Navbar() {
   const [direction, setDirection] = useState<"forward" | "backward">("forward");
   const [currentPane, setCurrentPane] = useState<"main" | "services" | "category">("main");
   const [activeCategory, setActiveCategory] = useState<number | null>(null);
+  const [activeMegaMenuService, setActiveMegaMenuService] = useState<string>("Web Dev");
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -96,7 +97,14 @@ export default function Navbar() {
         { name: "Next.js Architectures", link: "/services/web-dev/nextjs-architectures" },
         { name: "Headless Commerce", link: "/services/web-dev/headless-commerce" },
         { name: "Custom Web Apps", link: "/services/web-dev/custom-web-apps" }
-      ] 
+      ],
+      caseStudy: {
+        title: "ThemesJet — Premium Marketplace",
+        image: "/assets/themes_jet_final.webp",
+        tags: "WEB DEV · MARKETPLACE · 🌐 GLOBAL",
+        stats: "500+ Assets · 10k+ Developers",
+        link: "/work/themesjet"
+      }
     },
     { 
       title: "UI/UX Design", 
@@ -105,7 +113,14 @@ export default function Navbar() {
         { name: "Brand Identity", link: "/services/ui-ux-design/brand-identity" },
         { name: "Design Systems", link: "/services/ui-ux-design/design-systems" },
         { name: "Motion Graphics", link: "/services/ui-ux-design/motion-graphics" }
-      ] 
+      ],
+      caseStudy: {
+        title: "B2B SaaS Dashboard Redesign",
+        image: "/assets/b2b_saas_dashboard_1780213845016.png",
+        tags: "UI/UX · B2B SAAS · 📊 ANALYTICS",
+        stats: "+300% Conversion · 4.9 User Rating",
+        link: "/work"
+      }
     },
     { 
       title: "SEO", 
@@ -114,7 +129,14 @@ export default function Navbar() {
         { name: "Technical Audits", link: "/services/seo/technical-audits" },
         { name: "Local Rankings", link: "/services/seo/local-rankings" },
         { name: "Keyword Strategy", link: "/services/seo/keyword-strategy" }
-      ] 
+      ],
+      caseStudy: {
+        title: "AKA Moving SEO Growth",
+        image: "/assets/aka_moving_final.webp",
+        tags: "SEO · LOCAL B2C · 📈 GROWTH",
+        stats: "1.2M Organic Traffic · Top 3 Rankings",
+        link: "/work"
+      }
     },
     { 
       title: "Marketing", 
@@ -123,7 +145,14 @@ export default function Navbar() {
         { name: "PPC Campaigns", link: "/services/marketing/ppc-campaigns" },
         { name: "Growth Automation", link: "/services/marketing/growth-automation" },
         { name: "Conversion Optimization", link: "/services/marketing/conversion-optimization" }
-      ] 
+      ],
+      caseStudy: {
+        title: "Enterprise E-Commerce Scaling",
+        image: "/assets/enterprise_ecommerce_1780213870802.png",
+        tags: "MARKETING · E-COMMERCE · 🚀 SCALING",
+        stats: "5x ROAS · $2M Ad Spend Managed",
+        link: "/work"
+      }
     },
     { 
       title: "Content", 
@@ -132,7 +161,14 @@ export default function Navbar() {
         { name: "Editorial Writing", link: "/services/content/editorial-writing" },
         { name: "Brand Narrative", link: "/services/content/brand-narrative" },
         { name: "Copywriting", link: "/services/content/copywriting" }
-      ] 
+      ],
+      caseStudy: {
+        title: "Nexus Esports Content Strategy",
+        image: "/assets/nexus_esports_final.webp",
+        tags: "CONTENT · ESPORTS · ✍️ EDITORIAL",
+        stats: "100+ Long-form Guides · 40% Bounce Drop",
+        link: "/work"
+      }
     },
     { 
       title: "Strategy", 
@@ -141,7 +177,14 @@ export default function Navbar() {
         { name: "Digital Transformation", link: "/services/strategy/digital-transformation" },
         { name: "Business Intelligence", link: "/services/strategy/business-intelligence" },
         { name: "UX Audits", link: "/services/strategy/ux-audits" }
-      ] 
+      ],
+      caseStudy: {
+        title: "Novacore Enterprise Strategy",
+        image: "/assets/novacore_esports_final.webp",
+        tags: "STRATEGY · ENTERPRISE · 🏢 B2B",
+        stats: "3 Global Divisions · $10M Revenue Impact",
+        link: "/work"
+      }
     },
   ];
 
@@ -302,11 +345,17 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: i * 0.05 + 0.1 }}
                         className="flex flex-col gap-4"
+                        onMouseEnter={() => setActiveMegaMenuService(svc.title)}
                       >
-                        <div className="flex items-center gap-3 mb-2 group/title cursor-pointer">
-                          <svc.icon className="w-5 h-5 text-[#6324FC]" />
-                          <Link href={`/services/${svc.title.toLowerCase().replace(/[\s\/]+/g, '-')}`} onClick={() => setIsHovered(false)}>
-                            <h3 className="font-heading text-2xl tracking-wide text-primary group-hover/title:text-[#6324FC] transition-colors">{svc.title}</h3>
+                        <div className={`flex items-center gap-3 mb-2 group/title cursor-pointer transition-opacity duration-300 ${pathname === `/services/${svc.title.toLowerCase().replace(/[\s\/]+/g, '-')}` ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}>
+                          <svc.icon className={`w-5 h-5 transition-colors ${pathname === `/services/${svc.title.toLowerCase().replace(/[\s\/]+/g, '-')}` ? 'text-[#00E5FF] drop-shadow-[0_0_8px_rgba(0,229,255,0.8)]' : 'text-[#6324FC]'}`} />
+                          <Link href={`/services/${svc.title.toLowerCase().replace(/[\s\/]+/g, '-')}`} onClick={() => setIsHovered(false)} className="flex items-center gap-2">
+                            <h3 className={`font-heading text-2xl tracking-wide transition-colors ${pathname === `/services/${svc.title.toLowerCase().replace(/[\s\/]+/g, '-')}` ? 'text-[#00E5FF]' : 'text-primary group-hover/title:text-[#6324FC]'}`}>
+                              {svc.title}
+                            </h3>
+                            {pathname === `/services/${svc.title.toLowerCase().replace(/[\s\/]+/g, '-')}` && (
+                              <motion.span layoutId="mega-active" className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shadow-[0_0_10px_rgba(0,229,255,0.8)] animate-pulse" />
+                            )}
                           </Link>
                         </div>
                         <ul className="flex flex-col gap-3">
@@ -328,21 +377,36 @@ export default function Navbar() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
-                    className="col-span-4 border-l border-primary/10 pl-8"
+                    className="col-span-4 border-l border-primary/10 pl-8 relative"
                   >
                     <div className="text-xs font-heading  text-[#6324FC] capitalize tracking-widest mb-4">Featured Case Study</div>
-                    <Link href="/work/themesjet" onClick={() => setIsHovered(false)} className="group relative block overflow-hidden rounded-none cursor-pointer">
-                      <div className="relative w-full aspect-video bg-primary/5 border border-primary/10 mb-4 overflow-hidden">
-                        <div className="absolute inset-0 bg-[#6324FC]/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500" />
-                        <Image src="/assets/themes_jet_final.webp" alt="ThemesJet" fill className="object-cover scale-100 group-hover:scale-105 transition-transform duration-700" />
-                      </div>
-                      <div className="font-heading  text-[10px] tracking-widest text-[#6324FC] mb-2">WEB DEV · MARKETPLACE · 🌐 GLOBAL</div>
-                      <h4 className="font-heading text-2xl tracking-wide text-primary group-hover:text-[#6324FC] transition-colors mb-2">ThemesJet — Premium Marketplace</h4>
-                      <div className="font-sans text-sm font-light text-primary/50 mb-3">500+ Assets · 10k+ Developers</div>
-                      <p className="font-sans text-sm font-light text-primary/60 flex items-center gap-2 group-hover:text-primary transition-colors">
-                        View Full Study <ArrowRight className="w-4 h-4 text-[#6324FC]" />
-                      </p>
-                    </Link>
+                    
+                    <AnimatePresence mode="wait">
+                      {services.map((svc) => (
+                        svc.title === activeMegaMenuService && (
+                          <motion.div
+                            key={svc.title}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <Link href={svc.caseStudy.link} onClick={() => setIsHovered(false)} className="group relative block overflow-hidden rounded-none cursor-pointer">
+                              <div className="relative w-full aspect-video bg-primary/5 border border-primary/10 mb-4 overflow-hidden">
+                                <div className="absolute inset-0 bg-[#6324FC]/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500" />
+                                <Image src={svc.caseStudy.image} alt={svc.caseStudy.title} fill className="object-cover scale-100 group-hover:scale-105 transition-transform duration-700" />
+                              </div>
+                              <div className="font-heading text-[10px] tracking-widest text-[#6324FC] mb-2">{svc.caseStudy.tags}</div>
+                              <h4 className="font-heading text-2xl tracking-wide text-primary group-hover:text-[#6324FC] transition-colors mb-2">{svc.caseStudy.title}</h4>
+                              <div className="font-sans text-sm font-light text-primary/50 mb-3">{svc.caseStudy.stats}</div>
+                              <p className="font-sans text-sm font-light text-primary/60 flex items-center gap-2 group-hover:text-primary transition-colors">
+                                View Full Study <ArrowRight className="w-4 h-4 text-[#6324FC]" />
+                              </p>
+                            </Link>
+                          </motion.div>
+                        )
+                      ))}
+                    </AnimatePresence>
                   </motion.div>
 
                 </div>

@@ -264,38 +264,51 @@ export default function UltraPremiumCaseStudy() {
         </motion.div>
       </section>
 
-      {/* 2. Bento Grid Stats */}
+      {/* 2. Premium Glass Cards Stats */}
       <section className="relative z-20 py-16 md:py-24 px-6 lg:px-12 max-w-[1400px] mx-auto -mt-20">
-         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 h-auto md:h-[500px]">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {project.metrics.map((m: any, i: number) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className={`
-                  relative p-10 rounded-[2.5rem] bg-white/[0.03] border border-white/5 backdrop-blur-3xl overflow-hidden flex flex-col justify-between group hover:border-[#6324FC]/30 transition-all duration-700
-                  ${m.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''}
-                  ${m.size === 'medium' ? 'md:col-span-2' : ''}
-                `}
+                transition={{ delay: i * 0.1, duration: 0.8 }}
+                className="group relative flex flex-col justify-between min-h-[320px] p-8 rounded-[2rem] bg-white/[0.02] border border-white/5 backdrop-blur-3xl overflow-hidden hover:-translate-y-2 transition-all duration-500 shadow-2xl"
               >
-                 <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-10 transition-opacity">
-                    <m.icon className="w-32 h-32 text-white" />
-                 </div>
+                 {/* Dynamic Border & Background Hover Glow */}
+                 <div 
+                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]"
+                   style={{ boxShadow: `inset 0 0 0 1px ${project.accent}60`, background: `radial-gradient(circle at top right, ${project.accent}15, transparent 70%)` }}
+                 />
                  
-                 <div className="flex justify-between items-start relative z-10">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center">
-                       <m.icon className="w-5 h-5 text-[#6324FC]" />
+                 {/* Top: Icon in glowing circle */}
+                 <div className="relative z-10 flex items-start justify-between">
+                    <div 
+                      className="w-14 h-14 rounded-full flex items-center justify-center bg-white/[0.03] border border-white/10 group-hover:bg-white/[0.05] transition-colors duration-500"
+                      style={{ boxShadow: `0 0 20px -5px ${project.accent}40` }}
+                    >
+                       <m.icon className="w-6 h-6" style={{ color: project.accent }} />
                     </div>
-                    <div className="font-heading  text-[10px] tracking-widest text-white/20 capitalize ">{m.label}</div>
+                    <div className="font-heading text-[9px] tracking-[0.4em] text-white/20 uppercase group-hover:text-white/40 transition-colors">
+                       0x{i+1}
+                    </div>
                  </div>
 
-                 <div className="relative z-10 mt-auto">
-                    <div className={`font-heading tracking-tighter leading-none ${m.size === 'large' ? 'text-9xl' : 'text-6xl'} text-white mb-2`}>
-                       <NumberTicker value={m.val} suffix={m.suffix} prefix={m.prefix} />
+                 {/* Bottom: Label and Number */}
+                 <div className="relative z-10 mt-auto pt-12 space-y-2">
+                    <div className="font-heading text-[10px] tracking-widest text-white/40 uppercase group-hover:text-white/70 transition-colors duration-500">
+                       {m.label}
                     </div>
-                    <div className="font-heading  text-[9px] tracking-[0.3em] text-[#6324FC] capitalize ">Validated Metric // 0x{i}</div>
+                    <div className="font-heading text-6xl tracking-tighter leading-none text-white group-hover:scale-105 transition-transform duration-500 origin-left">
+                       <span style={{ 
+                         background: `linear-gradient(to bottom right, #ffffff, ${project.accent}cc)`, 
+                         WebkitBackgroundClip: 'text',
+                         WebkitTextFillColor: 'transparent'
+                       }}>
+                         <NumberTicker value={m.val} suffix={m.suffix} prefix={m.prefix} />
+                       </span>
+                    </div>
                  </div>
               </motion.div>
             ))}

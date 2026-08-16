@@ -19,6 +19,7 @@ const cabin = Cabin({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://injaazh.com'),
   title: "Injaazh | Top-Tier Global Digital Agency — Web Design, Technical SEO & Content",
   description: "Injaazh is a premium full-service digital agency trusted by 1,200+ global brands. We engineer ultra-fast Next.js websites, dominate Google search rankings with Technical SEO, and scale revenue with data-driven content marketing.",
   icons: {

@@ -87,7 +87,7 @@ export default function HeroSlider() {
         className="absolute top-[12%] right-[20%] w-[15vw] h-[20vh] rounded-3xl overflow-hidden shadow-2xl shadow-black/50 border border-primary/10 z-0 hidden md:block"
       >
         <div className="absolute inset-0 bg-black/40 z-10" />
-        <Image src="/assets/scalia_app_final.webp" alt="Project 3" fill sizes="(max-width: 768px) 100vw, 15vw" className="object-cover" priority />
+        <Image src="/assets/themes_jet_final.webp" alt="Project 3" fill sizes="(max-width: 768px) 100vw, 15vw" className="object-cover" priority />
       </motion.div>
 
       {/* Massive Central Typography */}
