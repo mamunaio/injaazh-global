@@ -41,7 +41,7 @@ export default function TeamPreview() {
     <section className="w-full bg-[#F5F5F0] dark:bg-[#060608] py-16 md:py-24 pb-0 border-t border-[#060608]/10 dark:border-white/5 relative overflow-hidden">
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#6324FC]/10 blur-[150px] rounded-full pointer-events-none opacity-50" />
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay" />
+      <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay" />
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         {/* Header Section */}

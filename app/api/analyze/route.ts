@@ -68,17 +68,23 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, email, url, performance, seo, roi, gaps, goal, metrics } = body;
 
-    // 1. LEAD STORAGE LOGGING
-    console.log(`NEW LEAD: ${name} (${email}) for ${url}`);
+    // 1. INPUT VALIDATION & LEAD LOGGING
+    if (!email) {
+      return NextResponse.json({ error: "Email is required to receive audit report." }, { status: 400 });
+    }
+    console.log(`NEW LEAD: ${name || "Anonymous"} (${email}) for ${url}`);
 
     // 2. REAL EMAIL DELIVERY VIA RESEND
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const resendApiKey = process.env.RESEND_API_KEY;
     let emailSent = false;
-    try {
-      const { data, error: resendError } = await resend.emails.send({
-        from: "Injaazh Global <onboarding@resend.dev>",
-        to: email, // Note: Resend only allows sending to the owner's email for unverified domains
-        subject: `Your AI Performance Audit: ${url}`,
+
+    if (resendApiKey) {
+      try {
+        const resend = new Resend(resendApiKey);
+        const { data, error: resendError } = await resend.emails.send({
+          from: "Injaazh Global <onboarding@resend.dev>",
+          to: email, // Note: Resend only allows sending to the owner's email for unverified domains
+          subject: `Your AI Performance Audit: ${url}`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 10px;">
             <h2 style="color: #6324FC;">AI Neural Audit Report</h2>
@@ -122,6 +128,9 @@ export async function POST(request: Request) {
     } catch (err) {
       console.warn("Resend runtime error - skipping email:", err);
     }
+  } else {
+    console.warn("RESEND_API_KEY is not configured in environment variables. Audit email skipped.");
+  }
 
     // Always return success so the UI can show the report, even if email fails
     return NextResponse.json({ 

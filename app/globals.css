@@ -13,6 +13,7 @@
 
 @layer base {
   :root {
+    color-scheme: light;
     --bg: #f5f5f0;
     --surface: #ffffff;
     --text-primary: #060608;
@@ -26,6 +27,7 @@
   }
 
   html.dark {
+    color-scheme: dark;
     --bg: #060608;
     --surface: #0a0a0d;
     --text-primary: #edeae2;
@@ -125,42 +127,43 @@
 /* Modern custom scrollbar styling */
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
-  transition: scrollbar-color 0.3s ease;
 }
 
-.custom-scrollbar:hover,
-.custom-scrollbar:active,
-.custom-scrollbar:focus-within {
+html.dark .custom-scrollbar {
+  color-scheme: dark;
+  scrollbar-color: rgba(99, 36, 252, 0.4) transparent;
+}
+
+html:not(.dark) .custom-scrollbar {
+  color-scheme: light;
   scrollbar-color: rgba(99, 36, 252, 0.4) transparent;
 }
 
 /* Chrome, Edge, and Safari */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: transparent;
-  border-radius: 10px;
+html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  transition: background 0.3s ease;
+}
+
+html:not(.dark) .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(6, 6, 8, 0.2);
+  border-radius: 9999px;
   transition: background 0.3s ease;
 }
 
 .custom-scrollbar:hover::-webkit-scrollbar-thumb,
-.custom-scrollbar:active::-webkit-scrollbar-thumb,
-.custom-scrollbar:focus-within::-webkit-scrollbar-thumb {
-  background: rgba(99, 36, 252, 0.4);
-}
-
-.dark .custom-scrollbar:hover::-webkit-scrollbar-thumb,
-.dark .custom-scrollbar:active::-webkit-scrollbar-thumb,
-.dark .custom-scrollbar:focus-within::-webkit-scrollbar-thumb {
-  background: rgba(0, 229, 255, 0.4);
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #6324fc !important;
 }
 
 /* Mobile Landscape & Short Screen Height Optimizations */
@@ -394,8 +397,10 @@ html:not(.dark) {
   }
   
   /* Input placeholder adjustments */
-  .placeholder\:text-white\/5::placeholder { color: rgba(6, 6, 8, 0.12) !important; }
-  .placeholder\:text-white\/10::placeholder { color: rgba(6, 6, 8, 0.22) !important; }
+  .placeholder\:text-white\/5::placeholder { color: rgba(6, 6, 8, 0.38) !important; }
+  .placeholder\:text-white\/10::placeholder { color: rgba(6, 6, 8, 0.45) !important; }
+  .placeholder\:text-white\/20::placeholder { color: rgba(6, 6, 8, 0.50) !important; }
+  .placeholder\:text-white\/30::placeholder { color: rgba(6, 6, 8, 0.55) !important; }
 
   /* 8. Box Shadows (Softened for light mode) */
   .shadow-\[0_40px_80px_rgba\(0\2c 0\2c 0\2c 0\.4\)\] {

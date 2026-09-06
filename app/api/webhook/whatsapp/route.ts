@@ -15,7 +15,12 @@ export async function GET(req: NextRequest) {
     console.log('Incoming WhatsApp verification request:', { mode, token, challenge });
 
     // This must match the Verify Token set in the Meta Developer Portal
-    const VERIFY_TOKEN = 'injaazh_secret_123';
+    const VERIFY_TOKEN = process.env.WHATSAPP_VERIFY_TOKEN;
+
+    if (!VERIFY_TOKEN) {
+      console.error('Server Configuration Error: WHATSAPP_VERIFY_TOKEN is not configured.');
+      return new Response('Server configuration error: Verification token missing', { status: 500 });
+    }
 
     if (mode && token) {
       if (mode === 'subscribe' && token === VERIFY_TOKEN) {

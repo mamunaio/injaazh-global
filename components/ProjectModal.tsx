@@ -104,36 +104,36 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+        className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6 overflow-hidden overscroll-contain"
       >
         {/* Cinematic Backdrop */}
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-[12px]" onClick={onClose} />
+        <div className="absolute inset-0 bg-black/60 dark:bg-black/80 backdrop-blur-[12px] overscroll-contain" onClick={onClose} />
         
         <motion.div 
           initial={{ scale: 0.98, opacity: 0, y: 10 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.98, opacity: 0, y: 10 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full max-w-4xl bg-[#08080A] border border-white/5 rounded-[32px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)] flex flex-col h-auto max-h-[90vh]"
+          className="relative w-full max-w-4xl bg-white dark:bg-[#08080A] border border-black/10 dark:border-white/10 rounded-[32px] overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.2)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.8)] flex flex-col h-auto max-h-[90vh] overscroll-contain my-auto"
         >
           {/* Header */}
-          <div className="flex items-center justify-between px-8 py-6 border-b border-white/[0.03]">
+          <div className="flex items-center justify-between px-6 sm:px-8 py-5 sm:py-6 border-b border-black/5 dark:border-white/[0.05]">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-[1px] bg-[#6324FC]" />
-              <div className="font-heading  text-[9px] tracking-[0.3em] capitalize text-white/30">
+              <div className="w-8 h-[2px] bg-[#6324FC]" />
+              <div className="font-heading text-[10px] tracking-[0.25em] uppercase font-semibold text-neutral-500 dark:text-white/40">
                 {step < 5 ? `Request Pipeline // Phase 0${step}` : "Status: Confirmed"}
               </div>
             </div>
             <button 
               onClick={onClose} 
-              className="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center text-white/20 hover:text-white hover:bg-white/5 transition-all duration-300"
+              className="w-8 h-8 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center text-neutral-500 hover:text-black dark:text-white/40 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 cursor-pointer"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
 
           {/* Progress Indicator */}
-          <div className="w-full h-[1px] bg-white/[0.02]">
+          <div className="w-full h-[2px] bg-neutral-200 dark:bg-white/[0.05]">
             <motion.div 
               className="h-full bg-[#6324FC]"
               animate={{ width: `${(step / 5) * 100}%` }}
@@ -142,7 +142,7 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
           </div>
 
           {/* Content Area */}
-          <div className="flex-1 px-8 lg:px-16 py-10 lg:py-14 overflow-hidden">
+          <div className="flex-1 px-6 sm:px-10 lg:px-16 py-6 sm:py-8 overflow-y-auto overscroll-contain custom-scrollbar">
             <AnimatePresence mode="wait">
               
               {/* STEP 1: SERVICES */}
@@ -152,10 +152,10 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="flex flex-col gap-10"
+                  className="flex flex-col gap-8"
                 >
                   <div className="space-y-4">
-                    <h2 className="font-heading text-4xl lg:text-5xl capitalize tracking-tight text-white leading-tight">
+                    <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl capitalize tracking-tight text-neutral-900 dark:text-white leading-tight">
                       What can we <span className="text-[#6324FC] italic">architect</span> <br/>
                       for your enterprise?
                     </h2>
@@ -168,26 +168,28 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                         <button 
                           key={svc.id}
                           onClick={() => toggleService(svc.id)}
-                          className={`group relative flex items-center gap-4 p-5 rounded-2xl border transition-all duration-500 ${
+                          className={`group relative flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl border transition-all duration-300 text-left cursor-pointer ${
                             isSelected 
-                              ? 'bg-[#6324FC]/5 border-[#6324FC]/40 text-white shadow-[0_0_20px_rgba(99,36,252,0.1)]' 
-                              : 'bg-white/[0.02] border-white/5 text-white/30 hover:border-white/10 hover:text-white'
+                              ? 'bg-[#6324FC]/10 border-[#6324FC] text-[#6324FC] dark:text-white shadow-[0_0_20px_rgba(99,36,252,0.15)]' 
+                              : 'bg-black/[0.02] dark:bg-white/[0.02] border-black/10 dark:border-white/10 text-neutral-700 dark:text-white/50 hover:border-[#6324FC]/40 hover:text-neutral-900 dark:hover:text-white'
                           }`}
                         >
-                          <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-500 ${
-                            isSelected ? 'bg-[#6324FC] text-white' : 'bg-white/5 text-white/20'
+                          <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${
+                            isSelected 
+                              ? 'bg-[#6324FC] text-white' 
+                              : 'bg-black/5 dark:bg-white/5 text-neutral-600 dark:text-white/40 group-hover:bg-[#6324FC]/10 group-hover:text-[#6324FC]'
                           }`}>
                             <svc.icon className="w-5 h-5" />
                           </div>
-                          <span className="font-heading  capitalize tracking-tight">{svc.id}</span>
+                          <span className="font-heading text-sm sm:text-base capitalize tracking-tight font-medium">{svc.id}</span>
                           
                           {isSelected && (
-                            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute -top-1 -right-1 w-5 h-5 bg-[#6324FC] rounded-full flex items-center justify-center">
-                              <CheckCircle2 className="w-3 h-3 text-white" />
+                            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute -top-1 -right-1 w-5 h-5 bg-[#6324FC] rounded-full flex items-center justify-center shadow-sm">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-white" />
                             </motion.div>
                           )}
                         </button>
-                      )
+                      );
                     })}
                   </div>
                 </motion.div>
@@ -200,9 +202,9 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="flex flex-col gap-10"
+                  className="flex flex-col gap-8"
                 >
-                  <h2 className="font-heading text-4xl lg:text-5xl capitalize tracking-tight text-white leading-tight">
+                  <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl capitalize tracking-tight text-neutral-900 dark:text-white leading-tight">
                     Define your <span className="text-[#6324FC] italic">strategic</span> <br/>
                     investment range.
                   </h2>
@@ -211,14 +213,18 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                       <button 
                         key={b}
                         onClick={() => { setBudget(b); setTimeout(handleNext, 400); }}
-                        className={`group flex items-center justify-between p-6 rounded-2xl border transition-all duration-500 ${
+                        className={`group flex items-center justify-between p-5 sm:p-6 rounded-2xl border transition-all duration-300 cursor-pointer ${
                           budget === b 
-                            ? 'bg-[#6324FC]/5 border-[#6324FC]/40 text-white' 
-                            : 'bg-white/[0.02] border-white/5 text-white/30 hover:border-white/10 hover:text-white'
+                            ? 'bg-[#6324FC]/10 border-[#6324FC] text-[#6324FC] dark:text-white shadow-[0_0_20px_rgba(99,36,252,0.15)]' 
+                            : 'bg-black/[0.02] dark:bg-white/[0.02] border-black/10 dark:border-white/10 text-neutral-700 dark:text-white/50 hover:border-[#6324FC]/40 hover:text-neutral-900 dark:hover:text-white'
                         }`}
                       >
-                        <span className="font-heading text-xl capitalize tracking-tight">{b}</span>
-                        <div className={`w-8 h-8 rounded-full border border-white/5 flex items-center justify-center transition-all ${budget === b ? 'bg-[#6324FC] border-[#6324FC]' : 'group-hover:border-white/20'}`}>
+                        <span className="font-heading text-lg sm:text-xl capitalize tracking-tight font-medium">{b}</span>
+                        <div className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all ${
+                          budget === b 
+                            ? 'bg-[#6324FC] border-[#6324FC] text-white' 
+                            : 'border-black/15 dark:border-white/10 text-neutral-400 dark:text-white/30 group-hover:border-[#6324FC] group-hover:text-[#6324FC]'
+                        }`}>
                           <ArrowRight className="w-4 h-4" />
                         </div>
                       </button>
@@ -234,19 +240,25 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="flex flex-col gap-10 h-full"
+                  className="flex flex-col gap-6 sm:gap-8 h-full"
                 >
-                  <h2 className="font-heading text-4xl lg:text-5xl capitalize tracking-tight text-white leading-tight">
+                  <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl capitalize tracking-tight text-neutral-900 dark:text-white leading-tight">
                     Detail the <span className="text-[#6324FC] italic">vision</span> <br/>
                     of this objective.
                   </h2>
-                  <textarea 
-                    autoFocus
-                    value={details}
-                    onChange={(e) => setDetails(e.target.value)}
-                    placeholder="Briefly describe the goals, timeline, and current challenges..."
-                    className="w-full min-h-[200px] bg-white/[0.01] border border-white/5 rounded-2xl p-8 font-sans  font-light text-white focus:outline-none focus:border-[#6324FC]/40 transition-all resize-none placeholder:text-white/5"
-                  />
+                  <div className="space-y-2">
+                    <textarea 
+                      autoFocus
+                      value={details}
+                      onChange={(e) => setDetails(e.target.value)}
+                      placeholder="Briefly describe the goals, timeline, and current challenges..."
+                      className="w-full min-h-[180px] sm:min-h-[220px] bg-black/[0.02] dark:bg-white/[0.02] border border-black/15 dark:border-white/10 rounded-2xl p-6 sm:p-8 font-sans text-neutral-900 dark:text-white focus:outline-none focus:border-[#6324FC] focus:ring-1 focus:ring-[#6324FC] transition-all resize-none placeholder:text-neutral-400 dark:placeholder:text-white/25 text-base leading-relaxed"
+                    />
+                    <div className="flex justify-between items-center px-1 text-xs text-neutral-400 dark:text-white/30">
+                      <span>{details.trim().length < 10 ? "Min 10 characters required" : "Ready to proceed"}</span>
+                      <span>{details.length} characters</span>
+                    </div>
+                  </div>
                 </motion.div>
               )}
 
@@ -257,9 +269,9 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="flex flex-col gap-10"
+                  className="flex flex-col gap-8"
                 >
-                  <h2 className="font-heading text-4xl lg:text-5xl capitalize tracking-tight text-white leading-tight">
+                  <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl capitalize tracking-tight text-neutral-900 dark:text-white leading-tight">
                     Finalize your <span className="text-[#6324FC] italic">professional</span> <br/>
                     identification.
                   </h2>
@@ -268,29 +280,29 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                     <motion.div 
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="bg-red-500/10 border border-red-500/20 text-red-500 font-heading  text-[10px] py-3 px-6 rounded-xl text-center"
+                      className="bg-red-500/10 border border-red-500/20 text-red-500 font-heading text-xs py-3 px-6 rounded-xl text-center"
                     >
                       {error}
                     </motion.div>
                   )}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-3">
-                      <label className="font-heading  text-[9px] tracking-widest capitalize text-white/20">Full Name</label>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                    <div className="space-y-2 sm:space-y-3">
+                      <label className="font-heading text-[10px] tracking-widest uppercase font-semibold text-neutral-500 dark:text-white/40">Full Name</label>
                       <input 
                         type="text" 
                         value={contact.name}
                         onChange={(e) => setContact({...contact, name: e.target.value})}
-                        className="w-full bg-transparent border-b border-white/10 py-4 font-heading text-2xl text-white focus:outline-none focus:border-[#6324FC] transition-colors"
+                        className="w-full bg-transparent border-b border-black/15 dark:border-white/15 py-3 sm:py-4 font-heading text-xl sm:text-2xl text-neutral-900 dark:text-white focus:outline-none focus:border-[#6324FC] transition-colors placeholder:text-neutral-400 dark:placeholder:text-white/25"
                         placeholder="John Visionary"
                       />
                     </div>
-                    <div className="space-y-3">
-                      <label className="font-heading  text-[9px] tracking-widest capitalize text-white/20">Email Address</label>
+                    <div className="space-y-2 sm:space-y-3">
+                      <label className="font-heading text-[10px] tracking-widest uppercase font-semibold text-neutral-500 dark:text-white/40">Email Address</label>
                       <input 
                         type="email" 
                         value={contact.email}
                         onChange={(e) => setContact({...contact, email: e.target.value})}
-                        className="w-full bg-transparent border-b border-white/10 py-4 font-heading text-2xl text-white focus:outline-none focus:border-[#6324FC] transition-colors"
+                        className="w-full bg-transparent border-b border-black/15 dark:border-white/15 py-3 sm:py-4 font-heading text-xl sm:text-2xl text-neutral-900 dark:text-white focus:outline-none focus:border-[#6324FC] transition-colors placeholder:text-neutral-400 dark:placeholder:text-white/25"
                         placeholder="john@future.com"
                       />
                     </div>
@@ -304,16 +316,16 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                   key="step5"
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="flex flex-col items-center text-center gap-8 py-6"
+                  className="flex flex-col items-center text-center gap-6 sm:gap-8 py-6"
                 >
                   <div className="w-20 h-20 bg-[#6324FC] rounded-2xl flex items-center justify-center text-white shadow-[0_0_30px_rgba(99,36,252,0.3)]">
                     <CheckCircle2 className="w-10 h-10" />
                   </div>
                   <div className="space-y-4">
-                    <h2 className="font-heading text-5xl capitalize tracking-tight text-white">
+                    <h2 className="font-heading text-4xl sm:text-5xl capitalize tracking-tight text-neutral-900 dark:text-white">
                       Transmission <br/><span className="text-[#6324FC] italic">Confirmed.</span>
                     </h2>
-                    <p className="font-sans font-light  text-white/30 max-w-sm mx-auto">
+                    <p className="font-sans font-light text-neutral-600 dark:text-white/40 max-w-sm mx-auto text-sm sm:text-base">
                       Our strategists will review your brief. Expect a response within 12 business hours.
                     </p>
                   </div>
@@ -321,16 +333,14 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                     onClick={onClose}
                     className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] isolate w-full md:w-auto"
                   >
-                    {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
                     <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
                       <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
                     </div>
                     
-                    <div className="relative w-full h-full px-8 py-3.5 rounded-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
-                      {/* Flowing background gradient */}
+                    <div className="relative w-full h-full px-8 py-3.5 rounded-full bg-white dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
                       
-                      <span className="relative z-10 flex items-center justify-center gap-4 font-heading text-lg tracking-tight text-primary capitalize text-center">
+                      <span className="relative z-10 flex items-center justify-center gap-4 font-heading text-base sm:text-lg tracking-tight text-neutral-900 dark:text-white capitalize text-center font-medium">
                         Return to Portal
                       </span>
                     </div>
@@ -343,11 +353,11 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
 
           {/* Footer Controls */}
           {step < 5 && (
-            <div className="px-8 py-8 border-t border-white/[0.03] flex items-center justify-between bg-black/20">
+            <div className="px-6 sm:px-8 py-5 sm:py-6 border-t border-black/5 dark:border-white/[0.05] flex items-center justify-between bg-neutral-50/80 dark:bg-black/20">
               {step > 1 ? (
                 <button 
                   onClick={handlePrev}
-                  className="font-heading  text-[10px] tracking-widest capitalize text-white/20 hover:text-white transition-colors"
+                  className="font-heading text-xs tracking-wider capitalize text-neutral-500 hover:text-neutral-900 dark:text-white/40 dark:hover:text-white transition-colors cursor-pointer"
                 >
                   ← Previous Phase
                 </button>
@@ -361,21 +371,19 @@ export default function ProjectModal({ isOpen, onClose, defaultService }: { isOp
                   (step === 3 && details.trim().length < 10) || 
                   (step === 4 && (!contact.name.trim() || !contact.email.includes('@') || contact.email.length < 5))
                 }
-                className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] disabled:opacity-20 disabled:cursor-not-allowed disabled:hover:shadow-none isolate"
+                className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:shadow-none isolate"
               >
-                {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
                 <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
                   <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
                 </div>
                 
-                <div className="relative w-full h-full px-8 py-3.5 rounded-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
-                  {/* Flowing background gradient */}
+                <div className="relative w-full h-full px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-white dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
                   <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
                   
-                  <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-lg tracking-tight text-primary capitalize text-center">
+                  <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-base sm:text-lg tracking-tight text-neutral-900 dark:text-white capitalize text-center font-medium">
                     {isSubmitting ? "Transmitting..." : step === 4 ? "Submit Request" : "Next Phase"}
                     {isSubmitting ? (
-                      <div className="w-4 h-4 border-2 border-[#6324FC] border-t-white rounded-full animate-spin" />
+                      <div className="w-4 h-4 border-2 border-[#6324FC] border-t-transparent rounded-full animate-spin" />
                     ) : (
                       <ArrowRight className="w-4 h-4 text-[#6324FC] group-hover:translate-x-1 transition-transform" />
                     )}

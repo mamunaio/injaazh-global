@@ -180,7 +180,7 @@ export default function AgencyClient() {
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-[#6324FC]/20 to-[#00E5FF]/20 blur-[120px] rounded-full animate-pulse pointer-events-none"
           style={{ animationDuration: "4s" }}
         />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.04] mix-blend-overlay pointer-events-none" />
+        <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-[0.04] mix-blend-overlay pointer-events-none" />
 
         {/* Massive Background Text */}
         <motion.div
@@ -575,7 +575,7 @@ export default function AgencyClient() {
       {/* 7. Outro */}
       <section className="h-[90vh] flex flex-col items-center justify-center text-center px-6 border-t border-white/5 relative overflow-hidden bg-[#060608]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#6324FC]/10 blur-[150px] rounded-full pointer-events-none" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
+        <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
 
         <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl mb-12 relative z-10 max-w-5xl capitalize tracking-tighter">
           Let's engineer your <br />{" "}

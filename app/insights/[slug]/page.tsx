@@ -62,7 +62,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
         </motion.div>
 
         {/* Floating Grain Overlay */}
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05] pointer-events-none mix-blend-overlay z-10" />
+        <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-[0.05] pointer-events-none mix-blend-overlay z-10" />
 
         <div className="relative z-20 w-full max-w-[1400px] px-6 lg:px-12">
           <motion.div
