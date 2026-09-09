@@ -19,7 +19,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   }
 
   const title = `${project.title} — ${project.category} Case Study | INJAAZH`;
-  const description = `${project.subtitle} Read how INJAAZH engineered high-performance digital architecture and measurable growth for ${project.client}.`;
+  const description = `${project.subtitle} Read how INJAAZH Global engineered high-performance digital architecture, 99/100 Core Web Vitals, and scalable growth for ${project.client}.`;
   const canonicalUrl = `https://injaazh.com/work/${project.slug}`;
   const ogImageUrl = project.img.startsWith("http")
     ? project.img
@@ -28,6 +28,16 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   return {
     title,
     description,
+    keywords: [
+      project.title,
+      project.category,
+      project.client,
+      "Next.js 15 Web Development",
+      "Enterprise Case Study",
+      "Technical SEO",
+      "High Performance Web Architecture",
+      ...project.tags,
+    ],
     alternates: {
       canonical: canonicalUrl,
     },
@@ -70,11 +80,11 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
     notFound();
   }
 
-  const jsonLd = {
+  // Primary TechArticle / CreativeWork Schema
+  const creativeWorkJsonLd = {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: project.title,
-    headline: project.subtitle,
+    "@type": "TechArticle",
+    headline: `${project.title}: ${project.subtitle}`,
     description: project.overview,
     image: project.img.startsWith("http") ? project.img : `https://injaazh.com${project.img}`,
     author: {
@@ -86,19 +96,78 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
       "@type": "Organization",
       name: "INJAAZH GLOBAL",
       url: "https://injaazh.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://injaazh.com/fav.png",
+      },
     },
     genre: project.category,
     keywords: project.tags.join(", "),
     url: `https://injaazh.com/work/${project.slug}`,
-    dateCreated: project.year,
+    datePublished: `${project.year}-01-01`,
+    dateModified: "2026-09-09",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://injaazh.com/work/${project.slug}`,
+    },
   };
+
+  // Google BreadcrumbList Schema
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://injaazh.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Work",
+        item: "https://injaazh.com/work",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: project.title,
+        item: `https://injaazh.com/work/${project.slug}`,
+      },
+    ],
+  };
+
+  // Google FAQPage Schema for Rich Snippets
+  const faqJsonLd = project.faq && project.faq.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: project.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  } : null;
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <WorkDetailClient project={project} allProjects={projectsData} />
     </>
   );
