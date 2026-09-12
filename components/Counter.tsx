@@ -3,12 +3,41 @@
 import { useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
-export default function Counter({ value }: { value: string }) {
+export default function Counter({
+  value,
+  prefix = "",
+  suffix = "",
+}: {
+  value: string;
+  prefix?: string;
+  suffix?: string;
+}) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [count, setCount] = useState(0);
-  const target = parseFloat(value.replace(/[^0-9.]/g, ""));
+
+  // Extract numeric portion
+  const numericMatch = value.match(/[\d.]+/);
+  const target = numericMatch ? parseFloat(numericMatch[0]) : 0;
   const isDecimal = value.includes(".");
+
+  // Detect prefix if not provided
+  const derivedPrefix = prefix || (value.startsWith("$") ? "$" : "");
+
+  // Detect suffix if not provided
+  const derivedSuffix =
+    suffix ||
+    (() => {
+      let s = "";
+      if (value.includes("M")) s += "M";
+      if (value.includes("B")) s += "B";
+      if (value.includes("k")) s += "k";
+      if (value.includes("%")) s += "%";
+      if (value.includes("+")) s += "+";
+      if (value.includes("x") || value.includes("X")) s += "x";
+      if (value.includes("s") && !value.includes("M") && !value.includes("B")) s += "s";
+      return s;
+    })();
 
   useEffect(() => {
     if (!isInView) return;
@@ -34,10 +63,9 @@ export default function Counter({ value }: { value: string }) {
 
   return (
     <span ref={ref}>
+      {derivedPrefix}
       {isDecimal ? count.toFixed(1) : Math.round(count)}
-      {value.includes("%") && "%"}
-      {value.includes("+") && "+"}
-      {value.includes("s") && "s"}
+      {derivedSuffix}
     </span>
   );
 }
