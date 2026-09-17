@@ -1,1041 +1,774 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useMotionValue,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { 
+  Code2, 
+  Layout, 
+  Search, 
+  TrendingUp, 
+  PenTool, 
+  Compass,
+  ArrowRight,
+  ArrowUpRight,
+  CheckCircle2,
+  Sparkles,
+  ShieldCheck,
+  Zap,
+  Globe,
+  Cpu,
+  Layers,
+  BarChart3,
+  ExternalLink,
+  ChevronRight
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  LayoutGrid,
-  List,
-  Sparkles,
-  Zap,
-  CheckCircle2,
-  Code2,
-  Database,
-  Cloud,
-  TrendingUp,
-  ArrowRight,
-  ChevronRight,
-  Search,
-  Layers,
-  Cpu,
-  Rocket,
-} from "lucide-react";
-import { useProjectModal } from "@/components/ProjectModalContext";
 
-// Primary Services Definition with 18 Granular Sub-Services
-export interface ServicePillar {
+interface ServicePillar {
   id: string;
-  categoryKey: string;
+  number: string;
   title: string;
-  tagline: string;
+  subtitle: string;
   slug: string;
+  category: string;
+  filterCategory: "all" | "engineering" | "design" | "search" | "growth" | "strategy";
   desc: string;
+  capabilities: string[];
+  metricValue: string;
+  metricLabel: string;
   image: string;
-  benchmarks: { label: string; value: string }[];
-  deliverables: string[];
-  technologies: string[];
-  subServices: { name: string; path: string; desc: string }[];
+  accentColor: string;
+  icon: typeof Code2;
 }
 
-const servicePillars: ServicePillar[] = [
+const servicesData: ServicePillar[] = [
   {
     id: "web-dev",
-    categoryKey: "WEB DEV",
-    title: "Web Development",
-    tagline: "Enterprise Next.js Architectures & Headless Commerce",
+    number: "01",
+    title: "Headless Web & Next.js Core Systems",
+    subtitle: "Enterprise Web Engineering & Headless Commerce",
     slug: "web-dev",
-    desc: "We engineer ultra-performant, scalable digital platforms using Next.js, React, and Headless architectures engineered for absolute velocity, security, and conversion.",
+    category: "CORE ARCHITECTURE",
+    filterCategory: "engineering",
+    desc: "We engineer lightning-fast Next.js 15 architectures, headless Shopify Plus platforms, and high-concurrency cloud web apps. Zero bloated templates — only bespoke, edge-rendered code with sub-second load times.",
+    capabilities: [
+      "Next.js 15 & React 19",
+      "Headless Shopify Plus",
+      "Edge Computing & Cloud APIs",
+      "Sub-Second TTFB Guarantee",
+      "Microservices Architecture",
+      "Enterprise Headless CMS"
+    ],
+    metricValue: "99 / 100",
+    metricLabel: "Core Web Vitals Pass Rate",
     image: "/assets/enterprise_ecommerce_1780213870802.png",
-    benchmarks: [
-      { label: "Core Web Vitals", value: "100/100" },
-      { label: "Largest Contentful Paint", value: "< 0.8s" },
-      { label: "Infrastructure Uptime", value: "99.99%" },
-    ],
-    deliverables: [
-      "Bespoke Web Applications",
-      "Headless E-Commerce Integration",
-      "Microservices & Serverless APIs",
-      "Automated CI/CD Pipelines",
-    ],
-    technologies: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Node.js", "Vercel Edge", "Supabase", "Shopify Plus"],
-    subServices: [
-      {
-        name: "Next.js Architectures",
-        path: "/services/web-dev/nextjs-architectures",
-        desc: "Edge-rendered, server-driven enterprise web architectures designed for global scalability.",
-      },
-      {
-        name: "Headless Commerce",
-        path: "/services/web-dev/headless-commerce",
-        desc: "Decoupled Shopify Plus and custom transaction engines for high-volume retailers.",
-      },
-      {
-        name: "Custom Web Apps",
-        path: "/services/web-dev/custom-web-apps",
-        desc: "Complex SaaS applications, client portals, and bespoke management dashboards.",
-      },
-    ],
+    accentColor: "#6324FC",
+    icon: Code2,
   },
   {
     id: "ui-ux-design",
-    categoryKey: "UI/UX DESIGN",
-    title: "UI/UX Design Systems",
-    tagline: "Bespoke Digital Design & Interaction Engineering",
+    number: "02",
+    title: "Enterprise UI/UX & Design Systems",
+    subtitle: "Cognitive Design & High-Conversion Prototyping",
     slug: "ui-ux-design",
-    desc: "Data-driven wireframing, enterprise design systems, and cinematic interaction design that transform casual visitors into high-LTV brand advocates.",
-    image: "/assets/b2b_saas_dashboard_1780213845016.png",
-    benchmarks: [
-      { label: "Average Conversion Lift", value: "+140%" },
-      { label: "Cumulative Layout Shift", value: "< 0.01" },
-      { label: "Accessibility Score", value: "WCAG AAA" },
-    ],
-    deliverables: [
-      "Enterprise Figma Design Systems",
+    category: "COGNITIVE DESIGN SYSTEMS",
+    filterCategory: "design",
+    desc: "Bridging architectural luxury with behavioral conversion science. We design custom Figma component libraries, 60fps micro-interactions, and frictionless checkout flows engineered to win C-level trust.",
+    capabilities: [
+      "Design Systems & Token Architecture",
       "Interactive High-Fidelity Prototypes",
-      "Motion Graphics & Micro-Animations",
-      "Multi-Brand Token Frameworks",
+      "Cognitive Conversion UX Audits",
+      "60fps Framer Micro-Interactions",
+      "Accessibility & WCAG 2.1 AA",
+      "Multi-Platform Responsive Systems"
     ],
-    technologies: ["Figma", "Framer Motion", "Three.js", "Tokens Studio", "Adobe CC", "Tailwind Design Tokens"],
-    subServices: [
-      {
-        name: "Brand Identity",
-        path: "/services/ui-ux-design/brand-identity",
-        desc: "Distinctive corporate visual identities, typography guidelines, and brand books.",
-      },
-      {
-        name: "Design Systems",
-        path: "/services/ui-ux-design/design-systems",
-        desc: "Scalable component libraries, tokens, and multi-platform design standards.",
-      },
-      {
-        name: "Motion Graphics",
-        path: "/services/ui-ux-design/motion-graphics",
-        desc: "Cinematic 3D WebGL visuals, scroll-driven narratives, and dynamic micro-interactions.",
-      },
-    ],
+    metricValue: "+68%",
+    metricLabel: "C-Level Engagement Velocity",
+    image: "/assets/b2b_saas_dashboard_1780213845016.png",
+    accentColor: "#00E5FF",
+    icon: Layout,
   },
   {
     id: "seo",
-    categoryKey: "SEO",
-    title: "Technical SEO & AEO",
-    tagline: "Algorithmic Search Domination & Generative Engine Optimization",
+    number: "03",
+    title: "Technical SEO, Semantic Search & AI GEO",
+    subtitle: "Forensic Technical Audits & Generative Engine Dominance",
     slug: "seo",
-    desc: "Deep technical audits, semantic schema engineering, and aggressive keyword strategies engineered to dominate traditional search engines and AI Overviews.",
+    category: "SEARCH DOMINANCE & GEO",
+    filterCategory: "search",
+    desc: "Traditional keyword stuffing is dead. We architect semantic content silos, forensic technical schema graphs (JSON-LD), and Generative Engine Optimization (GEO) to dominate Google and Perplexity AI search rankings.",
+    capabilities: [
+      "Forensic Technical SEO Audits",
+      "Semantic Topical Entity Graphs",
+      "Generative Engine Optimization (GEO)",
+      "JSON-LD Schema Hierarchy",
+      "International Multi-Region SEO",
+      "Algorithmic Penalty Recovery"
+    ],
+    metricValue: "+240%",
+    metricLabel: "Average Organic Revenue Scaling",
     image: "/assets/nexus_esports_final.webp",
-    benchmarks: [
-      { label: "Organic Traffic Surge", value: "4.2x" },
-      { label: "High-Intent #1 Rankings", value: "85%+" },
-      { label: "Technical Crawl Errors", value: "0" },
-    ],
-    deliverables: [
-      "Full-Stack Technical Audit",
-      "Semantic Schema.org Architectures",
-      "Programmatic Keyword Matrix",
-      "Core Web Vitals Remediation",
-    ],
-    technologies: ["Semrush", "Ahrefs", "Google Search Console", "Screaming Frog", "Schema.org", "Log Analytics"],
-    subServices: [
-      {
-        name: "Technical Audits",
-        path: "/services/seo/technical-audits",
-        desc: "Exhaustive audits of crawlability, indexing, rendering bottlenecks, and Core Web Vitals.",
-      },
-      {
-        name: "Keyword Strategy",
-        path: "/services/seo/keyword-strategy",
-        desc: "High-intent transactional and programmatic keyword mapping for commercial dominance.",
-      },
-      {
-        name: "Local Rankings",
-        path: "/services/seo/local-rankings",
-        desc: "Hyper-targeted regional search dominance, Google Business optimization, and local schemas.",
-      },
-    ],
+    accentColor: "#00FFA3",
+    icon: Search,
   },
   {
     id: "marketing",
-    categoryKey: "MARKETING",
-    title: "Growth Marketing & PPC",
-    tagline: "ROI-Obsessed Paid Acquisition & Conversion Automation",
+    number: "04",
+    title: "Data-Driven Performance Marketing & CRO",
+    subtitle: "High-Intent Customer Acquisition & Funnel Acceleration",
     slug: "marketing",
-    desc: "Predictable, high-leverage paid acquisition campaigns, automated customer lifecycles, and conversion rate optimization engineered for aggressive revenue scale.",
+    category: "REVENUE ENGINE & ACQUISITION",
+    filterCategory: "growth",
+    desc: "Capital-efficient digital acquisition funnels built for high ROI. We engineer multi-channel Google Search campaigns, Meta performance pipelines, and rigorous multi-variant CRO experiments that scale enterprise pipelines.",
+    capabilities: [
+      "High-Intent Google Ads Architecture",
+      "Multi-Variant CRO Split Testing",
+      "Attribution Modeling & Data Pipelines",
+      "B2B Account-Based Marketing (ABM)",
+      "Automated Retention Workflows",
+      "Full-Funnel CAC Optimization"
+    ],
+    metricValue: "3.8x",
+    metricLabel: "Average Client ROAS Across Campaigns",
     image: "/assets/themes_jet_final.webp",
-    benchmarks: [
-      { label: "Average Campaign ROAS", value: "3.8x" },
-      { label: "Customer Acquisition Cost", value: "-35%" },
-      { label: "Funnel Velocity", value: "+65%" },
-    ],
-    deliverables: [
-      "Cross-Channel Paid Media Strategy",
-      "Automated Retention Pipelines",
-      "Conversion Rate Optimization (CRO)",
-      "Multi-Touch Attribution Modeling",
-    ],
-    technologies: ["Google Ads", "Meta Ads", "PostHog", "Klaviyo", "Google Analytics 4", "Hotjar"],
-    subServices: [
-      {
-        name: "PPC Campaigns",
-        path: "/services/marketing/ppc-campaigns",
-        desc: "High-ROAS search, display, and social advertising architectures focused on revenue.",
-      },
-      {
-        name: "Growth Automation",
-        path: "/services/marketing/growth-automation",
-        desc: "Automated onboarding, retention, and reactivation email and messaging workflows.",
-      },
-      {
-        name: "Conversion Optimization",
-        path: "/services/marketing/conversion-optimization",
-        desc: "Algorithmic A/B testing, user journey heatmaps, and frictionless checkout optimization.",
-      },
-    ],
+    accentColor: "#F59E0B",
+    icon: TrendingUp,
   },
   {
     id: "content",
-    categoryKey: "CONTENT",
-    title: "Content & Narrative",
-    tagline: "Persuasive Storytelling & Authoritative Editorial Strategy",
+    number: "05",
+    title: "Programmatic Content & Topical Authority",
+    subtitle: "Executive Thought Leadership & Organic Moats",
     slug: "content",
-    desc: "Authoritative editorial content, corporate storytelling, and strategic copywriting designed to build unshakeable brand equity and commercial trust.",
+    category: "AUTHORITY ASSETS & SILOS",
+    filterCategory: "growth",
+    desc: "Establishing unshakeable industry authority through high-density technical whitepapers, programmatic content engines, and editorial narratives that rank #1 and drive qualified enterprise sales inquiries.",
+    capabilities: [
+      "Topical Cluster & Silo Engineering",
+      "Executive Technical Whitepapers",
+      "Programmatic Content Pipelines",
+      "B2B Product Messaging Playbooks",
+      "Editorial Brand Narrative",
+      "Tier-1 Digital PR & Outreach"
+    ],
+    metricValue: "Top 3",
+    metricLabel: "Google SERP Dominance in 90 Days",
     image: "/assets/novacore_esports_final.webp",
-    benchmarks: [
-      { label: "Engagement Time Lift", value: "+220%" },
-      { label: "Editorial Quality Score", value: "98/100" },
-      { label: "Organic Referral Backlinks", value: "High-DA" },
-    ],
-    deliverables: [
-      "Executive Thought Leadership",
-      "Conversion Landing Page Copy",
-      "Technical Documentation & Guides",
-      "Brand Narrative Manuals",
-    ],
-    technologies: ["SurferSEO", "Clearscope", "Grammarly Business", "Editorial Frameworks", "Content Intelligence"],
-    subServices: [
-      {
-        name: "Copywriting",
-        path: "/services/content/copywriting",
-        desc: "Compelling sales pages, landing copy, and value proposition messaging frameworks.",
-      },
-      {
-        name: "Editorial Writing",
-        path: "/services/content/editorial-writing",
-        desc: "In-depth industry whitepapers, research reports, and technical thought leadership articles.",
-      },
-      {
-        name: "Brand Narrative",
-        path: "/services/content/brand-narrative",
-        desc: "Authentic corporate story, brand mission frameworks, and distinctive voice guidelines.",
-      },
-    ],
+    accentColor: "#FF2D55",
+    icon: PenTool,
   },
   {
     id: "strategy",
-    categoryKey: "STRATEGY",
-    title: "Strategy & Intelligence",
-    tagline: "Data-Driven Digital Transformation & Market Positioning",
+    number: "06",
+    title: "Enterprise Digital Strategy & Tech Audits",
+    subtitle: "Architecture Modernization & Strategic Roadmaps",
     slug: "strategy",
-    desc: "Executive-level digital strategy, competitive intelligence, and user experience audits to align digital products with aggressive commercial objectives.",
+    category: "SYSTEM ARCHITECTURE & ROADMAPS",
+    filterCategory: "strategy",
+    desc: "Aligning cutting-edge technology with aggressive commercial expansion. We audit legacy infrastructure, eliminate technical debt, consolidate modern tech stacks, and blueprint digital moats that outperform competitors.",
+    capabilities: [
+      "Tech Stack Consolidation Audits",
+      "Digital Transformation Roadmaps",
+      "Commercial Growth Modeling",
+      "Global Expansion Strategy",
+      "Vendor & Architecture Vetting",
+      "Enterprise SLA & Governance"
+    ],
+    metricValue: "99.98%",
+    metricLabel: "Enterprise Production SLA Standard",
     image: "/assets/aka_moving_final.webp",
-    benchmarks: [
-      { label: "Board-Ready Roadmap", value: "100%" },
-      { label: "Architectural De-risking", value: "Guaranteed" },
-      { label: "Data Architecture Unified", value: "Complete" },
-    ],
-    deliverables: [
-      "Digital Transformation Roadmap",
-      "Enterprise UX & Usability Audits",
-      "Competitor Intelligence Reports",
-      "Data Architecture Blueprints",
-    ],
-    technologies: ["Tableau", "PowerBI", "Mixpanel", "Notion Enterprise", "Miro", "Jira Enterprise"],
-    subServices: [
-      {
-        name: "Digital Transformation",
-        path: "/services/strategy/digital-transformation",
-        desc: "Comprehensive modernization of legacy software, workflows, and customer touchpoints.",
-      },
-      {
-        name: "Business Intelligence",
-        path: "/services/strategy/business-intelligence",
-        desc: "Unified executive analytics dashboards, data warehousing, and predictive reporting.",
-      },
-      {
-        name: "Enterprise UX Audits",
-        path: "/services/strategy/ux-audits",
-        desc: "Heuristic usability reviews, drop-off analysis, and UX optimization roadmaps.",
-      },
-    ],
+    accentColor: "#8B5CF6",
+    icon: Compass,
   },
 ];
 
-// Tech Ecosystem Categories
-const techEcosystem = [
+const deliveryPhases = [
   {
-    category: "Frontend & Web Architecture",
-    icon: Code2,
-    tools: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion", "Three.js / WebGL"],
-  },
-  {
-    category: "Cloud, Edge & Backend",
-    icon: Cloud,
-    tools: ["Vercel Edge", "Node.js", "Supabase", "Cloudflare Workers", "Docker", "REST & GraphQL"],
-  },
-  {
-    category: "E-Commerce & Headless CMS",
-    icon: Database,
-    tools: ["Shopify Plus", "Sanity.io", "Strapi", "Stripe Connect", "Algolia Search", "Medusa.js"],
-  },
-  {
-    category: "SEO & Growth Intelligence",
-    icon: TrendingUp,
-    tools: ["Semrush", "Ahrefs", "Google Analytics 4", "PostHog", "Google Search Console", "Screaming Frog"],
-  },
-];
-
-// Delivery Lifecycle Roadmap
-const deliverySteps = [
-  {
-    number: "01",
     phase: "PHASE 01",
-    title: "Market Discovery & Technical Audit",
-    desc: "We analyze your competitive landscape, user behavior, and code performance to blueprint an unshakeable strategy.",
-    icon: Search,
-    tags: ["Competitive Intel", "Tech Audit", "Architecture Spec"],
+    title: "Forensic Discovery & Systems Audit",
+    duration: "Week 01 - 02",
+    desc: "We perform deep-dive technical profiling, Core Web Vitals forensics, competitor keyword gap analysis, and conversion funnel audits to uncover hidden revenue bottlenecks.",
+    deliverables: [
+      "Forensic Architecture Audit",
+      "Competitor Keyword Gap Telemetry",
+      "Strategic Roadmap & SLA Spec"
+    ],
+    accent: "#6324FC",
   },
   {
-    number: "02",
     phase: "PHASE 02",
-    title: "Design System & Prototyping",
-    desc: "We build pixel-perfect interactive prototypes and tokenized design systems designed for conversion and brand authority.",
-    icon: Layers,
-    tags: ["Design Tokens", "Conversion UX", "Micro-Interactions"],
+    title: "Headless Architecture & Prototyping",
+    duration: "Week 03 - 04",
+    desc: "Engineering custom design systems, cognitive UX wireframes, and interactive high-fidelity prototypes. Every touchpoint is calibrated for visual luxury and frictionless usability.",
+    deliverables: [
+      "Figma Design System Tokens",
+      "High-Fidelity Interactive Prototype",
+      "Information & Schema Architecture"
+    ],
+    accent: "#00E5FF",
   },
   {
-    number: "03",
     phase: "PHASE 03",
-    title: "High-Performance Engineering",
-    desc: "We construct your software with Next.js, headless APIs, and rigorous automated testing for sub-second page loads.",
-    icon: Cpu,
-    tags: ["Next.js App Router", "Sub-second LCP", "Automated QA"],
+    title: "High-Velocity Edge Engineering",
+    duration: "Week 05 - 08",
+    desc: "Writing clean, modular Next.js 15 code deployed across global edge networks. Rigorous automated CI/CD testing, sub-second TTFB, and zero technical debt guaranteed.",
+    deliverables: [
+      "Next.js 15 Edge Deployment",
+      "Headless CMS & API Integrations",
+      "100% Core Web Vitals Optimization"
+    ],
+    accent: "#00FFA3",
   },
   {
-    number: "04",
     phase: "PHASE 04",
-    title: "Algorithmic SEO Scaling & Launch",
-    desc: "We deploy with structured data, Google Indexing APIs, and proactive monitoring to ensure immediate search engine domination.",
-    icon: Rocket,
-    tags: ["JSON-LD Schemas", "Indexing APIs", "24/7 Telemetry"],
+    title: "Global SEO Domination & Scale",
+    duration: "Week 09 - Ongoing",
+    desc: "Deployment is just Day One. We deploy programmatic content silos, activate multi-channel performance funnels, and run continuous CRO experiments to turn your platform into an engine.",
+    deliverables: [
+      "Programmatic Topical Silos",
+      "Continuous Multi-Variant CRO",
+      "Monthly Executive Growth Briefings"
+    ],
+    accent: "#F59E0B",
   },
 ];
 
-const categoryFilterKeys = [
-  "ALL",
-  "WEB DEV",
-  "UI/UX DESIGN",
-  "SEO",
-  "MARKETING",
-  "CONTENT",
-  "STRATEGY",
+const techStack = [
+  { name: "Next.js 15", category: "Core Framework", accent: "#6324FC" },
+  { name: "React 19", category: "Frontend Engine", accent: "#00E5FF" },
+  { name: "TypeScript", category: "Type Safety", accent: "#3B82F6" },
+  { name: "Tailwind CSS", category: "Styling System", accent: "#00FFA3" },
+  { name: "Framer Motion", category: "Micro-Interactions", accent: "#FF2D55" },
+  { name: "Three.js / WebGL", category: "3D & Canvas", accent: "#F59E0B" },
+  { name: "Shopify Plus", category: "Headless Commerce", accent: "#96BF48" },
+  { name: "Vercel Edge", category: "Edge Cloud Runtime", accent: "#FFFFFF" },
+  { name: "PostgreSQL", category: "Database Pipeline", accent: "#336791" },
+  { name: "Sanity & TinaCMS", category: "Headless Content", accent: "#F03E2F" },
+  { name: "Google Cloud", category: "Infrastructure", accent: "#4285F4" },
+  { name: "Ahrefs & Semrush", category: "Search Intelligence", accent: "#FF5C35" },
 ];
 
-// -------------------------------------------------------------
-// Interactive Service Card Component with Mouse Spotlight & Tilt
-// -------------------------------------------------------------
-function InteractiveServiceCard({
-  svc,
-  idx,
-  onArchitect,
-}: {
-  svc: ServicePillar;
-  idx: number;
-  onArchitect: (service: string) => void;
-}) {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+export default function ServicesClient() {
+  const [activeFilter, setActiveFilter] = useState<string>("all");
 
-  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
+  const filteredServices = activeFilter === "all"
+    ? servicesData
+    : servicesData.filter((svc) => svc.filterCategory === activeFilter);
 
   return (
-    <motion.div
-      onMouseMove={handleMouseMove}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: idx * 0.08 }}
-      className="group relative bg-white dark:bg-[#08080A] border border-black/10 dark:border-white/10 hover:border-[#6324FC]/60 rounded-3xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(99,36,252,0.16)] dark:hover:shadow-[0_25px_60px_rgba(99,36,252,0.25)] transition-all duration-500 flex flex-col justify-between"
-    >
-      {/* Dynamic Mouse Spotlight Glow */}
-      <motion.div
-        className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
-        style={{
-          background: useTransform(
-            [mouseX, mouseY],
-            ([x, y]) =>
-              `radial-gradient(400px circle at ${x}px ${y}px, rgba(99, 36, 252, 0.16), transparent 70%)`
-          ),
-        }}
-      />
+    <main className="w-full min-h-screen bg-[#060608] text-white relative overflow-hidden font-sans selection:bg-[#6324FC] selection:text-white">
+      
+      {/* Background Ambient Aurora Glows - GPU-Accelerated Zero-Overhead Gradients */}
+      <div className="absolute top-0 left-1/4 w-[750px] h-[750px] bg-[radial-gradient(circle,rgba(99,36,252,0.12)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 w-[650px] h-[650px] bg-[radial-gradient(circle,rgba(0,229,255,0.08)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/3 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(0,255,163,0.06)_0%,transparent_70%)] pointer-events-none" />
 
-      {/* Card Top: Image & Header Preview */}
-      <div>
-        <div className="relative w-full h-44 overflow-hidden bg-black/5">
-          <Image
-            src={svc.image}
-            alt={svc.title}
-            fill
-            className="object-cover group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
 
-          {/* Index & Category Badge */}
-          <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-20">
-            <span className="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[9px] font-heading uppercase tracking-widest text-white font-medium">
-              0{idx + 1} // {svc.categoryKey}
-            </span>
-
-            <span className="w-7 h-7 rounded-full bg-white/20 dark:bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center group-hover:bg-[#6324FC] group-hover:border-[#6324FC] group-hover:scale-110 transition-all duration-300 shadow-sm">
-              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+      {/* ========================================================
+          1. HERO SECTION: Signature Triad & Telemetry Strip
+          ======================================================== */}
+      <section className="relative w-full pt-36 md:pt-48 pb-16 md:pb-24 border-b border-white/5">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+          
+          {/* Eyebrow Kicker */}
+          <div className="flex items-center gap-4 mb-6">
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: 48 }}
+              transition={{ duration: 0.8 }}
+              className="h-[1px] bg-gradient-to-r from-[#6324FC] to-[#00E5FF]"
+            />
+            <span className="font-mono text-xs md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
+              FULL-SPECTRUM DIGITAL ARCHITECTURE // GLOBAL EXCELLENCE
             </span>
           </div>
 
-          {/* Tagline overlay on bottom of image */}
-          <div className="absolute bottom-3 left-3.5 right-3.5 z-20">
-            <p className="font-heading text-[11px] text-white/95 font-medium tracking-wide drop-shadow line-clamp-1">
-              {svc.tagline}
-            </p>
-          </div>
-        </div>
-
-        {/* Card Body */}
-        <div className="p-5 sm:p-6 space-y-3.5 relative z-20">
-          <div>
-            <Link href={`/services/${svc.slug}`} className="group-hover:text-[#6324FC] transition-colors block">
-              <h2 className="font-heading text-xl sm:text-2xl capitalize tracking-tight font-bold mb-1.5 flex items-center justify-between">
-                <span>{svc.title}</span>
-                <ChevronRight className="w-4 h-4 text-primary/30 group-hover:text-[#6324FC] group-hover:translate-x-1 transition-all" />
-              </h2>
-            </Link>
-            <p className="font-sans font-light text-xs sm:text-sm text-primary/70 leading-relaxed line-clamp-2">
-              {svc.desc}
-            </p>
-          </div>
-
-          {/* Verified Benchmarks */}
-          <div className="grid grid-cols-3 gap-1.5 py-2.5 border-y border-black/5 dark:border-white/5 text-center bg-black/[0.015] dark:bg-white/[0.02] rounded-xl px-2">
-            {svc.benchmarks.map((bm, i) => (
-              <div key={i} className="flex flex-col">
-                <span className="font-heading text-xs sm:text-sm font-bold text-[#6324FC]">
-                  {bm.value}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 lg:gap-16 mb-12">
+            {/* Signature Triad Heading */}
+            <div className="max-w-3xl">
+              <h1 className="sr-only">
+                Enterprise Digital Services: Web Engineering, UI/UX Systems, Technical SEO, and Growth Marketing
+              </h1>
+              <div
+                aria-hidden="true"
+                className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.88] tracking-tighter text-white"
+              >
+                <span className="text-white mr-3 md:mr-4">ENGINEERING</span>
+                <br className="hidden sm:inline" />
+                <span className="italic text-[#6324FC] drop-shadow-[0_0_35px_rgba(99,36,252,0.35)]">
+                  DIGITAL
                 </span>
-                <span className="text-[9px] text-primary/50 uppercase tracking-tight font-medium truncate">
-                  {bm.label}
-                </span>
+                <br />
+                <span className="stroke-text opacity-95">SUPREMACY.</span>
               </div>
+            </div>
+
+            {/* Authority Paragraph */}
+            <div className="max-w-lg">
+              <p className="font-sans font-light text-white/75 text-base sm:text-lg leading-relaxed border-l-2 border-[#6324FC]/60 pl-5 sm:pl-6 py-1 mb-4">
+                We don't build generic brochure websites. We architect high-concurrency digital platforms, dominate Google search through technical SEO forensics, and engineer revenue infrastructure across North America, Europe, and Australia.
+              </p>
+              <div className="flex items-center gap-2 text-xs font-mono text-white/40 pl-5 sm:pl-6">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#00E5FF]" />
+                <span>100% IN-HOUSE SENIOR SQUADS · ZERO JUNIOR DELEGATION</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Telemetry Counter Strip */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 md:p-6 rounded-3xl bg-[#0B0B10] border border-white/[0.08]">
+            <div className="flex flex-col">
+              <span className="font-heading text-2xl sm:text-3xl text-white font-bold tracking-tight">99.98%</span>
+              <span className="font-mono text-[10px] sm:text-[11px] text-white/50 uppercase tracking-wider mt-1">PRODUCTION SLA GUARANTEE</span>
+            </div>
+            <div className="flex flex-col border-l border-white/[0.06] pl-4 sm:pl-6">
+              <span className="font-heading text-2xl sm:text-3xl text-[#00E5FF] font-bold tracking-tight">0.8s</span>
+              <span className="font-mono text-[10px] sm:text-[11px] text-white/50 uppercase tracking-wider mt-1">AVG EDGE TTFB VELOCITY</span>
+            </div>
+            <div className="flex flex-col border-l border-white/[0.06] pl-4 sm:pl-6">
+              <span className="font-heading text-2xl sm:text-3xl text-[#00FFA3] font-bold tracking-tight">+240%</span>
+              <span className="font-mono text-[10px] sm:text-[11px] text-white/50 uppercase tracking-wider mt-1">AVG ORGANIC REVENUE LIFT</span>
+            </div>
+            <div className="flex flex-col border-l border-white/[0.06] pl-4 sm:pl-6">
+              <span className="font-heading text-2xl sm:text-3xl text-[#F59E0B] font-bold tracking-tight">TOP 1%</span>
+              <span className="font-mono text-[10px] sm:text-[11px] text-white/50 uppercase tracking-wider mt-1">GLOBAL AGENCY PERFORMANCE</span>
+            </div>
+          </div>
+
+          {/* Quick Capability Filter Pills */}
+          <div className="flex flex-wrap items-center gap-2 mt-8 pt-6 border-t border-white/[0.05]">
+            <span className="font-mono text-[11px] text-white/40 uppercase tracking-wider mr-2 hidden sm:inline">
+              CAPABILITY MATRIX:
+            </span>
+            {[
+              { id: "all", label: "ALL ARCHITECTURES" },
+              { id: "engineering", label: "WEB ENGINEERING" },
+              { id: "design", label: "UI/UX SYSTEMS" },
+              { id: "search", label: "TECHNICAL SEO" },
+              { id: "growth", label: "GROWTH & CRO" },
+              { id: "strategy", label: "STRATEGY & AUDITS" },
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveFilter(tab.id)}
+                className={`px-3.5 py-1.5 rounded-full font-mono text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                  activeFilter === tab.id
+                    ? "bg-[#6324FC] text-white shadow-[0_0_20px_rgba(99,36,252,0.4)] border border-[#6324FC]"
+                    : "bg-white/[0.03] text-white/60 hover:text-white border border-white/[0.08] hover:border-white/20"
+                }`}
+              >
+                {tab.label}
+              </button>
             ))}
           </div>
 
-          {/* Specialized Sub-Architectures Pills */}
-          <div className="space-y-1.5">
-            <span className="text-[9px] font-heading uppercase tracking-widest text-primary/45 font-semibold block">
-              Specialized Specs:
-            </span>
-            <div className="flex flex-wrap gap-1.5">
-              {svc.subServices.map((sub, sIdx) => (
-                <Link
-                  key={sIdx}
-                  href={sub.path}
-                  className="px-2.5 py-1 rounded-lg bg-black/[0.025] dark:bg-white/[0.03] border border-black/5 dark:border-white/5 hover:border-[#6324FC]/40 hover:bg-[#6324FC]/10 hover:text-[#6324FC] text-[11px] font-heading text-primary/80 transition-all duration-200"
-                >
-                  {sub.name}
-                </Link>
-              ))}
-            </div>
-          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Card Footer: Action Links */}
-      <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 flex items-center justify-between gap-3 border-t border-black/5 dark:border-white/5 relative z-20">
-        <Link
-          href={`/services/${svc.slug}`}
-          className="font-heading text-xs uppercase tracking-wider text-primary hover:text-[#6324FC] font-semibold flex items-center gap-1.5 transition-colors"
-        >
-          Deep Overview
-          <ArrowRight className="w-3.5 h-3.5" />
-        </Link>
-
-        <button
-          onClick={() => onArchitect(svc.title)}
-          className="px-3.5 py-1.5 rounded-full bg-[#6324FC]/10 hover:bg-[#6324FC] text-[#6324FC] hover:text-white border border-[#6324FC]/30 text-xs font-heading uppercase tracking-wider transition-all duration-300 font-medium cursor-pointer hover:shadow-[0_0_15px_rgba(99,36,252,0.4)]"
-        >
-          Architect Project
-        </button>
-      </div>
-    </motion.div>
-  );
-}
-
-// -------------------------------------------------------------
-// Interactive Execution Protocol Card with Mouse Spotlight & Hover Lift
-// -------------------------------------------------------------
-function ExecutionStepCard({
-  step,
-  idx,
-}: {
-  step: (typeof deliverySteps)[0];
-  idx: number;
-}) {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const Icon = step.icon;
-
-  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
-
-  return (
-    <motion.div
-      onMouseMove={handleMouseMove}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: idx * 0.08 }}
-      className="group relative rounded-3xl p-6 sm:p-7 bg-black/[0.02] dark:bg-white/[0.03] hover:bg-white dark:hover:bg-[#0c0c12] border border-black/10 dark:border-white/10 hover:border-[#6324FC]/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(99,36,252,0.16)] dark:hover:shadow-[0_25px_60px_rgba(99,36,252,0.28)] flex flex-col justify-between overflow-hidden cursor-default"
-    >
-      {/* Dynamic Mouse Spotlight Glow */}
-      <motion.div
-        className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
-        style={{
-          background: useTransform(
-            [mouseX, mouseY],
-            ([x, y]) =>
-              `radial-gradient(350px circle at ${x}px ${y}px, rgba(99, 36, 252, 0.18), transparent 70%)`
-          ),
-        }}
-      />
-
-      {/* Decorative ambient corner glow on hover */}
-      <div className="absolute top-0 right-0 w-36 h-36 bg-gradient-to-br from-[#6324FC]/15 to-[#00E5FF]/10 rounded-full blur-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-      {/* Card Content */}
-      <div className="relative z-20 space-y-4">
-        {/* Step Header: Number, Phase badge & Icon */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="font-heading text-3xl sm:text-4xl font-black tracking-tight text-[#6324FC] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#6324FC] group-hover:to-[#00E5FF] transition-all duration-300">
-              {step.number}
-            </span>
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-heading uppercase tracking-wider font-semibold bg-[#6324FC]/10 text-[#6324FC] border border-[#6324FC]/20">
-              {step.phase}
-            </span>
-          </div>
-
-          <div className="w-11 h-11 rounded-2xl bg-black/[0.04] dark:bg-white/[0.05] border border-black/10 dark:border-white/10 group-hover:border-[#6324FC] group-hover:bg-[#6324FC] text-[#6324FC] group-hover:text-white flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-sm">
-            <Icon className="w-5 h-5 transition-transform duration-500" />
-          </div>
-        </div>
-
-        {/* Title & Description */}
-        <div>
-          <h3 className="font-heading text-lg sm:text-xl font-bold tracking-tight text-primary group-hover:text-[#6324FC] transition-colors duration-300">
-            {step.title}
-          </h3>
-          <p className="font-sans font-light text-xs sm:text-sm text-primary/70 leading-relaxed mt-2">
-            {step.desc}
-          </p>
-        </div>
-      </div>
-
-      {/* Deliverable Tags */}
-      <div className="relative z-20 pt-6 mt-6 border-t border-black/5 dark:border-white/5 flex flex-wrap gap-2">
-        {step.tags.map((tag, tIdx) => (
-          <span
-            key={tIdx}
-            className="px-2.5 py-1 rounded-lg bg-black/[0.03] dark:bg-white/[0.04] border border-black/5 dark:border-white/5 font-mono text-[11px] text-primary/70 group-hover:border-[#6324FC]/30 group-hover:text-[#6324FC] group-hover:bg-[#6324FC]/5 transition-all duration-300"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-
-      {/* Bottom Expanding Gradient Progress Line on Hover */}
-      <div className="absolute bottom-0 left-0 h-[3px] w-0 group-hover:w-full bg-gradient-to-r from-[#6324FC] via-[#00E5FF] to-[#6324FC] transition-all duration-500 ease-out z-20" />
-    </motion.div>
-  );
-}
-
-// -------------------------------------------------------------
-// Main Services Client
-// -------------------------------------------------------------
-export default function ServicesClient() {
-  const { openModal } = useProjectModal();
-
-  const [activeCategory, setActiveCategory] = useState("ALL");
-  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const [hoveredListService, setHoveredListService] = useState<ServicePillar | null>(null);
-
-  // Global cursor physics for list preview thumbnail
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const springConfig = { damping: 25, stiffness: 200, mass: 0.5 };
-  const cursorX = useSpring(mouseX, springConfig);
-  const cursorY = useSpring(mouseY, springConfig);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX - 160);
-      mouseY.set(e.clientY - 200);
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
-
-  // Filtered Services
-  const filteredServices = useMemo(() => {
-    if (activeCategory === "ALL") return servicePillars;
-    return servicePillars.filter((p) => p.categoryKey === activeCategory);
-  }, [activeCategory]);
-
-  return (
-    <main className="w-full min-h-screen bg-background text-primary selection:bg-[#6324FC] selection:text-white pt-28 sm:pt-32 pb-24 font-sans relative overflow-x-hidden">
-      
-      {/* Subtle Ambient Background Gradients */}
-      <div className="absolute top-24 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#6324FC]/10 dark:bg-[#6324FC]/15 blur-[150px] pointer-events-none -z-10" />
-      <div className="absolute top-[800px] -left-40 w-[600px] h-[600px] bg-[#00E5FF]/5 dark:bg-[#00E5FF]/10 blur-[150px] pointer-events-none -z-10" />
-
-      {/* Floating Cursor-Follow Preview Thumbnail for List View */}
-      <AnimatePresence>
-        {viewMode === "list" && hoveredListService && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.75, rotate: -6 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            exit={{ opacity: 0, scale: 0.75, rotate: 6 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed top-0 left-0 w-[320px] h-[400px] rounded-3xl overflow-hidden pointer-events-none z-[100] hidden lg:block shadow-2xl border border-white/20 bg-black/90"
-            style={{ x: cursorX, y: cursorY }}
-          >
-            <Image
-              src={hoveredListService.image}
-              alt={hoveredListService.title}
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <span className="text-[10px] font-heading uppercase text-white/70 tracking-widest block mb-1">
-                {hoveredListService.categoryKey}
-              </span>
-              <h4 className="text-xl font-heading text-white font-bold tracking-tight">
-                {hoveredListService.title}
-              </h4>
-              <p className="text-xs font-sans text-white/70 line-clamp-2 mt-1">
-                {hoveredListService.tagline}
-              </p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        
-        {/* ========================================================
-            1. HERO HEADER
-            ======================================================== */}
-        <section className="mb-16 lg:mb-20">
-          <div className="flex flex-wrap items-center gap-3 mb-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] backdrop-blur-md text-[10px] font-heading uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
-              <span className="w-2 h-2 rounded-full bg-[#6324FC] animate-pulse" />
-              ENTERPRISE CAPABILITY SUITE // V2.5 ARCHITECTURE
-            </div>
-
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-green-500/20 bg-green-500/5 text-[10px] font-heading uppercase tracking-[0.2em] text-green-600 dark:text-green-400 font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-              100/100 Core Web Vitals Guarantee
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-            <div className="lg:col-span-8">
-              <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.9] capitalize">
-                ENGINEERING <br />
-                <span className="text-[#6324FC] italic">DIGITAL SUPREMACY</span> <br />
-                AT ENTERPRISE SCALE.
-              </h1>
-            </div>
-
-            <div className="lg:col-span-4">
-              <p className="font-sans font-light text-base sm:text-lg text-primary/70 leading-relaxed max-w-md">
-                We combine Next.js engineering, bespoke interaction design, and algorithmic search optimization to build resilient digital ecosystems that outrank competitors and maximize customer lifetime value.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ========================================================
-            2. VERIFIED BENCHMARKS RIBBON
-            ======================================================== */}
-        <section className="mb-16 p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#08080A] border border-black/10 dark:border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.04)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 divide-y md:divide-y-0 md:divide-x divide-black/5 dark:divide-white/5">
-            <div className="flex flex-col items-center text-center pt-4 md:pt-0">
-              <span className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#6324FC] mb-1">
-                100/100
-              </span>
-              <span className="font-heading text-xs uppercase tracking-wider text-primary/60 font-medium">
-                Core Web Vitals SLA
-              </span>
-            </div>
-
-            <div className="flex flex-col items-center text-center pt-4 md:pt-0">
-              <span className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-1">
-                4.2x
-              </span>
-              <span className="font-heading text-xs uppercase tracking-wider text-primary/60 font-medium">
-                Average Traffic Surge
-              </span>
-            </div>
-
-            <div className="flex flex-col items-center text-center pt-4 md:pt-0">
-              <span className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#00E5FF] mb-1">
-                &lt; 0.8s
-              </span>
-              <span className="font-heading text-xs uppercase tracking-wider text-primary/60 font-medium">
-                Global Edge LCP
-              </span>
-            </div>
-
-            <div className="flex flex-col items-center text-center pt-4 md:pt-0">
-              <span className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-green-500 mb-1">
-                99.99%
-              </span>
-              <span className="font-heading text-xs uppercase tracking-wider text-primary/60 font-medium">
-                Infrastructure Uptime
-              </span>
-            </div>
-          </div>
-        </section>
-
-        {/* ========================================================
-            3. CONTROL BAR: FILTERS & VIEW MODE SWITCHER
-            ======================================================== */}
-        <section className="mb-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-black/10 dark:border-white/10">
+      {/* ========================================================
+          2. FLAGSHIP ARCHITECTURAL PILLARS (Bento Showcase)
+          ======================================================== */}
+      <section className="w-full py-20 md:py-28 relative">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
           
-          {/* Category Filters */}
-          <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 custom-scrollbar">
-            {categoryFilterKeys.map((cat) => {
-              const isSelected = activeCategory === cat;
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 rounded-full font-heading text-xs uppercase tracking-wider transition-all duration-300 whitespace-nowrap cursor-pointer ${
-                    isSelected
-                      ? "bg-[#6324FC] text-white shadow-[0_0_20px_rgba(99,36,252,0.3)] font-semibold"
-                      : "bg-black/[0.02] dark:bg-white/[0.02] border border-black/10 dark:border-white/10 text-primary/70 hover:border-[#6324FC]/40 hover:text-primary"
-                  }`}
-                >
-                  {cat}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* View Mode Toggle: Grid vs List */}
-          <div className="flex items-center gap-1 p-1 rounded-full border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] shrink-0">
-            <button
-              onClick={() => setViewMode("grid")}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full font-heading text-xs uppercase tracking-wider transition-all cursor-pointer ${
-                viewMode === "grid"
-                  ? "bg-white dark:bg-[#0a0a0d] text-primary shadow-sm font-semibold"
-                  : "text-primary/50 hover:text-primary"
-              }`}
-            >
-              <LayoutGrid className="w-3.5 h-3.5" />
-              <span>Grid</span>
-            </button>
-
-            <button
-              onClick={() => setViewMode("list")}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full font-heading text-xs uppercase tracking-wider transition-all cursor-pointer ${
-                viewMode === "list"
-                  ? "bg-white dark:bg-[#0a0a0d] text-primary shadow-sm font-semibold"
-                  : "text-primary/50 hover:text-primary"
-              }`}
-            >
-              <List className="w-3.5 h-3.5" />
-              <span>List</span>
-            </button>
-          </div>
-        </section>
-
-        {/* ========================================================
-            4. SERVICES CATALOG (GRID OR LIST)
-            ======================================================== */}
-        <section className="mb-24">
-          <AnimatePresence mode="wait">
-            {viewMode === "grid" ? (
-              /* ================== GRID VIEW ================== */
-              <motion.div
-                key="grid-view"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-              >
-                {filteredServices.map((svc, idx) => (
-                  <InteractiveServiceCard
-                    key={svc.id}
-                    svc={svc}
-                    idx={idx}
-                    onArchitect={(title) => openModal(title)}
-                  />
-                ))}
-              </motion.div>
-            ) : (
-              /* ================== LIST VIEW ================== */
-              <motion.div
-                key="list-view"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                className="space-y-6"
-              >
-                {filteredServices.map((svc, idx) => (
+          <div className="flex flex-col gap-8 md:gap-12">
+            <AnimatePresence mode="popLayout">
+              {filteredServices.map((svc, idx) => {
+                const Icon = svc.icon;
+                return (
                   <motion.div
                     key={svc.id}
-                    onMouseEnter={() => setHoveredListService(svc)}
-                    onMouseLeave={() => setHoveredListService(null)}
-                    className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#08080A] border border-black/10 dark:border-white/10 hover:border-[#6324FC]/60 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_50px_rgba(99,36,252,0.15)] hover:translate-x-2 transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-8 group cursor-pointer"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.05 }}
+                    className="group relative rounded-3xl bg-[#09090E] border border-white/[0.08] hover:border-white/20 p-7 sm:p-9 lg:p-12 transition-all duration-300 overflow-hidden shadow-2xl"
                   >
-                    {/* Left: Index, Title & Description */}
-                    <div className="lg:w-5/12 space-y-3">
-                      <div className="flex items-center gap-3">
-                        <span className="text-sm font-mono text-[#6324FC] font-bold group-hover:scale-110 transition-transform">
-                          0{idx + 1}
-                        </span>
-                        <span className="text-xs font-heading uppercase tracking-widest text-primary/40 group-hover:text-primary/70 transition-colors">
-                          {svc.categoryKey}
-                        </span>
-                      </div>
+                    {/* Spotlight Radial Hover Glow */}
+                    <div 
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                      style={{
+                        background: `radial-gradient(circle at 20% 30%, ${svc.accentColor}15 0%, transparent 60%)`
+                      }}
+                    />
 
-                      <Link href={`/services/${svc.slug}`} className="group-hover:text-[#6324FC] transition-colors block">
-                        <h2 className="font-heading text-3xl sm:text-4xl capitalize tracking-tight font-semibold">
-                          {svc.title}
-                        </h2>
-                      </Link>
+                    {/* Top Shimmer Light Beam Effect */}
+                    <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
 
-                      <p className="font-sans font-light text-sm text-primary/70 leading-relaxed">
-                        {svc.desc}
-                      </p>
-
-                      <div className="flex flex-wrap gap-2 pt-2">
-                        {svc.technologies.slice(0, 4).map((tech, tIdx) => (
-                          <span
-                            key={tIdx}
-                            className="text-[10px] px-2.5 py-1 rounded-md bg-black/5 dark:bg-white/5 font-mono text-primary/60 group-hover:bg-[#6324FC]/10 group-hover:text-[#6324FC] transition-colors"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Middle: Sub-services */}
-                    <div className="lg:w-4/12 space-y-2 border-t lg:border-t-0 lg:border-l border-black/5 dark:border-white/5 pt-4 lg:pt-0 lg:pl-8">
-                      <span className="text-[10px] font-heading uppercase tracking-widest text-primary/40 font-semibold block">
-                        Included Architectures:
-                      </span>
-                      <div className="space-y-2">
-                        {svc.subServices.map((sub, sIdx) => (
-                          <Link
-                            key={sIdx}
-                            href={sub.path}
-                            className="flex items-center justify-between p-2 rounded-xl hover:bg-black/[0.04] dark:hover:bg-white/[0.04] hover:translate-x-1 group/listlink text-xs transition-all"
-                          >
-                            <span className="font-heading font-medium text-primary group-hover/listlink:text-[#6324FC]">
-                              {sub.name}
+                    {/* Card Content Layout: 2 Columns */}
+                    <div className="relative z-10 flex flex-col lg:flex-row items-stretch justify-between gap-10 lg:gap-14">
+                      
+                      {/* Left Column: Details & Capabilities */}
+                      <div className="w-full lg:w-[58%] flex flex-col justify-between">
+                        <div>
+                          {/* Top Meta Line: Number + Category Badge + Active Status */}
+                          <div className="flex flex-wrap items-center gap-3 mb-4">
+                            <span 
+                              className="font-mono text-sm font-bold tracking-widest"
+                              style={{ color: svc.accentColor }}
+                            >
+                              // {svc.number}
                             </span>
-                            <ArrowUpRight className="w-3.5 h-3.5 text-primary/30 group-hover/listlink:text-[#6324FC] group-hover/listlink:translate-x-0.5" />
+                            <span className="text-white/20 text-xs">•</span>
+                            <span 
+                              className="font-mono text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-full border"
+                              style={{
+                                backgroundColor: `${svc.accentColor}12`,
+                                borderColor: `${svc.accentColor}30`,
+                                color: svc.accentColor,
+                              }}
+                            >
+                              {svc.category}
+                            </span>
+                            <span className="text-white/20 text-xs">•</span>
+                            <span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-white/50">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#00FFA3] animate-pulse" />
+                              VERIFIED CAPABILITY
+                            </span>
+                          </div>
+
+                          {/* Service Title */}
+                          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-white font-medium tracking-tight mb-2 group-hover:text-white transition-colors">
+                            {svc.title}
+                          </h2>
+
+                          {/* Subtitle */}
+                          <div 
+                            className="font-mono text-xs uppercase tracking-wider mb-4 font-semibold"
+                            style={{ color: svc.accentColor }}
+                          >
+                            {svc.subtitle}
+                          </div>
+
+                          {/* Editorial Description */}
+                          <p className="font-sans font-light text-sm sm:text-base text-white/75 leading-relaxed mb-6">
+                            {svc.desc}
+                          </p>
+
+                          {/* Capabilities Grid Chips */}
+                          <div className="mb-8">
+                            <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2.5">
+                              ARCHITECTURAL DELIVERABLES:
+                            </div>
+                            <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                              {svc.capabilities.map((cap, cIdx) => (
+                                <span
+                                  key={cIdx}
+                                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/[0.03] border border-white/[0.07] text-[11px] font-mono text-white/80 group-hover:border-white/15 transition-colors"
+                                >
+                                  <span 
+                                    className="w-1 h-1 rounded-full"
+                                    style={{ backgroundColor: svc.accentColor }}
+                                  />
+                                  {cap}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Bottom Row: Performance Metric + Action Link */}
+                        <div className="pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+                          {/* Metric Pill */}
+                          <div className="flex items-center gap-3">
+                            <div 
+                              className="font-heading text-2xl sm:text-3xl font-bold tracking-tight"
+                              style={{ color: svc.accentColor }}
+                            >
+                              {svc.metricValue}
+                            </div>
+                            <div className="text-[11px] font-mono text-white/50 leading-tight">
+                              {svc.metricLabel}
+                            </div>
+                          </div>
+
+                          {/* Direct Service Navigation CTA */}
+                          <Link
+                            href={`/services/${svc.slug}`}
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-mono text-xs font-semibold uppercase tracking-wider text-white bg-white/[0.05] border border-white/10 hover:bg-[#6324FC] hover:border-[#6324FC] transition-all duration-300 group/btn shadow-lg"
+                          >
+                            <span>EXPLORE ARCHITECTURE SPEC</span>
+                            <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform duration-300" />
                           </Link>
-                        ))}
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Right: Actions */}
-                    <div className="lg:w-3/12 flex flex-col sm:flex-row lg:flex-col items-stretch justify-center gap-3 border-t lg:border-t-0 lg:border-l border-black/5 dark:border-white/5 pt-4 lg:pt-0 lg:pl-8">
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          openModal(svc.title);
-                        }}
-                        className="px-6 py-3 rounded-full bg-[#6324FC] hover:bg-[#521bd6] text-white text-xs font-heading uppercase tracking-wider font-medium transition-all shadow-[0_0_20px_rgba(99,36,252,0.3)] hover:shadow-[0_0_30px_rgba(99,36,252,0.5)] cursor-pointer text-center"
-                      >
-                        Architect Service
-                      </button>
-
-                      <Link
-                        href={`/services/${svc.slug}`}
-                        className="px-6 py-3 rounded-full border border-black/15 dark:border-white/15 hover:border-[#6324FC] hover:text-[#6324FC] text-primary text-xs font-heading uppercase tracking-wider font-medium transition-all text-center hover:bg-[#6324FC]/5"
-                      >
-                        Full Dossier
-                      </Link>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </section>
-
-        {/* ========================================================
-            5. TECHNOLOGY & CLOUD ECOSYSTEM
-            ======================================================== */}
-        <section className="mb-24">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="font-heading text-xs uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
-              TECHNOLOGY MATRIX
-            </span>
-            <h2 className="font-heading text-3xl sm:text-5xl capitalize tracking-tight">
-              Enterprise Tooling <br />
-              <span className="text-[#6324FC] italic">&amp; Cloud Infrastructure</span>
-            </h2>
-            <p className="font-sans font-light text-sm sm:text-base text-primary/70">
-              We build with battle-tested modern web stacks to guarantee zero technical debt, lightning-fast rendering, and unlimited vertical scale.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {techEcosystem.map((eco, idx) => {
-              const Icon = eco.icon;
-              return (
-                <div
-                  key={idx}
-                  className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#08080A] border border-black/10 dark:border-white/10 hover:border-[#6324FC]/50 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(99,36,252,0.15)] transition-all duration-300 flex flex-col justify-between group"
-                >
-                  <div className="space-y-4">
-                    <div className="w-12 h-12 rounded-2xl bg-[#6324FC]/10 flex items-center justify-center text-[#6324FC] group-hover:scale-110 group-hover:bg-[#6324FC] group-hover:text-white transition-all duration-300">
-                      <Icon className="w-6 h-6" />
-                    </div>
-
-                    <h3 className="font-heading text-lg font-semibold tracking-tight group-hover:text-[#6324FC] transition-colors">
-                      {eco.category}
-                    </h3>
-
-                    <div className="flex flex-wrap gap-2">
-                      {eco.tools.map((tool, tIdx) => (
-                        <span
-                          key={tIdx}
-                          className="px-2.5 py-1 rounded-lg bg-black/[0.03] dark:bg-white/[0.03] border border-black/5 dark:border-white/5 font-mono text-xs text-primary/80 group-hover:border-[#6324FC]/20 transition-colors"
+                      {/* Right Column: Interactive Device Mockup Chrome Preview */}
+                      <div className="w-full lg:w-[42%] flex flex-col justify-center">
+                        <Link 
+                          href={`/services/${svc.slug}`}
+                          className="block relative rounded-2xl bg-[#0A0A0E] border border-white/10 overflow-hidden shadow-2xl group/preview"
                         >
-                          {tool}
-                        </span>
-                      ))}
+                          {/* Safari Window Chrome Header */}
+                          <div className="px-4 py-3 bg-white/[0.03] border-b border-white/[0.08] flex items-center justify-between gap-3">
+                            <div className="flex items-center gap-1.5">
+                              <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/80" />
+                              <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/80" />
+                              <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]/80" />
+                            </div>
+                            <div className="px-3 py-0.5 rounded-full bg-black/40 border border-white/5 font-mono text-[9px] text-white/40 truncate max-w-[200px] flex items-center gap-1">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#00FFA3]" />
+                              <span>https://injaazh.com/services/{svc.slug}</span>
+                            </div>
+                            <ArrowUpRight className="w-3.5 h-3.5 text-white/30 group-hover/preview:text-white transition-colors" />
+                          </div>
+
+                          {/* Image Container with Hover Zoom */}
+                          <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#0A0A0E]">
+                            <Image
+                              src={svc.image}
+                              alt={svc.title}
+                              fill
+                              sizes="(max-width: 1024px) 100vw, 42vw"
+                              className="object-cover object-top filter grayscale group-hover/preview:grayscale-0 group-hover/preview:scale-105 transition-all duration-700 opacity-80 group-hover/preview:opacity-100"
+                            />
+                            {/* Accent Gradient Overlay */}
+                            <div 
+                              className="absolute inset-0 opacity-20 group-hover/preview:opacity-0 transition-opacity duration-500 pointer-events-none"
+                              style={{
+                                background: `linear-gradient(to top, ${svc.accentColor}40, transparent)`
+                              }}
+                            />
+                            {/* Hover Badge */}
+                            <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 font-mono text-[10px] text-white font-semibold flex items-center gap-1.5 opacity-0 group-hover/preview:opacity-100 transition-opacity duration-300">
+                              <span>VIEW CASE ARCHITECTURE</span>
+                              <ArrowRight className="w-3 h-3 text-[#00E5FF]" />
+                            </div>
+                          </div>
+                        </Link>
+                      </div>
+
                     </div>
-                  </div>
-                </div>
-              );
-            })}
+
+                    {/* Watermark platform icon in background */}
+                    <div 
+                      aria-hidden="true" 
+                      className="absolute -right-8 -bottom-8 w-44 h-44 text-white/[0.015] group-hover:text-white/[0.03] group-hover:scale-110 transition-all duration-700 pointer-events-none"
+                    >
+                      <Icon className="w-full h-full" />
+                    </div>
+
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
           </div>
-        </section>
 
-        {/* ========================================================
-            6. THE 4-STAGE ARCHITECTURAL DELIVERY LIFECYCLE
-            ======================================================== */}
-        <section className="mb-24 p-8 sm:p-12 lg:p-16 rounded-[36px] bg-white dark:bg-[#08080A] border border-black/10 dark:border-white/10 shadow-[0_25px_70px_rgba(0,0,0,0.05)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6324FC]/10 border border-[#6324FC]/20 text-[#6324FC] text-xs font-heading font-semibold uppercase tracking-[0.25em]">
-                <Sparkles className="w-3.5 h-3.5" />
-                EXECUTION PROTOCOL
-              </div>
-              <h2 className="font-heading text-3xl sm:text-5xl capitalize tracking-tight leading-tight">
-                The Architecture <br />
-                <span className="text-[#6324FC] italic">Of Certainty.</span>
-              </h2>
-              <p className="font-sans font-light text-sm sm:text-base text-primary/70 leading-relaxed">
-                We eliminate ambiguity through a milestone-driven engineering methodology tested across over 100+ high-traffic digital deployments.
-              </p>
+        </div>
+      </section>
 
-              <div className="pt-4 flex flex-col sm:flex-row gap-4 border-t border-black/10 dark:border-white/10">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#6324FC]/10 flex items-center justify-center text-[#6324FC]">
-                    <CheckCircle2 className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="font-heading text-sm font-bold text-primary">100% Milestone SLA</div>
-                    <div className="text-xs text-primary/50 font-sans">Transparent staged sign-offs</div>
-                  </div>
-                </div>
+      {/* ========================================================
+          3. 4-STAGE ENTERPRISE DELIVERY PROTOCOL
+          ======================================================== */}
+      <section className="w-full py-20 md:py-28 border-t border-white/5 relative overflow-hidden bg-black/40">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+          
+          {/* Eyebrow */}
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-12 h-[1px] bg-gradient-to-r from-[#6324FC] to-[#00E5FF]" />
+            <span className="font-mono text-xs md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
+              OPERATIONAL DISCIPLINE // HOW WE DELIVER
+            </span>
+          </div>
+
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+            <div className="max-w-2xl">
+              <div
+                aria-hidden="true"
+                className="font-heading text-4xl sm:text-6xl md:text-7xl leading-[0.88] tracking-tighter text-white"
+              >
+                <span className="text-white mr-3 md:mr-4">THE</span>
+                <span className="italic text-[#6324FC] drop-shadow-[0_0_35px_rgba(99,36,252,0.35)]">
+                  ARCHITECTURE
+                </span>
+                <br />
+                <span className="stroke-text opacity-95">OF SUCCESS.</span>
               </div>
             </div>
-
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {deliverySteps.map((step, idx) => (
-                <ExecutionStepCard key={step.number} step={step} idx={idx} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ========================================================
-            7. HERO CTA: LAUNCH PROJECT
-            ======================================================== */}
-        <section className="text-center py-16 px-6 rounded-3xl bg-gradient-to-br from-[#6324FC]/10 via-transparent to-[#00E5FF]/10 border border-[#6324FC]/20 relative overflow-hidden">
-          <div className="max-w-2xl mx-auto space-y-6 relative z-10">
-            <h2 className="font-heading text-3xl sm:text-5xl capitalize tracking-tight">
-              Ready To Architect <br />
-              <span className="text-[#6324FC] italic">Your Next Platform?</span>
-            </h2>
-            <p className="font-sans font-light text-sm sm:text-base text-primary/70 max-w-lg mx-auto">
-              Schedule a direct consultation with our principal software architects or trigger our guided pipeline wizard for an expedited technical estimate.
+            <p className="font-sans font-light text-white/70 text-sm sm:text-base max-w-md leading-relaxed border-l-2 border-[#6324FC]/60 pl-5">
+              We do not guess. We operate on a rigorous, data-driven framework of forensic systems audit, headless engineering, and aggressive algorithmic scale.
             </p>
+          </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <button
-                onClick={() => openModal()}
-                className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,36,252,0.4)] isolate w-full sm:w-auto"
+          {/* 4 Phases Chronological Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {deliveryPhases.map((phase, pIdx) => (
+              <motion.div
+                key={pIdx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: pIdx * 0.1 }}
+                className="group relative rounded-3xl bg-[#09090E] border border-white/[0.07] hover:border-white/20 p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xl overflow-hidden"
               >
-                <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
-                  <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
-                </div>
-                
-                <div className="relative w-full h-full px-8 py-4 rounded-full bg-white dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
-                  
-                  <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-sm tracking-[0.15em] text-primary uppercase text-center font-medium">
-                    LAUNCH PROJECT WIZARD
-                    <ArrowUpRight className="w-4 h-4 text-[#6324FC] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </span>
-                </div>
-              </button>
+                {/* Top Phase Accent Glow */}
+                <div 
+                  className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-15 transition-opacity duration-300 pointer-events-none rounded-full"
+                  style={{ background: `radial-gradient(circle, ${phase.accent}40 0%, transparent 70%)` }}
+                />
 
-              <Link
-                href="/contact"
-                className="px-8 py-4 rounded-full border border-black/15 dark:border-white/15 hover:border-[#6324FC] hover:text-[#6324FC] font-heading text-sm uppercase tracking-wider text-primary font-medium transition-all w-full sm:w-auto text-center hover:shadow-lg"
+                <div>
+                  <div className="flex items-center justify-between gap-3 mb-4">
+                    <span 
+                      className="font-mono text-xs font-bold tracking-widest"
+                      style={{ color: phase.accent }}
+                    >
+                      {phase.phase}
+                    </span>
+                    <span className="px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.06] font-mono text-[9px] text-white/50">
+                      {phase.duration}
+                    </span>
+                  </div>
+
+                  <h3 className="font-heading text-xl text-white font-medium mb-3 group-hover:text-white transition-colors">
+                    {phase.title}
+                  </h3>
+
+                  <p className="font-sans text-xs text-white/60 leading-relaxed mb-6">
+                    {phase.desc}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-white/[0.06] space-y-2">
+                  <div className="font-mono text-[9px] uppercase tracking-widest text-white/40 mb-1">
+                    KEY MILESTONES:
+                  </div>
+                  {phase.deliverables.map((del, dIdx) => (
+                    <div key={dIdx} className="flex items-start gap-2 text-xs font-mono text-white/75">
+                      <CheckCircle2 
+                        className="w-3.5 h-3.5 mt-0.5 shrink-0" 
+                        style={{ color: phase.accent }}
+                      />
+                      <span className="leading-tight">{del}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ========================================================
+          4. ENTERPRISE TECHNOLOGY MATRIX
+          ======================================================== */}
+      <section className="w-full py-20 md:py-28 border-t border-white/5 relative">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+          
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.3em] text-[#6324FC] font-semibold mb-3">
+              <Cpu className="w-3.5 h-3.5 text-[#00E5FF]" />
+              ENTERPRISE STACK // ZERO COMPROMISE INFRASTRUCTURE
+            </div>
+            <h2 className="font-heading text-3xl sm:text-5xl text-white font-medium tracking-tight">
+              Battle-Tested Technologies <br />
+              <span className="italic text-[#6324FC]">For Global Dominance.</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {techStack.map((tech, tIdx) => (
+              <motion.div
+                key={tIdx}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: tIdx * 0.03 }}
+                className="group relative rounded-2xl bg-[#09090E] border border-white/[0.06] hover:border-white/20 p-5 flex items-center justify-between transition-all duration-300"
               >
-                Direct Contact Nexus
-              </Link>
+                <div>
+                  <div className="font-heading text-base text-white font-medium group-hover:text-white transition-colors">
+                    {tech.name}
+                  </div>
+                  <div className="font-mono text-[10px] text-white/40 uppercase tracking-wider mt-0.5">
+                    {tech.category}
+                  </div>
+                </div>
+                <div 
+                  className="w-2 h-2 rounded-full group-hover:scale-150 transition-transform duration-300"
+                  style={{ backgroundColor: tech.accent }}
+                />
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ========================================================
+          5. CLOSING EXECUTIVE CONVERSION CTA
+          ======================================================== */}
+      <section className="w-full py-20 md:py-32 border-t border-white/5 relative overflow-hidden bg-gradient-to-b from-[#060608] via-[#0A0A10] to-[#060608]">
+        {/* Ambient Center Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[radial-gradient(circle,rgba(99,36,252,0.12)_0%,transparent_70%)] pointer-events-none" />
+
+        <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10 text-center">
+          
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] text-xs font-mono text-white/70 mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00FFA3] animate-pulse" />
+            COMMERCIAL IMPACT // DIRECT PRINCIPAL ACCESS
+          </div>
+
+          <div
+            aria-hidden="true"
+            className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.88] tracking-tighter text-white mb-8"
+          >
+            <span className="text-white mr-3 md:mr-4">READY TO ENGINEER</span>
+            <br className="hidden sm:inline" />
+            <span className="italic text-[#6324FC] drop-shadow-[0_0_35px_rgba(99,36,252,0.35)]">
+              DIGITAL
+            </span>
+            <br />
+            <span className="stroke-text opacity-95">SUPREMACY?</span>
+          </div>
+
+          <p className="font-sans font-light text-base sm:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed mb-12">
+            Schedule a confidential technical discovery session with our founding architects. We analyze your current digital bottlenecks, review your infrastructure, and deliver an actionable execution blueprint.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-mono text-sm font-bold uppercase tracking-wider text-white bg-[#6324FC] hover:bg-[#521bd6] shadow-[0_0_40px_rgba(99,36,252,0.4)] hover:shadow-[0_0_60px_rgba(99,36,252,0.6)] transition-all duration-300 group cursor-pointer"
+            >
+              <span>BOOK ARCHITECTURAL AUDIT</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+
+            <Link
+              href="/work"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-mono text-sm font-semibold uppercase tracking-wider text-white/80 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/20 transition-all duration-300"
+            >
+              <span>EXPLORE CASE STUDIES</span>
+              <ExternalLink className="w-4 h-4 text-white/40" />
+            </Link>
+          </div>
+
+          {/* Trust Guarantees */}
+          <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-white/40 pt-8 border-t border-white/[0.06]">
+            <div className="flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-[#00FFA3]" />
+              <span>Signed NDA Guaranteed</span>
+            </div>
+            <span>•</span>
+            <div className="flex items-center gap-1.5">
+              <Zap className="w-4 h-4 text-[#00E5FF]" />
+              <span>Direct Principal Architect Access</span>
+            </div>
+            <span>•</span>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-[#6324FC]" />
+              <span>Zero-Obligation Forensic Review</span>
             </div>
           </div>
-        </section>
 
-      </div>
+        </div>
+      </section>
+
     </main>
   );
 }

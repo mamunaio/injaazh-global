@@ -188,6 +188,16 @@ export default function Navbar() {
     },
   ];
 
+  useEffect(() => {
+    const matched = services.find((s) => {
+      const catSlug = `/services/${s.title.toLowerCase().replace(/[\s\/]+/g, "-")}`;
+      return pathname === catSlug || pathname.startsWith(catSlug + "/");
+    });
+    if (matched) {
+      setActiveMegaMenuService(matched.title);
+    }
+  }, [pathname]);
+
   return (
     <>
       <motion.header 
@@ -338,38 +348,62 @@ export default function Navbar() {
                   
                   {/* 6 Services across a 3x2 Grid */}
                   <div className="col-span-8 grid grid-cols-3 gap-y-12 gap-x-8">
-                    {services.map((svc, i) => (
-                      <motion.div 
-                        key={i} 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, delay: i * 0.05 + 0.1 }}
-                        className="flex flex-col gap-4"
-                        onMouseEnter={() => setActiveMegaMenuService(svc.title)}
-                      >
-                        <div className={`flex items-center gap-3 mb-2 group/title cursor-pointer transition-opacity duration-300 ${pathname === `/services/${svc.title.toLowerCase().replace(/[\s\/]+/g, '-')}` ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}>
-                          <svc.icon className={`w-5 h-5 transition-colors ${pathname === `/services/${svc.title.toLowerCase().replace(/[\s\/]+/g, '-')}` ? 'text-[#00E5FF] drop-shadow-[0_0_8px_rgba(0,229,255,0.8)]' : 'text-[#6324FC]'}`} />
-                          <Link href={`/services/${svc.title.toLowerCase().replace(/[\s\/]+/g, '-')}`} onClick={() => setIsHovered(false)} className="flex items-center gap-2">
-                            <h3 className={`font-heading text-2xl tracking-wide transition-colors ${pathname === `/services/${svc.title.toLowerCase().replace(/[\s\/]+/g, '-')}` ? 'text-[#00E5FF]' : 'text-primary group-hover/title:text-[#6324FC]'}`}>
-                              {svc.title}
-                            </h3>
-                            {pathname === `/services/${svc.title.toLowerCase().replace(/[\s\/]+/g, '-')}` && (
-                              <motion.span layoutId="mega-active" className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shadow-[0_0_10px_rgba(0,229,255,0.8)] animate-pulse" />
-                            )}
-                          </Link>
-                        </div>
-                        <ul className="flex flex-col gap-3">
-                          {svc.items.map((item, idx) => (
-                            <li key={idx} className="group/link flex items-center gap-2">
-                              <ArrowRight className="w-3 h-3 text-[#6324FC] opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300" />
-                              <Link href={item.link} className="font-sans text-sm font-light text-primary/60 group-hover/link:text-primary group-hover/link:translate-x-1 transition-all duration-300">
-                                {item.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </motion.div>
-                    ))}
+                    {services.map((svc, i) => {
+                      const categorySlug = `/services/${svc.title.toLowerCase().replace(/[\s\/]+/g, '-')}`;
+                      const isCategoryActive = pathname === categorySlug || pathname.startsWith(categorySlug + "/");
+                      return (
+                        <motion.div 
+                          key={i} 
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.4, delay: i * 0.05 + 0.1 }}
+                          className="flex flex-col gap-4"
+                          onMouseEnter={() => setActiveMegaMenuService(svc.title)}
+                        >
+                          <div className={`flex items-center gap-3 mb-2 group/title cursor-pointer transition-all duration-300 ${isCategoryActive ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}>
+                            <svc.icon className={`w-5 h-5 transition-colors ${isCategoryActive ? 'text-[#00E5FF] drop-shadow-[0_0_8px_rgba(0,229,255,0.8)]' : 'text-[#6324FC]'}`} />
+                            <Link href={categorySlug} onClick={() => setIsHovered(false)} className="flex items-center gap-2">
+                              <h3 className={`font-heading text-2xl tracking-wide transition-colors ${isCategoryActive ? 'text-[#00E5FF] font-semibold' : 'text-primary group-hover/title:text-[#6324FC]'}`}>
+                                {svc.title}
+                              </h3>
+                              {isCategoryActive && (
+                                <motion.span layoutId="mega-active" className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shadow-[0_0_10px_rgba(0,229,255,0.8)] animate-pulse" />
+                              )}
+                            </Link>
+                          </div>
+                          <ul className="flex flex-col gap-1.5">
+                            {svc.items.map((item, idx) => {
+                              const isItemActive = pathname === item.link;
+                              return (
+                                <li key={idx} className="group/link flex items-center">
+                                  <Link 
+                                    href={item.link} 
+                                    onClick={() => setIsHovered(false)} 
+                                    className={`w-full font-sans text-sm tracking-wide transition-all duration-300 flex items-center justify-between py-1.5 px-3 -mx-3 rounded-xl ${
+                                      isItemActive 
+                                        ? "text-[#00E5FF] font-medium bg-[#00E5FF]/10 border border-[#00E5FF]/20 shadow-[0_0_15px_rgba(0,229,255,0.12)]" 
+                                        : "text-primary/60 hover:text-primary hover:bg-white/[0.04] font-light"
+                                    }`}
+                                  >
+                                    <span className="flex items-center gap-2">
+                                      <ArrowRight className={`w-3.5 h-3.5 transition-all duration-300 ${
+                                        isItemActive 
+                                          ? "opacity-100 translate-x-0 text-[#00E5FF]" 
+                                          : "opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 text-[#6324FC]"
+                                      }`} />
+                                      <span className={isItemActive ? "text-white font-medium" : ""}>{item.name}</span>
+                                    </span>
+                                    {isItemActive && (
+                                      <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shadow-[0_0_8px_#00E5FF] animate-pulse shrink-0" />
+                                    )}
+                                  </Link>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </motion.div>
+                      );
+                    })}
                   </div>
 
                   {/* Featured Case Study Right Column */}
@@ -550,20 +584,24 @@ export default function Navbar() {
                     <h3 className="font-sans  font-semibold text-primary tracking-wide mb-2 border-b border-primary/10 pb-4">Our Services</h3>
 
                     {services.map((svc, i) => {
-                      const isOpen = activeCategory === i;
+                      const categorySlug = `/services/${svc.title.toLowerCase().replace(/[\s\/]+/g, '-')}`;
+                      const isCategoryActive = pathname === categorySlug || pathname.startsWith(categorySlug + "/");
+                      const isOpen = activeCategory === i || (activeCategory === null && isCategoryActive);
                       return (
                         <div key={i} className="w-full">
                           <button
                             onClick={() => {
-                              setActiveCategory(isOpen ? null : i);
+                              setActiveCategory(isOpen ? -1 : i);
                             }}
-                            className="w-full font-sans text-base font-medium tracking-wide text-primary hover:text-[#6324FC] transition-colors flex items-center justify-between group text-left cursor-pointer py-2"
+                            className={`w-full font-sans text-base font-medium tracking-wide transition-colors flex items-center justify-between group text-left cursor-pointer py-2 ${
+                              isCategoryActive ? "text-[#00E5FF]" : "text-primary hover:text-[#6324FC]"
+                            }`}
                           >
                             <span className="flex items-center gap-3">
-                              <svc.icon className="w-4 h-4 text-[#6324FC]" />
+                              <svc.icon className={`w-4 h-4 ${isCategoryActive ? "text-[#00E5FF]" : "text-[#6324FC]"}`} />
                               {svc.title}
                             </span>
-                            <ChevronDown className={`w-4 h-4 transition-transform duration-300 text-[#6324FC] ${isOpen ? "rotate-180" : ""}`} />
+                            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isCategoryActive ? "text-[#00E5FF]" : "text-[#6324FC]"} ${isOpen ? "rotate-180" : ""}`} />
                           </button>
                           
                           <AnimatePresence initial={false}>
@@ -573,7 +611,7 @@ export default function Navbar() {
                                 animate={{ height: "auto", opacity: 1 }}
                                 exit={{ height: 0, opacity: 0 }}
                                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                                className="overflow-hidden mt-2 pl-7 border-l border-primary/10 flex flex-col gap-2"
+                                className="overflow-hidden mt-2 pl-7 border-l border-primary/10 flex flex-col gap-1.5"
                               >
                                 {svc.items.map((item, idx) => {
                                   const isSubActive = pathname === item.link;
@@ -585,12 +623,17 @@ export default function Navbar() {
                                         setMobileMenuOpen(false);
                                         setActiveCategory(null);
                                       }}
-                                      className={`font-sans text-sm font-light transition-colors flex items-center justify-between group py-1.5 ${
-                                        isSubActive ? "text-[#6324FC] font-normal" : "text-primary/70 hover:text-[#6324FC]"
+                                      className={`font-sans text-sm tracking-wide transition-colors flex items-center justify-between group py-1.5 px-2.5 rounded-lg ${
+                                        isSubActive 
+                                          ? "text-[#00E5FF] bg-[#00E5FF]/10 border border-[#00E5FF]/20 font-medium" 
+                                          : "text-primary/70 hover:text-[#6324FC]"
                                       }`}
                                     >
-                                      <span>{item.name}</span>
-                                      <ArrowRight className="w-3.5 h-3.5 text-[#6324FC] opacity-0 group-hover:opacity-100 transition-opacity" />
+                                      <span className="flex items-center gap-2">
+                                        {isSubActive && <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shadow-[0_0_8px_#00E5FF] animate-pulse" />}
+                                        <span className={isSubActive ? "text-white font-medium" : ""}>{item.name}</span>
+                                      </span>
+                                      <ArrowRight className={`w-3.5 h-3.5 ${isSubActive ? "text-[#00E5FF] opacity-100" : "text-[#6324FC] opacity-0 group-hover:opacity-100"}`} />
                                     </Link>
                                   );
                                 })}
