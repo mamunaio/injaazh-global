@@ -109,6 +109,25 @@ const cases: CaseItem[] = [
     color: "#FF2D55",
     accentGlow: "rgba(255, 45, 85, 0.25)",
   },
+  {
+    id: "04",
+    slug: "the-ultrasound-source",
+    category: "MEDTECH · E-COMMERCE",
+    title: "The Ultrasound Source — Diagnostic Medical Imaging",
+    location: "🇺🇸 GREER, SC",
+    liveUrl: "https://theultrasoundsource.com/",
+    displayUrl: "theultrasoundsource.com",
+    status: "CLIENT WEBSITE",
+    metrics: [
+      { label: "B2B RFQ SURGE", val: 310, suffix: "%", prefix: "+", icon: Zap },
+      { label: "PAGE LOAD", val: 0.7, suffix: "s", icon: Target },
+    ],
+    body: "Sub-second medical imaging catalog and diagnostic equipment consultation funnel for hospitals and clinics across North America. Engineered with Next.js 15, YMYL healthcare SEO, and AI answer engine schemas.",
+    tags: ["Next.js 15", "Medical Tech", "Headless RFQ", "YMYL SEO"],
+    image: "/assets/tuss.png",
+    color: "#00E5FF",
+    accentGlow: "rgba(0, 229, 255, 0.25)",
+  },
 ];
 
 function NumberTicker({

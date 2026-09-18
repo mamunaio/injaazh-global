@@ -107,6 +107,7 @@ export default function WorkDetailClient({
   const heroRef = useRef<HTMLDivElement>(null);
   const [activeDeviceView, setActiveDeviceView] = useState<"desktop" | "mobile">("desktop");
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [activeGalleryIndex, setActiveGalleryIndex] = useState<number>(0);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -866,6 +867,142 @@ export default function WorkDetailClient({
 
         </div>
       </section>
+
+      {/* ─────────────────────────────────────────────────────────────
+          7B. MULTI-SCREEN CLINICAL ARCHITECTURE GALLERY (IF PRESENT)
+      ───────────────────────────────────────────────────────────── */}
+      {project.gallery && project.gallery.length > 0 && (
+        <section className="py-24 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-white/5 relative overflow-hidden">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <div className="flex items-center gap-3 font-mono text-xs tracking-[0.4em] uppercase text-white/50 mb-3">
+                <span className="w-8 h-[1px]" style={{ backgroundColor: accentColor }} />
+                Clinical Interface Gallery
+              </div>
+              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-white">
+                EXPLORE THE <span style={{ color: accentColor }}>LIVE PLATFORM.</span>
+              </h2>
+            </div>
+            <p className="font-sans font-light text-white/50 max-w-sm text-sm md:text-base">
+              Inspect the high-precision diagnostic catalog, B2B quote funnels, and clinical resource architecture.
+            </p>
+          </div>
+
+          {/* Interactive Screen Tab Selectors */}
+          <div className="flex items-center gap-3 overflow-x-auto pb-4 mb-8 no-scrollbar">
+            {project.gallery.map((item, idx) => {
+              const isActive = activeGalleryIndex === idx;
+              return (
+                <button
+                  key={idx}
+                  onClick={() => setActiveGalleryIndex(idx)}
+                  className={`px-5 py-3 rounded-2xl font-mono text-xs tracking-wider uppercase transition-all duration-300 flex items-center gap-3 whitespace-nowrap cursor-pointer border ${
+                    isActive
+                      ? "bg-white/10 text-white border-white/30 shadow-lg"
+                      : "bg-[#0D0D14]/70 text-white/40 border-white/5 hover:border-white/20 hover:text-white"
+                  }`}
+                  style={{
+                    borderColor: isActive ? accentColor : undefined,
+                  }}
+                >
+                  <span
+                    className="w-2 h-2 rounded-full transition-colors"
+                    style={{ backgroundColor: isActive ? accentColor : "rgba(255,255,255,0.2)" }}
+                  />
+                  <span>{item.tag}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Main Selected Viewport Showcase */}
+          <div className="rounded-3xl border border-white/10 bg-[#0D0D14]/90 backdrop-blur-2xl overflow-hidden shadow-2xl p-4 sm:p-6">
+            {/* Browser Header Bar */}
+            <div className="flex items-center justify-between px-4 py-3 bg-[#08080E] rounded-2xl border border-white/5 mb-6">
+              <div className="flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-red-500/60" />
+                <span className="w-3 h-3 rounded-full bg-yellow-500/60" />
+                <span className="w-3 h-3 rounded-full bg-emerald-500/60" />
+                <span className="hidden sm:inline font-mono text-[11px] text-white/40 ml-3">
+                  theultrasoundsource.com — {project.gallery[activeGalleryIndex]?.tag || "VIEWPORT"}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 font-mono text-xs text-white/50">
+                <span className="text-emerald-400">●</span>
+                <span className="hidden sm:inline">200 OK — 0.6s Edge Response</span>
+              </div>
+            </div>
+
+            {/* Active Image Showcase with Smooth AnimatePresence */}
+            <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-2xl overflow-hidden bg-black border border-white/5">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeGalleryIndex}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.4 }}
+                  className="relative w-full h-full"
+                >
+                  <Image
+                    src={project.gallery[activeGalleryIndex].img}
+                    alt={project.gallery[activeGalleryIndex].title}
+                    fill
+                    className="object-cover object-top"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                  
+                  {/* Floating Caption Overlay */}
+                  <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-black/80 border border-white/10 backdrop-blur-xl max-w-2xl">
+                    <span
+                      className="font-mono text-[10px] tracking-widest uppercase font-bold px-2.5 py-1 rounded-full inline-block mb-2"
+                      style={{ backgroundColor: `${accentColor}20`, color: accentColor }}
+                    >
+                      {project.gallery[activeGalleryIndex].tag}
+                    </span>
+                    <h4 className="font-heading text-xl sm:text-2xl text-white uppercase tracking-tight mb-1">
+                      {project.gallery[activeGalleryIndex].title}
+                    </h4>
+                    <p className="font-sans font-light text-xs sm:text-sm text-white/70">
+                      {project.gallery[activeGalleryIndex].subtitle}
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Thumbnails Strip */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
+              {project.gallery.map((item, idx) => {
+                const isActive = activeGalleryIndex === idx;
+                return (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveGalleryIndex(idx)}
+                    className={`relative rounded-xl overflow-hidden aspect-[16/10] border-2 transition-all duration-300 text-left cursor-pointer group ${
+                      isActive
+                        ? "border-[#00E5FF] shadow-lg scale-[1.02]"
+                        : "border-white/10 opacity-60 hover:opacity-100 hover:border-white/30"
+                    }`}
+                  >
+                    <Image
+                      src={item.img}
+                      alt={item.title}
+                      fill
+                      className="object-cover object-top"
+                    />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors" />
+                    <div className="absolute bottom-2 left-2 right-2 font-mono text-[10px] tracking-wider text-white font-medium truncate bg-black/70 px-2 py-1 rounded">
+                      {item.tag}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           8. SEO-RICH INTERACTIVE FAQ ACCORDION

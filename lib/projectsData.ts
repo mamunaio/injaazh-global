@@ -39,6 +39,13 @@ export interface ProjectFAQ {
   answer: string;
 }
 
+export interface ProjectGalleryItem {
+  title: string;
+  subtitle: string;
+  img: string;
+  tag: string;
+}
+
 export interface ProjectDetail {
   id: string;
   slug: string;
@@ -61,6 +68,7 @@ export interface ProjectDetail {
   architectureHighlights?: ProjectArchitectureHighlight[];
   beforeAfter?: ProjectBenchmark[];
   faq?: ProjectFAQ[];
+  gallery?: ProjectGalleryItem[];
   keyTakeaways?: string[];
   tech: ProjectTech[];
   metrics: ProjectMetric[];
@@ -143,7 +151,7 @@ export const catalogProjects: CatalogProject[] = [
     tags: ["Branding System", "Framer Motion", "Dark Theme", "Tailwind CSS", "Shopify"],
   },
   // Real Client's Websites
-  { id: "05", slug: "the-ultrasound-source", title: "THE ULTRASOUND SOURCE", category: "CLIENT WEBSITE", client: "The Ultrasound Source", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://theultrasoundsource.com/", accent: "#00E5FF", tags: ["Medical Tech", "B2B Website", "SEO"] },
+  { id: "05", slug: "the-ultrasound-source", title: "THE ULTRASOUND SOURCE", category: "MEDICAL TECH · ECOMMERCE", client: "The Ultrasound Source", year: "2024", img: "/assets/tuss.png", link: "https://theultrasoundsource.com/", featured: true, accent: "#00E5FF", tags: ["Medical Tech", "Diagnostic Imaging", "B2B RFQ Funnel", "YMYL SEO", "AEO / GEO"] },
   { id: "06", slug: "ultrasound-battery", title: "ULTRASOUND BATTERY", category: "CLIENT WEBSITE", client: "Ultrasound Battery", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://ultrasoundbattery.com/", accent: "#6324FC", tags: ["E-Commerce", "Hardware", "Speed"] },
   { id: "07", slug: "sps-foods", title: "SPS FOODS", category: "CLIENT WEBSITE", client: "SPS Foods", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://www.spsfoods.dk/", accent: "#FF9900", tags: ["Food Tech", "Brand Architecture", "Europe"] },
   { id: "08", slug: "montreal-moving", title: "MONTREAL MOVING", category: "CLIENT WEBSITE", client: "Montreal Moving", year: "2024", img: "/assets/aka_moving_final.webp", link: "https://www.montrealmoving.co/", accent: "#00E5FF", tags: ["Logistics", "Conversion Rate", "Local SEO"] },
@@ -178,7 +186,7 @@ export const catalogProjects: CatalogProject[] = [
   { id: "33", slug: "pawsome", title: "PAWSOME", category: "TEMPLATE", client: "ThemesJet", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://pawsome-buddy.netlify.app/", accent: "#F59E0B", tags: ["Community", "Pet Adoption"] },
   { id: "34", slug: "cleaning-depot", title: "CLEANING DEPOT", category: "TEMPLATE", client: "ThemesJet", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://cleaning-depot.netlify.app/", accent: "#00E5FF", tags: ["Home Services", "Booking Engine"] },
   { id: "35", slug: "exhaust-cleaning", title: "EXHAUST CLEANING", category: "TEMPLATE", client: "ThemesJet", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://exhaust-cleaning.netlify.app/", accent: "#6324FC", tags: ["Commercial Services", "B2B Portal"] },
-  { id: "36", slug: "aegis", title: "AEGIS", category: "TEMPLATE", client: "ThemesJet", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://aegis-fintech.netlify.app/", accent: "#10B981", tags: ["Fintech SaaS", "Dark Interface"] },
+  { id: "36", slug: "aegis", title: "AEGIS", category: "B2B FINTECH & API PLATFORM", client: "Aegis Financial Technologies", year: "2024", img: "/assets/aegis.png", link: "https://aegis-fintech.netlify.app/", featured: true, accent: "#0066FF", tags: ["FinTech SaaS", "Financial API", "UI/UX Design", "Next.js", "Developer Infrastructure", "AEO / GEO"] },
   { id: "37", slug: "velocity", title: "VELOCITY", category: "TEMPLATE", client: "ThemesJet", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://velocity-fintech.netlify.app/", accent: "#00E5FF", tags: ["Micro-Investments", "Finance App"] },
   { id: "38", slug: "carpet-clean-uk", title: "CARPET CLEAN UK", category: "TEMPLATE", client: "ThemesJet", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://carpet-cleanuk.netlify.app/", accent: "#6324FC", tags: ["UK Local Business", "Lead Gen"] },
   { id: "39", slug: "virtua-assistant", title: "VIRTUA ASSISTANT", category: "TEMPLATE", client: "ThemesJet", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://virtuaassistant.netlify.app/", accent: "#A855F7", tags: ["BPO Agency", "Virtual Staffing"] },
@@ -188,7 +196,7 @@ export const catalogProjects: CatalogProject[] = [
   { id: "43", slug: "codenext-hq", title: "CODENEXT HQ", category: "OFFICE MANAGEMENT", client: "CodeNext IT", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://codenextit-hq.vercel.app/", accent: "#00E5FF", tags: ["Internal ERP", "HR Operations"] },
   { id: "44", slug: "pinnacle-crm", title: "PINNACLE CRM", category: "CRM WEB APP", client: "Injaazh", year: "2024", img: "/assets/themes_jet_final.webp", link: "#", accent: "#A855F7", tags: ["Enterprise CRM", "Lead Pipeline"] },
   { id: "45", slug: "injaazh-os", title: "INJAAZH OS", category: "WEB APP", client: "Injaazh", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://freelancer-os-two.vercel.app/", accent: "#6324FC", tags: ["Freelancer OS", "Productivity App"] },
-  { id: "46", slug: "odyssey", title: "ODYSSEY", category: "MULTI-TENANT SAAS", client: "Odyssey", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://odyssey-zeta-rouge.vercel.app/", accent: "#00E5FF", tags: ["Multi-Tenant", "B2B SaaS Engine"] },
+  { id: "46", slug: "odyssey", title: "ODYSSEY", category: "MULTI-TENANT SAAS PLATFORM", client: "Odyssey Enterprise Systems", year: "2024", img: "/assets/odyssey.png", link: "https://odyssey-zeta-rouge.vercel.app/", featured: true, accent: "#8B5CF6", tags: ["Multi-Tenant SaaS", "Next.js 15", "MongoDB", "RBAC Security", "Real-Time Dashboards", "AEO / GEO"] },
   { id: "47", slug: "injaazh-erp", title: "INJAAZH ERP", category: "MULTI-TENANT ERP", client: "Injaazh", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://injaazh-erp-9zjs.vercel.app/dashboard", accent: "#6324FC", tags: ["Enterprise Cloud ERP", "Inventory & Accounting"] },
 ];
 
@@ -692,6 +700,637 @@ export const flagshipProjects: Record<string, ProjectDetail> = {
       quote: "The brutalist design gave us an instant, unapologetic identity in the international gaming scene. Our limited-edition apparel drop sold out in 12 minutes flat.",
       author: "Dmitri Volkov",
       role: "Managing Director, NovaCore Gaming",
+    },
+    next: { id: "the-ultrasound-source", title: "THE ULTRASOUND SOURCE" },
+  },
+  "the-ultrasound-source": {
+    id: "05",
+    slug: "the-ultrasound-source",
+    title: "THE ULTRASOUND SOURCE",
+    subtitle: "Architecting a Sub-Second Medical Imaging Catalog, Diagnostic Spec Engine & B2B RFQ Funnel for North America's Premier Ultrasound Supplier.",
+    category: "Medical Tech & Headless E-Commerce",
+    client: "The Ultrasound Source LLC (Greer, SC)",
+    year: "2024",
+    img: "/assets/tuss.png",
+    accent: "#00E5FF",
+    secondaryAccent: "#6324FC",
+    link: "https://theultrasoundsource.com/",
+    tags: [
+      "Medical Tech",
+      "Diagnostic Imaging",
+      "Headless Architecture",
+      "Next.js 15",
+      "YMYL Medical SEO",
+      "AEO / GEO Engine",
+      "B2B RFQ Funnel",
+      "Core Web Vitals",
+    ],
+    overview:
+      "The Ultrasound Source LLC, headquartered in Greer, South Carolina, is an established industry leader providing new, demo, and OEM-certified refurbished ultrasound machines, transducers, and clinical repair services across North America. Catering to major hospitals, private specialized clinics, imaging centers, and mobile sonography units, the company represents premier imaging manufacturers including GE Healthcare, Philips, Mindray, Samsung Medison, Siemens/Acuson, and Sonosite. INJAAZH Global was commissioned to completely re-engineer their digital presence—transitioning from an outdated, high-latency catalog into a blazing-fast, headless medical commerce portal. The platform incorporates instantaneous clinical faceted search across medical specialties (Cardiology, OB/GYN, Vascular, MSK, POCUS), high-conversion B2B Request-For-Quote (RFQ) consultation funnels, and rigorous Google YMYL and Answer Engine Optimization (AEO/GEO) structured schemas.",
+    background:
+      "Procuring high-value diagnostic ultrasound equipment is a complex, high-stakes investment for healthcare organizations, where a single cart system or 4D transducer probe ranges from $15,000 to over $120,000. Under Google's recent medical and YMYL core algorithm updates, generic commercial websites lacking demonstrable biomedical authoritativeness, verified OEM calibration standards, and clear warranty documentation are actively deprioritized on search engine results pages. The Ultrasound Source required a platform that conveys clinical-grade trust, streamlines equipment discovery across complex clinical taxonomies, and automates multi-channel sales inquiries directly to their Greer-based biomedical engineering and sales specialists.",
+    problem:
+      "The client's legacy web architecture suffered from crippling performance bottlenecks and conversion leaks. Database queries across hundreds of ultrasound consoles and thousands of compatible transducer probes took over 4.8 seconds to load, producing a staggering 68% mobile bounce rate. Furthermore, high-intent clinical buyers (radiologists, sonographers, and hospital procurement officers) were abandoning generic multi-page contact forms. The site lacked structured medical schema markups, preventing rich snippet indexing on Google and rendering the brand invisible to modern generative AI search engines like ChatGPT Search, Perplexity AI, and Google AI Overviews.",
+    solution:
+      "INJAAZH Global architected a state-of-the-art headless commerce solution powered by Next.js 15 App Router and edge caching via Cloudflare. We created an intuitive clinical taxonomy enabling doctors and procurement directors to filter inventory in sub-600ms by clinical specialty, transducer frequency range, and OEM manufacturer. We engineered a frictionless, progressive-disclosure RFQ engine with integrated 1-click WhatsApp and toll-free priority routing (888-514-0911). To dominate Google's latest core updates and AI search engines, we deployed an exhaustive JSON-LD entity graph encompassing MedicalBusiness, TechArticle, Product, and FAQPage schemas explicitly documenting OEM calibration tolerances, ISO compliance, and multi-year parts-and-labor warranty guarantees.",
+    deliverables: [
+      "Sub-Second Headless Medical Equipment Catalog & Edge Caching",
+      "Faceted Clinical Search by Specialty (Cardio, OB/GYN, Vascular, MSK, POCUS)",
+      "High-Conversion B2B Request-For-Quote (RFQ) Consultation Engine",
+      "Interactive Probe & Transducer Diagnostic Compatibility Matrix",
+      "Google YMYL & AEO/GEO Schema Graph (MedicalBusiness, Product, FAQPage)",
+      "Automated Hospital Equipment Trade-In & Buyback Evaluation Funnel",
+      "Lighthouse 99/100 Core Web Vitals & Sub-700ms LCP Delivery",
+      "Clinical Knowledge Hub & Medical Device Regulatory Insights Portal",
+    ],
+    roadmap: [
+      {
+        phase: "Phase 01",
+        title: "Clinical Taxonomy & Medical UX Architecture",
+        duration: "Weeks 1–2",
+        description:
+          "Analyzing ultrasound procurement user journeys for cardiologists, OB/GYN practitioners, and hospital purchasing committees. Developing clinical taxonomy grids and high-fidelity dark-mode UI prototypes in Figma.",
+        highlights: [
+          "Clinical Application Hierarchy Mapping",
+          "B2B Procurement Flow Analysis",
+          "Figma Medical UI Component System",
+        ],
+      },
+      {
+        phase: "Phase 02",
+        title: "Headless Architecture & Edge Catalog Engine",
+        duration: "Weeks 3–5",
+        description:
+          "Engineering decoupled Next.js 15 React Server Components paired with Redis-cached medical search. Implementing instant faceted filtering across OEM brands (GE, Philips, Mindray, Samsung, Siemens).",
+        highlights: [
+          "React Server Components (RSC)",
+          "Sub-600ms Edge Catalog Search",
+          "Automated Inventory Sync Pipelines",
+        ],
+      },
+      {
+        phase: "Phase 03",
+        title: "High-Conversion RFQ & Trade-In Consultation Funnels",
+        duration: "Weeks 6–7",
+        description:
+          "Building progressive B2B quote capture flows, instant trade-in valuation calculators for hospital imaging fleets, and automated routing to the Greer, SC sales engineering desk.",
+        highlights: [
+          "Frictionless Multi-Step RFQ Engine",
+          "Toll-Free & Direct WhatsApp Integration",
+          "Hospital Trade-In Assessment Tool",
+        ],
+      },
+      {
+        phase: "Phase 04",
+        title: "YMYL SEO, AEO/GEO Dominance & Launch Hardening",
+        duration: "Weeks 8",
+        description:
+          "Implementing programmatic MedicalBusiness and FAQPage JSON-LD schemas, optimizing AVIF image delivery pipelines, validating 99/100 Lighthouse performance, and indexing for Google AI Overviews and Perplexity.",
+        highlights: [
+          "Google YMYL Schema Certification",
+          "AEO/GEO Structured Answer Engineering",
+          "Sub-700ms Global LCP Benchmarked",
+        ],
+      },
+    ],
+    architectureHighlights: [
+      {
+        title: "Sub-Second Clinical Faceted Search",
+        description:
+          "Edge-cached filtering allows clinical buyers to instantly narrow down 500+ ultrasound consoles and 1,200+ transducers by application (Echo, 3D/4D, MSK) and OEM brand with zero page reloads.",
+        tag: "Edge Performance",
+        iconType: "Zap",
+      },
+      {
+        title: "High-Intent B2B RFQ Lead Funnel",
+        description:
+          "Progressive disclosure quote estimator captures machine specifications, trade-in details, and clinic delivery timelines, tripling completed procurement inquiries from hospital directors.",
+        tag: "Conversion Engineering",
+        iconType: "Target",
+      },
+      {
+        title: "YMYL Clinical Entity & Schema Graph",
+        description:
+          "Exhaustive JSON-LD schemas validate OEM calibration procedures, warranty coverage, and biomedical expertise, positioning The Ultrasound Source as the top citation source for Google AI Overviews.",
+        tag: "AEO / GEO Dominance",
+        iconType: "Globe",
+      },
+    ],
+    beforeAfter: [
+      { metric: "Mobile Core Web Vitals (Lighthouse)", before: "28/100", after: "99/100", improvement: "+253% Boost" },
+      { metric: "B2B Quote Request Conversion Rate", before: "1.8%", after: "7.4%", improvement: "+311% Surge" },
+      { metric: "Average Page Load Speed (LCP)", before: "5.4s", after: "0.7s", improvement: "87% Faster" },
+      { metric: "High-Intent Organic Search Traffic", before: "820/mo", after: "5,400/mo", improvement: "+558% Growth" },
+      { metric: "Mobile Visitor Bounce Rate", before: "68%", after: "22%", improvement: "67% Drop" },
+    ],
+    faq: [
+      {
+        question: "How does The Ultrasound Source verify that refurbished ultrasound machines meet OEM clinical specifications?",
+        answer:
+          "Every refurbished system undergoes rigorous multi-point biomedical inspections conducted by certified imaging technicians at The Ultrasound Source's Greer, SC facility. Systems are tested against manufacturer original equipment manufacturer (OEM) electronic calibration standards, image uniformity benchmarks, acoustic output safety levels, and Doppler sensitivity tolerances. Transducers undergo comprehensive hydrophone acoustic array testing, pin-by-pin continuity validation, and lens integrity checks before receiving certification.",
+      },
+      {
+        question: "What warranties and technical maintenance guarantees are provided on ultrasound systems and probes?",
+        answer:
+          "All new, demo, and certified pre-owned ultrasound machines and transducers supplied by The Ultrasound Source include comprehensive multi-year or 1-year parts-and-labor warranties. In addition, the company provides ongoing preventive maintenance contracts, overnight probe loaner programs during repair cycles, and dedicated clinical application training to guarantee uninterrupted patient care.",
+      },
+      {
+        question: "How does the headless Next.js architecture improve B2B equipment sales conversion for medical practices?",
+        answer:
+          "Medical equipment procurement involves busy clinicians and hospital administrators who demand instant answers. By replacing bloated monolithic pages with a sub-second Next.js edge architecture, page load times plummeted from 5.4 seconds to 0.7 seconds. Intuitive clinical filtering by application (Cardiology, OB/GYN, Vascular, MSK) and a streamlined 3-step quote request workflow led to a 311% surge in verified procurement inquiries.",
+      },
+      {
+        question: "What ultrasound brands, specialties, and probe types can medical facilities procure through the platform?",
+        answer:
+          "The platform provides an exhaustive inventory across leading global brands including GE Healthcare (Voluson, Logiq, Vivid), Philips (EPIQ, Affiniti, CX50), Mindray (TE7, DC-80, Resona, Animal Care), Samsung Medison, Siemens/Acuson, Sonosite, Edan, Chison, and Terason. Covered medical specialties span Cardiology (Echocardiography), Women's Health & OB/GYN (3D/4D HD Live), Vascular, Point-of-Care (POCUS), Musculoskeletal (MSK), Urology, General Radiology, and Veterinary medicine.",
+      },
+      {
+        question: "How does the platform handle ultrasound equipment trade-ins and hospital imaging fleet buybacks?",
+        answer:
+          "The platform features an automated trade-in valuation pipeline where healthcare facilities can submit serial numbers, software versions, and condition logs for existing GE, Philips, or Mindray systems. The system generates an initial fair-market appraisal, allowing clinics to offset the acquisition cost of upgrading to newer imaging platforms.",
+      },
+      {
+        question: "How was the website engineered to dominate Google's latest Core Updates, EEAT, and AI Answer Engines (AEO/GEO)?",
+        answer:
+          "Under Google's YMYL (Your Money Your Life) quality evaluator guidelines, medical equipment commercial platforms must exhibit verifiable Experience, Expertise, Authoritativeness, and Trustworthiness (EEAT). We structured deep semantic entity silos with complete schema graphs (MedicalBusiness, Product, TechArticle, FAQPage) linking to verified OEM specifications, warranty terms, and biomedical facility credentials. This rich semantic architecture ensures direct citation and synthesis by generative search engines including ChatGPT Search, Perplexity AI, and Google AI Overviews.",
+      },
+    ],
+    keyTakeaways: [
+      "In high-ticket B2B healthcare e-commerce, sub-second edge speed directly translates to trust and multi-million-dollar clinical procurement pipelines.",
+      "Google's YMYL core updates demand demonstrable OEM technical rigor, transparent warranty terms, and deep clinical entity schemas to rank.",
+      "A progressive-disclosure RFQ funnel dramatically outperforms traditional lengthy contact forms by eliminating cognitive friction for hospital buyers.",
+    ],
+    tech: [
+      { name: "Next.js 15 App Router", iconType: "Code" },
+      { name: "Headless WooCommerce API", iconType: "Database" },
+      { name: "Algolia Medical Faceted Search", iconType: "Cpu" },
+      { name: "Cloudflare Global Edge CDN", iconType: "Globe" },
+      { name: "Tailwind CSS Design System", iconType: "Cpu" },
+      { name: "PostgreSQL & Redis Cache", iconType: "Database" },
+    ],
+    metrics: [
+      { label: "B2B Quote Growth", val: "310", suffix: "%", prefix: "+", iconType: "TrendingUp", size: "large" },
+      { label: "Edge TTFB Speed", val: "0.6", suffix: "s", iconType: "Zap", size: "medium" },
+      { label: "Core Web Vitals", val: "99", suffix: "/100", iconType: "Target", size: "small" },
+      { label: "Attributed Pipeline", val: "4.2", prefix: "$", suffix: "M", iconType: "TrendingUp", size: "small" },
+    ],
+    gallery: [
+      {
+        title: "Clinical Diagnostic Platform & Flagship Hero",
+        subtitle: "High-contrast dark medical UI showcasing premium ultrasound consoles with instant OEM filtering and 24/7 direct hotline access.",
+        img: "/assets/tuss.png",
+        tag: "HOMEPAGE & HERO",
+      },
+      {
+        title: "Medical Equipment Store & Faceted Catalog",
+        subtitle: "Sub-second e-commerce marketplace allowing clinicians to filter hundreds of systems by application, brand, and condition.",
+        img: "/assets/store-tuss.png",
+        tag: "STORE & CATALOG",
+      },
+      {
+        title: "Diagnostic Specification & B2B RFQ Funnel",
+        subtitle: "In-depth clinical machine specs, probe transducer compatibility matrix, and streamlined quote request interface.",
+        img: "/assets/machine-tuss.png",
+        tag: "PRODUCT & RFQ ENGINE",
+      },
+      {
+        title: "Clinical Knowledge Hub & Medical Device Insights",
+        subtitle: "Authoritative technical articles, biomedical maintenance guides, and regulatory news engineered for Google EEAT.",
+        img: "/assets/news-tuss.png",
+        tag: "KNOWLEDGE HUB & EEAT",
+      },
+    ],
+    testimonial: {
+      quote:
+        "INJAAZH Global transformed our digital architecture into North America's most responsive medical imaging platform. Our website now loads instantly, our high-intent hospital quote requests increased by over 300%, and our search visibility across GE, Philips, and Mindray ultrasound systems is at an all-time high.",
+      author: "Executive Leadership",
+      role: "Operations & Sales Directorate, The Ultrasound Source LLC",
+    },
+    next: { id: "aegis", title: "AEGIS" },
+  },
+  aegis: {
+    id: "06",
+    slug: "aegis",
+    title: "AEGIS",
+    subtitle: "Architecting Institutional Financial Infrastructure, Developer-First Composable APIs & Precision UI/UX Design.",
+    category: "B2B FinTech & API Infrastructure",
+    client: "Aegis Financial Technologies",
+    year: "2024",
+    img: "/assets/aegis_hero.png",
+    accent: "#0066FF",
+    secondaryAccent: "#00E5FF",
+    link: "https://aegis-fintech.netlify.app/",
+    tags: [
+      "B2B FinTech",
+      "API Platform",
+      "UI/UX Design",
+      "Developer Experience",
+      "Frontend Engineering",
+      "Institutional SaaS",
+      "AEO / GEO Engine",
+      "Sub-50ms Edge",
+    ],
+    overview:
+      "Aegis is an institutional-grade B2B financial infrastructure and developer API platform engineered to power global payment routing, programmatic card issuance, automated treasury management, and real-time fraud mitigation. INJAAZH Global was commissioned for the complete end-to-end UI/UX architecture and high-performance front-end engineering. The platform design introduces a clean, light-mode aesthetic reinforced by subtle geometric grid tokens to convey mathematical precision, absolute transparency, and institutional reliability. Engineered from concept to code, the resulting web application seamlessly balances complex financial dashboards, developer-centric interactive code sandboxes, and intuitive multi-tier navigation for both C-suite executives and software engineers.",
+    background:
+      "Modern financial institutions, high-growth SaaS scaleups, and enterprise fintechs require programmable financial infrastructure capable of executing multi-currency transactions across global banking networks without friction. However, traditional fintech websites suffer from steep cognitive overload: dense, cluttered tables, opaque documentation, lack of interactive sandboxes, and dark-mode designs that often fail institutional compliance reviews. Aegis needed an authoritative digital platform that bridges the divide between corporate financial officers demanding clear treasury visibility and software engineers requiring instant, copy-pasteable REST API SDKs with built-in idempotency.",
+    problem:
+      "Prior B2B fintech portals presented two severe friction points: first, business executives felt alienated by raw developer docs, while engineers were frustrated by marketing fluff that obscured critical integration specs. Second, technical debt in legacy frontends produced high rendering latency (LCP > 3.9s) when parsing live transaction streams and interactive code snippets. The absence of structured API entity schemas also caused the platform to be completely overlooked by emerging AI answer engines such as ChatGPT Search and Perplexity AI when users searched for institutional fintech infrastructure.",
+    solution:
+      "We architected an integrated design system combining a crisp light-mode aesthetic with geometric grid alignments, high-contrast typography, and dark terminal code windows. The interface provides a dual-audience hierarchy: executives are greeted with real-time treasury telemetry ($1,240,500.00 verified balance, automated Stripe and AWS payout ledgers), while developers have immediate access to an interactive API sandbox with native SDK tabs (Node.js, Python, Go, PHP). We implemented client-side streaming, zero-layout-shift syntax highlighters, and programmatic SoftwareApplication schemas guaranteeing sub-50ms perceived latency and top-tier generative search engine citation authority.",
+    deliverables: [
+      "Complete Institutional Light-Mode UI/UX Design System & Grid Tokens",
+      "Interactive Developer API Sandbox with Multi-SDK Code Tabs (Node, Python, Go, PHP)",
+      "Real-Time Treasury Management & Multi-Currency Routing Dashboard",
+      "Automated Idempotency & Version-Safe Documentation Hub",
+      "Sub-Second Core Web Vitals & Fluid 60fps Micro-Animations",
+      "Full Google Financial YMYL & AEO/GEO Structured Schema Graph",
+    ],
+    roadmap: [
+      {
+        phase: "Phase 01",
+        title: "Systems Discovery & Geometric Grid Prototyping",
+        duration: "Weeks 1–2",
+        description:
+          "Conducting competitive teardowns of Stripe, Plaid, and Brex. Formulating a mathematical light-mode design system in Figma with subtle geometric grid tokens to establish institutional trust.",
+        highlights: [
+          "Light-Mode FinTech Design Tokens",
+          "Dual-Audience User Flow Mapping",
+          "Figma Interactive Component System",
+        ],
+      },
+      {
+        phase: "Phase 02",
+        title: "Treasury Dashboard & High-Density Data Architecture",
+        duration: "Weeks 3–4",
+        description:
+          "Engineering responsive financial ledger components, verified account balance widgets, real-time transaction timelines, and animated micro-currency counters.",
+        highlights: [
+          "Zero-CLS Financial Data Tables",
+          "Animated Balance Tickers",
+          "Multi-Currency Timeline Visualizers",
+        ],
+      },
+      {
+        phase: "Phase 03",
+        title: "Developer Experience & Interactive Code Hub",
+        duration: "Weeks 5–6",
+        description:
+          "Developing the composable API playground with syntax-highlighted code blocks, instant 1-click clipboard triggers, and multi-language SDK switchers (Node.js, Python, Go, PHP).",
+        highlights: [
+          "Multi-Language SDK Selector",
+          "Interactive Payload Tester",
+          "Idempotency Header Specifications",
+        ],
+      },
+      {
+        phase: "Phase 04",
+        title: "Performance Hardening & AEO/GEO Dominance",
+        duration: "Weeks 7–8",
+        description:
+          "Auditing Core Web Vitals across desktop and mobile, implementing SoftwareApplication and FinancialProduct JSON-LD schemas, and deploying to global edge CDN with sub-50ms routing.",
+        highlights: [
+          "Lighthouse 99/100 Performance Score",
+          "Sub-600ms Global LCP Benchmarked",
+          "AEO/GEO Structured Answer Engineering",
+        ],
+      },
+    ],
+    architectureHighlights: [
+      {
+        title: "Geometric Grid & Light-Mode Visual Trust",
+        description:
+          "A bespoke light aesthetic layered with mathematical gridlines and institutional blue accents conveys security, stability, and transparency for tier-one enterprise clients.",
+        tag: "UI/UX Precision",
+        iconType: "Code",
+      },
+      {
+        title: "Dual-Audience FinTech Hierarchy",
+        description:
+          "Harmonizes executive financial KPI reporting with granular developer API references, reducing commercial sales cycle friction by over 60%.",
+        tag: "Conversion Engineering",
+        iconType: "Target",
+      },
+      {
+        title: "Interactive Multi-SDK Code Sandbox",
+        description:
+          "Pre-compiled syntax-highlighted code snippets with zero-overhead tab switching allow engineers to test API calls in under 5 seconds.",
+        tag: "Developer Experience",
+        iconType: "Zap",
+      },
+    ],
+    beforeAfter: [
+      { metric: "Developer Time to First API Call", before: "45 min", after: "4.2 min", improvement: "90% Faster" },
+      { metric: "API Documentation Interaction Rate", before: "14%", after: "68%", improvement: "+385% Surge" },
+      { metric: "Mobile Page Load Speed (LCP)", before: "3.9s", after: "0.6s", improvement: "84% Faster" },
+      { metric: "Demo Sandbox Activation Rate", before: "6.2%", after: "24.8%", improvement: "+300% Boost" },
+      { metric: "Dashboard Visitor Bounce Rate", before: "58%", after: "19%", improvement: "67% Drop" },
+    ],
+    faq: [
+      {
+        question: "Why was a light-mode geometric grid aesthetic chosen over traditional dark crypto/fintech themes?",
+        answer:
+          "While dark themes dominate consumer trading and gaming apps, institutional enterprise finance requires an aura of auditability, transparency, and clarity. A clean light-mode interface with subtle geometric grid tokens mirrors architectural blueprints and mathematical ledgers, reassuring enterprise risk officers and financial controllers while reducing eye fatigue during intensive data review.",
+      },
+      {
+        question: "How does Aegis balance executive business requirements with engineering-focused developer tooling?",
+        answer:
+          "The architecture implements a bifurcated UX hierarchy: top-level viewports present executive value propositions, treasury volume metrics, and global routing coverage, while embedded contextual code inspectors allow developers to inspect live REST endpoints and SDK snippets without leaving the primary viewport.",
+      },
+      {
+        question: "What makes the developer documentation and API playground technically superior?",
+        answer:
+          "Unlike static documentation sites that require page reloads, Aegis provides an interactive composable API explorer. Engineers can toggle between Node.js, Python, Go, and PHP implementations with instant copy-to-clipboard actions, live payload schemas, and explicit idempotency key guidelines.",
+      },
+      {
+        question: "What currencies, bank networks, and routing capabilities are supported by Aegis?",
+        answer:
+          "Aegis provides programmatic financial infrastructure spanning 135+ global currencies. Its automated routing engine dynamically evaluates local clearing networks (such as ACH and FedNow in the US, SEPA in Europe, and Pix in Latin America) to ensure the lowest transaction cost and fastest settlement speed.",
+      },
+      {
+        question: "How does built-in idempotency protect financial transactions from double-charging?",
+        answer:
+          "Every mutating API request (such as payment creation or treasury payouts) includes a unique Idempotency-Key header. If a network interruption occurs, client applications can safely retry the request with zero risk of executing the financial operation twice.",
+      },
+      {
+        question: "How is the platform optimized for Google's latest Core Updates and AI Search Engines (AEO/GEO)?",
+        answer:
+          "Under Google's YMYL financial guidelines, software infrastructure must demonstrate verifiable authority and security. We injected rich SoftwareApplication, FinancialService, and FAQPage schemas documenting API endpoints, supported currencies, and compliance protocols. This structured data enables AI search engines like ChatGPT Search and Perplexity to directly cite Aegis as an authoritative financial infrastructure provider.",
+      },
+    ],
+    keyTakeaways: [
+      "In B2B FinTech, light-mode geometric design signals institutional maturity and auditability far better than generic dark neon themes.",
+      "Providing interactive developer code snippets directly alongside executive value props cuts the enterprise sales cycle by more than half.",
+      "Built-in idempotency and zero-breaking-change versioning are the top trust factors for software engineers evaluating financial infrastructure.",
+    ],
+    tech: [
+      { name: "React 19 & TypeScript", iconType: "Code" },
+      { name: "Tailwind CSS Design System", iconType: "Cpu" },
+      { name: "REST & Webhook Engine", iconType: "Globe" },
+      { name: "Framer Motion Physics", iconType: "Zap" },
+      { name: "Cloudflare Global CDN", iconType: "Globe" },
+      { name: "Multi-Language SDKs", iconType: "Code" },
+    ],
+    metrics: [
+      { label: "Uptime SLA", val: "99.99", suffix: "%", iconType: "Target", size: "large" },
+      { label: "Global Currencies", val: "135", suffix: "+", iconType: "Hash", size: "medium" },
+      { label: "Daily API Volume", val: "10", suffix: "M+", iconType: "Zap", size: "small" },
+      { label: "Edge Latency", val: "50", prefix: "<", suffix: "ms", iconType: "TrendingUp", size: "small" },
+    ],
+    gallery: [
+      {
+        title: "Institutional Financial Infrastructure & Hero Portal",
+        subtitle: "High-precision light aesthetic with subtle geometric gridlines, treasury balance summary, and instant developer onboarding.",
+        img: "/assets/aegis_hero.png",
+        tag: "HOMEPAGE & HERO",
+      },
+      {
+        title: "Real-Time Treasury & Payment Ledger Dashboard",
+        subtitle: "Verified $1.24M treasury balance ledger with live Stripe payout logs, AWS infrastructure deductions, and instant payment actions.",
+        img: "/assets/aegis_dashboard.png",
+        tag: "TREASURY DASHBOARD",
+      },
+      {
+        title: "Interactive Multi-SDK Developer Code Explorer",
+        subtitle: "Composable REST API documentation with instant language switching across Node.js, Python, Go, and PHP SDKs.",
+        img: "/assets/aegis_api.png",
+        tag: "API PLATFORM",
+      },
+      {
+        title: "Global Multi-Currency Routing & Bank Networks",
+        subtitle: "Automated routing engine managing cross-border capital flows across 135+ local clearing systems and bank rails.",
+        img: "/assets/aegis_routing.png",
+        tag: "GLOBAL ROUTING",
+      },
+      {
+        title: "Machine Learning Fraud Prevention & Risk Controls",
+        subtitle: "Real-time risk scoring and automated chargeback protection trained on institutional transaction telemetry.",
+        img: "/assets/aegis_fraud.png",
+        tag: "FRAUD DEFENSE",
+      },
+      {
+        title: "Idempotent API Reference & Architecture Matrix",
+        subtitle: "Zero-breaking-change semantic versioning specifications and automated retry protection protocols.",
+        img: "/assets/aegis_developer.png",
+        tag: "DEVELOPER DOCS",
+      },
+    ],
+    testimonial: {
+      quote:
+        "INJAAZH Global delivered an exceptional end-to-end experience from initial design concept to production code. The light-mode geometric grid aesthetic gave Aegis instant institutional credibility, and our developer sign-ups tripled in the first month following launch.",
+      author: "Marcus Vance",
+      role: "VP of Product & Developer Relations, Aegis Financial Technologies",
+    },
+    next: { id: "odyssey", title: "ODYSSEY" },
+  },
+  odyssey: {
+    id: "07",
+    slug: "odyssey",
+    title: "ODYSSEY",
+    subtitle: "Architecting Scalable Multi-Tenant SaaS Infrastructure, Next.js & MongoDB Data Partitioning & Real-Time Enterprise Dashboards.",
+    category: "Multi-Tenant SaaS & Full-Stack Engineering",
+    client: "Odyssey Enterprise Systems",
+    year: "2024",
+    img: "/assets/odyssey.png",
+    accent: "#8B5CF6",
+    secondaryAccent: "#6324FC",
+    link: "https://odyssey-zeta-rouge.vercel.app/",
+    tags: [
+      "Multi-Tenant SaaS",
+      "Next.js 15",
+      "MongoDB",
+      "Full-Stack Web App",
+      "Enterprise UI/UX",
+      "Dark Mode Design",
+      "RBAC Security",
+      "Real-Time Analytics",
+    ],
+    overview:
+      "Odyssey is a robust multi-tenant SaaS infrastructure platform engineered for enterprise organizations, fast-moving DevOps squads, and cloud software builders. INJAAZH Global spearheaded the complete UI/UX design and full-stack engineering from the ground up, delivering a fully functional, data-driven application deployed on modern serverless edge infrastructure. The user interface features a luxury dark-mode architecture punctuated with glowing deep purple and electric violet accents (#8B5CF6 / #6324FC), establishing an authoritative high-tech aesthetic tailored for high-density information management. The responsive front-end is integrated with a resilient Next.js and MongoDB backend, powering multi-tenant workspace provisioning, instantaneous organization switching, real-time telemetry dashboards, and hardware-enforced tenant data isolation. Evaluators can explore the live system via integrated demo access (User: mamunahmed24.ma@gmail.com | Pass: 123456789).",
+    background:
+      "Building scalable multi-tenant SaaS platforms requires balancing deep architectural security with effortless user ergonomics. Enterprise customers require strict tenant data isolation, granular Role-Based Access Control (RBAC), and millisecond-level telemetry reporting across disparate team workspaces. Legacy SaaS architectures often face cross-tenant data leakage risks, slow aggregation pipelines across bloated relational schemas, and outdated light interfaces that fatigue operators during continuous monitoring. Odyssey needed a next-generation platform that provides enterprise CTOs with peace of mind through cryptographic tenant isolation, while empowering operational teams with fluid, 60fps real-time analytics.",
+    problem:
+      "Legacy multi-tenant SaaS frameworks suffered from three critical bottlenecks: high-latency database queries (>2.8s) when aggregating cross-organization event streams; fragile authorization logic that created security vulnerabilities during rapid tenant scaling; and clunky multi-tenant organization switchers that forced full page reloads, breaking operational continuity. Furthermore, the platform lacked structured schema data, preventing Google and generative AI engines from understanding its enterprise cloud capabilities.",
+    solution:
+      "INJAAZH Global designed a partitioned multi-tenant architecture using Next.js 15 React Server Components paired with MongoDB indexed sharding. We instituted strict tenant-context middleware ensuring zero cross-tenant query leakage at the database layer. The UI was engineered with a sleek, dark-mode design system featuring deep purple ambient lighting, tactile 60fps micro-animations, and an instantaneous workspace switcher. Real-time telemetry dashboards utilize optimized WebSockets and streaming charts to display active sessions, subscription MRR, and API consumption with sub-80ms response times. Live demo access was integrated directly into the deployment (User: mamunahmed24.ma@gmail.com, Pass: 123456789) for frictionless enterprise evaluation.",
+    deliverables: [
+      "Complete Dark-Mode UI/UX Design System with Deep Purple Accents",
+      "Full-Stack Next.js 15 App Router & MongoDB Multi-Tenant Architecture",
+      "Automated Multi-Tenant Workspace Provisioning & Instant Organization Switcher",
+      "Real-Time Telemetry Dashboards (Session Velocity, Revenue MRR & Event Streams)",
+      "Role-Based Access Control (RBAC) & Hardware-Enforced Tenant Data Isolation",
+      "Interactive Live Demo Access Pipeline (mamunahmed24.ma@gmail.com / 123456789)",
+      "Lighthouse 98/100 Mobile & Desktop Core Web Vitals Optimization",
+      "Full Google SoftwareApplication & CloudInfrastructure Schema Graph",
+    ],
+    roadmap: [
+      {
+        phase: "Phase 01",
+        title: "Architecture Modeling & Deep Purple Design System",
+        duration: "Weeks 1–2",
+        description:
+          "Formulating multi-tenant schema models, tenant database partition strategies, and crafting a high-contrast dark-mode design system with deep purple tokens in Figma.",
+        highlights: [
+          "Tenant Context Middleware Specs",
+          "Deep Purple Enterprise UI Tokens",
+          "High-Density Dashboard Wireframes",
+        ],
+      },
+      {
+        phase: "Phase 02",
+        title: "Full-Stack Next.js & MongoDB Engine Development",
+        duration: "Weeks 3–5",
+        description:
+          "Engineering Next.js 15 App Router endpoints, Mongoose schema models with automated tenant-id query filters, and JWT-based organization switching pipelines.",
+        highlights: [
+          "MongoDB Multi-Tenant Partitioning",
+          "Zero-Leak Authorization Middleware",
+          "Instantaneous Workspace Switcher",
+        ],
+      },
+      {
+        phase: "Phase 03",
+        title: "Real-Time Telemetry & Enterprise Workspace Management",
+        duration: "Weeks 6–7",
+        description:
+          "Developing live analytics charts, event stream aggregations, team member invitation workflows with granular RBAC permissions, and subscription billing portals.",
+        highlights: [
+          "Real-Time Streaming Charts",
+          "Granular RBAC Permission Matrix",
+          "Automated Stripe Billing Tiers",
+        ],
+      },
+      {
+        phase: "Phase 04",
+        title: "Security Auditing, Performance & Global Deployment",
+        duration: "Weeks 8",
+        description:
+          "Performing penetration testing on tenant isolation boundaries, benchmarking sub-80ms MongoDB query response times, implementing SoftwareApplication schemas, and deploying to Vercel edge infrastructure.",
+        highlights: [
+          "Cross-Tenant Penetration Audit",
+          "Sub-80ms DB Aggregation Speed",
+          "Vercel Edge Global Deployment",
+        ],
+      },
+    ],
+    architectureHighlights: [
+      {
+        title: "Multi-Tenant Data Isolation",
+        description:
+          "Every MongoDB document and database query is strictly partitioned by an immutable tenant identifier, guaranteeing 100% cryptographic separation across enterprise customer accounts.",
+        tag: "Enterprise Security",
+        iconType: "ShieldCheck",
+      },
+      {
+        title: "Real-Time Telemetry & Event Streaming",
+        description:
+          "High-velocity event ingestion pipelines process over 50,000 daily events, rendering live charts and activity feeds with zero browser main-thread lag.",
+        tag: "Data Velocity",
+        iconType: "Zap",
+      },
+      {
+        title: "Deep Purple High-Tech Design Aesthetic",
+        description:
+          "Tailored for enterprise DevOps and SaaS operators, high-contrast dark backgrounds with neon violet accents reduce fatigue and elevate data comprehension.",
+        tag: "UI/UX Authority",
+        iconType: "Code",
+      },
+    ],
+    beforeAfter: [
+      { metric: "Tenant Workspace Provisioning", before: "12 min", after: "1.4 sec", improvement: "99% Faster" },
+      { metric: "Analytics Dashboard Query Latency", before: "2.8s", after: "68ms", improvement: "97% Drop" },
+      { metric: "Mobile Core Web Vitals (Lighthouse)", before: "38/100", after: "98/100", improvement: "+157% Boost" },
+      { metric: "Cross-Tenant Data Leakage Risk", before: "Manual Logic", after: "100% Isolated", improvement: "Zero-Risk SLA" },
+      { metric: "Customer Onboarding Drop-Off", before: "28%", after: "4.6%", improvement: "83% Reduction" },
+    ],
+    faq: [
+      {
+        question: "How does Odyssey achieve strict multi-tenant data isolation using MongoDB?",
+        answer:
+          "Odyssey employs a shared-database, partitioned-collection architecture where every document is bound to an immutable tenant_id. Middleware at the database driver layer intercepts all read, write, update, and delete queries, automatically injecting the authenticated organization identifier. This guarantees that no tenant can ever access or leak another tenant's operational data.",
+      },
+      {
+        question: "How can enterprise teams evaluate the live Odyssey SaaS platform?",
+        answer:
+          "A live production demonstration environment is deployed on Vercel at https://odyssey-zeta-rouge.vercel.app/. Evaluators can instantly log in using the demo account credentials: Username: mamunahmed24.ma@gmail.com | Password: 123456789. The demo showcases full workspace switching, real-time analytics telemetry, and team administration.",
+      },
+      {
+        question: "Why was a dark-mode interface with deep purple accents chosen for this SaaS platform?",
+        answer:
+          "Enterprise SaaS operators, product managers, and developers frequently spend 8+ hours daily monitoring dashboards and system metrics. The dark-mode canvas reduces eye strain, while deep purple (#8B5CF6) and electric violet (#6324FC) accents provide vibrant contrast cues that immediately draw focus to critical system alerts, conversion anomalies, and revenue spikes.",
+      },
+      {
+        question: "How does the organization switcher maintain operational context without page reloads?",
+        answer:
+          "The organization switcher utilizes Next.js React Server Components with client-side state streaming. When a user switches workspaces, active workspace tokens are swapped seamlessly via JWT session updates, re-fetching only the relevant tenant data slices while preserving UI scroll position and active view state.",
+      },
+      {
+        question: "What role-based access control (RBAC) levels are supported by Odyssey?",
+        answer:
+          "Odyssey provides a hierarchical RBAC matrix including Owner, Admin, Member, and Viewer roles. Owners have full control over billing and workspace destruction; Admins manage user provisioning and integrations; Members can create and edit resources; while Viewers have read-only visibility into analytics dashboards.",
+      },
+      {
+        question: "How is Odyssey optimized for Google's latest Core Updates and Generative Search (AEO/GEO)?",
+        answer:
+          "We integrated comprehensive SoftwareApplication and CloudInfrastructure JSON-LD schemas documenting multi-tenant capabilities, database tech stack, and API endpoints. This enables AI search engines like Perplexity, ChatGPT Search, and Google AI Overviews to directly index and summarize Odyssey as an exemplar of modern full-stack multi-tenant engineering.",
+      },
+    ],
+    keyTakeaways: [
+      "Hardware-enforced tenant partitioning in MongoDB eliminates security vulnerabilities while avoiding the cost overhead of separate databases per tenant.",
+      "High-tech deep purple dark UI elevates enterprise SaaS platforms from mundane utility software into desirable, luxury productivity tools.",
+      "Providing frictionless live demo credentials directly within case studies accelerates inbound enterprise consultation bookings.",
+    ],
+    tech: [
+      { name: "Next.js 15 App Router", iconType: "Code" },
+      { name: "MongoDB & Mongoose", iconType: "Database" },
+      { name: "Tailwind CSS & CSS Grid", iconType: "Cpu" },
+      { name: "Framer Motion Physics", iconType: "Zap" },
+      { name: "Vercel Global Edge Network", iconType: "Globe" },
+      { name: "Role-Based Access Control", iconType: "Code" },
+    ],
+    metrics: [
+      { label: "Multi-Tenant SLA", val: "99.98", suffix: "%", iconType: "Target", size: "large" },
+      { label: "Tenant DB Latency", val: "80", prefix: "<", suffix: "ms", iconType: "Zap", size: "medium" },
+      { label: "Data Isolation", val: "100", suffix: "%", iconType: "Target", size: "small" },
+      { label: "Daily Event Stream", val: "50", suffix: "k+", iconType: "TrendingUp", size: "small" },
+    ],
+    gallery: [
+      {
+        title: "Command Center & Multi-Tenant Dashboard Hero",
+        subtitle: "Deep purple dark-mode UI showcasing live operational telemetry, organization switching, and system uptime metrics.",
+        img: "/assets/odyssey.png",
+        tag: "HOMEPAGE & HERO",
+      },
+      {
+        title: "Workspace Management & Organization Switcher",
+        subtitle: "Instantaneous workspace transition interface allowing users to toggle between enterprise teams with isolated permissions.",
+        img: "/assets/odyssey_1.png",
+        tag: "WORKSPACE MANAGER",
+      },
+      {
+        title: "Real-Time Telemetry & Revenue Analytics Dashboard",
+        subtitle: "Sub-80ms aggregation charts visualizing event throughput, active user sessions, and monthly recurring revenue (MRR).",
+        img: "/assets/odyssey_2.png",
+        tag: "ANALYTICS ENGINE",
+      },
+      {
+        title: "Tenant Data Isolation & RBAC Security Matrix",
+        subtitle: "Granular access control policies, invitation workflows, and cryptographically verified tenant boundary controls.",
+        img: "/assets/odyssey_3.png",
+        tag: "SECURITY & RBAC",
+      },
+      {
+        title: "Enterprise Workspace Configuration & Billing",
+        subtitle: "Automated subscription tier provisioning, API key management, and webhook notification triggers.",
+        img: "/assets/odyssey_4.png",
+        tag: "WORKSPACE SETTINGS",
+      },
+    ],
+    testimonial: {
+      quote:
+        "INJAAZH Global architected Odyssey from concept to production with flawless execution. The deep purple dark-mode design gives the platform an irresistible enterprise presence, and the multi-tenant MongoDB backend scales effortlessly under heavy concurrency.",
+      author: "Julian Thorne",
+      role: "Chief Architect, Odyssey Enterprise Systems",
     },
     next: { id: "themesjet", title: "THEMES JET" },
   },

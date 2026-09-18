@@ -152,6 +152,99 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
     })),
   } : null;
 
+  // MedicalBusiness Schema for MedTech Clients (Enhancing Google EEAT & AEO Knowledge Graph)
+  const medicalBusinessJsonLd = project.slug === "the-ultrasound-source" ? {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    name: "The Ultrasound Source LLC",
+    image: `https://injaazh.com/assets/tuss.png`,
+    "@id": "https://theultrasoundsource.com/",
+    url: "https://theultrasoundsource.com/",
+    telephone: "+1-888-514-0911",
+    priceRange: "$$$$",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Greer",
+      addressRegion: "SC",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 34.9387,
+      longitude: -82.2271,
+    },
+    medicalSpecialty: [
+      "Cardiovascular",
+      "Obstetric",
+      "Gynecologic",
+      "Radiologic",
+      "Musculoskeletal",
+      "Vascular",
+    ],
+  } : null;
+
+  // SoftwareApplication & FinancialService Schema for FinTech & API Infrastructure (Aegis)
+  const financialSoftwareJsonLd = project.slug === "aegis" ? {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Aegis Institutional Financial Infrastructure",
+    applicationCategory: "FinancialApplication",
+    operatingSystem: "Cloud / Edge API",
+    image: `https://injaazh.com/assets/aegis_hero.png`,
+    url: "https://aegis-fintech.netlify.app/",
+    description: project.overview,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      description: "Developer Sandbox & Instant API Onboarding",
+    },
+    provider: {
+      "@type": "FinancialService",
+      name: "Aegis Financial Technologies",
+      url: "https://aegis-fintech.netlify.app/",
+      currenciesAccepted: "USD, EUR, GBP, CAD, AUD, JPY, and 130+ more",
+      paymentAccepted: "Credit Card, Wire, ACH, SEPA, FedNow, Pix",
+    },
+    featureList: [
+      "Global Multi-Currency Routing Engine (135+ Currencies)",
+      "Composable REST APIs & Native SDKs (Node, Python, Go, PHP)",
+      "Built-in Idempotency Key Processing",
+      "Real-Time Treasury Management & Account Ledgers",
+      "Machine Learning Fraud Defense & Chargeback Prevention",
+    ],
+  } : null;
+
+  // SoftwareApplication Schema for Multi-Tenant Cloud Architecture (Odyssey)
+  const odysseySoftwareJsonLd = project.slug === "odyssey" ? {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Odyssey Multi-Tenant SaaS Infrastructure",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Cloud / Edge Serverless",
+    image: `https://injaazh.com/assets/odyssey.png`,
+    url: "https://odyssey-zeta-rouge.vercel.app/",
+    description: project.overview,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      description: "Live Enterprise Demonstration Access (mamunahmed24.ma@gmail.com / 123456789)",
+    },
+    provider: {
+      "@type": "Organization",
+      name: "Odyssey Enterprise Systems",
+      url: "https://odyssey-zeta-rouge.vercel.app/",
+    },
+    featureList: [
+      "Multi-Tenant Workspace Provisioning & Isolation",
+      "Next.js 15 App Router & MongoDB Backend Architecture",
+      "Role-Based Access Control (RBAC) Security Matrix",
+      "Real-Time Analytics & Revenue Telemetry Dashboards",
+      "Automated Stripe Subscription Billing & Organization Switcher",
+    ],
+  } : null;
+
   return (
     <>
       <script
@@ -166,6 +259,24 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
+      {medicalBusinessJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalBusinessJsonLd) }}
+        />
+      )}
+      {financialSoftwareJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(financialSoftwareJsonLd) }}
+        />
+      )}
+      {odysseySoftwareJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(odysseySoftwareJsonLd) }}
         />
       )}
       <WorkDetailClient project={project} allProjects={projectsData} />
