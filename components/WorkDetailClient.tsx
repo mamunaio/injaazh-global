@@ -131,6 +131,15 @@ export default function WorkDetailClient({
   const accentColor = project.accent || "#6324FC";
   const secondaryAccent = project.secondaryAccent || "#00E5FF";
 
+  const mobileImageSrc =
+    project.mobileImg ||
+    project.gallery?.find(
+      (g) =>
+        g.tag.toLowerCase().includes("mobile") ||
+        g.title.toLowerCase().includes("mobile")
+    )?.img ||
+    project.img;
+
   return (
     <main
       ref={containerRef}
@@ -365,7 +374,7 @@ export default function WorkDetailClient({
                     <div className="relative w-[280px] sm:w-[320px] aspect-[9/19] rounded-[2.5rem] border-[6px] border-[#222230] overflow-hidden shadow-2xl bg-black">
                       <div className="absolute top-2 left-1/2 -translate-x-1/2 w-28 h-4 bg-[#222230] rounded-full z-20" />
                       <Image
-                        src={project.img}
+                        src={mobileImageSrc}
                         alt={`${project.title} Mobile Interface`}
                         fill
                         className="object-cover object-top"
@@ -857,10 +866,10 @@ export default function WorkDetailClient({
             <div className="relative aspect-[9/18] w-full rounded-[2rem] overflow-hidden bg-black border-2 border-white/10">
               <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-white/10 rounded-full z-20" />
               <Image
-                src={project.img}
+                src={mobileImageSrc}
                 alt={`${project.title} Mobile`}
                 fill
-                className="object-cover object-center"
+                className="object-cover object-top"
               />
             </div>
           </motion.div>

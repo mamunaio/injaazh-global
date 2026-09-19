@@ -55,6 +55,7 @@ export interface ProjectDetail {
   client: string;
   year: string;
   img: string;
+  mobileImg?: string;
   accent: string;
   secondaryAccent?: string;
   link?: string;
@@ -340,6 +341,7 @@ export const flagshipProjects: Record<string, ProjectDetail> = {
     client: "AKA Moving Corp",
     year: "2024",
     img: "/assets/aka-moving.png",
+    mobileImg: "/assets/aka_moving_phone_view.jpeg",
     accent: "#00E5FF",
     secondaryAccent: "#6324FC",
     link: "https://akamoving.com",
