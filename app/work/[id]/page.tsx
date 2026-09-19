@@ -315,6 +315,50 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
     ],
   } : null;
 
+  // SoftwareApplication & LogisticsService Schema for Deliver My Motor (EEAT / GEO / AEO)
+  const deliverMyMotorJsonLd = project.slug === "deliver-my-motor" ? {
+    "@context": "https://schema.org",
+    "@type": ["SoftwareApplication", "Service"],
+    name: "Deliver My Motor — UK Vehicle Transport Marketplace",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web / Mobile Responsive",
+    image: `https://injaazh.com/assets/deliver-my-motor.png`,
+    url: "https://www.delivermymotor.com/",
+    description: project.overview,
+    serviceType: "Motor Transport Marketplace",
+    areaServed: [
+      {
+        "@type": "Country",
+        name: "United Kingdom",
+      },
+      {
+        "@type": "Country",
+        name: "Ireland",
+      },
+    ],
+    provider: {
+      "@type": "Organization",
+      name: "Deliver My Motor UK",
+      url: "https://www.delivermymotor.com/",
+    },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "GBP",
+      description: "Instant Free Vehicle Transport Quotes in Under 60 Seconds",
+    },
+    featureList: [
+      "Sub-60s Algorithmic Vehicle Transport Quote Calculator",
+      "UK Postcode Distance Matrix Geocoding",
+      "Vetted & Insured UK Transporter Network (GIT Insurance)",
+      "Live Transporter Job Dispatch & Route Optimization Feed",
+      "Auction Collection Workflow (BCA, Copart, Manheim)",
+      "Multi-Vehicle Categories: Cars, Vans, Motorbikes, Boats, Recovery",
+      "Trade Plate Driver and Flatbed Trailer Options",
+      "Twilio SMS & Automated Email Dispatch Alerts",
+    ],
+  } : null;
+
   return (
     <>
       <script
@@ -353,6 +397,12 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(salamMedicalJsonLd) }}
+        />
+      )}
+      {deliverMyMotorJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(deliverMyMotorJsonLd) }}
         />
       )}
       <WorkDetailClient project={project} allProjects={projectsData} />
