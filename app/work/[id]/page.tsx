@@ -359,6 +359,55 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
     ],
   } : null;
 
+  // OnlineStore & PetStore Schema for Pawsome (EEAT / GEO / AEO)
+  const pawsomeStoreJsonLd = project.slug === "pawsome" ? {
+    "@context": "https://schema.org",
+    "@type": ["OnlineStore", "Store"],
+    name: "Pawsome — Pet Care & E-Commerce",
+    applicationCategory: "ShoppingApplication",
+    image: `https://injaazh.com/assets/pawsome.png`,
+    url: "https://pawsome-buddy.netlify.app/",
+    description: project.overview,
+    priceRange: "$$",
+    paymentAccepted: "Credit Card, Debit Card, Apple Pay, Google Pay",
+    currenciesAccepted: "USD",
+    provider: {
+      "@type": "Organization",
+      name: "Pawsome Buddy",
+      url: "https://pawsome-buddy.netlify.app/",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Pawsome Pet Supplies & Nutrition",
+      itemListElement: [
+        {
+          "@type": "OfferCatalog",
+          name: "Dog Supplies & Orthopedic Beds",
+        },
+        {
+          "@type": "OfferCatalog",
+          name: "Cat Essentials, Scratchers & Trees",
+        },
+        {
+          "@type": "OfferCatalog",
+          name: "Organic Pet Treats & Human-Grade Food",
+        },
+        {
+          "@type": "OfferCatalog",
+          name: "Indestructible Toys & Enrichment Gear",
+        },
+      ],
+    },
+    featureList: [
+      "Playful pastel UI design system with rounded organic micro-interactions",
+      "Interactive 'Pawsome Pet Profile' breed psychology & play style matchmaker",
+      "Gamified pet nutrition stat blocks (Energy, Immunity, Coat Health)",
+      "Trending Now dynamic flash deals & real-time cart drawer",
+      "100% organic, vet-approved, and cruelty-free curated pet catalog",
+      "Verified customer review matrix with real video unboxings",
+    ],
+  } : null;
+
   return (
     <>
       <script
@@ -403,6 +452,12 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(deliverMyMotorJsonLd) }}
+        />
+      )}
+      {pawsomeStoreJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(pawsomeStoreJsonLd) }}
         />
       )}
       <WorkDetailClient project={project} allProjects={projectsData} />
