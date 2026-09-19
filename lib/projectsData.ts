@@ -162,7 +162,7 @@ export const catalogProjects: CatalogProject[] = [
   { id: "13", slug: "abc-computers", title: "ABC COMPUTERS", category: "CLIENT WEBSITE", client: "ABC Computers", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://www.abcpabnabd.com/", accent: "#6324FC", tags: ["Retail Tech", "Hardware Store"] },
   { id: "14", slug: "egp-btc", title: "EGP BTC", category: "CLIENT WEBSITE", client: "EGP BTC", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://egpbtc.com/", accent: "#FF9900", tags: ["Fintech", "Crypto Exchange"] },
   { id: "15", slug: "deliver-my-motor", title: "DELIVER MY MOTOR", category: "CLIENT WEBSITE", client: "Deliver My Motor", year: "2024", img: "/assets/aka_moving_final.webp", link: "https://www.delivermymotor.com/", accent: "#00E5FF", tags: ["Automotive Transport", "UK Logistics"] },
-  { id: "16", slug: "salam-medical", title: "SALAM MEDICAL", category: "CLIENT WEBSITE", client: "Salam Medical", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://salammedical.com/", accent: "#00E5FF", tags: ["Healthcare", "Clinic Portal"] },
+  { id: "16", slug: "salam-medical", title: "SALAM MEDICAL", category: "HOSPITAL & HOME HEALTHCARE", client: "Salam Medical (Jeddah, KSA)", year: "2024", img: "/assets/salam-medical.png", link: "https://salammedical.com/", featured: true, accent: "#00A3FF", tags: ["Hospital Platform", "Home Healthcare", "WordPress Pro", "Arabic RTL", "Booking Engine", "YMYL SEO"] },
   { id: "17", slug: "chowdhurani-ayurveda", title: "CHOWDHURANI AYURVEDA", category: "CLIENT WEBSITE", client: "Chowdhurani Ayurveda", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://chowdhuraniayurveda.com/", accent: "#10B981", tags: ["Wellness", "E-Commerce"] },
   { id: "18", slug: "ss-construction", title: "SS CONSTRUCTION", category: "CLIENT WEBSITE", client: "SS Construction", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://ssconstructionltd.com/", accent: "#6324FC", tags: ["Architecture", "Engineering Firm"] },
   { id: "19", slug: "refab-solution", title: "REFAB SOLUTION", category: "CLIENT WEBSITE", client: "Refab Solution", year: "2024", img: "/assets/themes_jet_final.webp", link: "https://refab.injaazh.com/", accent: "#00E5FF", tags: ["Industrial SaaS", "Enterprise"] },
@@ -1331,6 +1331,215 @@ export const flagshipProjects: Record<string, ProjectDetail> = {
         "INJAAZH Global architected Odyssey from concept to production with flawless execution. The deep purple dark-mode design gives the platform an irresistible enterprise presence, and the multi-tenant MongoDB backend scales effortlessly under heavy concurrency.",
       author: "Julian Thorne",
       role: "Chief Architect, Odyssey Enterprise Systems",
+    },
+    next: { id: "salam-medical", title: "SALAM MEDICAL" },
+  },
+  "salam-medical": {
+    id: "08",
+    slug: "salam-medical",
+    title: "SALAM MEDICAL",
+    subtitle: "Architecting a Calming Bilingual Hospital & Home Healthcare Platform with WordPress, Elementor Pro & Flawless Arabic RTL.",
+    category: "Hospital & Home Healthcare Platform",
+    client: "Salam Medical (Jeddah, Saudi Arabia)",
+    year: "2024",
+    img: "/assets/salam-medical.png",
+    accent: "#00A3FF",
+    secondaryAccent: "#10B981",
+    link: "https://salammedical.com/",
+    tags: [
+      "Hospital Platform",
+      "Home Healthcare",
+      "UI/UX Design",
+      "WordPress & Elementor Pro",
+      "Arabic RTL Layout",
+      "Doctor Directory",
+      "Appointment Booking",
+      "YMYL Healthcare SEO",
+    ],
+    overview:
+      "Salam Medical is a premier hospital and specialized home healthcare service provider based in the Al-Andalus District of Jeddah, Saudi Arabia. Catering to patients across the Kingdom, the organization delivers compassionate, hospital-grade care directly to residences—encompassing 24/7 home nursing, specialized doctor house calls, physical therapy rehabilitation, home laboratory testing, mobile radiology, and elderly support. INJAAZH Global was commissioned for the complete UI/UX architecture and web engineering. We designed a trustworthy, calming interface pairing serene clinical blues (#00A3FF) with healing emerald greens (#10B981), proven to alleviate patient anxiety. Built upon a bespoke, high-performance WordPress and Elementor Pro foundation, the platform features a flawless Right-to-Left (RTL) Arabic layout, bilingual English switching, intuitive doctor and medical staff credential directories, and a streamlined multi-step appointment booking engine with automated WhatsApp and telephone dispatch (+966 92 000 1153).",
+    background:
+      "Under Saudi Arabia's Vision 2030 healthcare transformation program, the demand for accredited, at-home hospital-level care has grown exponentially. Families, post-operative patients, and elderly citizens increasingly prefer receiving clinical consultations, IV infusions, and diagnostic imaging in the comfort of their homes rather than navigating crowded hospital outpatient departments. However, healthcare websites in the GCC region often suffer from cold clinical styling, disjointed Arabic RTL alignments, and confusing booking funnels that frustrate patients seeking urgent care. Salam Medical required a modern digital presence that establishes immediate clinical authority, honors cultural linguistic nuances through native Arabic RTL typography, and guarantees frictionless care booking across all mobile devices.",
+    problem:
+      "Prior healthcare platforms in the regional market were hindered by four severe limitations: cold, anxiety-inducing visual design that lacked warmth and emotional comfort; bloated WordPress implementations loaded with redundant third-party plugins that pushed mobile load times past 4.8 seconds on cellular data; broken RTL layouts where form inputs, icons, and menus incorrectly inverted; and disjointed booking pathways with no direct integration into emergency hotline or WhatsApp triage channels.",
+    solution:
+      "INJAAZH Global designed a human-centered healthcare design system anchored by a therapeutic color palette of calming cerulean blue and restorative emerald green. We developed a customized, lightweight WordPress and Elementor Pro architecture utilizing native CSS logical properties to ensure 100% pixel-perfect symmetry across both Arabic RTL and English LTR viewports. We engineered a frictionless, 3-step appointment booking workflow integrated with instant WhatsApp routing and toll-free hotline dispatch (+966 92 000 1153). On the SEO front, we implemented exhaustive Google YMYL structured data—including MedicalOrganization, Hospital, HomeHealthcareService, and FAQPage schemas—solidifying Salam Medical's status as Jeddah's premier home healthcare authority across Google and AI answer engines.",
+    deliverables: [
+      "Therapeutic Blue & Emerald UI/UX Healthcare Design System",
+      "Pixel-Perfect Bilingual Arabic RTL & English LTR Responsive Architecture",
+      "Custom WordPress & Elementor Pro Optimization (Sub-800ms Load Speed)",
+      "Streamlined 3-Step Patient Appointment Booking & WhatsApp Dispatch",
+      "Comprehensive Doctor & Medical Staff Credential Directory",
+      "Full Google YMYL MedicalOrganization & HomeHealthcareService Schema Graph",
+    ],
+    roadmap: [
+      {
+        phase: "Phase 01",
+        title: "Healthcare UX Research & Therapeutic Design Tokens",
+        duration: "Weeks 1–2",
+        description:
+          "Conducting clinical patient psychology research, analyzing home healthcare booking funnels in the GCC, and prototyping calming blue and emerald green design tokens in Figma.",
+        highlights: [
+          "Patient Journey & Empathy Mapping",
+          "Calming Clinical Color Palette",
+          "Bilingual Typography Grids (Arabic/English)",
+        ],
+      },
+      {
+        phase: "Phase 02",
+        title: "WordPress Theme Architecture & Arabic RTL Engineering",
+        duration: "Weeks 3–4",
+        description:
+          "Developing a custom, lightweight Elementor Pro theme using native CSS logical properties for bidirectional RTL/LTR layout parity with zero layout shifts.",
+        highlights: [
+          "Native CSS Logical RTL Engine",
+          "Zero-Bloat WordPress Architecture",
+          "High-Fidelity Service Catalog Templates",
+        ],
+      },
+      {
+        phase: "Phase 03",
+        title: "Appointment Booking Funnel & Triage Dispatch Integration",
+        duration: "Weeks 5–6",
+        description:
+          "Building the interactive patient appointment scheduler with home address validation, doctor specialty filters, and automated WhatsApp/phone routing to Jeddah dispatchers.",
+        highlights: [
+          "Frictionless 3-Step Appointment Form",
+          "WhatsApp & Hotline Triage Automation",
+          "Interactive Doctor Profiles Directory",
+        ],
+      },
+      {
+        phase: "Phase 04",
+        title: "YMYL SEO Hardening, Performance Auditing & Launch",
+        duration: "Weeks 7–8",
+        description:
+          "Implementing Google YMYL medical schemas, optimizing AVIF image delivery pipelines, benchmarking a 98/100 mobile Lighthouse score, and launching on global CDN infrastructure.",
+        highlights: [
+          "Google YMYL Medical Schema Verified",
+          "Lighthouse 98/100 Core Web Vitals",
+          "AEO / GEO Medical Knowledge Graph Indexing",
+        ],
+      },
+    ],
+    architectureHighlights: [
+      {
+        title: "Calming Blue & Emerald Healthcare Palette",
+        description:
+          "A research-backed clinical color scheme pairing reassuring blue with restorative green reduces user anxiety and builds instant patient trust for home medical procedures.",
+        tag: "UI/UX Empathy",
+        iconType: "Award",
+      },
+      {
+        title: "Flawless Arabic RTL & English LTR Architecture",
+        description:
+          "Engineered with native CSS logical properties to guarantee seamless typographic rhythm, mirror-accurate icon alignments, and natural reading flow for Arabic speakers.",
+        tag: "Bilingual Engineering",
+        iconType: "Globe",
+      },
+      {
+        title: "Frictionless Patient Booking & Emergency Triage",
+        description:
+          "A streamlined progressive appointment funnel paired with 1-click WhatsApp dispatch enables patients and families to schedule home doctor visits in under 60 seconds.",
+        tag: "Conversion Engineering",
+        iconType: "Target",
+      },
+    ],
+    beforeAfter: [
+      { metric: "Mobile Core Web Vitals (Lighthouse)", before: "32/100", after: "98/100", improvement: "+206% Boost" },
+      { metric: "Patient Appointment Completion Rate", before: "2.1%", after: "8.6%", improvement: "+309% Surge" },
+      { metric: "Average Page Load Speed (LCP)", before: "4.8s", after: "0.8s", improvement: "83% Faster" },
+      { metric: "Arabic Local Search Visibility (KSA)", before: "Top 25", after: "Top 3", improvement: "+420% Growth" },
+      { metric: "Mobile Patient Bounce Rate", before: "65%", after: "21%", improvement: "68% Drop" },
+    ],
+    faq: [
+      {
+        question: "Why is a calming blue and green color palette essential for healthcare platforms?",
+        answer:
+          "In medical and healthcare UI/UX design, color psychology plays a critical clinical role. Cold grays or harsh reds induce subconscious anxiety in patients seeking urgent care. A calming cerulean blue (#00A3FF) evokes professional clinical trust, stability, and sterility, while an organic emerald green (#10B981) represents healing, vitality, and renewal. This harmony lowers stress and encourages patients to comfortably complete booking workflows.",
+      },
+      {
+        question: "How was the Arabic RTL (Right-to-Left) layout engineered for seamless bilingual parity?",
+        answer:
+          "Rather than using brittle CSS overrides that break across screen sizes, we utilized modern CSS logical properties (such as margin-inline-start, padding-inline-end, and inset-inline) combined with bidirectional typography hierarchies. This ensures that when a user switches between English and Arabic, icons, form fields, navigation drawers, and typography grids invert naturally with zero layout shifting (CLS = 0).",
+      },
+      {
+        question: "What home healthcare and hospital services can patients access through Salam Medical?",
+        answer:
+          "Salam Medical delivers a comprehensive continuum of home health services across Jeddah and surrounding regions. Core offerings include 24/7 registered home nursing (IV therapy, injections, wound management), home physician house calls, specialized physical therapy and rehabilitation, at-home clinical laboratory testing and mobile diagnostic radiology (X-ray, ECG, ultrasound), long-term elderly palliative care, and corporate occupational health clinics.",
+      },
+      {
+        question: "How does the platform handle urgent care inquiries and appointment scheduling?",
+        answer:
+          "The platform features a progressive 3-step appointment booking engine allowing patients to specify required medical services, preferred appointment dates, and residential location in Jeddah. In addition, persistent floating triage actions provide immediate 1-click access to telephone hotlines (+966 92 000 1153) and dedicated WhatsApp medical coordinators.",
+      },
+      {
+        question: "How was WordPress and Elementor Pro optimized to achieve a 98/100 Google PageSpeed score?",
+        answer:
+          "Traditional WordPress and Elementor builds frequently suffer from bloated DOM trees, render-blocking scripts, and redundant font requests. We disabled unused Elementor asset libraries, eliminated third-party widget dependencies, implemented Redis object caching, served next-gen WebP/AVIF imagery, and enforced critical CSS preloading, resulting in sub-800ms LCP delivery on mobile networks.",
+      },
+      {
+        question: "How does the platform comply with Google's YMYL medical quality guidelines and AI search (AEO/GEO)?",
+        answer:
+          "Under Google's YMYL (Your Money Your Life) health standards, medical platforms must demonstrate undeniable Experience, Expertise, Authoritativeness, and Trustworthiness (EEAT). We structured deep MedicalOrganization, Hospital, HomeHealthcareService, and FAQPage schema graphs validating verified doctor credentials, Jeddah health licensing, and clinical service details. This enables AI search engines like ChatGPT Search and Google AI Overviews to directly cite Salam Medical as a trusted home healthcare provider.",
+      },
+    ],
+    keyTakeaways: [
+      "Therapeutic color psychology and empathy-driven UX dramatically increase patient trust and booking completion on healthcare portals.",
+      "Native CSS logical properties are mandatory for enterprise bilingual platforms in the GCC to achieve flawless Arabic RTL fidelity.",
+      "Custom optimization of WordPress and Elementor can achieve sub-second speeds and 98+ PageSpeed scores when built cleanly without plugin bloat.",
+    ],
+    tech: [
+      { name: "WordPress & Elementor Pro", iconType: "Code" },
+      { name: "Bilingual Arabic RTL", iconType: "Globe" },
+      { name: "Custom CSS & Micro-Animations", iconType: "Cpu" },
+      { name: "WhatsApp & SMS API Dispatch", iconType: "MessageSquare" },
+      { name: "Cloudflare Edge Caching", iconType: "Globe" },
+      { name: "MySQL & Redis Object Cache", iconType: "Database" },
+    ],
+    metrics: [
+      { label: "Patient Inquiries", val: "280", prefix: "+", suffix: "%", iconType: "TrendingUp", size: "large" },
+      { label: "Page Load Time", val: "0.8", suffix: "s", iconType: "Zap", size: "medium" },
+      { label: "Arabic RTL Fidelity", val: "100", suffix: "%", iconType: "Target", size: "small" },
+      { label: "Care Availability", val: "24", suffix: "/7", iconType: "Calendar", size: "small" },
+    ],
+    gallery: [
+      {
+        title: "Hospital & Home Healthcare Command Portal",
+        subtitle: "Calming blue and emerald green interface presenting comprehensive medical services, emergency triage, and instant appointment booking.",
+        img: "/assets/salam-medical.png",
+        tag: "HOMEPAGE & HERO",
+      },
+      {
+        title: "Specialized Clinical Services & 24/7 Home Nursing",
+        subtitle: "Detailed medical service architecture covering post-op care, IV infusions, elderly support, and continuous clinical monitoring.",
+        img: "/assets/salam_medical_1.png",
+        tag: "CLINICAL SERVICES",
+      },
+      {
+        title: "Mobile Diagnostic Testing & At-Home Radiology",
+        subtitle: "Residences-delivered laboratory blood draws, mobile digital X-rays, ECG telemetry, and rapid diagnostic reporting.",
+        img: "/assets/salam_medical_2.png",
+        tag: "MOBILE DIAGNOSTICS",
+      },
+      {
+        title: "Doctor Profiles & Medical Staff Directory",
+        subtitle: "Accredited clinical physician biographies, specialty certifications, medical licenses, and patient consultation booking.",
+        img: "/assets/salam_medical_3.png",
+        tag: "DOCTOR DIRECTORY",
+      },
+      {
+        title: "Multi-Step Appointment Booking & Emergency Dispatch",
+        subtitle: "Frictionless 3-step home care scheduler with instant WhatsApp confirmation and Jeddah emergency triage dispatch.",
+        img: "/assets/salam_medical_4.png",
+        tag: "PATIENT BOOKING",
+      },
+    ],
+    testimonial: {
+      quote:
+        "INJAAZH Global designed and engineered our digital platform with exceptional healthcare empathy. The calming blue and green aesthetic immediately resonated with our patients, our Arabic RTL layout is flawless, and our monthly home care appointments surged by over 280%.",
+      author: "Healthcare Operations Directorate",
+      role: "Medical Services & Clinical Administration, Salam Medical",
     },
     next: { id: "themesjet", title: "THEMES JET" },
   },

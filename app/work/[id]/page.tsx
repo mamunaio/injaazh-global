@@ -245,6 +245,76 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
     ],
   } : null;
 
+  // MedicalOrganization & HomeHealthcareService Schema for Salam Medical (EEAT / GEO / YMYL)
+  const salamMedicalJsonLd = project.slug === "salam-medical" ? {
+    "@context": "https://schema.org",
+    "@type": ["MedicalOrganization", "Hospital"],
+    name: "Salam Medical (Salam Home Healthcare)",
+    image: `https://injaazh.com/assets/salam-medical.png`,
+    "@id": "https://salammedical.com/",
+    url: "https://salammedical.com/",
+    telephone: "+966 92 000 1153",
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Al-Andalus District",
+      addressLocality: "Jeddah",
+      postalCode: "23322",
+      addressCountry: "SA",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 21.543333,
+      longitude: 39.172778,
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "00:00",
+        closes: "23:59",
+      },
+    ],
+    medicalSpecialty: [
+      "Home Healthcare",
+      "Nursing",
+      "Physical Therapy",
+      "Geriatric Care",
+      "Mobile Diagnostic Radiology",
+      "Doctor House Calls",
+    ],
+    availableService: [
+      {
+        "@type": "MedicalProcedure",
+        name: "24/7 In-Home Clinical Nursing Care",
+      },
+      {
+        "@type": "MedicalProcedure",
+        name: "Licensed Doctor House Calls & Consultations",
+      },
+      {
+        "@type": "MedicalProcedure",
+        name: "In-Home Physical & Rehabilitation Therapy",
+      },
+      {
+        "@type": "MedicalProcedure",
+        name: "Mobile Diagnostic Radiology & Ultrasound",
+      },
+      {
+        "@type": "MedicalProcedure",
+        name: "At-Home Blood & Laboratory Sample Collection",
+      },
+    ],
+  } : null;
+
   return (
     <>
       <script
@@ -277,6 +347,12 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(odysseySoftwareJsonLd) }}
+        />
+      )}
+      {salamMedicalJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(salamMedicalJsonLd) }}
         />
       )}
       <WorkDetailClient project={project} allProjects={projectsData} />
