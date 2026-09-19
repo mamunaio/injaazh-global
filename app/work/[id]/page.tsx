@@ -657,6 +657,69 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
     },
   } : null;
 
+  // AnimalShelter & NGO Schema for Purrfect Hub (EEAT / GEO / AEO)
+  const purrfectHubJsonLd = project.slug === "purrfect-hub" ? {
+    "@context": "https://schema.org",
+    "@type": ["AnimalShelter", "NGO"],
+    name: "Purrfect Hub Pet Adoption & Care Platform",
+    image: `https://injaazh.com/assets/purrfect-hub.png`,
+    url: "https://purrfect-hub.netlify.app",
+    priceRange: "$$",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "320",
+    },
+    memberOf: [
+      {
+        "@type": "Organization",
+        name: "SafeHome Animal Rescue",
+      },
+      {
+        "@type": "Organization",
+        name: "LoveMutt Rescue Network",
+      },
+      {
+        "@type": "Organization",
+        name: "VetCare Clinical Network",
+      },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Pet Adoption & Feline Care Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Smart Algorithm Pet Adoption Matching",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Veterinarian Clinical Care Guides",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Shelter Pro SaaS Management Membership",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Verified Blockchain Pet Health History",
+          },
+        },
+      ],
+    },
+  } : null;
+
   return (
     <>
       <script
@@ -725,6 +788,12 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(exhaustCleanJsonLd) }}
+        />
+      )}
+      {purrfectHubJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(purrfectHubJsonLd) }}
         />
       )}
       <WorkDetailClient project={project} allProjects={projectsData} />
