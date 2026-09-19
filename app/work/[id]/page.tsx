@@ -408,6 +408,54 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
     ],
   } : null;
 
+  // SoftwareApplication & WebAPI Schema for Dev API Platform (EEAT / GEO / AEO)
+  const devApiJsonLd = project.slug === "dev-api" ? {
+    "@context": "https://schema.org",
+    "@type": ["SoftwareApplication", "WebApplication"],
+    name: "Dev API — Cloud API Documentation & Infrastructure Platform",
+    applicationCategory: "DeveloperApplication",
+    operatingSystem: "Cloud / Edge Serverless",
+    image: `https://injaazh.com/assets/dev-api.png`,
+    url: "https://devapi-saas.netlify.app/",
+    description: project.overview,
+    offers: {
+      "@type": "AggregateOffer",
+      lowPrice: "0",
+      highPrice: "49",
+      priceCurrency: "USD",
+      offerCount: "3",
+      offers: [
+        {
+          "@type": "Offer",
+          name: "Starter Sandbox",
+          price: "0",
+          priceCurrency: "USD",
+          description: "10,000 API calls/mo with 2 API keys and community support",
+        },
+        {
+          "@type": "Offer",
+          name: "Pro Developer",
+          price: "49",
+          priceCurrency: "USD",
+          description: "1,000,000 API calls/mo, unlimited keys, advanced analytics, and webhook retries",
+        },
+      ],
+    },
+    provider: {
+      "@type": "Organization",
+      name: "Dev API Cloud Platform",
+      url: "https://devapi-saas.netlify.app/",
+    },
+    featureList: [
+      "In-browser interactive API playground with live mock endpoints",
+      "Sub-32ms global edge response time across 200+ PoPs",
+      "Built-in OAuth 2.0, API keys, and JWT authentication management",
+      "Automated OpenAPI 3.1 specification generation and SDK exports",
+      "Adaptive sliding-window rate limiting and webhook dead-letter queues",
+      "Real-time analytics dashboards with 99.99% uptime SLA guarantee",
+    ],
+  } : null;
+
   return (
     <>
       <script
@@ -458,6 +506,12 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(pawsomeStoreJsonLd) }}
+        />
+      )}
+      {devApiJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(devApiJsonLd) }}
         />
       )}
       <WorkDetailClient project={project} allProjects={projectsData} />
