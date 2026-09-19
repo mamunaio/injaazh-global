@@ -543,6 +543,120 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
     },
   } : null;
 
+  // AutoRepair & AutomotiveBusiness Schema for Exhaust Clean (EEAT / GEO / Local SEO)
+  const exhaustCleanJsonLd = project.slug === "exhaust-clean" ? {
+    "@context": "https://schema.org",
+    "@type": ["AutoRepair", "AutomotiveBusiness"],
+    name: "Exhaust Clean Australia",
+    image: `https://injaazh.com/assets/exhaust-clean.png`,
+    url: "https://exhaust-cleaning.netlify.app/contact",
+    telephone: "+61-7-3382-7199",
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Brisbane",
+      addressRegion: "QLD",
+      addressCountry: "AU",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -27.4698,
+      longitude: 153.0251,
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+        ],
+        opens: "07:30",
+        closes: "17:00",
+      },
+    ],
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Brisbane",
+      },
+      {
+        "@type": "City",
+        name: "Gold Coast",
+      },
+      {
+        "@type": "State",
+        name: "Queensland",
+      },
+      {
+        "@type": "Country",
+        name: "Australia",
+      },
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "94",
+    },
+    memberOf: [
+      {
+        "@type": "Organization",
+        name: "Capricorn Society",
+      },
+      {
+        "@type": "Organization",
+        name: "Motor Trades Association of Queensland (MTA)",
+      },
+      {
+        "@type": "Organization",
+        name: "Institute of Automotive Mechanical Engineers (IAME)",
+      },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Diesel Emissions & Exhaust Restoration Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "DPF Filter Hydrodynamic Cleaning",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "SCR Selective Catalytic Reduction Inspection",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "DOC Catalyst Cleaning & Flow Testing",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "EGR Valve Carbon Decarb Restoration",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Intercooler Sludge Flushing",
+          },
+        },
+      ],
+    },
+  } : null;
+
   return (
     <>
       <script
@@ -605,6 +719,12 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(akaMovingJsonLd) }}
+        />
+      )}
+      {exhaustCleanJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(exhaustCleanJsonLd) }}
         />
       )}
       <WorkDetailClient project={project} allProjects={projectsData} />
