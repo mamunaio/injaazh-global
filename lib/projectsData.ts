@@ -118,11 +118,11 @@ export const catalogProjects: CatalogProject[] = [
     category: "SERVICE PLATFORM",
     client: "AKA Moving Corp",
     year: "2024",
-    img: "/assets/aka_moving_final.webp",
-    link: "https://akamoving.ca",
+    img: "/assets/aka-moving.png",
+    link: "https://akamoving.com",
     featured: true,
     accent: "#00E5FF",
-    tags: ["Logistics", "Real-Time Booking", "React", "Dynamic Pricing", "Automation"],
+    tags: ["WordPress from Scratch", "Logistics", "Real-Time Booking", "Bilingual EN/FR", "Local SEO", "Automation"],
   },
   {
     id: "03",
@@ -339,15 +339,15 @@ export const flagshipProjects: Record<string, ProjectDetail> = {
     category: "Service Platform & Custom WordPress",
     client: "AKA Moving Corp",
     year: "2024",
-    img: "/assets/aka_moving_final.webp",
+    img: "/assets/aka-moving.png",
     accent: "#00E5FF",
     secondaryAccent: "#6324FC",
-    link: "https://akamoving.ca",
-    tags: ["WordPress from Scratch", "Custom Theme", "Local SEO", "Performance", "Lead Generation", "UI/UX Design"],
+    link: "https://akamoving.com",
+    tags: ["WordPress from Scratch", "Custom Theme", "Local SEO", "Bilingual EN/FR", "Performance", "Lead Generation", "UI/UX Design"],
     overview:
-      "AKA Moving is a premier logistics and relocation enterprise serving commercial and residential clients across Canada. INJAAZH Global designed and developed this moving service platform entirely from scratch using a bespoke WordPress architecture. By rejecting bloated off-the-shelf templates and visual page builders in favor of custom-coded modular templates, we achieved sub-second mobile page loads, intuitive moving service navigation, and a frictionless multi-step quote booking funnel that increased customer inquiries by over 150%.",
+      "I designed and developed this moving service website from scratch using WordPress. The project includes a clean, modern UI along with a fully functional and responsive design. I implemented multiple features to ensure smooth user experience, fast performance, and easy navigation. Special attention was given to fulfilling all client requirements, including comprehensive service pages (Residential Moves, Commercial Office Moves, Cross-Canada Relocations, Warehousing, Waste Removal, and White Glove Service), contact functionality, and optimization for better usability. The final result is a professional, scalable, and user-friendly website tailored to the client’s business needs, serving Montreal and clients across Canada.",
     background:
-      "The moving and storage sector in Canada is characterized by intense local search competition and high buyer anxiety. Customers booking residential or long-distance commercial relocations demand immediate transparency, clear service tier breakdowns, and instant reassurance of licensing and reliability. AKA Moving's previous web presence relied on a generic template that suffered from 4.6-second mobile load times, broken contact forms, and virtually zero visibility across competitive local Google Map Pack searches in Montreal, Toronto, and Ottawa.",
+      "AKA Moving is a premier relocation and logistics enterprise serving commercial and residential clients across Canada. The client required a complete redesign and rebuild from scratch to replace an outdated web presence. The goal was to establish strong brand authority, clearly present complex service tiers, showcase verified customer reviews from Google, Yelp, and HomeStars, provide seamless bilingual English/French (EN|FR) navigation for the Quebec market, and deploy a frictionless instant estimate calculator with direct telephone dispatch (+1 514 915 3967).",
     problem:
       "Legacy moving websites routinely fail due to three critical friction points: first, heavy template bloat that destroys Core Web Vitals (LCP > 4.5s on 4G networks); second, overly long, intimidating inquiry forms that cause over 60% of prospective clients to abandon before submitting; and third, lack of localized semantic schema markup, causing the company to lose valuable Google Maps ranking to regional competitors.",
     solution:
@@ -453,6 +453,26 @@ export const flagshipProjects: Record<string, ProjectDetail> = {
       { label: "Mobile PageSpeed", val: "98", suffix: "/100", iconType: "Zap", size: "small" },
       { label: "Client Satisfaction", val: "98", suffix: "%", iconType: "Target", size: "small" },
       { label: "Bounce Rate Reduction", val: "60", suffix: "%", prefix: "-", iconType: "TrendingUp", size: "medium" },
+    ],
+    gallery: [
+      {
+        title: "Home & Commercial Moving Platform Command Center",
+        subtitle: "Comprehensive desktop interface featuring trust badges (Google 5.0, Yelp, BBB, HomeStars), multi-service breakdown, and instant estimate calculator.",
+        img: "/assets/aka-moving.png",
+        tag: "DESKTOP & ESTIMATOR",
+      },
+      {
+        title: "Mobile Responsive Experience & Bilingual EN/FR Switcher",
+        subtitle: "Pixel-perfect mobile viewport with video demonstration ('Watch how we move'), English/French bilingual toggle, and direct call dispatch (+1 514 915 3967).",
+        img: "/assets/aka_moving_phone_view.jpeg",
+        tag: "MOBILE & BILINGUAL",
+      },
+      {
+        title: "Specialized Relocation Services & Fleet Fleet Logistics",
+        subtitle: "Granular service silos for residential, commercial office moves, cross-Canada relocations, warehousing, waste removal, and white-glove care.",
+        img: "/assets/aka-moving.png",
+        tag: "SERVICE SILOS",
+      },
     ],
     testimonial: {
       quote: "INJAAZH Global designed and developed our moving website from scratch with exceptional attention to detail. The speed, responsive feel, and quote funnel immediately boosted our daily inquiries. It is easily the best investment we made for our business.",

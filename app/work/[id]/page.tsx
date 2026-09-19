@@ -456,6 +456,53 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
     ],
   } : null;
 
+  // MovingCompany & LocalBusiness Schema for AKA Moving (EEAT / GEO / Local SEO)
+  const akaMovingJsonLd = project.slug === "aka-moving" ? {
+    "@context": "https://schema.org",
+    "@type": ["MovingCompany", "LocalBusiness"],
+    name: "AKA Moving Corp",
+    image: `https://injaazh.com/assets/aka-moving.png`,
+    url: "https://akamoving.com",
+    telephone: "+1-514-915-3967",
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Montreal",
+      addressRegion: "QC",
+      addressCountry: "CA",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 45.5017,
+      longitude: -73.5673,
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "08:00",
+        closes: "20:00",
+      },
+    ],
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Montreal",
+      },
+      {
+        "@type": "Country",
+        name: "Canada",
+      },
+    ],
+  } : null;
+
   return (
     <>
       <script
@@ -512,6 +559,12 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(devApiJsonLd) }}
+        />
+      )}
+      {akaMovingJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(akaMovingJsonLd) }}
         />
       )}
       <WorkDetailClient project={project} allProjects={projectsData} />
