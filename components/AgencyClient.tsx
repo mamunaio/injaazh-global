@@ -71,10 +71,10 @@ const clients = [
   },
   {
     name: "Nexus Esports",
-    industry: "Gaming Content",
+    industry: "UI/UX & Web Dev",
     location: "Los Angeles, US",
-    accent: "group-hover:bg-[#6324FC]",
-    image: "/assets/nexus_esports_final.webp",
+    accent: "group-hover:bg-[#FF2D55]",
+    image: "/assets/nexus_esports.png",
   },
   {
     name: "Novacore",
@@ -108,8 +108,8 @@ const featuredCaseStudies = [
   },
   {
     slug: "nexus-esports",
-    title: "Nexus Esports — Content Strategy",
-    image: "/assets/nexus_esports_final.webp",
+    title: "Nexus Esports — UI/UX & Web Dev",
+    image: "/assets/nexus_esports.png",
   },
   {
     slug: "novacore-esports",

@@ -75,7 +75,7 @@ export default function HeroSlider() {
         className="absolute bottom-[17%] right-[3%] w-[32vw] h-[16vh] md:bottom-[6%] md:right-[5%] md:w-[22vw] md:h-[30vh] rounded-3xl overflow-hidden shadow-2xl shadow-black/50 border border-primary/10 z-10 block"
       >
         <div className="absolute inset-0 bg-black/20 hover:bg-transparent transition-colors duration-500 z-10" />
-        <Image src="/assets/nexus_esports_final.webp" alt="Project 2" fill sizes="(max-width: 768px) 100vw, (min-width: 768px) 22vw, 32vw" className="object-cover" priority />
+        <Image src="/assets/nexus_esports.png" alt="Project 2" fill sizes="(max-width: 768px) 100vw, (min-width: 768px) 22vw, 32vw" className="object-cover" priority />
       </motion.div>
 
       {/* Floating Image 3 - Center Top */}
@@ -87,7 +87,7 @@ export default function HeroSlider() {
         className="absolute top-[12%] right-[20%] w-[15vw] h-[20vh] rounded-3xl overflow-hidden shadow-2xl shadow-black/50 border border-primary/10 z-0 hidden md:block"
       >
         <div className="absolute inset-0 bg-black/40 z-10" />
-        <Image src="/assets/themes_jet_final.webp" alt="Project 3" fill sizes="(max-width: 768px) 100vw, 15vw" className="object-cover" priority />
+        <Image src="/assets/themes-jet.png" alt="Project 3" fill sizes="(max-width: 768px) 100vw, 15vw" className="object-cover" priority />
       </motion.div>
 
       {/* Massive Central Typography */}

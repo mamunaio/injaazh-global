@@ -888,6 +888,64 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
     },
   } : null;
 
+  // SportsOrganization & EntertainmentBusiness Schema for Nexus Esports (EEAT / GEO / AEO)
+  const nexusEsportsJsonLd = project.slug === "nexus-esports" ? {
+    "@context": "https://schema.org",
+    "@type": ["SportsOrganization", "EntertainmentBusiness"],
+    name: "Nexus Esports",
+    alternateName: "Nexus Competitive Gaming Collective",
+    image: "https://injaazh.com/assets/nexus_esports.png",
+    url: "https://nexus-esports.netlify.app",
+    sport: "Esports & Competitive Gaming",
+    description: project.overview,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "470",
+    },
+    member: [
+      { "@type": "Person", name: "Joao 'Malteser' Rezende", jobTitle: "Team Captain" },
+      { "@type": "Person", name: "Rai 'Meu Puro' Vieira", jobTitle: "In-Game Leader" },
+      { "@type": "Person", name: "Mikael 'Killer' Sousa", jobTitle: "Entry Fragger" },
+      { "@type": "Person", name: "Ricardo 'b$' Silva", jobTitle: "AWP Sniper" },
+      { "@type": "Person", name: "Cristiano 'LGC' Pinto", jobTitle: "Entry Fragger" },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Nexus Esports Broadcast & Fan Engagement Hub",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Live Tournament Broadcast Hub & Status Tickers",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Pro Player Lineup, Contract Roles & Statistics",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "4K Fragmovies & Esports Cinematic Highlights Vault",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Official Nexus Community Discord & Fan Gateway",
+          },
+        },
+      ],
+    },
+  } : null;
+
   return (
     <>
       <script
@@ -980,6 +1038,12 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(velocityFintechJsonLd) }}
+        />
+      )}
+      {nexusEsportsJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(nexusEsportsJsonLd) }}
         />
       )}
       <WorkDetailClient project={project} allProjects={projectsData} />

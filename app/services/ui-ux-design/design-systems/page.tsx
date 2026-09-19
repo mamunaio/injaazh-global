@@ -216,7 +216,7 @@ export default function DesignSystemsPage() {
             className="relative aspect-square rounded-[3rem] overflow-hidden border border-white/10 group"
           >
             <Image
-              src="/assets/nexus_esports_final.webp"
+              src="/assets/nexus_esports.png"
               alt="Design System Visual"
               fill
               className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"

@@ -244,7 +244,7 @@ export default function InsightsClient() {
           {/* Left: Cinematic Image Side */}
           <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full overflow-hidden border-r border-white/10">
             <Image
-              src="/assets/nexus_esports_final.webp"
+              src="/assets/nexus_esports.png"
               alt="Intelligence Hub"
               fill
               className="object-cover grayscale brightness-50 group-hover:scale-110 transition-transform duration-[4000ms]"

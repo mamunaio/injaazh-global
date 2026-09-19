@@ -231,7 +231,7 @@ export default function GrowthAutomationPage() {
             className="relative aspect-square rounded-[3rem] overflow-hidden border border-white/10 group flex items-center justify-center"
           >
             <Image
-              src="/assets/nexus_esports_final.webp"
+              src="/assets/nexus_esports.png"
               alt="Growth Automation Visual"
               fill
               className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"

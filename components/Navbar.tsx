@@ -163,11 +163,11 @@ export default function Navbar() {
         { name: "Copywriting", link: "/services/content/copywriting" }
       ],
       caseStudy: {
-        title: "Nexus Esports Content Strategy",
-        image: "/assets/nexus_esports_final.webp",
-        tags: "CONTENT · ESPORTS · ✍️ EDITORIAL",
-        stats: "100+ Long-form Guides · 40% Bounce Drop",
-        link: "/work"
+        title: "Nexus Esports UI/UX Architecture",
+        image: "/assets/nexus_esports.png",
+        tags: "UI/UX · ESPORTS · ⚡ GAMING",
+        stats: "Sub-Second LCP · Live Broadcast Hub",
+        link: "/work/nexus-esports"
       }
     },
     { 

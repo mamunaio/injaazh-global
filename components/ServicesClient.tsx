@@ -108,7 +108,7 @@ const servicesData: ServicePillar[] = [
     ],
     metricValue: "+240%",
     metricLabel: "Average Organic Revenue Scaling",
-    image: "/assets/nexus_esports_final.webp",
+    image: "/assets/nexus_esports.png",
     accentColor: "#00FFA3",
     icon: Search,
   },

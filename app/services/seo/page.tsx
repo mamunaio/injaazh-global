@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "INJAAZH",
     images: [
       {
-        url: "https://injaazh.com/assets/nexus_esports_final.webp",
+        url: "https://injaazh.com/assets/nexus_esports.png",
         width: 1200,
         height: 630,
         alt: "INJAAZH Enterprise SEO & Algorithmic Search Dominance",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Enterprise SEO & Algorithmic Search Dominance | INJAAZH",
     description:
       "Data-driven technical SEO audits, semantic keyword strategies, and high-authority link acquisition engineered to dominate Page 1 across the US, UK, Australia, and global search markets.",
-    images: ["https://injaazh.com/assets/nexus_esports_final.webp"],
+    images: ["https://injaazh.com/assets/nexus_esports.png"],
   },
 };
 

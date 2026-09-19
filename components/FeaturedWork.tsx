@@ -90,9 +90,9 @@ const cases: CaseItem[] = [
     category: "GAMING · ESPORTS",
     title: "Nexus Esports — Competitive Gaming UI",
     location: "GLOBAL GAMING",
-    liveUrl: "https://nexusesports.com",
-    displayUrl: "nexusesports.com",
-    status: "CONCEPT DEMO",
+    liveUrl: "https://nexus-esports.netlify.app/",
+    displayUrl: "nexus-esports.netlify.app",
+    status: "LIVE PLATFORM",
     metrics: [
       {
         label: "REGISTRATION",
@@ -105,7 +105,7 @@ const cases: CaseItem[] = [
     ],
     body: "An adrenaline-fueled, cyberpunk-inspired web architecture for elite esports collectives — featuring ultra-low latency tournament trackers, roster showcases, and sub-second load times.",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Dark Theme"],
-    image: "/assets/nexus_esports_final.webp",
+    image: "/assets/nexus_esports.png",
     color: "#FF2D55",
     accentGlow: "rgba(255, 45, 85, 0.25)",
   },
