@@ -78,10 +78,10 @@ const clients = [
   },
   {
     name: "Novacore",
-    industry: "Enterprise Strategy",
+    industry: "UI/UX & Web Dev",
     location: "London, UK",
-    accent: "group-hover:bg-[#00E5FF]",
-    image: "/assets/novacore_esports_final.webp",
+    accent: "group-hover:bg-[#00FF66]",
+    image: "/assets/novacore.png",
   },
 ];
 
@@ -89,7 +89,7 @@ const featuredCaseStudies = [
   {
     slug: "themesjet",
     title: "ThemesJet — Web Dev",
-    image: "/assets/themes_jet_final.webp",
+    image: "/assets/themes-jet.png",
   },
   {
     slug: "b2b-saas",
@@ -99,7 +99,7 @@ const featuredCaseStudies = [
   {
     slug: "aka-moving",
     title: "AKA Moving — SEO Strategy",
-    image: "/assets/aka_moving_final.webp",
+    image: "/assets/aka-moving.png",
   },
   {
     slug: "apex-ecommerce",
@@ -112,9 +112,9 @@ const featuredCaseStudies = [
     image: "/assets/nexus_esports_final.webp",
   },
   {
-    slug: "novacore",
-    title: "Novacore — Enterprise Strategy",
-    image: "/assets/novacore_esports_final.webp",
+    slug: "novacore-esports",
+    title: "Novacore — UI/UX & Web Dev",
+    image: "/assets/novacore.png",
   },
 ];
 

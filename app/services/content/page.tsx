@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "INJAAZH",
     images: [
       {
-        url: "https://injaazh.com/assets/novacore_esports_final.webp",
+        url: "https://injaazh.com/assets/novacore.png",
         width: 1200,
         height: 630,
         alt: "INJAAZH Brand Narrative & Content Architecture",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Brand Narrative, Editorial & High-Converting Copywriting | INJAAZH",
     description:
       "Psychology-driven direct response copywriting, executive thought leadership, and strategic brand narratives engineered for enterprise authority across US, UK, and global markets.",
-    images: ["https://injaazh.com/assets/novacore_esports_final.webp"],
+    images: ["https://injaazh.com/assets/novacore.png"],
   },
 };
 

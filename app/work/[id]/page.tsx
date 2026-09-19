@@ -769,6 +769,65 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
     },
   } : null;
 
+  // SportsOrganization & EntertainmentBusiness Schema for NovaCore Esports (EEAT / GEO / AEO)
+  const novaCoreJsonLd = (project.slug === "novacore-esports" || project.slug === "novacore") ? {
+    "@context": "https://schema.org",
+    "@type": ["SportsOrganization", "EntertainmentBusiness"],
+    name: "NovaCore Esports",
+    alternateName: "NovaCore Competitive Gaming Platform",
+    image: "https://injaazh.com/assets/novacore.png",
+    url: "https://novacore-esport.netlify.app",
+    sport: "Competitive Esports & Professional Gaming",
+    description: project.overview,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "410",
+    },
+    member: [
+      { "@type": "Person", name: "SHADOW", jobTitle: "Team Captain & Duelist" },
+      { "@type": "Person", name: "NEXUS", jobTitle: "Initiator & In-Game Leader" },
+      { "@type": "Person", name: "VORTEX", jobTitle: "Controller & Smokes Specialist" },
+      { "@type": "Person", name: "DEATHGRIP", jobTitle: "Sentinel & Site Anchor" },
+      { "@type": "Person", name: "MERCY", jobTitle: "Flex & Support" },
+      { "@type": "Person", name: "RUMBLE", jobTitle: "Head Coach & Tactical Analyst" },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "NovaCore Esports Digital Platform & Match Operations",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Dynamic Match Center Live Stream & Tournament Fixture Tracker",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Interactive Tactical Team Roster & Pro Player Stat Cards",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Product",
+            name: "NovaCore Limited V3 Pro Jersey Official Merchandise Drop",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Competitive Gaming Community Hub & Discord Gateway",
+          },
+        },
+      ],
+    },
+  } : null;
+
   return (
     <>
       <script
@@ -849,6 +908,12 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(themesJetJsonLd) }}
+        />
+      )}
+      {novaCoreJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(novaCoreJsonLd) }}
         />
       )}
       <WorkDetailClient project={project} allProjects={projectsData} />

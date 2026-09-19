@@ -179,11 +179,11 @@ export default function Navbar() {
         { name: "UX Audits", link: "/services/strategy/ux-audits" }
       ],
       caseStudy: {
-        title: "Novacore Enterprise Strategy",
-        image: "/assets/novacore_esports_final.webp",
-        tags: "STRATEGY · ENTERPRISE · 🏢 B2B",
-        stats: "3 Global Divisions · $10M Revenue Impact",
-        link: "/work"
+        title: "Novacore Esports UI & Web Dev",
+        image: "/assets/novacore.png",
+        tags: "UI/UX · WEB DEV · ⚡ GAMING",
+        stats: "99/100 Core Web Vitals · Dynamic Match Center",
+        link: "/work/novacore-esports"
       }
     },
   ];

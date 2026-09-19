@@ -154,7 +154,7 @@ const servicesData: ServicePillar[] = [
     ],
     metricValue: "Top 3",
     metricLabel: "Google SERP Dominance in 90 Days",
-    image: "/assets/novacore_esports_final.webp",
+    image: "/assets/novacore.png",
     accentColor: "#FF2D55",
     icon: PenTool,
   },

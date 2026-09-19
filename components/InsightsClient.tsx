@@ -41,7 +41,7 @@ const posts = [
     category: "Strategy",
     date: "Latest",
     readTime: "7 MIN READ",
-    image: "/assets/novacore_esports_final.webp",
+    image: "/assets/novacore.png",
     slug: "scaling-beyond-10m-users",
   },
   {
