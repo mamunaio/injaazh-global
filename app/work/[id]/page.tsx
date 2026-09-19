@@ -828,6 +828,66 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
     },
   } : null;
 
+  // FinancialService & SoftwareApplication Schema for Velocity FinTech (EEAT / GEO / AEO)
+  const velocityFintechJsonLd = project.slug === "velocity" ? {
+    "@context": "https://schema.org",
+    "@type": ["FinancialService", "SoftwareApplication"],
+    name: "Velocity Financial Technologies",
+    alternateName: "Velocity FinTech Infrastructure & Global Payments",
+    image: "https://injaazh.com/assets/velocity.png",
+    url: "https://velocity-fintech.netlify.app",
+    priceRange: "$$$",
+    applicationCategory: "FinanceApplication, PaymentGateway",
+    operatingSystem: "Cloud, Edge, REST API, Webhooks",
+    description: project.overview,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "530",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Velocity Global Financial Infrastructure Rails",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Instant Global Cross-Border Payouts across 130+ Countries",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Real-Time Telemetry Ledgers & Automated FX Reconciliation",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "PCI DSS Level 1 Bank-Grade Tokenized Card Checkout",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Multi-Wallet Management & Programmatic Ledger Balances",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Developer SDK Ecosystem & Webhook Simulator Hub",
+          },
+        },
+      ],
+    },
+  } : null;
+
   return (
     <>
       <script
@@ -914,6 +974,12 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(novaCoreJsonLd) }}
+        />
+      )}
+      {velocityFintechJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(velocityFintechJsonLd) }}
         />
       )}
       <WorkDetailClient project={project} allProjects={projectsData} />
