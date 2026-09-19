@@ -34,7 +34,7 @@ import {
   HelpCircle,
   Award,
 } from "lucide-react";
-import { ProjectDetail, projectsData as defaultProjects } from "@/lib/projectsData";
+import { ProjectDetail, catalogProjects, projectsData as defaultProjects } from "@/lib/projectsData";
 
 const iconMap: Record<string, any> = {
   Hash,
@@ -122,10 +122,27 @@ export default function WorkDetailClient({
   const mockupY1 = useTransform(scrollYProgress, [0.35, 0.85], [30, -30]);
   const mockupY2 = useTransform(scrollYProgress, [0.35, 0.85], [80, -80]);
 
+  const nextCatalogProject = catalogProjects.find(
+    (p) =>
+      p.slug.toLowerCase() === project.next?.id?.toLowerCase() ||
+      p.id === project.next?.id
+  );
+
   const nextProject =
-    (project.next && allProjects[project.next.id]) ||
+    (project.next &&
+      (allProjects[project.next.id] ||
+        Object.values(allProjects).find(
+          (p) => p.slug.toLowerCase() === project.next.id.toLowerCase()
+        ))) ||
     defaultProjects[project.next?.id] ||
-    defaultProjects["aka-moving"] ||
+    (nextCatalogProject
+      ? {
+          title: nextCatalogProject.title,
+          slug: nextCatalogProject.slug,
+          accent: nextCatalogProject.accent || "#6324FC",
+          category: nextCatalogProject.category,
+        }
+      : null) ||
     project;
 
   const accentColor = project.accent || "#6324FC";
@@ -1147,7 +1164,7 @@ export default function WorkDetailClient({
       ───────────────────────────────────────────────────────────── */}
       <section className="relative py-28 px-6 lg:px-12 w-full flex items-center justify-center bg-gradient-to-b from-[#060608] to-[#0D0D14] border-t border-white/5 overflow-hidden group">
         <Link
-          href={`/work/${nextProject.slug || project.next.id}`}
+          href={`/work/${project.next?.id || nextProject.slug}`}
           className="relative z-10 w-full max-w-[1200px] flex flex-col items-center text-center cursor-pointer"
         >
           {/* Subtle Ambient Background */}

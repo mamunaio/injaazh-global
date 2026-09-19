@@ -2491,153 +2491,180 @@ export function getProject(idOrSlug: string): ProjectDetail | undefined {
   const normalized = idOrSlug.toLowerCase().trim();
 
   // 1. Direct match in flagshipProjects
-  if (flagshipProjects[normalized]) {
-    return flagshipProjects[normalized];
-  }
+  let baseProject: ProjectDetail | undefined = flagshipProjects[normalized];
 
   // 2. Lookup by slug/id in flagshipProjects
-  const foundFlagship = Object.values(flagshipProjects).find(
-    (p) => p.slug.toLowerCase() === normalized || p.id === normalized
-  );
-  if (foundFlagship) return foundFlagship;
-
-  // 3. Lookup in catalogProjects and dynamically synthesize a rich case study
-  const catalogItem = catalogProjects.find(
-    (p) => p.slug.toLowerCase() === normalized || p.id === normalized
-  );
-
-  if (catalogItem) {
-    const defaultAccent = catalogItem.accent || "#6324FC";
-    const currentIndex = catalogProjects.findIndex((p) => p.slug === catalogItem.slug);
-    const nextItem = catalogProjects[(currentIndex + 1) % catalogProjects.length];
-
-    const isApp = catalogItem.category.includes("APP") || catalogItem.category.includes("SOFTWARE") || catalogItem.category.includes("ERP") || catalogItem.category.includes("CRM");
-    const isTemplate = catalogItem.category.includes("TEMPLATE");
-
-    return {
-      id: catalogItem.id,
-      slug: catalogItem.slug,
-      title: catalogItem.title,
-      subtitle: `Engineered High-Performance Digital Architecture & Scalable Web Solutions for ${catalogItem.client}.`,
-      category: catalogItem.category,
-      client: catalogItem.client,
-      year: catalogItem.year,
-      img: catalogItem.img,
-      accent: defaultAccent,
-      secondaryAccent: defaultAccent === "#6324FC" ? "#00E5FF" : "#6324FC",
-      link: catalogItem.link,
-      tags: catalogItem.tags || ["Next.js 15", "Performance", "UI/UX", "Full-Stack", "SEO"],
-      overview: `A bespoke digital transformation platform engineered by INJAAZH Global for ${catalogItem.client}. We architected an ultra-fast, search-optimized application designed to eliminate technical debt, enhance user engagement velocity, and deliver enterprise-grade availability. By pairing modern Next.js edge runtimes with clean typographic hierarchies and zero-latency database connections, the platform commands market authority in the ${catalogItem.category} sector.`,
-      background: `${catalogItem.client} required a strategic overhaul to replace sluggish legacy systems with a modern, high-speed digital experience. Their previous platform suffered from high bounce rates, slow page generation, and weak search visibility across Google. They engaged INJAAZH Global to architect an unfair competitive advantage that scales seamlessly with their business growth.`,
-      problem: `The primary bottleneck was legacy technical architecture leading to slow page loads (averaging over 4 seconds on mobile devices), unoptimized database lookups, and poor Core Web Vitals scores that lowered their ranking on Google search engine result pages.`,
-      solution: `INJAAZH Global designed and implemented an edge-optimized architecture utilizing modern React Server Components, Tailwind CSS styling tokens, and automated programmatic SEO schemas. The resulting platform delivers sub-second load times globally, crystal-clear mobile responsiveness, and high conversion rates.`,
-      deliverables: [
-        "End-to-End Modern Web Architecture",
-        "Responsive Mobile-First UI/UX Design System",
-        "Technical SEO, Metadata & Schema Integration",
-        "Conversion-Engineered User Flows & Forms",
-        "Sub-Second Asset Delivery & Core Web Vitals Optimization",
-      ],
-      roadmap: [
-        {
-          phase: "Phase 01",
-          title: "Discovery & Strategic Architecture",
-          duration: "Weeks 1–2",
-          description: `Auditing legacy bottlenecks, mapping conversion user journeys, and creating high-fidelity design prototypes tailored to ${catalogItem.client}'s audience.`,
-          highlights: ["Technical Debt Analysis", "Figma Design System", "Information Architecture"],
-        },
-        {
-          phase: "Phase 02",
-          title: "Core Development & Component Systems",
-          duration: "Weeks 3–5",
-          description: "Building reusable, modular components using modern TypeScript, Tailwind CSS, and lightweight animations.",
-          highlights: ["Modular React Components", "Mobile-First Layouts", "Interactive State Optimization"],
-        },
-        {
-          phase: "Phase 03",
-          title: "Database, API & Flow Integration",
-          duration: "Weeks 6–7",
-          description: "Integrating backend data flows, form handling, validation pipelines, and third-party integrations.",
-          highlights: ["API Route Optimization", "Secure Form Submissions", "Automated Validation"],
-        },
-        {
-          phase: "Phase 04",
-          title: "SEO Hardening & Launch Deployment",
-          duration: "Weeks 8",
-          description: "Conducting Core Web Vitals audits, testing cross-browser performance, implementing JSON-LD schemas, and deploying to global CDN.",
-          highlights: ["Lighthouse 98+ Score", "Programmatic SEO Schema", "Global Edge Deployment"],
-        },
-      ],
-      architectureHighlights: [
-        {
-          title: "Edge-Cached Sub-Second Response",
-          description: "Global CDN distribution ensures pages and assets load in under 500ms for visitors worldwide.",
-          tag: "Speed",
-          iconType: "Zap",
-        },
-        {
-          title: "Clean Modular Component Design",
-          description: "Structured architecture allows rapid feature additions and updates without introducing regression bugs.",
-          tag: "Architecture",
-          iconType: "Code",
-        },
-        {
-          title: "Google-Optimized Semantic Markup",
-          description: "Semantic HTML5 tags and JSON-LD structured data maximize visibility and click-through rates on Google search.",
-          tag: "SEO",
-          iconType: "Globe",
-        },
-      ],
-      beforeAfter: [
-        { metric: "Mobile Page Load Speed", before: "4.2s", after: "0.7s", improvement: "+83% Faster" },
-        { metric: "Core Web Vitals Score", before: "45/100", after: "98/100", improvement: "+117% Boost" },
-        { metric: "User Engagement Duration", before: "45s", after: "2m 15s", improvement: "+200% Surge" },
-        { metric: "Bounce Rate Reduction", before: "68%", after: "26%", improvement: "62% Drop" },
-      ],
-      faq: [
-        {
-          question: `What makes ${catalogItem.title} technically superior to generic templates?`,
-          answer: `Unlike bloated off-the-shelf templates, this solution was custom-engineered with clean Next.js code, zero unnecessary dependencies, and lightning-fast asset delivery tailored to ${catalogItem.client}'s exact commercial objectives.`,
-        },
-        {
-          question: `How does the platform ensure high Google search rankings?`,
-          answer: `We integrated full technical SEO fundamentals: sub-second Core Web Vitals, automated XML sitemaps, OpenGraph social cards, clean URL slugs, and semantic JSON-LD schemas.`,
-        },
-        {
-          question: `Is the platform fully responsive on mobile and tablet devices?`,
-          answer: `Yes. Every layout breakpoint was rigorously tested across iOS, Android, and modern desktop browsers to ensure a fluid 60fps user experience.`,
-        },
-      ],
-      keyTakeaways: [
-        "Eliminating legacy dependencies and optimizing Core Web Vitals yields immediate dividends in user retention and search traffic.",
-        "A tailored design system establishes instant trust and brand authority in competitive commercial industries.",
-      ],
-      tech: [
-        { name: isApp ? "Next.js & TypeScript" : "Next.js 15", iconType: "Code" },
-        { name: "Tailwind CSS", iconType: "Cpu" },
-        { name: "Vercel Edge Network", iconType: "Globe" },
-        { name: "PostgreSQL Database", iconType: "Database" },
-        { name: "Framer Motion", iconType: "Zap" },
-      ],
-      metrics: [
-        { label: "Speed Score", val: "98", suffix: "/100", iconType: "Zap", size: "large" },
-        { label: "Bounce Reduction", val: "45", suffix: "%", prefix: "-", iconType: "Target", size: "medium" },
-        { label: "Traffic Growth", val: "220", suffix: "%", prefix: "+", iconType: "TrendingUp", size: "small" },
-        { label: "Uptime SLA", val: "99.9", suffix: "%", iconType: "Calendar", size: "small" },
-      ],
-      testimonial: {
-        quote: `INJAAZH Global delivered far beyond our expectations. The new digital platform operates flawlessly, our search rankings jumped, and client feedback has been extraordinary.`,
-        author: catalogItem.client,
-        role: "Executive Leadership",
-      },
-      next: {
-        id: nextItem.slug,
-        title: nextItem.title,
-      },
-    };
+  if (!baseProject) {
+    baseProject = Object.values(flagshipProjects).find(
+      (p) => p.slug.toLowerCase() === normalized || p.id === normalized
+    );
   }
 
-  return undefined;
+  // 3. Lookup in catalogProjects and dynamically synthesize a rich case study
+  if (!baseProject) {
+    const catalogItem = catalogProjects.find(
+      (p) => p.slug.toLowerCase() === normalized || p.id === normalized
+    );
+
+    if (catalogItem) {
+      const defaultAccent = catalogItem.accent || "#6324FC";
+      const isApp =
+        catalogItem.category.includes("APP") ||
+        catalogItem.category.includes("SOFTWARE") ||
+        catalogItem.category.includes("ERP") ||
+        catalogItem.category.includes("CRM");
+
+      baseProject = {
+        id: catalogItem.id,
+        slug: catalogItem.slug,
+        title: catalogItem.title,
+        subtitle: `Engineered High-Performance Digital Architecture & Scalable Web Solutions for ${catalogItem.client}.`,
+        category: catalogItem.category,
+        client: catalogItem.client,
+        year: catalogItem.year,
+        img: catalogItem.img,
+        accent: defaultAccent,
+        secondaryAccent: defaultAccent === "#6324FC" ? "#00E5FF" : "#6324FC",
+        link: catalogItem.link,
+        tags: catalogItem.tags || ["Next.js 15", "Performance", "UI/UX", "Full-Stack", "SEO"],
+        overview: `A bespoke digital transformation platform engineered by INJAAZH Global for ${catalogItem.client}. We architected an ultra-fast, search-optimized application designed to eliminate technical debt, enhance user engagement velocity, and deliver enterprise-grade availability. By pairing modern Next.js edge runtimes with clean typographic hierarchies and zero-latency database connections, the platform commands market authority in the ${catalogItem.category} sector.`,
+        background: `${catalogItem.client} required a strategic overhaul to replace sluggish legacy systems with a modern, high-speed digital experience. Their previous platform suffered from high bounce rates, slow page generation, and weak search visibility across Google. They engaged INJAAZH Global to architect an unfair competitive advantage that scales seamlessly with their business growth.`,
+        problem: `The primary bottleneck was legacy technical architecture leading to slow page loads (averaging over 4 seconds on mobile devices), unoptimized database lookups, and poor Core Web Vitals scores that lowered their ranking on Google search engine result pages.`,
+        solution: `INJAAZH Global designed and implemented an edge-optimized architecture utilizing modern React Server Components, Tailwind CSS styling tokens, and automated programmatic SEO schemas. The resulting platform delivers sub-second load times globally, crystal-clear mobile responsiveness, and high conversion rates.`,
+        deliverables: [
+          "End-to-End Modern Web Architecture",
+          "Responsive Mobile-First UI/UX Design System",
+          "Technical SEO, Metadata & Schema Integration",
+          "Conversion-Engineered User Flows & Forms",
+          "Sub-Second Asset Delivery & Core Web Vitals Optimization",
+        ],
+        roadmap: [
+          {
+            phase: "Phase 01",
+            title: "Discovery & Strategic Architecture",
+            duration: "Weeks 1–2",
+            description: `Auditing legacy bottlenecks, mapping conversion user journeys, and creating high-fidelity design prototypes tailored to ${catalogItem.client}'s audience.`,
+            highlights: ["Technical Debt Analysis", "Figma Design System", "Information Architecture"],
+          },
+          {
+            phase: "Phase 02",
+            title: "Core Development & Component Systems",
+            duration: "Weeks 3–5",
+            description: "Building reusable, modular components using modern TypeScript, Tailwind CSS, and lightweight animations.",
+            highlights: ["Modular React Components", "Mobile-First Layouts", "Interactive State Optimization"],
+          },
+          {
+            phase: "Phase 03",
+            title: "Database, API & Flow Integration",
+            duration: "Weeks 6–7",
+            description: "Integrating backend data flows, form handling, validation pipelines, and third-party integrations.",
+            highlights: ["API Route Optimization", "Secure Form Submissions", "Automated Validation"],
+          },
+          {
+            phase: "Phase 04",
+            title: "SEO Hardening & Launch Deployment",
+            duration: "Weeks 8",
+            description: "Conducting Core Web Vitals audits, testing cross-browser performance, implementing JSON-LD schemas, and deploying to global CDN.",
+            highlights: ["Lighthouse 98+ Score", "Programmatic SEO Schema", "Global Edge Deployment"],
+          },
+        ],
+        architectureHighlights: [
+          {
+            title: "Edge-Cached Sub-Second Response",
+            description: "Global CDN distribution ensures pages and assets load in under 500ms for visitors worldwide.",
+            tag: "Speed",
+            iconType: "Zap",
+          },
+          {
+            title: "Clean Modular Component Design",
+            description: "Structured architecture allows rapid feature additions and updates without introducing regression bugs.",
+            tag: "Architecture",
+            iconType: "Code",
+          },
+          {
+            title: "Google-Optimized Semantic Markup",
+            description: "Semantic HTML5 tags and JSON-LD structured data maximize visibility and click-through rates on Google search.",
+            tag: "SEO",
+            iconType: "Globe",
+          },
+        ],
+        beforeAfter: [
+          { metric: "Mobile Page Load Speed", before: "4.2s", after: "0.7s", improvement: "+83% Faster" },
+          { metric: "Core Web Vitals Score", before: "45/100", after: "98/100", improvement: "+117% Boost" },
+          { metric: "User Engagement Duration", before: "45s", after: "2m 15s", improvement: "+200% Surge" },
+          { metric: "Bounce Rate Reduction", before: "68%", after: "26%", improvement: "62% Drop" },
+        ],
+        faq: [
+          {
+            question: `What makes ${catalogItem.title} technically superior to generic templates?`,
+            answer: `Unlike bloated off-the-shelf templates, this solution was custom-engineered with clean Next.js code, zero unnecessary dependencies, and lightning-fast asset delivery tailored to ${catalogItem.client}'s exact commercial objectives.`,
+          },
+          {
+            question: `How does the platform ensure high Google search rankings?`,
+            answer: `We integrated full technical SEO fundamentals: sub-second Core Web Vitals, automated XML sitemaps, OpenGraph social cards, clean URL slugs, and semantic JSON-LD schemas.`,
+          },
+          {
+            question: `Is the platform fully responsive on mobile and tablet devices?`,
+            answer: `Yes. Every layout breakpoint was rigorously tested across iOS, Android, and modern desktop browsers to ensure a fluid 60fps user experience.`,
+          },
+        ],
+        keyTakeaways: [
+          "Eliminating legacy dependencies and optimizing Core Web Vitals yields immediate dividends in user retention and search traffic.",
+          "A tailored design system establishes instant trust and brand authority in competitive commercial industries.",
+        ],
+        tech: [
+          { name: isApp ? "Next.js & TypeScript" : "Next.js 15", iconType: "Code" },
+          { name: "Tailwind CSS", iconType: "Cpu" },
+          { name: "Vercel Edge Network", iconType: "Globe" },
+          { name: "PostgreSQL Database", iconType: "Database" },
+          { name: "Framer Motion", iconType: "Zap" },
+        ],
+        metrics: [
+          { label: "Speed Score", val: "98", suffix: "/100", iconType: "Zap", size: "large" },
+          { label: "Bounce Reduction", val: "45", suffix: "%", prefix: "-", iconType: "Target", size: "medium" },
+          { label: "Traffic Growth", val: "220", suffix: "%", prefix: "+", iconType: "TrendingUp", size: "small" },
+          { label: "Uptime SLA", val: "99.9", suffix: "%", iconType: "Calendar", size: "small" },
+        ],
+        testimonial: {
+          quote: `INJAAZH Global delivered far beyond our expectations. The new digital platform operates flawlessly, our search rankings jumped, and client feedback has been extraordinary.`,
+          author: catalogItem.client,
+          role: "Executive Leadership",
+        },
+        next: {
+          id: "",
+          title: "",
+        },
+      };
+    }
+  }
+
+  if (!baseProject) return undefined;
+
+  // Compute strictly sequential NEXT project from catalogProjects (01 -> 02 -> 03 -> ... -> 47 -> 01)
+  // Strictly match by slug first to avoid old arbitrary flagship id collisions
+  let catalogIndex = catalogProjects.findIndex(
+    (p) => p.slug.toLowerCase() === baseProject!.slug.toLowerCase()
+  );
+
+  if (catalogIndex === -1) {
+    catalogIndex = catalogProjects.findIndex((p) => p.id === baseProject!.id);
+  }
+
+  const nextCatalogItem =
+    catalogIndex !== -1
+      ? catalogProjects[(catalogIndex + 1) % catalogProjects.length]
+      : catalogProjects[0];
+
+  const currentCatalogItem = catalogIndex !== -1 ? catalogProjects[catalogIndex] : undefined;
+
+  return {
+    ...baseProject,
+    id: currentCatalogItem ? currentCatalogItem.id : baseProject.id,
+    next: {
+      id: nextCatalogItem.slug,
+      title: nextCatalogItem.title,
+    },
+  };
 }
 
 export function getAllProjectSlugs(): string[] {
