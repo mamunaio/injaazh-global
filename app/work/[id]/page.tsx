@@ -720,6 +720,55 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
     },
   } : null;
 
+  // OnlineStore & SoftwareApplication Schema for Themes Jet (EEAT / GEO / AEO)
+  const themesJetJsonLd = project.slug === "themesjet" ? {
+    "@context": "https://schema.org",
+    "@type": ["OnlineStore", "SoftwareApplication"],
+    name: "Themes Jet Digital Marketplace",
+    image: `https://injaazh.com/assets/themes-jet.png`,
+    url: "https://themesjet.com",
+    priceRange: "$$",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "480",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Digital Website Templates, UI Kits & Software Assets",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Product",
+            name: "HTML5 & Bootstrap Premium Templates",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Product",
+            name: "Next.js 15 & React Server Component Dashboards",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Product",
+            name: "WordPress Themes & Utility Plugins",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Product",
+            name: "Glassmorphic UI Kits & Design Tokens",
+          },
+        },
+      ],
+    },
+  } : null;
+
   return (
     <>
       <script
@@ -794,6 +843,12 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(purrfectHubJsonLd) }}
+        />
+      )}
+      {themesJetJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(themesJetJsonLd) }}
         />
       )}
       <WorkDetailClient project={project} allProjects={projectsData} />
