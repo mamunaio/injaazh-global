@@ -122,7 +122,7 @@ export const catalogProjects: CatalogProject[] = [
     link: "https://akamoving.com",
     featured: true,
     accent: "#00E5FF",
-    tags: ["WordPress from Scratch", "Logistics", "Real-Time Booking", "Bilingual EN/FR", "Local SEO", "Automation"],
+    tags: ["WordPress from Scratch", "Logistics", "Real-Time Booking", "Bilingual EN/FR", "Local SEO", "EEAT & AEO Schema"],
   },
   {
     id: "03",
@@ -343,7 +343,7 @@ export const flagshipProjects: Record<string, ProjectDetail> = {
     accent: "#00E5FF",
     secondaryAccent: "#6324FC",
     link: "https://akamoving.com",
-    tags: ["WordPress from Scratch", "Custom Theme", "Local SEO", "Bilingual EN/FR", "Performance", "Lead Generation", "UI/UX Design"],
+    tags: ["WordPress from Scratch", "Custom Theme", "Local SEO", "Bilingual EN/FR", "Performance", "Lead Generation", "UI/UX Design", "EEAT & AEO Schema"],
     overview:
       "I designed and developed this moving service website from scratch using WordPress. The project includes a clean, modern UI along with a fully functional and responsive design. I implemented multiple features to ensure smooth user experience, fast performance, and easy navigation. Special attention was given to fulfilling all client requirements, including comprehensive service pages (Residential Moves, Commercial Office Moves, Cross-Canada Relocations, Warehousing, Waste Removal, and White Glove Service), contact functionality, and optimization for better usability. The final result is a professional, scalable, and user-friendly website tailored to the client’s business needs, serving Montreal and clients across Canada.",
     background:
@@ -433,6 +433,11 @@ export const flagshipProjects: Record<string, ProjectDetail> = {
       {
         question: "Can the client easily add new service areas and update content independently?",
         answer: "Yes. Using Advanced Custom Fields (ACF Pro) and native WordPress block integration, the AKA Moving team can publish new city routes, adjust pricing notices, and manage testimonials through simple, structured input fields without writing a single line of code.",
+      },
+      {
+        question: "How was the AKA Moving platform engineered to dominate Google's latest Core Updates, EEAT, and AI Answer Engines (AEO/GEO)?",
+        answer:
+          "Under Google's latest Core Updates, local logistics and commercial service providers must demonstrate undeniable Experience, Expertise, Authoritativeness, and Trustworthiness (EEAT). We structured deep semantic MovingCompany and LocalBusiness schema graphs linking verified Montreal coordinates, licensing credentials, operating hours, bilingual EN/FR support, and authentic client reviews from Google and HomeStars. Furthermore, by organizing moving service silos into concise, authoritative question-and-answer entities, the platform is optimized for direct AI answer engine synthesis across ChatGPT Search, Perplexity AI, and Google AI Overviews (GEO).",
       },
     ],
     keyTakeaways: [

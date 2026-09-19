@@ -501,6 +501,46 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
         name: "Canada",
       },
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "185",
+    },
+    knowsLanguage: ["en", "fr"],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Moving & Relocation Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Residential Home Moving",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Commercial Office Relocation",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Long Distance & Cross-Canada Moving",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Warehousing & Secure Storage",
+          },
+        },
+      ],
+    },
   } : null;
 
   return (
