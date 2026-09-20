@@ -2990,10 +2990,10 @@ export const flagshipProjects: Record<string, ProjectDetail> = {
         tag: "SOCIAL PROOF & DOCS",
       },
       {
-        title: "Mobile Viewport & Handheld Ergonomic Experience",
-        subtitle: "Responsive mobile screen layout ensuring flawless readability, touch-friendly CTA buttons, and seamless docs navigation on handheld devices.",
+        title: "InCode Neon Tech Smartphone Showcase & Mobile UX",
+        subtitle: "Immersive handheld presentation highlighting responsive dark UI, glowing purple/cyan accents, and touch-optimized developer tools on high-resolution mobile displays.",
         img: "/assets/incode_phone_view.png",
-        tag: "MOBILE VIEWPORT",
+        tag: "MOBILE VIEWPORT & SHOWCASE",
       },
     ],
     testimonial: {
