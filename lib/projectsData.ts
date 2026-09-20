@@ -248,7 +248,7 @@ export const flagshipProjects: Record<string, ProjectDetail> = {
     client: "Themes Jet Inc.",
     year: "2024",
     img: "/assets/themes-jet.png",
-    mobileImg: "/assets/themesjet_1.png",
+    mobileImg: "/assets/themesjet_phone_view.png",
     accent: "#6324FC",
     secondaryAccent: "#00E5FF",
     link: "https://themesjet.com/",
@@ -396,6 +396,12 @@ export const flagshipProjects: Record<string, ProjectDetail> = {
         subtitle: "5-star testimonials from verified engineers, newsletter dispatch, and comprehensive digital licensing terms.",
         img: "/assets/themesjet_4.png",
         tag: "EEAT & SOCIAL PROOF",
+      },
+      {
+        title: "Mobile Responsive Marketplace & Frictionless Asset Discovery",
+        subtitle: "Adaptive handheld viewport featuring instant digital asset search, responsive filter drawers, and one-tap checkout on mobile screens.",
+        img: "/assets/themesjet_phone_view.png",
+        tag: "MOBILE VIEWPORT",
       },
     ],
     testimonial: {
