@@ -2823,7 +2823,7 @@ export const flagshipProjects: Record<string, ProjectDetail> = {
     client: "InCode Cloud Systems (Freelancer.com Client)",
     year: "2024",
     img: "/assets/incode.png",
-    mobileImg: "/assets/incode_phone_view.png",
+    mobileImg: "/assets/InCode Neon Tech Smartphone Showcase.jpg",
     accent: "#8B5CF6",
     secondaryAccent: "#00E5FF",
     link: "https://www.freelancer.com/u/mhmamun360",
@@ -2992,7 +2992,7 @@ export const flagshipProjects: Record<string, ProjectDetail> = {
       {
         title: "InCode Neon Tech Smartphone Showcase & Mobile UX",
         subtitle: "Immersive handheld presentation highlighting responsive dark UI, glowing purple/cyan accents, and touch-optimized developer tools on high-resolution mobile displays.",
-        img: "/assets/incode_phone_view.png",
+        img: "/assets/InCode Neon Tech Smartphone Showcase.jpg",
         tag: "MOBILE VIEWPORT & SHOWCASE",
       },
     ],

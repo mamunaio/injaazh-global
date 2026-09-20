@@ -157,6 +157,8 @@ export default function WorkDetailClient({
     )?.img ||
     project.img;
 
+  const isFullShowcase = mobileImageSrc.toLowerCase().includes("showcase");
+
   return (
     <main
       ref={containerRef}
@@ -386,17 +388,29 @@ export default function WorkDetailClient({
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.4 }}
-                    className="py-12 flex justify-center w-full"
+                    className="py-8 md:py-12 flex justify-center w-full px-4"
                   >
-                    <div className="relative w-[280px] sm:w-[320px] aspect-[9/19] rounded-[2.5rem] border-[6px] border-[#222230] overflow-hidden shadow-2xl bg-black">
-                      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-28 h-4 bg-[#222230] rounded-full z-20" />
-                      <Image
-                        src={mobileImageSrc}
-                        alt={`${project.title} Mobile Interface`}
-                        fill
-                        className="object-cover object-top"
-                      />
-                    </div>
+                    {isFullShowcase ? (
+                      <div className="relative w-full max-w-[340px] sm:max-w-[380px] aspect-[2/3] rounded-[2.5rem] border border-white/20 overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] bg-black">
+                        <Image
+                          src={mobileImageSrc}
+                          alt={`${project.title} Mobile Showcase`}
+                          fill
+                          className="object-cover object-center"
+                          priority
+                        />
+                      </div>
+                    ) : (
+                      <div className="relative w-[280px] sm:w-[320px] aspect-[9/19] rounded-[2.5rem] border-[6px] border-[#222230] overflow-hidden shadow-2xl bg-black">
+                        <div className="absolute top-2 left-1/2 -translate-x-1/2 w-28 h-4 bg-[#222230] rounded-full z-20" />
+                        <Image
+                          src={mobileImageSrc}
+                          alt={`${project.title} Mobile Interface`}
+                          fill
+                          className="object-cover object-top"
+                        />
+                      </div>
+                    )}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -878,15 +892,17 @@ export default function WorkDetailClient({
           {/* Floating Mobile Companion Card */}
           <motion.div
             style={{ y: mockupY2 }}
-            className="w-[260px] sm:w-[300px] lg:w-[28%] rounded-[2.5rem] p-3 bg-[#141420]/90 border border-white/10 backdrop-blur-2xl shadow-2xl overflow-hidden lg:-ml-12 z-20"
+            className={`w-[260px] sm:w-[300px] ${isFullShowcase ? 'lg:w-[32%]' : 'lg:w-[28%]'} rounded-[2.5rem] p-3 bg-[#141420]/90 border border-white/10 backdrop-blur-2xl shadow-2xl overflow-hidden lg:-ml-12 z-20`}
           >
-            <div className="relative aspect-[9/18] w-full rounded-[2rem] overflow-hidden bg-black border-2 border-white/10">
-              <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-white/10 rounded-full z-20" />
+            <div className={`relative ${isFullShowcase ? 'aspect-[2/3]' : 'aspect-[9/18]'} w-full rounded-[2rem] overflow-hidden bg-black border-2 border-white/10`}>
+              {!isFullShowcase && (
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-white/10 rounded-full z-20" />
+              )}
               <Image
                 src={mobileImageSrc}
                 alt={`${project.title} Mobile`}
                 fill
-                className="object-cover object-top"
+                className={isFullShowcase ? "object-cover object-center" : "object-cover object-top"}
               />
             </div>
           </motion.div>
