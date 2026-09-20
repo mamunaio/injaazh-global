@@ -946,6 +946,43 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
     },
   } : null;
 
+  // SoftwareApplication & WebSite Schema for InCode Developer Tools & SaaS Landing Page UI
+  const inCodeJsonLd = project.slug === "incode" ? {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "InCode SaaS Developer Platform & Cloud Infrastructure Landing Page",
+    applicationCategory: "DeveloperApplication",
+    operatingSystem: "Web / Cloud / Edge",
+    image: "https://injaazh.com/assets/incode.png",
+    url: "https://www.freelancer.com/u/mhmamun360",
+    description: project.overview,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      description: "Free Developer Tier & Open Documentation Access",
+    },
+    provider: {
+      "@type": "Organization",
+      name: "InCode Cloud Systems",
+      url: "https://www.freelancer.com/u/mhmamun360",
+    },
+    author: {
+      "@type": "Person",
+      name: "Mamun Hossain",
+      url: "https://www.freelancer.com/u/mhmamun360",
+      jobTitle: "Lead UI/UX Designer & Full-Stack Architect",
+    },
+    featureList: [
+      "Immersive Deep Dark-Mode UI with Violet and Cyan Ambient Glows",
+      "Developer-Centric Hero Messaging ('Ship software without limits')",
+      "Clean Minimalist Social Proof Carousels ('Trusted by elite engineering teams')",
+      "High-Conversion Dual Call-to-Action Funnel ('Start Building for Free' & 'Read the Docs')",
+      "High-Density Architecture Visualization & Telemetry Cards",
+      "WCAG AAA Accessible Contrast Ratios & Scalable Design Tokens",
+    ],
+  } : null;
+
   return (
     <>
       <script
@@ -1044,6 +1081,12 @@ export default async function ProjectCaseStudyPage(props: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(nexusEsportsJsonLd) }}
+        />
+      )}
+      {inCodeJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(inCodeJsonLd) }}
         />
       )}
       <WorkDetailClient project={project} allProjects={projectsData} />
