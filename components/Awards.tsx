@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Award, 
-  Star, 
-  ShieldCheck, 
-  Zap, 
-  Trophy, 
+import {
+  Award,
+  Star,
+  ShieldCheck,
+  Zap,
+  Trophy,
   CheckCircle2
 } from "lucide-react";
 
@@ -88,9 +88,9 @@ const awards: AwardItem[] = [
 
 export default function Awards() {
   return (
-    <section 
+    <section
       id="awards"
-      className="w-full bg-[#060608] py-20 md:py-28 relative overflow-hidden border-t border-white/5 text-white"
+      className="w-full bg-[#F5F5F0] dark:bg-[#060608] py-20 md:py-28 relative overflow-hidden border-t border-black/5 dark:border-white/5 text-neutral-900 dark:text-white"
     >
       {/* Background Ambient Glows - GPU Accelerated */}
       <div className="absolute top-1/4 left-1/4 w-[650px] h-[650px] bg-[radial-gradient(circle,rgba(99,36,252,0.12)_0%,transparent_70%)] pointer-events-none" />
@@ -99,12 +99,12 @@ export default function Awards() {
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
-          
+
           {/* ========================================================
               LEFT COLUMN: Sticky Authority & Institutional Trust Hub
               ======================================================== */}
           <div className="w-full lg:w-[44%] lg:sticky lg:top-28">
-            
+
             {/* Eyebrow Kicker */}
             <div className="flex items-center gap-4 mb-6">
               <motion.div
@@ -114,7 +114,7 @@ export default function Awards() {
                 transition={{ duration: 0.8 }}
                 className="h-[1px] bg-gradient-to-r from-[#6324FC] to-[#00E5FF]"
               />
-              <span className="font-mono text-xs md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
+              <span className="font-mono text-[14px] md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
                 VALIDATED EXCELLENCE // GLOBAL RECOGNITION
               </span>
@@ -127,9 +127,9 @@ export default function Awards() {
               </h2>
               <div
                 aria-hidden="true"
-                className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.88] tracking-tighter text-white"
+                className="font-heading text-5xl md:text-7xl leading-[0.88] tracking-tighter text-neutral-900 dark:text-white"
               >
-                <span className="text-white mr-3 md:mr-4">INDUSTRY</span>
+                <span className="mr-3 md:mr-4">INDUSTRY</span>
                 <br className="hidden sm:inline" />
                 <span className="italic text-[#6324FC] drop-shadow-[0_0_35px_rgba(99,36,252,0.35)]">
                   HONORS &amp;
@@ -141,22 +141,22 @@ export default function Awards() {
 
             {/* Executive Capability Badges */}
             <div className="flex flex-wrap items-center gap-2 mb-6">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70 shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC]" />
                 TOP 1% GLOBAL AGENCY
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70 shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF]" />
                 INDEPENDENTLY AUDITED
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70 shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00FFA3]" />
                 ISO 9001:2015 CERTIFIED
               </div>
             </div>
 
             {/* Authority Editorial Copy */}
-            <p className="font-sans font-light text-white/75 text-sm sm:text-base leading-relaxed border-l-2 border-[#6324FC]/60 pl-5 sm:pl-6 py-0.5 mb-8">
+            <p className="font-sans font-light text-neutral-700 dark:text-white/75 text-sm sm:text-base leading-relaxed border-l-2 border-[#6324FC]/60 pl-5 sm:pl-6 py-0.5 mb-8">
               Our engineering architecture, technical SEO methodologies, and conversion benchmarks are independently audited and recognized by premier global platforms. We don't just build websites — we set international standards that legacy agencies measure against.
             </p>
 
@@ -166,7 +166,7 @@ export default function Awards() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="group relative rounded-3xl bg-[#09090E] border border-white/10 p-6 md:p-7 overflow-hidden hover:border-[#6324FC]/40 transition-all duration-300 shadow-2xl"
+              className="group relative rounded-3xl bg-white dark:bg-[#09090E] border border-black/10 dark:border-white/10 p-6 md:p-7 overflow-hidden hover:border-[#6324FC]/40 transition-all duration-300 shadow-xl dark:shadow-2xl"
             >
               {/* Radial Accent Glow */}
               <div className="absolute -right-12 -top-12 w-40 h-40 bg-[#6324FC]/15 blur-3xl rounded-full pointer-events-none group-hover:bg-[#6324FC]/25 transition-all duration-700" />
@@ -180,41 +180,41 @@ export default function Awards() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#00E5FF] font-semibold">Institutional Seal</span>
+                    <span className="font-mono text-[12px] uppercase tracking-widest text-[#6324FC] dark:text-[#00E5FF] font-semibold">Institutional Seal</span>
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00FFA3]" />
                   </div>
-                  <h3 className="font-heading text-lg text-white font-medium">Quality Guaranteed &amp; Audited</h3>
-                  <p className="font-sans text-xs text-white/50">ISO 9001:2015 Compliant Management System</p>
+                  <h3 className="font-heading text-lg text-neutral-900 dark:text-white font-medium">Quality Guaranteed &amp; Audited</h3>
+                  <p className="font-sans text-[14px] text-neutral-500 dark:text-white/50">ISO 9001:2015 Compliant Management System</p>
                 </div>
               </div>
 
               {/* Audit Metrics List */}
-              <div className="space-y-2.5 pt-4 border-t border-white/[0.06] text-xs font-mono">
-                <div className="flex items-center justify-between text-white/80">
+              <div className="space-y-2.5 pt-4 border-t border-black/10 dark:border-white/[0.06] text-[14px] font-mono">
+                <div className="flex items-center justify-between text-neutral-700 dark:text-white/80">
                   <span className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#00FFA3]" />
                     Audit Pass Rate
                   </span>
-                  <span className="text-white font-semibold">100% Verified</span>
+                  <span className="text-neutral-900 dark:text-white font-semibold">100% Verified</span>
                 </div>
-                <div className="flex items-center justify-between text-white/80">
+                <div className="flex items-center justify-between text-neutral-700 dark:text-white/80">
                   <span className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#00FFA3]" />
                     Enterprise SLA Standard
                   </span>
-                  <span className="text-white font-semibold">99.98% Guarantee</span>
+                  <span className="text-neutral-900 dark:text-white font-semibold">99.98% Guarantee</span>
                 </div>
-                <div className="flex items-center justify-between text-white/80">
+                <div className="flex items-center justify-between text-neutral-700 dark:text-white/80">
                   <span className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#00FFA3]" />
                     Architecture Compliance
                   </span>
-                  <span className="text-white font-semibold">Zero Vulnerability Vetted</span>
+                  <span className="text-neutral-900 dark:text-white font-semibold">Zero Vulnerability Vetted</span>
                 </div>
               </div>
 
               {/* Micro Status Chip */}
-              <div className="mt-4 pt-3 border-t border-white/[0.04] flex items-center justify-between text-[10px] font-mono text-white/40">
+              <div className="mt-4 pt-3 border-t border-black/10 dark:border-white/[0.04] flex items-center justify-between text-[12px] font-mono text-neutral-500 dark:text-white/40">
                 <span>CERTIFICATE #INJ-2026-GLOBAL</span>
                 <span className="text-[#00FFA3] flex items-center gap-1">
                   <span className="w-1 h-1 rounded-full bg-[#00FFA3] animate-ping" />
@@ -238,10 +238,10 @@ export default function Awards() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.08 }}
-                  className="group relative rounded-3xl bg-[#09090E] border border-white/[0.08] p-6 md:p-8 hover:border-white/25 transition-all duration-300 overflow-hidden shadow-xl"
+                  className="group relative rounded-3xl bg-white dark:bg-[#09090E] border border-black/10 dark:border-white/[0.08] p-6 md:p-8 hover:border-[#6324FC]/40 dark:hover:border-white/25 transition-all duration-300 overflow-hidden shadow-lg dark:shadow-xl"
                 >
                   {/* Spotlight Radial Hover Glow */}
-                  <div 
+                  <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                     style={{
                       background: `radial-gradient(circle at 10% 20%, ${award.accentColor}18 0%, transparent 70%)`
@@ -249,28 +249,28 @@ export default function Awards() {
                   />
 
                   {/* Shimmer Light Beam Effect on Card Top */}
-                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-black/10 dark:via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
 
                   {/* Card Content Grid */}
                   <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-                    
+
                     {/* Left & Center: Icon + Platform & Award Details */}
                     <div className="flex items-start gap-4 md:gap-5 flex-1">
-                      
+
                       {/* Squircle Metallic Icon Container */}
-                      <div 
-                        className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-500 relative"
+                      <div
+                        className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-neutral-100 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-500 relative"
                         style={{
                           boxShadow: `0 0 20px ${award.accentColor}10`
                         }}
                       >
-                        <Icon 
-                          className="w-7 h-7 md:w-8 md:h-8 transition-colors duration-500" 
+                        <Icon
+                          className="w-7 h-7 md:w-8 md:h-8 transition-colors duration-500"
                           style={{ color: award.accentColor }}
                         />
                         {/* Tiny corner pulse indicator */}
-                        <div 
-                          className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full border-2 border-[#060608]"
+                        <div
+                          className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full border-2 border-white dark:border-[#060608]"
                           style={{ backgroundColor: award.accentColor }}
                         />
                       </div>
@@ -279,30 +279,30 @@ export default function Awards() {
                       <div className="flex-1 min-w-0">
                         {/* Category & Badge Meta Row */}
                         <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                          <span 
-                            className="font-mono text-[9px] md:text-[10px] uppercase tracking-widest font-semibold"
+                          <span
+                            className="font-mono text-[12px] md:text-[10px] uppercase tracking-widest font-semibold"
                             style={{ color: award.accentColor }}
                           >
                             {award.category}
                           </span>
-                          <span className="text-white/20 text-xs">•</span>
-                          <span className="px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.06] font-mono text-[9px] text-white/70">
+                          <span className="text-neutral-400 dark:text-white/20 text-xs">•</span>
+                          <span className="px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-white/[0.04] border border-black/10 dark:border-white/[0.06] font-mono text-[12px] text-neutral-700 dark:text-white/70 shadow-sm">
                             {award.badge}
                           </span>
                         </div>
 
                         {/* Platform Name */}
-                        <h3 className="font-heading text-xl md:text-2xl text-white font-medium tracking-tight mb-1 group-hover:text-white transition-colors">
+                        <h3 className="font-heading text-xl md:text-2xl text-neutral-900 dark:text-white font-medium tracking-tight mb-1 group-hover:text-[#6324FC] dark:group-hover:text-white transition-colors">
                           {award.platform}
                         </h3>
 
                         {/* Official Award Title */}
-                        <p className="font-sans font-medium text-xs md:text-sm text-white/90 mb-2">
+                        <p className="font-sans font-medium text-[14px] md:text-sm text-neutral-800 dark:text-white/90 mb-2">
                           {award.title}
                         </p>
 
                         {/* Detailed Description */}
-                        <p className="font-sans text-xs text-white/60 leading-relaxed max-w-lg">
+                        <p className="font-sans text-[14px] text-neutral-600 dark:text-white/60 leading-relaxed max-w-lg">
                           {award.detail}
                         </p>
                       </div>
@@ -310,25 +310,25 @@ export default function Awards() {
                     </div>
 
                     {/* Right Side: Score Capsule & Star Array */}
-                    <div className="w-full sm:w-auto flex sm:flex-col items-center sm:items-end justify-between sm:justify-center pt-4 sm:pt-0 border-t sm:border-t-0 border-white/[0.06] flex-shrink-0">
-                      
+                    <div className="w-full sm:w-auto flex sm:flex-col items-center sm:items-end justify-between sm:justify-center pt-4 sm:pt-0 border-t sm:border-t-0 border-black/10 dark:border-white/[0.06] flex-shrink-0">
+
                       {/* Numeric Score Pill */}
-                      <div className="font-heading text-xl md:text-2xl text-white font-semibold tracking-tight mb-1">
+                      <div className="font-heading text-xl md:text-2xl text-neutral-900 dark:text-white font-semibold tracking-tight mb-1">
                         {award.score}
                       </div>
 
                       {/* 5-Star Rating Array */}
                       <div className="flex items-center gap-1 mb-1.5" aria-label={`${award.stars} out of 5 stars`}>
                         {[...Array(award.stars)].map((_, starIdx) => (
-                          <Star 
-                            key={starIdx} 
-                            className="w-3.5 h-3.5 fill-amber-400 text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)]" 
+                          <Star
+                            key={starIdx}
+                            className="w-3.5 h-3.5 fill-amber-400 text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)]"
                           />
                         ))}
                       </div>
 
                       {/* Verified Audit Beacon */}
-                      <div className="flex items-center gap-1.5 text-[10px] font-mono text-white/50">
+                      <div className="flex items-center gap-1.5 text-[12px] font-mono text-neutral-500 dark:text-white/50">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#00FFA3] animate-pulse" />
                         <span className="truncate max-w-[130px] sm:max-w-none">{award.auditMetric}</span>
                       </div>
@@ -338,9 +338,9 @@ export default function Awards() {
                   </div>
 
                   {/* Watermark platform icon in background */}
-                  <div 
-                    aria-hidden="true" 
-                    className="absolute -right-6 -bottom-6 w-32 h-32 text-white/[0.015] group-hover:text-white/[0.035] group-hover:scale-110 transition-all duration-700 pointer-events-none"
+                  <div
+                    aria-hidden="true"
+                    className="absolute -right-6 -bottom-6 w-32 h-32 text-black/[0.03] dark:text-white/[0.015] group-hover:text-[#6324FC]/10 dark:group-hover:text-white/[0.035] group-hover:scale-110 transition-all duration-700 pointer-events-none"
                   >
                     <Icon className="w-full h-full" />
                   </div>
@@ -349,7 +349,6 @@ export default function Awards() {
               );
             })}
           </div>
-
         </div>
       </div>
     </section>

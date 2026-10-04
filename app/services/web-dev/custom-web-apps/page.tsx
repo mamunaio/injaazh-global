@@ -75,7 +75,7 @@ export default function CustomWebAppsPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] uppercase">
+              <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] uppercase">
                 SOFTWARE DIVISION
               </span>
             </motion.div>
@@ -185,7 +185,7 @@ export default function CustomWebAppsPage() {
               <div className="relative z-10 h-full flex flex-col justify-between">
                 <div className="flex justify-between">
                   <Terminal className="w-8 h-8 text-[#6324FC]" />
-                  <div className="font-heading text-[10px] text-white/20 uppercase tracking-widest">
+                  <div className="font-heading text-[12px] text-white/20 uppercase tracking-widest">
                     DEV ENVIRONMENT V9.0
                   </div>
                 </div>
@@ -196,7 +196,7 @@ export default function CustomWebAppsPage() {
                   </div>
                   <div className="flex gap-2">
                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="font-heading text-[9px] text-white/40 uppercase">
+                    <span className="font-heading text-[12px] text-white/40 uppercase">
                       🟢 SYSTEM STATUS: OPERATIONAL
                     </span>
                   </div>
@@ -213,7 +213,7 @@ export default function CustomWebAppsPage() {
                   ].map((tech, i) => (
                     <div
                       key={i}
-                      className="flex items-center justify-between font-heading text-[10px] text-white/30 uppercase"
+                      className="flex items-center justify-between font-heading text-[12px] text-white/30 uppercase"
                     >
                       <span>{tech}</span>
                       <span className="text-[#6324FC]">OPTIMIZED</span>
@@ -261,7 +261,7 @@ export default function CustomWebAppsPage() {
                         <span className="font-heading text-2xl text-white uppercase">
                           {item.label}
                         </span>
-                        <span className="font-heading text-[9px] text-[#00E5FF] tracking-widest uppercase">
+                        <span className="font-heading text-[12px] text-[#00E5FF] tracking-widest uppercase">
                           {item.val}
                         </span>
                       </div>
@@ -373,18 +373,18 @@ export default function CustomWebAppsPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20 items-center">
             <div>
-              <span className="font-heading text-[#6324FC] text-xs uppercase tracking-widest block mb-4">
+              <span className="font-heading text-[#6324FC] text-[14px] uppercase tracking-widest block mb-4">
                 FEATURED BUILD
               </span>
               <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-4">
                 SCALIA <span className="italic text-[#6324FC]">DOMAIN.</span>
               </h2>
-              <div className="inline-block px-4 py-1.5 bg-white/[0.03] border border-white/5 rounded-full font-heading text-[10px] tracking-wider text-[#00E5FF] mb-8 uppercase">
+              <div className="inline-block px-4 py-1.5 bg-white/[0.03] border border-white/5 rounded-full font-heading text-[12px] tracking-wider text-[#00E5FF] mb-8 uppercase">
                 WEB APP · SAAS · GLOBAL
               </div>
               <div className="space-y-8 mb-12">
                 <div>
-                  <span className="font-heading text-red-500/80 text-xs uppercase tracking-widest block mb-2">
+                  <span className="font-heading text-red-500/80 text-[14px] uppercase tracking-widest block mb-2">
                     The Challenge
                   </span>
                   <p className="font-sans text-white/50 text-base">
@@ -395,7 +395,7 @@ export default function CustomWebAppsPage() {
                   </p>
                 </div>
                 <div>
-                  <span className="font-heading text-[#00E5FF] text-xs uppercase tracking-widest block mb-2">
+                  <span className="font-heading text-[#00E5FF] text-[14px] uppercase tracking-widest block mb-2">
                     Our Solution
                   </span>
                   <p className="font-sans text-white/50 text-base">

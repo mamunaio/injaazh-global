@@ -64,7 +64,7 @@ export default function NextJsArchitecturesPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] uppercase">
+              <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] uppercase">
                 ARCHITECTURE DIVISION
               </span>
             </motion.div>
@@ -224,10 +224,10 @@ export default function NextJsArchitecturesPage() {
                   <div className="font-heading text-4xl text-white mb-2 group-hover:text-[#6324FC] transition-colors">
                     {stat.val}
                   </div>
-                  <div className="font-heading text-[9px] tracking-widest text-[#6324FC] uppercase mb-1">
+                  <div className="font-heading text-[12px] tracking-widest text-[#6324FC] uppercase mb-1">
                     {stat.label}
                   </div>
-                  <div className="font-sans text-[10px] text-white/20 uppercase">
+                  <div className="font-sans text-[12px] text-white/20 uppercase">
                     {stat.sub}
                   </div>
                 </div>

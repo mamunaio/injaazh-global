@@ -75,7 +75,7 @@ export default function BrandIdentityPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] uppercase">
+              <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] uppercase">
                 CREATIVE DIVISION
               </span>
             </motion.div>
@@ -211,7 +211,7 @@ export default function BrandIdentityPage() {
                   },
                 ].map((spec, i) => (
                   <div key={i} className="space-y-4">
-                    <div className="font-heading text-[10px] tracking-widest text-[#6324FC] uppercase">
+                    <div className="font-heading text-[12px] tracking-widest text-[#6324FC] uppercase">
                       {spec.label}
                     </div>
                     {spec.colors ? (
@@ -230,7 +230,7 @@ export default function BrandIdentityPage() {
                     ) : spec.icon ? (
                       <spec.icon className="w-8 h-8 text-white" />
                     ) : null}
-                    <p className="font-sans text-xs text-white/40 leading-relaxed">
+                    <p className="font-sans text-[14px] text-white/40 leading-relaxed">
                       {spec.desc}
                     </p>
                   </div>
@@ -240,19 +240,19 @@ export default function BrandIdentityPage() {
 
             {/* Featured Brand Build - Scalia Domain */}
             <div className="p-8 rounded-[2.5rem] bg-white/[0.01] border border-white/5 space-y-6">
-              <span className="font-heading text-[#6324FC] text-[9px] tracking-widest uppercase block">
+              <span className="font-heading text-[#6324FC] text-[12px] tracking-widest uppercase block">
                 FEATURED BRAND BUILD
               </span>
               <h3 className="font-heading text-3xl text-white">
                 SCALIA DOMAIN
               </h3>
-              <div className="inline-block px-3 py-1 bg-white/[0.03] border border-white/5 rounded-full font-heading text-[9px] tracking-wider text-[#00E5FF] uppercase">
+              <div className="inline-block px-3 py-1 bg-white/[0.03] border border-white/5 rounded-full font-heading text-[12px] tracking-wider text-[#00E5FF] uppercase">
                 BRAND IDENTITY · SAAS · GLOBAL
               </div>
 
-              <div className="space-y-4 text-xs font-sans text-white/50 leading-relaxed">
+              <div className="space-y-4 text-[14px] font-sans text-white/50 leading-relaxed">
                 <p>
-                  <strong className="text-white block font-heading tracking-wider text-[10px] uppercase mb-1">
+                  <strong className="text-white block font-heading tracking-wider text-[12px] uppercase mb-1">
                     Challenge
                   </strong>
                   Scalia Domain needed a brand identity that communicated
@@ -261,7 +261,7 @@ export default function BrandIdentityPage() {
                 </p>
 
                 <div>
-                  <strong className="text-white block font-heading tracking-wider text-[10px] uppercase mb-1">
+                  <strong className="text-white block font-heading tracking-wider text-[12px] uppercase mb-1">
                     Deliverables
                   </strong>
                   <ul className="list-disc pl-4 space-y-1 text-white/40">
@@ -274,7 +274,7 @@ export default function BrandIdentityPage() {
                 </div>
 
                 <p>
-                  <strong className="text-white block font-heading tracking-wider text-[10px] uppercase mb-1">
+                  <strong className="text-white block font-heading tracking-wider text-[12px] uppercase mb-1">
                     Result
                   </strong>
                   A complete visual identity deployed across web app, marketing
@@ -347,7 +347,7 @@ export default function BrandIdentityPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16 items-center">
             <div>
-              <span className="font-heading text-[#6324FC] text-xs uppercase tracking-widest block mb-4">
+              <span className="font-heading text-[#6324FC] text-[14px] uppercase tracking-widest block mb-4">
                 BRAND CLARITY
               </span>
               <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize mb-8">
@@ -404,7 +404,7 @@ export default function BrandIdentityPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
             <div>
-              <span className="font-heading text-[#6324FC] text-xs uppercase tracking-widest block mb-4">
+              <span className="font-heading text-[#6324FC] text-[14px] uppercase tracking-widest block mb-4">
                 FULL DELIVERABLE SET
               </span>
               <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize">

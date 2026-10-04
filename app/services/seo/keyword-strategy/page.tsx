@@ -182,7 +182,7 @@ export default function KeywordStrategyPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+              <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
                 SEARCH INTELLIGENCE
               </span>
             </motion.div>
@@ -234,7 +234,7 @@ export default function KeywordStrategyPage() {
               <div className="font-heading text-6xl text-white tracking-tighter opacity-10 group-hover:opacity-100 transition-all duration-700">
                 User Intent
               </div>
-              <div className="font-heading text-[10px] tracking-[0.8em] text-[#6324FC] capitalize mt-4">
+              <div className="font-heading text-[12px] tracking-[0.8em] text-[#6324FC] capitalize mt-4">
                 Semantic Mapping
               </div>
             </div>
@@ -298,7 +298,7 @@ export default function KeywordStrategyPage() {
             <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between">
               <div className="flex justify-between items-start">
                 <SlidersHorizontal className="w-8 h-8 text-[#6324FC]" />
-                <div className="font-heading text-[9px] text-white/20 capitalize tracking-[0.3em]">
+                <div className="font-heading text-[12px] text-white/20 capitalize tracking-[0.3em]">
                   Intent Funnel // V2.0
                 </div>
               </div>
@@ -335,7 +335,7 @@ export default function KeywordStrategyPage() {
                       <span className="font-heading text-xl text-white capitalize">
                         {step.label}
                       </span>
-                      <span className="font-heading text-[9px] text-white/30 capitalize tracking-widest">
+                      <span className="font-heading text-[12px] text-white/30 capitalize tracking-widest">
                         {step.val}
                       </span>
                     </div>
@@ -352,7 +352,7 @@ export default function KeywordStrategyPage() {
                 ))}
               </div>
 
-              <div className="flex justify-between font-heading text-[9px] text-[#6324FC] capitalize tracking-widest">
+              <div className="flex justify-between font-heading text-[12px] text-[#6324FC] capitalize tracking-widest">
                 <span>Conversion Mapping</span>
                 <span>ROI Protocol Active</span>
               </div>
@@ -419,7 +419,7 @@ export default function KeywordStrategyPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               WHY MOST STRATEGIES FAIL
             </span>
           </div>
@@ -464,7 +464,7 @@ export default function KeywordStrategyPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               KEYWORD STRATEGY DELIVERABLES
             </span>
           </div>

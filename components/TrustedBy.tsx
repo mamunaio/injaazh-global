@@ -73,7 +73,7 @@ const partners = [
 
 export default function TrustedBy() {
   return (
-    <section className="w-full bg-[#060608] py-24 lg:py-32 relative overflow-hidden border-b border-white/5">
+    <section className="w-full bg-[#F5F5F0] dark:bg-[#060608] py-24 lg:py-32 relative overflow-hidden border-b border-black/5 dark:border-white/5 text-neutral-900 dark:text-white">
       {/* Background Accents */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#6324FC]/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#6324FC]/5 blur-[100px] rounded-full pointer-events-none" />
@@ -86,12 +86,12 @@ export default function TrustedBy() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize mb-6 flex items-center gap-3"
+              className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize mb-6 flex items-center gap-3 font-semibold"
             >
               <span className="w-8 h-[1px] bg-[#6324FC]" />
               THE NETWORK
             </motion.div>
-            <h1 className="font-heading text-8xl md:text-[9rem] leading-[0.8] tracking-tighter text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.05)] flex flex-col">
+            <h1 className="font-heading text-8xl md:text-[9rem] leading-[0.8] tracking-tighter text-neutral-900 dark:text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.05)] flex flex-col">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -118,13 +118,13 @@ export default function TrustedBy() {
             transition={{ delay: 0.3 }}
             className="flex flex-col items-start md:items-end text-left md:text-right"
           >
-            <p className="font-sans font-light text-white/40 text-base md: max-w-[320px] leading-relaxed mb-4">
+            <p className="font-sans font-normal dark:font-light text-neutral-600 dark:text-white/40 text-base max-w-[320px] leading-relaxed mb-4">
               We partner with industry pioneers to engineer digital dominance
               across every sector.
             </p>
             <div className="flex items-center gap-4">
-              <span className="text-white font-heading  text-2xl">1,200+</span>
-              <span className="text-white/20 font-heading  text-sm capitalize tracking-widest">
+              <span className="text-neutral-900 dark:text-white font-heading text-2xl font-bold">1,200+</span>
+              <span className="text-neutral-400 dark:text-white/20 font-heading text-sm capitalize tracking-widest">
                 Active Clients
               </span>
             </div>
@@ -141,25 +141,25 @@ export default function TrustedBy() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
               whileHover={{ y: -5 }}
-              className={`${partner.size} group relative bg-white/[0.02] border border-white/5 hover:border-[#6324FC]/30 hover:bg-[#6324FC]/5 transition-all duration-500 overflow-hidden p-6 md:p-10 flex flex-col justify-between`}
+              className={`${partner.size} group relative bg-white dark:bg-white/[0.02] border border-black/10 dark:border-white/5 hover:border-[#6324FC]/30 hover:bg-neutral-50 dark:hover:bg-[#6324FC]/5 transition-all duration-500 overflow-hidden p-6 md:p-10 flex flex-col justify-between shadow-md dark:shadow-none`}
             >
               {/* Card Glow */}
               <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-[#6324FC]/10 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
               <div className="flex justify-between items-start relative z-10">
-                <div className="p-3 bg-white/5 border border-white/10 group-hover:bg-[#6324FC] group-hover:border-[#6324FC] transition-all duration-500">
-                  <partner.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                <div className="p-3 bg-neutral-100 dark:bg-white/5 border border-black/10 dark:border-white/10 group-hover:bg-[#6324FC] group-hover:border-[#6324FC] transition-all duration-500 shadow-sm">
+                  <partner.icon className="w-5 h-5 md:w-6 md:h-6 text-neutral-800 dark:text-white group-hover:text-white transition-colors" />
                 </div>
-                <div className="font-heading  text-[8px] md:text-[10px] tracking-widest text-white/20 capitalize group-hover:text-[#6324FC] transition-colors">
+                <div className="font-heading text-[8px] md:text-[10px] tracking-widest text-neutral-400 dark:text-white/20 capitalize group-hover:text-[#6324FC] transition-colors font-semibold">
                   Sector 0{idx + 1}
                 </div>
               </div>
 
               <div className="relative z-10">
-                <h3 className="font-heading text-lg tracking-wide text-white mb-2 group-hover:translate-x-1 transition-transform">
+                <h3 className="font-heading text-lg tracking-wide text-neutral-900 dark:text-white mb-2 group-hover:translate-x-1 transition-transform">
                   {partner.name}
                 </h3>
-                <p className="font-sans font-light text-[10px] md:text-xs text-white/30 tracking-wider capitalize group-hover:text-white/60 transition-colors">
+                <p className="font-sans font-light text-[12px] md:text-xs text-neutral-500 dark:text-white/30 tracking-wider capitalize group-hover:text-neutral-700 dark:group-hover:text-white/60 transition-colors">
                   {partner.desc}
                 </p>
               </div>

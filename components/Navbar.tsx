@@ -13,7 +13,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
-  
+
   // Mobile menu sub-navigation states
   const [direction, setDirection] = useState<"forward" | "backward">("forward");
   const [currentPane, setCurrentPane] = useState<"main" | "services" | "category">("main");
@@ -90,9 +90,9 @@ export default function Navbar() {
   ];
 
   const services = [
-    { 
-      title: "Web Dev", 
-      icon: Code, 
+    {
+      title: "Web Dev",
+      icon: Code,
       items: [
         { name: "Next.js Architectures", link: "/services/web-dev/nextjs-architectures" },
         { name: "Headless Commerce", link: "/services/web-dev/headless-commerce" },
@@ -106,9 +106,9 @@ export default function Navbar() {
         link: "/work/themesjet"
       }
     },
-    { 
-      title: "UI/UX Design", 
-      icon: Paintbrush, 
+    {
+      title: "UI/UX Design",
+      icon: Paintbrush,
       items: [
         { name: "Brand Identity", link: "/services/ui-ux-design/brand-identity" },
         { name: "Design Systems", link: "/services/ui-ux-design/design-systems" },
@@ -122,9 +122,9 @@ export default function Navbar() {
         link: "/work"
       }
     },
-    { 
-      title: "SEO", 
-      icon: Search, 
+    {
+      title: "SEO",
+      icon: Search,
       items: [
         { name: "Technical Audits", link: "/services/seo/technical-audits" },
         { name: "Local Rankings", link: "/services/seo/local-rankings" },
@@ -138,9 +138,9 @@ export default function Navbar() {
         link: "/work"
       }
     },
-    { 
-      title: "Marketing", 
-      icon: TrendingUp, 
+    {
+      title: "Marketing",
+      icon: TrendingUp,
       items: [
         { name: "PPC Campaigns", link: "/services/marketing/ppc-campaigns" },
         { name: "Growth Automation", link: "/services/marketing/growth-automation" },
@@ -154,9 +154,9 @@ export default function Navbar() {
         link: "/work"
       }
     },
-    { 
-      title: "Content", 
-      icon: PenTool, 
+    {
+      title: "Content",
+      icon: PenTool,
       items: [
         { name: "Editorial Writing", link: "/services/content/editorial-writing" },
         { name: "Brand Narrative", link: "/services/content/brand-narrative" },
@@ -170,9 +170,9 @@ export default function Navbar() {
         link: "/work/nexus-esports"
       }
     },
-    { 
-      title: "Strategy", 
-      icon: LayoutDashboard, 
+    {
+      title: "Strategy",
+      icon: LayoutDashboard,
       items: [
         { name: "Digital Transformation", link: "/services/strategy/digital-transformation" },
         { name: "Business Intelligence", link: "/services/strategy/business-intelligence" },
@@ -200,26 +200,25 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.header 
-        className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
-          isScrolled || isHovered 
-            ? "bg-[#F5F5F0]/95 dark:bg-[#060608]/95 backdrop-blur-xl border-b border-primary/10 pt-0 pb-0" 
-            : "bg-transparent backdrop-blur-none border-b border-transparent pt-4 pb-0"
-        }`}
+      <motion.header
+        className={`fixed top-0 w-full z-[100] transition-all duration-500 ${isScrolled || isHovered
+          ? "bg-[#F5F5F0]/95 dark:bg-[#060608]/95 backdrop-blur-xl border-b border-primary/10 pt-0 pb-0"
+          : "bg-transparent backdrop-blur-none border-b border-transparent pt-4 pb-0"
+          }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
           <Link href="/" className="relative z-[101] flex items-center h-12 w-auto">
             <div className="relative h-full aspect-[3/1]">
-              <Image 
-                src="/assets/logo.webp" 
-                alt="INJAAZH" 
-                fill 
-                className="object-contain dark:brightness-0 dark:invert transition-all duration-300" 
+              <Image
+                src="/assets/logo.webp"
+                alt="INJAAZH"
+                fill
+                className="object-contain dark:brightness-0 dark:invert transition-all duration-300"
                 priority
               />
             </div>
           </Link>
-          
+
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-4 h-full relative">
             {navLinks.map((link) => {
@@ -238,20 +237,19 @@ export default function Navbar() {
                     if (link.isDropdown) handleMouseLeave();
                   }}
                 >
-                  <Link 
-                    href={link.href} 
-                    className={`relative z-10 text-sm font-sans tracking-wide transition-colors duration-300 flex items-center gap-1 ${
-                      isActive 
-                        ? "text-[#6324FC] font-semibold" 
-                        : "text-primary/70 hover:text-[#6324FC]"
-                    }`}
+                  <Link
+                    href={link.href}
+                    className={`relative z-10 text-sm font-sans tracking-wide transition-colors duration-300 flex items-center gap-1 ${isActive
+                      ? "text-[#6324FC] font-semibold"
+                      : "text-primary/70 hover:text-[#6324FC]"
+                      }`}
                   >
                     {link.name}
                     {link.isDropdown && (
                       <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${isHovered ? "rotate-180 text-[#6324FC]" : "text-primary/50"}`} />
                     )}
                   </Link>
-                  
+
                   {/* Hover Pill Background */}
                   {isHoveredOrDropdownOpen && (
                     <motion.span
@@ -260,7 +258,7 @@ export default function Navbar() {
                       transition={{ type: "spring", stiffness: 350, damping: 28 }}
                     />
                   )}
-                  
+
                   {/* Active Indicator Under Link */}
                   {isActive && (
                     <motion.span
@@ -274,23 +272,23 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden lg:block">
-            <Link 
-              href="/contact" 
+            <Link
+              href="/contact"
               className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)]"
             >
               {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
               <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
                 <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
               </div>
-              
+
               <div className="relative w-full h-full px-6 py-3 rounded-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
                 {/* Flowing background gradient */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
-                
+
                 {/* Bouncing/pulsating dot */}
                 <span className="w-2 h-2 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
-                
-                <span className="relative z-10 flex items-center gap-2 font-heading  tracking-wider text-primary capitalize transition-colors duration-500">
+
+                <span className="relative z-10 flex items-center gap-2 font-heading tracking-wider text-neutral-900 dark:text-white capitalize transition-colors duration-500 font-semibold">
                   LET'S TALK
                   <ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform duration-500 text-[#6324FC] dark:group-hover:text-white" />
                 </span>
@@ -301,28 +299,28 @@ export default function Navbar() {
           {/* Mobile Action Buttons (Let's Talk & Hamburger Toggle) */}
           <div className="lg:hidden flex items-center gap-3 relative z-[101]">
             {!mobileMenuOpen && (
-              <Link 
-                href="/contact" 
+              <Link
+                href="/contact"
                 className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_20px_rgba(99,36,252,0.3)]"
               >
                 {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
                 <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
                   <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
                 </div>
-                
+
                 <div className="relative w-full h-full px-3.5 py-1.5 rounded-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-2 z-10">
                   {/* Pulsating dot */}
                   <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
-                  
-                  <span className="relative z-10 flex items-center gap-1 font-heading text-xs tracking-wider text-primary capitalize transition-colors duration-500">
+
+                  <span className="relative z-10 flex items-center gap-1 font-heading text-[14px] tracking-wider text-neutral-900 dark:text-white capitalize transition-colors duration-500 font-semibold">
                     LET'S TALK
                     <ArrowRight className="w-3 h-3 -rotate-45 group-hover:rotate-0 transition-transform duration-500 text-[#6324FC] dark:group-hover:text-white" />
                   </span>
                 </div>
               </Link>
             )}
-            
-            <button 
+
+            <button
               className="text-primary hover:text-[#6324FC] transition-colors p-1"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -345,15 +343,15 @@ export default function Navbar() {
             >
               <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-12">
                 <div className="grid grid-cols-12 gap-8">
-                  
+
                   {/* 6 Services across a 3x2 Grid */}
                   <div className="col-span-8 grid grid-cols-3 gap-y-12 gap-x-8">
                     {services.map((svc, i) => {
                       const categorySlug = `/services/${svc.title.toLowerCase().replace(/[\s\/]+/g, '-')}`;
                       const isCategoryActive = pathname === categorySlug || pathname.startsWith(categorySlug + "/");
                       return (
-                        <motion.div 
-                          key={i} 
+                        <motion.div
+                          key={i}
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.4, delay: i * 0.05 + 0.1 }}
@@ -376,21 +374,19 @@ export default function Navbar() {
                               const isItemActive = pathname === item.link;
                               return (
                                 <li key={idx} className="group/link flex items-center">
-                                  <Link 
-                                    href={item.link} 
-                                    onClick={() => setIsHovered(false)} 
-                                    className={`w-full font-sans text-sm tracking-wide transition-all duration-300 flex items-center justify-between py-1.5 px-3 -mx-3 rounded-xl ${
-                                      isItemActive 
-                                        ? "text-[#00E5FF] font-medium bg-[#00E5FF]/10 border border-[#00E5FF]/20 shadow-[0_0_15px_rgba(0,229,255,0.12)]" 
-                                        : "text-primary/60 hover:text-primary hover:bg-white/[0.04] font-light"
-                                    }`}
+                                  <Link
+                                    href={item.link}
+                                    onClick={() => setIsHovered(false)}
+                                    className={`w-full font-sans text-sm tracking-wide transition-all duration-300 flex items-center justify-between py-1.5 px-3 -mx-3 rounded-xl ${isItemActive
+                                      ? "text-[#00E5FF] font-medium bg-[#00E5FF]/10 border border-[#00E5FF]/20 shadow-[0_0_15px_rgba(0,229,255,0.12)]"
+                                      : "text-primary/60 hover:text-primary hover:bg-white/[0.04] font-light"
+                                      }`}
                                   >
                                     <span className="flex items-center gap-2">
-                                      <ArrowRight className={`w-3.5 h-3.5 transition-all duration-300 ${
-                                        isItemActive 
-                                          ? "opacity-100 translate-x-0 text-[#00E5FF]" 
-                                          : "opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 text-[#6324FC]"
-                                      }`} />
+                                      <ArrowRight className={`w-3.5 h-3.5 transition-all duration-300 ${isItemActive
+                                        ? "opacity-100 translate-x-0 text-[#00E5FF]"
+                                        : "opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 text-[#6324FC]"
+                                        }`} />
                                       <span className={isItemActive ? "text-white font-medium" : ""}>{item.name}</span>
                                     </span>
                                     {isItemActive && (
@@ -407,14 +403,14 @@ export default function Navbar() {
                   </div>
 
                   {/* Featured Case Study Right Column */}
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="col-span-4 border-l border-primary/10 pl-8 relative"
                   >
                     <div className="text-xs font-heading  text-[#6324FC] capitalize tracking-widest mb-4">Featured Case Study</div>
-                    
+
                     <AnimatePresence mode="wait">
                       {services.map((svc) => (
                         svc.title === activeMegaMenuService && (
@@ -430,7 +426,7 @@ export default function Navbar() {
                                 <div className="absolute inset-0 bg-[#6324FC]/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500" />
                                 <Image src={svc.caseStudy.image} alt={svc.caseStudy.title} fill className="object-cover scale-100 group-hover:scale-105 transition-transform duration-700" />
                               </div>
-                              <div className="font-heading text-[10px] tracking-widest text-[#6324FC] mb-2">{svc.caseStudy.tags}</div>
+                              <div className="font-heading text-[12px] tracking-widest text-[#6324FC] mb-2">{svc.caseStudy.tags}</div>
                               <h4 className="font-heading text-2xl tracking-wide text-primary group-hover:text-[#6324FC] transition-colors mb-2">{svc.caseStudy.title}</h4>
                               <div className="font-sans text-sm font-light text-primary/50 mb-3">{svc.caseStudy.stats}</div>
                               <p className="font-sans text-sm font-light text-primary/60 flex items-center gap-2 group-hover:text-primary transition-colors">
@@ -469,7 +465,7 @@ export default function Navbar() {
       {/* Slide-in Mobile Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
@@ -479,7 +475,7 @@ export default function Navbar() {
             {/* Horizontal sliding panes area */}
             <div className="relative flex-grow overflow-hidden w-full h-full flex flex-col">
               <AnimatePresence initial={false} mode="popLayout" custom={direction}>
-                
+
                 {/* PANE 1: MAIN MENU */}
                 {currentPane === "main" && (
                   <motion.div
@@ -512,9 +508,8 @@ export default function Navbar() {
                             <Link
                               href={link.href}
                               onClick={() => setMobileMenuOpen(false)}
-                              className={`font-sans text-base font-medium tracking-wide transition-colors flex items-center justify-between group py-2 ${
-                                isActive ? "text-[#6324FC]" : "text-primary hover:text-[#6324FC]"
-                              }`}
+                              className={`font-sans text-base font-medium tracking-wide transition-colors flex items-center justify-between group py-2 ${isActive ? "text-[#6324FC]" : "text-primary hover:text-[#6324FC]"
+                                }`}
                             >
                               <span>{link.name}</span>
                               {isActive ? (
@@ -528,15 +523,14 @@ export default function Navbar() {
                         </div>
                       );
                     })}
-                    
+
                     {/* Contact Link in menu */}
                     <div className="w-full">
                       <Link
                         href="/contact"
                         onClick={() => setMobileMenuOpen(false)}
-                        className={`font-sans text-base font-medium tracking-wide transition-colors flex items-center justify-between group py-2 ${
-                          pathname === "/contact" ? "text-[#6324FC]" : "text-primary hover:text-[#6324FC]"
-                        }`}
+                        className={`font-sans text-base font-medium tracking-wide transition-colors flex items-center justify-between group py-2 ${pathname === "/contact" ? "text-[#6324FC]" : "text-primary hover:text-[#6324FC]"
+                          }`}
                       >
                         <span>Contact</span>
                         {pathname === "/contact" ? (
@@ -550,7 +544,7 @@ export default function Navbar() {
 
                     {/* Get in touch footer */}
                     <div className="mt-auto pt-8">
-                      <div className="font-heading  text-xs text-primary/40 tracking-widest capitalize mb-4">Get in touch</div>
+                      <div className="font-heading  text-[14px] text-primary/40 tracking-widest capitalize mb-4">Get in touch</div>
                       <a href="mailto:contact@injaazh.com" className="font-sans font-light text-xl text-[#6324FC]">contact@injaazh.com</a>
                     </div>
                   </motion.div>
@@ -575,12 +569,12 @@ export default function Navbar() {
                         setCurrentPane("main");
                         setActiveCategory(null);
                       }}
-                      className="flex items-center gap-2 font-heading  text-[10px] tracking-widest text-primary/50 hover:text-primary transition-colors text-left capitalize mb-4 cursor-pointer"
+                      className="flex items-center gap-2 font-heading  text-[12px] tracking-widest text-primary/50 hover:text-primary transition-colors text-left capitalize mb-4 cursor-pointer"
                     >
                       <ArrowRight className="w-4 h-4 rotate-180 text-[#6324FC]" />
                       Back to Menu
                     </button>
-                    
+
                     <h3 className="font-sans  font-semibold text-primary tracking-wide mb-2 border-b border-primary/10 pb-4">Our Services</h3>
 
                     {services.map((svc, i) => {
@@ -593,9 +587,8 @@ export default function Navbar() {
                             onClick={() => {
                               setActiveCategory(isOpen ? -1 : i);
                             }}
-                            className={`w-full font-sans text-base font-medium tracking-wide transition-colors flex items-center justify-between group text-left cursor-pointer py-2 ${
-                              isCategoryActive ? "text-[#00E5FF]" : "text-primary hover:text-[#6324FC]"
-                            }`}
+                            className={`w-full font-sans text-base font-medium tracking-wide transition-colors flex items-center justify-between group text-left cursor-pointer py-2 ${isCategoryActive ? "text-[#00E5FF]" : "text-primary hover:text-[#6324FC]"
+                              }`}
                           >
                             <span className="flex items-center gap-3">
                               <svc.icon className={`w-4 h-4 ${isCategoryActive ? "text-[#00E5FF]" : "text-[#6324FC]"}`} />
@@ -603,7 +596,7 @@ export default function Navbar() {
                             </span>
                             <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isCategoryActive ? "text-[#00E5FF]" : "text-[#6324FC]"} ${isOpen ? "rotate-180" : ""}`} />
                           </button>
-                          
+
                           <AnimatePresence initial={false}>
                             {isOpen && (
                               <motion.div
@@ -623,11 +616,10 @@ export default function Navbar() {
                                         setMobileMenuOpen(false);
                                         setActiveCategory(null);
                                       }}
-                                      className={`font-sans text-sm tracking-wide transition-colors flex items-center justify-between group py-1.5 px-2.5 rounded-lg ${
-                                        isSubActive 
-                                          ? "text-[#00E5FF] bg-[#00E5FF]/10 border border-[#00E5FF]/20 font-medium" 
-                                          : "text-primary/70 hover:text-[#6324FC]"
-                                      }`}
+                                      className={`font-sans text-sm tracking-wide transition-colors flex items-center justify-between group py-1.5 px-2.5 rounded-lg ${isSubActive
+                                        ? "text-[#00E5FF] bg-[#00E5FF]/10 border border-[#00E5FF]/20 font-medium"
+                                        : "text-primary/70 hover:text-[#6324FC]"
+                                        }`}
                                     >
                                       <span className="flex items-center gap-2">
                                         {isSubActive && <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shadow-[0_0_8px_#00E5FF] animate-pulse" />}

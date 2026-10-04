@@ -10,7 +10,7 @@ import { ArrowRight } from "lucide-react";
 export default function HeroSlider() {
   const { openModal } = useProjectModal();
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   // Spring physics for smooth mouse follow
   const springConfig = { damping: 25, stiffness: 150, mass: 0.5 };
   const mouseX = useSpring(0, springConfig);
@@ -33,10 +33,10 @@ export default function HeroSlider() {
   // Parallax transforms for different layers
   const textX = useTransform(mouseX, [-1, 1], [-50, 50]);
   const textY = useTransform(mouseY, [-1, 1], [-50, 50]);
-  
+
   const img1X = useTransform(mouseX, [-1, 1], [-50, 50]);
   const img1Y = useTransform(mouseY, [-1, 1], [-50, 50]);
-  
+
   const img2X = useTransform(mouseX, [-1, 1], [80, -80]);
   const img2Y = useTransform(mouseY, [-1, 1], [80, -80]);
 
@@ -44,18 +44,18 @@ export default function HeroSlider() {
   const img3Y = useTransform(mouseY, [-1, 1], [40, -40]);
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="hero-section relative h-screen w-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 overflow-hidden flex items-center justify-center"
     >
       {/* Dynamic Background Glow */}
-      <motion.div 
+      <motion.div
         className="absolute w-[50vw] h-[50vw] bg-[#6324FC]/20 blur-[120px] rounded-full pointer-events-none"
         style={{ x: useTransform(mouseX, [-1, 1], [-200, 200]), y: useTransform(mouseY, [-1, 1], [-200, 200]) }}
       />
 
       {/* Floating Image 1 - Top Left */}
-      <motion.div 
+      <motion.div
         style={{ x: img1X, y: img1Y, rotate: -10 }}
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -67,7 +67,7 @@ export default function HeroSlider() {
       </motion.div>
 
       {/* Floating Image 2 - Bottom Right */}
-      <motion.div 
+      <motion.div
         style={{ x: img2X, y: img2Y, rotate: 15 }}
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -79,7 +79,7 @@ export default function HeroSlider() {
       </motion.div>
 
       {/* Floating Image 3 - Center Top */}
-      <motion.div 
+      <motion.div
         style={{ x: img3X, y: img3Y, rotate: 5 }}
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -91,10 +91,10 @@ export default function HeroSlider() {
       </motion.div>
 
       {/* Massive Central Typography */}
-      <div 
+      <div
         className="hero-content-container relative z-20 flex flex-col items-center text-center pointer-events-none px-6 md:px-0 w-full"
       >
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
@@ -102,18 +102,19 @@ export default function HeroSlider() {
         >
           {/* Animated Glow Border */}
           <div className="absolute -inset-[1px] bg-gradient-to-r from-[#6324FC] via-[#A855F7] to-[#00E5FF] rounded-full blur-sm opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
-          
-          <div className="relative font-heading  text-white tracking-[0.1em] sm:tracking-[0.2em] md:tracking-[0.4em] text-[9px] md:text-[11px] bg-[#060608] dark:bg-black backdrop-blur-xl px-4 md:px-8 py-3 rounded-full border border-white/10 capitalize flex items-center justify-center gap-2 md:gap-4 text-center whitespace-nowrap overflow-hidden text-ellipsis">
+
+          <div className="relative font-heading text-neutral-900 dark:text-white tracking-[0.1em] sm:tracking-[0.2em] md:tracking-[0.4em] text-[12px] md:text-[11px] bg-white dark:bg-black backdrop-blur-xl px-4 md:px-8 py-3 rounded-full border border-black/10 dark:border-white/10 capitalize flex items-center justify-center gap-2 md:gap-4 text-center whitespace-nowrap overflow-hidden text-ellipsis shadow-sm dark:shadow-none">
             <span className="w-2 h-2 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0" />
             <span className="truncate">TOP-TIER WEB ENGINEERING & SEO AGENCY</span>
           </div>
         </motion.div>
 
-        <h1 className="hero-title font-heading text-[12vw] sm:text-[10vw] md:text-[9vw] leading-[0.8] tracking-tighter text-primary drop-shadow-[0_10px_30px_rgba(0,0,0,0.05)] flex flex-col items-center mt-6 font-bold text-center uppercase">
+        <h1 className="hero-title font-heading text-[12vw] sm:text-[10vw] md:text-[9vw] leading-[0.8] tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.05)] flex flex-col items-center mt-6 font-bold text-center uppercase">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5, ease: "easeOut", delay: 1 }}
+            className="text-[#6324FC] dark:text-primary transition-colors duration-500"
           >
             WE BUILD WHAT
           </motion.div>
@@ -121,7 +122,7 @@ export default function HeroSlider() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5, ease: "easeOut", delay: 1.2 }}
-            className="stroke-text text-primary/5 italic opacity-90 mt-2 md:mt-0"
+            className="stroke-hero italic opacity-90 mt-2 md:mt-0 select-none cursor-default"
           >
             WINS AWARDS.
           </motion.div>
@@ -140,7 +141,7 @@ export default function HeroSlider() {
           transition={{ duration: 1, delay: 1.6 }}
           className="hero-button-container mt-8 pointer-events-auto"
         >
-          <button 
+          <button
             onClick={() => openModal()}
             className="group relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95 hover:shadow-[0_0_30px_rgba(99,36,252,0.3)] hover:scale-105"
           >
@@ -148,15 +149,15 @@ export default function HeroSlider() {
             <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
               <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
             </div>
-            
+
             <div className="relative w-full h-full px-8 py-4 rounded-full bg-[#F5F5F0] dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
               {/* Flowing background gradient */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
-              
+
               {/* Pulsating dot */}
               <span className="w-2.5 h-2.5 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
-              
-              <span className="relative z-10 flex items-center gap-2 font-heading  tracking-wider text-primary capitalize transition-colors duration-500">
+
+              <span className="relative z-10 flex items-center gap-2 font-heading tracking-wider text-neutral-900 dark:text-white capitalize transition-colors duration-500 font-semibold">
                 LET'S TALK
                 <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-500 text-[#6324FC] dark:group-hover:text-white" />
               </span>
@@ -166,7 +167,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Circular Animated Scroll Indicator */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 1.8 }}
@@ -174,7 +175,7 @@ export default function HeroSlider() {
         className="hero-scroll-indicator absolute bottom-8 z-30 flex items-center justify-center cursor-pointer group"
       >
         {/* Spinning Text Ring */}
-        <motion.div 
+        <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
           className="absolute w-[120px] h-[120px]"
@@ -199,7 +200,7 @@ export default function HeroSlider() {
           <div className="relative w-full h-full rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center z-10">
             <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
             {/* Bouncing Arrow */}
-            <motion.div 
+            <motion.div
               animate={{ y: [-4, 4, -4] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               className="relative z-10"

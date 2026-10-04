@@ -188,7 +188,7 @@ export default function GrowthAutomationPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+              <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
                 AUTOMATION DIVISION
               </span>
             </motion.div>
@@ -336,7 +336,7 @@ export default function GrowthAutomationPage() {
                 {platforms.map((item, i) => (
                   <div
                     key={i}
-                    className="px-6 py-4 bg-white/[0.03] border border-white/5 rounded-xl font-heading text-[10px] tracking-widest text-white/60 capitalize flex items-center gap-3"
+                    className="px-6 py-4 bg-white/[0.03] border border-white/5 rounded-xl font-heading text-[12px] tracking-widest text-white/60 capitalize flex items-center gap-3"
                   >
                     <div className="w-1 h-1 rounded-full bg-[#6324FC]" />
                     {item}
@@ -348,7 +348,7 @@ export default function GrowthAutomationPage() {
             <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between">
               <div className="flex justify-between items-start">
                 <Terminal className="w-8 h-8 text-[#6324FC]" />
-                <div className="font-heading text-[9px] text-white/20 capitalize tracking-[0.3em]">
+                <div className="font-heading text-[12px] text-white/20 capitalize tracking-[0.3em]">
                   System Flow // 0xAF
                 </div>
               </div>
@@ -375,7 +375,7 @@ export default function GrowthAutomationPage() {
                       <div className="font-heading text-xl text-white capitalize">
                         {node.label}
                       </div>
-                      <div className="font-heading text-[9px] text-[#00E5FF] capitalize tracking-widest">
+                      <div className="font-heading text-[12px] text-[#00E5FF] capitalize tracking-widest">
                         {node.status}
                       </div>
                     </div>
@@ -426,7 +426,7 @@ export default function GrowthAutomationPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               AUTOMATION SCOPE
             </span>
           </div>
@@ -454,7 +454,7 @@ export default function GrowthAutomationPage() {
                 className="p-8 rounded-[2.5rem] bg-white/[0.01] border border-white/5 hover:border-white/10 transition-colors group flex flex-col justify-between"
               >
                 <div>
-                  <div className="font-heading text-[#6324FC] text-xs mb-6">
+                  <div className="font-heading text-[#6324FC] text-[14px] mb-6">
                     Scope 0{i + 1}
                   </div>
                   <h3 className="font-heading text-2xl text-white mb-4 group-hover:text-[#6324FC] transition-colors">
@@ -473,7 +473,7 @@ export default function GrowthAutomationPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               AUTOMATION CLARITY
             </span>
           </div>
@@ -532,7 +532,7 @@ export default function GrowthAutomationPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               THE MATH IS CLEAR
             </span>
           </div>
@@ -554,19 +554,17 @@ export default function GrowthAutomationPage() {
             {compareHiring.map((table, i) => (
               <div
                 key={i}
-                className={`p-10 rounded-[2.5rem] bg-white/[0.01] border transition-all duration-500 relative overflow-hidden ${
-                  table.isSystem
-                    ? "border-[#6324FC]/30 hover:border-[#6324FC]/50"
-                    : "border-white/5 hover:border-white/10"
-                }`}
+                className={`p-10 rounded-[2.5rem] bg-white/[0.01] border transition-all duration-500 relative overflow-hidden ${table.isSystem
+                  ? "border-[#6324FC]/30 hover:border-[#6324FC]/50"
+                  : "border-white/5 hover:border-white/10"
+                  }`}
               >
                 {table.isSystem && (
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#6324FC]/10 blur-3xl rounded-full pointer-events-none" />
                 )}
                 <h3
-                  className={`font-heading text-3xl mb-8 ${
-                    table.isSystem ? "text-[#6324FC]" : "text-white/60"
-                  }`}
+                  className={`font-heading text-3xl mb-8 ${table.isSystem ? "text-[#6324FC]" : "text-white/60"
+                    }`}
                 >
                   {table.title}
                 </h3>

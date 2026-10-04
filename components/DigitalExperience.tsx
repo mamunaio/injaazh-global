@@ -210,11 +210,10 @@ export default function DigitalExperience() {
                   key={idx}
                   onClick={() => setActiveTab(idx)}
                   onMouseEnter={() => setActiveTab(idx)}
-                  className={`relative py-3 md:py-4 rounded-full font-heading text-xs sm:text-sm md: tracking-widest transition-all duration-500 flex items-center justify-center ${
-                    activeTab === idx
-                      ? "px-4 sm:px-5 md:px-8 text-white flex-grow md:flex-grow-0"
-                      : "px-3 sm:px-4 md:px-8 text-white/40 hover:text-white/70 flex-shrink-0"
-                  }`}
+                  className={`relative py-3 md:py-4 rounded-full font-heading text-[14px] sm:text-sm md: tracking-widest transition-all duration-500 flex items-center justify-center ${activeTab === idx
+                    ? "px-4 sm:px-5 md:px-8 !text-white flex-grow md:flex-grow-0"
+                    : "px-3 sm:px-4 md:px-8 text-neutral-600 dark:text-white/40 hover:text-neutral-900 dark:hover:text-white/70 flex-shrink-0"
+                    }`}
                 >
                   {activeTab === idx && (
                     <motion.div
@@ -227,14 +226,20 @@ export default function DigitalExperience() {
                       }}
                     />
                   )}
-                  <span className="relative z-10 flex items-center justify-center">
-                    <tab.icon className="w-4 h-4 shrink-0" />
+                  <span
+                    className={`relative z-10 flex items-center justify-center ${activeTab === idx ? "!text-white" : ""}`}
+                    style={activeTab === idx ? { color: "#ffffff" } : undefined}
+                  >
+                    <tab.icon
+                      className="w-4 h-4 shrink-0"
+                      style={activeTab === idx ? { color: "#ffffff", stroke: "#ffffff" } : undefined}
+                    />
                     <span
-                      className={`whitespace-nowrap transition-all duration-500 overflow-hidden ${
-                        activeTab === idx
-                          ? "max-w-[200px] opacity-100 ml-2 md:ml-3"
-                          : "max-w-0 opacity-0 ml-0 md:max-w-[200px] md:opacity-100 md:ml-3"
-                      }`}
+                      className={`whitespace-nowrap transition-all duration-500 overflow-hidden ${activeTab === idx
+                        ? "max-w-[200px] opacity-100 ml-2 md:ml-3"
+                        : "max-w-0 opacity-0 ml-0 md:max-w-[200px] md:opacity-100 md:ml-3"
+                        }`}
+                      style={activeTab === idx ? { color: "#ffffff" } : undefined}
                     >
                       {tab.name}
                     </span>
@@ -260,12 +265,12 @@ export default function DigitalExperience() {
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-[1px] bg-[#6324FC]" />
-                  <span className="font-heading  text-[10px] tracking-[0.5em] text-[#6324FC] capitalize ">
+                  <span className="font-heading  text-[12px] tracking-[0.5em] text-[#6324FC] capitalize ">
                     {content[activeTab].badge}
                   </span>
                 </div>
 
-                <h3 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize flex flex-wrap gap-x-4 gap-y-2">
+                <h3 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-neutral-900 dark:text-white capitalize flex flex-wrap gap-x-4 gap-y-2">
                   {content[activeTab].headlineSegments.map((seg, idx) => {
                     if (seg.type === "purple") {
                       return (
@@ -287,7 +292,7 @@ export default function DigitalExperience() {
                       );
                     } else {
                       return (
-                        <span key={idx} className="inline-block text-white">
+                        <span key={idx} className="inline-block text-neutral-900 dark:text-white">
                           {seg.text}
                         </span>
                       );
@@ -295,7 +300,7 @@ export default function DigitalExperience() {
                   })}
                 </h3>
 
-                <p className="font-sans font-light  md:text-xl text-white/70 leading-relaxed max-w-xl border-l-2 border-[#6324FC]/40 pl-6 md:pl-8">
+                <p className="font-sans font-light md:text-xl text-neutral-600 dark:text-white/70 leading-relaxed max-w-xl border-l-2 border-[#6324FC]/40 pl-6 md:pl-8">
                   {content[activeTab].desc}
                 </p>
 
@@ -303,7 +308,7 @@ export default function DigitalExperience() {
                   {content[activeTab].tags.map((tag, idx) => (
                     <div
                       key={idx}
-                      className="px-4 py-2 bg-[#6324FC]/10 border border-[#6324FC]/30 font-heading  text-[10px] tracking-widest text-white/90 capitalize rounded-full whitespace-nowrap shadow-[0_0_15px_rgba(99,36,252,0.1)]"
+                      className="px-4 py-2 bg-white dark:bg-[#6324FC]/10 border border-black/10 dark:border-[#6324FC]/30 font-heading text-[12px] tracking-widest text-neutral-800 dark:text-white/90 capitalize rounded-full whitespace-nowrap shadow-xs dark:shadow-[0_0_15px_rgba(99,36,252,0.1)]"
                     >
                       {tag}
                     </div>
@@ -347,7 +352,7 @@ export default function DigitalExperience() {
                     rotateY,
                     transformStyle: "preserve-3d",
                   }}
-                  className="relative bg-white/[0.03] backdrop-blur-2xl border border-white/10 rounded-[2rem] lg:rounded-[3rem] p-8 md:p-14 overflow-hidden shadow-2xl shadow-black transition-colors duration-500 hover:border-white/20"
+                  className="relative bg-white dark:bg-white/[0.03] backdrop-blur-2xl border border-black/10 dark:border-white/10 rounded-[2rem] lg:rounded-[3rem] p-8 md:p-14 overflow-hidden shadow-xl dark:shadow-2xl dark:shadow-black transition-colors duration-500 hover:border-[#6324FC]/30 dark:hover:border-white/20"
                 >
                   {/* Decorative Ambient Glows inside the card */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#6324FC]/10 blur-[80px] rounded-full -mr-32 -mt-32 pointer-events-none" />
@@ -362,10 +367,10 @@ export default function DigitalExperience() {
                   >
                     {content[activeTab].kpis.map((kpi, idx) => (
                       <div key={idx} className="space-y-1">
-                        <div className="font-heading text-4xl md:text-5xl text-white tracking-tighter drop-shadow-2xl whitespace-nowrap">
+                        <div className="font-heading text-4xl md:text-5xl text-neutral-900 dark:text-white tracking-tighter drop-shadow-2xl whitespace-nowrap">
                           {kpi.val}
                         </div>
-                        <div className="font-heading  text-[10px] md:text-xs tracking-[0.3em] text-[#00E5FF] capitalize font-semibold">
+                        <div className="font-heading  text-[12px] md:text-xs tracking-[0.3em] text-[#6324FC] dark:text-[#00E5FF] capitalize font-semibold">
                           {kpi.label}
                         </div>
                       </div>
@@ -378,13 +383,13 @@ export default function DigitalExperience() {
                   >
                     {content[activeTab].bars.map((bar, idx) => (
                       <div key={idx} className="space-y-2">
-                        <div className="flex justify-between font-heading  text-[10px] tracking-[0.2em] text-white/70 capitalize ">
+                        <div className="flex justify-between font-heading  text-[12px] tracking-[0.2em] text-neutral-700 dark:text-white/70 capitalize ">
                           <span>{bar.label}</span>
-                          <span className="text-white font-bold">
+                          <span className="text-neutral-900 dark:text-white font-bold">
                             {bar.width}
                           </span>
                         </div>
-                        <div className="relative h-1.5 bg-white/[0.05] rounded-full overflow-hidden">
+                        <div className="relative h-1.5 bg-neutral-200 dark:bg-white/[0.05] rounded-full overflow-hidden">
                           <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: bar.width }}

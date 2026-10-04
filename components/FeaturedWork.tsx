@@ -128,6 +128,44 @@ const cases: CaseItem[] = [
     color: "#00E5FF",
     accentGlow: "rgba(0, 229, 255, 0.25)",
   },
+  {
+    id: "05",
+    slug: "deliver-my-motor",
+    category: "LOGISTICS · MARKETPLACE",
+    title: "Deliver My Motor — Vehicle Transport Platform",
+    location: "🇬🇧 UNITED KINGDOM",
+    liveUrl: "https://www.delivermymotor.com/",
+    displayUrl: "delivermymotor.com",
+    status: "LIVE PLATFORM",
+    metrics: [
+      { label: "QUOTE TIME", val: 60, suffix: "s", prefix: "<", icon: Zap },
+      { label: "CARRIER NETWORK", val: 500, suffix: "+", icon: Target },
+    ],
+    body: "Full-stack automotive transport marketplace connecting UK motorists with vetted carriers in real time. Features automated distance calculation, instant dispatch, and secure escrow deposits.",
+    tags: ["PHP & Laravel", "Marketplace", "Distance API", "UK Logistics"],
+    image: "/assets/deliver-my-motor.png",
+    color: "#FF6B00",
+    accentGlow: "rgba(255, 107, 0, 0.25)",
+  },
+  {
+    id: "06",
+    slug: "salam-medical",
+    category: "HEALTHCARE · HOSPITAL",
+    title: "Salam Medical — Enterprise Healthcare Platform",
+    location: "🇸🇦 JEDDAH, KSA",
+    liveUrl: "https://salammedical.com/",
+    displayUrl: "salammedical.com",
+    status: "CLIENT WEBSITE",
+    metrics: [
+      { label: "PATIENT TRIAGE", val: 240, suffix: "%", prefix: "+", icon: Zap },
+      { label: "PERFORMANCE", val: 98, suffix: "/100", icon: Target },
+    ],
+    body: "Calming bilingual hospital and home healthcare digital ecosystem engineered with pixel-perfect Arabic RTL support, instant emergency WhatsApp routing, and authoritative YMYL medical schemas.",
+    tags: ["WordPress Pro", "Arabic RTL", "Doctor Directory", "YMYL SEO"],
+    image: "/assets/salam-medical.png",
+    color: "#10B981",
+    accentGlow: "rgba(16, 185, 129, 0.25)",
+  },
 ];
 
 function NumberTicker({
@@ -163,7 +201,7 @@ function NumberTicker({
   }, [value]);
 
   return (
-    <span className="font-heading text-xl md:text-2xl text-white font-bold tracking-tight">
+    <span className="font-heading text-xl md:text-2xl text-neutral-900 dark:text-white font-bold tracking-tight">
       {prefix}
       {typeof value === "number" && value % 1 !== 0
         ? displayValue.toFixed(1)
@@ -209,7 +247,7 @@ function CaseStudyCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7, delay: index * 0.15 }}
-      className="group relative flex flex-col h-full rounded-3xl bg-[#09090D] border border-white/[0.08] hover:border-white/20 transition-all duration-500 overflow-hidden shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)]"
+      className="group relative flex flex-col h-full rounded-3xl bg-white dark:bg-[#09090D] border border-[#E4E4EB] dark:border-white/[0.08] hover:border-[#6324FC]/40 dark:hover:border-white/20 transition-all duration-500 overflow-hidden shadow-[0_10px_35px_-5px_rgba(0,0,0,0.06),0_2px_10px_rgba(0,0,0,0.03)] dark:shadow-2xl hover:shadow-[0_20px_50px_-10px_rgba(99,36,252,0.12)] dark:hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)]"
       onMouseMove={handleMouseMove}
       style={{ perspective: 1000 }}
     >
@@ -226,7 +264,7 @@ function CaseStudyCard({
       />
 
       {/* Top Safari Mockup Browser Chrome */}
-      <div className="relative z-10 flex items-center justify-between px-5 py-3 bg-[#0E0E14] border-b border-white/[0.06] rounded-t-3xl">
+      <div className="relative z-10 flex items-center justify-between px-5 py-3 bg-[#F5F5F8] dark:bg-[#0E0E14] border-b border-[#E8E8EE] dark:border-white/[0.06] rounded-t-3xl transition-colors">
         {/* macOS Traffic Lights */}
         <div className="flex items-center gap-1.5">
           <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/80 group-hover:bg-[#FF5F56] transition-colors" />
@@ -240,9 +278,9 @@ function CaseStudyCard({
           target="_blank"
           rel="noopener noreferrer"
           title={`Visit ${project.displayUrl}`}
-          className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-[11px] font-mono text-white/70 hover:text-white hover:bg-white/[0.08] transition-all"
+          className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.04] border border-[#DFDFE6] dark:border-white/[0.08] text-[12px] font-mono text-[#33333F] dark:text-white/70 hover:text-black dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-white/[0.08] transition-all shadow-sm dark:shadow-none"
         >
-          <Lock className="w-3 h-3 text-emerald-400 shrink-0" />
+          <Lock className="w-3 h-3 text-emerald-500 dark:text-emerald-400 shrink-0" />
           <span className="truncate max-w-[130px] font-medium">{project.displayUrl}</span>
         </a>
 
@@ -252,7 +290,7 @@ function CaseStudyCard({
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
           </span>
-          <span className="text-[9px] font-mono font-bold tracking-wider text-emerald-400/90 uppercase hidden sm:inline">
+          <span className="text-[9px] font-mono font-bold tracking-wider text-emerald-600 dark:text-emerald-400/90 uppercase hidden sm:inline">
             {project.status}
           </span>
         </div>
@@ -262,7 +300,7 @@ function CaseStudyCard({
       <div className="relative z-10 p-3 pb-0">
         <Link
           href={`/work/${project.slug}`}
-          className="block relative aspect-[16/10] overflow-hidden rounded-2xl bg-[#13131A] border border-white/5 group/img"
+          className="block relative aspect-[16/10] overflow-hidden rounded-2xl bg-[#ECECEF] dark:bg-[#13131A] border border-[#E2E2E8] dark:border-white/5 group/img"
         >
           <motion.div
             style={{ rotateX, rotateY }}
@@ -277,12 +315,12 @@ function CaseStudyCard({
             />
 
             {/* Subtle Gradient Veil */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#09090D] via-[#09090D]/30 to-transparent opacity-75 group-hover:opacity-30 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent dark:from-[#09090D] dark:via-[#09090D]/30 dark:to-transparent opacity-75 group-hover:opacity-20 transition-opacity duration-500" />
 
             {/* Quick Inspection Pill on Image Hover */}
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <span className="px-4 py-2 rounded-full bg-[#060608]/90 backdrop-blur-md border border-white/20 text-white font-mono text-xs tracking-wider flex items-center gap-2 shadow-2xl">
-                <Sparkles className="w-3.5 h-3.5 text-[#00E5FF]" />
+              <span className="px-4 py-2 rounded-full bg-white/95 dark:bg-[#060608]/90 backdrop-blur-md border border-black/10 dark:border-white/20 text-neutral-900 dark:text-white font-mono text-[14px] tracking-wider flex items-center gap-2 shadow-2xl">
+                <Sparkles className="w-3.5 h-3.5 text-[#6324FC] dark:text-[#00E5FF]" />
                 EXPLORE CASE STUDY
               </span>
             </div>
@@ -292,7 +330,7 @@ function CaseStudyCard({
               {project.metrics.map((m, i) => (
                 <div
                   key={i}
-                  className="flex-1 bg-[#060608]/85 backdrop-blur-xl border border-white/10 p-3 rounded-xl hover:bg-[#060608] transition-colors"
+                  className="flex-1 bg-white/95 dark:bg-[#060608]/85 backdrop-blur-xl border border-black/[0.08] dark:border-white/10 p-3 rounded-xl hover:bg-white dark:hover:bg-[#060608] shadow-[0_4px_16px_rgba(0,0,0,0.08)] dark:shadow-none transition-colors"
                 >
                   <div className="flex items-center gap-2 mb-0.5">
                     <m.icon
@@ -305,7 +343,7 @@ function CaseStudyCard({
                       prefix={m.prefix}
                     />
                   </div>
-                  <span className="font-mono text-[9px] tracking-wider text-white/50 uppercase block truncate">
+                  <span className="font-mono text-[12px] tracking-wider text-neutral-600 dark:text-white/50 uppercase block truncate font-medium dark:font-normal">
                     {m.label}
                   </span>
                 </div>
@@ -321,7 +359,7 @@ function CaseStudyCard({
           {/* Category & Location Header */}
           <div className="flex items-center justify-between gap-2 mb-3">
             <span
-              className="font-mono text-[10px] tracking-widest uppercase font-semibold flex items-center gap-1.5"
+              className="font-mono text-[12px] tracking-widest uppercase font-semibold flex items-center gap-1.5"
               style={{ color: project.color }}
             >
               <span
@@ -330,20 +368,20 @@ function CaseStudyCard({
               />
               {project.category}
             </span>
-            <span className="font-mono text-[10px] text-white/40 tracking-wider">
+            <span className="font-mono text-[12px] text-neutral-500 dark:text-white/40 tracking-wider font-medium dark:font-normal">
               {project.location}
             </span>
           </div>
 
           {/* Project Title */}
           <Link href={`/work/${project.slug}`}>
-            <h3 className="font-heading text-2xl text-white font-bold mb-3 hover:text-[#00E5FF] transition-colors leading-tight group-hover:translate-x-0.5 duration-300">
+            <h3 className="font-heading text-2xl text-neutral-900 dark:text-white font-bold mb-3 hover:text-[#6324FC] dark:hover:text-[#00E5FF] transition-colors leading-tight group-hover:translate-x-0.5 duration-300">
               {project.title}
             </h3>
           </Link>
 
           {/* Project Body */}
-          <p className="font-sans font-light text-white/60 text-xs sm:text-sm leading-relaxed mb-5 line-clamp-3">
+          <p className="font-sans font-normal dark:font-light text-neutral-600 dark:text-white/60 text-[14px] sm:text-sm leading-relaxed mb-5 line-clamp-3">
             {project.body}
           </p>
 
@@ -352,7 +390,7 @@ function CaseStudyCard({
             {project.tags.map((tag, tIdx) => (
               <span
                 key={tIdx}
-                className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-white/70 font-mono text-[10px] tracking-wide"
+                className="px-2.5 py-1 rounded-md bg-[#F2F2F6] dark:bg-white/[0.04] border border-[#E4E4EC] dark:border-white/[0.06] text-neutral-700 dark:text-white/70 font-mono text-[12px] tracking-wide font-medium dark:font-normal"
               >
                 {tag}
               </span>
@@ -361,32 +399,32 @@ function CaseStudyCard({
         </div>
 
         {/* Dual Action Buttons Footer */}
-        <div className="pt-4 border-t border-white/[0.07] flex items-center gap-3">
+        <div className="pt-4 border-t border-black/[0.07] dark:border-white/[0.07] flex items-center gap-3">
           {/* Live Preview Button */}
           <a
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.12] border border-white/10 hover:border-white/20 text-white font-mono text-[11px] tracking-wider uppercase font-semibold transition-all group/btn"
+            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#F4F4F7] hover:bg-[#EAEAEF] dark:bg-white/[0.05] dark:hover:bg-white/[0.12] border border-[#DFDFE6] dark:border-white/10 hover:border-[#CECED8] dark:hover:border-white/20 text-neutral-900 dark:text-white font-mono text-[12px] tracking-wider uppercase font-semibold transition-all group/btn shadow-sm dark:shadow-none"
           >
             <span>Live Site</span>
-            <ExternalLink className="w-3.5 h-3.5 text-white/60 group-hover/btn:text-white transition-colors" />
+            <ExternalLink className="w-3.5 h-3.5 text-neutral-600 dark:text-white/60 group-hover/btn:text-neutral-900 dark:group-hover/btn:text-white transition-colors" />
           </a>
 
           {/* Detailed Case Study Button */}
           <Link
             href={`/work/${project.slug}`}
-            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-white font-mono text-[11px] tracking-wider uppercase font-semibold transition-all relative overflow-hidden group/cs"
+            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-neutral-900 dark:text-white font-mono text-[12px] tracking-wider uppercase font-semibold transition-all relative overflow-hidden group/cs shadow-sm dark:shadow-none"
             style={{
-              background: `linear-gradient(135deg, ${project.color}33, ${project.color}11)`,
-              borderColor: `${project.color}55`,
+              background: `linear-gradient(135deg, ${project.color}22, ${project.color}0A)`,
+              borderColor: `${project.color}44`,
               borderWidth: 1,
             }}
           >
             <span className="relative z-10 group-hover/cs:translate-x-[-2px] transition-transform">
               Case Study
             </span>
-            <ArrowRight className="w-3.5 h-3.5 relative z-10 group-hover/cs:translate-x-1 transition-transform" />
+            <ArrowRight className="w-3.5 h-3.5 relative z-10 text-neutral-900 dark:text-white group-hover/cs:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>
@@ -396,7 +434,7 @@ function CaseStudyCard({
 
 export default function FeaturedWork() {
   return (
-    <section className="w-full bg-[#060608] py-20 md:py-28 relative overflow-hidden">
+    <section className="w-full bg-[#F5F5F0] dark:bg-[#060608] py-20 md:py-28 relative overflow-hidden transition-colors duration-500">
       {/* Background Ambience & Lighting */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6324FC]/10 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00E5FF]/10 blur-[140px] rounded-full translate-y-1/2 -translate-x-1/4 pointer-events-none" />
@@ -412,7 +450,7 @@ export default function FeaturedWork() {
               viewport={{ once: true }}
               className="h-[1px] bg-[#6324FC]"
             />
-            <span className="font-mono text-xs md:text-sm tracking-[0.5em] text-[#6324FC] uppercase font-semibold">
+            <span className="font-mono text-[14px] md:text-sm tracking-[0.5em] text-[#6324FC] uppercase font-semibold">
               SELECTED WORKS
             </span>
           </div>
@@ -424,7 +462,7 @@ export default function FeaturedWork() {
               </h2>
               <div
                 aria-hidden="true"
-                className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.85] tracking-tighter text-white"
+                className="font-heading text-5xl md:text-7xl lg:text-7xl leading-[0.85] tracking-tighter text-neutral-900 dark:text-white transition-colors duration-500"
               >
                 RESULTS <br />
                 <motion.span
@@ -447,12 +485,12 @@ export default function FeaturedWork() {
             </div>
 
             <div className="max-w-xl border-l-2 border-[#6324FC]/40 pl-6 sm:pl-8 py-1">
-              <p className="font-sans font-light text-white/70 text-base sm:text-lg leading-relaxed mb-4">
+              <p className="font-sans font-normal dark:font-light text-neutral-600 dark:text-white/70 text-base sm:text-lg leading-relaxed mb-4 transition-colors">
                 Real enterprise websites engineered for measurable ROI, high Google rankings, and frictionless user experiences. Every featured case study below represents live client solutions.
               </p>
               <Link
                 href="/work"
-                className="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-[#6324FC] hover:text-white uppercase transition-colors"
+                className="inline-flex items-center gap-2 font-mono text-[14px] tracking-widest text-[#6324FC] hover:text-black dark:hover:text-white uppercase transition-colors"
               >
                 <span>EXPLORE ALL METHODOLOGIES</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -469,12 +507,12 @@ export default function FeaturedWork() {
         </div>
 
         {/* Bottom Banner & Full Archive CTA */}
-        <div className="mt-16 pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="mt-16 pt-12 border-t border-black/10 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 transition-colors">
           <div className="relative">
-            <div className="font-mono text-xs tracking-widest text-[#6324FC] uppercase mb-1 font-semibold">
+            <div className="font-mono text-[14px] tracking-widest text-[#6324FC] uppercase mb-1 font-semibold">
               ENTERPRISE STANDARDS
             </div>
-            <div className="font-sans text-white/90 text-lg sm:text-xl font-medium max-w-lg">
+            <div className="font-sans text-neutral-900 dark:text-white/90 text-lg sm:text-xl font-medium max-w-lg transition-colors">
               "We don&apos;t just deliver web pages — we engineer high-speed digital assets that dominate search and drive revenue."
             </div>
           </div>
@@ -490,9 +528,9 @@ export default function FeaturedWork() {
                 <div className="w-[160%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
               </div>
 
-              <div className="relative w-full h-full px-8 py-4 rounded-full bg-[#060608] flex items-center justify-center gap-3.5 z-10">
+              <div className="relative w-full h-full px-8 py-4 rounded-full bg-[#F5F5F0] dark:bg-[#060608] flex items-center justify-center gap-3.5 z-10 transition-colors duration-500">
                 <span className="w-2 h-2 rounded-full bg-[#00E5FF] shadow-[0_0_10px_#00E5FF] animate-pulse shrink-0" />
-                <span className="font-heading text-sm md:text-base tracking-widest text-white uppercase font-bold flex items-center gap-3">
+                <span className="font-heading text-sm md:text-base tracking-widest text-neutral-900 dark:text-white uppercase font-bold flex items-center gap-3 transition-colors">
                   VIEW FULL PORTFOLIO ARCHIVE
                   <ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-[#00E5FF]" />
                 </span>

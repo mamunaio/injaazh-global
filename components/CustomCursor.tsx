@@ -26,7 +26,7 @@ export default function CustomCursor() {
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      
+
       if (target.closest("a") || target.closest("button") || target.tagName === "BUTTON" || target.tagName === "A") {
         setIsHovering(true);
       } else {
@@ -90,7 +90,7 @@ export default function CustomCursor() {
       </AnimatePresence>
 
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] flex items-center justify-center font-heading  text-xs text-primary tracking-widest drop-shadow-[0_0_10px_rgba(99,36,252,0.6)]"
+        className="fixed top-0 left-0 pointer-events-none z-[9999] flex items-center justify-center font-heading  text-[14px] text-primary tracking-widest drop-shadow-[0_0_10px_rgba(99,36,252,0.6)]"
         style={{
           x: cursorX,
           y: cursorY,
@@ -106,7 +106,7 @@ export default function CustomCursor() {
           height: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
         }}
       >
-        
+
         {/* 1. TEXT BUBBLE STATE */}
         <AnimatePresence>
           {cursorText && (
@@ -124,14 +124,14 @@ export default function CustomCursor() {
         {/* 2. ADVANCED SVG RING STATE (Visible when no text) */}
         <AnimatePresence>
           {!cursorText && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="absolute inset-0 w-full h-full"
             >
               <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible">
-                
+
                 {/* Inner Solid Ring (Spins counter-clockwise) */}
                 <motion.circle
                   cx="50"
@@ -154,28 +154,28 @@ export default function CustomCursor() {
                   r="45"
                   stroke="#6324FC"
                   strokeWidth={isHovering ? "3" : "2"}
-                  strokeDasharray={isHovering ? "6 6" : "8 12"} 
+                  strokeDasharray={isHovering ? "6 6" : "8 12"}
                   fill="none"
                   opacity={isHovering ? "1" : "0.8"}
                   initial={{ rotate: 0 }}
                   animate={{ rotate: 360 }}
-                  transition={{ 
-                    repeat: Infinity, 
-                    duration: isHovering ? 4 : 10, 
-                    ease: "linear" 
+                  transition={{
+                    repeat: Infinity,
+                    duration: isHovering ? 4 : 10,
+                    ease: "linear"
                   }}
                   style={{ transformOrigin: "50px 50px" }}
                 />
 
                 {/* Center Pulsing Dot (Anchors the visual) */}
-                <motion.circle 
-                  cx="50" 
-                  cy="50" 
-                  r="3" 
-                  fill="#6324FC" 
-                  animate={{ 
-                    scale: isHovering ? 0 : [1, 1.5, 1], 
-                    opacity: isHovering ? 0 : [0.6, 1, 0.6] 
+                <motion.circle
+                  cx="50"
+                  cy="50"
+                  r="3"
+                  fill="#6324FC"
+                  animate={{
+                    scale: isHovering ? 0 : [1, 1.5, 1],
+                    opacity: isHovering ? 0 : [0.6, 1, 0.6]
                   }}
                   transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
                 />

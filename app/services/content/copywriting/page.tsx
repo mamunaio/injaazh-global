@@ -67,7 +67,7 @@ export default function CopywritingPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">
+              <span className="font-heading  text-[#6324FC] text-[12px] tracking-[0.5em] capitalize ">
                 Persuasion Division
               </span>
             </motion.div>
@@ -177,7 +177,7 @@ export default function CopywritingPage() {
             <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between group">
               <div className="flex justify-between items-start">
                 <MessageSquare className="w-8 h-8 text-[#6324FC]" />
-                <div className="font-heading  text-[9px] text-white/20 capitalize tracking-[0.3em]">
+                <div className="font-heading  text-[12px] text-white/20 capitalize tracking-[0.3em]">
                   Copy Node // v9.0
                 </div>
               </div>
@@ -193,7 +193,7 @@ export default function CopywritingPage() {
                   <div className="font-heading text-3xl text-white leading-none">
                     THE PRODUCT YOU NEVER KNEW YOU NEEDED.
                   </div>
-                  <div className="flex justify-between font-heading  text-[9px] text-[#00FFA3] capitalize tracking-widest">
+                  <div className="flex justify-between font-heading  text-[12px] text-[#00FFA3] capitalize tracking-widest">
                     <span>Persuasion Score: 98%</span>
                     <span>CTR Potential: High</span>
                   </div>
@@ -219,7 +219,7 @@ export default function CopywritingPage() {
                 </div>
               </div>
 
-              <div className="flex justify-between font-heading  text-[9px] text-[#6324FC] capitalize tracking-widest">
+              <div className="flex justify-between font-heading  text-[12px] text-[#6324FC] capitalize tracking-widest">
                 <span>Linguistic Engine</span>
                 <span>Conversion Mode Active</span>
               </div>

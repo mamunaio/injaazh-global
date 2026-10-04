@@ -48,7 +48,7 @@ export default function TeamClient() {
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             className="text-center md:text-left"
           >
-            <div className="font-heading text-[10px] tracking-[0.8em] text-[#6324FC] capitalize mb-6 ml-[0.8em]">
+            <div className="font-heading text-[12px] tracking-[0.8em] text-[#6324FC] capitalize mb-6 ml-[0.8em]">
               The Collective // Talent 0x88
             </div>
             <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-4 text-[#060608] dark:text-white">
@@ -94,12 +94,12 @@ export default function TeamClient() {
               {/* Content Overlay - pointer-events-none so it doesn't block the main Link */}
               <div className="absolute inset-0 z-20 flex flex-col justify-end p-10 lg:p-12 pointer-events-none">
                 {/* Meta (Top Right ID) */}
-                <div className="absolute top-10 right-10 font-heading text-[10px] text-white/20 group-hover:text-[var(--member-color-60)] transition-colors">
+                <div className="absolute top-10 right-10 font-heading text-[12px] text-white/20 group-hover:text-[var(--member-color-60)] transition-colors">
                   {member.id} // SECURE
                 </div>
 
                 {/* Role Badge */}
-                <div className="inline-flex w-fit px-3 py-1.5 bg-[var(--member-color-30)] backdrop-blur-md border border-[var(--member-color-40)] rounded-full font-heading text-[9px] tracking-[0.2em] text-sky-100 capitalize mb-6 group-hover:bg-[var(--member-color)] group-hover:border-[var(--member-color)] group-hover:text-white transition-all duration-500">
+                <div className="inline-flex w-fit px-3 py-1.5 bg-[var(--member-color-30)] backdrop-blur-md border border-[var(--member-color-40)] rounded-full font-heading text-[12px] tracking-[0.2em] text-sky-100 capitalize mb-6 group-hover:bg-[var(--member-color)] group-hover:border-[var(--member-color)] group-hover:text-white transition-all duration-500">
                   {member.role}
                 </div>
 
@@ -166,8 +166,8 @@ export default function TeamClient() {
                 </div>
 
                 <div className="absolute bottom-0 left-0 h-1 bg-[var(--member-color)] w-0 group-hover:w-full transition-all duration-1000" />
-                </div>
-              </motion.div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -176,7 +176,7 @@ export default function TeamClient() {
       <section className="px-6 lg:px-12 max-w-[1400px] mx-auto py-16 md:py-24 border-t border-[#060608]/10 dark:border-white/5">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-8 p-16 rounded-[4rem] bg-white dark:bg-white/[0.02] border border-[#060608]/10 dark:border-white/5 flex flex-col justify-center space-y-8 shadow-sm">
-            <div className="font-heading text-[10px] text-[#6324FC] tracking-[0.5em] capitalize">
+            <div className="font-heading text-[12px] text-[#6324FC] tracking-[0.5em] capitalize">
               Global Sync
             </div>
             <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize">
@@ -191,7 +191,7 @@ export default function TeamClient() {
             <div className="font-heading text-8xl leading-none tracking-tighter text-white">
               <Counter value="100%" />
             </div>
-            <div className="font-heading text-[10px] tracking-[0.4em] capitalize opacity-60 text-white">
+            <div className="font-heading text-[12px] tracking-[0.4em] capitalize opacity-60 text-white">
               Success Rate
             </div>
           </div>
@@ -201,7 +201,7 @@ export default function TeamClient() {
       {/* 4. Final CTA */}
       <section className="py-16 md:py-24 px-6 lg:px-12 max-w-[1400px] mx-auto text-center border-t border-[#060608]/10 dark:border-white/5">
         <Link href="/contact" className="group flex flex-col items-center">
-          <div className="font-heading text-[11px] tracking-[0.8em] text-primary/40 capitalize mb-12">
+          <div className="font-heading text-[12px] tracking-[0.8em] text-primary/40 capitalize mb-12">
             Next Move
           </div>
           <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize text-primary group-hover:text-[#6324FC] transition-colors duration-700 italic">

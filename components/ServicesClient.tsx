@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  Code2, 
-  Layout, 
-  Search, 
-  TrendingUp, 
-  PenTool, 
+import {
+  Code2,
+  Layout,
+  Search,
+  TrendingUp,
+  PenTool,
   Compass,
   ArrowRight,
   ArrowUpRight,
@@ -258,7 +258,7 @@ export default function ServicesClient() {
 
   return (
     <main className="w-full min-h-screen bg-[#060608] text-white relative overflow-hidden font-sans selection:bg-[#6324FC] selection:text-white">
-      
+
       {/* Background Ambient Aurora Glows - GPU-Accelerated Zero-Overhead Gradients */}
       <div className="absolute top-0 left-1/4 w-[750px] h-[750px] bg-[radial-gradient(circle,rgba(99,36,252,0.12)_0%,transparent_70%)] pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-[650px] h-[650px] bg-[radial-gradient(circle,rgba(0,229,255,0.08)_0%,transparent_70%)] pointer-events-none" />
@@ -270,7 +270,7 @@ export default function ServicesClient() {
           ======================================================== */}
       <section className="relative w-full pt-36 md:pt-48 pb-16 md:pb-24 border-b border-white/5">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-          
+
           {/* Eyebrow Kicker */}
           <div className="flex items-center gap-4 mb-6">
             <motion.div
@@ -279,7 +279,7 @@ export default function ServicesClient() {
               transition={{ duration: 0.8 }}
               className="h-[1px] bg-gradient-to-r from-[#6324FC] to-[#00E5FF]"
             />
-            <span className="font-mono text-xs md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
+            <span className="font-mono text-[14px] md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
               FULL-SPECTRUM DIGITAL ARCHITECTURE // GLOBAL EXCELLENCE
             </span>
@@ -293,7 +293,7 @@ export default function ServicesClient() {
               </h1>
               <div
                 aria-hidden="true"
-                className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.88] tracking-tighter text-white"
+                className="font-heading text-5xl md:text-7xl  leading-[0.88] tracking-tighter text-white"
               >
                 <span className="text-white mr-3 md:mr-4">ENGINEERING</span>
                 <br className="hidden sm:inline" />
@@ -310,7 +310,7 @@ export default function ServicesClient() {
               <p className="font-sans font-light text-white/75 text-base sm:text-lg leading-relaxed border-l-2 border-[#6324FC]/60 pl-5 sm:pl-6 py-1 mb-4">
                 We don't build generic brochure websites. We architect high-concurrency digital platforms, dominate Google search through technical SEO forensics, and engineer revenue infrastructure across North America, Europe, and Australia.
               </p>
-              <div className="flex items-center gap-2 text-xs font-mono text-white/40 pl-5 sm:pl-6">
+              <div className="flex items-center gap-2 text-[14px] font-mono text-white/40 pl-5 sm:pl-6">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#00E5FF]" />
                 <span>100% IN-HOUSE SENIOR SQUADS · ZERO JUNIOR DELEGATION</span>
               </div>
@@ -321,25 +321,25 @@ export default function ServicesClient() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 md:p-6 rounded-3xl bg-[#0B0B10] border border-white/[0.08]">
             <div className="flex flex-col">
               <span className="font-heading text-2xl sm:text-3xl text-white font-bold tracking-tight">99.98%</span>
-              <span className="font-mono text-[10px] sm:text-[11px] text-white/50 uppercase tracking-wider mt-1">PRODUCTION SLA GUARANTEE</span>
+              <span className="font-mono text-[12px] sm:text-[11px] text-white/50 uppercase tracking-wider mt-1">PRODUCTION SLA GUARANTEE</span>
             </div>
             <div className="flex flex-col border-l border-white/[0.06] pl-4 sm:pl-6">
               <span className="font-heading text-2xl sm:text-3xl text-[#00E5FF] font-bold tracking-tight">0.8s</span>
-              <span className="font-mono text-[10px] sm:text-[11px] text-white/50 uppercase tracking-wider mt-1">AVG EDGE TTFB VELOCITY</span>
+              <span className="font-mono text-[12px] sm:text-[11px] text-white/50 uppercase tracking-wider mt-1">AVG EDGE TTFB VELOCITY</span>
             </div>
             <div className="flex flex-col border-l border-white/[0.06] pl-4 sm:pl-6">
               <span className="font-heading text-2xl sm:text-3xl text-[#00FFA3] font-bold tracking-tight">+240%</span>
-              <span className="font-mono text-[10px] sm:text-[11px] text-white/50 uppercase tracking-wider mt-1">AVG ORGANIC REVENUE LIFT</span>
+              <span className="font-mono text-[12px] sm:text-[11px] text-white/50 uppercase tracking-wider mt-1">AVG ORGANIC REVENUE LIFT</span>
             </div>
             <div className="flex flex-col border-l border-white/[0.06] pl-4 sm:pl-6">
               <span className="font-heading text-2xl sm:text-3xl text-[#F59E0B] font-bold tracking-tight">TOP 1%</span>
-              <span className="font-mono text-[10px] sm:text-[11px] text-white/50 uppercase tracking-wider mt-1">GLOBAL AGENCY PERFORMANCE</span>
+              <span className="font-mono text-[12px] sm:text-[11px] text-white/50 uppercase tracking-wider mt-1">GLOBAL AGENCY PERFORMANCE</span>
             </div>
           </div>
 
           {/* Quick Capability Filter Pills */}
           <div className="flex flex-wrap items-center gap-2 mt-8 pt-6 border-t border-white/[0.05]">
-            <span className="font-mono text-[11px] text-white/40 uppercase tracking-wider mr-2 hidden sm:inline">
+            <span className="font-mono text-[12px] text-white/40 uppercase tracking-wider mr-2 hidden sm:inline">
               CAPABILITY MATRIX:
             </span>
             {[
@@ -353,11 +353,10 @@ export default function ServicesClient() {
               <button
                 key={tab.id}
                 onClick={() => setActiveFilter(tab.id)}
-                className={`px-3.5 py-1.5 rounded-full font-mono text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer ${
-                  activeFilter === tab.id
-                    ? "bg-[#6324FC] text-white shadow-[0_0_20px_rgba(99,36,252,0.4)] border border-[#6324FC]"
-                    : "bg-white/[0.03] text-white/60 hover:text-white border border-white/[0.08] hover:border-white/20"
-                }`}
+                className={`px-3.5 py-1.5 rounded-full font-mono text-[14px] uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeFilter === tab.id
+                  ? "bg-[#6324FC] text-white shadow-[0_0_20px_rgba(99,36,252,0.4)] border border-[#6324FC]"
+                  : "bg-white/[0.03] text-white/60 hover:text-white border border-white/[0.08] hover:border-white/20"
+                  }`}
               >
                 {tab.label}
               </button>
@@ -372,7 +371,7 @@ export default function ServicesClient() {
           ======================================================== */}
       <section className="w-full py-20 md:py-28 relative">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-          
+
           <div className="flex flex-col gap-8 md:gap-12">
             <AnimatePresence mode="popLayout">
               {filteredServices.map((svc, idx) => {
@@ -387,7 +386,7 @@ export default function ServicesClient() {
                     className="group relative rounded-3xl bg-[#09090E] border border-white/[0.08] hover:border-white/20 p-7 sm:p-9 lg:p-12 transition-all duration-300 overflow-hidden shadow-2xl"
                   >
                     {/* Spotlight Radial Hover Glow */}
-                    <div 
+                    <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                       style={{
                         background: `radial-gradient(circle at 20% 30%, ${svc.accentColor}15 0%, transparent 60%)`
@@ -399,21 +398,21 @@ export default function ServicesClient() {
 
                     {/* Card Content Layout: 2 Columns */}
                     <div className="relative z-10 flex flex-col lg:flex-row items-stretch justify-between gap-10 lg:gap-14">
-                      
+
                       {/* Left Column: Details & Capabilities */}
                       <div className="w-full lg:w-[58%] flex flex-col justify-between">
                         <div>
                           {/* Top Meta Line: Number + Category Badge + Active Status */}
                           <div className="flex flex-wrap items-center gap-3 mb-4">
-                            <span 
+                            <span
                               className="font-mono text-sm font-bold tracking-widest"
                               style={{ color: svc.accentColor }}
                             >
                               // {svc.number}
                             </span>
                             <span className="text-white/20 text-xs">•</span>
-                            <span 
-                              className="font-mono text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-full border"
+                            <span
+                              className="font-mono text-[12px] uppercase tracking-widest px-2.5 py-1 rounded-full border"
                               style={{
                                 backgroundColor: `${svc.accentColor}12`,
                                 borderColor: `${svc.accentColor}30`,
@@ -423,7 +422,7 @@ export default function ServicesClient() {
                               {svc.category}
                             </span>
                             <span className="text-white/20 text-xs">•</span>
-                            <span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-white/50">
+                            <span className="inline-flex items-center gap-1.5 text-[12px] font-mono text-white/50">
                               <span className="w-1.5 h-1.5 rounded-full bg-[#00FFA3] animate-pulse" />
                               VERIFIED CAPABILITY
                             </span>
@@ -435,8 +434,8 @@ export default function ServicesClient() {
                           </h2>
 
                           {/* Subtitle */}
-                          <div 
-                            className="font-mono text-xs uppercase tracking-wider mb-4 font-semibold"
+                          <div
+                            className="font-mono text-[14px] uppercase tracking-wider mb-4 font-semibold"
                             style={{ color: svc.accentColor }}
                           >
                             {svc.subtitle}
@@ -456,9 +455,9 @@ export default function ServicesClient() {
                               {svc.capabilities.map((cap, cIdx) => (
                                 <span
                                   key={cIdx}
-                                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/[0.03] border border-white/[0.07] text-[11px] font-mono text-white/80 group-hover:border-white/15 transition-colors"
+                                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/[0.03] border border-white/[0.07] text-[12px] font-mono text-white/80 group-hover:border-white/15 transition-colors"
                                 >
-                                  <span 
+                                  <span
                                     className="w-1 h-1 rounded-full"
                                     style={{ backgroundColor: svc.accentColor }}
                                   />
@@ -473,7 +472,7 @@ export default function ServicesClient() {
                         <div className="pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
                           {/* Metric Pill */}
                           <div className="flex items-center gap-3">
-                            <div 
+                            <div
                               className="font-heading text-2xl sm:text-3xl font-bold tracking-tight"
                               style={{ color: svc.accentColor }}
                             >
@@ -487,7 +486,7 @@ export default function ServicesClient() {
                           {/* Direct Service Navigation CTA */}
                           <Link
                             href={`/services/${svc.slug}`}
-                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-mono text-xs font-semibold uppercase tracking-wider text-white bg-white/[0.05] border border-white/10 hover:bg-[#6324FC] hover:border-[#6324FC] transition-all duration-300 group/btn shadow-lg"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-mono text-[14px] font-semibold uppercase tracking-wider text-white bg-white/[0.05] border border-white/10 hover:bg-[#6324FC] hover:border-[#6324FC] transition-all duration-300 group/btn shadow-lg"
                           >
                             <span>EXPLORE ARCHITECTURE SPEC</span>
                             <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform duration-300" />
@@ -497,7 +496,7 @@ export default function ServicesClient() {
 
                       {/* Right Column: Interactive Device Mockup Chrome Preview */}
                       <div className="w-full lg:w-[42%] flex flex-col justify-center">
-                        <Link 
+                        <Link
                           href={`/services/${svc.slug}`}
                           className="block relative rounded-2xl bg-[#0A0A0E] border border-white/10 overflow-hidden shadow-2xl group/preview"
                         >
@@ -508,7 +507,7 @@ export default function ServicesClient() {
                               <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/80" />
                               <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]/80" />
                             </div>
-                            <div className="px-3 py-0.5 rounded-full bg-black/40 border border-white/5 font-mono text-[9px] text-white/40 truncate max-w-[200px] flex items-center gap-1">
+                            <div className="px-3 py-0.5 rounded-full bg-black/40 border border-white/5 font-mono text-[12px] text-white/40 truncate max-w-[200px] flex items-center gap-1">
                               <span className="w-1.5 h-1.5 rounded-full bg-[#00FFA3]" />
                               <span>https://injaazh.com/services/{svc.slug}</span>
                             </div>
@@ -525,14 +524,14 @@ export default function ServicesClient() {
                               className="object-cover object-top filter grayscale group-hover/preview:grayscale-0 group-hover/preview:scale-105 transition-all duration-700 opacity-80 group-hover/preview:opacity-100"
                             />
                             {/* Accent Gradient Overlay */}
-                            <div 
+                            <div
                               className="absolute inset-0 opacity-20 group-hover/preview:opacity-0 transition-opacity duration-500 pointer-events-none"
                               style={{
                                 background: `linear-gradient(to top, ${svc.accentColor}40, transparent)`
                               }}
                             />
                             {/* Hover Badge */}
-                            <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 font-mono text-[10px] text-white font-semibold flex items-center gap-1.5 opacity-0 group-hover/preview:opacity-100 transition-opacity duration-300">
+                            <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 font-mono text-[12px] text-white font-semibold flex items-center gap-1.5 opacity-0 group-hover/preview:opacity-100 transition-opacity duration-300">
                               <span>VIEW CASE ARCHITECTURE</span>
                               <ArrowRight className="w-3 h-3 text-[#00E5FF]" />
                             </div>
@@ -543,8 +542,8 @@ export default function ServicesClient() {
                     </div>
 
                     {/* Watermark platform icon in background */}
-                    <div 
-                      aria-hidden="true" 
+                    <div
+                      aria-hidden="true"
                       className="absolute -right-8 -bottom-8 w-44 h-44 text-white/[0.015] group-hover:text-white/[0.03] group-hover:scale-110 transition-all duration-700 pointer-events-none"
                     >
                       <Icon className="w-full h-full" />
@@ -564,11 +563,11 @@ export default function ServicesClient() {
           ======================================================== */}
       <section className="w-full py-20 md:py-28 border-t border-white/5 relative overflow-hidden bg-black/40">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-          
+
           {/* Eyebrow */}
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-[1px] bg-gradient-to-r from-[#6324FC] to-[#00E5FF]" />
-            <span className="font-mono text-xs md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
+            <span className="font-mono text-[14px] md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
               OPERATIONAL DISCIPLINE // HOW WE DELIVER
             </span>
@@ -605,20 +604,20 @@ export default function ServicesClient() {
                 className="group relative rounded-3xl bg-[#09090E] border border-white/[0.07] hover:border-white/20 p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xl overflow-hidden"
               >
                 {/* Top Phase Accent Glow */}
-                <div 
+                <div
                   className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-15 transition-opacity duration-300 pointer-events-none rounded-full"
                   style={{ background: `radial-gradient(circle, ${phase.accent}40 0%, transparent 70%)` }}
                 />
 
                 <div>
                   <div className="flex items-center justify-between gap-3 mb-4">
-                    <span 
-                      className="font-mono text-xs font-bold tracking-widest"
+                    <span
+                      className="font-mono text-[14px] font-bold tracking-widest"
                       style={{ color: phase.accent }}
                     >
                       {phase.phase}
                     </span>
-                    <span className="px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.06] font-mono text-[9px] text-white/50">
+                    <span className="px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.06] font-mono text-[12px] text-white/50">
                       {phase.duration}
                     </span>
                   </div>
@@ -627,19 +626,19 @@ export default function ServicesClient() {
                     {phase.title}
                   </h3>
 
-                  <p className="font-sans text-xs text-white/60 leading-relaxed mb-6">
+                  <p className="font-sans text-[14px] text-white/60 leading-relaxed mb-6">
                     {phase.desc}
                   </p>
                 </div>
 
                 <div className="pt-4 border-t border-white/[0.06] space-y-2">
-                  <div className="font-mono text-[9px] uppercase tracking-widest text-white/40 mb-1">
+                  <div className="font-mono text-[12px] uppercase tracking-widest text-white/40 mb-1">
                     KEY MILESTONES:
                   </div>
                   {phase.deliverables.map((del, dIdx) => (
-                    <div key={dIdx} className="flex items-start gap-2 text-xs font-mono text-white/75">
-                      <CheckCircle2 
-                        className="w-3.5 h-3.5 mt-0.5 shrink-0" 
+                    <div key={dIdx} className="flex items-start gap-2 text-[14px] font-mono text-white/75">
+                      <CheckCircle2
+                        className="w-3.5 h-3.5 mt-0.5 shrink-0"
                         style={{ color: phase.accent }}
                       />
                       <span className="leading-tight">{del}</span>
@@ -658,9 +657,9 @@ export default function ServicesClient() {
           ======================================================== */}
       <section className="w-full py-20 md:py-28 border-t border-white/5 relative">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.3em] text-[#6324FC] font-semibold mb-3">
+            <div className="inline-flex items-center gap-2 font-mono text-[14px] uppercase tracking-[0.3em] text-[#6324FC] font-semibold mb-3">
               <Cpu className="w-3.5 h-3.5 text-[#00E5FF]" />
               ENTERPRISE STACK // ZERO COMPROMISE INFRASTRUCTURE
             </div>
@@ -684,11 +683,11 @@ export default function ServicesClient() {
                   <div className="font-heading text-base text-white font-medium group-hover:text-white transition-colors">
                     {tech.name}
                   </div>
-                  <div className="font-mono text-[10px] text-white/40 uppercase tracking-wider mt-0.5">
+                  <div className="font-mono text-[12px] text-white/40 uppercase tracking-wider mt-0.5">
                     {tech.category}
                   </div>
                 </div>
-                <div 
+                <div
                   className="w-2 h-2 rounded-full group-hover:scale-150 transition-transform duration-300"
                   style={{ backgroundColor: tech.accent }}
                 />
@@ -707,15 +706,15 @@ export default function ServicesClient() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[radial-gradient(circle,rgba(99,36,252,0.12)_0%,transparent_70%)] pointer-events-none" />
 
         <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10 text-center">
-          
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] text-xs font-mono text-white/70 mb-8">
+
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] text-[14px] font-mono text-white/70 mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00FFA3] animate-pulse" />
             COMMERCIAL IMPACT // DIRECT PRINCIPAL ACCESS
           </div>
 
           <div
             aria-hidden="true"
-            className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.88] tracking-tighter text-white mb-8"
+            className="font-heading text-5xl md:text-7xl  leading-[0.88] tracking-tighter text-white mb-8"
           >
             <span className="text-white mr-3 md:mr-4">READY TO ENGINEER</span>
             <br className="hidden sm:inline" />
@@ -749,7 +748,7 @@ export default function ServicesClient() {
           </div>
 
           {/* Trust Guarantees */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-white/40 pt-8 border-t border-white/[0.06]">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-[14px] font-mono text-white/40 pt-8 border-t border-white/[0.06]">
             <div className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-[#00FFA3]" />
               <span>Signed NDA Guaranteed</span>

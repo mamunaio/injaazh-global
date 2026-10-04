@@ -106,11 +106,10 @@ export default function InsightsClient() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-6 py-2 rounded-full font-heading text-xs tracking-widest capitalize transition-all border ${
-                    activeCategory === cat
-                      ? "bg-[#6324FC] border-[#6324FC] text-white"
-                      : "bg-transparent border-[#060608]/20 dark:border-white/10 text-[#060608]/60 dark:text-white/40 hover:border-[#060608]/40 dark:hover:border-white/30"
-                  }`}
+                  className={`px-6 py-2 rounded-full font-heading text-[14px] tracking-widest capitalize transition-all border ${activeCategory === cat
+                    ? "bg-[#6324FC] border-[#6324FC] text-white"
+                    : "bg-transparent border-[#060608]/20 dark:border-white/10 text-[#060608]/60 dark:text-white/40 hover:border-[#060608]/40 dark:hover:border-white/30"
+                    }`}
                 >
                   {cat}
                 </button>
@@ -140,10 +139,10 @@ export default function InsightsClient() {
             <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full flex flex-col md:flex-row md:items-end justify-between gap-8">
               <div className="max-w-3xl">
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="bg-[#6324FC] text-white px-3 py-1 font-heading  text-[10px] tracking-widest capitalize ">
+                  <span className="bg-[#6324FC] text-white px-3 py-1 font-heading  text-[12px] tracking-widest capitalize ">
                     FEATURED
                   </span>
-                  <span className="font-heading  text-[10px] tracking-widest capitalize text-white/60">
+                  <span className="font-heading  text-[12px] tracking-widest capitalize text-white/60">
                     {posts[0].category.toUpperCase()}
                   </span>
                 </div>
@@ -154,7 +153,7 @@ export default function InsightsClient() {
                   {posts[0].excerpt}
                 </p>
               </div>
-              <div className="flex items-center gap-4 text-white/60 font-heading  text-[10px] tracking-widest capitalize whitespace-nowrap">
+              <div className="flex items-center gap-4 text-white/60 font-heading  text-[12px] tracking-widest capitalize whitespace-nowrap">
                 <span className="flex items-center gap-2">
                   <Clock className="w-3 h-3" /> {posts[0].readTime}
                 </span>
@@ -186,12 +185,12 @@ export default function InsightsClient() {
                 fill
                 className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
               />
-              <div className="absolute top-4 right-4 bg-[#060608]/80 backdrop-blur-md px-3 py-1 font-heading  text-[10px] tracking-widest capitalize text-white border border-white/10">
+              <div className="absolute top-4 right-4 bg-[#060608]/80 backdrop-blur-md px-3 py-1 font-heading  text-[12px] tracking-widest capitalize text-white border border-white/10">
                 {post.category}
               </div>
             </Link>
 
-            <div className="flex items-center gap-4 mb-4 font-heading  text-[10px] tracking-widest capitalize text-white/40">
+            <div className="flex items-center gap-4 mb-4 font-heading  text-[12px] tracking-widest capitalize text-white/40">
               <span>{post.date}</span>
               <span className="w-1 h-1 rounded-full bg-[#6324FC]" />
               <span>{post.readTime}</span>
@@ -220,7 +219,7 @@ export default function InsightsClient() {
                 {/* Flowing background gradient */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500 rounded-[11px]" />
 
-                <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-[10px] tracking-[0.2em] text-white/60 group-hover/btn:text-white transition-colors duration-500 uppercase text-center">
+                <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-[12px] tracking-[0.2em] text-white/60 group-hover/btn:text-white transition-colors duration-500 uppercase text-center">
                   READ ARTICLE
                   <ArrowRight className="w-4 h-4 text-[#6324FC] group-hover/btn:translate-x-1 transition-transform" />
                 </span>
@@ -252,7 +251,7 @@ export default function InsightsClient() {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#060608]/80" />
 
             <div className="absolute inset-0 flex flex-col justify-end p-12">
-              <div className="font-heading  text-[9px] tracking-[0.5em] text-[#6324FC] capitalize mb-4">
+              <div className="font-heading  text-[12px] tracking-[0.5em] text-[#6324FC] capitalize mb-4">
                 Core Signal
               </div>
               <h3 className="font-heading text-4xl capitalize tracking-tighter italic">
@@ -300,8 +299,8 @@ export default function InsightsClient() {
                         i === 1
                           ? "/assets/team_imtiaz.webp"
                           : i === 2
-                          ? "/assets/team_ismail.webp"
-                          : "/assets/team_shanto.webp"
+                            ? "/assets/team_ismail.webp"
+                            : "/assets/team_shanto.webp"
                       }
                       alt="Subscriber"
                       fill
@@ -310,7 +309,7 @@ export default function InsightsClient() {
                   </div>
                 ))}
               </div>
-              <p className="font-heading  text-[9px] tracking-widest text-white/20 capitalize ">
+              <p className="font-heading  text-[12px] tracking-widest text-white/20 capitalize ">
                 Join a global network of digital architects
               </p>
             </div>

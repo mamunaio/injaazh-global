@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-background: var(--bg);
   --color-surface: var(--surface);
@@ -65,6 +66,16 @@
     -webkit-text-stroke: 1px var(--text-primary);
   }
 
+  .stroke-hero {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #6324FC;
+    transition: -webkit-text-stroke 0.3s ease;
+  }
+
+  html.dark .stroke-hero {
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.7);
+  }
+
   .stroke-white {
     color: transparent;
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
@@ -76,6 +87,7 @@
     height: 8px !important;
     transition: all 0.4s ease !important;
   }
+
   .swiper-pagination-bullet-active {
     background-color: #6324fc !important;
     width: 24px !important;
@@ -87,13 +99,11 @@
   }
 
   .clip-cta {
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% calc(100% - 15px),
-      calc(100% - 15px) 100%,
-      0 100%
-    );
+    clip-path: polygon(0 0,
+        100% 0,
+        100% calc(100% - 15px),
+        calc(100% - 15px) 100%,
+        0 100%);
   }
 
   /* Marquee Animations */
@@ -109,6 +119,7 @@
     from {
       transform: translateX(0);
     }
+
     to {
       transform: translateX(-50%);
     }
@@ -118,6 +129,7 @@
     from {
       transform: translateX(-50%);
     }
+
     to {
       transform: translateX(0);
     }
@@ -201,9 +213,11 @@ html:not(.dark) .custom-scrollbar::-webkit-scrollbar-thumb {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -221,11 +235,13 @@ html:not(.dark) .custom-scrollbar::-webkit-scrollbar-thumb {
    This avoids touching or modifying the perfect dark mode.
    ========================================================== */
 html:not(.dark) {
+
   /* 1. Main Background Overrides & Alternation */
   .bg-\[\#060608\],
   main.bg-\[\#060608\],
   header.bg-\[\#060608\] {
-    background-color: var(--bg) !important; /* #F5F5F0 */
+    background-color: var(--bg) !important;
+    /* #F5F5F0 */
   }
 
   /* Alternating section backgrounds on pages for visual depth */
@@ -233,93 +249,145 @@ html:not(.dark) {
   div.bg-\[\#060608\] {
     background-color: var(--bg) !important;
   }
-  
+
   section.bg-\[\#060608\]:nth-of-type(3n+1),
   div.bg-\[\#060608\]:nth-of-type(3n+1) {
-    background-color: var(--bg) !important; /* #F5F5F0 */
+    background-color: var(--bg) !important;
+    /* #F5F5F0 */
   }
 
   section.bg-\[\#060608\]:nth-of-type(3n+2),
   div.bg-\[\#060608\]:nth-of-type(3n+2) {
-    background-color: #ffffff !important; /* Pure white surface */
+    background-color: #ffffff !important;
+    /* Pure white surface */
   }
 
   section.bg-\[\#060608\]:nth-of-type(3n+3),
   div.bg-\[\#060608\]:nth-of-type(3n+3) {
-    background-color: #EEECEA !important; /* Elegant warm grey */
+    background-color: #EEECEA !important;
+    /* Elegant warm grey */
   }
 
   /* Specific premium background assignments for major homepage sections */
   .hero-section {
     background-color: var(--bg) !important;
   }
-  
+
   /* HeroMarquee background */
-  main > div:nth-child(2) {
+  main>div:nth-child(2) {
     background-color: #ffffff !important;
   }
-  
+
   /* DigitalExperience - Section 3 */
-  main > *:nth-child(3) {
+  main>*:nth-child(3) {
     background-color: #EEECEA !important;
   }
 
   /* FeaturedWork (Case Studies Grid) - Section 4 */
-  main > *:nth-child(4) {
+  main>*:nth-child(4) {
     background-color: #ffffff !important;
   }
 
   /* OurProcess - Section 5 */
-  main > *:nth-child(5) {
+  main>*:nth-child(5) {
     background-color: var(--bg) !important;
   }
 
   /* WhyChoose - Section 6 */
-  main > *:nth-child(6) {
+  main>*:nth-child(6) {
     background-color: #ffffff !important;
   }
 
   /* GlobalImpact - Section 7 */
-  main > *:nth-child(7) {
+  main>*:nth-child(7) {
     background-color: #EEECEA !important;
   }
 
   /* Testimonials - Section 8 */
-  main > *:nth-child(8) {
+  main>*:nth-child(8) {
     background-color: #ffffff !important;
   }
 
   /* TeamPreview - Section 9 */
-  main > *:nth-child(9) {
+  main>*:nth-child(9) {
     background-color: var(--bg) !important;
   }
 
   /* LatestInsights - Section 10 */
-  main > *:nth-child(10) {
+  main>*:nth-child(10) {
     background-color: #ffffff !important;
   }
 
   /* Awards - Section 11 */
-  main > *:nth-child(11) {
+  main>*:nth-child(11) {
     background-color: #EEECEA !important;
   }
 
+  .bg-\[\#060608\] {
+    background-color: var(--bg) !important;
+  }
+
   .bg-\[\#0a0a0d\],
-  .bg-\[\#08080A\] {
-    background-color: var(--surface) !important; /* #ffffff */
+  .bg-\[\#08080A\],
+  .bg-\[\#09090D\],
+  .bg-\[\#09090E\],
+  .bg-\[\#0A0A0E\],
+  .bg-\[\#0A0A10\],
+  .bg-\[\#0A0A10\]\/90,
+  .bg-\[\#0D0D14\],
+  .bg-\[\#0D0D14\]\/90,
+  .bg-\[\#0D0D14\]\/70,
+  .bg-\[\#08080E\],
+  .bg-\[\#08080E\]\/90,
+  .bg-\[\#08080C\],
+  .bg-\[\#0E0E14\],
+  .bg-\[\#0E0E14\]\/90,
+  .bg-\[\#050507\],
+  .bg-\[\#0B0B11\],
+  .bg-\[\#0B0B11\]\/98,
+  .bg-\[\#12121D\],
+  .bg-\[\#07070A\],
+  .bg-\[\#111115\] {
+    background-color: var(--surface) !important;
+    border-color: rgba(6, 6, 8, 0.1) !important;
   }
 
   /* 2. Background Opacities */
-  .bg-\[\#060608\]\/95 { background-color: rgba(245, 245, 240, 0.95) !important; }
-  .bg-\[\#060608\]\/90 { background-color: rgba(245, 245, 240, 0.90) !important; }
-  .bg-\[\#060608\]\/80 { background-color: rgba(245, 245, 240, 0.80) !important; }
-  .bg-\[\#060608\]\/60 { background-color: rgba(245, 245, 240, 0.60) !important; }
-  .bg-\[\#060608\]\/50 { background-color: rgba(245, 245, 240, 0.50) !important; }
-  .bg-\[\#060608\]\/40 { background-color: rgba(245, 245, 240, 0.40) !important; }
-  .bg-\[\#060608\]\/10 { background-color: rgba(245, 245, 240, 0.10) !important; }
-  
-  .bg-black\/20 { background-color: rgba(6, 6, 8, 0.05) !important; }
-  .bg-black\/60 { background-color: rgba(6, 6, 8, 0.4) !important; }
+  .bg-\[\#060608\]\/95 {
+    background-color: rgba(245, 245, 240, 0.95) !important;
+  }
+
+  .bg-\[\#060608\]\/90 {
+    background-color: rgba(245, 245, 240, 0.90) !important;
+  }
+
+  .bg-\[\#060608\]\/80 {
+    background-color: rgba(245, 245, 240, 0.80) !important;
+  }
+
+  .bg-\[\#060608\]\/60 {
+    background-color: rgba(245, 245, 240, 0.60) !important;
+  }
+
+  .bg-\[\#060608\]\/50 {
+    background-color: rgba(245, 245, 240, 0.50) !important;
+  }
+
+  .bg-\[\#060608\]\/40 {
+    background-color: rgba(245, 245, 240, 0.40) !important;
+  }
+
+  .bg-\[\#060608\]\/10 {
+    background-color: rgba(245, 245, 240, 0.10) !important;
+  }
+
+  .bg-black\/20 {
+    background-color: rgba(6, 6, 8, 0.05) !important;
+  }
+
+  .bg-black\/60 {
+    background-color: rgba(6, 6, 8, 0.4) !important;
+  }
 
   /* 3. Translucent White Background Overrides (Map to visible light cards) */
   .bg-white\/5,
@@ -354,39 +422,103 @@ html:not(.dark) {
   .text-white {
     color: var(--text-primary) !important;
   }
-  
+
   /* Text Opacity Variants */
-  .text-white\/95 { color: rgba(6, 6, 8, 0.95) !important; }
-  .text-white\/90 { color: rgba(6, 6, 8, 0.90) !important; }
-  .text-white\/80 { color: rgba(6, 6, 8, 0.80) !important; }
-  .text-white\/70 { color: rgba(6, 6, 8, 0.70) !important; }
-  .text-white\/60 { color: rgba(6, 6, 8, 0.60) !important; }
-  .text-white\/50 { color: rgba(6, 6, 8, 0.50) !important; }
-  .text-white\/40 { color: rgba(6, 6, 8, 0.40) !important; }
-  .text-white\/30 { color: rgba(6, 6, 8, 0.30) !important; }
-  .text-white\/20 { color: rgba(6, 6, 8, 0.20) !important; }
-  .text-white\/10 { color: rgba(6, 6, 8, 0.10) !important; }
+  .text-white\/95 {
+    color: rgba(6, 6, 8, 0.95) !important;
+  }
+
+  .text-white\/90 {
+    color: rgba(6, 6, 8, 0.90) !important;
+  }
+
+  .text-white\/80 {
+    color: rgba(6, 6, 8, 0.80) !important;
+  }
+
+  .text-white\/70 {
+    color: rgba(6, 6, 8, 0.70) !important;
+  }
+
+  .text-white\/60 {
+    color: rgba(6, 6, 8, 0.60) !important;
+  }
+
+  .text-white\/50 {
+    color: rgba(6, 6, 8, 0.50) !important;
+  }
+
+  .text-white\/40 {
+    color: rgba(6, 6, 8, 0.40) !important;
+  }
+
+  .text-white\/30 {
+    color: rgba(6, 6, 8, 0.30) !important;
+  }
+
+  .text-white\/20 {
+    color: rgba(6, 6, 8, 0.20) !important;
+  }
+
+  .text-white\/10 {
+    color: rgba(6, 6, 8, 0.10) !important;
+  }
 
   /* Gray / Zinc text visibility enhancements */
-  .text-zinc-400, .text-gray-400 { color: rgba(6, 6, 8, 0.7) !important; }
-  .text-zinc-500, .text-gray-500 { color: rgba(6, 6, 8, 0.6) !important; }
-  
+  .text-zinc-400,
+  .text-gray-400 {
+    color: rgba(6, 6, 8, 0.7) !important;
+  }
+
+  .text-zinc-500,
+  .text-gray-500 {
+    color: rgba(6, 6, 8, 0.6) !important;
+  }
+
   /* 5. Border Overrides (Convert to Deeper Dark Tinted for Crisp Visibility) */
-  .border-white\/5 { border-color: rgba(6, 6, 8, 0.14) !important; }
-  .border-white\/10 { border-color: rgba(6, 6, 8, 0.22) !important; }
-  .border-white\/20 { border-color: rgba(6, 6, 8, 0.32) !important; }
-  .border-white\/\[0\.05\] { border-color: rgba(6, 6, 8, 0.14) !important; }
-  .border-white\/\[0\.03\] { border-color: rgba(6, 6, 8, 0.10) !important; }
+  .border-white\/5 {
+    border-color: rgba(6, 6, 8, 0.14) !important;
+  }
+
+  .border-white\/10 {
+    border-color: rgba(6, 6, 8, 0.22) !important;
+  }
+
+  .border-white\/20 {
+    border-color: rgba(6, 6, 8, 0.32) !important;
+  }
+
+  .border-white\/\[0\.05\] {
+    border-color: rgba(6, 6, 8, 0.14) !important;
+  }
+
+  .border-white\/\[0\.03\] {
+    border-color: rgba(6, 6, 8, 0.10) !important;
+  }
 
   /* Accent Borders */
-  .border-\[\#00E5FF\]\/30 { border-color: rgba(0, 180, 216, 0.4) !important; }
-  .border-\[\#6324FC\]\/20 { border-color: rgba(99, 36, 252, 0.3) !important; }
-  .border-\[\#6324FC\]\/30 { border-color: rgba(99, 36, 252, 0.4) !important; }
-  .border-\[\#6324FC\]\/40 { border-color: rgba(99, 36, 252, 0.55) !important; }
-  .border-\[\#6324FC\]\/50 { border-color: rgba(99, 36, 252, 0.7) !important; }
+  .border-\[\#00E5FF\]\/30 {
+    border-color: rgba(0, 180, 216, 0.4) !important;
+  }
+
+  .border-\[\#6324FC\]\/20 {
+    border-color: rgba(99, 36, 252, 0.3) !important;
+  }
+
+  .border-\[\#6324FC\]\/30 {
+    border-color: rgba(99, 36, 252, 0.4) !important;
+  }
+
+  .border-\[\#6324FC\]\/40 {
+    border-color: rgba(99, 36, 252, 0.55) !important;
+  }
+
+  .border-\[\#6324FC\]\/50 {
+    border-color: rgba(99, 36, 252, 0.7) !important;
+  }
 
   /* 6. List and Grid Divider Borders */
-  .divide-white\/10 > :not([hidden]) ~ :not([hidden]) {
+  .divide-white\/10> :not([hidden])~ :not([hidden]) {
     border-color: rgba(6, 6, 8, 0.14) !important;
   }
 
@@ -395,46 +527,88 @@ html:not(.dark) {
     background-color: var(--surface) !important;
     color: var(--text-primary) !important;
   }
-  
+
   /* Input placeholder adjustments */
-  .placeholder\:text-white\/5::placeholder { color: rgba(6, 6, 8, 0.38) !important; }
-  .placeholder\:text-white\/10::placeholder { color: rgba(6, 6, 8, 0.45) !important; }
-  .placeholder\:text-white\/20::placeholder { color: rgba(6, 6, 8, 0.50) !important; }
-  .placeholder\:text-white\/30::placeholder { color: rgba(6, 6, 8, 0.55) !important; }
+  .placeholder\:text-white\/5::placeholder {
+    color: rgba(6, 6, 8, 0.38) !important;
+  }
+
+  .placeholder\:text-white\/10::placeholder {
+    color: rgba(6, 6, 8, 0.45) !important;
+  }
+
+  .placeholder\:text-white\/20::placeholder {
+    color: rgba(6, 6, 8, 0.50) !important;
+  }
+
+  .placeholder\:text-white\/30::placeholder {
+    color: rgba(6, 6, 8, 0.55) !important;
+  }
 
   /* 8. Box Shadows (Softened for light mode) */
   .shadow-\[0_40px_80px_rgba\(0\2c 0\2c 0\2c 0\.4\)\] {
     box-shadow: 0 10px 30px rgba(6, 6, 8, 0.06), 0 2px 8px rgba(6, 6, 8, 0.03) !important;
   }
+
   .shadow-\[0_0_50px_rgba\(0\2c 0\2c 0\2c 0\.1\)\] {
     box-shadow: 0 6px 16px rgba(6, 6, 8, 0.05) !important;
   }
+
   .shadow-\[0_20px_50px_rgba\(255\2c 255\2c 255\2c 0\.1\)\] {
     box-shadow: 0 10px 25px rgba(99, 36, 252, 0.02) !important;
   }
+
   .shadow-\[0_0_40px_rgba\(99\2c 36\2c 252\2c 0\.1\)\] {
     box-shadow: 0 6px 15px rgba(99, 36, 252, 0.015) !important;
   }
+
   .shadow-\[0_0_50px_rgba\(99\2c 36\2c 252\2c 0\.1\)\] {
     box-shadow: 0 8px 20px rgba(99, 36, 252, 0.015) !important;
   }
+
   .shadow-\[0_40px_100px_rgba\(0\2c 0\2c 0\2c 0\.8\)\] {
     box-shadow: 0 15px 30px rgba(6, 6, 8, 0.04), 0 0 20px rgba(99, 36, 252, 0.01) !important;
   }
+
   .shadow-\[0_0_100px_rgba\(99\2c 36\2c 252\2c 0\.2\)\] {
     box-shadow: 0 15px 30px rgba(99, 36, 252, 0.02), 0 0 15px rgba(0, 229, 255, 0.01) !important;
   }
 
-  /* 9. Purple Solid Background — always force white text & icons inside */
-  .bg-\[\#6324FC\] {
+  /* 9. Purple Solid Background / Buttons — only when the container ITSELF has a solid purple background */
+  .bg-\[\#6324FC\],
+  .bg-\[\#6324fc\],
+  .bg-purple-600,
+  button.bg-\[\#6324FC\],
+  button.bg-\[\#6324fc\],
+  a.bg-\[\#6324FC\],
+  a.bg-\[\#6324fc\] {
     color: #ffffff !important;
   }
-  .bg-\[\#6324FC\] * {
+
+  /* Text & icons inside solid purple buttons or links */
+  button.bg-\[\#6324FC\] *,
+  button.bg-\[\#6324fc\] *,
+  a.bg-\[\#6324FC\] *,
+  a.bg-\[\#6324fc\] * {
     color: #ffffff !important;
   }
-  .bg-\[\#6324FC\] svg {
+
+  button.bg-\[\#6324FC\] svg,
+  button.bg-\[\#6324fc\] svg,
+  a.bg-\[\#6324FC\] svg,
+  a.bg-\[\#6324fc\] svg {
     color: #ffffff !important;
-    stroke: currentColor !important;
+    stroke: #ffffff !important;
+  }
+
+  /* Light buttons, tags, chips, and badges with light backgrounds must keep dark text */
+  .bg-white:not(.bg-\[\#6324FC\]),
+  .bg-\[\#F5F5F0\],
+  .bg-\[\#F8F8FA\],
+  .bg-neutral-100,
+  .bg-neutral-50,
+  .bg-\[\#EEECEA\] {
+    color: var(--text-primary);
   }
 
   /* 10. Insights page post category label overlay on images stays readable */
@@ -460,5 +634,18 @@ html:not(.dark) {
   /* 13. Swiper pagination dots — visible on light bg */
   .swiper-pagination-bullet {
     background-color: rgba(6, 6, 8, 0.2) !important;
+  }
+}
+
+/* ==========================================================
+   GLOBAL DARK MODE RESTORATION & CARD INTEGRITY
+   Guarantees that all card containers, panels, and surfaces
+   always stay dark in dark mode according to the project theme.
+   ========================================================== */
+html.dark {
+  /* Prevent any card from retaining white background underneath semi-transparent dark gradients */
+  [class*="rounded-"][class*="dark:bg-gradient"],
+  [class*="rounded-"][class*="dark:from-white"] {
+    background-color: #0A0A0E !important;
   }
 }

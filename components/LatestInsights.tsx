@@ -49,7 +49,7 @@ const posts = [
 
 export default function LatestInsights() {
   return (
-    <section className="w-full bg-[#060608] py-20 md:py-28 relative overflow-hidden border-t border-white/5 text-white">
+    <section className="w-full bg-[#F5F5F0] dark:bg-[#060608] py-20 md:py-28 relative overflow-hidden border-t border-black/5 dark:border-white/5 text-neutral-900 dark:text-white">
       {/* Background Ambient Glows - GPU Accelerated */}
       <div className="absolute top-0 right-1/4 w-[700px] h-[700px] bg-[radial-gradient(circle,rgba(99,36,252,0.12)_0%,transparent_70%)] pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(0,229,255,0.08)_0%,transparent_70%)] pointer-events-none" />
@@ -66,7 +66,7 @@ export default function LatestInsights() {
               transition={{ duration: 0.8 }}
               className="h-[1px] bg-gradient-to-r from-[#6324FC] to-[#00E5FF]"
             />
-            <span className="font-mono text-xs md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
+            <span className="font-mono text-[14px] md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
               THE INTELLIGENCE HUB // RESEARCH & WHITE PAPERS
             </span>
@@ -80,9 +80,9 @@ export default function LatestInsights() {
               </h2>
               <div
                 aria-hidden="true"
-                className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.88] tracking-tighter text-white"
+                className="font-heading text-5xl md:text-7xl leading-[0.88] tracking-tighter text-neutral-900 dark:text-white"
               >
-                <span className="text-white mr-3 md:mr-4">INSIGHTS</span>
+                <span className="mr-3 md:mr-4">INSIGHTS</span>
                 <span className="italic text-[#6324FC] drop-shadow-[0_0_35px_rgba(99,36,252,0.35)]">
                   THAT
                 </span>
@@ -91,16 +91,16 @@ export default function LatestInsights() {
               </div>
 
               {/* Research Capability Badges */}
-              <div className="flex flex-wrap items-center gap-2.5 mt-6 pt-5 border-t border-white/[0.06]">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+              <div className="flex flex-wrap items-center gap-2.5 mt-6 pt-5 border-t border-black/10 dark:border-white/[0.06]">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70 shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC]" />
                   ORIGINAL RESEARCH
                 </div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70 shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF]" />
                   NEXT.JS BENCHMARKS
                 </div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70 shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00FFA3]" />
                   GLOBAL SEO PLAYBOOKS
                 </div>
@@ -109,10 +109,10 @@ export default function LatestInsights() {
 
             {/* Editorial Description */}
             <div className="max-w-lg">
-              <p className="font-sans font-light text-white/75 text-sm sm:text-base leading-relaxed border-l-2 border-[#6324FC]/60 pl-5 sm:pl-6 py-0.5 mb-4">
+              <p className="font-sans font-light text-neutral-700 dark:text-white/75 text-sm sm:text-base leading-relaxed border-l-2 border-[#6324FC]/60 pl-5 sm:pl-6 py-0.5 mb-4">
                 Battle-tested engineering whitepapers, technical SEO teardowns, and actionable growth architectures engineered by our principal practitioners.
               </p>
-              <div className="flex items-center gap-2 text-xs font-mono text-white/40 pl-5 sm:pl-6">
+              <div className="flex items-center gap-2 text-[14px] font-mono text-neutral-500 dark:text-white/40 pl-5 sm:pl-6">
                 <Sparkles className="w-3.5 h-3.5 text-[#00E5FF]" />
                 <span>DATA-BACKED AGENCY WHITE PAPERS</span>
               </div>
@@ -129,7 +129,7 @@ export default function LatestInsights() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative flex flex-col h-full rounded-[2.5rem] bg-gradient-to-b from-white/[0.03] to-white/[0.01] border border-white/[0.07] hover:border-[#6324FC]/40 transition-all duration-700 overflow-hidden backdrop-blur-2xl shadow-2xl hover:-translate-y-2"
+              className="group relative flex flex-col h-full rounded-[2.5rem] bg-white dark:bg-[#0A0A0E] dark:bg-gradient-to-b dark:from-white/[0.03] dark:to-white/[0.01] border border-black/10 dark:border-white/[0.07] hover:border-[#6324FC]/40 transition-all duration-700 overflow-hidden backdrop-blur-2xl shadow-xl dark:shadow-2xl hover:-translate-y-2"
             >
               {/* Card Ambient Glow on Hover */}
               <div
@@ -143,10 +143,10 @@ export default function LatestInsights() {
                   src={post.image}
                   alt={post.title}
                   fill
-                  className="object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 ease-out opacity-85 group-hover:opacity-100"
+                  className="object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 ease-out opacity-90 group-hover:opacity-100"
                 />
                 {/* Cinematic Vignette Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060608] via-[#060608]/40 to-transparent opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent dark:from-[#060608] dark:via-[#060608]/40 dark:to-transparent opacity-90" />
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700"
                   style={{ backgroundColor: post.color }}
@@ -155,10 +155,10 @@ export default function LatestInsights() {
                 {/* Top Category Badge */}
                 <div className="absolute top-6 left-6 z-10">
                   <span
-                    className="px-3.5 py-1.5 backdrop-blur-md text-white font-mono text-[10px] font-semibold tracking-wider uppercase rounded-full border shadow-lg"
+                    className="px-3.5 py-1.5 backdrop-blur-md text-white font-mono text-[12px] font-semibold tracking-wider uppercase rounded-full border shadow-lg"
                     style={{
-                      backgroundColor: `${post.color}20`,
-                      borderColor: `${post.color}40`,
+                      backgroundColor: `${post.color}CC`,
+                      borderColor: `${post.color}`,
                     }}
                   >
                     {post.category}
@@ -167,7 +167,7 @@ export default function LatestInsights() {
 
                 {/* Top Right Spec Chip */}
                 <div className="absolute top-6 right-6 z-10 hidden sm:block">
-                  <span className="px-2.5 py-1 rounded-full bg-[#060608]/70 border border-white/[0.08] font-mono text-[9px] text-white/60 font-semibold uppercase tracking-wider backdrop-blur-md">
+                  <span className="px-2.5 py-1 rounded-full bg-white/80 dark:bg-[#060608]/70 border border-black/10 dark:border-white/[0.08] font-mono text-[12px] text-neutral-700 dark:text-white/60 font-semibold uppercase tracking-wider backdrop-blur-md shadow-sm">
                     {post.badge}
                   </span>
                 </div>
@@ -177,13 +177,13 @@ export default function LatestInsights() {
               <div className="p-7 sm:p-8 flex flex-col flex-1 relative z-10 justify-between">
                 <div>
                   {/* Meta Bar */}
-                  <div className="flex items-center gap-5 mb-5 font-mono text-[11px] text-white/45">
-                    <div className="flex items-center gap-1.5 group-hover:text-white/70 transition-colors">
+                  <div className="flex items-center gap-5 mb-5 font-mono text-[12px] text-neutral-500 dark:text-white/45">
+                    <div className="flex items-center gap-1.5 group-hover:text-neutral-800 dark:group-hover:text-white/70 transition-colors">
                       <Calendar className="w-3.5 h-3.5 text-[#6324FC]" />
                       {post.date}
                     </div>
                     <span>•</span>
-                    <div className="flex items-center gap-1.5 group-hover:text-white/70 transition-colors">
+                    <div className="flex items-center gap-1.5 group-hover:text-neutral-800 dark:group-hover:text-white/70 transition-colors">
                       <Clock className="w-3.5 h-3.5 text-[#00E5FF]" />
                       {post.readTime}
                     </div>
@@ -191,28 +191,28 @@ export default function LatestInsights() {
 
                   {/* Title */}
                   <Link href={`/blog/${post.slug}`}>
-                    <h3 className="font-heading text-xl sm:text-2xl tracking-tight text-white mb-4 leading-snug group-hover:text-[#00E5FF] transition-colors duration-300">
+                    <h3 className="font-heading text-xl sm:text-2xl tracking-tight text-neutral-900 dark:text-white mb-4 leading-snug group-hover:text-[#6324FC] dark:group-hover:text-[#00E5FF] transition-colors duration-300">
                       {post.title}
                     </h3>
                   </Link>
 
                   {/* Excerpt */}
-                  <p className="font-sans font-light text-white/50 text-sm leading-relaxed mb-6 line-clamp-3">
+                  <p className="font-sans font-normal dark:font-light text-neutral-600 dark:text-white/50 text-sm leading-relaxed mb-6 line-clamp-3">
                     {post.excerpt}
                   </p>
                 </div>
 
                 {/* Bottom CTA */}
-                <div className="pt-5 border-t border-white/[0.06] mt-auto">
+                <div className="pt-5 border-t border-black/10 dark:border-white/[0.06] mt-auto">
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="inline-flex items-center justify-between w-full text-white/60 font-mono tracking-wider text-xs group/btn transition-colors duration-300 hover:text-white"
+                    className="inline-flex items-center justify-between w-full text-neutral-700 dark:text-white/60 font-mono tracking-wider text-[14px] group/btn transition-colors duration-300 hover:text-neutral-900 dark:hover:text-white"
                   >
                     <span className="font-semibold uppercase flex items-center gap-2">
                       READ FULL BRIEFING
                     </span>
-                    <div className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center group-hover/btn:bg-[#6324FC] group-hover/btn:border-[#6324FC] group-hover/btn:text-white transition-all duration-300">
-                      <ArrowRight className="w-4 h-4 text-white/70 group-hover/btn:text-white group-hover/btn:translate-x-0.5 transition-all" />
+                    <div className="w-8 h-8 rounded-full bg-neutral-100 dark:bg-white/[0.04] border border-black/10 dark:border-white/[0.08] flex items-center justify-center group-hover/btn:bg-[#6324FC] group-hover/btn:border-[#6324FC] group-hover/btn:text-white transition-all duration-300 shadow-sm">
+                      <ArrowRight className="w-4 h-4 text-neutral-700 dark:text-white/70 group-hover/btn:text-white group-hover/btn:translate-x-0.5 transition-all" />
                     </div>
                   </Link>
                 </div>
@@ -234,12 +234,12 @@ export default function LatestInsights() {
                 <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
               </div>
 
-              <div className="relative w-full h-full px-8 py-4 md:px-12 md:py-5 rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
+              <div className="relative w-full h-full px-8 py-4 md:px-12 md:py-5 rounded-full bg-white dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10 shadow-lg">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
 
                 <span className="w-2 h-2 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
 
-                <span className="relative z-10 flex items-center justify-center gap-4 font-heading md:text-lg tracking-[0.2em] text-white uppercase text-center font-bold">
+                <span className="relative z-10 flex items-center justify-center gap-4 font-heading md:text-lg tracking-[0.2em] text-neutral-900 dark:text-white uppercase text-center font-bold">
                   ACCESS THE VAULT
                   <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-500 text-[#00E5FF]" />
                 </span>

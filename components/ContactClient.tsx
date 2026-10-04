@@ -231,24 +231,24 @@ export default function ContactClient() {
 
   return (
     <main className="w-full min-h-screen bg-background text-primary selection:bg-[#6324FC] selection:text-white pt-28 sm:pt-32 pb-24 font-sans relative overflow-x-hidden">
-      
+
       {/* Background Subtle Ambient Glows */}
       <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#6324FC]/10 dark:bg-[#6324FC]/15 blur-[140px] pointer-events-none -z-10" />
       <div className="absolute top-[800px] -left-40 w-[500px] h-[500px] bg-[#00E5FF]/5 dark:bg-[#00E5FF]/10 blur-[140px] pointer-events-none -z-10" />
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        
+
         {/* ========================================================
             HERO HEADER
             ======================================================== */}
         <section className="mb-16 lg:mb-24">
           <div className="flex flex-wrap items-center gap-3 mb-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] backdrop-blur-md text-[10px] font-heading uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] backdrop-blur-md text-[12px] font-heading uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
               <span className="w-2 h-2 rounded-full bg-[#6324FC] animate-pulse" />
               COMMUNICATION NEXUS // 24/7 AVAILABILITY
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-green-500/20 bg-green-500/5 text-[10px] font-heading uppercase tracking-[0.2em] text-green-600 dark:text-green-400 font-medium">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-green-500/20 bg-green-500/5 text-[12px] font-heading uppercase tracking-[0.2em] text-green-600 dark:text-green-400 font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
               Average Response SLA: &lt; 6 Hours
             </div>
@@ -256,7 +256,7 @@ export default function ContactClient() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-8">
-              <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.9] capitalize">
+              <h1 className="font-heading text-5xl md:text-7xl  tracking-tighter leading-[0.9] capitalize">
                 LET'S ARCHITECT <br />
                 <span className="text-[#6324FC] italic">THE FUTURE</span> TOGETHER.
               </h1>
@@ -274,12 +274,12 @@ export default function ContactClient() {
             MAIN WORKSPACE GRID: FORM (LEFT) + COMMAND CENTER (RIGHT)
             ======================================================== */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
+
           {/* ----------------------------------------------------
               LEFT COLUMN: INTERACTIVE FORM & PIPELINE
               ---------------------------------------------------- */}
           <div className="lg:col-span-7 bg-white dark:bg-[#08080A] border border-black/10 dark:border-white/10 rounded-[32px] p-6 sm:p-10 lg:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.06)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.8)] relative overflow-hidden">
-            
+
             {/* Top Accent Line */}
             <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#6324FC] via-[#00E5FF] to-[#6324FC]" />
 
@@ -298,7 +298,7 @@ export default function ContactClient() {
                   </div>
 
                   <div className="space-y-3 max-w-md">
-                    <span className="font-heading text-xs tracking-[0.3em] uppercase text-[#6324FC] font-semibold">
+                    <span className="font-heading text-[14px] tracking-[0.3em] uppercase text-[#6324FC] font-semibold">
                       Status: Transmitted & Logged
                     </span>
                     <h2 className="font-heading text-4xl sm:text-5xl tracking-tight capitalize">
@@ -310,7 +310,7 @@ export default function ContactClient() {
                     </p>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/10 dark:border-white/10 text-xs text-primary/60 max-w-sm flex items-center gap-3 text-left">
+                  <div className="p-4 rounded-2xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/10 dark:border-white/10 text-[14px] text-primary/60 max-w-sm flex items-center gap-3 text-left">
                     <ShieldCheck className="w-5 h-5 text-green-500 shrink-0" />
                     <span>Your submission is encrypted and safeguarded under our enterprise NDA protocol.</span>
                   </div>
@@ -320,7 +320,7 @@ export default function ContactClient() {
                       setIsSuccess(false);
                       setDetails("");
                     }}
-                    className="mt-4 px-8 py-3.5 rounded-full border border-black/15 dark:border-white/15 font-heading text-xs uppercase tracking-widest hover:border-[#6324FC] hover:text-[#6324FC] transition-all cursor-pointer font-medium"
+                    className="mt-4 px-8 py-3.5 rounded-full border border-black/15 dark:border-white/15 font-heading text-[14px] uppercase tracking-widest hover:border-[#6324FC] hover:text-[#6324FC] transition-all cursor-pointer font-medium"
                   >
                     Submit Another Brief
                   </button>
@@ -338,7 +338,7 @@ export default function ContactClient() {
                   {/* Step 1: Select Inquiry Type */}
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <label className="font-heading text-xs tracking-widest uppercase font-semibold text-primary/80 flex items-center gap-2">
+                      <label className="font-heading text-[14px] tracking-widest uppercase font-semibold text-primary/80 flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC]" />
                         01. Objective Classification
                       </label>
@@ -354,14 +354,13 @@ export default function ContactClient() {
                             type="button"
                             key={type.id}
                             onClick={() => setInquiryType(type.id)}
-                            className={`flex flex-col items-center justify-center p-3.5 sm:p-4 rounded-2xl border text-center transition-all duration-300 cursor-pointer ${
-                              isSelected
-                                ? "bg-[#6324FC]/10 border-[#6324FC] text-[#6324FC] dark:text-white shadow-[0_0_20px_rgba(99,36,252,0.15)]"
-                                : "bg-black/[0.02] dark:bg-white/[0.02] border-black/10 dark:border-white/10 text-primary/70 hover:border-[#6324FC]/40 hover:text-primary"
-                            }`}
+                            className={`flex flex-col items-center justify-center p-3.5 sm:p-4 rounded-2xl border text-center transition-all duration-300 cursor-pointer ${isSelected
+                              ? "bg-[#6324FC]/10 border-[#6324FC] text-[#6324FC] dark:text-white shadow-[0_0_20px_rgba(99,36,252,0.15)]"
+                              : "bg-black/[0.02] dark:bg-white/[0.02] border-black/10 dark:border-white/10 text-primary/70 hover:border-[#6324FC]/40 hover:text-primary"
+                              }`}
                           >
                             <Icon className="w-5 h-5 mb-2" />
-                            <span className="font-heading text-xs capitalize tracking-tight font-medium">
+                            <span className="font-heading text-[14px] capitalize tracking-tight font-medium">
                               {type.label}
                             </span>
                           </button>
@@ -372,7 +371,7 @@ export default function ContactClient() {
 
                   {/* Step 2: Contact Details */}
                   <div className="space-y-4">
-                    <label className="font-heading text-xs tracking-widest uppercase font-semibold text-primary/80 flex items-center gap-2">
+                    <label className="font-heading text-[14px] tracking-widest uppercase font-semibold text-primary/80 flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC]" />
                       02. Identity & Enterprise Information
                     </label>
@@ -441,7 +440,7 @@ export default function ContactClient() {
                   {/* Step 3: Required Engineering Services */}
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <label className="font-heading text-xs tracking-widest uppercase font-semibold text-primary/80 flex items-center gap-2">
+                      <label className="font-heading text-[14px] tracking-widest uppercase font-semibold text-primary/80 flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC]" />
                         03. Capability Alignment
                       </label>
@@ -456,11 +455,10 @@ export default function ContactClient() {
                             type="button"
                             key={svc}
                             onClick={() => toggleService(svc)}
-                            className={`px-4 py-2.5 rounded-xl border font-heading text-xs tracking-tight transition-all duration-300 cursor-pointer ${
-                              isSelected
-                                ? "bg-[#6324FC] border-[#6324FC] text-white shadow-[0_0_15px_rgba(99,36,252,0.3)]"
-                                : "bg-black/[0.02] dark:bg-white/[0.02] border-black/10 dark:border-white/10 text-primary/70 hover:border-[#6324FC]/50 hover:text-primary"
-                            }`}
+                            className={`px-4 py-2.5 rounded-xl border font-heading text-[14px] tracking-tight transition-all duration-300 cursor-pointer ${isSelected
+                              ? "bg-[#6324FC] border-[#6324FC] text-white shadow-[0_0_15px_rgba(99,36,252,0.3)]"
+                              : "bg-black/[0.02] dark:bg-white/[0.02] border-black/10 dark:border-white/10 text-primary/70 hover:border-[#6324FC]/50 hover:text-primary"
+                              }`}
                           >
                             {svc}
                           </button>
@@ -471,7 +469,7 @@ export default function ContactClient() {
 
                   {/* Step 4: Strategic Investment Range */}
                   <div className="space-y-4">
-                    <label className="font-heading text-xs tracking-widest uppercase font-semibold text-primary/80 flex items-center gap-2">
+                    <label className="font-heading text-[14px] tracking-widest uppercase font-semibold text-primary/80 flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC]" />
                       04. Anticipated Investment (USD)
                     </label>
@@ -484,11 +482,10 @@ export default function ContactClient() {
                             type="button"
                             key={tier}
                             onClick={() => setBudget(tier)}
-                            className={`p-3 rounded-xl border text-center font-heading text-xs tracking-tight transition-all duration-300 cursor-pointer ${
-                              isSelected
-                                ? "bg-[#6324FC]/10 border-[#6324FC] text-[#6324FC] dark:text-white font-medium shadow-[0_0_15px_rgba(99,36,252,0.15)]"
-                                : "bg-black/[0.02] dark:bg-white/[0.02] border-black/10 dark:border-white/10 text-primary/70 hover:border-[#6324FC]/40 hover:text-primary"
-                            }`}
+                            className={`p-3 rounded-xl border text-center font-heading text-[14px] tracking-tight transition-all duration-300 cursor-pointer ${isSelected
+                              ? "bg-[#6324FC]/10 border-[#6324FC] text-[#6324FC] dark:text-white font-medium shadow-[0_0_15px_rgba(99,36,252,0.15)]"
+                              : "bg-black/[0.02] dark:bg-white/[0.02] border-black/10 dark:border-white/10 text-primary/70 hover:border-[#6324FC]/40 hover:text-primary"
+                              }`}
                           >
                             {tier}
                           </button>
@@ -500,7 +497,7 @@ export default function ContactClient() {
                   {/* Step 5: Vision & Scope Details */}
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <label className="font-heading text-xs tracking-widest uppercase font-semibold text-primary/80 flex items-center gap-2">
+                      <label className="font-heading text-[14px] tracking-widest uppercase font-semibold text-primary/80 flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC]" />
                         05. Project Objective & Vision
                       </label>
@@ -524,7 +521,7 @@ export default function ContactClient() {
                     <motion.div
                       initial={{ opacity: 0, y: -8 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-heading tracking-wide text-center"
+                      className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 text-[14px] font-heading tracking-wide text-center"
                     >
                       {errorMessage}
                     </motion.div>
@@ -532,7 +529,7 @@ export default function ContactClient() {
 
                   {/* Submission Controls */}
                   <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-black/5 dark:border-white/5">
-                    <div className="flex items-center gap-2 text-xs text-primary/50">
+                    <div className="flex items-center gap-2 text-[14px] text-primary/50">
                       <ShieldCheck className="w-4 h-4 text-green-500 shrink-0" />
                       <span>100% Confidential. Protected by Mutual NDA.</span>
                     </div>
@@ -549,7 +546,7 @@ export default function ContactClient() {
 
                       <div className="relative w-full h-full px-8 py-4 rounded-full bg-white dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
                         <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
-                        
+
                         <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-sm tracking-[0.15em] text-primary uppercase text-center font-medium">
                           {isSubmitting ? "TRANSMITTING BRIEF..." : "TRANSMIT PROJECT BRIEF"}
                           {isSubmitting ? (
@@ -570,11 +567,11 @@ export default function ContactClient() {
               RIGHT COLUMN: COMMAND CENTERS & DIRECT CHANNELS
               ---------------------------------------------------- */}
           <div className="lg:col-span-5 space-y-8">
-            
+
             {/* Direct VIP Contact Card */}
             <div className="bg-white dark:bg-[#08080A] border border-black/10 dark:border-white/10 rounded-[32px] p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.04)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
               <div className="flex items-center justify-between mb-6">
-                <span className="font-heading text-xs tracking-widest uppercase font-semibold text-[#6324FC]">
+                <span className="font-heading text-[14px] tracking-widest uppercase font-semibold text-[#6324FC]">
                   Direct Channels
                 </span>
                 <span className="text-[11px] font-mono text-primary/40">VIP Fast-Track</span>
@@ -629,11 +626,11 @@ export default function ContactClient() {
             {/* Global Command Centers (Live Clocks) */}
             <div className="bg-white dark:bg-[#08080A] border border-black/10 dark:border-white/10 rounded-[32px] p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.04)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
               <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-2 font-heading text-xs tracking-widest uppercase font-semibold text-primary/80">
+                <div className="flex items-center gap-2 font-heading text-[14px] tracking-widest uppercase font-semibold text-primary/80">
                   <Globe2 className="w-4 h-4 text-[#6324FC]" />
                   Global Command Centers
                 </div>
-                <div className="flex items-center gap-1.5 text-[11px] text-green-600 dark:text-green-400 font-mono">
+                <div className="flex items-center gap-1.5 text-[12px] text-green-600 dark:text-green-400 font-mono">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping" />
                   Live Sync
                 </div>
@@ -652,11 +649,10 @@ export default function ContactClient() {
                           {office.city}
                         </span>
                         <span
-                          className={`text-[9px] font-heading uppercase px-2 py-0.5 rounded-full border ${
-                            clock.isOpen
-                              ? "border-green-500/30 text-green-500 bg-green-500/10"
-                              : "border-primary/20 text-primary/40 bg-primary/5"
-                          }`}
+                          className={`text-[9px] font-heading uppercase px-2 py-0.5 rounded-full border ${clock.isOpen
+                            ? "border-green-500/30 text-green-500 bg-green-500/10"
+                            : "border-primary/20 text-primary/40 bg-primary/5"
+                            }`}
                         >
                           {clock.isOpen ? "Open" : "Standby"}
                         </span>
@@ -677,7 +673,7 @@ export default function ContactClient() {
 
             {/* Interactive FAQ Card */}
             <div className="bg-white dark:bg-[#08080A] border border-black/10 dark:border-white/10 rounded-[32px] p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.04)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
-              <h2 className="font-heading text-xs tracking-widest uppercase font-semibold text-primary/80 mb-6 flex items-center gap-2">
+              <h2 className="font-heading text-[14px] tracking-widest uppercase font-semibold text-primary/80 mb-6 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC]" />
                 Frequently Clarified Inquiries
               </h2>
@@ -694,13 +690,12 @@ export default function ContactClient() {
                         onClick={() => setActiveFaq(isOpen ? null : idx)}
                         className="w-full px-4 py-3.5 flex items-center justify-between text-left gap-4 cursor-pointer hover:text-[#6324FC] transition-colors"
                       >
-                        <span className="font-heading text-xs font-medium tracking-tight">
+                        <span className="font-heading text-[14px] font-medium tracking-tight">
                           {item.question}
                         </span>
                         <ChevronDown
-                          className={`w-4 h-4 text-primary/40 transition-transform duration-300 shrink-0 ${
-                            isOpen ? "rotate-180 text-[#6324FC]" : ""
-                          }`}
+                          className={`w-4 h-4 text-primary/40 transition-transform duration-300 shrink-0 ${isOpen ? "rotate-180 text-[#6324FC]" : ""
+                            }`}
                         />
                       </button>
 
@@ -713,7 +708,7 @@ export default function ContactClient() {
                             transition={{ duration: 0.3 }}
                             className="overflow-hidden"
                           >
-                            <div className="px-4 pb-4 pt-1 text-xs text-primary/60 font-light leading-relaxed border-t border-black/5 dark:border-white/5">
+                            <div className="px-4 pb-4 pt-1 text-[14px] text-primary/60 font-light leading-relaxed border-t border-black/5 dark:border-white/5">
                               {item.answer}
                             </div>
                           </motion.div>

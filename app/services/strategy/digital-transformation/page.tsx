@@ -161,7 +161,7 @@ export default function DigitalTransformationPage() {
 
                 <div className="text-center">
                   <Cpu className="w-12 h-12 text-[#6324FC] mx-auto mb-4" />
-                  <div className="font-heading text-[9px] tracking-[0.5em] text-white/40 uppercase">
+                  <div className="font-heading text-[12px] tracking-[0.5em] text-white/40 uppercase">
                     Ecosystem Migration v9.4
                   </div>
                 </div>
@@ -223,7 +223,7 @@ export default function DigitalTransformationPage() {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <ShieldAlert className="w-5 h-5 text-[#FF2D55]" />
-                  <span className="font-heading text-xs tracking-widest text-[#FF2D55] uppercase">
+                  <span className="font-heading text-[14px] tracking-widest text-[#FF2D55] uppercase">
                     SYSTEM LIABILITIES
                   </span>
                 </div>
@@ -283,7 +283,7 @@ export default function DigitalTransformationPage() {
             <div className="max-w-3xl mb-16">
               <div className="flex items-center gap-3 mb-6">
                 <Cpu className="w-5 h-5 text-[#6324FC]" />
-                <span className="font-heading text-xs tracking-widest text-[#6324FC] uppercase">
+                <span className="font-heading text-[14px] tracking-widest text-[#6324FC] uppercase">
                   TRANSFORMATION IN ACTION
                 </span>
               </div>
@@ -361,7 +361,7 @@ export default function DigitalTransformationPage() {
             <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between group">
               <div className="flex justify-between items-start">
                 <Layers className="w-8 h-8 text-[#6324FC]" />
-                <div className="font-heading text-[9px] text-white/20 capitalize tracking-[0.3em]">
+                <div className="font-heading text-[12px] text-white/20 capitalize tracking-[0.3em]">
                   Architectural Node // 0xDE
                 </div>
               </div>
@@ -392,7 +392,7 @@ export default function DigitalTransformationPage() {
                       {item.label}
                     </div>
                     <div
-                      className={`font-heading text-[10px] tracking-widest capitalize ${item.color}`}
+                      className={`font-heading text-[12px] tracking-widest capitalize ${item.color}`}
                     >
                       {item.val}
                     </div>
@@ -400,7 +400,7 @@ export default function DigitalTransformationPage() {
                 ))}
               </div>
 
-              <div className="flex justify-between font-heading text-[9px] text-[#6324FC] capitalize tracking-widest">
+              <div className="flex justify-between font-heading text-[12px] text-[#6324FC] capitalize tracking-widest">
                 <span>Ecosystem Health</span>
                 <span>99.99% Performance</span>
               </div>
@@ -497,7 +497,7 @@ export default function DigitalTransformationPage() {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <Cpu className="w-5 h-5 text-[#00E5FF]" />
-                  <span className="font-heading text-xs tracking-widest text-[#00E5FF] uppercase">
+                  <span className="font-heading text-[14px] tracking-widest text-[#00E5FF] uppercase">
                     QUALIFICATION STAGE
                   </span>
                 </div>

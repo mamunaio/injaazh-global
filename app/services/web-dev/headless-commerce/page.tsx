@@ -73,7 +73,7 @@ export default function HeadlessCommercePage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] uppercase">
+              <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] uppercase">
                 COMMERCE DIVISION
               </span>
             </motion.div>
@@ -200,7 +200,7 @@ export default function HeadlessCommercePage() {
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="px-6 py-4 bg-white/[0.03] border border-white/5 rounded-xl font-heading text-[10px] tracking-widest text-white/60 uppercase"
+                    className="px-6 py-4 bg-white/[0.03] border border-white/5 rounded-xl font-heading text-[12px] tracking-widest text-white/60 uppercase"
                   >
                     {item}
                   </div>
@@ -215,7 +215,7 @@ export default function HeadlessCommercePage() {
                 <div className="font-heading text-6xl text-white tracking-tighter uppercase">
                   API FIRST
                 </div>
-                <div className="font-heading text-[10px] tracking-[0.5em] text-[#6324FC] uppercase mt-4">
+                <div className="font-heading text-[12px] tracking-[0.5em] text-[#6324FC] uppercase mt-4">
                   UNIFIED COMMERCE
                 </div>
               </div>
@@ -315,10 +315,10 @@ export default function HeadlessCommercePage() {
                   <div className="font-heading text-4xl text-white mb-2 group-hover:text-[#6324FC] transition-colors">
                     {stat.val}
                   </div>
-                  <div className="font-heading text-[9px] tracking-widest text-[#6324FC] uppercase mb-1">
+                  <div className="font-heading text-[12px] tracking-widest text-[#6324FC] uppercase mb-1">
                     {stat.label}
                   </div>
-                  <div className="font-sans text-[10px] text-white/20 uppercase">
+                  <div className="font-sans text-[12px] text-white/20 uppercase">
                     {stat.sub}
                   </div>
                 </div>
@@ -421,7 +421,7 @@ export default function HeadlessCommercePage() {
               </h2>
               <div className="space-y-8 mb-12">
                 <div>
-                  <span className="font-heading text-[#6324FC] text-xs uppercase tracking-widest block mb-2">
+                  <span className="font-heading text-[#6324FC] text-[14px] uppercase tracking-widest block mb-2">
                     Client & Industry
                   </span>
                   <p className="font-sans text-white text-lg">
@@ -429,7 +429,7 @@ export default function HeadlessCommercePage() {
                   </p>
                 </div>
                 <div>
-                  <span className="font-heading text-red-500/80 text-xs uppercase tracking-widest block mb-2">
+                  <span className="font-heading text-red-500/80 text-[14px] uppercase tracking-widest block mb-2">
                     The Bottleneck
                   </span>
                   <p className="font-sans text-white/50 text-base">
@@ -439,7 +439,7 @@ export default function HeadlessCommercePage() {
                   </p>
                 </div>
                 <div>
-                  <span className="font-heading text-[#00E5FF] text-xs uppercase tracking-widest block mb-2">
+                  <span className="font-heading text-[#00E5FF] text-[14px] uppercase tracking-widest block mb-2">
                     The Solution
                   </span>
                   <p className="font-sans text-white/50 text-base">
@@ -451,19 +451,19 @@ export default function HeadlessCommercePage() {
                 <div className="grid grid-cols-3 gap-6 pt-4">
                   <div>
                     <div className="font-heading text-3xl text-white">0.3s</div>
-                    <div className="font-sans text-xs text-white/40">
+                    <div className="font-sans text-[14px] text-white/40">
                       TTI (Load Speed)
                     </div>
                   </div>
                   <div>
                     <div className="font-heading text-3xl text-white">+32%</div>
-                    <div className="font-sans text-xs text-white/40">
+                    <div className="font-sans text-[14px] text-white/40">
                       Conversion Lift
                     </div>
                   </div>
                   <div>
                     <div className="font-heading text-3xl text-white">+40%</div>
-                    <div className="font-sans text-xs text-white/40">
+                    <div className="font-sans text-[14px] text-white/40">
                       Mobile Sales
                     </div>
                   </div>

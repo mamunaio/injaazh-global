@@ -139,7 +139,7 @@ export default function MotionGraphicsPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+              <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
                 MOTION DIVISION
               </span>
             </motion.div>
@@ -290,13 +290,13 @@ export default function MotionGraphicsPage() {
                     key={i}
                     className="p-6 bg-white/[0.03] border border-white/5 rounded-2xl space-y-2 group hover:border-[#6324FC]/30 transition-colors"
                   >
-                    <div className="font-heading text-[9px] tracking-widest text-[#6324FC] capitalize">
+                    <div className="font-heading text-[12px] tracking-widest text-[#6324FC] capitalize">
                       {tool.label}
                     </div>
                     <div className="font-heading text-xl text-white capitalize">
                       {tool.val}
                     </div>
-                    <p className="font-sans text-xs text-white/30 leading-relaxed">
+                    <p className="font-sans text-[14px] text-white/30 leading-relaxed">
                       {tool.desc}
                     </p>
                   </div>
@@ -396,7 +396,7 @@ export default function MotionGraphicsPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               MOTION APPLICATIONS
             </span>
           </div>
@@ -436,7 +436,7 @@ export default function MotionGraphicsPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               THE CASE FOR MOTION
             </span>
           </div>

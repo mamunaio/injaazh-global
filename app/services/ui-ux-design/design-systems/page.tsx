@@ -173,7 +173,7 @@ export default function DesignSystemsPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">
+              <span className="font-heading  text-[#6324FC] text-[12px] tracking-[0.5em] capitalize ">
                 SYSTEMS DIVISION
               </span>
             </motion.div>
@@ -347,7 +347,7 @@ export default function DesignSystemsPage() {
                 </motion.div>
 
                 <div className="text-center space-y-2">
-                  <div className="font-heading  text-[10px] tracking-[0.5em] text-[#6324FC] capitalize ">
+                  <div className="font-heading  text-[12px] tracking-[0.5em] text-[#6324FC] capitalize ">
                     System Assembly
                   </div>
                   <div className="font-heading text-2xl text-white">
@@ -404,7 +404,7 @@ export default function DesignSystemsPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">
+            <span className="font-heading  text-[#6324FC] text-[12px] tracking-[0.5em] capitalize ">
               SYSTEM CLARITY
             </span>
           </div>
@@ -460,7 +460,7 @@ export default function DesignSystemsPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">
+            <span className="font-heading  text-[#6324FC] text-[12px] tracking-[0.5em] capitalize ">
               FULL SYSTEM DELIVERABLES
             </span>
           </div>

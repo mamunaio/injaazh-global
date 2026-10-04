@@ -69,7 +69,7 @@ export default function CareersPage() {
             className="flex items-center gap-4 mb-12"
           >
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading  text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">
+            <span className="font-heading  text-[#6324FC] text-[12px] tracking-[0.5em] capitalize ">
               Join the Collective
             </span>
           </motion.div>
@@ -133,7 +133,7 @@ export default function CareersPage() {
             <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-white capitalize ">
               Open <span className="italic text-[#6324FC]">Missions</span>
             </h2>
-            <div className="hidden md:flex items-center gap-4 text-white/20 font-heading  text-[10px] tracking-widest capitalize ">
+            <div className="hidden md:flex items-center gap-4 text-white/20 font-heading  text-[12px] tracking-widest capitalize ">
               <span>Total Active: {jobs.length}</span>
               <div className="w-1 h-1 rounded-full bg-[#6324FC]" />
               <span>Global Intake</span>
@@ -155,10 +155,10 @@ export default function CareersPage() {
                 >
                   <div className="space-y-4">
                     <div className="flex items-center gap-4">
-                      <span className="font-heading  text-[9px] tracking-widest text-[#6324FC] px-3 py-1 bg-[#6324FC]/10 rounded-full">
+                      <span className="font-heading  text-[12px] tracking-widest text-[#6324FC] px-3 py-1 bg-[#6324FC]/10 rounded-full">
                         {job.type}
                       </span>
-                      <span className="font-heading  text-[9px] tracking-widest text-white/30">
+                      <span className="font-heading  text-[12px] tracking-widest text-white/30">
                         {job.location}
                       </span>
                     </div>
@@ -190,7 +190,7 @@ export default function CareersPage() {
                       </p>
 
                       <div className="space-y-4">
-                        <span className="font-heading  text-[10px] tracking-widest text-white/20 capitalize ">
+                        <span className="font-heading  text-[12px] tracking-widest text-white/20 capitalize ">
                           Baseline Requirements:
                         </span>
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">

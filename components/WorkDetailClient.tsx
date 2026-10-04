@@ -35,6 +35,7 @@ import {
   Award,
 } from "lucide-react";
 import { ProjectDetail, catalogProjects, projectsData as defaultProjects } from "@/lib/projectsData";
+import { recordProjectPageView } from "@/lib/projectViews";
 
 const iconMap: Record<string, any> = {
   Hash,
@@ -109,6 +110,12 @@ export default function WorkDetailClient({
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [activeGalleryIndex, setActiveGalleryIndex] = useState<number>(0);
 
+  useEffect(() => {
+    if (project?.slug) {
+      recordProjectPageView(project.slug);
+    }
+  }, [project?.slug]);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
@@ -137,11 +144,11 @@ export default function WorkDetailClient({
     defaultProjects[project.next?.id] ||
     (nextCatalogProject
       ? {
-          title: nextCatalogProject.title,
-          slug: nextCatalogProject.slug,
-          accent: nextCatalogProject.accent || "#6324FC",
-          category: nextCatalogProject.category,
-        }
+        title: nextCatalogProject.title,
+        slug: nextCatalogProject.slug,
+        accent: nextCatalogProject.accent || "#6324FC",
+        category: nextCatalogProject.category,
+      }
       : null) ||
     project;
 
@@ -162,7 +169,7 @@ export default function WorkDetailClient({
   return (
     <main
       ref={containerRef}
-      className="bg-[#060608] min-h-screen text-white relative overflow-x-hidden selection:bg-[#6324FC] selection:text-white"
+      className="bg-[#F5F5F0] dark:bg-[#060608] min-h-screen text-neutral-900 dark:text-white relative overflow-x-hidden selection:bg-[#6324FC] selection:text-white"
     >
       {/* Ambient Radial Mesh Lighting */}
       <div
@@ -177,10 +184,10 @@ export default function WorkDetailClient({
       ───────────────────────────────────────────────────────────── */}
       <section
         ref={heroRef}
-        className="relative min-h-[92vh] pt-32 md:pt-40 pb-20 w-full flex flex-col items-center justify-center overflow-hidden border-b border-white/5"
+        className="relative min-h-[92vh] pt-32 md:pt-40 pb-20 w-full flex flex-col items-center justify-center overflow-hidden border-b border-black/5 dark:border-white/5"
       >
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full relative z-10">
-          
+        <div className="px-6 lg:px-12 w-full relative z-10">
+
           {/* Breadcrumb Navigation & Status Ribbon */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -192,37 +199,37 @@ export default function WorkDetailClient({
               {/* Back to Archive Button */}
               <Link
                 href="/work"
-                className="group inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0E0E14]/90 border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300 shadow-md backdrop-blur-xl"
+                className="group inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white dark:bg-[#0E0E14]/90 border border-black/10 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 hover:bg-neutral-50 dark:hover:bg-white/10 transition-all duration-300 shadow-sm dark:shadow-md backdrop-blur-xl"
                 style={{ borderColor: `${accentColor}40` }}
               >
                 <div
                   className="p-1 rounded-full transition-transform duration-300 group-hover:-translate-x-1"
                   style={{ backgroundColor: `${accentColor}25` }}
                 >
-                  <ArrowLeft className="w-3.5 h-3.5 text-white" />
+                  <ArrowLeft className="w-3.5 h-3.5 text-neutral-800 dark:text-white" />
                 </div>
-                <span className="font-mono text-xs tracking-wider uppercase text-white/80 group-hover:text-white transition-colors duration-300">
+                <span className="font-mono text-[14px] tracking-wider uppercase text-neutral-700 dark:text-white/80 group-hover:text-neutral-950 dark:group-hover:text-white transition-colors duration-300">
                   Back to Archive
                 </span>
               </Link>
 
               {/* Status Badge */}
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md">
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/10 backdrop-blur-md shadow-xs dark:shadow-none">
                 <span
                   className="w-2 h-2 rounded-full animate-pulse"
                   style={{ backgroundColor: accentColor, boxShadow: `0 0 12px ${accentColor}` }}
                 />
-                <span className="font-mono text-xs tracking-[0.25em] uppercase text-white/70">
+                <span className="font-mono text-[14px] tracking-[0.25em] uppercase text-neutral-600 dark:text-white/70">
                   CASE STUDY // 0x{project.id}
                 </span>
-                <span className="text-white/20">|</span>
-                <span className="font-mono text-xs tracking-wider uppercase" style={{ color: accentColor }}>
+                <span className="text-black/20 dark:text-white/20">|</span>
+                <span className="font-mono text-[14px] tracking-wider uppercase font-semibold" style={{ color: accentColor }}>
                   {project.category}
                 </span>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 font-mono text-xs tracking-widest text-white/40">
+            <div className="flex items-center gap-3 font-mono text-[14px] tracking-widest text-neutral-500 dark:text-white/40">
               <span>{project.client}</span>
               <span>•</span>
               <span>{project.year}</span>
@@ -235,7 +242,7 @@ export default function WorkDetailClient({
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.1 }}
-              className="font-heading text-5xl sm:text-6xl md:text-8xl lg:text-9xl leading-[0.88] tracking-tighter uppercase text-white"
+              className="font-heading text-5xl sm:text-6xl md:text-8xl lg:text-9xl leading-[0.88] tracking-tighter uppercase text-neutral-900 dark:text-white"
             >
               {project.title.split(" ")[0]}{" "}
               <span
@@ -253,7 +260,7 @@ export default function WorkDetailClient({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="font-sans font-light text-lg sm:text-xl md:text-2xl text-white/60 max-w-4xl leading-relaxed"
+              className="font-sans font-light text-lg sm:text-xl md:text-2xl text-neutral-600 dark:text-white/60 max-w-4xl leading-relaxed"
             >
               {project.subtitle}
             </motion.p>
@@ -264,14 +271,14 @@ export default function WorkDetailClient({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-wrap items-center justify-between gap-6 pb-12 border-b border-white/10"
+            className="flex flex-wrap items-center justify-between gap-6 pb-12 border-b border-black/10 dark:border-white/10"
           >
             {/* Tag Pills */}
             <div className="flex flex-wrap gap-2.5 items-center">
               {project.tags.map((tag, idx) => (
                 <span
                   key={idx}
-                  className="px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider bg-white/[0.04] border border-white/10 text-white/80 hover:border-white/30 transition-colors"
+                  className="px-3.5 py-1.5 rounded-full text-[14px] font-mono tracking-wider bg-white dark:bg-white/[0.04] border border-black/10 dark:border-white/10 text-neutral-700 dark:text-white/80 hover:border-black/30 dark:hover:border-white/30 transition-colors shadow-xs dark:shadow-none"
                 >
                   #{tag}
                 </span>
@@ -284,7 +291,7 @@ export default function WorkDetailClient({
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-heading text-xs tracking-[0.2em] uppercase text-white overflow-hidden transition-all duration-500 shadow-xl hover:scale-105"
+                className="group relative inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-heading text-[14px] tracking-[0.2em] uppercase text-white overflow-hidden transition-all duration-500 shadow-xl hover:scale-105"
                 style={{
                   background: `linear-gradient(135deg, ${accentColor}, ${secondaryAccent})`,
                   boxShadow: `0 0 35px -5px ${accentColor}80`,
@@ -304,7 +311,7 @@ export default function WorkDetailClient({
           ───────────────────────────────────────────────────────────── */}
           <motion.div
             style={{ opacity: heroOpacity, scale: heroScale }}
-            className="mt-12 relative w-full rounded-2xl md:rounded-3xl p-2 md:p-3 bg-[#12121A]/80 border border-white/10 backdrop-blur-2xl shadow-[0_30px_100px_rgba(0,0,0,0.8)] overflow-hidden"
+            className="mt-12 relative w-full rounded-2xl md:rounded-3xl p-2 md:p-3 bg-white dark:bg-[#12121A]/80 border border-black/10 dark:border-white/10 backdrop-blur-2xl shadow-xl dark:shadow-[0_10px_10px_rgba(0,0,0,0.2)] overflow-hidden"
           >
             {/* Ambient Behind Glow */}
             <div
@@ -317,7 +324,7 @@ export default function WorkDetailClient({
             />
 
             {/* Safari Chrome Header */}
-            <div className="relative z-10 flex items-center justify-between px-4 py-3 border-b border-white/10 bg-[#0A0A10]/90 rounded-t-xl">
+            <div className="relative z-10 flex items-center justify-between px-4 py-3 border-b border-black/10 dark:border-white/10 bg-[#F5F5F8] dark:bg-[#0A0A10]/90 rounded-t-xl">
               {/* Traffic Light Dots */}
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#FF5F56] border border-black/20" />
@@ -326,33 +333,31 @@ export default function WorkDetailClient({
               </div>
 
               {/* Fake Address Bar */}
-              <div className="hidden sm:flex items-center gap-2 px-6 py-1.5 rounded-lg bg-black/40 border border-white/5 font-mono text-xs text-white/50 w-80 justify-center">
-                <span className="text-emerald-400">🔒</span>
+              <div className="hidden sm:flex items-center gap-2 px-6 py-1.5 rounded-lg bg-white dark:bg-black/40 border border-black/10 dark:border-white/5 font-mono text-[14px] text-neutral-600 dark:text-white/50 w-80 justify-center shadow-xs">
+                <span className="text-emerald-500 dark:text-emerald-400">🔒</span>
                 <span className="truncate">
                   {project.link ? project.link.replace(/^https?:\/\//, "") : `injaazh.com/work/${project.slug}`}
                 </span>
               </div>
 
               {/* Device Preview Switcher */}
-              <div className="flex items-center gap-1.5 bg-black/30 p-1 rounded-lg border border-white/5">
+              <div className="flex items-center gap-1.5 bg-neutral-100 dark:bg-black/30 p-1 rounded-lg border border-black/5 dark:border-white/5">
                 <button
                   onClick={() => setActiveDeviceView("desktop")}
-                  className={`p-1.5 rounded transition-colors ${
-                    activeDeviceView === "desktop"
-                      ? "bg-white/20 text-white"
-                      : "text-white/40 hover:text-white"
-                  }`}
+                  className={`p-1.5 rounded transition-colors ${activeDeviceView === "desktop"
+                    ? "bg-[#6324FC] text-white shadow-xs"
+                    : "text-neutral-500 dark:text-white/40 hover:text-neutral-900 dark:hover:text-white"
+                    }`}
                   title="Desktop View"
                 >
                   <Monitor className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => setActiveDeviceView("mobile")}
-                  className={`p-1.5 rounded transition-colors ${
-                    activeDeviceView === "mobile"
-                      ? "bg-white/20 text-white"
-                      : "text-white/40 hover:text-white"
-                  }`}
+                  className={`p-1.5 rounded transition-colors ${activeDeviceView === "mobile"
+                    ? "bg-[#6324FC] text-white shadow-xs"
+                    : "text-neutral-500 dark:text-white/40 hover:text-neutral-900 dark:hover:text-white"
+                    }`}
                   title="Mobile View"
                 >
                   <Smartphone className="w-4 h-4" />
@@ -391,7 +396,7 @@ export default function WorkDetailClient({
                     className="py-8 md:py-12 flex justify-center w-full px-4"
                   >
                     {isFullShowcase ? (
-                      <div className="relative w-full max-w-[340px] sm:max-w-[380px] aspect-[2/3] rounded-[2.5rem] border border-white/20 overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] bg-black">
+                      <div className="relative w-full max-w-[340px] sm:max-w-[380px] aspect-[2/3] rounded-[2.5rem] border border-white/20 overflow-hidden bg-black">
                         <Image
                           src={mobileImageSrc}
                           alt={`${project.title} Mobile Showcase`}
@@ -423,18 +428,18 @@ export default function WorkDetailClient({
       {/* ─────────────────────────────────────────────────────────────
           2. EXECUTIVE IMPACT BENTO GRID (KPI STATS)
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative z-20 py-20 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-white/5">
+      <section className="relative z-20 py-20 px-6 lg:px-12 border-b border-black/5 dark:border-white/5">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="flex items-center gap-3 font-mono text-xs tracking-[0.4em] uppercase text-white/50 mb-3">
+            <div className="flex items-center gap-3 font-mono text-[14px] tracking-[0.4em] uppercase text-neutral-500 dark:text-white/50 mb-3">
               <span className="w-8 h-[1px]" style={{ backgroundColor: accentColor }} />
               Measurable Outcomes
             </div>
-            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-white">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-neutral-900 dark:text-white">
               RESULTS THAT <span style={{ color: accentColor }}>MOVE THE NEEDLE.</span>
             </h2>
           </div>
-          <p className="font-sans font-light text-white/50 max-w-sm text-sm md:text-base">
+          <p className="font-sans font-light text-neutral-600 dark:text-white/50 max-w-sm text-sm md:text-base">
             Every architectural decision was measured against commercial conversion and latency benchmarks.
           </p>
         </div>
@@ -449,7 +454,7 @@ export default function WorkDetailClient({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.7 }}
-                className="group relative flex flex-col justify-between min-h-[260px] p-8 rounded-3xl bg-[#0D0D14]/90 border border-white/10 backdrop-blur-xl hover:border-white/25 transition-all duration-500 shadow-xl overflow-hidden hover:-translate-y-1.5"
+                className="group relative flex flex-col justify-between min-h-[260px] p-8 rounded-3xl bg-white dark:bg-[#0D0D14]/90 border border-black/10 dark:border-white/10 backdrop-blur-xl hover:border-black/25 dark:hover:border-white/25 transition-all duration-500 shadow-lg dark:shadow-xl overflow-hidden hover:-translate-y-1.5"
               >
                 {/* Glow Spotlight */}
                 <div
@@ -460,22 +465,23 @@ export default function WorkDetailClient({
                 {/* Top Row: Icon + Index */}
                 <div className="flex items-center justify-between relative z-10">
                   <div
-                    className="w-12 h-12 rounded-2xl flex items-center justify-center bg-white/[0.04] border border-white/10 transition-transform duration-500 group-hover:scale-110"
+                    className="w-12 h-12 rounded-2xl flex items-center justify-center bg-neutral-100 dark:bg-white/[0.04] border border-black/10 dark:border-white/10 transition-transform duration-500 group-hover:scale-110"
                     style={{ color: accentColor }}
                   >
                     <IconComponent className="w-5 h-5" />
                   </div>
-                  <span className="font-mono text-xs tracking-widest text-white/30">
+                  <span className="font-mono text-[14px] tracking-widest text-neutral-400 dark:text-white/30">
                     0{i + 1}
                   </span>
                 </div>
 
                 {/* Bottom Row: Number & Label */}
                 <div className="relative z-10 pt-8 space-y-2">
-                  <div className="font-heading text-5xl sm:text-6xl tracking-tighter leading-none text-white">
+                  <div className="font-heading text-5xl sm:text-6xl tracking-tighter leading-none text-neutral-900 dark:text-white">
                     <span
+                      className="inline-block"
                       style={{
-                        background: `linear-gradient(135deg, #ffffff 30%, ${accentColor} 100%)`,
+                        background: `linear-gradient(135deg, var(--text-primary) 30%, ${accentColor} 100%)`,
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                       }}
@@ -483,7 +489,7 @@ export default function WorkDetailClient({
                       <NumberTicker value={m.val} suffix={m.suffix} prefix={m.prefix} />
                     </span>
                   </div>
-                  <div className="font-mono text-xs tracking-widest text-white/50 uppercase">
+                  <div className="font-mono text-[14px] tracking-widest text-neutral-500 dark:text-white/50 uppercase">
                     {m.label}
                   </div>
                 </div>
@@ -496,47 +502,47 @@ export default function WorkDetailClient({
       {/* ─────────────────────────────────────────────────────────────
           3. STRATEGIC NARRATIVE & BACKGROUND
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-white/5">
+      <section className="py-24 px-6 lg:px-12 border-b border-black/5 dark:border-white/5">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
+
           {/* Left Column: Context Sidebar (Sticky on Desktop) */}
           <div className="lg:col-span-4 space-y-8 lg:sticky lg:top-36">
-            
+
             {/* Meta Card */}
-            <div className="p-8 rounded-3xl bg-[#0D0D14]/90 border border-white/10 backdrop-blur-xl space-y-6">
-              <div className="flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-white/50">
+            <div className="p-8 rounded-3xl bg-white dark:bg-[#0D0D14]/90 border border-black/10 dark:border-white/10 backdrop-blur-xl space-y-6 shadow-lg dark:shadow-xl">
+              <div className="flex items-center gap-2 font-mono text-[14px] tracking-widest uppercase text-neutral-500 dark:text-white/50">
                 <Sparkles className="w-3.5 h-3.5" style={{ color: accentColor }} />
                 Project Intelligence
               </div>
 
-              <div className="space-y-4 divide-y divide-white/5 font-mono text-xs">
+              <div className="space-y-4 divide-y divide-black/5 dark:divide-white/5 font-mono text-xs">
                 <div className="flex justify-between pt-2">
-                  <span className="text-white/40 uppercase">Client</span>
-                  <span className="text-white font-medium">{project.client}</span>
+                  <span className="text-neutral-500 dark:text-white/40 uppercase">Client</span>
+                  <span className="text-neutral-900 dark:text-white font-medium">{project.client}</span>
                 </div>
                 <div className="flex justify-between pt-3">
-                  <span className="text-white/40 uppercase">Timeline</span>
-                  <span className="text-white font-medium">{project.year}</span>
+                  <span className="text-neutral-500 dark:text-white/40 uppercase">Timeline</span>
+                  <span className="text-neutral-900 dark:text-white font-medium">{project.year}</span>
                 </div>
                 <div className="flex justify-between pt-3">
-                  <span className="text-white/40 uppercase">Domain</span>
-                  <span className="text-white font-medium">{project.category}</span>
+                  <span className="text-neutral-500 dark:text-white/40 uppercase">Domain</span>
+                  <span className="text-neutral-900 dark:text-white font-medium">{project.category}</span>
                 </div>
                 <div className="flex justify-between pt-3">
-                  <span className="text-white/40 uppercase">Architect</span>
-                  <span className="text-white font-medium">INJAAZH Global</span>
+                  <span className="text-neutral-500 dark:text-white/40 uppercase">Architect</span>
+                  <span className="text-neutral-900 dark:text-white font-medium">INJAAZH Global</span>
                 </div>
               </div>
             </div>
 
             {/* Scope & Deliverables Checklist */}
-            <div className="p-8 rounded-3xl bg-[#0D0D14]/90 border border-white/10 backdrop-blur-xl space-y-4">
-              <div className="flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-white/50 mb-2">
+            <div className="p-8 rounded-3xl bg-white dark:bg-[#0D0D14]/90 border border-black/10 dark:border-white/10 backdrop-blur-xl space-y-4 shadow-lg dark:shadow-xl">
+              <div className="flex items-center gap-2 font-mono text-[14px] tracking-widest uppercase text-neutral-500 dark:text-white/50 mb-2">
                 <Layers className="w-3.5 h-3.5" style={{ color: accentColor }} />
                 Delivered Engineering
               </div>
 
-              <ul className="space-y-3 font-sans text-sm text-white/70">
+              <ul className="space-y-3 font-sans text-sm text-neutral-700 dark:text-white/70">
                 {(project.deliverables || [
                   "Sub-second Edge Deployment",
                   "High-Converting UI/UX System",
@@ -555,8 +561,8 @@ export default function WorkDetailClient({
             </div>
 
             {/* Interactive Tech Stack */}
-            <div className="p-8 rounded-3xl bg-[#0D0D14]/90 border border-white/10 backdrop-blur-xl space-y-4">
-              <div className="flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-white/50 mb-2">
+            <div className="p-8 rounded-3xl bg-white dark:bg-[#0D0D14]/90 border border-black/10 dark:border-white/10 backdrop-blur-xl space-y-4 shadow-lg dark:shadow-xl">
+              <div className="flex items-center gap-2 font-mono text-[14px] tracking-widest uppercase text-neutral-500 dark:text-white/50 mb-2">
                 <Cpu className="w-3.5 h-3.5" style={{ color: accentColor }} />
                 Technology Stack
               </div>
@@ -567,10 +573,10 @@ export default function WorkDetailClient({
                   return (
                     <div
                       key={idx}
-                      className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/30 transition-colors group cursor-default"
+                      className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-100 dark:bg-white/[0.03] border border-black/5 dark:border-white/10 hover:border-black/20 dark:hover:border-white/30 transition-colors group cursor-default shadow-2xs dark:shadow-none"
                     >
-                      <TechIcon className="w-3.5 h-3.5 text-white/40 group-hover:text-white transition-colors" />
-                      <span className="font-mono text-xs text-white/80">{t.name}</span>
+                      <TechIcon className="w-3.5 h-3.5 text-neutral-500 dark:text-white/40 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors" />
+                      <span className="font-mono text-[14px] text-neutral-800 dark:text-white/80">{t.name}</span>
                     </div>
                   );
                 })}
@@ -581,32 +587,32 @@ export default function WorkDetailClient({
 
           {/* Right Column: Narrative Storyline */}
           <div className="lg:col-span-8 space-y-12">
-            
+
             {/* Project Overview */}
             <div className="space-y-6">
-              <div className="flex items-center gap-3 font-mono text-xs tracking-[0.4em] uppercase text-white/50">
+              <div className="flex items-center gap-3 font-mono text-[14px] tracking-[0.4em] uppercase text-neutral-500 dark:text-white/50">
                 <span className="w-8 h-[1px]" style={{ backgroundColor: accentColor }} />
                 Executive Summary
               </div>
-              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-white leading-[0.9]">
+              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-neutral-900 dark:text-white leading-[0.9]">
                 ARCHITECTING FOR <span style={{ color: accentColor }}>SUPREMACY.</span>
               </h2>
-              <p className="font-sans font-light text-xl md:text-2xl text-white/70 leading-relaxed">
+              <p className="font-sans font-light text-xl md:text-2xl text-neutral-600 dark:text-white/70 leading-relaxed">
                 {project.overview}
               </p>
             </div>
 
             {/* Client Background & Industry Environment */}
             {project.background && (
-              <div className="p-8 md:p-10 rounded-3xl bg-[#0D0D14]/70 border border-white/5 backdrop-blur-xl space-y-4">
-                <div className="flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-white/50">
+              <div className="p-8 md:p-10 rounded-3xl bg-white dark:bg-[#0D0D14]/70 border border-black/10 dark:border-white/5 backdrop-blur-xl space-y-4 shadow-md dark:shadow-none">
+                <div className="flex items-center gap-2 font-mono text-[14px] tracking-widest uppercase text-neutral-500 dark:text-white/50">
                   <Award className="w-4 h-4" style={{ color: accentColor }} />
                   Strategic Context & Market Landscape
                 </div>
-                <h3 className="font-heading text-2xl uppercase tracking-tight text-white">
+                <h3 className="font-heading text-2xl uppercase tracking-tight text-neutral-900 dark:text-white">
                   The Commercial Imperative
                 </h3>
-                <p className="font-sans font-light text-base md:text-lg text-white/70 leading-relaxed">
+                <p className="font-sans font-light text-base md:text-lg text-neutral-600 dark:text-white/70 leading-relaxed">
                   {project.background}
                 </p>
               </div>
@@ -614,24 +620,24 @@ export default function WorkDetailClient({
 
             {/* The Friction vs The Solution Bento Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
-              
+
               {/* Challenge Card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-8 md:p-10 rounded-3xl bg-[#0D0D14]/90 border border-red-500/20 backdrop-blur-xl relative overflow-hidden space-y-4"
+                className="p-8 md:p-10 rounded-3xl bg-white dark:bg-[#0D0D14]/90 border border-red-500/20 backdrop-blur-xl relative overflow-hidden space-y-4 shadow-md dark:shadow-xl"
               >
-                <div className="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400">
+                <div className="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500 dark:text-red-400">
                   <Target className="w-5 h-5" />
                 </div>
-                <div className="font-mono text-xs tracking-widest uppercase text-red-400">
+                <div className="font-mono text-[14px] tracking-widest uppercase text-red-500 dark:text-red-400 font-semibold">
                   The Friction & Bottlenecks
                 </div>
-                <h3 className="font-heading text-2xl uppercase tracking-tight text-white">
+                <h3 className="font-heading text-2xl uppercase tracking-tight text-neutral-900 dark:text-white">
                   Why Legacy Methods Failed
                 </h3>
-                <p className="font-sans font-light text-base text-white/60 leading-relaxed">
+                <p className="font-sans font-light text-base text-neutral-600 dark:text-white/60 leading-relaxed">
                   {project.problem}
                 </p>
               </motion.div>
@@ -642,18 +648,18 @@ export default function WorkDetailClient({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-8 md:p-10 rounded-3xl bg-[#0D0D14]/90 border border-emerald-500/20 backdrop-blur-xl relative overflow-hidden space-y-4"
+                className="p-8 md:p-10 rounded-3xl bg-white dark:bg-[#0D0D14]/90 border border-emerald-500/20 backdrop-blur-xl relative overflow-hidden space-y-4 shadow-md dark:shadow-xl"
               >
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
-                <div className="font-mono text-xs tracking-widest uppercase text-emerald-400">
+                <div className="font-mono text-[14px] tracking-widest uppercase text-emerald-600 dark:text-emerald-400 font-semibold">
                   The Engineering Breakthrough
                 </div>
-                <h3 className="font-heading text-2xl uppercase tracking-tight text-white">
+                <h3 className="font-heading text-2xl uppercase tracking-tight text-neutral-900 dark:text-white">
                   How INJAAZH Engineered Success
                 </h3>
-                <p className="font-sans font-light text-base text-white/60 leading-relaxed">
+                <p className="font-sans font-light text-base text-neutral-600 dark:text-white/60 leading-relaxed">
                   {project.solution}
                 </p>
               </motion.div>
@@ -668,18 +674,18 @@ export default function WorkDetailClient({
           4. FOUR-PHASE ENGINEERING EXECUTION ROADMAP
       ───────────────────────────────────────────────────────────── */}
       {project.roadmap && project.roadmap.length > 0 && (
-        <section className="py-24 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-white/5">
+        <section className="py-24 px-6 lg:px-12 border-b border-black/5 dark:border-white/5">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <div className="flex items-center gap-3 font-mono text-xs tracking-[0.4em] uppercase text-white/50 mb-3">
+              <div className="flex items-center gap-3 font-mono text-[14px] tracking-[0.4em] uppercase text-neutral-500 dark:text-white/50 mb-3">
                 <span className="w-8 h-[1px]" style={{ backgroundColor: accentColor }} />
                 Methodology & Timeline
               </div>
-              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-white">
+              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-neutral-900 dark:text-white">
                 THE 4-PHASE <span style={{ color: accentColor }}>EXECUTION BLUEPRINT.</span>
               </h2>
             </div>
-            <p className="font-sans font-light text-white/50 max-w-sm text-sm md:text-base">
+            <p className="font-sans font-light text-neutral-600 dark:text-white/50 max-w-sm text-sm md:text-base">
               A structured, sprint-based approach from technical discovery to production-ready global deployment.
             </p>
           </div>
@@ -692,37 +698,37 @@ export default function WorkDetailClient({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.6 }}
-                className="p-8 rounded-3xl bg-[#0D0D14]/90 border border-white/10 backdrop-blur-xl flex flex-col justify-between space-y-6 hover:border-white/25 transition-all duration-300 shadow-xl"
+                className="p-8 rounded-3xl bg-white dark:bg-[#0D0D14]/90 border border-black/10 dark:border-white/10 backdrop-blur-xl flex flex-col justify-between space-y-6 hover:border-black/25 dark:hover:border-white/25 transition-all duration-300 shadow-lg dark:shadow-xl"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span
-                      className="px-3 py-1 rounded-full text-xs font-mono tracking-wider uppercase font-bold"
+                      className="px-3 py-1 rounded-full text-[14px] font-mono tracking-wider uppercase font-bold"
                       style={{ backgroundColor: `${accentColor}20`, color: accentColor }}
                     >
                       {step.phase}
                     </span>
-                    <div className="flex items-center gap-1.5 font-mono text-[10px] text-white/40">
+                    <div className="flex items-center gap-1.5 font-mono text-[12px] text-neutral-500 dark:text-white/40">
                       <Clock className="w-3 h-3" />
                       <span>{step.duration}</span>
                     </div>
                   </div>
 
-                  <h3 className="font-heading text-xl uppercase tracking-tight text-white">
+                  <h3 className="font-heading text-xl uppercase tracking-tight text-neutral-900 dark:text-white">
                     {step.title}
                   </h3>
 
-                  <p className="font-sans font-light text-xs text-white/60 leading-relaxed">
+                  <p className="font-sans font-light text-[14px] text-neutral-600 dark:text-white/60 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-white/5 space-y-2">
-                  <div className="font-mono text-[10px] tracking-wider uppercase text-white/40 mb-2">
+                <div className="pt-4 border-t border-black/5 dark:border-white/5 space-y-2">
+                  <div className="font-mono text-[12px] tracking-wider uppercase text-neutral-500 dark:text-white/40 mb-2">
                     Milestone Deliverables:
                   </div>
                   {step.highlights.map((h, hIdx) => (
-                    <div key={hIdx} className="flex items-center gap-2 font-mono text-xs text-white/80">
+                    <div key={hIdx} className="flex items-center gap-2 font-mono text-[14px] text-neutral-700 dark:text-white/80">
                       <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accentColor }} />
                       <span>{h}</span>
                     </div>
@@ -738,54 +744,54 @@ export default function WorkDetailClient({
           5. BEFORE VS AFTER AUDIT BENCHMARKS (MEASURABLE ROI)
       ───────────────────────────────────────────────────────────── */}
       {project.beforeAfter && project.beforeAfter.length > 0 && (
-        <section className="py-24 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-white/5">
+        <section className="py-24 px-6 lg:px-12 border-b border-black/5 dark:border-white/5">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <div className="flex items-center gap-3 font-mono text-xs tracking-[0.4em] uppercase text-white/50 mb-3">
+              <div className="flex items-center gap-3 font-mono text-[14px] tracking-[0.4em] uppercase text-neutral-500 dark:text-white/50 mb-3">
                 <span className="w-8 h-[1px]" style={{ backgroundColor: accentColor }} />
                 Technical Proof & Audit
               </div>
-              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-white">
+              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-neutral-900 dark:text-white">
                 BEFORE VS AFTER <span style={{ color: accentColor }}>PERFORMANCE MATRIX.</span>
               </h2>
             </div>
-            <p className="font-sans font-light text-white/50 max-w-sm text-sm md:text-base">
+            <p className="font-sans font-light text-neutral-600 dark:text-white/50 max-w-sm text-sm md:text-base">
               Hard data extracted from Google Lighthouse, Cloudflare analytics, and conversion telemetry.
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0D0D14]/90 backdrop-blur-xl shadow-2xl">
-            <div className="grid grid-cols-12 px-6 sm:px-10 py-5 bg-[#08080E] border-b border-white/10 font-mono text-xs uppercase tracking-widest text-white/50">
+          <div className="overflow-hidden rounded-3xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#0D0D14]/90 backdrop-blur-xl shadow-lg dark:shadow-2xl">
+            <div className="grid grid-cols-12 px-6 sm:px-10 py-5 bg-[#F5F5F8] dark:bg-[#08080E] border-b border-black/10 dark:border-white/10 font-mono text-[14px] uppercase tracking-widest text-neutral-500 dark:text-white/50">
               <div className="col-span-5 sm:col-span-4">Benchmark Metric</div>
               <div className="col-span-2 text-center hidden sm:block">Legacy Baseline</div>
               <div className="col-span-4 sm:col-span-3 text-center">INJAAZH Architecture</div>
               <div className="col-span-3 text-right">Net Gain</div>
             </div>
 
-            <div className="divide-y divide-white/5 font-sans">
+            <div className="divide-y divide-black/5 dark:divide-white/5 font-sans">
               {project.beforeAfter.map((row, idx) => (
                 <div
                   key={idx}
-                  className="grid grid-cols-12 px-6 sm:px-10 py-6 items-center hover:bg-white/[0.02] transition-colors"
+                  className="grid grid-cols-12 px-6 sm:px-10 py-6 items-center hover:bg-neutral-50 dark:hover:bg-white/[0.02] transition-colors"
                 >
                   <div className="col-span-5 sm:col-span-4">
-                    <span className="font-heading text-lg sm:text-xl text-white">{row.metric}</span>
+                    <span className="font-heading text-lg sm:text-xl text-neutral-900 dark:text-white">{row.metric}</span>
                   </div>
 
-                  <div className="col-span-2 text-center font-mono text-xs sm:text-sm text-red-400/80 line-through hidden sm:block">
+                  <div className="col-span-2 text-center font-mono text-[14px] sm:text-sm text-red-500 dark:text-red-400/80 line-through hidden sm:block">
                     {row.before}
                   </div>
 
                   <div className="col-span-4 sm:col-span-3 text-center">
                     <span
-                      className="px-3.5 py-1.5 rounded-full font-mono text-xs sm:text-sm font-bold"
+                      className="px-3.5 py-1.5 rounded-full font-mono text-[14px] sm:text-sm font-bold"
                       style={{ backgroundColor: `${accentColor}15`, color: accentColor }}
                     >
                       {row.after}
                     </span>
                   </div>
 
-                  <div className="col-span-3 text-right font-heading text-base sm:text-xl text-emerald-400">
+                  <div className="col-span-3 text-right font-heading text-base sm:text-xl text-emerald-600 dark:text-emerald-400">
                     {row.improvement}
                   </div>
                 </div>
@@ -799,17 +805,17 @@ export default function WorkDetailClient({
           6. ARCHITECTURAL DEEP-DIVE BENTO CARDS
       ───────────────────────────────────────────────────────────── */}
       {project.architectureHighlights && project.architectureHighlights.length > 0 && (
-        <section className="py-24 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-white/5">
+        <section className="py-24 px-6 lg:px-12 border-b border-black/5 dark:border-white/5">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 font-mono text-xs tracking-[0.4em] uppercase text-white/50">
+            <div className="inline-flex items-center gap-2 font-mono text-[14px] tracking-[0.4em] uppercase text-neutral-500 dark:text-white/50">
               <span className="w-8 h-[1px]" style={{ backgroundColor: accentColor }} />
               Engineering Depth
               <span className="w-8 h-[1px]" style={{ backgroundColor: accentColor }} />
             </div>
-            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-white">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-neutral-900 dark:text-white">
               CORE TECHNICAL <span style={{ color: accentColor }}>INNOVATIONS.</span>
             </h2>
-            <p className="font-sans font-light text-white/50 text-base">
+            <p className="font-sans font-light text-neutral-600 dark:text-white/50 text-base">
               A breakdown of the proprietary systems and custom architecture developed for this project.
             </p>
           </div>
@@ -818,25 +824,25 @@ export default function WorkDetailClient({
             {project.architectureHighlights.map((item, idx) => (
               <div
                 key={idx}
-                className="p-8 md:p-10 rounded-3xl bg-[#0D0D14]/90 border border-white/10 backdrop-blur-xl relative overflow-hidden space-y-6 hover:border-white/25 transition-all duration-300 shadow-xl group"
+                className="p-8 md:p-10 rounded-3xl bg-white dark:bg-[#0D0D14]/90 border border-black/10 dark:border-white/10 backdrop-blur-xl relative overflow-hidden space-y-6 hover:border-black/25 dark:hover:border-white/25 transition-all duration-300 shadow-lg dark:shadow-xl group"
               >
                 <div
-                  className="w-12 h-12 rounded-2xl flex items-center justify-center bg-white/[0.04] border border-white/10 group-hover:scale-110 transition-transform"
+                  className="w-12 h-12 rounded-2xl flex items-center justify-center bg-neutral-100 dark:bg-white/[0.04] border border-black/10 dark:border-white/10 group-hover:scale-110 transition-transform"
                   style={{ color: accentColor }}
                 >
                   <Cpu className="w-6 h-6" />
                 </div>
 
                 <div className="space-y-2">
-                  <span className="font-mono text-[10px] tracking-widest uppercase text-white/40">
+                  <span className="font-mono text-[12px] tracking-widest uppercase text-neutral-500 dark:text-white/40">
                     {item.tag}
                   </span>
-                  <h3 className="font-heading text-2xl uppercase tracking-tight text-white">
+                  <h3 className="font-heading text-2xl uppercase tracking-tight text-neutral-900 dark:text-white">
                     {item.title}
                   </h3>
                 </div>
 
-                <p className="font-sans font-light text-sm text-white/60 leading-relaxed">
+                <p className="font-sans font-light text-sm text-neutral-600 dark:text-white/60 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -848,34 +854,34 @@ export default function WorkDetailClient({
       {/* ─────────────────────────────────────────────────────────────
           7. INTERACTIVE DUAL DEVICE SHOWCASE
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-white/5 relative overflow-hidden">
+      <section className="py-24 px-6 lg:px-12 border-b border-black/5 dark:border-white/5 relative overflow-hidden">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 font-mono text-xs tracking-[0.4em] uppercase text-white/50">
+          <div className="inline-flex items-center gap-2 font-mono text-[14px] tracking-[0.4em] uppercase text-neutral-500 dark:text-white/50">
             <span className="w-8 h-[1px]" style={{ backgroundColor: accentColor }} />
             Cross-Device Fidelity
             <span className="w-8 h-[1px]" style={{ backgroundColor: accentColor }} />
           </div>
-          <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-white">
+          <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-neutral-900 dark:text-white">
             SEAMLESS <span style={{ color: accentColor }}>ACROSS VIEWPORTS.</span>
           </h2>
-          <p className="font-sans font-light text-white/50 text-base">
+          <p className="font-sans font-light text-neutral-600 dark:text-white/50 text-base">
             Responsive design is not an afterthought. Every breakpoint is handcrafted for maximum engagement.
           </p>
         </div>
 
         {/* Dual Device Composition */}
         <div className="relative flex flex-col lg:flex-row items-center justify-center gap-8 min-h-[480px] md:min-h-[600px]">
-          
+
           {/* Main Desktop Card */}
           <motion.div
             style={{ y: mockupY1 }}
-            className="w-full lg:w-[68%] rounded-3xl p-3 bg-[#111118]/90 border border-white/10 backdrop-blur-2xl shadow-2xl overflow-hidden"
+            className="w-full lg:w-[68%] rounded-3xl p-3 bg-white dark:bg-[#111118]/90 border border-black/10 dark:border-white/10 backdrop-blur-2xl shadow-xl dark:shadow-2xl overflow-hidden"
           >
-            <div className="flex items-center gap-2 px-4 py-3 bg-[#08080E] rounded-t-2xl border-b border-white/5">
-              <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
-              <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
-              <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
-              <span className="font-mono text-[10px] text-white/40 ml-2 truncate">
+            <div className="flex items-center gap-2 px-4 py-3 bg-[#F5F5F8] dark:bg-[#08080E] rounded-t-2xl border-b border-black/5 dark:border-white/5">
+              <span className="w-2.5 h-2.5 rounded-full bg-black/20 dark:bg-white/20" />
+              <span className="w-2.5 h-2.5 rounded-full bg-black/20 dark:bg-white/20" />
+              <span className="w-2.5 h-2.5 rounded-full bg-black/20 dark:bg-white/20" />
+              <span className="font-mono text-[12px] text-neutral-500 dark:text-white/40 ml-2 truncate">
                 Desktop High-Resolution View
               </span>
             </div>
@@ -892,11 +898,11 @@ export default function WorkDetailClient({
           {/* Floating Mobile Companion Card */}
           <motion.div
             style={{ y: mockupY2 }}
-            className={`w-[260px] sm:w-[300px] ${isFullShowcase ? 'lg:w-[32%]' : 'lg:w-[28%]'} rounded-[2.5rem] p-3 bg-[#141420]/90 border border-white/10 backdrop-blur-2xl shadow-2xl overflow-hidden lg:-ml-12 z-20`}
+            className={`w-[260px] sm:w-[300px] ${isFullShowcase ? 'lg:w-[32%]' : 'lg:w-[28%]'} rounded-[2.5rem] p-3 bg-white dark:bg-[#141420]/90 border border-black/10 dark:border-white/10 backdrop-blur-2xl shadow-2xl overflow-hidden lg:-ml-12 z-20`}
           >
-            <div className={`relative ${isFullShowcase ? 'aspect-[2/3]' : 'aspect-[9/18]'} w-full rounded-[2rem] overflow-hidden bg-black border-2 border-white/10`}>
+            <div className={`relative ${isFullShowcase ? 'aspect-[2/3]' : 'aspect-[9/18]'} w-full rounded-[2rem] overflow-hidden bg-black border-2 border-black/10 dark:border-white/10`}>
               {!isFullShowcase && (
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-white/10 rounded-full z-20" />
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-neutral-300 dark:bg-white/10 rounded-full z-20" />
               )}
               <Image
                 src={mobileImageSrc}
@@ -914,18 +920,18 @@ export default function WorkDetailClient({
           7B. MULTI-SCREEN CLINICAL ARCHITECTURE GALLERY (IF PRESENT)
       ───────────────────────────────────────────────────────────── */}
       {project.gallery && project.gallery.length > 0 && (
-        <section className="py-24 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-white/5 relative overflow-hidden">
+        <section className="py-24 px-6 lg:px-12 border-b border-black/5 dark:border-white/5 relative overflow-hidden">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <div className="flex items-center gap-3 font-mono text-xs tracking-[0.4em] uppercase text-white/50 mb-3">
+              <div className="flex items-center gap-3 font-mono text-[14px] tracking-[0.4em] uppercase text-neutral-500 dark:text-white/50 mb-3">
                 <span className="w-8 h-[1px]" style={{ backgroundColor: accentColor }} />
                 Clinical Interface Gallery
               </div>
-              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-white">
+              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-neutral-900 dark:text-white">
                 EXPLORE THE <span style={{ color: accentColor }}>LIVE PLATFORM.</span>
               </h2>
             </div>
-            <p className="font-sans font-light text-white/50 max-w-sm text-sm md:text-base">
+            <p className="font-sans font-light text-neutral-600 dark:text-white/50 max-w-sm text-sm md:text-base">
               Inspect the high-precision diagnostic catalog, B2B quote funnels, and clinical resource architecture.
             </p>
           </div>
@@ -938,18 +944,19 @@ export default function WorkDetailClient({
                 <button
                   key={idx}
                   onClick={() => setActiveGalleryIndex(idx)}
-                  className={`px-5 py-3 rounded-2xl font-mono text-xs tracking-wider uppercase transition-all duration-300 flex items-center gap-3 whitespace-nowrap cursor-pointer border ${
-                    isActive
-                      ? "bg-white/10 text-white border-white/30 shadow-lg"
-                      : "bg-[#0D0D14]/70 text-white/40 border-white/5 hover:border-white/20 hover:text-white"
-                  }`}
+                  className={`px-5 py-3 rounded-2xl font-mono text-[14px] tracking-wider uppercase transition-all duration-300 flex items-center gap-3 whitespace-nowrap cursor-pointer border ${isActive
+                    ? "bg-[#6324FC] text-white border-[#6324FC] shadow-lg"
+                    : "bg-white dark:bg-[#0D0D14]/70 text-neutral-600 dark:text-white/40 border-black/10 dark:border-white/5 hover:border-black/20 dark:hover:border-white/20 hover:text-neutral-900 dark:hover:text-white"
+                    }`}
                   style={{
                     borderColor: isActive ? accentColor : undefined,
+                    backgroundColor: isActive ? accentColor : undefined,
+                    color: isActive ? "#ffffff" : undefined,
                   }}
                 >
                   <span
                     className="w-2 h-2 rounded-full transition-colors"
-                    style={{ backgroundColor: isActive ? accentColor : "rgba(255,255,255,0.2)" }}
+                    style={{ backgroundColor: isActive ? "#ffffff" : "currentColor" }}
                   />
                   <span>{item.tag}</span>
                 </button>
@@ -958,25 +965,25 @@ export default function WorkDetailClient({
           </div>
 
           {/* Main Selected Viewport Showcase */}
-          <div className="rounded-3xl border border-white/10 bg-[#0D0D14]/90 backdrop-blur-2xl overflow-hidden shadow-2xl p-4 sm:p-6">
+          <div className="rounded-3xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#0D0D14]/90 backdrop-blur-2xl overflow-hidden shadow-xl dark:shadow-2xl p-4 sm:p-6">
             {/* Browser Header Bar */}
-            <div className="flex items-center justify-between px-4 py-3 bg-[#08080E] rounded-2xl border border-white/5 mb-6">
+            <div className="flex items-center justify-between px-4 py-3 bg-[#F5F5F8] dark:bg-[#08080E] rounded-2xl border border-black/5 dark:border-white/5 mb-6">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-red-500/60" />
                 <span className="w-3 h-3 rounded-full bg-yellow-500/60" />
                 <span className="w-3 h-3 rounded-full bg-emerald-500/60" />
-                <span className="hidden sm:inline font-mono text-[11px] text-white/40 ml-3">
+                <span className="hidden sm:inline font-mono text-[12px] text-neutral-500 dark:text-white/40 ml-3">
                   theultrasoundsource.com — {project.gallery[activeGalleryIndex]?.tag || "VIEWPORT"}
                 </span>
               </div>
-              <div className="flex items-center gap-2 font-mono text-xs text-white/50">
-                <span className="text-emerald-400">●</span>
+              <div className="flex items-center gap-2 font-mono text-[14px] text-neutral-500 dark:text-white/50">
+                <span className="text-emerald-500 dark:text-emerald-400">●</span>
                 <span className="hidden sm:inline">200 OK — 0.6s Edge Response</span>
               </div>
             </div>
 
             {/* Active Image Showcase with Smooth AnimatePresence */}
-            <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-2xl overflow-hidden bg-black border border-white/5">
+            <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-black/5 dark:border-white/5">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeGalleryIndex}
@@ -993,25 +1000,42 @@ export default function WorkDetailClient({
                     className="object-cover object-top"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-                  
-                  {/* Floating Caption Overlay */}
-                  <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-black/80 border border-white/10 backdrop-blur-xl max-w-2xl">
+                  {/* Subtle Shadow Overlay on Desktop Only - Removed on Mobile/Tablet so Image is 100% Clear */}
+                  <div className="hidden lg:block absolute inset-0 bg-gradient-to-t from-black/40 dark:from-black/70 via-transparent to-transparent pointer-events-none" />
+
+                  {/* Floating Caption Overlay (Desktop Only) */}
+                  <div className="hidden lg:block absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-white/95 dark:bg-black/80 backdrop-blur-xl border border-black/10 dark:border-white/10 shadow-xl dark:shadow-2xl max-w-2xl">
                     <span
-                      className="font-mono text-[10px] tracking-widest uppercase font-bold px-2.5 py-1 rounded-full inline-block mb-2"
-                      style={{ backgroundColor: `${accentColor}20`, color: accentColor }}
+                      className="font-mono text-[12px] tracking-widest uppercase font-bold px-2.5 py-1 rounded-full inline-block mb-2"
+                      style={{ backgroundColor: `${accentColor}15`, color: accentColor }}
                     >
                       {project.gallery[activeGalleryIndex].tag}
                     </span>
-                    <h4 className="font-heading text-xl sm:text-2xl text-white uppercase tracking-tight mb-1">
+                    <h4 className="font-heading text-xl sm:text-2xl text-neutral-900 dark:text-white uppercase tracking-tight mb-1">
                       {project.gallery[activeGalleryIndex].title}
                     </h4>
-                    <p className="font-sans font-light text-xs sm:text-sm text-white/70">
+                    <p className="font-sans font-light text-[14px] sm:text-sm text-neutral-600 dark:text-white/80">
                       {project.gallery[activeGalleryIndex].subtitle}
                     </p>
                   </div>
                 </motion.div>
               </AnimatePresence>
+            </div>
+
+            {/* Mobile & Tablet Caption Card (Placed cleanly BELOW the image so it NEVER blocks the image) */}
+            <div className="block lg:hidden mt-4 p-4 sm:p-5 rounded-2xl bg-[#F8F8FA] dark:bg-white/[0.04] border border-black/5 dark:border-white/5">
+              <span
+                className="font-mono text-[11px] tracking-widest uppercase font-bold px-2.5 py-0.5 rounded-full inline-block mb-1.5"
+                style={{ backgroundColor: `${accentColor}15`, color: accentColor }}
+              >
+                {project.gallery[activeGalleryIndex].tag}
+              </span>
+              <h4 className="font-heading text-lg text-neutral-900 dark:text-white uppercase tracking-tight mb-1">
+                {project.gallery[activeGalleryIndex].title}
+              </h4>
+              <p className="font-sans font-light text-xs sm:text-sm text-neutral-600 dark:text-white/80">
+                {project.gallery[activeGalleryIndex].subtitle}
+              </p>
             </div>
 
             {/* Thumbnails Strip */}
@@ -1022,11 +1046,10 @@ export default function WorkDetailClient({
                   <button
                     key={idx}
                     onClick={() => setActiveGalleryIndex(idx)}
-                    className={`relative rounded-xl overflow-hidden aspect-[16/10] border-2 transition-all duration-300 text-left cursor-pointer group ${
-                      isActive
-                        ? "border-[#00E5FF] shadow-lg scale-[1.02]"
-                        : "border-white/10 opacity-60 hover:opacity-100 hover:border-white/30"
-                    }`}
+                    className={`relative rounded-xl overflow-hidden aspect-[16/10] border-2 transition-all duration-300 text-left cursor-pointer group ${isActive
+                      ? "border-[#6324FC] shadow-lg scale-[1.02]"
+                      : "border-black/10 dark:border-white/10 opacity-80 hover:opacity-100 hover:border-black/30 dark:hover:border-white/30"
+                      }`}
                   >
                     <Image
                       src={item.img}
@@ -1034,8 +1057,8 @@ export default function WorkDetailClient({
                       fill
                       className="object-cover object-top"
                     />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors" />
-                    <div className="absolute bottom-2 left-2 right-2 font-mono text-[10px] tracking-wider text-white font-medium truncate bg-black/70 px-2 py-1 rounded">
+                    <div className="absolute inset-0 bg-black/5 dark:bg-black/30 group-hover:bg-transparent transition-colors" />
+                    <div className="absolute bottom-2 left-2 right-2 font-mono text-[12px] tracking-wider text-neutral-900 dark:text-white font-medium truncate bg-white/95 dark:bg-black/75 backdrop-blur-xs px-2 py-1 rounded shadow-xs border border-black/5 dark:border-white/5">
                       {item.tag}
                     </div>
                   </button>
@@ -1050,41 +1073,40 @@ export default function WorkDetailClient({
           8. SEO-RICH INTERACTIVE FAQ ACCORDION
       ───────────────────────────────────────────────────────────── */}
       {project.faq && project.faq.length > 0 && (
-        <section className="py-24 px-6 lg:px-12 max-w-[1200px] mx-auto border-b border-white/5">
+        <section className="py-24 px-6 lg:px-12 border-b border-black/5 dark:border-white/5">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 font-mono text-xs tracking-[0.4em] uppercase text-white/50">
+            <div className="inline-flex items-center gap-2 font-mono text-[14px] tracking-[0.4em] uppercase text-neutral-500 dark:text-white/50">
               <HelpCircle className="w-4 h-4" style={{ color: accentColor }} />
               Knowledge & Insights
             </div>
-            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-white">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase text-neutral-900 dark:text-white">
               FREQUENTLY ASKED <span style={{ color: accentColor }}>QUESTIONS.</span>
             </h2>
-            <p className="font-sans font-light text-white/50 text-base">
+            <p className="font-sans font-light text-neutral-600 dark:text-white/50 text-base">
               Common architectural, technical, and strategic questions regarding this project.
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 max-w-4xl mx-auto">
             {project.faq.map((item, idx) => {
               const isOpen = openFaqIndex === idx;
               return (
                 <div
                   key={idx}
-                  className="rounded-2xl border border-white/10 bg-[#0D0D14]/90 backdrop-blur-xl overflow-hidden transition-all duration-300"
+                  className="rounded-2xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#0D0D14]/90 backdrop-blur-xl overflow-hidden transition-all duration-300 shadow-sm dark:shadow-md"
                 >
                   <button
                     onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
                     className="w-full px-8 py-6 text-left flex items-center justify-between gap-4 cursor-pointer group"
                   >
-                    <span className="font-heading text-lg sm:text-xl text-white group-hover:text-[#6324FC] transition-colors">
+                    <span className="font-heading text-lg sm:text-xl text-neutral-900 dark:text-white group-hover:text-[#6324FC] transition-colors">
                       {item.question}
                     </span>
                     <div
-                      className={`p-2 rounded-full border border-white/10 transition-transform duration-300 ${
-                        isOpen ? "rotate-180 bg-white/10" : ""
-                      }`}
+                      className={`p-2 rounded-full border border-black/10 dark:border-white/10 transition-transform duration-300 ${isOpen ? "rotate-180 bg-neutral-100 dark:bg-white/10" : ""
+                        }`}
                     >
-                      <ChevronDown className="w-4 h-4 text-white/60" />
+                      <ChevronDown className="w-4 h-4 text-neutral-500 dark:text-white/60" />
                     </div>
                   </button>
 
@@ -1097,7 +1119,7 @@ export default function WorkDetailClient({
                         transition={{ duration: 0.35 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-8 pb-6 pt-2 font-sans font-light text-sm md:text-base text-white/70 leading-relaxed border-t border-white/5">
+                        <div className="px-8 pb-6 pt-2 font-sans font-light text-sm md:text-base text-neutral-600 dark:text-white/70 leading-relaxed border-t border-black/5 dark:border-white/5">
                           {item.answer}
                         </div>
                       </motion.div>
@@ -1114,13 +1136,13 @@ export default function WorkDetailClient({
           9. STRATEGIC TAKEAWAYS FOR TECH LEADERS
       ───────────────────────────────────────────────────────────── */}
       {project.keyTakeaways && project.keyTakeaways.length > 0 && (
-        <section className="py-24 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-white/5">
-          <div className="p-10 md:p-14 rounded-3xl bg-gradient-to-br from-[#12121E] to-[#0A0A10] border border-white/10 backdrop-blur-2xl">
-            <div className="flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-white/50 mb-4">
+        <section className="py-24 px-6 lg:px-12 border-b border-black/5 dark:border-white/5">
+          <div className="p-10 md:p-14 rounded-3xl bg-white dark:bg-gradient-to-br dark:from-[#12121E] dark:to-[#0A0A10] border border-black/10 dark:border-white/10 shadow-xl dark:shadow-2xl backdrop-blur-2xl">
+            <div className="flex items-center gap-2 font-mono text-[14px] tracking-widest uppercase text-neutral-500 dark:text-white/50 mb-4">
               <Activity className="w-4 h-4" style={{ color: accentColor }} />
               Executive Takeaways
             </div>
-            <h3 className="font-heading text-3xl sm:text-4xl uppercase tracking-tight text-white mb-8">
+            <h3 className="font-heading text-3xl sm:text-4xl uppercase tracking-tight text-neutral-900 dark:text-white mb-8">
               Key Lessons for CTOs & Product Founders
             </h3>
 
@@ -1128,12 +1150,12 @@ export default function WorkDetailClient({
               {project.keyTakeaways.map((takeaway, idx) => (
                 <div
                   key={idx}
-                  className="p-6 rounded-2xl bg-white/[0.03] border border-white/5 space-y-3"
+                  className="p-6 rounded-2xl bg-[#F8F8FA] dark:bg-white/[0.03] border border-black/5 dark:border-white/5 space-y-3 shadow-xs dark:shadow-none"
                 >
-                  <div className="font-mono text-xs font-bold" style={{ color: accentColor }}>
+                  <div className="font-mono text-[14px] font-bold" style={{ color: accentColor }}>
                     0{idx + 1} // Insight
                   </div>
-                  <p className="font-sans text-sm text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm text-neutral-600 dark:text-white/80 leading-relaxed">
                     {takeaway}
                   </p>
                 </div>
@@ -1146,29 +1168,29 @@ export default function WorkDetailClient({
       {/* ─────────────────────────────────────────────────────────────
           10. CLIENT TESTIMONIAL QUOTE
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-20 px-6 lg:px-12 max-w-[1200px] mx-auto border-b border-white/5">
-        <div className="relative p-10 md:p-14 rounded-3xl bg-gradient-to-br from-[#12121D] to-[#0A0A10] border border-white/10 backdrop-blur-2xl overflow-hidden text-center">
+      <section className="py-20 px-6 lg:px-12 max-w-[1200px] mx-auto border-b border-black/5 dark:border-white/5">
+        <div className="relative p-10 md:p-14 rounded-3xl bg-white dark:bg-gradient-to-br dark:from-[#12121D] dark:to-[#0A0A10] border border-black/10 dark:border-white/10 shadow-xl dark:shadow-2xl backdrop-blur-2xl overflow-hidden text-center">
           <Quote
-            className="absolute top-6 right-6 w-28 h-28 opacity-5 pointer-events-none"
+            className="absolute top-6 right-6 w-28 h-28 opacity-10 dark:opacity-5 pointer-events-none"
             style={{ color: accentColor }}
           />
-          <blockquote className="relative z-10 font-heading text-2xl sm:text-3xl md:text-4xl text-white leading-snug tracking-tight mb-8 max-w-3xl mx-auto">
+          <blockquote className="relative z-10 font-heading text-2xl sm:text-3xl md:text-4xl text-neutral-900 dark:text-white leading-snug tracking-tight mb-8 max-w-3xl mx-auto">
             &quot;{project.testimonial.quote}&quot;
           </blockquote>
 
           <div className="flex flex-col items-center gap-2 relative z-10">
             <div
-              className="w-14 h-14 rounded-full flex items-center justify-center font-heading text-lg text-white font-bold mb-2"
+              className="w-14 h-14 rounded-full flex items-center justify-center font-heading text-lg text-white font-bold mb-2 shadow-md"
               style={{
                 background: `linear-gradient(135deg, ${accentColor}, ${secondaryAccent})`,
               }}
             >
               {project.testimonial.author.charAt(0)}
             </div>
-            <div className="font-heading text-xl text-white">
+            <div className="font-heading text-xl text-neutral-900 dark:text-white">
               {project.testimonial.author}
             </div>
-            <div className="font-mono text-xs tracking-wider text-white/50 uppercase">
+            <div className="font-mono text-[14px] tracking-wider text-neutral-500 dark:text-white/50 uppercase">
               {project.testimonial.role}
             </div>
           </div>
@@ -1178,10 +1200,10 @@ export default function WorkDetailClient({
       {/* ─────────────────────────────────────────────────────────────
           11. MAGNETIC NEXT PROJECT TAKEOVER
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-28 px-6 lg:px-12 w-full flex items-center justify-center bg-gradient-to-b from-[#060608] to-[#0D0D14] border-t border-white/5 overflow-hidden group">
+      <section className="relative py-28 px-6 lg:px-12 w-full flex items-center justify-center bg-transparent dark:bg-gradient-to-b dark:from-[#060608] dark:to-[#0D0D14] border-t border-black/5 dark:border-white/5 overflow-hidden group">
         <Link
           href={`/work/${project.next?.id || nextProject.slug}`}
-          className="relative z-10 w-full max-w-[1200px] flex flex-col items-center text-center cursor-pointer"
+          className="relative z-10 w-full max-w-[1200px] flex flex-col items-center text-center cursor-pointer py-6"
         >
           {/* Subtle Ambient Background */}
           <div
@@ -1191,24 +1213,21 @@ export default function WorkDetailClient({
             }}
           />
 
-          <span className="font-mono text-xs tracking-[0.4em] uppercase text-white/40 mb-4 group-hover:text-white transition-colors duration-300">
+          <span className="font-mono text-[14px] tracking-[0.4em] uppercase text-neutral-500 dark:text-white/40 mb-4 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors duration-300">
             CONTINUE EXPLORING // NEXT CASE STUDY
           </span>
 
           <h2
-            className="font-heading text-5xl sm:text-7xl md:text-9xl tracking-tighter uppercase text-white group-hover:text-transparent group-hover:bg-clip-text transition-all duration-700 leading-none mb-8"
-            style={{
-              backgroundImage: `linear-gradient(135deg, #ffffff, ${nextProject.accent || "#6324FC"})`,
-            }}
+            className="font-heading text-5xl sm:text-7xl md:text-9xl tracking-tighter uppercase text-neutral-900 dark:text-white group-hover:text-[#6324FC] transition-colors duration-300 leading-none mb-8"
           >
             {project.next.title}
           </h2>
 
-          <div className="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-white/[0.04] border border-white/10 group-hover:border-white/30 group-hover:bg-white/10 transition-all duration-500 shadow-xl">
-            <span className="font-heading text-xs tracking-[0.2em] uppercase text-white">
+          <div className="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-white dark:bg-white/[0.04] border border-black/10 dark:border-white/10 group-hover:border-black/25 dark:group-hover:border-white/30 transition-all duration-500 shadow-md dark:shadow-xl">
+            <span className="font-heading text-[14px] tracking-[0.2em] uppercase text-neutral-900 dark:text-white">
               View Next Case Study
             </span>
-            <MoveRight className="w-5 h-5 text-white group-hover:translate-x-2 transition-transform duration-300" />
+            <MoveRight className="w-5 h-5 text-neutral-900 dark:text-white group-hover:translate-x-2 transition-transform duration-300" />
           </div>
         </Link>
       </section>

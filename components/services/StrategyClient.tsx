@@ -130,7 +130,7 @@ function MetricSpotlightCard({
           />
         </div>
         <span
-          className="font-heading text-[10px] tracking-widest px-2.5 py-1 rounded-full border uppercase transition-colors duration-300"
+          className="font-heading text-[12px] tracking-widest px-2.5 py-1 rounded-full border uppercase transition-colors duration-300"
           style={{
             backgroundColor: isHovered ? `${stat.color}20` : "transparent",
             borderColor: isHovered ? stat.color : "rgba(128,128,128,0.2)",
@@ -146,14 +146,14 @@ function MetricSpotlightCard({
           <Counter value={stat.value} />
         </div>
         <div
-          className="font-heading text-xs tracking-wider uppercase mt-1 transition-colors duration-300"
+          className="font-heading text-[14px] tracking-wider uppercase mt-1 transition-colors duration-300"
           style={{ color: isHovered ? stat.color : undefined }}
         >
           {stat.label}
         </div>
       </div>
 
-      <p className="relative z-20 text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed font-sans mt-2 border-t border-black/5 dark:border-white/5 pt-3">
+      <p className="relative z-20 text-[14px] text-neutral-600 dark:text-neutral-400 leading-relaxed font-sans mt-2 border-t border-black/5 dark:border-white/5 pt-3">
         {stat.desc}
       </p>
 
@@ -592,17 +592,17 @@ export default function StrategyClient() {
             >
               SERVICES <ChevronRight className="w-3.5 h-3.5 text-neutral-400" />
             </Link>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6324FC]/10 border border-[#6324FC]/25 text-[#6324FC] text-xs font-heading tracking-wider uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6324FC]/10 border border-[#6324FC]/25 text-[#6324FC] text-[14px] font-heading tracking-wider uppercase">
               <Sparkles className="w-3.5 h-3.5" />
               <span>DIGITAL STRATEGY & BUSINESS INTELLIGENCE // V2.5</span>
             </div>
-            <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-600 dark:text-emerald-400 text-xs font-heading tracking-wider uppercase">
+            <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-600 dark:text-emerald-400 text-[14px] font-heading tracking-wider uppercase">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
               <span>MEASURABLE KPI SLA</span>
             </div>
           </div>
 
-          <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight mb-8">
+          <h1 className="font-heading text-5xl md:text-7xl  leading-[0.95] tracking-tight mb-8">
             PRAGMATIC DIGITAL STRATEGY <br className="hidden md:block" />
             ENGINEERED TO{" "}
             <span className="italic bg-gradient-to-r from-[#6324FC] via-[#00E5FF] to-[#00FFA3] bg-clip-text text-transparent">
@@ -628,7 +628,7 @@ export default function StrategyClient() {
             ].map((pill, i) => (
               <span
                 key={i}
-                className="px-3.5 py-1.5 rounded-full text-xs font-heading tracking-wider bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 text-neutral-800 dark:text-neutral-200 shadow-sm"
+                className="px-3.5 py-1.5 rounded-full text-[14px] font-heading tracking-wider bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 text-neutral-800 dark:text-neutral-200 shadow-sm"
               >
                 ✓ {pill}
               </span>
@@ -685,7 +685,7 @@ export default function StrategyClient() {
             <div>
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-8 h-[2px] bg-[#6324FC]" />
-                <span className="font-heading text-xs tracking-[0.3em] text-[#6324FC] uppercase">
+                <span className="font-heading text-[14px] tracking-[0.3em] text-[#6324FC] uppercase">
                   STRATEGIC ADVISORY DIVISIONS
                 </span>
               </div>
@@ -725,7 +725,7 @@ export default function StrategyClient() {
                         <Icon className="w-6 h-6" style={{ color: sub.accent }} />
                       </div>
                       <span
-                        className="font-heading text-[10px] tracking-widest px-3 py-1 rounded-full border uppercase"
+                        className="font-heading text-[12px] tracking-widest px-3 py-1 rounded-full border uppercase"
                         style={{
                           borderColor: `${sub.accent}40`,
                           color: sub.accent,
@@ -740,7 +740,7 @@ export default function StrategyClient() {
                       {sub.title}
                     </h3>
                     <p
-                      className="font-heading text-xs tracking-wider uppercase mb-5 font-semibold"
+                      className="font-heading text-[14px] tracking-wider uppercase mb-5 font-semibold"
                       style={{ color: sub.accent }}
                     >
                       {sub.tagline}
@@ -753,7 +753,7 @@ export default function StrategyClient() {
                     {/* Highlights */}
                     <div className="space-y-2.5 mb-8 border-t border-black/5 dark:border-white/5 pt-5">
                       {sub.highlights.map((h, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-xs text-neutral-700 dark:text-neutral-300">
+                        <div key={idx} className="flex items-start gap-2 text-[14px] text-neutral-700 dark:text-neutral-300">
                           <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: sub.accent }} />
                           <span>{h}</span>
                         </div>
@@ -765,7 +765,7 @@ export default function StrategyClient() {
                       {sub.techPills.map((pill, j) => (
                         <span
                           key={j}
-                          className="px-2.5 py-1 text-[10px] font-heading tracking-wider rounded-md bg-neutral-100 dark:bg-white/5 text-neutral-700 dark:text-neutral-300 border border-black/5 dark:border-white/5"
+                          className="px-2.5 py-1 text-[12px] font-heading tracking-wider rounded-md bg-neutral-100 dark:bg-white/5 text-neutral-700 dark:text-neutral-300 border border-black/5 dark:border-white/5"
                         >
                           {pill}
                         </span>
@@ -776,7 +776,7 @@ export default function StrategyClient() {
                   {/* Deep Navigation Link */}
                   <Link
                     href={sub.slug}
-                    className="w-full py-4 px-6 rounded-2xl flex items-center justify-between transition-all duration-300 font-heading text-xs tracking-wider uppercase font-bold text-neutral-900 dark:text-white border border-black/10 dark:border-white/10 hover:border-transparent group/btn relative overflow-hidden"
+                    className="w-full py-4 px-6 rounded-2xl flex items-center justify-between transition-all duration-300 font-heading text-[14px] tracking-wider uppercase font-bold text-neutral-900 dark:text-white border border-black/10 dark:border-white/10 hover:border-transparent group/btn relative overflow-hidden"
                     style={{
                       background: `linear-gradient(to right, ${sub.accent}12, transparent)`,
                     }}
@@ -799,7 +799,7 @@ export default function StrategyClient() {
       <section className="w-full py-20 md:py-28 relative overflow-hidden border-b border-black/10 dark:border-white/10 bg-neutral-100/50 dark:bg-[#08080c]/50">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00FFA3]/10 border border-[#00FFA3]/30 text-emerald-600 dark:text-[#00FFA3] text-xs font-heading tracking-widest uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00FFA3]/10 border border-[#00FFA3]/30 text-emerald-600 dark:text-[#00FFA3] text-[14px] font-heading tracking-widest uppercase mb-4">
               <Zap className="w-3.5 h-3.5" />
               <span>STRATEGIC ROI ENGINE</span>
             </div>
@@ -828,11 +828,10 @@ export default function StrategyClient() {
                     <button
                       key={key}
                       onClick={() => setActiveScenario(key)}
-                      className={`p-4 rounded-2xl border text-left transition-all duration-300 flex flex-col justify-between ${
-                        isSelected
-                          ? "bg-neutral-100 dark:bg-white/10 shadow-md scale-[1.02]"
-                          : "bg-white dark:bg-white/[0.02] border-black/10 dark:border-white/5 hover:border-black/25 dark:hover:border-white/20"
-                      }`}
+                      className={`p-4 rounded-2xl border text-left transition-all duration-300 flex flex-col justify-between ${isSelected
+                        ? "bg-neutral-100 dark:bg-white/10 shadow-md scale-[1.02]"
+                        : "bg-white dark:bg-white/[0.02] border-black/10 dark:border-white/5 hover:border-black/25 dark:hover:border-white/20"
+                        }`}
                       style={{
                         borderColor: isSelected ? preset.accent : undefined,
                       }}
@@ -863,7 +862,7 @@ export default function StrategyClient() {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                 <div className="flex items-center gap-2">
                   <Sliders className="w-4 h-4 text-[#6324FC]" />
-                  <span className="font-heading text-xs tracking-wider uppercase text-neutral-800 dark:text-neutral-200">
+                  <span className="font-heading text-[14px] tracking-wider uppercase text-neutral-800 dark:text-neutral-200">
                     ANNUAL DIGITAL REVENUE / OPERATION BUDGET:
                   </span>
                 </div>
@@ -880,7 +879,7 @@ export default function StrategyClient() {
                 onChange={(e) => setAnnualRevenueBudget(Number(e.target.value))}
                 className="w-full h-2 bg-neutral-200 dark:bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#6324FC]"
               />
-              <div className="flex justify-between text-[11px] text-neutral-600 dark:text-neutral-400 font-heading mt-2">
+              <div className="flex justify-between text-[12px] text-neutral-600 dark:text-neutral-400 font-heading mt-2">
                 <span>$250K (Growing SME)</span>
                 <span>$1.2M (Mid-Market Scale)</span>
                 <span>$5M+ (Enterprise Organization)</span>
@@ -964,7 +963,7 @@ export default function StrategyClient() {
             {/* 4. Interactive 90-Day Roadmap Visualizer */}
             <div className="p-6 sm:p-8 rounded-2xl bg-neutral-50 dark:bg-black/40 border border-black/5 dark:border-white/5">
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-black/5 dark:border-white/5">
-                <div className="flex items-center gap-2 text-xs font-heading tracking-widest text-neutral-600 dark:text-neutral-400 uppercase">
+                <div className="flex items-center gap-2 text-[14px] font-heading tracking-widest text-neutral-600 dark:text-neutral-400 uppercase">
                   <Workflow className="w-4 h-4 text-[#6324FC]" />
                   <span>ACTIONABLE 90-DAY DIGITAL TRANSFORMATION ROADMAP</span>
                 </div>
@@ -989,7 +988,7 @@ export default function StrategyClient() {
                       <h4 className="font-heading text-base font-bold text-neutral-900 dark:text-white mb-3">
                         {phase.title}
                       </h4>
-                      <ul className="space-y-2 text-xs text-neutral-600 dark:text-neutral-400">
+                      <ul className="space-y-2 text-[14px] text-neutral-600 dark:text-neutral-400">
                         {phase.tasks.map((task, tIdx) => (
                           <li key={tIdx} className="flex items-start gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC] mt-1.5 flex-shrink-0" />
@@ -1014,7 +1013,7 @@ export default function StrategyClient() {
           <div className="mb-16">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-8 h-[2px] bg-[#6324FC]" />
-              <span className="font-heading text-xs tracking-[0.3em] text-[#6324FC] uppercase">
+              <span className="font-heading text-[14px] tracking-[0.3em] text-[#6324FC] uppercase">
                 STRATEGIC EXECUTION PROTOCOL
               </span>
             </div>
@@ -1031,14 +1030,13 @@ export default function StrategyClient() {
                 <button
                   key={idx}
                   onClick={() => setActiveProtocolTab(idx)}
-                  className={`p-5 rounded-2xl text-left border transition-all duration-300 flex flex-col justify-between ${
-                    isSelected
-                      ? "bg-white dark:bg-[#101018] shadow-lg border-[#6324FC] scale-[1.02]"
-                      : "bg-white/60 dark:bg-white/[0.02] border-black/10 dark:border-white/5 hover:border-black/20 dark:hover:border-white/20"
-                  }`}
+                  className={`p-5 rounded-2xl text-left border transition-all duration-300 flex flex-col justify-between ${isSelected
+                    ? "bg-white dark:bg-[#101018] shadow-lg border-[#6324FC] scale-[1.02]"
+                    : "bg-white/60 dark:bg-white/[0.02] border-black/10 dark:border-white/5 hover:border-black/20 dark:hover:border-white/20"
+                    }`}
                 >
                   <span
-                    className="font-heading text-xs font-bold mb-2 tracking-widest"
+                    className="font-heading text-[14px] font-bold mb-2 tracking-widest"
                     style={{ color: isSelected ? stage.color : undefined }}
                   >
                     STAGE {stage.id}
@@ -1056,7 +1054,7 @@ export default function StrategyClient() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8">
                 <div
-                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-heading tracking-widest uppercase mb-4"
+                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[14px] font-heading tracking-widest uppercase mb-4"
                   style={{
                     backgroundColor: `${protocolStages[activeProtocolTab].color}15`,
                     color: protocolStages[activeProtocolTab].color,
@@ -1119,7 +1117,7 @@ export default function StrategyClient() {
       <section className="w-full py-20 md:py-28 relative overflow-hidden border-b border-black/10 dark:border-white/10 bg-neutral-100/40 dark:bg-[#07070b]/40">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/25 text-rose-600 dark:text-rose-400 text-xs font-heading tracking-widest uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/25 text-rose-600 dark:text-rose-400 text-[14px] font-heading tracking-widest uppercase mb-4">
               <span>HEAD-TO-HEAD BATTLECARD</span>
             </div>
             <h2 className="font-heading text-4xl sm:text-6xl md:text-7xl leading-[0.95] tracking-tight mb-6">
@@ -1158,7 +1156,7 @@ export default function StrategyClient() {
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-xs text-rose-600 dark:text-rose-300 font-heading tracking-wider uppercase font-semibold">
+              <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-[14px] text-rose-600 dark:text-rose-300 font-heading tracking-wider uppercase font-semibold">
                 Outcome: Expensive PDFs that collect dust, wasted engineering budgets, and zero revenue acceleration.
               </div>
             </div>
@@ -1192,7 +1190,7 @@ export default function StrategyClient() {
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs text-emerald-700 dark:text-emerald-300 font-heading tracking-wider uppercase font-semibold flex items-center justify-between">
+              <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-[14px] text-emerald-700 dark:text-emerald-300 font-heading tracking-wider uppercase font-semibold flex items-center justify-between">
                 <span>Outcome: Modernized cloud infrastructure, clear KPI visibility, and compounding revenue scale.</span>
                 <Sparkles className="w-4 h-4 text-emerald-400 flex-shrink-0" />
               </div>
@@ -1210,7 +1208,7 @@ export default function StrategyClient() {
             <div>
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-8 h-[2px] bg-[#6324FC]" />
-                <span className="font-heading text-xs tracking-[0.3em] text-[#6324FC] uppercase">
+                <span className="font-heading text-[14px] tracking-[0.3em] text-[#6324FC] uppercase">
                   ENTERPRISE BI INFRASTRUCTURE
                 </span>
               </div>
@@ -1241,7 +1239,7 @@ export default function StrategyClient() {
                 <h4 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-[#6324FC] transition-colors">
                   {tool.name}
                 </h4>
-                <p className="font-sans text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                <p className="font-sans text-[14px] text-neutral-600 dark:text-neutral-400 leading-relaxed">
                   {tool.desc}
                 </p>
               </div>
@@ -1270,27 +1268,24 @@ export default function StrategyClient() {
               return (
                 <div
                   key={i}
-                  className={`border rounded-2xl transition-all duration-300 overflow-hidden ${
-                    isOpen
-                      ? "bg-white dark:bg-[#0e0e16] border-[#6324FC]/40 shadow-lg"
-                      : "bg-white dark:bg-[#0c0c12] border-black/10 dark:border-white/10 hover:border-black/25 dark:hover:border-white/20"
-                  }`}
+                  className={`border rounded-2xl transition-all duration-300 overflow-hidden ${isOpen
+                    ? "bg-white dark:bg-[#0e0e16] border-[#6324FC]/40 shadow-lg"
+                    : "bg-white dark:bg-[#0c0c12] border-black/10 dark:border-white/10 hover:border-black/25 dark:hover:border-white/20"
+                    }`}
                 >
                   <button
                     className="w-full py-6 px-8 flex justify-between items-center text-left gap-4"
                     onClick={() => setOpenFaq(isOpen ? null : i)}
                   >
                     <span
-                      className={`font-heading text-lg sm:text-xl transition-colors duration-300 font-bold ${
-                        isOpen ? "text-[#6324FC]" : "text-neutral-900 dark:text-white"
-                      }`}
+                      className={`font-heading text-lg sm:text-xl transition-colors duration-300 font-bold ${isOpen ? "text-[#6324FC]" : "text-neutral-900 dark:text-white"
+                        }`}
                     >
                       {faq.q}
                     </span>
                     <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${
-                        isOpen ? "bg-[#6324FC] text-white rotate-45" : "bg-neutral-100 dark:bg-white/10 text-neutral-600 dark:text-neutral-400"
-                      }`}
+                      className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${isOpen ? "bg-[#6324FC] text-white rotate-45" : "bg-neutral-100 dark:bg-white/10 text-neutral-600 dark:text-neutral-400"
+                        }`}
                     >
                       <Plus className="w-4 h-4" />
                     </div>
@@ -1325,7 +1320,7 @@ export default function StrategyClient() {
       {/* ========================================================= */}
       <section className="w-full py-24 md:py-36 relative overflow-hidden text-center">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6324FC]/10 border border-[#6324FC]/30 text-[#6324FC] text-xs font-heading tracking-widest uppercase mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6324FC]/10 border border-[#6324FC]/30 text-[#6324FC] text-[14px] font-heading tracking-widest uppercase mb-8">
             <Sparkles className="w-3.5 h-3.5" />
             <span>COMMISSION YOUR DIGITAL TRANSFORMATION SPRINT</span>
           </div>

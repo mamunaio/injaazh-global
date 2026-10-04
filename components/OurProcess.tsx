@@ -90,55 +90,55 @@ const steps = [
 function CardPreview({ type }: { type: string }) {
   if (type === "audit") {
     return (
-      <div className="w-full h-full p-5 sm:p-6 rounded-2xl bg-[#08080C] border border-white/[0.06] flex flex-col justify-between">
-        <div className="flex items-center justify-between border-b border-white/[0.06] pb-3">
+      <div className="w-full h-full p-5 sm:p-6 rounded-2xl bg-[#F8F8FA] dark:bg-[#08080C] border border-[#E8E8EE] dark:border-white/[0.06] flex flex-col justify-between">
+        <div className="flex items-center justify-between border-b border-[#E8E8EE] dark:border-white/[0.06] pb-3">
           <div className="flex items-center gap-2">
             <Gauge className="w-4 h-4 text-emerald-400" />
-            <span className="font-mono text-[11px] font-semibold text-white/90">
+            <span className="font-mono text-[12px] font-semibold text-neutral-900 dark:text-white/90">
               LIGHTHOUSE PERFORMANCE
             </span>
           </div>
-          <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-[10px] font-bold">
+          <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-[12px] font-bold">
             PASSED 100/100
           </span>
         </div>
 
         <div className="grid grid-cols-2 gap-2.5 my-4">
-          <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.04]">
-            <span className="font-mono text-[9px] text-white/40 block mb-0.5">
+          <div className="p-3 rounded-xl bg-white dark:bg-white/[0.02] border border-[#E2E2E8] dark:border-white/[0.04]">
+            <span className="font-mono text-[12px] text-neutral-500 dark:text-white/40 block mb-0.5">
               FIRST CONTENTFUL PAINT
             </span>
-            <span className="font-heading text-xl text-white font-bold">
+            <span className="font-heading text-xl text-neutral-900 dark:text-white font-bold">
               0.4<span className="text-xs text-emerald-400">s</span>
             </span>
           </div>
-          <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.04]">
-            <span className="font-mono text-[9px] text-white/40 block mb-0.5">
+          <div className="p-3 rounded-xl bg-white dark:bg-white/[0.02] border border-[#E2E2E8] dark:border-white/[0.04]">
+            <span className="font-mono text-[12px] text-neutral-500 dark:text-white/40 block mb-0.5">
               TIME TO FIRST BYTE
             </span>
-            <span className="font-heading text-xl text-white font-bold">
+            <span className="font-heading text-xl text-neutral-900 dark:text-white font-bold">
               38<span className="text-xs text-emerald-400">ms</span>
             </span>
           </div>
-          <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.04]">
-            <span className="font-mono text-[9px] text-white/40 block mb-0.5">
+          <div className="p-3 rounded-xl bg-white dark:bg-white/[0.02] border border-[#E2E2E8] dark:border-white/[0.04]">
+            <span className="font-mono text-[12px] text-neutral-500 dark:text-white/40 block mb-0.5">
               CUMULATIVE LAYOUT SHIFT
             </span>
-            <span className="font-heading text-xl text-white font-bold">
+            <span className="font-heading text-xl text-neutral-900 dark:text-white font-bold">
               0.00
             </span>
           </div>
-          <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.04]">
-            <span className="font-mono text-[9px] text-white/40 block mb-0.5">
+          <div className="p-3 rounded-xl bg-white dark:bg-white/[0.02] border border-[#E2E2E8] dark:border-white/[0.04]">
+            <span className="font-mono text-[12px] text-neutral-500 dark:text-white/40 block mb-0.5">
               TOTAL BLOCKING TIME
             </span>
-            <span className="font-heading text-xl text-white font-bold">
+            <span className="font-heading text-xl text-neutral-900 dark:text-white font-bold">
               0<span className="text-xs text-emerald-400">ms</span>
             </span>
           </div>
         </div>
 
-        <div className="flex items-center justify-between pt-2.5 border-t border-white/[0.05] text-[10px] font-mono text-white/50">
+        <div className="flex items-center justify-between pt-2.5 border-t border-[#E8E8EE] dark:border-white/[0.05] text-[12px] font-mono text-neutral-500 dark:text-white/50">
           <span>Security Audit: Grade A+</span>
           <span className="text-emerald-400">0 Vulnerabilities</span>
         </div>
@@ -148,22 +148,22 @@ function CardPreview({ type }: { type: string }) {
 
   if (type === "design") {
     return (
-      <div className="w-full h-full p-5 sm:p-6 rounded-2xl bg-[#08080C] border border-white/[0.06] flex flex-col justify-between">
-        <div className="flex items-center justify-between border-b border-white/[0.06] pb-3">
+      <div className="w-full h-full p-5 sm:p-6 rounded-2xl bg-[#F8F8FA] dark:bg-[#08080C] border border-[#E8E8EE] dark:border-white/[0.06] flex flex-col justify-between">
+        <div className="flex items-center justify-between border-b border-[#E8E8EE] dark:border-white/[0.06] pb-3">
           <div className="flex items-center gap-2">
             <Layers className="w-4 h-4 text-[#00E5FF]" />
-            <span className="font-mono text-[11px] font-semibold text-white/90">
+            <span className="font-mono text-[12px] font-semibold text-neutral-900 dark:text-white/90">
               GLOBAL TOKEN SYSTEM
             </span>
           </div>
-          <span className="px-2.5 py-0.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/20 text-[#00E5FF] font-mono text-[10px] font-bold">
+          <span className="px-2.5 py-0.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/20 text-[#00E5FF] font-mono text-[12px] font-bold">
             FIGMA // 60 FPS
           </span>
         </div>
 
         <div className="my-4 space-y-2.5">
-          <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.04]">
-            <span className="font-mono text-xs text-white/70">Palette Tokens</span>
+          <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-white/[0.02] border border-[#E2E2E8] dark:border-white/[0.04]">
+            <span className="font-mono text-[14px] text-neutral-700 dark:text-white/70">Palette Tokens</span>
             <div className="flex gap-1.5">
               <span className="w-3.5 h-3.5 rounded-full bg-[#6324FC] ring-1 ring-white/20" />
               <span className="w-3.5 h-3.5 rounded-full bg-[#00E5FF] ring-1 ring-white/20" />
@@ -171,17 +171,17 @@ function CardPreview({ type }: { type: string }) {
               <span className="w-3.5 h-3.5 rounded-full bg-[#0E0E14] ring-1 ring-white/20" />
             </div>
           </div>
-          <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.04]">
-            <span className="font-mono text-xs text-white/70">Typography Scale</span>
-            <span className="font-mono text-xs text-[#00E5FF]">Cabinet + JetBrains</span>
+          <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-white/[0.02] border border-[#E2E2E8] dark:border-white/[0.04]">
+            <span className="font-mono text-[14px] text-neutral-700 dark:text-white/70">Typography Scale</span>
+            <span className="font-mono text-[14px] text-[#00E5FF]">Cabinet + JetBrains</span>
           </div>
-          <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.04]">
-            <span className="font-mono text-xs text-white/70">Responsive Grids</span>
-            <span className="font-mono text-xs text-emerald-400">Fluid 12-Column</span>
+          <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-white/[0.02] border border-[#E2E2E8] dark:border-white/[0.04]">
+            <span className="font-mono text-[14px] text-neutral-700 dark:text-white/70">Responsive Grids</span>
+            <span className="font-mono text-[14px] text-emerald-400">Fluid 12-Column</span>
           </div>
         </div>
 
-        <div className="flex items-center justify-between pt-2.5 border-t border-white/[0.05] text-[10px] font-mono text-white/50">
+        <div className="flex items-center justify-between pt-2.5 border-t border-[#E8E8EE] dark:border-white/[0.05] text-[12px] font-mono text-neutral-500 dark:text-white/50">
           <span>Awwwards Aesthetic Standard</span>
           <span className="text-[#00E5FF]">Verified Accessible</span>
         </div>
@@ -191,21 +191,21 @@ function CardPreview({ type }: { type: string }) {
 
   if (type === "engineering") {
     return (
-      <div className="w-full h-full p-5 sm:p-6 rounded-2xl bg-[#08080C] border border-white/[0.06] flex flex-col justify-between font-mono">
-        <div className="flex items-center justify-between border-b border-white/[0.06] pb-3">
+      <div className="w-full h-full p-5 sm:p-6 rounded-2xl bg-[#F8F8FA] dark:bg-[#08080C] border border-[#E8E8EE] dark:border-white/[0.06] flex flex-col justify-between font-mono">
+        <div className="flex items-center justify-between border-b border-[#E8E8EE] dark:border-white/[0.06] pb-3">
           <div className="flex items-center gap-2">
             <Terminal className="w-4 h-4 text-[#6324FC]" />
-            <span className="text-[11px] font-semibold text-white/90">
+            <span className="text-[11px] font-semibold text-neutral-900 dark:text-white/90">
               EDGE ARCHITECTURE
             </span>
           </div>
-          <span className="px-2.5 py-0.5 rounded-full bg-[#6324FC]/20 border border-[#6324FC]/30 text-[#00E5FF] text-[10px] font-bold">
+          <span className="px-2.5 py-0.5 rounded-full bg-[#6324FC]/20 border border-[#6324FC]/30 text-[#00E5FF] text-[12px] font-bold">
             NEXT.JS 15
           </span>
         </div>
 
-        <div className="my-3 p-3 rounded-xl bg-black/60 border border-white/5 text-[11px] leading-relaxed text-white/80 overflow-hidden">
-          <div className="text-white/40 mb-0.5">// Edge SSR Runtime</div>
+        <div className="my-3 p-3 rounded-xl bg-[#EFEFF4] dark:bg-black/60 border border-[#E2E2E8] dark:border-white/5 text-[12px] leading-relaxed text-neutral-800 dark:text-white/80 overflow-hidden">
+          <div className="text-neutral-500 dark:text-white/40 mb-0.5">// Edge SSR Runtime</div>
           <div>
             <span className="text-purple-400">export const</span> runtime ={" "}
             <span className="text-emerald-400">&apos;edge&apos;</span>;
@@ -224,7 +224,7 @@ function CardPreview({ type }: { type: string }) {
           <div>&#125;</div>
         </div>
 
-        <div className="flex items-center justify-between pt-2.5 border-t border-white/[0.05] text-[10px] text-white/50">
+        <div className="flex items-center justify-between pt-2.5 border-t border-[#E8E8EE] dark:border-white/[0.05] text-[12px] text-neutral-500 dark:text-white/50">
           <span>Global CDN: 300+ PoPs</span>
           <span className="text-emerald-400">99.99% Uptime</span>
         </div>
@@ -233,48 +233,48 @@ function CardPreview({ type }: { type: string }) {
   }
 
   return (
-    <div className="w-full h-full p-5 sm:p-6 rounded-2xl bg-[#08080C] border border-white/[0.06] flex flex-col justify-between">
-      <div className="flex items-center justify-between border-b border-white/[0.06] pb-3">
+    <div className="w-full h-full p-5 sm:p-6 rounded-2xl bg-[#F8F8FA] dark:bg-[#08080C] border border-[#E8E8EE] dark:border-white/[0.06] flex flex-col justify-between">
+      <div className="flex items-center justify-between border-b border-[#E8E8EE] dark:border-white/[0.06] pb-3">
         <div className="flex items-center gap-2">
           <TrendingUp className="w-4 h-4 text-emerald-400" />
-          <span className="font-mono text-[11px] font-semibold text-white/90">
+          <span className="font-mono text-[12px] font-semibold text-neutral-900 dark:text-white/90">
             SEARCH DOMINANCE TELEMETRY
           </span>
         </div>
-        <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-[10px] font-bold">
+        <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-[12px] font-bold">
           GEO & AEO OPTIMIZED
         </span>
       </div>
 
       <div className="my-4 space-y-2.5">
-        <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.04] flex items-center justify-between">
+        <div className="p-3 rounded-xl bg-white dark:bg-white/[0.02] border border-[#E2E2E8] dark:border-white/[0.04] flex items-center justify-between">
           <div>
-            <span className="font-mono text-[9px] text-white/40 block">
+            <span className="font-mono text-[12px] text-neutral-500 dark:text-white/40 block">
               ORGANIC TRAFFIC SCALE
             </span>
-            <span className="font-heading text-xl text-white font-bold">
+            <span className="font-heading text-xl text-neutral-900 dark:text-white font-bold">
               +340<span className="text-xs text-emerald-400">%</span>
             </span>
           </div>
-          <span className="font-mono text-[10px] text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-500/10">
+          <span className="font-mono text-[12px] text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-500/10">
             COMPOUNDING
           </span>
         </div>
 
-        <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.04] flex items-center justify-between">
+        <div className="p-3 rounded-xl bg-white dark:bg-white/[0.02] border border-[#E2E2E8] dark:border-white/[0.04] flex items-center justify-between">
           <div>
-            <span className="font-mono text-[9px] text-white/40 block">
+            <span className="font-mono text-[12px] text-neutral-500 dark:text-white/40 block">
               COMPETITIVE SERP RANKINGS
             </span>
-            <span className="font-heading text-lg text-white font-bold">
+            <span className="font-heading text-lg text-neutral-900 dark:text-white font-bold">
               Top 3 Dominance
             </span>
           </div>
-          <span className="font-mono text-xs text-[#00E5FF]">High Intent</span>
+          <span className="font-mono text-[14px] text-[#00E5FF]">High Intent</span>
         </div>
       </div>
 
-      <div className="flex items-center justify-between pt-2.5 border-t border-white/[0.05] text-[10px] font-mono text-white/50">
+      <div className="flex items-center justify-between pt-2.5 border-t border-[#E8E8EE] dark:border-white/[0.05] text-[12px] font-mono text-neutral-500 dark:text-white/50">
         <span>Rich Snippet Silos: Active</span>
         <span className="text-emerald-400">Zero Technical Debt</span>
       </div>
@@ -317,17 +317,17 @@ export default function OurProcess() {
         duration: 1,
         ease: "power2.out",
       }, 0)
-      .to(cards[0].querySelector(".deck-card-inner"), {
-        scale: 0.95,
-        transformOrigin: "top center",
-        duration: 1,
-        ease: "power2.out",
-      }, 0)
-      .to(cards[0].querySelector(".deck-card-overlay"), {
-        opacity: 0.35,
-        duration: 1,
-        ease: "power2.out",
-      }, 0);
+        .to(cards[0].querySelector(".deck-card-inner"), {
+          scale: 0.95,
+          transformOrigin: "top center",
+          duration: 1,
+          ease: "power2.out",
+        }, 0)
+        .to(cards[0].querySelector(".deck-card-overlay"), {
+          opacity: 0.35,
+          duration: 1,
+          ease: "power2.out",
+        }, 0);
 
       // --- SEQUENCE 2: Card 02 enters over Card 01 ---
       tl.to(cards[2], {
@@ -337,28 +337,28 @@ export default function OurProcess() {
         duration: 1,
         ease: "power2.out",
       }, 1)
-      .to(cards[1].querySelector(".deck-card-inner"), {
-        scale: 0.95,
-        transformOrigin: "top center",
-        duration: 1,
-        ease: "power2.out",
-      }, 1)
-      .to(cards[1].querySelector(".deck-card-overlay"), {
-        opacity: 0.35,
-        duration: 1,
-        ease: "power2.out",
-      }, 1)
-      .to(cards[0].querySelector(".deck-card-inner"), {
-        scale: 0.91,
-        transformOrigin: "top center",
-        duration: 1,
-        ease: "power2.out",
-      }, 1)
-      .to(cards[0].querySelector(".deck-card-overlay"), {
-        opacity: 0.60,
-        duration: 1,
-        ease: "power2.out",
-      }, 1);
+        .to(cards[1].querySelector(".deck-card-inner"), {
+          scale: 0.95,
+          transformOrigin: "top center",
+          duration: 1,
+          ease: "power2.out",
+        }, 1)
+        .to(cards[1].querySelector(".deck-card-overlay"), {
+          opacity: 0.35,
+          duration: 1,
+          ease: "power2.out",
+        }, 1)
+        .to(cards[0].querySelector(".deck-card-inner"), {
+          scale: 0.91,
+          transformOrigin: "top center",
+          duration: 1,
+          ease: "power2.out",
+        }, 1)
+        .to(cards[0].querySelector(".deck-card-overlay"), {
+          opacity: 0.60,
+          duration: 1,
+          ease: "power2.out",
+        }, 1);
 
       // --- SEQUENCE 3: Card 03 (LAST CARD) enters smoothly over Card 02 ---
       tl.to(cards[3], {
@@ -368,39 +368,39 @@ export default function OurProcess() {
         duration: 1,
         ease: "power2.out",
       }, 2)
-      .to(cards[2].querySelector(".deck-card-inner"), {
-        scale: 0.95,
-        transformOrigin: "top center",
-        duration: 1,
-        ease: "power2.out",
-      }, 2)
-      .to(cards[2].querySelector(".deck-card-overlay"), {
-        opacity: 0.35,
-        duration: 1,
-        ease: "power2.out",
-      }, 2)
-      .to(cards[1].querySelector(".deck-card-inner"), {
-        scale: 0.91,
-        transformOrigin: "top center",
-        duration: 1,
-        ease: "power2.out",
-      }, 2)
-      .to(cards[1].querySelector(".deck-card-overlay"), {
-        opacity: 0.60,
-        duration: 1,
-        ease: "power2.out",
-      }, 2)
-      .to(cards[0].querySelector(".deck-card-inner"), {
-        scale: 0.88,
-        transformOrigin: "top center",
-        duration: 1,
-        ease: "power2.out",
-      }, 2)
-      .to(cards[0].querySelector(".deck-card-overlay"), {
-        opacity: 0.75,
-        duration: 1,
-        ease: "power2.out",
-      }, 2);
+        .to(cards[2].querySelector(".deck-card-inner"), {
+          scale: 0.95,
+          transformOrigin: "top center",
+          duration: 1,
+          ease: "power2.out",
+        }, 2)
+        .to(cards[2].querySelector(".deck-card-overlay"), {
+          opacity: 0.35,
+          duration: 1,
+          ease: "power2.out",
+        }, 2)
+        .to(cards[1].querySelector(".deck-card-inner"), {
+          scale: 0.91,
+          transformOrigin: "top center",
+          duration: 1,
+          ease: "power2.out",
+        }, 2)
+        .to(cards[1].querySelector(".deck-card-overlay"), {
+          opacity: 0.60,
+          duration: 1,
+          ease: "power2.out",
+        }, 2)
+        .to(cards[0].querySelector(".deck-card-inner"), {
+          scale: 0.88,
+          transformOrigin: "top center",
+          duration: 1,
+          ease: "power2.out",
+        }, 2)
+        .to(cards[0].querySelector(".deck-card-overlay"), {
+          opacity: 0.75,
+          duration: 1,
+          ease: "power2.out",
+        }, 2);
 
       // --- SEQUENCE 4: Compact buffer pause before smooth unpinning ---
       tl.to({}, { duration: 0.2 });
@@ -411,7 +411,7 @@ export default function OurProcess() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full bg-[#060608] text-white"
+      className="relative w-full bg-[#F5F5F0] dark:bg-[#060608] text-neutral-900 dark:text-white"
     >
       {/* Background Ambience & Fine Architectural Grid */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
@@ -422,7 +422,7 @@ export default function OurProcess() {
             backgroundSize: "48px 48px",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#060608] via-transparent to-[#060608]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F5F5F0] via-transparent to-[#F5F5F0] dark:from-[#060608] dark:via-transparent dark:to-[#060608]" />
       </div>
 
       <div className="absolute top-1/4 -left-40 w-[600px] h-[600px] bg-[#6324FC]/10 blur-[180px] rounded-full pointer-events-none" />
@@ -438,7 +438,7 @@ export default function OurProcess() {
               viewport={{ once: true }}
               className="h-[1px] bg-[#6324FC]"
             />
-            <span className="font-mono text-xs md:text-sm tracking-[0.5em] text-[#6324FC] uppercase font-semibold">
+            <span className="font-mono text-[14px] md:text-sm tracking-[0.5em] text-[#6324FC] uppercase font-semibold">
               OUR METHODOLOGY // 04-STEP SYSTEM
             </span>
           </div>
@@ -448,7 +448,7 @@ export default function OurProcess() {
           </h2>
           <div
             aria-hidden="true"
-            className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.85] tracking-tighter text-white mb-6"
+            className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter text-neutral-900 dark:text-white mb-6"
           >
             The Architecture <br />
             <span className="inline-block italic text-[#6324FC] mr-4">
@@ -460,7 +460,7 @@ export default function OurProcess() {
             </span>
           </div>
 
-          <p className="font-sans font-light text-white/70 text-base sm:text-lg border-l-2 border-[#6324FC]/40 pl-6 leading-relaxed mb-8">
+          <p className="font-sans font-light text-neutral-600 dark:text-white/70 text-base sm:text-lg border-l-2 border-[#6324FC]/40 pl-6 leading-relaxed mb-8">
             We don&apos;t just build websites. We engineer high-performance digital ecosystems — designed to capture market share, outrank competitors in Google search, and dominate every channel your enterprise clients use to find you.
           </p>
 
@@ -473,8 +473,8 @@ export default function OurProcess() {
             <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-full">
               <div className="w-[160%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
             </div>
-            <div className="relative w-full h-full px-7 py-3.5 rounded-full bg-[#060608] flex items-center justify-center gap-3 z-10">
-              <span className="font-heading text-xs tracking-widest text-white uppercase font-bold">
+            <div className="relative w-full h-full px-7 py-3.5 rounded-full bg-white dark:bg-[#060608] flex items-center justify-center gap-3 z-10">
+              <span className="font-heading text-[14px] tracking-widest text-neutral-900 dark:text-white uppercase font-bold">
                 INITIATE YOUR BLUEPRINT
               </span>
               <ArrowRight className="w-3.5 h-3.5 text-[#00E5FF] group-hover:translate-x-1 transition-transform" />
@@ -497,9 +497,9 @@ export default function OurProcess() {
             className="deck-card absolute top-0 left-4 right-4 sm:left-6 sm:right-6 lg:left-12 lg:right-12"
             style={{ zIndex: idx + 10 }}
           >
-            <div className="deck-card-inner relative w-full rounded-3xl bg-[#0B0B11]/98 backdrop-blur-2xl border border-white/[0.1] hover:border-white/20 p-6 sm:p-9 lg:p-11 shadow-[0_-20px_50px_-15px_rgba(0,0,0,0.95)] transition-colors duration-500 overflow-hidden group origin-top">
+            <div className="deck-card-inner relative w-full rounded-3xl bg-white dark:bg-[#0B0B11]/98 backdrop-blur-2xl border border-[#E4E4EB] dark:border-white/[0.1] hover:border-[#6324FC]/30 dark:hover:border-white/20 p-6 sm:p-9 lg:p-11 shadow-[0_-6px_20px_-6px_rgba(20,20,40,0.06),0_10px_30px_-10px_rgba(20,20,40,0.05)] dark:shadow-[0_-20px_50px_-15px_rgba(0,0,0,0.95)] transition-colors duration-500 overflow-hidden group origin-top">
               {/* Dynamic Darkening Overlay for Progressive Depth */}
-              <div className="deck-card-overlay absolute inset-0 bg-[#060608] opacity-0 pointer-events-none rounded-3xl z-30 transition-opacity" />
+              <div className="deck-card-overlay absolute inset-0 bg-neutral-900/20 dark:bg-[#060608] opacity-0 pointer-events-none rounded-3xl z-30 transition-opacity" />
 
               {/* Top Edge Ambient Highlight */}
               <div
@@ -516,7 +516,7 @@ export default function OurProcess() {
               />
 
               {/* Large Faded Background Number */}
-              <div className="absolute top-3 right-5 sm:right-9 font-heading text-[5.5rem] sm:text-[7.5rem] lg:text-[9rem] leading-none text-white/[0.03] group-hover:text-white/[0.06] transition-colors duration-500 select-none pointer-events-none">
+              <div className="absolute top-3 right-5 sm:right-9 font-heading text-[5.5rem] sm:text-[7.5rem] lg:text-[9rem] leading-none text-black/[0.04] group-hover:text-black/[0.07] dark:text-white/[0.03] dark:group-hover:text-white/[0.06] transition-colors duration-500 select-none pointer-events-none">
                 {step.id}
               </div>
 
@@ -527,7 +527,7 @@ export default function OurProcess() {
                     {/* Phase Badge & Step Count */}
                     <div className="flex items-center gap-3 mb-4">
                       <span
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] font-mono text-[10px] tracking-wider uppercase font-semibold"
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F2FF] dark:bg-white/[0.04] border border-[#E4E0F5] dark:border-white/[0.08] font-mono text-[12px] tracking-wider uppercase font-semibold"
                         style={{ color: step.accentColor }}
                       >
                         <span
@@ -536,34 +536,34 @@ export default function OurProcess() {
                         />
                         {step.phase}
                       </span>
-                      <span className="font-mono text-xs text-white/40 tracking-widest font-semibold">
+                      <span className="font-mono text-[14px] text-neutral-500 dark:text-white/40 tracking-widest font-semibold">
                         STEP {step.id} / 04
                       </span>
                     </div>
 
                     {/* Title & Subtitle */}
-                    <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white font-bold tracking-tight mb-2 leading-tight">
+                    <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-neutral-900 dark:text-white font-bold tracking-tight mb-2 leading-tight">
                       {step.title}
                     </h3>
-                    <div className="font-mono text-xs sm:text-sm text-white/60 mb-4 tracking-wide">
+                    <div className="font-mono text-[14px] sm:text-sm text-neutral-500 dark:text-white/60 mb-4 tracking-wide">
                       {step.subtitle}
                     </div>
 
                     {/* Body Text */}
-                    <p className="font-sans font-light text-white/70 text-xs sm:text-sm lg:text-base leading-relaxed mb-5">
+                    <p className="font-sans font-light text-neutral-600 dark:text-white/70 text-[14px] sm:text-sm lg:text-base leading-relaxed mb-5">
                       {step.desc}
                     </p>
 
                     {/* Key Deliverables Checklist */}
-                    <div className="mb-5 p-3.5 sm:p-4 rounded-2xl bg-white/[0.02] border border-white/[0.05]">
-                      <span className="font-mono text-[10px] tracking-widest text-white/40 uppercase block mb-2.5 font-semibold">
+                    <div className="mb-5 p-3.5 sm:p-4 rounded-2xl bg-[#F7F7FA] dark:bg-white/[0.02] border border-[#E8E8EE] dark:border-white/[0.05]">
+                      <span className="font-mono text-[12px] tracking-widest text-neutral-500 dark:text-white/40 uppercase block mb-2.5 font-semibold">
                         MILESTONE DELIVERABLES
                       </span>
                       <div className="space-y-2">
                         {step.deliverables.map((del, dIdx) => (
                           <div
                             key={dIdx}
-                            className="flex items-start gap-2.5 text-xs sm:text-sm text-white/80 font-sans"
+                            className="flex items-start gap-2.5 text-[14px] sm:text-sm text-neutral-800 dark:text-white/80 font-sans"
                           >
                             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
                             <span>{del}</span>
@@ -578,7 +578,7 @@ export default function OurProcess() {
                     {step.tags.map((tag, tIdx) => (
                       <span
                         key={tIdx}
-                        className="font-mono text-[10px] tracking-wide px-3 py-1 rounded-lg bg-white/[0.04] border border-white/[0.06] text-white/60 group-hover:text-white/90 group-hover:border-white/15 transition-colors"
+                        className="font-mono text-[12px] tracking-wide px-3 py-1 rounded-lg bg-[#F2F2F6] dark:bg-white/[0.04] border border-[#E2E2E8] dark:border-white/[0.06] text-neutral-700 dark:text-white/60 group-hover:text-neutral-900 dark:group-hover:text-white/90 group-hover:border-[#6324FC]/30 dark:group-hover:border-white/15 transition-colors"
                       >
                         {tag}
                       </span>

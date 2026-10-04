@@ -174,7 +174,7 @@ export default function EditorialWritingPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+              <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
                 EDITORIAL DIVISION
               </span>
             </motion.div>
@@ -288,7 +288,7 @@ export default function EditorialWritingPage() {
             <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between group">
               <div className="flex justify-between items-start">
                 <Newspaper className="w-8 h-8 text-[#6324FC]" />
-                <div className="font-heading text-[9px] text-white/20 capitalize tracking-[0.3em]">
+                <div className="font-heading text-[12px] text-white/20 capitalize tracking-[0.3em]">
                   Issue 024 // Strategic Narrative
                 </div>
               </div>
@@ -311,7 +311,7 @@ export default function EditorialWritingPage() {
                     <div className="font-heading text-2xl text-white capitalize italic">
                       Modern Hegemony.
                     </div>
-                    <p className="font-sans text-[10px] text-white/40 leading-relaxed">
+                    <p className="font-sans text-[12px] text-white/40 leading-relaxed">
                       In an era of digital noise, silence is authority. We craft
                       the narratives that command the space between the screams.
                     </p>
@@ -324,7 +324,7 @@ export default function EditorialWritingPage() {
                 </div>
               </div>
 
-              <div className="flex justify-between font-heading text-[9px] text-[#6324FC] capitalize tracking-widest">
+              <div className="flex justify-between font-heading text-[12px] text-[#6324FC] capitalize tracking-widest">
                 <span>Editorial Engine</span>
                 <span>Tone Consensus: High</span>
               </div>
@@ -391,7 +391,7 @@ export default function EditorialWritingPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               WHO NEEDS EDITORIAL AUTHORITY
             </span>
           </div>
@@ -446,7 +446,7 @@ export default function EditorialWritingPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               WHAT WE PRODUCE
             </span>
           </div>
@@ -473,7 +473,7 @@ export default function EditorialWritingPage() {
                 className="p-8 rounded-[2.5rem] bg-white/[0.01] border border-white/5 hover:border-white/10 transition-colors group flex flex-col justify-between"
               >
                 <div>
-                  <div className="font-heading text-[#6324FC] text-xs mb-6">
+                  <div className="font-heading text-[#6324FC] text-[14px] mb-6">
                     Format 0{i + 1}
                   </div>
                   <h3 className="font-heading text-2xl text-white mb-4 group-hover:text-[#6324FC] transition-colors">
@@ -492,7 +492,7 @@ export default function EditorialWritingPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               THE CONTRAST
             </span>
           </div>

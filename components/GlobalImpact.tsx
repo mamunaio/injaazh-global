@@ -174,7 +174,7 @@ const industries = [
 
 export default function GlobalImpact() {
   return (
-    <section className="relative w-full bg-[#060608] text-white pt-20 md:pt-28 pb-0 overflow-hidden">
+    <section className="relative w-full bg-[#F5F5F0] dark:bg-[#060608] text-neutral-900 dark:text-white pt-20 md:pt-28 pb-0 overflow-hidden transition-colors duration-500">
       {/* Background Ambient Glows - GPU Accelerated */}
       <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(99,36,252,0.12)_0%,transparent_70%)] -translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(0,229,255,0.08)_0%,transparent_70%)] translate-x-1/2 pointer-events-none" />
@@ -191,7 +191,7 @@ export default function GlobalImpact() {
               transition={{ duration: 0.8 }}
               className="h-[1px] bg-gradient-to-r from-[#6324FC] to-[#00E5FF]"
             />
-            <span className="font-mono text-xs md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
+            <span className="font-mono text-[14px] md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
               GLOBAL IMPACT // INTERNATIONAL RECOGNITION
             </span>
@@ -205,9 +205,9 @@ export default function GlobalImpact() {
               </h2>
               <div
                 aria-hidden="true"
-                className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.88] tracking-tighter text-white"
+                className="font-heading text-5xl md:text-7xl  leading-[0.88] tracking-tighter text-neutral-900 dark:text-white"
               >
-                <span className="text-white mr-3 md:mr-4">RECOGNIZED</span>
+                <span className="text-neutral-900 dark:text-white mr-3 md:mr-4">RECOGNIZED</span>
                 <br className="hidden sm:inline" />
                 <span className="italic text-[#6324FC] drop-shadow-[0_0_35px_rgba(99,36,252,0.35)] mr-3 md:mr-4">
                   WORLD
@@ -216,16 +216,16 @@ export default function GlobalImpact() {
               </div>
 
               {/* International Agency Capability Pills */}
-              <div className="flex flex-wrap items-center gap-2.5 mt-6 pt-5 border-t border-white/[0.06]">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+              <div className="flex flex-wrap items-center gap-2.5 mt-6 pt-5 border-t border-black/5 dark:border-white/[0.06]">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC]" />
                   5 GLOBAL CAPITALS
                 </div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF]" />
                   24/7 TIMEZONE AGILITY
                 </div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00FFA3]" />
                   100% KPI ACCOUNTABILITY
                 </div>
@@ -234,10 +234,10 @@ export default function GlobalImpact() {
 
             {/* Editorial Description */}
             <div className="max-w-lg">
-              <p className="font-sans font-light text-white/75 text-sm sm:text-base leading-relaxed border-l-2 border-[#6324FC]/60 pl-5 sm:pl-6 py-0.5 mb-4">
+              <p className="font-sans font-light text-neutral-600 dark:text-white/75 text-sm sm:text-base leading-relaxed border-l-2 border-[#6324FC]/60 pl-5 sm:pl-6 py-0.5 mb-4">
                 We partner with enterprise leaders and high-growth disruptors across North America, Europe, Asia-Pacific, and the Middle East — engineering high-velocity Next.js architectures and global search dominance that deliver predictable, scalable revenue.
               </p>
-              <div className="flex items-center gap-2 text-xs font-mono text-white/40 pl-5 sm:pl-6">
+              <div className="flex items-center gap-2 text-[14px] font-mono text-neutral-500 dark:text-white/40 pl-5 sm:pl-6">
                 <Compass className="w-3.5 h-3.5 text-[#00E5FF]" />
                 <span>CROSS-BORDER DIGITAL SOVEREIGNTY PROTOCOL</span>
               </div>
@@ -247,13 +247,13 @@ export default function GlobalImpact() {
 
         {/* Live Regional Market Presence Hub */}
         <div className="mb-14 md:mb-18">
-          <div className="flex items-center justify-between gap-4 mb-5 pb-3 border-b border-white/[0.06]">
-            <span className="font-mono text-xs uppercase tracking-widest text-white/50 flex items-center gap-2">
+          <div className="flex items-center justify-between gap-4 mb-5 pb-3 border-b border-black/5 dark:border-white/[0.06]">
+            <span className="font-mono text-[14px] uppercase tracking-widest text-neutral-500 dark:text-white/50 flex items-center gap-2">
               <MapPin className="w-3.5 h-3.5 text-[#6324FC]" />
               TARGETED SOVEREIGN MARKETS & ACTIVE CLIENT DEPLOYMENTS
             </span>
-            <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-[10px] font-bold uppercase tracking-wider">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 dark:text-emerald-400 font-mono text-[12px] font-bold uppercase tracking-wider">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
               LIVE TELEMETRY
             </span>
           </div>
@@ -266,7 +266,7 @@ export default function GlobalImpact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
-                className="group relative rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-white/[0.18] p-4.5 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                className="group relative rounded-2xl bg-white dark:bg-white/[0.02] border border-black/10 dark:border-white/[0.06] hover:border-[#6324FC]/30 dark:hover:border-white/[0.18] p-4.5 transition-all duration-300 hover:-translate-y-1 overflow-hidden shadow-xs dark:shadow-none"
               >
                 {/* Micro Hover Gradient */}
                 <div
@@ -279,30 +279,30 @@ export default function GlobalImpact() {
                 <div className="flex items-center justify-between mb-3 relative z-10">
                   <div className="flex items-center gap-2">
                     <span className="text-xl leading-none">{m.flag}</span>
-                    <span className="font-heading font-bold text-sm text-white group-hover:text-[#00E5FF] transition-colors">
+                    <span className="font-heading font-bold text-sm text-neutral-900 dark:text-white group-hover:text-[#6324FC] dark:group-hover:text-[#00E5FF] transition-colors">
                       {m.country}
                     </span>
                   </div>
-                  <span className="px-1.5 py-0.5 rounded bg-white/[0.05] border border-white/[0.08] font-mono text-[9px] text-white/60 font-semibold">
+                  <span className="px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-white/[0.05] border border-black/5 dark:border-white/[0.08] font-mono text-[12px] text-neutral-600 dark:text-white/60 font-semibold">
                     {m.code}
                   </span>
                 </div>
 
                 <div className="relative z-10">
-                  <div className="font-mono text-[11px] text-white/70 font-medium mb-1">
+                  <div className="font-mono text-[12px] text-neutral-700 dark:text-white/70 font-medium mb-1">
                     {m.cities}
                   </div>
-                  <div className="font-sans text-[11px] text-white/45 line-clamp-1">
+                  <div className="font-sans text-[12px] text-neutral-500 dark:text-white/45 line-clamp-1">
                     {m.focus}
                   </div>
                 </div>
 
-                <div className="mt-3.5 pt-2.5 border-t border-white/[0.04] flex items-center justify-between text-[9px] font-mono relative z-10">
-                  <span className="text-emerald-400 flex items-center gap-1.5 font-medium">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <div className="mt-3.5 pt-2.5 border-t border-black/5 dark:border-white/[0.04] flex items-center justify-between text-[12px] font-mono relative z-10">
+                  <span className="text-emerald-500 dark:text-emerald-400 flex items-center gap-1.5 font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
                     {m.status}
                   </span>
-                  <span className="text-white/30 group-hover:text-white/70 transition-colors">
+                  <span className="text-neutral-400 dark:text-white/30 group-hover:text-neutral-700 dark:group-hover:text-white/70 transition-colors">
                     ACTIVE ↗
                   </span>
                 </div>
@@ -322,7 +322,7 @@ export default function GlobalImpact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: idx * 0.1 }}
-                className="group relative rounded-[2.2rem] bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/[0.07] hover:border-[#6324FC]/40 p-8 transition-all duration-500 hover:-translate-y-2 shadow-2xl overflow-hidden flex flex-col justify-between min-h-[300px]"
+                className="group relative rounded-[2.2rem] bg-white dark:bg-[#0A0A0E] dark:bg-gradient-to-b dark:from-white/[0.04] dark:to-white/[0.01] border border-black/10 dark:border-white/[0.07] hover:border-[#6324FC]/40 p-8 transition-all duration-500 hover:-translate-y-2 shadow-sm dark:shadow-2xl overflow-hidden flex flex-col justify-between min-h-[300px]"
               >
                 {/* Dynamic Ambient Background Glow */}
                 <div
@@ -331,13 +331,13 @@ export default function GlobalImpact() {
                 />
 
                 {/* Shimmer Light Sweep on Hover */}
-                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/[0.04] to-transparent pointer-events-none" />
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-black/[0.02] dark:via-white/[0.04] to-transparent pointer-events-none" />
 
                 {/* Top Bar of Card */}
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-6">
                     <div
-                      className="w-13 h-13 rounded-2xl flex items-center justify-center transition-all duration-500 shadow-lg group-hover:scale-110"
+                      className="w-13 h-13 rounded-2xl flex items-center justify-center transition-all duration-500 shadow-md group-hover:scale-110"
                       style={{
                         backgroundColor: `${item.color}15`,
                         border: `1px solid ${item.color}35`,
@@ -348,13 +348,13 @@ export default function GlobalImpact() {
                         style={{ color: item.color }}
                       />
                     </div>
-                    <span className="font-mono text-xs font-semibold px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-white/50 group-hover:text-white/80 transition-colors">
+                    <span className="font-mono text-[14px] font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-white/[0.03] border border-black/5 dark:border-white/[0.08] text-neutral-600 dark:text-white/50 group-hover:text-neutral-900 dark:group-hover:text-white/80 transition-colors">
                       {item.id} // STAT
                     </span>
                   </div>
 
                   {/* Primary Stat Counter */}
-                  <div className="font-heading text-5xl lg:text-6xl tracking-tight text-white mb-2 font-bold">
+                  <div className="font-heading text-5xl lg:text-6xl tracking-tight text-neutral-900 dark:text-white mb-2 font-bold">
                     <AnimatedCounter
                       from={0}
                       to={item.num}
@@ -364,25 +364,25 @@ export default function GlobalImpact() {
                     />
                   </div>
 
-                  <div className="font-heading text-xs tracking-[0.25em] text-white/80 uppercase font-bold mb-3">
+                  <div className="font-heading text-[14px] tracking-[0.25em] text-neutral-700 dark:text-white/80 uppercase font-bold mb-3">
                     {item.label}
                   </div>
 
-                  <p className="font-sans font-light text-xs text-white/50 leading-relaxed">
+                  <p className="font-sans font-light text-[14px] text-neutral-500 dark:text-white/50 leading-relaxed">
                     {item.subtext}
                   </p>
                 </div>
 
                 {/* Bottom Metric Pill */}
-                <div className="relative z-10 pt-4 mt-6 border-t border-white/[0.05] flex items-center justify-between">
+                <div className="relative z-10 pt-4 mt-6 border-t border-black/5 dark:border-white/[0.05] flex items-center justify-between">
                   <span
-                    className="font-mono text-[11px] font-semibold flex items-center gap-1.5"
+                    className="font-mono text-[12px] font-semibold flex items-center gap-1.5"
                     style={{ color: item.color }}
                   >
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     {item.metric}
                   </span>
-                  <ArrowUpRight className="w-4 h-4 text-white/20 group-hover:text-white transition-colors duration-300" />
+                  <ArrowUpRight className="w-4 h-4 text-neutral-400 dark:text-white/20 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors duration-300" />
                 </div>
               </motion.div>
             );
@@ -391,18 +391,18 @@ export default function GlobalImpact() {
       </div>
 
       {/* Massive Typography Marquee for Industries */}
-      <div className="w-full bg-[#050507] py-16 md:py-20 border-t border-white/5 relative overflow-hidden group">
+      <div className="w-full bg-[#EEECEA] dark:bg-[#050507] py-16 md:py-20 border-t border-black/5 dark:border-white/5 relative overflow-hidden group">
         {/* Edge Gradients for smooth fade out */}
-        <div className="absolute top-0 left-0 w-32 md:w-64 h-full bg-gradient-to-r from-[#050507] to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-32 md:w-64 h-full bg-gradient-to-l from-[#050507] to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-32 md:w-64 h-full bg-gradient-to-r from-[#EEECEA] dark:from-[#050507] to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-32 md:w-64 h-full bg-gradient-to-l from-[#EEECEA] dark:from-[#050507] to-transparent z-10 pointer-events-none" />
 
         {/* Section Label */}
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-8 flex items-center justify-between text-white/40 font-mono text-xs uppercase tracking-widest">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-8 flex items-center justify-between text-neutral-500 dark:text-white/40 font-mono text-[14px] uppercase tracking-widest">
           <span className="flex items-center gap-2">
             <Sparkles className="w-3.5 h-3.5 text-[#6324FC]" />
             INDUSTRIES SCALED ACROSS INTERNATIONAL MARKETS
           </span>
-          <span className="hidden sm:inline text-white/25">
+          <span className="hidden sm:inline text-neutral-400 dark:text-white/25">
             HOVER TO INSPECT // ENTERPRISE VERTICALS
           </span>
         </div>
@@ -421,11 +421,10 @@ export default function GlobalImpact() {
                 {industries.slice(0, 10).map((industry, pIdx) => (
                   <div key={pIdx} className="flex items-center gap-10">
                     <span
-                      className={`hover:text-[#6324FC] transition-colors cursor-crosshair ${
-                        pIdx % 2 !== 0
-                          ? "stroke-text italic opacity-85"
-                          : "text-white"
-                      }`}
+                      className={`hover:text-[#6324FC] transition-colors cursor-crosshair ${pIdx % 2 !== 0
+                        ? "stroke-text italic opacity-85"
+                        : "text-neutral-900 dark:text-white"
+                        }`}
                     >
                       {industry}
                     </span>
@@ -451,11 +450,10 @@ export default function GlobalImpact() {
                 {industries.slice(10).map((industry, pIdx) => (
                   <div key={pIdx} className="flex items-center gap-10">
                     <span
-                      className={`hover:text-[#00E5FF] transition-colors cursor-crosshair ${
-                        pIdx % 2 === 0
-                          ? "stroke-text italic opacity-85"
-                          : "text-white"
-                      }`}
+                      className={`hover:text-[#00E5FF] transition-colors cursor-crosshair ${pIdx % 2 === 0
+                        ? "stroke-text italic opacity-85"
+                        : "text-neutral-900 dark:text-white"
+                        }`}
                     >
                       {industry}
                     </span>

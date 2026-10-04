@@ -181,7 +181,7 @@ export default function BrandNarrativePage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+              <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
                 STORY DIVISION
               </span>
             </motion.div>
@@ -299,7 +299,7 @@ export default function BrandNarrativePage() {
             <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between group">
               <div className="flex justify-between items-start">
                 <Target className="w-8 h-8 text-[#FF2D55]" />
-                <div className="font-heading text-[9px] text-white/20 capitalize tracking-[0.3em]">
+                <div className="font-heading text-[12px] text-white/20 capitalize tracking-[0.3em]">
                   Emotional Resonance // v1.2
                 </div>
               </div>
@@ -338,7 +338,7 @@ export default function BrandNarrativePage() {
                 </div>
               </div>
 
-              <div className="flex justify-between font-heading text-[9px] text-[#FF2D55] capitalize tracking-widest">
+              <div className="flex justify-between font-heading text-[12px] text-[#FF2D55] capitalize tracking-widest">
                 <span>Story Protocol</span>
                 <span>Resonance Sync Active</span>
               </div>
@@ -405,7 +405,7 @@ export default function BrandNarrativePage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               WHAT YOU RECEIVE
             </span>
           </div>
@@ -460,7 +460,7 @@ export default function BrandNarrativePage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               STORY CLARITY
             </span>
           </div>

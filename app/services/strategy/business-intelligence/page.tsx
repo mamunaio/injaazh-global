@@ -203,7 +203,7 @@ export default function BusinessIntelligencePage() {
             />
             <div className="absolute inset-0 bg-[#060608]/40 mix-blend-multiply group-hover:opacity-0 transition-opacity" />
             <div className="absolute top-8 left-8 p-6 bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl">
-              <div className="font-heading text-[9px] text-[#00E5FF] mb-2 uppercase tracking-widest">
+              <div className="font-heading text-[12px] text-[#00E5FF] mb-2 uppercase tracking-widest">
                 Data Integrity
               </div>
               <div className="flex items-center gap-3">
@@ -269,7 +269,7 @@ export default function BusinessIntelligencePage() {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <SlidersHorizontal className="w-5 h-5 text-[#6324FC]" />
-                  <span className="font-heading text-xs tracking-widest text-[#6324FC] uppercase">
+                  <span className="font-heading text-[14px] tracking-widest text-[#6324FC] uppercase">
                     TECHNOLOGY PLATFORMS
                   </span>
                 </div>
@@ -313,7 +313,7 @@ export default function BusinessIntelligencePage() {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <ShieldAlert className="w-5 h-5 text-[#FF2D55]" />
-                  <span className="font-heading text-xs tracking-widest text-[#FF2D55] uppercase">
+                  <span className="font-heading text-[14px] tracking-widest text-[#FF2D55] uppercase">
                     INVISIBILITY COST
                   </span>
                 </div>
@@ -374,7 +374,7 @@ export default function BusinessIntelligencePage() {
             <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between">
               <div className="flex justify-between items-start">
                 <PieChart className="w-8 h-8 text-[#6324FC]" />
-                <div className="font-heading text-[9px] text-white/20 capitalize tracking-[0.3em]">
+                <div className="font-heading text-[12px] text-white/20 capitalize tracking-[0.3em]">
                   Insights Node // 0xBI
                 </div>
               </div>
@@ -418,7 +418,7 @@ export default function BusinessIntelligencePage() {
                 </div>
               </div>
 
-              <div className="flex justify-between font-heading text-[9px] text-[#00E5FF] capitalize tracking-widest">
+              <div className="flex justify-between font-heading text-[12px] text-[#00E5FF] capitalize tracking-widest">
                 <span>Neural Analysis</span>
                 <span>Decision Protocol Active</span>
               </div>
@@ -514,7 +514,7 @@ export default function BusinessIntelligencePage() {
             <div className="max-w-3xl mb-16">
               <div className="flex items-center gap-3 mb-6">
                 <Database className="w-5 h-5 text-[#00FFA3]" />
-                <span className="font-heading text-xs tracking-widest text-[#00FFA3] uppercase">
+                <span className="font-heading text-[14px] tracking-widest text-[#00FFA3] uppercase">
                   DELIVERABLE PACKAGES
                 </span>
               </div>

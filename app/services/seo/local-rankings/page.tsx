@@ -165,7 +165,7 @@ export default function LocalRankingsPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+              <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
                 REGIONAL DIVISION
               </span>
             </motion.div>
@@ -215,7 +215,7 @@ export default function LocalRankingsPage() {
             />
             <div className="absolute inset-0 bg-[#6324FC]/10 mix-blend-overlay group-hover:opacity-0 transition-opacity" />
             <div className="absolute bottom-8 right-8 p-6 bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl">
-              <div className="font-heading text-[9px] text-[#6324FC] mb-2 capitalize">
+              <div className="font-heading text-[12px] text-[#6324FC] mb-2 capitalize">
                 Market Share
               </div>
               <div className="font-heading text-4xl text-white">
@@ -285,7 +285,7 @@ export default function LocalRankingsPage() {
             <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between">
               <div className="flex justify-between items-start">
                 <Map className="w-8 h-8 text-[#00E5FF]" />
-                <div className="font-heading text-[9px] text-white/20 capitalize tracking-[0.3em]">
+                <div className="font-heading text-[12px] text-white/20 capitalize tracking-[0.3em]">
                   Map Radius // 50KM
                 </div>
               </div>
@@ -298,11 +298,10 @@ export default function LocalRankingsPage() {
                 ].map((biz, i) => (
                   <div
                     key={i}
-                    className={`p-6 rounded-2xl border transition-all duration-500 ${
-                      biz.active
-                        ? "bg-[#6324FC]/10 border-[#6324FC]/30"
-                        : "bg-white/[0.02] border-white/5 opacity-40"
-                    }`}
+                    className={`p-6 rounded-2xl border transition-all duration-500 ${biz.active
+                      ? "bg-[#6324FC]/10 border-[#6324FC]/30"
+                      : "bg-white/[0.02] border-white/5 opacity-40"
+                      }`}
                   >
                     <div className="flex justify-between items-center">
                       <div className="space-y-1">
@@ -322,9 +321,8 @@ export default function LocalRankingsPage() {
                         </div>
                       </div>
                       <div
-                        className={`font-heading text-3xl ${
-                          biz.active ? "text-[#6324FC]" : "text-white/20"
-                        }`}
+                        className={`font-heading text-3xl ${biz.active ? "text-[#6324FC]" : "text-white/20"
+                          }`}
                       >
                         {biz.rank}
                       </div>
@@ -333,7 +331,7 @@ export default function LocalRankingsPage() {
                 ))}
               </div>
 
-              <div className="flex justify-between font-heading text-[9px] text-[#00E5FF] capitalize tracking-widest">
+              <div className="flex justify-between font-heading text-[12px] text-[#00E5FF] capitalize tracking-widest">
                 <span>Proximity Optimization</span>
                 <span>Geo-Shield Active</span>
               </div>
@@ -399,7 +397,7 @@ export default function LocalRankingsPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               LOCAL CLARITY
             </span>
           </div>
@@ -458,7 +456,7 @@ export default function LocalRankingsPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               KNOW THE DIFFERENCE
             </span>
           </div>
@@ -542,7 +540,7 @@ export default function LocalRankingsPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               PROVEN IN YOUR MARKET
             </span>
           </div>

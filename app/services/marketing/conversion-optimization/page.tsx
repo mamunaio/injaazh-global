@@ -152,7 +152,7 @@ export default function ConversionOptimizationPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+              <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
                 OPTIMIZATION DIVISION
               </span>
             </motion.div>
@@ -201,7 +201,7 @@ export default function ConversionOptimizationPage() {
             />
             <div className="absolute inset-0 bg-[#6324FC]/10 mix-blend-overlay group-hover:opacity-0 transition-opacity" />
             <div className="absolute bottom-8 left-8 p-8 bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl">
-              <div className="font-heading text-[9px] text-[#00FFA3] mb-2 capitalize">
+              <div className="font-heading text-[12px] text-[#00FFA3] mb-2 capitalize">
                 Lifting Conversion By
               </div>
               <div className="font-heading text-5xl text-white">+42%</div>
@@ -266,7 +266,7 @@ export default function ConversionOptimizationPage() {
             <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between">
               <div className="flex justify-between items-start">
                 <Microscope className="w-8 h-8 text-[#6324FC]" />
-                <div className="font-heading text-[9px] text-white/20 capitalize tracking-[0.3em]">
+                <div className="font-heading text-[12px] text-white/20 capitalize tracking-[0.3em]">
                   Testing Node // 0x7B
                 </div>
               </div>
@@ -308,7 +308,7 @@ export default function ConversionOptimizationPage() {
                 </div>
               </div>
 
-              <div className="flex justify-between font-heading text-[9px] text-[#6324FC] capitalize tracking-widest">
+              <div className="flex justify-between font-heading text-[12px] text-[#6324FC] capitalize tracking-widest">
                 <span>Winner Identified</span>
                 <span>Statistical Significance: 99%</span>
               </div>
@@ -375,7 +375,7 @@ export default function ConversionOptimizationPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               THE MATH MOST BRANDS IGNORE
             </span>
           </div>
@@ -456,7 +456,7 @@ export default function ConversionOptimizationPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               CONVERSION AUDIT
             </span>
           </div>

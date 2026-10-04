@@ -221,7 +221,7 @@ export default function TechnicalAuditsPage() {
       <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay" />
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        
+
         {/* 01. Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20 items-center pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5">
           <div>
@@ -231,7 +231,7 @@ export default function TechnicalAuditsPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize ">
+              <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize ">
                 INTELLIGENCE DIVISION
               </span>
             </motion.div>
@@ -281,7 +281,7 @@ export default function TechnicalAuditsPage() {
             />
             <div className="absolute inset-0 bg-[#060608]/40 mix-blend-multiply group-hover:opacity-0 transition-opacity" />
             <div className="absolute top-8 left-8 p-6 bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl">
-              <div className="font-heading text-[9px] text-[#00E5FF] mb-2 capitalize ">
+              <div className="font-heading text-[12px] text-[#00E5FF] mb-2 capitalize ">
                 Crawler Status
               </div>
               <div className="flex items-center gap-3">
@@ -348,7 +348,7 @@ export default function TechnicalAuditsPage() {
             <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between">
               <div className="flex justify-between items-start">
                 <BarChart3 className="w-8 h-8 text-[#6324FC]" />
-                <div className="font-heading text-[9px] text-white/20 capitalize tracking-[0.3em]">
+                <div className="font-heading text-[12px] text-white/20 capitalize tracking-[0.3em]">
                   Analysis Node // Ox42
                 </div>
               </div>
@@ -400,7 +400,7 @@ export default function TechnicalAuditsPage() {
                 </div>
               </div>
 
-              <div className="flex justify-between font-heading text-[9px] text-[#6324FC] capitalize tracking-widest">
+              <div className="flex justify-between font-heading text-[12px] text-[#6324FC] capitalize tracking-widest">
                 <span>Neural Scan</span>
                 <span>Continuous Audit Active</span>
               </div>
@@ -466,7 +466,7 @@ export default function TechnicalAuditsPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               200+ DATA POINTS
             </span>
           </div>
@@ -513,7 +513,7 @@ export default function TechnicalAuditsPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               AUDIT CLARITY
             </span>
           </div>
@@ -569,7 +569,7 @@ export default function TechnicalAuditsPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               WHAT YOU RECEIVE
             </span>
           </div>

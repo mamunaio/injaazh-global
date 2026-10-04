@@ -79,11 +79,10 @@ function FeatureCard({
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
       onMouseMove={handleMouseMove}
-      className={`group relative overflow-hidden rounded-[2.5rem] bg-[#09090D] border border-white/[0.07] p-10 transition-all duration-300 hover:border-[#6324FC]/40 flex flex-col justify-between shadow-2xl ${
-        index === 0 || index === 3
-          ? "md:col-span-3"
-          : "md:col-span-3 lg:col-span-3"
-      }`}
+      className={`group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-[#09090D] border border-black/10 dark:border-white/[0.07] p-10 transition-all duration-300 hover:border-[#6324FC]/40 flex flex-col justify-between shadow-[0_10px_35px_-5px_rgba(0,0,0,0.05)] dark:shadow-2xl ${index === 0 || index === 3
+        ? "md:col-span-3"
+        : "md:col-span-3 lg:col-span-3"
+        }`}
     >
 
       {/* Dynamic Border Glow */}
@@ -111,7 +110,7 @@ function FeatureCard({
               ease: "easeInOut",
               delay: index * 0.5,
             }}
-            className="w-20 h-20 rounded-3xl flex items-center justify-center transition-all duration-700 shadow-2xl relative overflow-hidden group-hover:scale-110"
+            className="w-20 h-20 rounded-3xl flex items-center justify-center transition-all duration-700 shadow-lg dark:shadow-2xl relative overflow-hidden group-hover:scale-110"
             style={{
               backgroundColor: `${item.color}10`,
               border: `1px solid ${item.color}20`,
@@ -125,39 +124,39 @@ function FeatureCard({
             />
           </motion.div>
 
-          <div className="flex flex-col items-end opacity-20 group-hover:opacity-100 transition-opacity duration-500">
-            <span className="font-heading  text-[9px] tracking-[0.4em] text-white capitalize mb-1">
+          <div className="flex flex-col items-end opacity-40 group-hover:opacity-100 transition-opacity duration-500">
+            <span className="font-heading text-[12px] tracking-[0.4em] text-neutral-500 dark:text-white capitalize mb-1">
               ARCHITECTURE
             </span>
-            <span className="font-heading  text-[10px] tracking-[0.2em] text-[#6324FC] capitalize ">
+            <span className="font-heading text-[12px] tracking-[0.2em] text-[#6324FC] capitalize ">
               {item.id}
             </span>
           </div>
         </div>
 
         <div className="space-y-6">
-          <h3 className="font-heading text-3xl md:text-4xl tracking-tight text-white mb-4 group-hover:text-white transition-colors duration-500">
+          <h3 className="font-heading text-3xl md:text-4xl tracking-tight text-neutral-900 dark:text-white mb-4 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors duration-500">
             {item.title}
           </h3>
 
-          <p className="font-sans font-light text-lg text-white/60 leading-relaxed max-w-xl group-hover:text-white/90 transition-colors duration-500">
+          <p className="font-sans font-light text-lg text-neutral-600 dark:text-white/60 leading-relaxed max-w-xl group-hover:text-neutral-900 dark:group-hover:text-white/90 transition-colors duration-500">
             {item.body}
           </p>
         </div>
       </div>
 
       {/* Productive Accents */}
-      <div className="relative z-10 mt-8 pt-8 border-t border-white/[0.05] flex items-center justify-between">
+      <div className="relative z-10 mt-8 pt-8 border-t border-black/5 dark:border-white/[0.05] flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div
             className="w-1.5 h-1.5 rounded-full animate-pulse"
             style={{ backgroundColor: item.color }}
           />
-          <span className="font-heading  text-[10px] tracking-widest text-white/20 capitalize ">
+          <span className="font-heading text-[12px] tracking-widest text-neutral-500 dark:text-white/20 capitalize ">
             OPERATIONAL STATUS: OPTIMAL
           </span>
         </div>
-        <ArrowUpRight className="w-5 h-5 text-white/10 group-hover:text-white transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
+        <ArrowUpRight className="w-5 h-5 text-neutral-400 dark:text-white/10 group-hover:text-neutral-900 dark:group-hover:text-white transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
       </div>
     </motion.div>
   );
@@ -167,7 +166,7 @@ export default function WhyChoose() {
   const { openModal, openAuditModal } = useProjectModal();
 
   return (
-    <section className="w-full bg-[#060608] pt-10 md:pt-14 pb-20 relative overflow-hidden">
+    <section className="w-full bg-[#F5F5F0] dark:bg-[#060608] pt-20 md:pt-28 pb-20 md:pb-28 relative overflow-hidden text-neutral-900 dark:text-white">
       {/* Enhanced Background Ambience - GPU Accelerated */}
       <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(99,36,252,0.1)_0%,transparent_70%)] -translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(0,229,255,0.08)_0%,transparent_70%)] translate-x-1/2 pointer-events-none" />
@@ -183,7 +182,7 @@ export default function WhyChoose() {
               transition={{ duration: 0.8 }}
               className="h-[1px] bg-gradient-to-r from-[#6324FC] to-[#00E5FF]"
             />
-            <span className="font-mono text-xs md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
+            <span className="font-mono text-[14px] md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
               ENGINEERED GROWTH // VALUE PROPOSITION
             </span>
@@ -196,9 +195,9 @@ export default function WhyChoose() {
               </h2>
               <div
                 aria-hidden="true"
-                className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.88] tracking-tighter text-white"
+                className="font-heading text-5xl md:text-7xl leading-[0.88] tracking-tighter text-neutral-900 dark:text-white"
               >
-                <span className="text-white mr-3 md:mr-4">THE</span>
+                <span className="mr-3 md:mr-4">THE</span>
                 <span className="italic text-[#6324FC] drop-shadow-[0_0_35px_rgba(99,36,252,0.35)]">
                   INJAAZH
                 </span>
@@ -206,17 +205,21 @@ export default function WhyChoose() {
                 <span className="stroke-text opacity-95">ADVANTAGE.</span>
               </div>
 
+              <p className="font-sans font-light text-neutral-700 dark:text-white/75 text-sm sm:text-base leading-relaxed mt-6 max-w-xl border-l-2 border-[#6324FC]/60 pl-5 sm:pl-6 py-0.5">
+                Backed by proven global expertise, we engineer complete digital ecosystems that dominate search engines, convert high-ticket B2B traffic, and generate scalable enterprise revenue — measured transparently against predefined KPIs.
+              </p>
+
               {/* Enterprise Architectural Pillar Badges */}
-              <div className="flex flex-wrap items-center gap-2.5 mt-6 pt-5 border-t border-white/[0.06]">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+              <div className="flex flex-wrap items-center gap-2.5 mt-6 pt-5 border-t border-black/10 dark:border-white/[0.06]">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70 shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC]" />
                   NEXT.JS 15 ARCHITECTURE
                 </div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70 shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF]" />
                   GLOBAL SERP RANKING
                 </div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70 shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00FFA3]" />
                   CONTRACTED KPIS
                 </div>
@@ -224,12 +227,8 @@ export default function WhyChoose() {
             </div>
 
             <div className="max-w-xl">
-              <p className="font-sans font-light text-white/75 text-sm sm:text-base leading-relaxed mb-6 border-l-2 border-[#6324FC]/60 pl-5 sm:pl-6 py-0.5">
-                Backed by proven global expertise, we engineer complete digital ecosystems that dominate search engines, convert high-ticket B2B traffic, and generate scalable enterprise revenue — measured transparently against predefined KPIs.
-              </p>
-
               {/* Luxury Institutional Trust Seal & Guarantee Card */}
-              <div className="relative group/seal rounded-3xl bg-gradient-to-b from-white/[0.08] via-white/[0.02] to-transparent p-[1px] overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-[0_20px_50px_rgba(99,36,252,0.15)]">
+              <div className="relative group/seal rounded-3xl bg-gradient-to-b from-[#6324FC]/15 via-black/[0.04] to-black/[0.02] dark:from-white/[0.08] dark:via-white/[0.02] dark:to-transparent p-[1px] overflow-hidden shadow-[0_10px_35px_-5px_rgba(0,0,0,0.06),0_2px_10px_rgba(0,0,0,0.03)] dark:shadow-2xl transition-all duration-500 hover:shadow-[0_20px_50px_rgba(99,36,252,0.15)]">
                 {/* Dynamic Ambient Background Glow */}
                 <div className="absolute -top-12 -right-12 w-36 h-36 bg-[#6324FC]/20 rounded-full blur-3xl pointer-events-none group-hover/seal:bg-[#00E5FF]/25 transition-all duration-700" />
                 <div className="absolute -bottom-12 -left-12 w-36 h-36 bg-[#00FFA3]/15 rounded-full blur-3xl pointer-events-none" />
@@ -237,37 +236,37 @@ export default function WhyChoose() {
                 {/* Shimmer Light Sweep on Hover */}
                 <div className="absolute inset-0 -translate-x-full group-hover/seal:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none" />
 
-                <div className="relative z-10 bg-[#0A0A0E]/95 backdrop-blur-2xl rounded-[23px] p-5 sm:p-6">
+                <div className="relative z-10 bg-white dark:bg-[#0A0A0E]/95 backdrop-blur-2xl rounded-[23px] p-5 sm:p-6">
                   {/* Top Seal Bar */}
-                  <div className="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-white/[0.08]">
+                  <div className="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-[#E8E8EE] dark:border-white/[0.08]">
                     <div className="flex items-center gap-3.5">
                       {/* Rotating Metallic Crest Icon */}
-                      <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-[#6324FC]/25 to-white/[0.05] border border-white/10 flex items-center justify-center shrink-0 shadow-inner group-hover/seal:border-[#6324FC]/60 transition-colors">
+                      <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-[#6324FC]/25 to-white/[0.05] border border-[#E2E2E8] dark:border-white/10 flex items-center justify-center shrink-0 shadow-inner group-hover/seal:border-[#6324FC]/60 transition-colors">
                         <div className="absolute inset-1 rounded-xl border border-dashed border-[#6324FC]/40 animate-[spin_25s_linear_infinite]" />
-                        <ShieldCheck className="w-6 h-6 text-[#00E5FF] group-hover/seal:text-white transition-colors drop-shadow-[0_0_10px_rgba(0,229,255,0.6)]" />
+                        <ShieldCheck className="w-6 h-6 text-[#6324FC] dark:text-[#00E5FF] group-hover/seal:text-[#6324FC] dark:group-hover/seal:text-white transition-colors dark:drop-shadow-[0_0_10px_rgba(0,229,255,0.6)]" />
                         <span className="absolute -top-1 -right-1 flex h-3 w-3">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                          <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-[#0A0A0E]" />
+                          <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-white dark:border-[#0A0A0E]" />
                         </span>
                       </div>
 
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="font-heading text-sm sm:text-base text-white font-bold tracking-wide">
+                          <span className="font-heading text-sm sm:text-base text-neutral-900 dark:text-white font-bold tracking-wide">
                             Institutional Trust Seal
                           </span>
-                          <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 font-mono text-[9px] font-bold uppercase tracking-wider">
+                          <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 font-mono text-[12px] font-bold uppercase tracking-wider">
                             VERIFIED
                           </span>
                         </div>
-                        <span className="font-mono text-[10px] text-white/45 uppercase tracking-widest block mt-0.5">
+                        <span className="font-mono text-[12px] text-neutral-500 dark:text-white/45 uppercase tracking-widest block mt-0.5">
                           SPEC // SLA-99.9-GLOBAL-AUDIT
                         </span>
                       </div>
                     </div>
 
                     {/* Micro Security Chip */}
-                    <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.03] border border-white/[0.06] text-[10px] font-mono text-white/50">
+                    <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#F8F8FA] dark:bg-white/[0.03] border border-[#E8E8EE] dark:border-white/[0.06] text-[12px] font-mono text-neutral-500 dark:text-white/50">
                       <Lock className="w-3 h-3 text-[#6324FC]" />
                       SOC2 / ISO COMPLIANT
                     </div>
@@ -275,32 +274,32 @@ export default function WhyChoose() {
 
                   {/* Proof Telemetry Grid */}
                   <div className="grid grid-cols-3 gap-2.5 sm:gap-3 pt-1 text-left">
-                    <div className="p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-                      <div className="flex items-center gap-1 text-amber-300 mb-1">
-                        <Star className="w-3.5 h-3.5 fill-amber-300" />
-                        <span className="font-heading text-xs font-bold text-white">4.9 / 5.0</span>
+                    <div className="p-2.5 rounded-xl bg-[#F8F8FA] dark:bg-white/[0.02] border border-[#E8E8EE] dark:border-white/[0.05]">
+                      <div className="flex items-center gap-1 text-amber-400 mb-1">
+                        <Star className="w-3.5 h-3.5 fill-amber-400" />
+                        <span className="font-heading text-[14px] font-bold text-neutral-900 dark:text-white">4.9 / 5.0</span>
                       </div>
-                      <span className="font-mono text-[10px] text-white/50 block leading-tight">
+                      <span className="font-mono text-[12px] text-neutral-500 dark:text-white/50 block leading-tight">
                         Clutch & Google Verified
                       </span>
                     </div>
 
-                    <div className="p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-                      <div className="flex items-center gap-1 text-emerald-400 mb-1">
+                    <div className="p-2.5 rounded-xl bg-[#F8F8FA] dark:bg-white/[0.02] border border-[#E8E8EE] dark:border-white/[0.05]">
+                      <div className="flex items-center gap-1 text-emerald-500 dark:text-emerald-400 mb-1">
                         <CheckCircle2 className="w-3.5 h-3.5" />
-                        <span className="font-heading text-xs font-bold text-white">99.98%</span>
+                        <span className="font-heading text-[14px] font-bold text-neutral-900 dark:text-white">99.98%</span>
                       </div>
-                      <span className="font-mono text-[10px] text-white/50 block leading-tight">
+                      <span className="font-mono text-[12px] text-neutral-500 dark:text-white/50 block leading-tight">
                         Guaranteed SLA Uptime
                       </span>
                     </div>
 
-                    <div className="p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-                      <div className="flex items-center gap-1 text-[#00E5FF] mb-1">
+                    <div className="p-2.5 rounded-xl bg-[#F8F8FA] dark:bg-white/[0.02] border border-[#E8E8EE] dark:border-white/[0.05]">
+                      <div className="flex items-center gap-1 text-[#0891B2] dark:text-[#00E5FF] mb-1">
                         <Award className="w-3.5 h-3.5" />
-                        <span className="font-heading text-xs font-bold text-white">24H Res</span>
+                        <span className="font-heading text-[14px] font-bold text-neutral-900 dark:text-white">24H Res</span>
                       </div>
-                      <span className="font-mono text-[10px] text-white/50 block leading-tight">
+                      <span className="font-mono text-[12px] text-neutral-500 dark:text-white/50 block leading-tight">
                         Direct PM Guarantee
                       </span>
                     </div>
@@ -322,23 +321,23 @@ export default function WhyChoose() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             onClick={() => openAuditModal()}
-            className="md:col-span-6 rounded-[3rem] bg-gradient-to-r from-[#6324FC] via-[#00E5FF] to-[#6324FC] p-[1px] group cursor-pointer relative overflow-hidden mt-6"
+            className="md:col-span-6 rounded-[3rem] group cursor-pointer relative overflow-hidden mt-6"
           >
-            <div className="w-full h-full bg-[#060608]/95 backdrop-blur-3xl rounded-[2.9rem] p-10 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10 transition-colors group-hover:bg-transparent">
+            <div className="w-full h-full bg-white dark:bg-[#09090D]/95 border border-black/10 dark:border-transparent backdrop-blur-3xl rounded-[3rem] p-10 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10 transition-colors shadow-lg dark:shadow-none">
               <div className="flex flex-col lg:items-start text-center lg:text-left">
                 <div className="flex items-center gap-3 mb-6 justify-center lg:justify-start">
-                  <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                    <Cpu className="w-5 h-5 text-white animate-spin-slow" />
+                  <div className="w-10 h-10 rounded-full bg-neutral-100 dark:bg-white/5 flex items-center justify-center border border-black/10 dark:border-white/10">
+                    <Cpu className="w-5 h-5 text-neutral-800 dark:text-white animate-spin-slow" />
                   </div>
-                  <span className="font-heading  text-xs text-[#6324FC] tracking-[0.4em] capitalize ">
+                  <span className="font-heading text-[14px] text-[#6324FC] tracking-[0.4em] capitalize ">
                     NEURAL ENGINE V2.0
                   </span>
                 </div>
-                <h2 className="font-heading text-3xl md:text-5xl text-white leading-none tracking-tighter mb-6 capitalize ">
+                <h2 className="font-heading text-3xl md:text-5xl text-neutral-900 dark:text-white leading-none tracking-tighter mb-6 capitalize ">
                   Get Your <br />
-                  <span className="italic text-[#00E5FF]">Free Audit</span>
+                  <span className="italic text-[#6324FC] dark:text-[#00E5FF]">Free Audit</span>
                 </h2>
-                <p className="font-sans font-light text-white/80 text-xl max-w-xl leading-relaxed">
+                <p className="font-sans font-light text-neutral-600 dark:text-white/80 text-xl max-w-xl leading-relaxed">
                   We analyze your technical architecture, SEO gaps, and revenue
                   potential — then deliver a custom growth report within 24
                   hours. No automation. Real experts. Real insights.
@@ -349,7 +348,7 @@ export default function WhyChoose() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 md:px-12 py-4 md:py-6 bg-white text-black rounded-2xl font-heading text-lg tracking-widest shadow-[0_20px_50px_rgba(255,255,255,0.1)] group-hover:bg-[#6324FC] group-hover:text-white transition-all flex items-center justify-center gap-4 w-full md:w-auto"
+                  className="px-8 md:px-12 py-4 md:py-6 bg-[#6324FC] text-white dark:bg-white dark:text-black rounded-2xl font-heading text-lg tracking-widest shadow-xl group-hover:bg-[#783cfd] dark:group-hover:bg-[#6324FC] dark:group-hover:text-white transition-all flex items-center justify-center gap-4 w-full md:w-auto"
                 >
                   START YOUR FREE AUDIT ⚡
                 </motion.button>

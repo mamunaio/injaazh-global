@@ -175,7 +175,7 @@ export default function UXAuditsPage() {
             <div className="absolute inset-0 bg-[#6324FC]/10 mix-blend-overlay group-hover:opacity-0 transition-opacity" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
               <ClipboardCheck className="w-20 h-20 text-white mb-4 animate-pulse" />
-              <div className="font-heading text-[10px] tracking-[0.5em] text-white/60 uppercase">
+              <div className="font-heading text-[12px] tracking-[0.5em] text-white/60 uppercase">
                 Empathy Scanned
               </div>
             </div>
@@ -235,7 +235,7 @@ export default function UXAuditsPage() {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <ShieldAlert className="w-5 h-5 text-[#FF2D55]" />
-                  <span className="font-heading text-xs tracking-widest text-[#FF2D55] uppercase">
+                  <span className="font-heading text-[14px] tracking-widest text-[#FF2D55] uppercase">
                     CONVERSION BLEEDING
                   </span>
                 </div>
@@ -296,7 +296,7 @@ export default function UXAuditsPage() {
             <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between group">
               <div className="flex justify-between items-start">
                 <MousePointer2 className="w-8 h-8 text-[#6324FC]" />
-                <div className="font-heading text-[9px] text-white/20 capitalize tracking-[0.3em]">
+                <div className="font-heading text-[12px] text-white/20 capitalize tracking-[0.3em]">
                   Behavioral Node // 0xUX
                 </div>
               </div>
@@ -327,10 +327,10 @@ export default function UXAuditsPage() {
                       {item.label}
                     </div>
                     <div
-                      className={`font-heading text-[10px] tracking-widest capitalize ${typeof item.color === "string" && item.color.startsWith("text") ? item.color : ""}`}
+                      className={`font-heading text-[12px] tracking-widest capitalize ${typeof item.color === "string" && item.color.startsWith("text") ? item.color : ""}`}
                       style={
                         typeof item.color === "string" &&
-                        !item.color.startsWith("text")
+                          !item.color.startsWith("text")
                           ? { color: item.color }
                           : {}
                       }
@@ -341,7 +341,7 @@ export default function UXAuditsPage() {
                 ))}
               </div>
 
-              <div className="flex justify-between font-heading text-[9px] text-[#6324FC] capitalize tracking-widest">
+              <div className="flex justify-between font-heading text-[12px] text-[#6324FC] capitalize tracking-widest">
                 <span>Empathy Engine</span>
                 <span>99% Satisfaction Target</span>
               </div>
@@ -437,7 +437,7 @@ export default function UXAuditsPage() {
             <div className="max-w-3xl mb-16">
               <div className="flex items-center gap-3 mb-6">
                 <Layers className="w-5 h-5 text-[#6324FC]" />
-                <span className="font-heading text-xs tracking-widest text-[#6324FC] uppercase">
+                <span className="font-heading text-[14px] tracking-widest text-[#6324FC] uppercase">
                   AUDIT RESULTS
                 </span>
               </div>
@@ -481,7 +481,7 @@ export default function UXAuditsPage() {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <ShieldAlert className="w-5 h-5 text-[#00E5FF]" />
-                  <span className="font-heading text-xs tracking-widest text-[#00E5FF] uppercase">
+                  <span className="font-heading text-[14px] tracking-widest text-[#00E5FF] uppercase">
                     WARNING SIGNALS
                   </span>
                 </div>

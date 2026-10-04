@@ -50,7 +50,7 @@ const teamPreviewData = [
 
 export default function TeamPreview() {
   return (
-    <section className="w-full bg-[#060608] py-20 md:py-28 border-t border-white/5 relative overflow-hidden text-white">
+    <section className="w-full bg-[#F5F5F0] dark:bg-[#060608] py-20 md:py-28 border-t border-black/5 dark:border-white/5 relative overflow-hidden text-neutral-900 dark:text-white">
       {/* Background Ambient Glows - GPU Accelerated */}
       <div className="absolute top-1/3 left-1/4 w-[700px] h-[700px] bg-[radial-gradient(circle,rgba(99,36,252,0.12)_0%,transparent_70%)] -translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(0,229,255,0.08)_0%,transparent_70%)] translate-x-1/2 pointer-events-none" />
@@ -67,7 +67,7 @@ export default function TeamPreview() {
               transition={{ duration: 0.8 }}
               className="h-[1px] bg-gradient-to-r from-[#6324FC] to-[#00E5FF]"
             />
-            <span className="font-mono text-xs md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
+            <span className="font-mono text-[14px] md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
               THE COLLECTIVE // LEADERSHIP & ARCHITECTURE
             </span>
@@ -81,9 +81,9 @@ export default function TeamPreview() {
               </h2>
               <div
                 aria-hidden="true"
-                className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.88] tracking-tighter text-white"
+                className="font-heading text-5xl md:text-7xl leading-[0.88] tracking-tighter text-neutral-900 dark:text-white"
               >
-                <span className="text-white mr-3 md:mr-4">THE MINDS</span>
+                <span className="mr-3 md:mr-4">THE MINDS</span>
                 <span className="italic text-[#6324FC] drop-shadow-[0_0_35px_rgba(99,36,252,0.35)]">
                   BEHIND
                 </span>
@@ -92,16 +92,16 @@ export default function TeamPreview() {
               </div>
 
               {/* Executive Capability Badges */}
-              <div className="flex flex-wrap items-center gap-2.5 mt-6 pt-5 border-t border-white/[0.06]">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+              <div className="flex flex-wrap items-center gap-2.5 mt-6 pt-5 border-t border-black/10 dark:border-white/[0.06]">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70 shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC]" />
                   FOUNDER-LED ARCHITECTURE
                 </div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70 shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF]" />
                   CROSS-TIMEZONE SQUAD
                 </div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70 shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00FFA3]" />
                   100% IN-HOUSE TALENT
                 </div>
@@ -110,10 +110,10 @@ export default function TeamPreview() {
 
             {/* Editorial Authority Copy */}
             <div className="max-w-lg">
-              <p className="font-sans font-light text-white/75 text-sm sm:text-base leading-relaxed border-l-2 border-[#6324FC]/60 pl-5 sm:pl-6 py-0.5 mb-4">
+              <p className="font-sans font-light text-neutral-700 dark:text-white/75 text-sm sm:text-base leading-relaxed border-l-2 border-[#6324FC]/60 pl-5 sm:pl-6 py-0.5 mb-4">
                 A specialized collective of enterprise software architects, technical SEO scientists, and digital growth engineers — operating with surgical precision to outperform legacy agencies ten times our size.
               </p>
-              <div className="flex items-center gap-2 text-xs font-mono text-white/40 pl-5 sm:pl-6">
+              <div className="flex items-center gap-2 text-[14px] font-mono text-neutral-500 dark:text-white/40 pl-5 sm:pl-6">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#00E5FF]" />
                 <span>DIRECT ACCESS TO PRINCIPAL ARCHITECTS</span>
               </div>
@@ -134,7 +134,7 @@ export default function TeamPreview() {
                 delay: idx * 0.1,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="group relative aspect-[3/4.2] rounded-[2.5rem] border border-white/[0.08] hover:border-[#6324FC]/50 transition-all duration-700 overflow-hidden backdrop-blur-xl bg-[#0A0A0E] shadow-2xl"
+              className="group relative aspect-[3/4.2] rounded-[2.5rem] border border-black/10 dark:border-white/[0.08] hover:border-[#6324FC]/50 transition-all duration-700 overflow-hidden backdrop-blur-xl bg-white dark:bg-[#0A0A0E] shadow-xl dark:shadow-2xl"
             >
               {/* Member Image with Smooth Grayscale to Color Reveal */}
               <div className="absolute inset-0 grayscale opacity-85 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-out">
@@ -147,7 +147,7 @@ export default function TeamPreview() {
               </div>
 
               {/* Rich Cinematic Vignette Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#060608] via-[#060608]/50 to-transparent opacity-95 group-hover:opacity-90 transition-opacity duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent dark:from-[#060608] dark:via-[#060608]/50 dark:to-transparent opacity-95 group-hover:opacity-90 transition-opacity duration-700" />
               <div
                 className="absolute inset-0 opacity-0 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none"
                 style={{
@@ -157,11 +157,11 @@ export default function TeamPreview() {
 
               {/* Top Bar with Member ID and Badge */}
               <div className="absolute top-6 inset-x-6 flex items-center justify-between z-10">
-                <span className="font-mono text-xs font-semibold text-white/50 bg-[#060608]/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/[0.08]">
+                <span className="font-mono text-[14px] font-semibold text-neutral-700 dark:text-white/50 bg-white/80 dark:bg-[#060608]/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-black/10 dark:border-white/[0.08]">
                   // {member.id}
                 </span>
                 <span
-                  className="px-2.5 py-1 rounded-full text-[9px] font-mono font-bold uppercase tracking-wider backdrop-blur-md border"
+                  className="px-2.5 py-1 rounded-full text-[12px] font-mono font-bold uppercase tracking-wider backdrop-blur-md border"
                   style={{
                     backgroundColor: `${member.color}15`,
                     borderColor: `${member.color}35`,
@@ -181,7 +181,7 @@ export default function TeamPreview() {
 
                 {/* Role Pill */}
                 <div
-                  className="inline-flex w-fit px-3 py-1 rounded-full text-[10px] font-mono font-semibold tracking-wider uppercase mb-3 border backdrop-blur-md"
+                  className="inline-flex w-fit px-3 py-1 rounded-full text-[12px] font-mono font-semibold tracking-wider uppercase mb-3 border backdrop-blur-md"
                   style={{
                     backgroundColor: `${member.color}15`,
                     borderColor: `${member.color}30`,
@@ -192,7 +192,7 @@ export default function TeamPreview() {
                 </div>
 
                 {/* Member Name */}
-                <h3 className="font-heading text-2xl sm:text-3xl tracking-tight text-white mb-1 leading-tight group-hover:text-white transition-colors">
+                <h3 className="font-heading text-2xl sm:text-3xl tracking-tight text-neutral-900 dark:text-white mb-1 leading-tight group-hover:text-[#6324FC] dark:group-hover:text-white transition-colors">
                   {member.name.split(" ")[0]} <br />
                   <span className="opacity-80 group-hover:opacity-100 transition-opacity">
                     {member.name.split(" ").slice(1).join(" ")}
@@ -200,34 +200,34 @@ export default function TeamPreview() {
                 </h3>
 
                 {/* Specialty Pill */}
-                <div className="font-mono text-[11px] text-white/50 mb-2 truncate">
+                <div className="font-mono text-[12px] text-neutral-500 dark:text-white/50 mb-2 truncate">
                   {member.specialty}
                 </div>
 
                 {/* Expandable Bio & Social Links Drawer */}
                 <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
                   <div className="overflow-hidden">
-                    <p className="font-sans font-light text-xs text-white/70 leading-relaxed pt-2 pb-4">
+                    <p className="font-sans font-light text-[14px] text-neutral-700 dark:text-white/70 leading-relaxed pt-2 pb-4">
                       {member.bio}
                     </p>
-                    <div className="flex items-center gap-2.5 border-t border-white/[0.08] pt-3">
+                    <div className="flex items-center gap-2.5 border-t border-black/10 dark:border-white/[0.08] pt-3">
                       <Link
                         href="#"
-                        className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:border-[#6324FC] hover:bg-[#6324FC]/20 transition-all duration-300"
+                        className="w-8 h-8 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center text-neutral-600 dark:text-white/60 hover:text-white hover:border-[#6324FC] hover:bg-[#6324FC] dark:hover:bg-[#6324FC]/20 transition-all duration-300"
                         aria-label="Website"
                       >
                         <Globe className="w-3.5 h-3.5" />
                       </Link>
                       <Link
                         href="#"
-                        className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:border-[#00E5FF] hover:bg-[#00E5FF]/20 transition-all duration-300"
+                        className="w-8 h-8 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center text-neutral-600 dark:text-white/60 hover:text-white hover:border-[#00E5FF] hover:bg-[#00E5FF] dark:hover:bg-[#00E5FF]/20 transition-all duration-300"
                         aria-label="Portfolio link"
                       >
                         <ExternalLink className="w-3.5 h-3.5" />
                       </Link>
                       <Link
                         href="#"
-                        className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:border-[#00FFA3] hover:bg-[#00FFA3]/20 transition-all duration-300"
+                        className="w-8 h-8 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center text-neutral-600 dark:text-white/60 hover:text-white hover:border-[#00FFA3] hover:bg-[#00FFA3] dark:hover:bg-[#00FFA3]/20 transition-all duration-300"
                         aria-label="Contact email"
                       >
                         <Mail className="w-3.5 h-3.5" />
@@ -259,12 +259,12 @@ export default function TeamPreview() {
                 <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
               </div>
 
-              <div className="relative w-full h-full px-8 py-4 md:px-12 md:py-5 rounded-full bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
+              <div className="relative w-full h-full px-8 py-4 md:px-12 md:py-5 rounded-full bg-white dark:bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10 shadow-lg">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
 
                 <span className="w-2 h-2 rounded-full bg-[#6324FC] shadow-[0_0_10px_rgba(99,36,252,0.8)] animate-pulse shrink-0 relative z-10" />
 
-                <span className="relative z-10 flex items-center justify-center gap-4 font-heading md:text-lg tracking-[0.2em] text-white uppercase text-center font-bold">
+                <span className="relative z-10 flex items-center justify-center gap-4 font-heading md:text-lg tracking-[0.2em] text-neutral-900 dark:text-white uppercase text-center font-bold">
                   MEET THE ENTIRE SQUAD
                   <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-500 text-[#00E5FF]" />
                 </span>

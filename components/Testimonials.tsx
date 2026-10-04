@@ -200,7 +200,7 @@ const reviews = [
 
 export default function Testimonials() {
   return (
-    <section className="w-full bg-[#060608] pt-16 md:pt-24 pb-16 md:pb-24 border-t border-white/5 relative overflow-hidden">
+    <section className="w-full bg-[#F5F5F0] dark:bg-[#060608] pt-16 md:pt-24 pb-16 md:pb-24 border-t border-black/5 dark:border-white/5 relative overflow-hidden transition-colors duration-500">
       {/* Background Ambient Glows - GPU Accelerated */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(99,36,252,0.12)_0%,transparent_70%)] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(0,229,255,0.08)_0%,transparent_70%)] pointer-events-none" />
@@ -218,7 +218,7 @@ export default function Testimonials() {
                 transition={{ duration: 0.8 }}
                 className="h-[1px] bg-gradient-to-r from-[#6324FC] to-[#00E5FF]"
               />
-              <span className="font-mono text-xs md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
+              <span className="font-mono text-[14px] md:text-sm tracking-[0.45em] text-[#6324FC] uppercase font-semibold flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
                 CLIENT SUCCESS STORIES // EXECUTIVE PROOF
               </span>
@@ -230,9 +230,9 @@ export default function Testimonials() {
             </h2>
             <div
               aria-hidden="true"
-              className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.88] tracking-tighter text-white"
+              className="font-heading text-5xl md:text-7xl leading-[0.88] tracking-tighter text-neutral-900 dark:text-white"
             >
-              <span className="text-white mr-3 md:mr-4">TRUSTED</span>
+              <span className="text-neutral-900 dark:text-white mr-3 md:mr-4">TRUSTED</span>
               <span className="italic text-[#6324FC] drop-shadow-[0_0_35px_rgba(99,36,252,0.35)]">
                 BY
               </span>
@@ -241,16 +241,16 @@ export default function Testimonials() {
             </div>
 
             {/* Capability Badges */}
-            <div className="flex flex-wrap items-center gap-2.5 mt-6 pt-5 border-t border-white/[0.06]">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+            <div className="flex flex-wrap items-center gap-2.5 mt-6 pt-5 border-t border-black/5 dark:border-white/[0.06]">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#6324FC]" />
                 100% VERIFIED REVIEWS
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF]" />
                 CLUTCH TOP AGENCY
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-white/70">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/[0.08] text-[12px] font-mono text-neutral-700 dark:text-white/70">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00FFA3]" />
                 C-LEVEL CLIENTELE
               </div>
@@ -258,40 +258,40 @@ export default function Testimonials() {
           </div>
 
           {/* Luxury Executive Rating Capsule */}
-          <div className="relative group/seal rounded-3xl bg-[#0A0A0E] border border-white/10 p-5 sm:p-6 shadow-2xl transition-all duration-300 hover:border-[#6324FC]/40 max-w-sm w-full">
-              <div className="flex items-center justify-between gap-4 mb-3 pb-3 border-b border-white/[0.08]">
-                <div>
-                  <div className="font-heading text-3xl font-bold text-white flex items-baseline gap-1">
-                    4.9<span className="text-white/30 text-lg font-normal">/ 5.0</span>
-                  </div>
-                  <span className="font-mono text-[10px] text-white/45 uppercase tracking-widest block mt-0.5">
-                    GLOBAL CLIENT SATISFACTION
-                  </span>
+          <div className="relative group/seal rounded-3xl bg-white dark:bg-[#0A0A0E] border border-black/10 dark:border-white/10 p-5 sm:p-6 shadow-lg dark:shadow-2xl transition-all duration-300 hover:border-[#6324FC]/40 max-w-sm w-full">
+            <div className="flex items-center justify-between gap-4 mb-3 pb-3 border-b border-black/5 dark:border-white/[0.08]">
+              <div>
+                <div className="font-heading text-3xl font-bold text-neutral-900 dark:text-white flex items-baseline gap-1">
+                  4.9<span className="text-neutral-400 dark:text-white/30 text-lg font-normal">/ 5.0</span>
                 </div>
-                <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 font-mono text-[9px] font-bold uppercase tracking-wider flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  AUDITED
+                <span className="font-mono text-[12px] text-neutral-500 dark:text-white/45 uppercase tracking-widest block mt-0.5">
+                  GLOBAL CLIENT SATISFACTION
                 </span>
               </div>
+              <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-500 dark:text-emerald-400 font-mono text-[12px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
+                AUDITED
+              </span>
+            </div>
 
-              <div className="flex items-center gap-1 mb-3">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-4 h-4 fill-amber-400 text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
-                  />
-                ))}
-              </div>
+            <div className="flex items-center gap-1 mb-3">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="w-4 h-4 fill-amber-400 text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
+                />
+              ))}
+            </div>
 
-              <div className="flex items-center justify-between text-[10px] font-mono text-white/50 pt-2 border-t border-white/[0.04]">
-                <span>Clutch Verified</span>
-                <span>•</span>
-                <span>Google 5.0 ★</span>
-                <span>•</span>
-                <span className="text-[#00E5FF]">100% SLA</span>
-              </div>
+            <div className="flex items-center justify-between text-[12px] font-mono text-neutral-500 dark:text-white/50 pt-2 border-t border-black/5 dark:border-white/[0.04]">
+              <span>Clutch Verified</span>
+              <span>•</span>
+              <span>Google 5.0 ★</span>
+              <span>•</span>
+              <span className="text-[#0891B2] dark:text-[#00E5FF]">100% SLA</span>
             </div>
           </div>
+        </div>
 
         {/* Swiper Slider */}
         <div className="relative group/swiper testimonial-slider">
@@ -316,7 +316,7 @@ export default function Testimonials() {
           >
             {reviews.map((rev) => (
               <SwiperSlide key={rev.id} className="!h-auto flex">
-                <div className="group relative w-full h-full min-h-[360px] md:min-h-[380px] rounded-3xl bg-[#09090E] border border-white/[0.07] hover:border-[#6324FC]/40 transition-all duration-300 overflow-hidden p-6 sm:p-7 flex flex-col justify-between shadow-xl">
+                <div className="group relative w-full h-full min-h-[360px] md:min-h-[380px] rounded-3xl bg-white dark:bg-[#09090E] border border-black/10 dark:border-white/[0.07] hover:border-[#6324FC]/40 transition-all duration-300 overflow-hidden p-6 sm:p-7 flex flex-col justify-between shadow-lg dark:shadow-xl">
                   {/* Card Dynamic Glow on Hover */}
                   <div
                     className="absolute -top-12 -right-12 w-36 h-36 rounded-full blur-3xl opacity-0 group-hover:opacity-15 transition-opacity duration-500 pointer-events-none"
@@ -324,7 +324,7 @@ export default function Testimonials() {
                   />
 
                   {/* Watermark Quote Icon */}
-                  <Quote className="absolute top-5 right-5 w-12 h-12 text-white/[0.025] group-hover:text-[#6324FC]/10 group-hover:scale-105 transition-all duration-500 -rotate-12 pointer-events-none" />
+                  <Quote className="absolute top-5 right-5 w-12 h-12 text-black/[0.04] dark:text-white/[0.025] group-hover:text-[#6324FC]/10 group-hover:scale-105 transition-all duration-500 -rotate-12 pointer-events-none" />
 
                   {/* Top & Middle Content Container */}
                   <div className="relative z-10 flex-1 flex flex-col justify-between">
@@ -332,7 +332,7 @@ export default function Testimonials() {
                       <div className="flex items-center justify-between gap-3 mb-3.5">
                         {/* Verified Project Impact Chip */}
                         <span
-                          className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-mono font-semibold tracking-wider uppercase border"
+                          className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[12px] sm:text-[10px] font-mono font-semibold tracking-wider uppercase border"
                           style={{
                             backgroundColor: `${rev.color}10`,
                             borderColor: `${rev.color}30`,
@@ -348,11 +348,10 @@ export default function Testimonials() {
                           {[...Array(5)].map((_, i) => (
                             <Star
                               key={i}
-                              className={`w-3 h-3 sm:w-3.5 sm:h-3.5 ${
-                                i < rev.stars
-                                  ? "fill-amber-400 text-amber-400 drop-shadow-[0_0_6px_rgba(251,191,36,0.35)]"
-                                  : "fill-white/10 text-white/20"
-                              }`}
+                              className={`w-3 h-3 sm:w-3.5 sm:h-3.5 ${i < rev.stars
+                                ? "fill-amber-400 text-amber-400 drop-shadow-[0_0_6px_rgba(251,191,36,0.35)]"
+                                : "fill-neutral-200 text-neutral-300 dark:fill-white/10 dark:text-white/20"
+                                }`}
                             />
                           ))}
                         </div>
@@ -360,7 +359,7 @@ export default function Testimonials() {
 
                       {/* Project Title / Spec */}
                       {rev.project && (
-                        <div className="font-mono text-[10px] sm:text-[11px] text-white/50 mb-3 flex items-center gap-1.5 line-clamp-1">
+                        <div className="font-mono text-[12px] sm:text-[11px] text-neutral-500 dark:text-white/50 mb-3 flex items-center gap-1.5 line-clamp-1">
                           <span className="text-[#6324FC] font-bold">//</span>
                           <span className="truncate">{rev.project}</span>
                         </div>
@@ -369,18 +368,18 @@ export default function Testimonials() {
 
                     {/* Quotation Body - Vertically Centered in Available Space */}
                     <div className="flex-1 flex flex-col justify-center my-1.5">
-                      <p className="font-sans font-light text-xs sm:text-sm md:text-[14.5px] text-white/85 leading-relaxed">
+                      <p className="font-sans font-normal dark:font-light text-[14px] sm:text-sm md:text-[14.5px] text-neutral-800 dark:text-white/85 leading-relaxed">
                         "{rev.quote}"
                       </p>
                     </div>
 
                     {/* Verified Project Tags */}
                     {rev.tags && (
-                      <div className="flex flex-wrap items-center gap-1 mt-3 pt-2.5 border-t border-white/[0.04]">
+                      <div className="flex flex-wrap items-center gap-1 mt-3 pt-2.5 border-t border-black/[0.06] dark:border-white/[0.04]">
                         {rev.tags.map((tag, tIdx) => (
                           <span
                             key={tIdx}
-                            className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06] text-[9px] font-mono text-white/45"
+                            className="px-2 py-0.5 rounded bg-neutral-100 dark:bg-white/[0.03] border border-black/[0.06] dark:border-white/[0.06] text-[12px] font-mono text-neutral-600 dark:text-white/45"
                           >
                             {tag}
                           </span>
@@ -390,7 +389,7 @@ export default function Testimonials() {
                   </div>
 
                   {/* Author Attribution Footer */}
-                  <div className="relative z-10 pt-4 border-t border-white/[0.06] mt-4">
+                  <div className="relative z-10 pt-4 border-t border-black/[0.06] dark:border-white/[0.06] mt-4">
                     <div className="flex items-center gap-3">
                       <div
                         className={`w-10 h-10 rounded-xl flex items-center justify-center font-heading text-sm font-bold text-white bg-gradient-to-br ${rev.gradient} border border-white/10 shadow-md shrink-0`}
@@ -400,17 +399,17 @@ export default function Testimonials() {
 
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-0.5">
-                          <span className="font-heading text-sm sm:text-[15px] font-bold text-white group-hover:text-[#00E5FF] transition-colors truncate">
+                          <span className="font-heading text-sm sm:text-[15px] font-bold text-neutral-900 dark:text-white group-hover:text-[#6324FC] dark:group-hover:text-[#00E5FF] transition-colors truncate">
                             {rev.name}
                           </span>
-                          <span className="px-1.5 py-0.2 rounded-full bg-white/[0.05] border border-white/[0.08] font-mono text-[8px] text-white/70 font-semibold tracking-wider shrink-0">
+                          <span className="px-1.5 py-0.2 rounded-full bg-neutral-100 dark:bg-white/[0.05] border border-black/10 dark:border-white/[0.08] font-mono text-[8px] text-neutral-600 dark:text-white/70 font-semibold tracking-wider shrink-0">
                             {rev.countryCode}
                           </span>
                         </div>
-                        <div className="font-sans text-[11px] text-white/50 truncate">
-                          {rev.role} · <span className="text-white/70">{rev.location}</span>
+                        <div className="font-sans text-[12px] text-neutral-500 dark:text-white/50 truncate">
+                          {rev.role} · <span className="text-neutral-700 dark:text-white/70">{rev.location}</span>
                         </div>
-                        <div className="font-mono text-[9px] sm:text-[10px] text-[#6324FC] mt-0.5 truncate">
+                        <div className="font-mono text-[12px] sm:text-[10px] text-[#6324FC] mt-0.5 truncate">
                           {rev.service}
                         </div>
                       </div>
@@ -428,15 +427,15 @@ export default function Testimonials() {
             <div className="flex gap-4">
               <button
                 aria-label="Previous testimonial slide"
-                className="testimonial-prev group relative w-12 h-12 rounded-full border border-white/15 bg-[#0A0A0E] hover:border-[#6324FC] hover:bg-[#6324FC]/10 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg"
+                className="testimonial-prev group relative w-12 h-12 rounded-full border border-black/15 dark:border-white/15 bg-white dark:bg-[#0A0A0E] hover:border-[#6324FC] hover:bg-[#6324FC]/10 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 shadow-md dark:shadow-lg"
               >
-                <ChevronLeft className="w-5 h-5 text-white/70 group-hover:text-white transition-colors" />
+                <ChevronLeft className="w-5 h-5 text-neutral-700 dark:text-white/70 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors" />
               </button>
               <button
                 aria-label="Next testimonial slide"
-                className="testimonial-next group relative w-12 h-12 rounded-full border border-white/15 bg-[#0A0A0E] hover:border-[#6324FC] hover:bg-[#6324FC]/10 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg"
+                className="testimonial-next group relative w-12 h-12 rounded-full border border-black/15 dark:border-white/15 bg-white dark:bg-[#0A0A0E] hover:border-[#6324FC] hover:bg-[#6324FC]/10 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 shadow-md dark:shadow-lg"
               >
-                <ChevronRight className="w-5 h-5 text-white/70 group-hover:text-white transition-colors" />
+                <ChevronRight className="w-5 h-5 text-neutral-700 dark:text-white/70 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors" />
               </button>
             </div>
           </div>

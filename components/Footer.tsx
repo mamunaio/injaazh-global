@@ -92,7 +92,7 @@ export default function Footer() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading  text-[#6324FC] tracking-[0.5em] text-[10px] capitalize mb-12 flex items-center gap-4"
+            className="font-heading  text-[#6324FC] tracking-[0.5em] text-[12px] capitalize mb-12 flex items-center gap-4"
           >
             <span className="w-12 h-[1px] bg-[#6324FC]" />
             COLLABORATE WITH US
@@ -151,7 +151,7 @@ export default function Footer() {
           <div className="col-span-1 lg:col-span-5 flex flex-col lg:pr-24">
             <div className="flex items-center gap-4 mb-6">
               <span className="w-8 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading  text-[10px] tracking-[0.4em] text-[#6324FC] capitalize ">
+              <span className="font-heading  text-[12px] tracking-[0.4em] text-[#6324FC] capitalize ">
                 JOIN THE COLLECTIVE
               </span>
             </div>
@@ -230,17 +230,17 @@ export default function Footer() {
                   <div className="relative w-1.5 h-1.5 rounded-full bg-[#6324FC]" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-heading  text-[10px] tracking-[0.3em] capitalize text-primary/60 group-hover:text-[#6324FC] transition-colors">
+                  <span className="font-heading  text-[12px] tracking-[0.3em] capitalize text-primary/60 group-hover:text-[#6324FC] transition-colors">
                     {loc.city}
                   </span>
                   <span className="font-heading text-xl tracking-tight text-primary">
                     {mounted
                       ? now.toLocaleTimeString("en-US", {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                          timeZone: loc.tz,
-                          hour12: true,
-                        })
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        timeZone: loc.tz,
+                        hour12: true,
+                      })
                       : "--:--"}
                   </span>
                 </div>
@@ -250,7 +250,7 @@ export default function Footer() {
 
           {/* Legal & Copyright */}
           <div className="flex flex-col lg:items-end gap-6">
-            <div className="flex gap-8 font-heading  text-[10px] tracking-widest text-primary/60 capitalize ">
+            <div className="flex gap-8 font-heading  text-[12px] tracking-widest text-primary/60 capitalize ">
               <Link
                 href="/privacy-policy"
                 className="hover:text-[#6324FC] transition-colors"
@@ -270,7 +270,7 @@ export default function Footer() {
                 COOKIES
               </Link>
             </div>
-            <p className="font-sans text-xs text-primary/40 tracking-wider">
+            <p className="font-sans text-[14px] text-primary/40 tracking-wider">
               © {mounted ? now.getFullYear() : "2026"} Injaazh. All Rights
               Reserved.
             </p>
@@ -336,7 +336,7 @@ export default function Footer() {
             <text
               y="-14"
               textAnchor="middle"
-              className="font-heading  text-[9px] font-bold fill-primary tracking-[0.2em] capitalize "
+              className="font-heading  text-[12px] font-bold fill-primary tracking-[0.2em] capitalize "
             >
               NYC HUB
             </text>
@@ -368,7 +368,7 @@ export default function Footer() {
             <text
               y="-14"
               textAnchor="middle"
-              className="font-heading  text-[9px] font-bold fill-primary tracking-[0.2em] capitalize "
+              className="font-heading  text-[12px] font-bold fill-primary tracking-[0.2em] capitalize "
             >
               LDN HUB
             </text>
@@ -400,7 +400,7 @@ export default function Footer() {
             <text
               y="-14"
               textAnchor="middle"
-              className="font-heading  text-[9px] font-bold fill-primary tracking-[0.2em] capitalize "
+              className="font-heading  text-[12px] font-bold fill-primary tracking-[0.2em] capitalize "
             >
               DXB HUB
             </text>

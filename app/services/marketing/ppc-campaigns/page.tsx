@@ -262,7 +262,7 @@ export default function PPCCampaignsPage() {
               className="flex items-center gap-4 mb-12"
             >
               <div className="w-12 h-[1px] bg-[#6324FC]" />
-              <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+              <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
                 GROWTH DIVISION
               </span>
             </motion.div>
@@ -314,7 +314,7 @@ export default function PPCCampaignsPage() {
               <div className="font-heading text-6xl text-white tracking-tighter shadow-text animate-pulse">
                 8.4x
               </div>
-              <div className="font-heading text-[10px] tracking-[0.5em] text-[#6324FC] capitalize mt-2">
+              <div className="font-heading text-[12px] tracking-[0.5em] text-[#6324FC] capitalize mt-2">
                 Average ROAS
               </div>
             </div>
@@ -378,14 +378,14 @@ export default function PPCCampaignsPage() {
             <div className="relative aspect-square bg-[#0A0A0C] border border-white/10 rounded-3xl p-10 shadow-2xl shadow-black overflow-hidden flex flex-col justify-between">
               <div className="flex justify-between items-start">
                 <DollarSign className="w-8 h-8 text-[#00FFA3]" />
-                <div className="font-heading text-[9px] text-white/20 capitalize tracking-[0.3em]">
+                <div className="font-heading text-[12px] text-white/20 capitalize tracking-[0.3em]">
                   Revenue Node // V4.2
                 </div>
               </div>
 
               <div className="space-y-8 flex-1 flex flex-col justify-center">
                 <div className="space-y-2">
-                  <div className="font-heading text-[9px] text-white/20 capitalize tracking-widest">
+                  <div className="font-heading text-[12px] text-white/20 capitalize tracking-widest">
                     Monthly Ad Spend
                   </div>
                   <div className="font-heading text-5xl text-white tracking-tighter">
@@ -397,7 +397,7 @@ export default function PPCCampaignsPage() {
 
                 <div className="grid grid-cols-2 gap-8">
                   <div className="space-y-2">
-                    <div className="font-heading text-[9px] text-[#6324FC] capitalize tracking-widest">
+                    <div className="font-heading text-[12px] text-[#6324FC] capitalize tracking-widest">
                       New Customers
                     </div>
                     <div className="font-heading text-4xl text-white">
@@ -405,7 +405,7 @@ export default function PPCCampaignsPage() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <div className="font-heading text-[9px] text-[#00FFA3] capitalize tracking-widest">
+                    <div className="font-heading text-[12px] text-[#00FFA3] capitalize tracking-widest">
                       Total Revenue
                     </div>
                     <div className="font-heading text-4xl text-white font-bold">
@@ -415,7 +415,7 @@ export default function PPCCampaignsPage() {
                 </div>
               </div>
 
-              <div className="flex justify-between font-heading text-[9px] text-[#6324FC] capitalize tracking-widest">
+              <div className="flex justify-between font-heading text-[12px] text-[#6324FC] capitalize tracking-widest">
                 <span>Performance Mode</span>
                 <span>Real-Time Sync Active</span>
               </div>
@@ -481,7 +481,7 @@ export default function PPCCampaignsPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               PPC CLARITY
             </span>
           </div>
@@ -538,7 +538,7 @@ export default function PPCCampaignsPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               THE WARNING SIGNS
             </span>
           </div>
@@ -563,19 +563,17 @@ export default function PPCCampaignsPage() {
             {mistakes.map((table, i) => (
               <div
                 key={i}
-                className={`p-10 rounded-[2.5rem] bg-white/[0.01] border transition-all duration-500 relative overflow-hidden ${
-                  table.isPositive
-                    ? "border-[#6324FC]/30 hover:border-[#6324FC]/50"
-                    : "border-white/5 hover:border-white/10"
-                }`}
+                className={`p-10 rounded-[2.5rem] bg-white/[0.01] border transition-all duration-500 relative overflow-hidden ${table.isPositive
+                  ? "border-[#6324FC]/30 hover:border-[#6324FC]/50"
+                  : "border-white/5 hover:border-white/10"
+                  }`}
               >
                 {table.isPositive && (
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#6324FC]/10 blur-3xl rounded-full pointer-events-none" />
                 )}
                 <h3
-                  className={`font-heading text-3xl mb-8 ${
-                    table.isPositive ? "text-[#6324FC]" : "text-white/60"
-                  }`}
+                  className={`font-heading text-3xl mb-8 ${table.isPositive ? "text-[#6324FC]" : "text-white/60"
+                    }`}
                 >
                   {table.title}
                 </h3>
@@ -610,7 +608,7 @@ export default function PPCCampaignsPage() {
         <div className="py-16 md:py-24 border-b border-white/5">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-[1px] bg-[#6324FC]" />
-            <span className="font-heading text-[#6324FC] text-[10px] tracking-[0.5em] capitalize">
+            <span className="font-heading text-[#6324FC] text-[12px] tracking-[0.5em] capitalize">
               FULL PLATFORM COVERAGE
             </span>
           </div>
@@ -650,7 +648,7 @@ export default function PPCCampaignsPage() {
                         style={{ color: chan.color }}
                       />
                     </div>
-                    <span className="font-sans font-light text-[10px] tracking-widest text-[#00E5FF] uppercase">
+                    <span className="font-sans font-light text-[12px] tracking-widest text-[#00E5FF] uppercase">
                       {chan.subtitle}
                     </span>
                   </div>

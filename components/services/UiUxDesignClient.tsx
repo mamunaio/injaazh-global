@@ -127,7 +127,7 @@ function MetricSpotlightCard({
         </div>
 
         <span
-          className="px-2.5 py-0.5 rounded-full text-[9px] font-heading uppercase tracking-wider font-semibold transition-all duration-300 bg-black/[0.03] dark:bg-white/[0.05] border border-black/5 dark:border-white/5 text-primary/60"
+          className="px-2.5 py-0.5 rounded-full text-[12px] font-heading uppercase tracking-wider font-semibold transition-all duration-300 bg-black/[0.03] dark:bg-white/[0.05] border border-black/5 dark:border-white/5 text-primary/60"
           style={{
             backgroundColor: isHovered ? hexToRgba(stat.color, 0.12) : undefined,
             color: isHovered ? stat.color : undefined,
@@ -145,12 +145,12 @@ function MetricSpotlightCard({
         >
           <Counter value={stat.value} />
         </div>
-        <div className="font-heading text-xs sm:text-sm uppercase tracking-wider text-primary font-bold transition-colors">
+        <div className="font-heading text-[14px] sm:text-sm uppercase tracking-wider text-primary font-bold transition-colors">
           {stat.label}
         </div>
       </div>
 
-      <p className="relative z-20 text-[11px] font-sans text-primary/60 leading-relaxed pt-2 border-t border-black/5 dark:border-white/5">
+      <p className="relative z-20 text-[12px] font-sans text-primary/60 leading-relaxed pt-2 border-t border-black/5 dark:border-white/5">
         {stat.desc}
       </p>
 
@@ -245,7 +245,7 @@ function ToolSpotlightCard({
             />
           </div>
           <span
-            className="px-3 py-1 rounded-full text-[10px] font-heading uppercase tracking-widest font-semibold bg-black/[0.03] dark:bg-white/[0.05] border border-black/5 dark:border-white/5 text-primary/70 transition-all duration-300"
+            className="px-3 py-1 rounded-full text-[12px] font-heading uppercase tracking-widest font-semibold bg-black/[0.03] dark:bg-white/[0.05] border border-black/5 dark:border-white/5 text-primary/70 transition-all duration-300"
             style={{
               backgroundColor: isHovered ? hexToRgba(tool.color, 0.12) : undefined,
               color: isHovered ? tool.color : undefined,
@@ -265,7 +265,7 @@ function ToolSpotlightCard({
           >
             {tool.title}
           </h3>
-          <p className="font-sans font-light text-xs sm:text-sm text-primary/70 leading-relaxed mt-2">
+          <p className="font-sans font-light text-[14px] sm:text-sm text-primary/70 leading-relaxed mt-2">
             {tool.desc}
           </p>
         </div>
@@ -525,7 +525,7 @@ export default function UiUxDesignClient() {
       <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-[0.025] pointer-events-none mix-blend-overlay" />
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        
+
         {/* ========================================================
             1. HERO HEADER SECTION
             ======================================================== */}
@@ -533,7 +533,7 @@ export default function UiUxDesignClient() {
           <div className="flex flex-wrap items-center gap-3 mb-8">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-xs font-heading uppercase tracking-widest text-primary/50 hover:text-[#6324FC] transition-colors"
+              className="inline-flex items-center gap-2 text-[14px] font-heading uppercase tracking-widest text-primary/50 hover:text-[#6324FC] transition-colors"
             >
               Services
               <ChevronRight className="w-3.5 h-3.5" />
@@ -545,12 +545,12 @@ export default function UiUxDesignClient() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-8 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#6324FC]/25 bg-[#6324FC]/10 text-[#6324FC] text-xs font-heading font-semibold uppercase tracking-[0.2em]">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#6324FC]/25 bg-[#6324FC]/10 text-[#6324FC] text-[14px] font-heading font-semibold uppercase tracking-[0.2em]">
                 <Sparkles className="w-3.5 h-3.5" />
                 AWWWARDS-CALIBER DESIGN // V2.5 ARCHITECTURE
               </div>
 
-              <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.92] capitalize">
+              <h1 className="font-heading text-5xl md:text-7xl  tracking-tighter leading-[0.92] capitalize">
                 Cinematic UI/UX <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6324FC] via-[#a855f7] to-[#00E5FF] italic">
                   Engineered To Convert.
@@ -579,7 +579,7 @@ export default function UiUxDesignClient() {
 
                 <a
                   href="#simulator"
-                  className="px-6 py-4 rounded-full border border-black/10 dark:border-white/10 hover:border-[#6324FC]/40 bg-black/[0.02] dark:bg-white/[0.02] hover:bg-black/[0.04] dark:hover:bg-white/[0.05] text-xs font-heading uppercase tracking-wider text-primary font-medium flex items-center gap-2 transition-all"
+                  className="px-6 py-4 rounded-full border border-black/10 dark:border-white/10 hover:border-[#6324FC]/40 bg-black/[0.02] dark:bg-white/[0.02] hover:bg-black/[0.04] dark:hover:bg-white/[0.05] text-[14px] font-heading uppercase tracking-wider text-primary font-medium flex items-center gap-2 transition-all"
                 >
                   <Sliders className="w-4 h-4 text-[#6324FC]" />
                   Interactive Token Simulator
@@ -632,7 +632,7 @@ export default function UiUxDesignClient() {
             ======================================================== */}
         <section id="simulator" className="py-20 border-b border-black/10 dark:border-white/10">
           <div className="max-w-4xl mx-auto text-center space-y-4 mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6324FC]/10 text-[#6324FC] border border-[#6324FC]/20 text-xs font-heading font-semibold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6324FC]/10 text-[#6324FC] border border-[#6324FC]/20 text-[14px] font-heading font-semibold uppercase tracking-widest">
               <Component className="w-3.5 h-3.5" />
               LIVE DESIGN TOKEN LAB
             </div>
@@ -647,7 +647,7 @@ export default function UiUxDesignClient() {
 
           <div className="p-8 sm:p-12 rounded-[32px] bg-white dark:bg-[#0c0c12] border border-black/10 dark:border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.05)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.6)]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              
+
               {/* Token Control Column */}
               <div className="lg:col-span-6 space-y-8">
                 {/* Mode Selector */}
@@ -660,11 +660,10 @@ export default function UiUxDesignClient() {
                       <button
                         key={mode}
                         onClick={() => setPreviewTheme(mode)}
-                        className={`py-2.5 px-3 rounded-xl font-heading text-xs uppercase tracking-wider transition-all cursor-pointer ${
-                          previewTheme === mode
-                            ? "bg-[#6324FC] text-white font-semibold shadow-[0_0_15px_rgba(99,36,252,0.3)]"
-                            : "bg-black/[0.03] dark:bg-white/[0.04] border border-black/10 dark:border-white/10 text-primary/70 hover:text-primary"
-                        }`}
+                        className={`py-2.5 px-3 rounded-xl font-heading text-[14px] uppercase tracking-wider transition-all cursor-pointer ${previewTheme === mode
+                          ? "bg-[#6324FC] text-white font-semibold shadow-[0_0_15px_rgba(99,36,252,0.3)]"
+                          : "bg-black/[0.03] dark:bg-white/[0.04] border border-black/10 dark:border-white/10 text-primary/70 hover:text-primary"
+                          }`}
                       >
                         {mode === "dark" ? "Onyx Dark" : mode === "light" ? "Alabaster" : "Cyber Pulse"}
                       </button>
@@ -688,9 +687,8 @@ export default function UiUxDesignClient() {
                       <button
                         key={col.hex}
                         onClick={() => setAccentColor(col.hex)}
-                        className={`w-9 h-9 rounded-full transition-transform cursor-pointer flex items-center justify-center ${
-                          accentColor === col.hex ? "scale-125 ring-2 ring-offset-2 ring-primary" : "hover:scale-110"
-                        }`}
+                        className={`w-9 h-9 rounded-full transition-transform cursor-pointer flex items-center justify-center ${accentColor === col.hex ? "scale-125 ring-2 ring-offset-2 ring-primary" : "hover:scale-110"
+                          }`}
                         style={{ backgroundColor: col.hex }}
                       >
                         {accentColor === col.hex && <Check className="w-4 h-4 text-white" />}
@@ -705,7 +703,7 @@ export default function UiUxDesignClient() {
                     <label className="text-xs font-heading uppercase tracking-widest text-primary/60 font-semibold">
                       Border Radius Token:
                     </label>
-                    <span className="font-mono text-xs font-bold text-[#6324FC]">
+                    <span className="font-mono text-[14px] font-bold text-[#6324FC]">
                       --radius: {cornerRounding}px
                     </span>
                   </div>
@@ -719,7 +717,7 @@ export default function UiUxDesignClient() {
                     onChange={(e) => setCornerRounding(Number(e.target.value))}
                     className="w-full h-2 bg-black/10 dark:bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#6324FC]"
                   />
-                  <div className="flex justify-between text-[10px] font-mono text-primary/40">
+                  <div className="flex justify-between text-[12px] font-mono text-primary/40">
                     <span>4px (Sharp)</span>
                     <span>16px (Balanced)</span>
                     <span>32px (Fluid Pill)</span>
@@ -727,7 +725,7 @@ export default function UiUxDesignClient() {
                 </div>
 
                 {/* Code Manifest Preview */}
-                <div className="p-4 rounded-2xl bg-black/[0.04] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1 font-mono text-xs text-primary/80">
+                <div className="p-4 rounded-2xl bg-black/[0.04] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1 font-mono text-[14px] text-primary/80">
                   <div className="text-[10px] text-primary/40 uppercase mb-1">Tailwind Design Token Sync</div>
                   <div>--color-primary: <span style={{ color: accentColor }}>{accentColor}</span>;</div>
                   <div>--radius-component: {cornerRounding}px;</div>
@@ -747,7 +745,7 @@ export default function UiUxDesignClient() {
               >
                 <div className="flex items-center justify-between">
                   <span
-                    className="px-3 py-1 text-[10px] font-heading uppercase tracking-widest font-semibold"
+                    className="px-3 py-1 text-[12px] font-heading uppercase tracking-widest font-semibold"
                     style={{
                       borderRadius: `${cornerRounding}px`,
                       backgroundColor: hexToRgba(accentColor, 0.15),
@@ -783,7 +781,7 @@ export default function UiUxDesignClient() {
                 <div className="flex items-center gap-3 pt-2">
                   <button
                     onClick={() => openModal(`Design System Token Build (${accentColor})`)}
-                    className="flex-1 py-3 px-4 font-heading text-xs uppercase tracking-widest font-bold text-white transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+                    className="flex-1 py-3 px-4 font-heading text-[14px] uppercase tracking-widest font-bold text-white transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
                     style={{
                       borderRadius: `${cornerRounding}px`,
                       backgroundColor: accentColor,
@@ -795,7 +793,7 @@ export default function UiUxDesignClient() {
                   </button>
 
                   <button
-                    className="py-3 px-4 border text-xs font-heading uppercase tracking-wider font-semibold opacity-80 hover:opacity-100 transition-opacity"
+                    className="py-3 px-4 border text-[14px] font-heading uppercase tracking-wider font-semibold opacity-80 hover:opacity-100 transition-opacity"
                     style={{
                       borderRadius: `${cornerRounding}px`,
                       borderColor: hexToRgba(accentColor, 0.3),
@@ -816,7 +814,7 @@ export default function UiUxDesignClient() {
         <section className="py-20 border-b border-black/10 dark:border-white/10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="space-y-3">
-              <span className="font-heading text-xs uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
+              <span className="font-heading text-[14px] uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
                 SPECIALIZED DESIGN MODULES
               </span>
               <h2 className="font-heading text-3xl sm:text-5xl capitalize tracking-tight">
@@ -837,10 +835,10 @@ export default function UiUxDesignClient() {
               >
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <span className="px-3 py-1 rounded-full text-[10px] font-heading uppercase tracking-widest font-semibold bg-[#6324FC]/10 text-[#6324FC] border border-[#6324FC]/20">
+                    <span className="px-3 py-1 rounded-full text-[12px] font-heading uppercase tracking-widest font-semibold bg-[#6324FC]/10 text-[#6324FC] border border-[#6324FC]/20">
                       {sub.badge}
                     </span>
-                    <span className="font-mono text-xs text-[#6324FC] font-bold">
+                    <span className="font-mono text-[14px] text-[#6324FC] font-bold">
                       {sub.metrics}
                     </span>
                   </div>
@@ -855,7 +853,7 @@ export default function UiUxDesignClient() {
                     <p className="text-xs text-[#6324FC] font-heading font-medium tracking-wide mt-1">
                       {sub.tagline}
                     </p>
-                    <p className="font-sans font-light text-xs sm:text-sm text-primary/70 leading-relaxed mt-3">
+                    <p className="font-sans font-light text-[14px] sm:text-sm text-primary/70 leading-relaxed mt-3">
                       {sub.desc}
                     </p>
                   </div>
@@ -868,7 +866,7 @@ export default function UiUxDesignClient() {
                       {sub.features.map((feat, fIdx) => (
                         <span
                           key={fIdx}
-                          className="px-2.5 py-1 rounded-lg bg-black/[0.03] dark:bg-white/[0.04] border border-black/5 dark:border-white/5 text-[11px] font-mono text-primary/70"
+                          className="px-2.5 py-1 rounded-lg bg-black/[0.03] dark:bg-white/[0.04] border border-black/5 dark:border-white/5 text-[12px] font-mono text-primary/70"
                         >
                           {feat}
                         </span>
@@ -880,7 +878,7 @@ export default function UiUxDesignClient() {
                 <div className="pt-8 mt-6 border-t border-black/5 dark:border-white/5">
                   <Link
                     href={sub.href}
-                    className="w-full py-3 rounded-xl bg-black/[0.03] dark:bg-white/[0.04] hover:bg-[#6324FC] hover:text-white border border-black/10 dark:border-white/10 hover:border-[#6324FC] font-heading text-xs uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-2 group/btn"
+                    className="w-full py-3 rounded-xl bg-black/[0.03] dark:bg-white/[0.04] hover:bg-[#6324FC] hover:text-white border border-black/10 dark:border-white/10 hover:border-[#6324FC] font-heading text-[14px] uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-2 group/btn"
                   >
                     <span>Inspect Deep Architecture</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
@@ -898,7 +896,7 @@ export default function UiUxDesignClient() {
             ======================================================== */}
         <section className="py-20 border-b border-black/10 dark:border-white/10">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="font-heading text-xs uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
+            <span className="font-heading text-[14px] uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
               ENGINEERING METHODOLOGY
             </span>
             <h2 className="font-heading text-3xl sm:text-5xl capitalize tracking-tight">
@@ -916,13 +914,12 @@ export default function UiUxDesignClient() {
               <button
                 key={stage.id}
                 onClick={() => setActiveStage(idx)}
-                className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
-                  activeStage === idx
-                    ? "bg-[#6324FC] text-white border-[#6324FC] shadow-[0_0_20px_rgba(99,36,252,0.3)]"
-                    : "bg-white dark:bg-[#0c0c12] border-black/10 dark:border-white/10 text-primary hover:border-[#6324FC]/40"
-                }`}
+                className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${activeStage === idx
+                  ? "bg-[#6324FC] text-white border-[#6324FC] shadow-[0_0_20px_rgba(99,36,252,0.3)]"
+                  : "bg-white dark:bg-[#0c0c12] border-black/10 dark:border-white/10 text-primary hover:border-[#6324FC]/40"
+                  }`}
               >
-                <div className={`font-heading text-xs font-mono mb-1 ${activeStage === idx ? "text-white/80" : "text-[#6324FC]"}`}>
+                <div className={`font-heading text-[14px] font-mono mb-1 ${activeStage === idx ? "text-white/80" : "text-[#6324FC]"}`}>
                   STAGE {stage.id}
                 </div>
                 <div className="font-heading text-sm font-bold tracking-tight line-clamp-1">
@@ -964,7 +961,7 @@ export default function UiUxDesignClient() {
                       {designStages[activeStage].deliverables.map((deliv, dIdx) => (
                         <div
                           key={dIdx}
-                          className="flex items-center gap-2.5 p-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.03] border border-black/5 dark:border-white/5 text-xs text-primary font-medium"
+                          className="flex items-center gap-2.5 p-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.03] border border-black/5 dark:border-white/5 text-[14px] text-primary font-medium"
                         >
                           <CheckCircle2 className="w-4 h-4 text-[#6324FC] shrink-0" />
                           <span>{deliv}</span>
@@ -982,7 +979,7 @@ export default function UiUxDesignClient() {
                     {designStages[activeStage].outcomes.map((outcome, oIdx) => (
                       <div
                         key={oIdx}
-                        className="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-[#0a0a0f] border border-black/5 dark:border-white/5 text-xs font-heading font-semibold text-primary"
+                        className="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-[#0a0a0f] border border-black/5 dark:border-white/5 text-[14px] font-heading font-semibold text-primary"
                       >
                         <span>{outcome}</span>
                         <span className="text-green-500 font-mono">Verified SLA</span>
@@ -992,7 +989,7 @@ export default function UiUxDesignClient() {
 
                   <button
                     onClick={() => openModal(`Stage ${activeStage + 1} UI/UX Sprint`)}
-                    className="w-full mt-4 py-3 rounded-xl bg-[#6324FC] text-white font-heading text-xs uppercase tracking-wider font-semibold hover:bg-[#521cd6] transition-colors cursor-pointer"
+                    className="w-full mt-4 py-3 rounded-xl bg-[#6324FC] text-white font-heading text-[14px] uppercase tracking-wider font-semibold hover:bg-[#521cd6] transition-colors cursor-pointer"
                   >
                     Kickoff This Design Stage
                   </button>
@@ -1008,7 +1005,7 @@ export default function UiUxDesignClient() {
         <section className="py-20 border-b border-black/10 dark:border-white/10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="space-y-3">
-              <span className="font-heading text-xs uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
+              <span className="font-heading text-[14px] uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
                 TOOLING & RUNTIME ECOSYSTEM
               </span>
               <h2 className="font-heading text-3xl sm:text-5xl capitalize tracking-tight">
@@ -1033,7 +1030,7 @@ export default function UiUxDesignClient() {
             ======================================================== */}
         <section className="py-20 border-b border-black/10 dark:border-white/10">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6324FC]/10 text-[#6324FC] border border-[#6324FC]/20 text-xs font-heading font-semibold uppercase tracking-[0.25em]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6324FC]/10 text-[#6324FC] border border-[#6324FC]/20 text-[14px] font-heading font-semibold uppercase tracking-[0.25em]">
               <Sparkles className="w-3.5 h-3.5" />
               THE PARADIGM SHIFT
             </div>
@@ -1047,7 +1044,7 @@ export default function UiUxDesignClient() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-stretch">
-            
+
             {/* Card 1: Typical Agency Flaws */}
             <div className="p-8 sm:p-10 rounded-[32px] bg-red-500/[0.02] dark:bg-red-500/[0.03] border border-red-500/20 shadow-sm flex flex-col justify-between relative overflow-hidden">
               <div className="space-y-6">
@@ -1057,13 +1054,13 @@ export default function UiUxDesignClient() {
                       <XCircle className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="font-heading text-xs uppercase tracking-widest text-red-500 font-bold block">
+                      <span className="font-heading text-[14px] uppercase tracking-widest text-red-500 font-bold block">
                         LEGACY UI/UX AGENCIES
                       </span>
                       <span className="text-[11px] text-primary/50 font-sans">Fragmented artboards & high UI drift</span>
                     </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full text-[10px] font-heading uppercase tracking-wider font-semibold bg-red-500/10 text-red-500 border border-red-500/20">
+                  <span className="px-2.5 py-1 rounded-full text-[12px] font-heading uppercase tracking-wider font-semibold bg-red-500/10 text-red-500 border border-red-500/20">
                     DECORATIVE ONLY
                   </span>
                 </div>
@@ -1076,10 +1073,10 @@ export default function UiUxDesignClient() {
                     >
                       <XCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                       <div className="space-y-0.5">
-                        <div className="font-heading text-xs font-bold uppercase tracking-wider text-red-400">
+                        <div className="font-heading text-[14px] font-bold uppercase tracking-wider text-red-400">
                           {item.feature}
                         </div>
-                        <p className="font-sans font-light text-xs sm:text-sm text-primary/70 leading-relaxed">
+                        <p className="font-sans font-light text-[14px] sm:text-sm text-primary/70 leading-relaxed">
                           {item.legacy}
                         </p>
                       </div>
@@ -1106,13 +1103,13 @@ export default function UiUxDesignClient() {
                       <CheckCircle2 className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="font-heading text-xs uppercase tracking-widest text-[#6324FC] font-bold block">
+                      <span className="font-heading text-[14px] uppercase tracking-widest text-[#6324FC] font-bold block">
                         INJAAZH TOKENIZED ARCHITECTURE
                       </span>
                       <span className="text-[11px] text-primary/50 font-sans">Zero-drift design-to-code synchronization</span>
                     </div>
                   </div>
-                  <span className="px-3 py-1 rounded-full text-[10px] font-heading uppercase tracking-wider font-bold bg-[#6324FC] text-white shadow-[0_0_15px_rgba(99,36,252,0.5)]">
+                  <span className="px-3 py-1 rounded-full text-[12px] font-heading uppercase tracking-wider font-bold bg-[#6324FC] text-white shadow-[0_0_15px_rgba(99,36,252,0.5)]">
                     ENTERPRISE STANDARD
                   </span>
                 </div>
@@ -1125,10 +1122,10 @@ export default function UiUxDesignClient() {
                     >
                       <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
                       <div className="space-y-0.5">
-                        <div className="font-heading text-xs font-bold uppercase tracking-wider text-[#6324FC] group-hover:text-primary transition-colors">
+                        <div className="font-heading text-[14px] font-bold uppercase tracking-wider text-[#6324FC] group-hover:text-primary transition-colors">
                           {item.feature}
                         </div>
-                        <p className="font-sans font-medium text-xs sm:text-sm text-primary leading-relaxed">
+                        <p className="font-sans font-medium text-[14px] sm:text-sm text-primary leading-relaxed">
                           {item.injaazh}
                         </p>
                       </div>
@@ -1140,7 +1137,7 @@ export default function UiUxDesignClient() {
               <div className="relative z-10 pt-6 mt-6 border-t border-black/10 dark:border-white/10">
                 <button
                   onClick={() => openModal("Tokenized UI/UX Migration")}
-                  className="w-full py-4 rounded-2xl bg-[#6324FC] hover:bg-[#521cd6] text-white font-heading text-xs uppercase tracking-widest font-bold shadow-[0_0_25px_rgba(99,36,252,0.4)] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-4 rounded-2xl bg-[#6324FC] hover:bg-[#521cd6] text-white font-heading text-[14px] uppercase tracking-widest font-bold shadow-[0_0_25px_rgba(99,36,252,0.4)] transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>Deploy Tokenized Design System</span>
                   <ArrowRight className="w-4 h-4" />
@@ -1156,7 +1153,7 @@ export default function UiUxDesignClient() {
             ======================================================== */}
         <section className="py-20 border-b border-black/10 dark:border-white/10">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <span className="font-heading text-xs uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
+            <span className="font-heading text-[14px] uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
               TRANSPARENCY FIRST
             </span>
             <h2 className="font-heading text-3xl sm:text-5xl capitalize tracking-tight">
@@ -1181,9 +1178,8 @@ export default function UiUxDesignClient() {
                       {faq.q}
                     </span>
                     <ChevronDown
-                      className={`w-5 h-5 text-[#6324FC] shrink-0 transition-transform duration-300 ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
+                      className={`w-5 h-5 text-[#6324FC] shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+                        }`}
                     />
                   </button>
 
@@ -1195,7 +1191,7 @@ export default function UiUxDesignClient() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-primary/70 leading-relaxed font-sans border-t border-black/5 dark:border-white/5">
+                        <div className="px-6 pb-6 pt-1 text-[14px] sm:text-sm text-primary/70 leading-relaxed font-sans border-t border-black/5 dark:border-white/5">
                           {faq.a}
                         </div>
                       </motion.div>
@@ -1212,7 +1208,7 @@ export default function UiUxDesignClient() {
             ======================================================== */}
         <section className="text-center py-24 px-6 rounded-[36px] bg-gradient-to-br from-[#6324FC]/10 via-transparent to-[#00E5FF]/10 border border-[#6324FC]/25 my-16 relative overflow-hidden">
           <div className="max-w-2xl mx-auto space-y-6 relative z-10">
-            <span className="font-heading text-xs uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
+            <span className="font-heading text-[14px] uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
               ELEVATE YOUR DIGITAL PRESENCE
             </span>
             <h2 className="font-heading text-4xl sm:text-6xl capitalize tracking-tight leading-tight">
@@ -1241,7 +1237,7 @@ export default function UiUxDesignClient() {
 
               <Link
                 href="/contact"
-                className="px-8 py-5 rounded-full border border-black/10 dark:border-white/10 hover:border-[#6324FC]/40 bg-white/40 dark:bg-white/[0.03] text-xs font-heading uppercase tracking-wider text-primary font-medium transition-all"
+                className="px-8 py-5 rounded-full border border-black/10 dark:border-white/10 hover:border-[#6324FC]/40 bg-white/40 dark:bg-white/[0.03] text-[14px] font-heading uppercase tracking-wider text-primary font-medium transition-all"
               >
                 Contact Design Directors
               </Link>

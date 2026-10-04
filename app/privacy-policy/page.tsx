@@ -134,51 +134,51 @@ export default function PrivacyPolicy() {
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#6324FC]/5 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#00E5FF]/5 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay fixed" />
-      
+
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-        
+
         {/* Cinematic Header */}
         <section className="pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-4xl"
-        >
-          <div className="font-heading  text-[#6324FC] tracking-[0.5em] text-[10px] capitalize mb-8 flex items-center gap-4">
-            <span className="w-12 h-[1px] bg-[#6324FC]" /> 
-            Legal & Compliance Hub
-          </div>
-          
-          <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-12">
-            PRIVACY <br/>
-            <span className="stroke-text text-transparent italic opacity-50">POLICY</span>
-          </h1>
-          
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-8 text-white/40 font-heading  text-xs capitalize tracking-widest border-t border-white/10 pt-8">
-            <div className="flex items-center gap-3">
-              <Clock className="w-4 h-4 text-[#00E5FF]" />
-              <span>Effective Date: Q2 2026</span>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-4xl"
+          >
+            <div className="font-heading  text-[#6324FC] tracking-[0.5em] text-[12px] capitalize mb-8 flex items-center gap-4">
+              <span className="w-12 h-[1px] bg-[#6324FC]" />
+              Legal & Compliance Hub
             </div>
-            <span className="hidden md:block w-1 h-1 bg-white/20 rounded-full" />
-            <div className="flex items-center gap-3">
-              <Shield className="w-4 h-4 text-[#6324FC]" />
-              <span>Document ID: INJ-PL-048</span>
+
+            <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-12">
+              PRIVACY <br />
+              <span className="stroke-text text-transparent italic opacity-50">POLICY</span>
+            </h1>
+
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-8 text-white/40 font-heading  text-[14px] capitalize tracking-widest border-t border-white/10 pt-8">
+              <div className="flex items-center gap-3">
+                <Clock className="w-4 h-4 text-[#00E5FF]" />
+                <span>Effective Date: Q2 2026</span>
+              </div>
+              <span className="hidden md:block w-1 h-1 bg-white/20 rounded-full" />
+              <div className="flex items-center gap-3">
+                <Shield className="w-4 h-4 text-[#6324FC]" />
+                <span>Document ID: INJ-PL-048</span>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
         </section>
         {/* Two Column Layout */}
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
-          
+
           {/* Left: Sticky Table of Contents */}
           <div className="lg:w-1/3 hidden lg:block">
             <div className="sticky top-40 space-y-8">
-              <h4 className="font-heading  text-[10px] text-white/30 tracking-widest capitalize mb-8">Table of Contents</h4>
+              <h4 className="font-heading  text-[12px] text-white/30 tracking-widest capitalize mb-8">Table of Contents</h4>
               <nav className="flex flex-col gap-6 relative before:absolute before:left-0 before:top-2 before:bottom-2 before:w-[1px] before:bg-white/10">
                 {SECTIONS.map((section) => (
-                  <a 
-                    key={section.id} 
+                  <a
+                    key={section.id}
                     href={`#${section.id}`}
                     className={`relative pl-8 font-heading  tracking-tight transition-all duration-300 ${activeSection === section.id ? 'text-[#6324FC]' : 'text-white/40 hover:text-white/80'}`}
                   >
@@ -194,7 +194,7 @@ export default function PrivacyPolicy() {
           {/* Right: Legal Content (The "Document") */}
           <div className="lg:w-2/3">
             <div className="prose prose-invert prose-lg max-w-none">
-              
+
               <div className="mb-20 p-8 border border-white/10 bg-white/[0.02] rounded-2xl backdrop-blur-sm">
                 <p className="font-sans font-light text-white/80 text-xl leading-relaxed m-0">
                   This framework delineates the uncompromising standard to which Injaazh Global holds itself regarding the custody, processing, and erasure of deterministic data. We operate under the axiom that privacy is not a feature, but a fundamental human right encoded into our engineering DNA.
@@ -203,8 +203,8 @@ export default function PrivacyPolicy() {
 
               <div className="space-y-32">
                 {SECTIONS.map((section, idx) => (
-                  <motion.div 
-                    key={section.id} 
+                  <motion.div
+                    key={section.id}
                     id={section.id}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -216,11 +216,11 @@ export default function PrivacyPolicy() {
                     <div className="absolute -left-12 -top-12 font-heading text-[8rem] leading-none text-white/[0.02] pointer-events-none select-none hidden md:block">
                       0{idx + 1}
                     </div>
-                    
+
                     <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-12 text-[#00E5FF] border-b border-white/10 pb-8 relative z-10">
                       {section.title}
                     </h2>
-                    
+
                     <div className="font-sans font-light text-white/60  leading-loose space-y-8 relative z-10">
                       {section.content}
                     </div>
@@ -229,19 +229,19 @@ export default function PrivacyPolicy() {
               </div>
 
               {/* Consent & Contact Footer */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 className="mt-40 p-12 border border-[#6324FC]/30 bg-gradient-to-br from-[#6324FC]/10 to-transparent rounded-[3rem] relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#00E5FF]/20 blur-[100px]" />
-                
+
                 <h3 className="font-heading text-4xl tracking-tight capitalize mb-6 text-white relative z-10">Enforce Your Rights</h3>
                 <p className="font-sans text-white/70  leading-relaxed mb-10 relative z-10 max-w-2xl">
                   As an enterprise client or data subject, your authority over your data is absolute. Should you require cryptographic verification of erasure, or wish to audit our processing logs, our compliance team stands ready.
                 </p>
-                
+
                 <div className="flex flex-col sm:flex-row gap-6 relative z-10">
                   <Link href="/contact" className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-white text-black font-heading text-sm tracking-widest capitalize rounded-full hover:bg-[#00E5FF] transition-colors">
                     Contact Compliance <ArrowRight className="w-4 h-4" />

@@ -165,7 +165,7 @@ function ChannelSpotlightCard({
             />
           </div>
           <span
-            className="px-3 py-1 rounded-full text-[10px] font-heading uppercase tracking-widest font-semibold bg-black/[0.03] dark:bg-white/[0.05] border border-black/5 dark:border-white/5 text-primary/70 transition-all duration-300"
+            className="px-3 py-1 rounded-full text-[12px] font-heading uppercase tracking-widest font-semibold bg-black/[0.03] dark:bg-white/[0.05] border border-black/5 dark:border-white/5 text-primary/70 transition-all duration-300"
             style={{
               backgroundColor: isHovered ? hexToRgba(chan.color, 0.12) : undefined,
               color: isHovered ? chan.color : undefined,
@@ -185,7 +185,7 @@ function ChannelSpotlightCard({
           >
             {chan.title}
           </h3>
-          <p className="font-sans font-light text-xs sm:text-sm text-primary/70 leading-relaxed mt-2">
+          <p className="font-sans font-light text-[14px] sm:text-sm text-primary/70 leading-relaxed mt-2">
             {chan.desc}
           </p>
         </div>
@@ -298,7 +298,7 @@ function MetricSpotlightCard({
         </div>
 
         <span
-          className="px-2.5 py-0.5 rounded-full text-[9px] font-heading uppercase tracking-wider font-semibold transition-all duration-300 bg-black/[0.03] dark:bg-white/[0.05] border border-black/5 dark:border-white/5 text-primary/60"
+          className="px-2.5 py-0.5 rounded-full text-[12px] font-heading uppercase tracking-wider font-semibold transition-all duration-300 bg-black/[0.03] dark:bg-white/[0.05] border border-black/5 dark:border-white/5 text-primary/60"
           style={{
             backgroundColor: isHovered ? hexToRgba(stat.color, 0.12) : undefined,
             color: isHovered ? stat.color : undefined,
@@ -317,13 +317,13 @@ function MetricSpotlightCard({
         >
           <Counter value={stat.value} />
         </div>
-        <div className="font-heading text-xs sm:text-sm uppercase tracking-wider text-primary font-bold transition-colors">
+        <div className="font-heading text-[14px] sm:text-sm uppercase tracking-wider text-primary font-bold transition-colors">
           {stat.label}
         </div>
       </div>
 
       {/* Description */}
-      <p className="relative z-20 text-[11px] font-sans text-primary/60 leading-relaxed pt-2 border-t border-black/5 dark:border-white/5">
+      <p className="relative z-20 text-[12px] font-sans text-primary/60 leading-relaxed pt-2 border-t border-black/5 dark:border-white/5">
         {stat.desc}
       </p>
 
@@ -599,7 +599,7 @@ export default function MarketingClient() {
       <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-[0.025] pointer-events-none mix-blend-overlay" />
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        
+
         {/* ========================================================
             1. HERO HEADER SECTION
             ======================================================== */}
@@ -607,7 +607,7 @@ export default function MarketingClient() {
           <div className="flex flex-wrap items-center gap-3 mb-8">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-xs font-heading uppercase tracking-widest text-primary/50 hover:text-[#6324FC] transition-colors"
+              className="inline-flex items-center gap-2 text-[14px] font-heading uppercase tracking-widest text-primary/50 hover:text-[#6324FC] transition-colors"
             >
               Services
               <ChevronRight className="w-3.5 h-3.5" />
@@ -619,12 +619,12 @@ export default function MarketingClient() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-8 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#6324FC]/25 bg-[#6324FC]/10 text-[#6324FC] text-xs font-heading font-semibold uppercase tracking-[0.2em]">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#6324FC]/25 bg-[#6324FC]/10 text-[#6324FC] text-[14px] font-heading font-semibold uppercase tracking-[0.2em]">
                 <Sparkles className="w-3.5 h-3.5" />
                 ENTERPRISE GROWTH ARCHITECTURE // V2.5
               </div>
 
-              <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.92] capitalize">
+              <h1 className="font-heading text-5xl md:text-7xl  tracking-tighter leading-[0.92] capitalize">
                 Data-Driven Marketing <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6324FC] via-[#a855f7] to-[#00E5FF] italic">
                   That Prints Revenue.
@@ -653,7 +653,7 @@ export default function MarketingClient() {
 
                 <a
                   href="#simulator"
-                  className="px-6 py-4 rounded-full border border-black/10 dark:border-white/10 hover:border-[#6324FC]/40 bg-black/[0.02] dark:bg-white/[0.02] hover:bg-black/[0.04] dark:hover:bg-white/[0.05] text-xs font-heading uppercase tracking-wider text-primary font-medium flex items-center gap-2 transition-all"
+                  className="px-6 py-4 rounded-full border border-black/10 dark:border-white/10 hover:border-[#6324FC]/40 bg-black/[0.02] dark:bg-white/[0.02] hover:bg-black/[0.04] dark:hover:bg-white/[0.05] text-[14px] font-heading uppercase tracking-wider text-primary font-medium flex items-center gap-2 transition-all"
                 >
                   <Calculator className="w-4 h-4 text-[#6324FC]" />
                   Simulate Growth & ROAS
@@ -706,7 +706,7 @@ export default function MarketingClient() {
             ======================================================== */}
         <section id="simulator" className="py-20 border-b border-black/10 dark:border-white/10">
           <div className="max-w-4xl mx-auto text-center space-y-4 mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6324FC]/10 text-[#6324FC] border border-[#6324FC]/20 text-xs font-heading font-semibold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6324FC]/10 text-[#6324FC] border border-[#6324FC]/20 text-[14px] font-heading font-semibold uppercase tracking-widest">
               <Sliders className="w-3.5 h-3.5" />
               LIVE PIPELINE PROJECTION ENGINE
             </div>
@@ -721,7 +721,7 @@ export default function MarketingClient() {
 
           <div className="p-8 sm:p-12 rounded-[32px] bg-white dark:bg-[#0c0c12] border border-black/10 dark:border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.05)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.6)]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              
+
               {/* Controls Column */}
               <div className="lg:col-span-6 space-y-8">
                 {/* Industry Selector */}
@@ -734,11 +734,10 @@ export default function MarketingClient() {
                       <button
                         key={ind}
                         onClick={() => setIndustry(ind)}
-                        className={`py-2.5 px-3 rounded-xl font-heading text-xs uppercase tracking-wider transition-all cursor-pointer ${
-                          industry === ind
-                            ? "bg-[#6324FC] text-white font-semibold shadow-[0_0_15px_rgba(99,36,252,0.3)]"
-                            : "bg-black/[0.03] dark:bg-white/[0.04] border border-black/10 dark:border-white/10 text-primary/70 hover:text-primary"
-                        }`}
+                        className={`py-2.5 px-3 rounded-xl font-heading text-[14px] uppercase tracking-wider transition-all cursor-pointer ${industry === ind
+                          ? "bg-[#6324FC] text-white font-semibold shadow-[0_0_15px_rgba(99,36,252,0.3)]"
+                          : "bg-black/[0.03] dark:bg-white/[0.04] border border-black/10 dark:border-white/10 text-primary/70 hover:text-primary"
+                          }`}
                       >
                         {ind === "ecommerce" ? "E-Commerce" : ind === "b2b" ? "B2B Leads" : "SaaS / App"}
                       </button>
@@ -767,7 +766,7 @@ export default function MarketingClient() {
                     className="w-full h-2 bg-black/10 dark:bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#6324FC]"
                   />
 
-                  <div className="flex justify-between text-[10px] font-mono text-primary/40">
+                  <div className="flex justify-between text-[12px] font-mono text-primary/40">
                     <span>$3k (Kickoff)</span>
                     <span>$25k</span>
                     <span>$50k</span>
@@ -819,7 +818,7 @@ export default function MarketingClient() {
 
                 <button
                   onClick={() => openModal(`Marketing Plan (${monthlyBudget}/mo ${industry.toUpperCase()})`)}
-                  className="w-full py-4 rounded-full bg-[#6324FC] hover:bg-[#521cd6] text-white font-heading text-xs uppercase tracking-widest font-semibold transition-all shadow-[0_0_25px_rgba(99,36,252,0.4)] flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-4 rounded-full bg-[#6324FC] hover:bg-[#521cd6] text-white font-heading text-[14px] uppercase tracking-widest font-semibold transition-all shadow-[0_0_25px_rgba(99,36,252,0.4)] flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>Lock In This Acquisition Target</span>
                   <ArrowRight className="w-4 h-4" />
@@ -836,7 +835,7 @@ export default function MarketingClient() {
         <section className="py-20 border-b border-black/10 dark:border-white/10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="space-y-3">
-              <span className="font-heading text-xs uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
+              <span className="font-heading text-[14px] uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
                 SPECIALIZED GROWTH MODULES
               </span>
               <h2 className="font-heading text-3xl sm:text-5xl capitalize tracking-tight">
@@ -857,10 +856,10 @@ export default function MarketingClient() {
               >
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <span className="px-3 py-1 rounded-full text-[10px] font-heading uppercase tracking-widest font-semibold bg-[#6324FC]/10 text-[#6324FC] border border-[#6324FC]/20">
+                    <span className="px-3 py-1 rounded-full text-[12px] font-heading uppercase tracking-widest font-semibold bg-[#6324FC]/10 text-[#6324FC] border border-[#6324FC]/20">
                       {sub.badge}
                     </span>
-                    <span className="font-mono text-xs text-[#6324FC] font-bold">
+                    <span className="font-mono text-[14px] text-[#6324FC] font-bold">
                       {sub.metrics}
                     </span>
                   </div>
@@ -875,7 +874,7 @@ export default function MarketingClient() {
                     <p className="text-xs text-[#6324FC] font-heading font-medium tracking-wide mt-1">
                       {sub.tagline}
                     </p>
-                    <p className="font-sans font-light text-xs sm:text-sm text-primary/70 leading-relaxed mt-3">
+                    <p className="font-sans font-light text-[14px] sm:text-sm text-primary/70 leading-relaxed mt-3">
                       {sub.desc}
                     </p>
                   </div>
@@ -888,7 +887,7 @@ export default function MarketingClient() {
                       {sub.features.map((feat, fIdx) => (
                         <span
                           key={fIdx}
-                          className="px-2.5 py-1 rounded-lg bg-black/[0.03] dark:bg-white/[0.04] border border-black/5 dark:border-white/5 text-[11px] font-mono text-primary/70"
+                          className="px-2.5 py-1 rounded-lg bg-black/[0.03] dark:bg-white/[0.04] border border-black/5 dark:border-white/5 text-[12px] font-mono text-primary/70"
                         >
                           {feat}
                         </span>
@@ -900,7 +899,7 @@ export default function MarketingClient() {
                 <div className="pt-8 mt-6 border-t border-black/5 dark:border-white/5">
                   <Link
                     href={sub.href}
-                    className="w-full py-3 rounded-xl bg-black/[0.03] dark:bg-white/[0.04] hover:bg-[#6324FC] hover:text-white border border-black/10 dark:border-white/10 hover:border-[#6324FC] font-heading text-xs uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-2 group/btn"
+                    className="w-full py-3 rounded-xl bg-black/[0.03] dark:bg-white/[0.04] hover:bg-[#6324FC] hover:text-white border border-black/10 dark:border-white/10 hover:border-[#6324FC] font-heading text-[14px] uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-2 group/btn"
                   >
                     <span>Inspect Deep Architecture</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
@@ -918,7 +917,7 @@ export default function MarketingClient() {
             ======================================================== */}
         <section className="py-20 border-b border-black/10 dark:border-white/10">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="font-heading text-xs uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
+            <span className="font-heading text-[14px] uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
               END-TO-END CUSTOMER LIFECYCLE
             </span>
             <h2 className="font-heading text-3xl sm:text-5xl capitalize tracking-tight">
@@ -936,13 +935,12 @@ export default function MarketingClient() {
               <button
                 key={stage.id}
                 onClick={() => setActiveStage(idx)}
-                className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
-                  activeStage === idx
-                    ? "bg-[#6324FC] text-white border-[#6324FC] shadow-[0_0_20px_rgba(99,36,252,0.3)]"
-                    : "bg-white dark:bg-[#0c0c12] border-black/10 dark:border-white/10 text-primary hover:border-[#6324FC]/40"
-                }`}
+                className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${activeStage === idx
+                  ? "bg-[#6324FC] text-white border-[#6324FC] shadow-[0_0_20px_rgba(99,36,252,0.3)]"
+                  : "bg-white dark:bg-[#0c0c12] border-black/10 dark:border-white/10 text-primary hover:border-[#6324FC]/40"
+                  }`}
               >
-                <div className={`font-heading text-xs font-mono mb-1 ${activeStage === idx ? "text-white/80" : "text-[#6324FC]"}`}>
+                <div className={`font-heading text-[14px] font-mono mb-1 ${activeStage === idx ? "text-white/80" : "text-[#6324FC]"}`}>
                   STAGE {stage.id}
                 </div>
                 <div className="font-heading text-sm font-bold tracking-tight line-clamp-1">
@@ -984,7 +982,7 @@ export default function MarketingClient() {
                       {funnelStages[activeStage].channels.map((chan, cIdx) => (
                         <div
                           key={cIdx}
-                          className="flex items-center gap-2.5 p-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.03] border border-black/5 dark:border-white/5 text-xs text-primary font-medium"
+                          className="flex items-center gap-2.5 p-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.03] border border-black/5 dark:border-white/5 text-[14px] text-primary font-medium"
                         >
                           <CheckCircle2 className="w-4 h-4 text-[#6324FC] shrink-0" />
                           <span>{chan}</span>
@@ -1002,7 +1000,7 @@ export default function MarketingClient() {
                     {funnelStages[activeStage].kpis.map((kpi, kIdx) => (
                       <div
                         key={kIdx}
-                        className="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-[#0a0a0f] border border-black/5 dark:border-white/5 text-xs font-heading font-semibold text-primary"
+                        className="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-[#0a0a0f] border border-black/5 dark:border-white/5 text-[14px] font-heading font-semibold text-primary"
                       >
                         <span>{kpi.split(" (")[0]}</span>
                         <span className="text-[#6324FC] font-mono">
@@ -1014,7 +1012,7 @@ export default function MarketingClient() {
 
                   <button
                     onClick={() => openModal(`Stage ${activeStage + 1} Strategy Session`)}
-                    className="w-full mt-4 py-3 rounded-xl bg-[#6324FC] text-white font-heading text-xs uppercase tracking-wider font-semibold hover:bg-[#521cd6] transition-colors cursor-pointer"
+                    className="w-full mt-4 py-3 rounded-xl bg-[#6324FC] text-white font-heading text-[14px] uppercase tracking-wider font-semibold hover:bg-[#521cd6] transition-colors cursor-pointer"
                   >
                     Audit This Funnel Stage
                   </button>
@@ -1030,7 +1028,7 @@ export default function MarketingClient() {
         <section className="py-20 border-b border-black/10 dark:border-white/10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="space-y-3">
-              <span className="font-heading text-xs uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
+              <span className="font-heading text-[14px] uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
                 PLATFORM ECOSYSTEM
               </span>
               <h2 className="font-heading text-3xl sm:text-5xl capitalize tracking-tight">
@@ -1055,7 +1053,7 @@ export default function MarketingClient() {
             ======================================================== */}
         <section className="py-20 border-b border-black/10 dark:border-white/10">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6324FC]/10 text-[#6324FC] border border-[#6324FC]/20 text-xs font-heading font-semibold uppercase tracking-[0.25em]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6324FC]/10 text-[#6324FC] border border-[#6324FC]/20 text-[14px] font-heading font-semibold uppercase tracking-[0.25em]">
               <Sparkles className="w-3.5 h-3.5" />
               THE PARADIGM SHIFT
             </div>
@@ -1069,7 +1067,7 @@ export default function MarketingClient() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-stretch">
-            
+
             {/* Card 1: Typical Digital Agency (Pain Points) */}
             <div className="p-8 sm:p-10 rounded-[32px] bg-red-500/[0.02] dark:bg-red-500/[0.03] border border-red-500/20 shadow-sm flex flex-col justify-between relative overflow-hidden">
               <div className="space-y-6">
@@ -1079,13 +1077,13 @@ export default function MarketingClient() {
                       <XCircle className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="font-heading text-xs uppercase tracking-widest text-red-500 font-bold block">
+                      <span className="font-heading text-[14px] uppercase tracking-widest text-red-500 font-bold block">
                         TYPICAL DIGITAL AGENCY
                       </span>
                       <span className="text-[11px] text-primary/50 font-sans">High overhead & low accountability</span>
                     </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full text-[10px] font-heading uppercase tracking-wider font-semibold bg-red-500/10 text-red-500 border border-red-500/20">
+                  <span className="px-2.5 py-1 rounded-full text-[12px] font-heading uppercase tracking-wider font-semibold bg-red-500/10 text-red-500 border border-red-500/20">
                     LEGACY MODEL
                   </span>
                 </div>
@@ -1098,10 +1096,10 @@ export default function MarketingClient() {
                     >
                       <XCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                       <div className="space-y-0.5">
-                        <div className="font-heading text-xs font-bold uppercase tracking-wider text-red-400">
+                        <div className="font-heading text-[14px] font-bold uppercase tracking-wider text-red-400">
                           {item.feature}
                         </div>
-                        <p className="font-sans font-light text-xs sm:text-sm text-primary/70 leading-relaxed">
+                        <p className="font-sans font-light text-[14px] sm:text-sm text-primary/70 leading-relaxed">
                           {item.agency}
                         </p>
                       </div>
@@ -1129,13 +1127,13 @@ export default function MarketingClient() {
                       <CheckCircle2 className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="font-heading text-xs uppercase tracking-widest text-[#6324FC] font-bold block">
+                      <span className="font-heading text-[14px] uppercase tracking-widest text-[#6324FC] font-bold block">
                         INJAAZH GROWTH ENGINEERING
                       </span>
                       <span className="text-[11px] text-primary/50 font-sans">Deterministic revenue acceleration</span>
                     </div>
                   </div>
-                  <span className="px-3 py-1 rounded-full text-[10px] font-heading uppercase tracking-wider font-bold bg-[#6324FC] text-white shadow-[0_0_15px_rgba(99,36,252,0.5)]">
+                  <span className="px-3 py-1 rounded-full text-[12px] font-heading uppercase tracking-wider font-bold bg-[#6324FC] text-white shadow-[0_0_15px_rgba(99,36,252,0.5)]">
                     ENTERPRISE STANDARD
                   </span>
                 </div>
@@ -1148,10 +1146,10 @@ export default function MarketingClient() {
                     >
                       <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
                       <div className="space-y-0.5">
-                        <div className="font-heading text-xs font-bold uppercase tracking-wider text-[#6324FC] group-hover:text-primary transition-colors">
+                        <div className="font-heading text-[14px] font-bold uppercase tracking-wider text-[#6324FC] group-hover:text-primary transition-colors">
                           {item.feature}
                         </div>
-                        <p className="font-sans font-medium text-xs sm:text-sm text-primary leading-relaxed">
+                        <p className="font-sans font-medium text-[14px] sm:text-sm text-primary leading-relaxed">
                           {item.injaazh}
                         </p>
                       </div>
@@ -1163,7 +1161,7 @@ export default function MarketingClient() {
               <div className="relative z-10 pt-6 mt-6 border-t border-black/10 dark:border-white/10">
                 <button
                   onClick={() => openModal("Growth Engineering Transition")}
-                  className="w-full py-4 rounded-2xl bg-[#6324FC] hover:bg-[#521cd6] text-white font-heading text-xs uppercase tracking-widest font-bold shadow-[0_0_25px_rgba(99,36,252,0.4)] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-4 rounded-2xl bg-[#6324FC] hover:bg-[#521cd6] text-white font-heading text-[14px] uppercase tracking-widest font-bold shadow-[0_0_25px_rgba(99,36,252,0.4)] transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>Transition To Injaazh Growth Standard</span>
                   <ArrowRight className="w-4 h-4" />
@@ -1179,7 +1177,7 @@ export default function MarketingClient() {
             ======================================================== */}
         <section className="py-20 border-b border-black/10 dark:border-white/10">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <span className="font-heading text-xs uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
+            <span className="font-heading text-[14px] uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
               TRANSPARENCY FIRST
             </span>
             <h2 className="font-heading text-3xl sm:text-5xl capitalize tracking-tight">
@@ -1204,9 +1202,8 @@ export default function MarketingClient() {
                       {faq.q}
                     </span>
                     <ChevronDown
-                      className={`w-5 h-5 text-[#6324FC] shrink-0 transition-transform duration-300 ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
+                      className={`w-5 h-5 text-[#6324FC] shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+                        }`}
                     />
                   </button>
 
@@ -1218,7 +1215,7 @@ export default function MarketingClient() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-primary/70 leading-relaxed font-sans border-t border-black/5 dark:border-white/5">
+                        <div className="px-6 pb-6 pt-1 text-[14px] sm:text-sm text-primary/70 leading-relaxed font-sans border-t border-black/5 dark:border-white/5">
                           {faq.a}
                         </div>
                       </motion.div>
@@ -1235,7 +1232,7 @@ export default function MarketingClient() {
             ======================================================== */}
         <section className="text-center py-24 px-6 rounded-[36px] bg-gradient-to-br from-[#6324FC]/10 via-transparent to-[#00E5FF]/10 border border-[#6324FC]/25 my-16 relative overflow-hidden">
           <div className="max-w-2xl mx-auto space-y-6 relative z-10">
-            <span className="font-heading text-xs uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
+            <span className="font-heading text-[14px] uppercase tracking-[0.25em] text-[#6324FC] font-semibold">
               KICKOFF YOUR GROWTH CYCLE
             </span>
             <h2 className="font-heading text-4xl sm:text-6xl capitalize tracking-tight leading-tight">
@@ -1264,7 +1261,7 @@ export default function MarketingClient() {
 
               <Link
                 href="/contact"
-                className="px-8 py-5 rounded-full border border-black/10 dark:border-white/10 hover:border-[#6324FC]/40 bg-white/40 dark:bg-white/[0.03] text-xs font-heading uppercase tracking-wider text-primary font-medium transition-all"
+                className="px-8 py-5 rounded-full border border-black/10 dark:border-white/10 hover:border-[#6324FC]/40 bg-white/40 dark:bg-white/[0.03] text-[14px] font-heading uppercase tracking-wider text-primary font-medium transition-all"
               >
                 Contact Growth Team
               </Link>

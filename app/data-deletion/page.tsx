@@ -10,28 +10,28 @@ export default function DataDeletion() {
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#6324FC]/5 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#00E5FF]/5 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay" />
-      
+
       <div className="max-w-[900px] mx-auto px-6 md:px-12 relative z-10">
-        
+
         {/* Header Section */}
         <section className="pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-center"
           >
-            <div className="font-heading  text-[#6324FC] tracking-[0.5em] text-[10px] capitalize mb-10 flex justify-center items-center gap-4">
-              <span className="w-12 h-[1px] bg-[#6324FC]" /> 
+            <div className="font-heading  text-[#6324FC] tracking-[0.5em] text-[12px] capitalize mb-10 flex justify-center items-center gap-4">
+              <span className="w-12 h-[1px] bg-[#6324FC]" />
               Compliance & Privacy
               <span className="w-12 h-[1px] bg-[#6324FC]" />
             </div>
-            
+
             <h1 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-10">
-              DATA DELETION <br/>
+              DATA DELETION <br />
               <span className="stroke-text text-transparent italic opacity-30">INSTRUCTIONS</span>
             </h1>
-            
+
             <p className="font-sans font-light text-white/50 text-xl leading-relaxed max-w-2xl mx-auto border-l border-white/5 pl-8 text-left md:text-center md:border-l-0 md:pl-0">
               At Injaazh, we value your privacy. Following Meta&apos;s Platform Policy, we provide a Data Deletion Callback URL or Data Deletion Instructions URL to help users request their data removal.
             </p>
@@ -40,9 +40,9 @@ export default function DataDeletion() {
 
         {/* Instructions Content */}
         <div className="space-y-16 py-16 md:py-24">
-          
+
           {/* Method 1: Facebook App Settings */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -50,7 +50,7 @@ export default function DataDeletion() {
             className="p-12 bg-white/[0.02] border border-white/5 rounded-[2.5rem] backdrop-blur-2xl relative group overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-[#6324FC]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            
+
             <div className="flex flex-col md:flex-row items-start gap-8 relative z-10">
               <div className="w-16 h-16 rounded-2xl bg-[#6324FC]/10 flex items-center justify-center shrink-0 border border-[#6324FC]/20 shadow-[0_0_30px_rgba(99,36,252,0.1)]">
                 <ShieldCheck className="text-[#6324FC] w-8 h-8" />
@@ -61,25 +61,25 @@ export default function DataDeletion() {
                   If you have used our app with Facebook Login, you can remove your activities by following these steps:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                   {[
-                     "Go to your Facebook Profile's Settings & Privacy.",
-                     "Click Settings.",
-                     "Navigate to Apps and Websites in the left menu.",
-                     "Find Injaazh ERP in the list.",
-                     "Click the Remove button."
-                   ].map((step, i) => (
-                     <div key={i} className="flex gap-4 items-start">
-                       <span className="font-heading  text-[#6324FC] text-sm font-bold">0{i+1}.</span>
-                       <p className="font-sans text-white/40 text-sm leading-relaxed">{step}</p>
-                     </div>
-                   ))}
+                  {[
+                    "Go to your Facebook Profile's Settings & Privacy.",
+                    "Click Settings.",
+                    "Navigate to Apps and Websites in the left menu.",
+                    "Find Injaazh ERP in the list.",
+                    "Click the Remove button."
+                  ].map((step, i) => (
+                    <div key={i} className="flex gap-4 items-start">
+                      <span className="font-heading  text-[#6324FC] text-sm font-bold">0{i + 1}.</span>
+                      <p className="font-sans text-white/40 text-sm leading-relaxed">{step}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </motion.div>
 
           {/* Method 2: Manual Request */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -87,7 +87,7 @@ export default function DataDeletion() {
             className="p-12 bg-white/[0.02] border border-white/5 rounded-[2.5rem] backdrop-blur-2xl relative group overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-[#00E5FF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            
+
             <div className="flex flex-col md:flex-row items-start gap-8 relative z-10">
               <div className="w-16 h-16 rounded-2xl bg-[#00E5FF]/10 flex items-center justify-center shrink-0 border border-[#00E5FF]/20 shadow-[0_0_30px_rgba(0,229,255,0.1)]">
                 <Mail className="text-[#00E5FF] w-8 h-8" />
@@ -97,8 +97,8 @@ export default function DataDeletion() {
                 <p className="font-sans text-white/60  leading-relaxed">
                   To request manual deletion of any data associated with your account from our servers, please contact our data protection team directly:
                 </p>
-                <a 
-                  href="mailto:info@injaazh.com" 
+                <a
+                  href="mailto:info@injaazh.com"
                   className="inline-flex items-center gap-6 px-10 py-5 bg-white/[0.03] hover:bg-[#6324FC] border border-white/10 rounded-full transition-all duration-500 group"
                 >
                   <span className="font-heading text-2xl tracking-tighter capitalize group-hover:text-white">info@injaazh.com</span>
@@ -114,7 +114,7 @@ export default function DataDeletion() {
           </motion.div>
 
           {/* Note Section */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
