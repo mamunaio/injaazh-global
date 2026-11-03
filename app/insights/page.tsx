@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Insights & Strategy | Engineering Global Market Dominance | Injaazh",
   description: "Explorations into the intersection of full-service digital strategy, engineering excellence, and global market dominance by Injaazh.",
   keywords: ["Digital Strategy", "Enterprise Engineering", "SEO Insights", "UI/UX Case Studies", "Headless Architecture"],
+  alternates: {
+    canonical: "https://injaazh.com/insights",
+  },
   openGraph: {
     title: "Insights & Strategy | Injaazh",
     description: "Explorations into the intersection of full-service digital strategy, engineering excellence, and global market dominance.",

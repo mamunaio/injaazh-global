@@ -4,6 +4,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Featured Work & Case Studies | INJAAZH",
   description: "Explore our portfolio of high-performance Next.js websites, technical SEO transformations, and enterprise digital solutions built by INJAAZH.",
+  alternates: {
+    canonical: "https://injaazh.com/work",
+  },
   openGraph: {
     title: "Featured Work & Case Studies | INJAAZH",
     description: "Explore our portfolio of high-performance Next.js websites, technical SEO transformations, and enterprise digital solutions built by INJAAZH.",

@@ -4,6 +4,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Premium UI/UX Design Agency | INJAAZH",
   description: "Data-driven wireframing and prototyping that convert users into loyal customers without sacrificing aesthetic luxury.",
+  alternates: {
+    canonical: "https://injaazh.com/services/ui-ux-design",
+  },
   openGraph: {
     title: "Premium UI/UX Design Agency | INJAAZH",
     description: "Data-driven wireframing and prototyping that convert users into loyal customers without sacrificing aesthetic luxury.",

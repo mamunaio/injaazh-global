@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://injaazh.com",
+  },
+};
+
 import dynamic from "next/dynamic";
 import HeroSlider from "@/components/HeroSlider";
 import HeroMarquee from "@/components/HeroMarquee";

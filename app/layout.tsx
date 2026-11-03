@@ -25,9 +25,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/fav.png",
   },
-  alternates: {
-    canonical: "https://injaazh.com",
-  },
   openGraph: {
     title: "Injaazh | Top-Tier Global Digital Agency — Web Design & Technical SEO",
     description: "Injaazh is a premium full-service digital agency trusted by 1,200+ global brands. We engineer ultra-fast websites, dominate Google search, and scale revenue.",

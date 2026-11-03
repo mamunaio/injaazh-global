@@ -18,6 +18,9 @@ export async function generateMetadata(
   return {
     title: `${member.name} | ${member.role} | Injaazh`,
     description: member.bio,
+    alternates: {
+      canonical: `https://injaazh.com/team/${member.slug}`,
+    },
     openGraph: {
       title: `${member.name} | Injaazh`,
       description: member.bio,

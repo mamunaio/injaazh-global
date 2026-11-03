@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Global Digital Agency | Enterprise Web Development & SEO | Injaazh",
   description: "Injaazh is an elite global digital agency specializing in enterprise web development, advanced SEO strategy, and high-converting UI/UX design. We engineer digital dominance.",
   keywords: ["Global Digital Agency", "Enterprise Web Development", "SEO Strategy", "UI/UX Design Agency", "B2B SaaS Development", "Headless Commerce", "Digital Strategy"],
+  alternates: {
+    canonical: "https://injaazh.com/agency",
+  },
   openGraph: {
     title: "Global Digital Agency | Enterprise Web Development & SEO",
     description: "Injaazh is an elite global digital agency specializing in enterprise web development, advanced SEO strategy, and high-converting UI/UX design.",

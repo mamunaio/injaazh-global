@@ -4,6 +4,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Performance Marketing | INJAAZH",
   description: "ROI-obsessed PPC campaigns and conversion rate optimization (CRO) designed for exponential revenue growth.",
+  alternates: {
+    canonical: "https://injaazh.com/services/marketing",
+  },
   openGraph: {
     title: "Performance Marketing | INJAAZH",
     description: "ROI-obsessed PPC campaigns and conversion rate optimization (CRO) designed for exponential revenue growth.",

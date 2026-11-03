@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Our Team | The Collective Minds Behind Injaazh",
   description: "Meet the visionary architects, engineers, and strategists at Injaazh who build digital ecosystems and drive exponential growth for global enterprises.",
   keywords: ["Injaazh Team", "Digital Architects", "Web Engineers", "Growth Strategists", "Executive Leadership"],
+  alternates: {
+    canonical: "https://injaazh.com/team",
+  },
   openGraph: {
     title: "Our Team | Injaazh",
     description: "Meet the visionary architects, engineers, and strategists at Injaazh.",
