@@ -6,56 +6,26 @@ import Image from "next/image";
 import { ArrowUpRight, Clock, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { useProjectModal } from "@/components/ProjectModalContext";
+import { getAllInsights } from "@/lib/insightsData";
 
-const categories = ["All", "Strategy", "Design", "Engineering", "Marketing"];
+const canonicalArticles = getAllInsights();
 
-const posts = [
-  {
-    id: 1,
-    title: "The Future of Headless Architecture in 2025",
-    excerpt:
-      "Why the world's fastest-growing brands are ditching traditional CMS platforms for headless Next.js architectures â€” and what it means for your SEO, speed, and conversion rate.",
-    category: "Engineering",
-    date: "Latest",
-    readTime: "8 MIN READ",
-    image: "/assets/themes_jet_final.webp",
-    slug: "future-of-headless-architecture",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Neuro-Design: The Psychology Behind High-Converting Interfaces",
-    excerpt:
-      "How we leverage cognitive load theory to build digital interfaces that feel like second nature to Western users â€” and convert at 2x the industry average.",
-    category: "Design",
-    date: "Latest",
-    readTime: "5 MIN READ",
-    image: "/assets/b2b_saas_dashboard_1780213845016.png",
-    slug: "neuro-design-psychology",
-  },
-  {
-    id: 3,
-    title: "Scaling Beyond 10,000+ Users: Lessons from the Edge",
-    excerpt:
-      "A technical deep-dive into global data management and database architecture for hyper-growth platforms â€” drawn from real client deployments across the US and UK.",
-    category: "Strategy",
-    date: "Latest",
-    readTime: "7 MIN READ",
-    image: "/assets/novacore.png",
-    slug: "scaling-beyond-10m-users",
-  },
-  {
-    id: 4,
-    title: "Personalization at Scale: More Than Just a Buzzword",
-    excerpt:
-      "Implementing real-time content personalization for Western e-commerce and SaaS brands â€” strategies that actually drive revenue without compromising user privacy.",
-    category: "Marketing",
-    date: "Latest",
-    readTime: "6 MIN READ",
-    image: "/assets/enterprise_ecommerce_1780213870802.png",
-    slug: "ai-driven-personalization",
-  },
+const categories = [
+  "All",
+  ...Array.from(new Set(canonicalArticles.map((a) => a.category))),
 ];
+
+const posts = canonicalArticles.map((article, index) => ({
+  id: index + 1,
+  title: article.title,
+  excerpt: article.cardExcerpt,
+  category: article.category,
+  date: article.formattedDate,
+  readTime: article.readTime.toUpperCase(),
+  image: article.heroImage.url,
+  slug: article.slug,
+  featured: index === 0,
+}));
 
 export default function InsightsClient() {
   const { openModal } = useProjectModal();
@@ -64,7 +34,9 @@ export default function InsightsClient() {
   const filteredPosts =
     activeCategory === "All"
       ? posts.slice(1)
-      : posts.slice(1).filter((post) => post.category === activeCategory);
+      : posts.filter(
+        (post) => post.category.toLowerCase() === activeCategory.toLowerCase()
+      );
 
   return (
     <main className="w-full bg-[#F5F5F0] dark:bg-[#060608] min-h-screen pt-32 text-primary dark:text-white font-sans overflow-hidden">
@@ -327,7 +299,7 @@ export default function InsightsClient() {
           COLLABORATE WITH US
         </div>
         <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-12">
-          <span className="text-white">LET'S SCALE</span> <br />
+          <span className="text-white">LET&apos;S SCALE</span> <br />
           <span className="stroke-white italic opacity-80">WORLDWIDE.</span>
         </h2>
         <div className="flex justify-center">

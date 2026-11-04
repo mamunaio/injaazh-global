@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Clock, Calendar, Sparkles, ArrowUpRight } from "lucide-react";
+import { ArrowRight, Clock, Calendar, Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -138,7 +138,7 @@ export default function LatestInsights() {
               />
 
               {/* Top Image Container */}
-              <Link href={`/blog/${post.slug}`} className="relative h-64 sm:h-72 w-full overflow-hidden block">
+              <Link href={`/insights/${post.slug}`} className="relative h-64 sm:h-72 w-full overflow-hidden block">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -190,7 +190,7 @@ export default function LatestInsights() {
                   </div>
 
                   {/* Title */}
-                  <Link href={`/blog/${post.slug}`}>
+                  <Link href={`/insights/${post.slug}`}>
                     <h3 className="font-heading text-xl sm:text-2xl tracking-tight text-neutral-900 dark:text-white mb-4 leading-snug group-hover:text-[#6324FC] dark:group-hover:text-[#00E5FF] transition-colors duration-300">
                       {post.title}
                     </h3>
@@ -205,7 +205,7 @@ export default function LatestInsights() {
                 {/* Bottom CTA */}
                 <div className="pt-5 border-t border-black/10 dark:border-white/[0.06] mt-auto">
                   <Link
-                    href={`/blog/${post.slug}`}
+                    href={`/insights/${post.slug}`}
                     className="inline-flex items-center justify-between w-full text-neutral-700 dark:text-white/60 font-mono tracking-wider text-[14px] group/btn transition-colors duration-300 hover:text-neutral-900 dark:hover:text-white"
                   >
                     <span className="font-semibold uppercase flex items-center gap-2">
@@ -223,7 +223,7 @@ export default function LatestInsights() {
 
         {/* Global Hub CTA Button */}
         <div className="flex justify-center">
-          <Link href="/blog" className="group block w-full md:w-auto relative">
+          <Link href="/insights" className="group block w-full md:w-auto relative">
             <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
