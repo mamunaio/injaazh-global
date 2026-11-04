@@ -36,6 +36,16 @@ export interface ArticleSection {
   content: string;
 }
 
+export interface InsightCardDTO {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  date: string;
+  readTime: string;
+  image: string;
+}
+
 export interface InsightArticle {
   id: number;
   slug: string;
@@ -745,6 +755,21 @@ export function getInsightBySlug(slug: string): InsightArticle | undefined {
  */
 export function getAllInsights(): readonly InsightArticle[] {
   return [...frozenArticles];
+}
+
+/**
+ * Retrieve minimal card DTOs for client-side listing (prevents full content leakage).
+ */
+export function getInsightCards(): readonly InsightCardDTO[] {
+  return frozenArticles.map((art) => ({
+    slug: art.slug,
+    title: art.title,
+    excerpt: art.cardExcerpt,
+    category: art.category,
+    date: art.formattedDate,
+    readTime: art.readTime.toUpperCase(),
+    image: art.heroImage.url,
+  }));
 }
 
 /**
