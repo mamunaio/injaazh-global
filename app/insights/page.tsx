@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import InsightsClient from "@/components/InsightsClient";
+import { getInsightCards } from "@/lib/insightsData";
 
 export const metadata: Metadata = {
   title: "Insights & Strategy | Engineering Global Market Dominance | Injaazh",
@@ -17,6 +18,12 @@ export const metadata: Metadata = {
 };
 
 export default function InsightsPage() {
+  const cards = getInsightCards();
+  const categories = [
+    "All",
+    ...Array.from(new Set(cards.map((c) => c.category))),
+  ];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
@@ -39,7 +46,7 @@ export default function InsightsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <InsightsClient />
+      <InsightsClient posts={cards} categories={categories} />
     </>
   );
 }

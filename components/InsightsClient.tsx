@@ -6,69 +6,37 @@ import Image from "next/image";
 import { ArrowUpRight, Clock, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { useProjectModal } from "@/components/ProjectModalContext";
+import { InsightCardDTO } from "@/lib/insightsData";
 
-const categories = ["All", "Strategy", "Design", "Engineering", "Marketing"];
+interface InsightsClientProps {
+  posts: readonly InsightCardDTO[];
+  categories: readonly string[];
+}
 
-const posts = [
-  {
-    id: 1,
-    title: "The Future of Headless Architecture in 2025",
-    excerpt:
-      "Why the world's fastest-growing brands are ditching traditional CMS platforms for headless Next.js architectures â€” and what it means for your SEO, speed, and conversion rate.",
-    category: "Engineering",
-    date: "Latest",
-    readTime: "8 MIN READ",
-    image: "/assets/themes_jet_final.webp",
-    slug: "future-of-headless-architecture",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Neuro-Design: The Psychology Behind High-Converting Interfaces",
-    excerpt:
-      "How we leverage cognitive load theory to build digital interfaces that feel like second nature to Western users â€” and convert at 2x the industry average.",
-    category: "Design",
-    date: "Latest",
-    readTime: "5 MIN READ",
-    image: "/assets/b2b_saas_dashboard_1780213845016.png",
-    slug: "neuro-design-psychology",
-  },
-  {
-    id: 3,
-    title: "Scaling Beyond 10,000+ Users: Lessons from the Edge",
-    excerpt:
-      "A technical deep-dive into global data management and database architecture for hyper-growth platforms â€” drawn from real client deployments across the US and UK.",
-    category: "Strategy",
-    date: "Latest",
-    readTime: "7 MIN READ",
-    image: "/assets/novacore.png",
-    slug: "scaling-beyond-10m-users",
-  },
-  {
-    id: 4,
-    title: "Personalization at Scale: More Than Just a Buzzword",
-    excerpt:
-      "Implementing real-time content personalization for Western e-commerce and SaaS brands â€” strategies that actually drive revenue without compromising user privacy.",
-    category: "Marketing",
-    date: "Latest",
-    readTime: "6 MIN READ",
-    image: "/assets/enterprise_ecommerce_1780213870802.png",
-    slug: "ai-driven-personalization",
-  },
-];
-
-export default function InsightsClient() {
+export default function InsightsClient({ posts, categories }: InsightsClientProps) {
   const { openModal } = useProjectModal();
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const filteredPosts =
-    activeCategory === "All"
-      ? posts.slice(1)
-      : posts.slice(1).filter((post) => post.category === activeCategory);
+  const isAll = activeCategory === "All";
+  const matchingPosts = isAll
+    ? posts
+    : posts.filter(
+      (post) => post.category.toLowerCase() === activeCategory.toLowerCase()
+    );
+
+  const showFeatured =
+    matchingPosts.length > 0 &&
+    (isAll || posts[0]?.category.toLowerCase() === activeCategory.toLowerCase());
+
+  const featuredPost = showFeatured ? posts[0] : null;
+
+  const gridPosts = featuredPost
+    ? matchingPosts.filter((p) => p.slug !== featuredPost.slug)
+    : matchingPosts;
 
   return (
     <main className="w-full bg-[#F5F5F0] dark:bg-[#060608] min-h-screen pt-32 text-primary dark:text-white font-sans overflow-hidden">
-      {/* 1. Header Section â€” agency-style gradient, no image */}
+      {/* 1. Header Section — agency-style gradient, no image */}
       <section className="relative w-full min-h-[50vh] md:min-h-[60vh] py-20 md:py-32 flex items-center justify-center overflow-hidden bg-[#F0EEF8] dark:bg-[#060608] mb-20">
         {/* Dynamic Glow Orbs */}
         <div
@@ -108,7 +76,7 @@ export default function InsightsClient() {
                   onClick={() => setActiveCategory(cat)}
                   className={`px-6 py-2 rounded-full font-heading text-[14px] tracking-widest capitalize transition-all border ${activeCategory === cat
                     ? "bg-[#6324FC] border-[#6324FC] text-white"
-                    : "bg-transparent border-[#060608]/20 dark:border-white/10 text-[#060608]/60 dark:text-white/40 hover:border-[#060608]/40 dark:hover:border-white/30"
+                    : "bg-transparent border-[#060608]/20 dark:border-white/10 text-[#060608]/60 dark:text-white/40 hover:border-[#060608]/40 dark:hover:border-white/30 cursor-pointer"
                     }`}
                 >
                   {cat}
@@ -120,114 +88,135 @@ export default function InsightsClient() {
       </section>
 
       {/* 2. Featured Post */}
-      <section className="px-6 lg:px-12 max-w-[1400px] mx-auto ">
-        <Link href={`/insights/${posts[0].slug}`}>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="group relative w-full aspect-[21/9] md:aspect-[3/1] bg-white/[0.02] border border-white/5 overflow-hidden rounded-none cursor-pointer"
-          >
-            <Image
-              src={posts[0].image}
-              alt={posts[0].title}
-              fill
-              className="object-cover opacity-80 group-hover:opacity-100 transition-all duration-1000"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#060608] via-[#060608]/80 to-transparent" />
-
-            <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full flex flex-col md:flex-row md:items-end justify-between gap-8">
-              <div className="max-w-3xl">
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="bg-[#6324FC] text-white px-3 py-1 font-heading  text-[12px] tracking-widest capitalize ">
-                    FEATURED
-                  </span>
-                  <span className="font-heading  text-[12px] tracking-widest capitalize text-white/60">
-                    {posts[0].category.toUpperCase()}
-                  </span>
-                </div>
-                <h2 className="font-heading text-4xl md:text-6xl text-white tracking-tight leading-none group-hover:text-[#6324FC] transition-colors duration-500 mb-4">
-                  {posts[0].title}
-                </h2>
-                <p className="font-sans font-light text-white/50  max-w-2xl hidden md:block">
-                  {posts[0].excerpt}
-                </p>
-              </div>
-              <div className="flex items-center gap-4 text-white/60 font-heading  text-[12px] tracking-widest capitalize whitespace-nowrap">
-                <span className="flex items-center gap-2">
-                  <Clock className="w-3 h-3" /> {posts[0].readTime}
-                </span>
-                <ArrowUpRight className="w-6 h-6 text-[#6324FC] group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
-              </div>
-            </div>
-          </motion.div>
-        </Link>
-      </section>
-
-      {/* 3. Post Grid */}
-      <section className="px-6 lg:px-12 max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20 py-16 md:py-24">
-        {filteredPosts.map((post, index) => (
-          <motion.div
-            key={post.id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="group flex flex-col"
-          >
-            <Link
-              href={`/insights/${post.slug}`}
-              className="relative aspect-[4/3] bg-white/[0.02] border border-white/5 overflow-hidden mb-8 block"
+      {featuredPost && (
+        <section className="px-6 lg:px-12 max-w-[1400px] mx-auto ">
+          <Link href={`/insights/${featuredPost.slug}`}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="group relative w-full aspect-[21/9] md:aspect-[3/1] bg-white/[0.02] border border-white/5 overflow-hidden rounded-none cursor-pointer"
             >
               <Image
-                src={post.image}
-                alt={post.title}
+                src={featuredPost.image}
+                alt={featuredPost.title}
                 fill
-                className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                className="object-cover opacity-80 group-hover:opacity-100 transition-all duration-1000"
               />
-              <div className="absolute top-4 right-4 bg-[#060608]/80 backdrop-blur-md px-3 py-1 font-heading  text-[12px] tracking-widest capitalize text-white border border-white/10">
-                {post.category}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#060608] via-[#060608]/80 to-transparent" />
+
+              <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full flex flex-col md:flex-row md:items-end justify-between gap-8">
+                <div className="max-w-3xl">
+                  <div className="flex items-center gap-4 mb-4">
+                    <span className="bg-[#6324FC] text-white px-3 py-1 font-heading text-[12px] tracking-widest capitalize">
+                      FEATURED
+                    </span>
+                    <span className="font-heading text-[12px] tracking-widest capitalize text-white/60">
+                      {featuredPost.category.toUpperCase()}
+                    </span>
+                  </div>
+                  <h2 className="font-heading text-4xl md:text-6xl text-white tracking-tight leading-none group-hover:text-[#6324FC] transition-colors duration-500 mb-4">
+                    {featuredPost.title}
+                  </h2>
+                  <p className="font-sans font-light text-white/50 max-w-2xl hidden md:block">
+                    {featuredPost.excerpt}
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 text-white/60 font-heading text-[12px] tracking-widest capitalize whitespace-nowrap">
+                  <span className="flex items-center gap-2">
+                    <Clock className="w-3 h-3" /> {featuredPost.readTime}
+                  </span>
+                  <ArrowUpRight className="w-6 h-6 text-[#6324FC] group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
+                </div>
               </div>
-            </Link>
+            </motion.div>
+          </Link>
+        </section>
+      )}
 
-            <div className="flex items-center gap-4 mb-4 font-heading  text-[12px] tracking-widest capitalize text-white/40">
-              <span>{post.date}</span>
-              <span className="w-1 h-1 rounded-full bg-[#6324FC]" />
-              <span>{post.readTime}</span>
-            </div>
-
-            <Link href={`/insights/${post.slug}`}>
-              <h3 className="font-heading text-3xl text-white tracking-tight leading-tight mb-4 group-hover:text-[#6324FC] transition-colors duration-300">
-                {post.title}
-              </h3>
-            </Link>
-
-            <p className="font-sans font-light text-white/50 mb-8 flex-1">
-              {post.excerpt}
-            </p>
-
-            <Link
-              href={`/insights/${post.slug}`}
-              className="group/btn relative p-[1px] rounded-xl overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 hover:shadow-[0_0_20px_rgba(99,36,252,0.2)] isolate"
+      {/* 3. Post Grid */}
+      {gridPosts.length > 0 && (
+        <section className="px-6 lg:px-12 max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20 py-16 md:py-24">
+          {gridPosts.map((post, index) => (
+            <motion.div
+              key={post.slug}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group flex flex-col"
             >
-              {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
-              <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-xl">
-                <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+              <Link
+                href={`/insights/${post.slug}`}
+                className="relative aspect-[4/3] bg-white/[0.02] border border-white/5 overflow-hidden mb-8 block"
+              >
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                />
+                <div className="absolute top-4 right-4 bg-[#060608]/80 backdrop-blur-md px-3 py-1 font-heading text-[12px] tracking-widest capitalize text-white border border-white/10">
+                  {post.category}
+                </div>
+              </Link>
+
+              <div className="flex items-center gap-4 mb-4 font-heading text-[12px] tracking-widest capitalize text-white/40">
+                <span>{post.date}</span>
+                <span className="w-1 h-1 rounded-full bg-[#6324FC]" />
+                <span>{post.readTime}</span>
               </div>
 
-              <div className="relative w-full h-full py-3.5 rounded-[11px] bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
-                {/* Flowing background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500 rounded-[11px]" />
+              <Link href={`/insights/${post.slug}`}>
+                <h3 className="font-heading text-3xl text-white tracking-tight leading-tight mb-4 group-hover:text-[#6324FC] transition-colors duration-300">
+                  {post.title}
+                </h3>
+              </Link>
 
-                <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-[12px] tracking-[0.2em] text-white/60 group-hover/btn:text-white transition-colors duration-500 uppercase text-center">
-                  READ ARTICLE
-                  <ArrowRight className="w-4 h-4 text-[#6324FC] group-hover/btn:translate-x-1 transition-transform" />
-                </span>
-              </div>
-            </Link>
-          </motion.div>
-        ))}
-      </section>
+              <p className="font-sans font-light text-white/50 mb-8 flex-1">
+                {post.excerpt}
+              </p>
+
+              <Link
+                href={`/insights/${post.slug}`}
+                className="group/btn relative p-[1px] rounded-xl overflow-hidden flex items-center justify-center cursor-pointer transition-all duration-300 hover:shadow-[0_0_20px_rgba(99,36,252,0.2)] isolate"
+              >
+                {/* Centered square spinning infinitely to produce a perfect 360-degree rotating border */}
+                <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden rounded-xl">
+                  <div className="w-[150%] aspect-square bg-[conic-gradient(from_0deg,#6324FC,#00E5FF,#6324FC)] animate-[spin_6s_linear_infinite] rounded-full" />
+                </div>
+
+                <div className="relative w-full h-full py-3.5 rounded-[11px] bg-[#060608] transition-colors duration-500 flex items-center justify-center gap-3 z-10">
+                  {/* Flowing background gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#6324FC]/10 to-[#00E5FF]/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500 rounded-[11px]" />
+
+                  <span className="relative z-10 flex items-center justify-center gap-3 font-heading text-[12px] tracking-[0.2em] text-white/60 group-hover/btn:text-white transition-colors duration-500 uppercase text-center">
+                    READ ARTICLE
+                    <ArrowRight className="w-4 h-4 text-[#6324FC] group-hover/btn:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </section>
+      )}
+
+      {/* Clean Non-Broken Empty State */}
+      {!featuredPost && gridPosts.length === 0 && (
+        <section className="px-6 lg:px-12 max-w-[1400px] mx-auto py-24 text-center">
+          <div className="max-w-md mx-auto p-12 rounded-3xl bg-white/[0.02] border border-white/10 backdrop-blur-xl">
+            <p className="font-heading text-lg tracking-widest uppercase text-white/50 mb-6">
+              No briefings available in this category
+            </p>
+            <button
+              onClick={() => setActiveCategory("All")}
+              className="px-8 py-3 rounded-full font-heading text-xs tracking-widest uppercase bg-[#6324FC] text-white hover:bg-[#6324FC]/80 transition-all cursor-pointer"
+            >
+              View All Briefings
+            </button>
+          </div>
+        </section>
+      )}
 
       {/* 4. Editorial Flagship Newsletter */}
       <section className="relative px-6 lg:px-12 max-w-[1400px] mx-auto py-16 md:py-24 overflow-hidden">
@@ -251,7 +240,7 @@ export default function InsightsClient() {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#060608]/80" />
 
             <div className="absolute inset-0 flex flex-col justify-end p-12">
-              <div className="font-heading  text-[12px] tracking-[0.5em] text-[#6324FC] capitalize mb-4">
+              <div className="font-heading text-[12px] tracking-[0.5em] text-[#6324FC] capitalize mb-4">
                 Core Signal
               </div>
               <h3 className="font-heading text-4xl capitalize tracking-tighter italic">
@@ -282,7 +271,7 @@ export default function InsightsClient() {
                 placeholder="ENTER YOUR EMAIL"
                 className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-8 py-8 font-heading text-2xl focus:outline-none focus:border-[#6324FC] focus:bg-white/[0.05] transition-all placeholder:text-white/10 capitalize text-white backdrop-blur-xl"
               />
-              <button className="absolute right-3 top-1/2 -translate-y-1/2 w-14 h-14 rounded-xl bg-[#6324FC] flex items-center justify-center group-hover/input:scale-105 transition-transform duration-500 shadow-[0_0_30px_rgba(99,36,252,0.3)]">
+              <button className="absolute right-3 top-1/2 -translate-y-1/2 w-14 h-14 rounded-xl bg-[#6324FC] flex items-center justify-center group-hover/input:scale-105 transition-transform duration-500 shadow-[0_0_30px_rgba(99,36,252,0.3)] cursor-pointer">
                 <ArrowRight className="w-6 h-6 text-white" />
               </button>
             </div>
@@ -309,7 +298,7 @@ export default function InsightsClient() {
                   </div>
                 ))}
               </div>
-              <p className="font-heading  text-[12px] tracking-widest text-white/20 capitalize ">
+              <p className="font-heading text-[12px] tracking-widest text-white/20 capitalize ">
                 Join a global network of digital architects
               </p>
             </div>
@@ -323,11 +312,11 @@ export default function InsightsClient() {
 
       {/* 5. Bottom CTA Section */}
       <section className="px-6 lg:px-12 max-w-[1400px] mx-auto text-center py-16 md:py-24 border-t border-white/5">
-        <div className="font-heading  text-sm tracking-[0.5em] text-[#6324FC] capitalize mb-8">
+        <div className="font-heading text-sm tracking-[0.5em] text-[#6324FC] capitalize mb-8">
           COLLABORATE WITH US
         </div>
         <h2 className="font-heading text-5xl md:text-7xl leading-[0.85] tracking-tighter capitalize mb-12">
-          <span className="text-white">LET'S SCALE</span> <br />
+          <span className="text-white">LET&apos;S SCALE</span> <br />
           <span className="stroke-white italic opacity-80">WORLDWIDE.</span>
         </h2>
         <div className="flex justify-center">
